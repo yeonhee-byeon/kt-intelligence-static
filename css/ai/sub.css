@@ -1,0 +1,117 @@
+/* 솔루션 페이지 공통 스타일 */
+.banner-section {
+  background: url(/resource/images/ai/solution/RAI/banner-bg1.png) no-repeat center center;
+  background-size: cover;
+  margin-top: 5.125rem;
+}
+.banner-inner {
+  max-width: 1200px;
+  height: 33.75rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.banner-section h2 {
+  font-weight: 700;
+  font-size: var(--font-size-9xl);
+  line-height: 1;
+  letter-spacing: var(--letter-spacing-lg);
+  margin-bottom: 1.25rem;
+}
+.banner-section p {
+  color: #000;
+  font-size: var(--font-size-3xl);
+  font-weight: 600;
+  line-height: 1.48;
+}
+
+/* Content Section */
+.content-wrapper {
+  width: 100%;
+}
+.content-section {
+  padding: 7.75rem 0 11.875rem;
+}
+.content-section ~ .content-section {
+  padding: 0 0 10rem;
+}
+.content-inner {
+  max-width: 1384px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+.content-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.content-title-wrapper span {
+  color: var(--primary-color);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  line-height: var(--line-height-150);
+  letter-spacing: var(--letter-spacing-md);
+}
+.content-title-wrapper h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: var(--font-size-7xl);
+  font-weight: 700;
+  line-height: var(--line-height-136);
+  letter-spacing: var(--letter-spacing-md);
+}
+.content-title-wrapper p {
+  color: var(--gray-900-color);
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  line-height: var(--line-height-172);
+  letter-spacing: var(--letter-spacing-md);
+}
+.content-list-wrapper {
+  width: 100%;
+}
+.content-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.content-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 27.5rem;
+  height: 17.125rem;
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid var(--gray-300-color);
+  background: var(--white-color);
+}
+.content-list-item span {
+  color: var(--gray-600-color);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  line-height: var(--line-height-172);
+}
+.content-list-item h3 {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  line-height: var(--line-height-150);
+  letter-spacing: var(--letter-spacing-md);
+  margin-bottom: 1.625rem;
+}
+.content-list-item p {
+  color: var(--gray-900-color);
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  line-height: var(--line-height-172);
+  letter-spacing: var(--letter-spacing-base);
+}

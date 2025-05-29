@@ -1,0 +1,17 @@
+<svg width="744" height="726" viewBox="0 0 744 726" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="436.86" height="1.57988" transform="matrix(-0.851414 0.524495 0.851414 0.524495 371.951 0.972656)" fill="#2B2B2B"/>
+<path d="M371.931 2.64252L1.34671 230.933V511.014L371.938 295.414L371.931 2.64252Z" fill="url(#paint0_linear_174_4382)"/>
+<rect width="1.57988" height="280.081" transform="matrix(-0.851414 -0.524495 0 1 1.34375 230.934)" fill="#0F0F0F"/>
+<rect width="435.258" height="1.57988" transform="matrix(0.851414 0.524495 -0.851414 0.524495 373.25 1.8125)" fill="#2B2B2B"/>
+<path d="M371.901 2.64057L742.485 230.931V511.012L371.895 295.412L371.901 2.64057Z" fill="#222222"/>
+<rect width="1.57988" height="280.157" transform="matrix(0.851414 -0.524495 0 1 742.488 230.934)" fill="#0F0F0F"/>
+<rect width="428" height="428" transform="matrix(0.866025 0.5 -0.866025 0.5 371.939 295.426)" fill="#242424"/>
+<rect width="428" height="1.6" transform="matrix(0.866025 0.5 0 1 1.2832 509.426)" fill="#0F0F0F"/>
+<rect width="428" height="1.6" transform="matrix(0.866025 -0.5 0 1 371.939 723.426)" fill="#0F0F0F"/>
+<defs>
+<linearGradient id="paint0_linear_174_4382" x1="409.884" y1="397.446" x2="179.78" y2="157.202" gradientUnits="userSpaceOnUse">
+<stop stop-color="#242424"/>
+<stop offset="1" stop-color="#141414"/>
+</linearGradient>
+</defs>
+</svg>
