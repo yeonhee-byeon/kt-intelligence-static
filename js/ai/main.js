@@ -21,7 +21,7 @@ window.addEventListener("load", function () {
 
 // HeroSection 등장 및 롤링 애니메이션
 (function () {
-    const logo = document.querySelector(".hero-logo");
+    // const logo = document.querySelector(".hero-logo");
     const button = document.querySelector(".hero-btn-wrap");
     const title1First = document.querySelector(".hero-title1-first");
     const title1Second = document.querySelector(".hero-title1-second");
@@ -31,53 +31,76 @@ window.addEventListener("load", function () {
     const title2Third = document.querySelector(".hero-title2-third");
 
     // 등장 애니메이션
-    // if (window.gsap) {
-    //     const tl = gsap.timeline();
-    //     tl.from(logo, { opacity: 0, y: 30, duration: 1, ease: "power2.out" }).from(title1First, { opacity: 0, y: 30, duration: 1, ease: "power2.out" }, "-=0.8").from(title1Second, { opacity: 0, y: 30, duration: 1, ease: "power2.out" }, "-=0.8").from(title1Third, { opacity: 0, y: 30, duration: 1, ease: "power2.out" }, "-=0.8").from(title2First, { opacity: 0, y: 30, duration: 1, ease: "power2.out" }, "-=0.8").from(title2Second, { opacity: 0, y: 30, duration: 1, ease: "power2.out" }, "-=0.8").from(title2Third, { opacity: 0, y: 30, duration: 1, ease: "power2.out" }, "-=0.8").from(button, { opacity: 0, y: 30, duration: 1, ease: "power2.out" }, "-=0.8");
-    // }
+    gsap.set(title1First, { opacity: 0 });
+    gsap.set(title2First, { opacity: 0 });
+    gsap.set(title1Second, { opacity: 0 });
+    gsap.set(title2Second, { opacity: 0 });
+    gsap.set(title1Third, { opacity: 0 });
+    gsap.set(title2Third, { opacity: 0 });
+    gsap.set(button, { opacity: 0 });
+
+    if (window.gsap) {
+        const tl = gsap.timeline({ repeat: -1 });
+
+        // First set
+        tl.to(title1First, { opacity: 1, duration: 1, ease: "power2.out" })
+            .to(title2First, { opacity: 1, duration: 1, ease: "power2.out" }, "-=0.2")
+            .to([title1First, title2First], { opacity: 0, ease: "power2.out", delay: 5 })
+
+            // Second set
+            .to(title1Second, { opacity: 1, duration: 1, ease: "power2.out" })
+            .to(title2Second, { opacity: 1, duration: 1, ease: "power2.out" }, "-=0.2")
+            .to([title1Second, title2Second], { opacity: 0, ease: "power2.out", delay: 5 })
+
+            // Third set
+            .to(title1Third, { opacity: 1, duration: 1, ease: "power2.out" })
+            .to(title2Third, { opacity: 1, duration: 1, ease: "power2.out" }, "-=0.2")
+            .to([title1Third, title2Third], { opacity: 0, ease: "power2.out", delay: 5 });
+    }
+    gsap.to(button, { opacity: 1, duration: 1, delay: 1.5, ease: "power2.out" });
 
     // 롤링 애니메이션
-    const interval = setInterval(() => {
-        if (title1First && title1Second && title1Third && title2First && title2Second && title2Third) {
-            // 첫 번째 텍스트 롤링
-            title1First.style.animation = "rollingCurrent 0.5s ease-in-out forwards";
-            title1Second.style.animation = "rollingNext 0.5s ease-in-out forwards";
-            setTimeout(() => {
-                if (title2First && title2Second && title2Third) {
-                    title2First.style.animation = "rollingCurrent 0.5s ease-in-out forwards";
-                    title2Second.style.animation = "rollingNext 0.5s ease-in-out forwards";
-                    title2Third.style.animation = "rollingNext 0.5s ease-in-out forwards";
-                }
-            }, 250);
-            setTimeout(() => {
-                if (title1First && title1Second && title1Third) {
-                    title1First.style.animation = "";
-                    title1Second.style.animation = "";
-                    title1Third.style.animation = "";
-                    // 텍스트 스왑
-                    const temp1 = title1First.innerHTML;
-                    title1First.innerHTML = title1Second.innerHTML;
-                    title1Second.innerHTML = title1Third.innerHTML;
-                    title1Third.innerHTML = temp1;
-                }
-            }, 500);
-            setTimeout(() => {
-                if (title2First && title2Second && title2Third) {
-                    title2First.style.animation = "";
-                    title2Second.style.animation = "";
-                    title2Third.style.animation = "";
-                    // 텍스트 스왑
-                    const temp2 = title2First.innerHTML;
-                    title2First.innerHTML = title2Second.innerHTML;
-                    title2Second.innerHTML = title2Third.innerHTML;
-                    title2Third.innerHTML = temp2;
-                }
-            }, 750);
-        }
-    }, 5000);
-    window.addEventListener("beforeunload", () => {
-        clearInterval(interval);
-    });
+    // const interval = setInterval(() => {
+    //     if (title1First && title1Second && title1Third && title2First && title2Second && title2Third) {
+    //         // 첫 번째 텍스트 롤링
+    //         title1First.style.animation = "rollingCurrent 0.5s ease-in-out forwards";
+    //         title1Second.style.animation = "rollingNext 0.5s ease-in-out forwards";
+    //         setTimeout(() => {
+    //             if (title2First && title2Second && title2Third) {
+    //                 title2First.style.animation = "rollingCurrent 0.5s ease-in-out forwards";
+    //                 title2Second.style.animation = "rollingNext 0.5s ease-in-out forwards";
+    //                 title2Third.style.animation = "rollingNext 0.5s ease-in-out forwards";
+    //             }
+    //         }, 250);
+    //         setTimeout(() => {
+    //             if (title1First && title1Second && title1Third) {
+    //                 title1First.style.animation = "";
+    //                 title1Second.style.animation = "";
+    //                 title1Third.style.animation = "";
+    //                 // 텍스트 스왑
+    //                 const temp1 = title1First.innerHTML;
+    //                 title1First.innerHTML = title1Second.innerHTML;
+    //                 title1Second.innerHTML = title1Third.innerHTML;
+    //                 title1Third.innerHTML = temp1;
+    //             }
+    //         }, 500);
+    //         setTimeout(() => {
+    //             if (title2First && title2Second && title2Third) {
+    //                 title2First.style.animation = "";
+    //                 title2Second.style.animation = "";
+    //                 title2Third.style.animation = "";
+    //                 // 텍스트 스왑
+    //                 const temp2 = title2First.innerHTML;
+    //                 title2First.innerHTML = title2Second.innerHTML;
+    //                 title2Second.innerHTML = title2Third.innerHTML;
+    //                 title2Third.innerHTML = temp2;
+    //             }
+    //         }, 750);
+    //     }
+    // }, 5000);
+    // window.addEventListener("beforeunload", () => {
+    //     clearInterval(interval);
+    // });
 })();
 
 // InfoSection 카운트업 애니메이션 (info-section 진입 시 1회만 실행)
