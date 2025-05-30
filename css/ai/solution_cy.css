@@ -1,0 +1,612 @@
+.title-wrapper h3 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: -0.52px;
+  margin-bottom: 2rem;
+}
+
+.list-item span.sub-text-bk {
+    color: var(--black-color);
+}
+
+.banner-section h2.agent-banner-title {
+    padding-bottom: 0.7rem;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 39.4%; /* 16:9 비율 (9/16 = 0.5625) */
+    border-radius: 20px;
+    background: var(--white-color);
+    overflow: hidden;
+    /* 필요시 max-width: 800px; 등 추가 가능 */
+    color: #000;
+    border: 1px solid var(--gray-300-color);
+}
+
+.video-inner {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-inner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+.video-inner span {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    color: #969696;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: var(--font-size-5xl);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 136%; /* 43.52px */
+    letter-spacing: -0.64px;
+}
+
+.sub-title-wrapper {
+    text-align: center;
+}
+
+.sub-title-wrapper h2 {
+    font-size: 2.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 146%; /* 67.16px */
+    letter-spacing: -0.92px;
+}
+
+.sub-title-wrapper p {
+    font-size: var(--font-size-xl);
+    margin: 2rem 0 0;
+    
+}
+
+.box-list.white-box .box-item {
+    background-color: var(--white-color);
+}
+
+.content-section .basicBtn-wrapper {
+    margin-top: 6.25rem;
+}
+
+.double-card-wrapper {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+
+.double-card-wrapper .double-card {
+    width: 50%;
+}
+
+.double-card-wrapper .double-card .double-card-inner .double-card-img{    
+    border: 1px solid var(--gray-300-color);
+    border-radius: 1.25rem;
+    overflow: hidden;
+}
+
+
+.double-card-wrapper .double-card .double-card-inner .double-card-img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.double-card-wrapper .double-card .double-card-inner .double-txts {
+    margin-top: 1.5rem;
+}
+
+.double-card-wrapper .double-card .double-card-inner .double-txts h3 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--black-color);
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+
+.double-card-wrapper .double-card .double-card-inner .double-txts p {
+    font-size: var(--font-size-md);
+    color: var(--gray-900-color);
+    line-height: 172%;
+    letter-spacing: -0.18px;
+    margin-top: 0.75rem;
+    font-weight: 500;
+}
+
+
+
+/* agent */
+.agent-tech-list {
+    display: flex;
+    justify-content: center;
+    padding: 6.25rem 0;
+}
+
+.agent-tech-list li {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 0.75rem;
+    border: 1px solid #d9d9d9;
+    padding: 2.75rem;
+    box-shadow: 4px 8px 20px 0px rgba(0, 0, 0, 0.06);
+}
+
+.agent-tech-list li:nth-child(2) {
+    margin: 0 1.25rem;
+    position: relative;
+}
+
+.agent-tech-list li:nth-child(2):after {
+    display: block;
+    content: "";
+    width: 3rem;
+    height: 3rem;
+    background-image: url('/resource/images/ai/icons/check-red.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: -1.6rem;
+    right: -1rem;
+}
+
+.agent-tech-list li img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.content-section.agent-pattern {
+    background-color: var(--gray-50-color);
+    padding-top: 1.90625rem;
+    transition: background-color 0.3s ease;
+}
+
+
+.agent-pattern.tabs-component .tabs-wrapper .tabs button {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    letter-spacing: 0;
+    position: relative;
+}
+
+.agent-pattern.tabs-component .tabs-wrapper .tabs button::after {
+    display: none;
+}
+
+.agent-pattern.tabs-component .tabs-wrapper .tabs button.tabs__tab--active::after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--black-color);
+    position: absolute;
+    top: 2.1rem;
+    left: unset;
+}
+
+.tab-inner-wrapper {
+    width: 100%;
+}
+  
+
+.tab-section {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    padding-bottom: 10rem;
+}
+
+.tab-section:nth-last-child(1) {
+    padding-bottom: 0;
+}
+
+.agent-pattern.tabs-component .table-card-list {
+    gap: 2rem;
+    align-items: baseline;
+}
+
+.agent-pattern.tabs-component .table-card-list li:after {
+    display: none;
+}
+
+.agent-pattern.tabs-component .table-card-item p {
+    text-align: left;
+    padding: 2rem;
+    min-height: 15.8rem;
+}
+
+/* Agent Pattern Framework 도식 */
+.agent-pattern-diagram {
+  width: 100%;
+  background: var(--white-color);
+  border-radius: 1.25rem;
+  border: 1px solid #d9d9d9;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 5.75rem 6.4375rem 3.8125rem;
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  line-height: 172%; /* 37.84px */
+  letter-spacing: -0.44px;
+}
+.agent-pattern-diagram .diagram-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2.0625rem;
+}
+
+.agent-pattern-diagram .diagram-block {
+  background: #f7f7f7;
+  border-radius: 24px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.03);
+  position: relative;
+}
+.agent-pattern-diagram .agent-types {
+  gap: 2rem;
+  background: none;
+  box-shadow: none;
+  min-width: 12.75rem;
+}
+.agent-pattern-diagram .agent-type {
+  padding: 2.9375rem 2.5rem;
+  min-width: 12.75rem;
+  background: #f7f7f7;
+  border-radius: 1.25rem;
+  border: 1px solid var(--gray-300-color, #D9D9D9);  
+}
+.agent-pattern-diagram .agent-type:last-child {
+  margin-bottom: 0;
+}
+.agent-pattern-diagram .agent-patterns {
+  min-width: 12.75rem;
+  height: 100%;
+  justify-content: center;
+  min-width: 12.75rem;
+  background: var(--white-color);
+  border-radius: 1.25rem;
+  border: 1px solid var(--gray-300-color, #D9D9D9);    
+}
+.agent-pattern-diagram .agent-patterns-icon {
+  width: 40px;
+  height: 40px;
+  background: url('/resource/images/ai/solution/agent/diagram-patterns.svg') no-repeat center/contain;
+  margin-bottom: 1.2rem;
+}
+.agent-pattern-diagram .diagram-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+}
+.agent-pattern-diagram .pattern-types {
+  gap: 2rem;
+  background: none;
+  box-shadow: none;
+  padding: 0 1.5rem;
+  min-width: 12.75rem;
+}
+.agent-pattern-diagram .pattern-type {
+    min-width: 12.75rem;
+    min-height: 14.2rem;
+    background: #f7f7f7;
+    border-radius: 1.25rem;
+    border: 1px solid var(--gray-300-color, #D9D9D9);  
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.agent-pattern-diagram .pattern-type:last-child {
+  margin-bottom: 0;
+}
+.agent-pattern-diagram .pattern-logic {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: none;
+  box-shadow: none;
+  padding: 0 1.5rem;
+  min-width: 12.75rem;
+}
+.agent-pattern-diagram .logic-group {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.agent-pattern-diagram .logic-group:last-child {
+  margin-bottom: 0;
+}
+.agent-pattern-diagram .logic-primitive,
+.agent-pattern-diagram .logic-advanced {
+  width: 48px;
+  height: 96px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+.agent-pattern-diagram .logic-primitive:before,
+.agent-pattern-diagram .logic-primitive:after,
+.agent-pattern-diagram .logic-advanced:before,
+.agent-pattern-diagram .logic-advanced:after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 8px auto;
+}
+.agent-pattern-diagram .logic-primitive:before { background: #e3eaff; }
+.agent-pattern-diagram .logic-primitive:after { background: #ffe3e3; }
+.agent-pattern-diagram .logic-advanced:before { background: #fff6d6; }
+.agent-pattern-diagram .logic-advanced:after { background: #e3eaff; }
+.agent-pattern-diagram .agent-capability {
+  min-width: 160px;
+  min-height: 160px;
+  justify-content: center;
+}
+.agent-pattern-diagram .agent-capability-icon {
+  width: 40px;
+  height: 40px;
+  background: url('/resource/images/ai/solution/agent/diagram-capability.svg') no-repeat center/contain;
+  margin-bottom: 1.2rem;
+}
+
+/* 점선 화살표 */
+.agent-pattern-diagram .diagram-arrow {
+  width: 40px;
+  height: 2px;
+  background: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.agent-pattern-diagram .arrow-right:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 0;
+  border-top: 2px dashed #bbb;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+
+/* Multi-Model Orchestrator 도식 */
+.orchestrator-diagram {
+  width: 100%;
+  max-width: 1384px;
+  margin: 4rem auto 0 auto;
+  padding: 2.5rem 2rem;
+  background: #fff;
+  border-radius: 24px;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.orchestrator-diagram .diagram-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2.5rem;
+}
+.orchestrator-diagram .diagram-block {
+  background: #fafafa;
+  border-radius: 24px;
+  min-width: 180px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.03);
+  position: relative;
+  justify-content: center;
+  padding: 2.5rem 2.5rem;
+}
+.orchestrator-diagram .user-block,
+.orchestrator-diagram .agent-block {
+  min-width: 180px;
+  min-height: 320px;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: none;
+  font-size: 2rem;
+  font-weight: 700;
+  justify-content: center;
+}
+.orchestrator-diagram .diagram-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: auto 0;
+}
+.orchestrator-diagram .orchestrator-block {
+  min-width: 480px;
+  min-height: 360px;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: none;
+  padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.orchestrator-diagram .orchestrator-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.orchestrator-diagram .orchestrator-inner {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  width: 100%;
+  position: relative;
+  min-height: 260px;
+}
+.orchestrator-diagram .orchestrator-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1 1 220px;
+}
+.orchestrator-diagram .orchestrator-section {
+  background: #f7f7f7;
+  border-radius: 18px;
+  border: 1px solid #eee;
+  padding: 1.5rem 2rem;
+  min-width: 200px;
+  min-height: 100px;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+.orchestrator-diagram .orchestrator-section:last-child {
+  margin-bottom: 0;
+}
+.orchestrator-diagram .section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: #f3f3f3;
+  border-radius: 12px 12px 0 0;
+  padding: 0.5rem 0.5rem;
+  text-align: left;
+}
+.orchestrator-diagram .section-content {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 400;
+  line-height: 1.7;
+  padding-left: 0.2rem;
+}
+.orchestrator-diagram .orchestrator-right {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 220px;
+  justify-content: flex-start;
+}
+.orchestrator-diagram .llms {
+  background: #f7f7f7;
+  border-radius: 18px;
+  border: 1px solid #eee;
+  padding: 1.5rem 2rem;
+  min-width: 200px;
+  min-height: 220px;
+  box-sizing: border-box;
+}
+.orchestrator-diagram .llms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.orchestrator-diagram .llm-item {
+  background: #ffeaea;
+  border-radius: 10px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #222;
+  text-align: left;
+  border: 1px solid #f5cfcf;
+  width: 120px;
+}
+.orchestrator-diagram .llm-item.sub {
+  margin-left: 2.5rem;
+  background: #fff3f3;
+  border: 1px dashed #f5cfcf;
+}
+
+/* 점선 화살표 */
+.orchestrator-diagram .diagram-arrow {
+  width: 40px;
+  height: 2px;
+  background: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.orchestrator-diagram .arrow-right:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 0;
+  border-top: 2px dashed #bbb;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.orchestrator-diagram .diagram-lines {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 반응형 */
+@media (max-width: 1200px) {
+  .orchestrator-diagram {
+    padding: 1.5rem 0.5rem;
+  }
+  .orchestrator-diagram .diagram-row {
+    gap: 1.2rem;
+  }
+  .orchestrator-diagram .diagram-block {
+    padding: 1.2rem 1rem;
+    min-width: 120px;
+  }
+  .orchestrator-diagram .orchestrator-block {
+    min-width: 320px;
+    padding: 1.2rem 1rem;
+  }
+}
+@media (max-width: 900px) {
+  .orchestrator-diagram {
+    overflow-x: auto;
+    padding: 1rem 0.2rem;
+  }
+  .orchestrator-diagram .diagram-row {
+    min-width: 900px;
+  }
+}
