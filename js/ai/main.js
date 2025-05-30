@@ -595,18 +595,30 @@ window.addEventListener("load", function () {
   let animationId;
   let pos = 0;
   let isPaused = false;
+  let lastTimestamp = 0;
+  const FRAME_RATE = 60; // 60fps
+  const FRAME_INTERVAL = 1000 / FRAME_RATE;
+  const MOVE_SPEED = 1;
 
   // 트랙 복제(무한루프)
   track.innerHTML += track.innerHTML;
 
-  function animate() {
-    if (!isPaused) {
-      pos -= 1;
-      if (Math.abs(pos) >= slideWidth * slideCount) {
-        pos = 0;
+  function animate(timestamp) {
+    if (!lastTimestamp) lastTimestamp = timestamp;
+
+    const elapsed = timestamp - lastTimestamp;
+
+    if (elapsed > FRAME_INTERVAL) {
+      if (!isPaused) {
+        pos -= MOVE_SPEED;
+        if (Math.abs(pos) >= slideWidth * slideCount) {
+          pos = 0;
+        }
+        track.style.transform = `translate3d(${pos}px, 0, 0)`;
       }
-      track.style.transform = `translateX(${pos}px)`;
+      lastTimestamp = timestamp;
     }
+
     animationId = requestAnimationFrame(animate);
   }
 

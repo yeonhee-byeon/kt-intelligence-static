@@ -859,7 +859,7 @@
 }
 .eco-top {
   background: url(/resource/images/ai/k-eco/k-eco-top-bg.png) no-repeat center center;
-  border-radius: 1.5rem;
+  border-radius: 1.25rem;
   padding: 6.5rem 3.625rem 6.5rem 3.375rem;
   display: flex;
   align-items: center;
@@ -960,7 +960,7 @@
   flex: 1 1 0;
   min-height: 33.75rem;
   background: var(--gray-100-color);
-  border-radius: 1.2rem;
+  border-radius: 1.25rem;
   padding: 3.25rem 1.5rem 1.5rem 2.625rem;
   display: flex;
   flex-direction: column;
@@ -1148,7 +1148,7 @@
 .custom-slide {
   flex: 0 0 25.625rem;
   background: #fff;
-  border-radius: 1rem;
+  border-radius: 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1187,6 +1187,7 @@
 }
 .usecase-labels {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.2rem;
 }
