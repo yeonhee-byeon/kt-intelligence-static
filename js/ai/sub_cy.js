@@ -18,28 +18,59 @@ document.addEventListener('DOMContentLoaded', function () {
           panel.classList.toggle('tabs__panel--active', isActive);
           panel.hidden = !isActive;
         });
+
+        // 모바일에서 탭 클릭 시 해당 탭을 왼쪽으로 스크롤 (1.25rem 여백)
+        if (window.innerWidth <= 767) {
+          const tabsContainer = tabs;
+          const tabElement = e.target;
+          const containerRect = tabsContainer.getBoundingClientRect();
+          const tabRect = tabElement.getBoundingClientRect();
+          const scrollLeft = tabRect.left - containerRect.left - 20; // 1.25rem = 20px
+
+          tabsContainer.scrollTo({
+            left: tabsContainer.scrollLeft + scrollLeft,
+            behavior: 'smooth'
+          });
+        }
       }
     });
   });
 });
 
 
-// 필터 드롭다운 기능
+//arcodian
 (function () {
-  var dropdowns = document.querySelectorAll('.filter-dropdown');
-  dropdowns.forEach(function (dropdown) {
-    var toggleBtn = dropdown.querySelector('.filter-dropdown__toggle');
-    if (!toggleBtn) return;
-    toggleBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var expanded = dropdown.getAttribute('aria-expanded') === 'true';
-      dropdown.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-    });
-    // 바깥 클릭 시 닫힘
-    document.addEventListener('click', function (e) {
-      if (!dropdown.contains(e.target)) {
-        dropdown.setAttribute('aria-expanded', 'false');
+  function closeAllAccordionItems(container, exceptItem) {
+    container.querySelectorAll('.kt-accordion__item').forEach(function (item) {
+      if (item !== exceptItem) {
+        item.classList.remove('active');
+        const panel = item.querySelector('.kt-accordion__panel');
+        panel.style.maxHeight = null;
       }
+    });
+  }
+
+  document.querySelectorAll('.kt-accordion').forEach(function (accordion) {
+    accordion.querySelectorAll('.kt-accordion__header').forEach(function (header) {
+      header.addEventListener('click', function () {
+        const item = header.closest('.kt-accordion__item');
+        const panel = item.querySelector('.kt-accordion__panel');
+        const isActive = item.classList.contains('active');
+
+        if (!isActive) {
+          closeAllAccordionItems(accordion, item);
+          item.classList.add('active');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        } else {
+          item.classList.remove('active');
+          panel.style.maxHeight = null;
+        }
+      });
+    });
+
+    // 페이지 로드시 열려있는 아코디언이 있으면 높이 세팅
+    accordion.querySelectorAll('.kt-accordion__item.active .kt-accordion__panel').forEach(function (panel) {
+      panel.style.maxHeight = panel.scrollHeight + 'px';
     });
   });
 })();

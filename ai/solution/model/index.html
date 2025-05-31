@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Model</title>
+
+    <link rel="stylesheet" href="/css/ai/swiper-bundle.min.css" />
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="/css/ai/common/common.css" />
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="/css/ai/common/reset.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/css/ai/style.css" />
+    <link rel="stylesheet" href="/css/ai/sub_cy.css" />
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="/css/ai/common/aos.css" />
+    <link rel="stylesheet" href="/css/ai/solution.css">
+    <link rel="stylesheet" href="/css/ai/solution_cy.css">
+
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="main-header" class="header dark-header">
+        <div class="header-inner">
+            <!-- Left: Logo -->
+            <div class="header-logo">
+                <a href="/ai/main/">
+                    <img src="/resource/images/ai/icons/logo.svg" alt="logo" width="162" height="32" class="logo-img" />
+                </a>
+            </div>
+            <!-- Center: Navigation (Desktop) -->
+            <nav class="header-nav">
+                <div class="nav-item has-dropdown">
+                    <a href="#" class="nav-link">Solution
+                        <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">K On Model</a></li>
+                        <li><a href="#">K On RAG</a></li>
+                        <li><a href="#">K On Agent</a></li>
+                        <li><a href="/ai/solution/RAI/">K On RAI</a></li>
+                        <li><a href="#">K On Studio</a></li>
+                        <li><a href="#">K On Cloud</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item"><a href="#" class="nav-link">Use Case</a></div>
+                <div class="nav-item"><a href="#" class="nav-link">Resources</a></div>
+            </nav>
+            <!-- Right: Links, Language, Login (Desktop) -->
+            <div class="header-right">
+                <a href="#" class="right-link">
+                    Inside KT
+                    <img src="/resource/images/ai/icons/arrow-up-right-black.svg" alt="" width="16" height="28"
+                        class="arrow-icon" />
+                </a>
+                <button class="header-btn">K on Model 체험하기</button>
+                <div class="header-lang" id="lang-dropdown">
+                    <button class="lang-btn" id="lang-btn">
+                        <img src="/resource/images/ai/icons/globe.svg" alt="globe" width="28" height="28" />
+                        <span id="lang-current">KR</span>
+                        <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
+                    </button>
+                    <ul class="lang-menu" id="lang-menu">
+                        <li><button data-lang="KR">KR</button></li>
+                        <li><button data-lang="EN">EN</button></li>
+                    </ul>
+                </div>
+                <!-- 모바일 메뉴 버튼 -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <img src="/resource/images/ai/mobile/ico-menu.svg" alt="menu" width="28" height="28" />
+                </button>
+            </div>
+
+            <!-- 모바일 메뉴 -->
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-menu-inner">
+                    <div class="mobile-menu-header">
+                        <a href="/ai/main/" class="mobile-menu-logo">
+                            <img src="/resource/images/ai/icons/logo.svg" alt="K intelligence" />
+                        </a>
+                        <button class="mobile-menu-close" id="mobile-menu-close">
+                            <img src="/resource/images/ai/mobile/ico-close.svg" alt="close" />
+                        </button>
+                    </div>
+                    <nav class="mobile-menu-nav">
+                        <ul>
+                            <li class="mobile-menu-item has-sub">
+                                <button class="mobile-menu-link" id="mobile-solution-toggle">
+                                    <strong>Solution</strong>
+                                    <img src="/resource/images/ai/icons/ico-up.svg" alt="펼치기" />
+                                </button>
+                                <ul class="mobile-sub-menu" id="mobile-solution-sub">
+                                    <li><a href="#">K on Model</a></li>
+                                    <li><a href="#">K on RAG</a></li>
+                                    <li><a href="#">K on Agent</a></li>
+                                    <li><a href="#">K on RAI</a></li>
+                                    <li><a href="#">K on Cloud</a></li>
+                                    <li><a href="#">K on Studio</a></li>
+                                </ul>
+                            </li>
+                            <li class="mobile-menu-item">
+                                <a href="#" class="mobile-menu-link">Use Case <img
+                                        src="/resource/images/ai/icons/ico-up.svg" alt=">" /></a>
+                            </li>
+                            <li class="mobile-menu-item">
+                                <a href="#" class="mobile-menu-link">Tech& <img
+                                        src="/resource/images/ai/icons/ico-up.svg" alt=">" /></a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="mobile-menu-bottom">
+                        <div class="mobile-menu-links">
+                            <a href="#" class="mobile-menu-ext-link">inside KT <img
+                                    src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부" /></a>
+                            <a href="#" class="mobile-menu-ext-link">체험하기 <img
+                                    src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부" /></a>
+                        </div>
+                        <div class="mobile-menu-bottom-row">
+                            <div class="mobile-menu-lang">
+                                <button class="active">KOR</button>
+                                <button>ENG</button>
+                            </div>
+                            <a href="mailto:k.intelligence@kt.com" class="mobile-menu-contact"> <img
+                                    src="/resource/images/ai/icons/mail.svg" alt="메일" /> 비지니스 문의 </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sticky Header -->
+        <div id="sticky-header" class="sticky-header">
+            <div class="sticky-header-inner">
+                <ul class="sticky-header-list">
+                    <li data-section="parallax-depth-section">K Intelligence 구성요소</li>
+                    <li data-section="kquality-section">K Quality Framework</li>
+                    <li data-section="eco-section">K ECO</li>
+                    <li data-section="usecase-section">Use Case</li>
+                    <li data-section="news-section">새로운 소식</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <!-- Banner Section -->
+    <section id="banner-section" class="banner-section">
+        <img src="/resource/images/ai/solution/model/agent-banner.png" alt="banner" width="100%" height="100%" />
+        <div class="banner-inner">
+            <h2 class="agent-banner-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                <img src="/resource/images/ai/solution/model/ico-kon.svg" alt="logo" width="53" height="52" /> on Model
+            </h2>
+            <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                신뢰성과 안전성을 모두 갖춘, 가장 한국적인 AI 모델 K on Model은 검증된 데이터와 안정된 인프라와<br>
+                높은 성능을 바탕으로 기업이 안심하고 사용할 수 있는 AI 경험을 제공합니다.
+            </p>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Content Section -->
+    <div class="content-wrapper">
+
+
+        <!-- K on Model 장점 -->
+        <div class="content-section">
+            <div class="content-inner">
+                <div class="title-wrapper">
+                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">K on Model 장점</h2>
+                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        저작권 걱정 없는 고품질 데이터로 학습하고, 국내에서 안전하게 운영되어 정확하고 신뢰할 수 있는 AI를 제공합니다.
+                    </p>
+                </div>
+                <div class="tripple-box-wrapper">
+                    <ul class="tripple-box-list">
+                        <li>
+                            <div class="tripple-box-item">
+                                <div class="img">
+                                    <img src="/resource/images/ai/solution/model/model-benefit-01.png"
+                                        alt="학습한 모델 이미지" />
+                                </div>
+                                <h3>신뢰할 수 있는 데이터로 학습한 모델</h3>
+                                <p>책임 있게 수집된 데이터, 정확하고 안전한<br>
+                                    AI의 시작점입니다.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tripple-box-item">
+                                <div class="img">
+                                    <img src="/resource/images/ai/solution/model/model-benefit-02.png"
+                                        alt="학습한 모델 이미지" />
+                                </div>
+                                <h3>신뢰성과 성능을<br>
+                                    검증한 AI</h3>
+                                <p>성능 평가와 신뢰성 검증을 통해 우수한 성능과 높은<br>
+                                    안정성을 확보했습니다.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tripple-box-item">
+                                <div class="img">
+                                    <img src="/resource/images/ai/solution/model/model-benefit-03.png"
+                                        alt="학습한 모델 이미지" />
+                                </div>
+                                <h3>데이터 국외 반출 없는 안정적인 인프라</h3>
+                                <p>해당 서비스는 Microsoft Azure SPC 기반의<br>
+                                    국내 리전에서 안전하게 운영됩니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- 라인업 -->
+        <div class="content-section">
+            <div class="content-inner">
+                <div class="title-wrapper">
+                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">K on Model</span>
+                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">라인업</h2>
+                </div>
+                <div class="box-wrapper line-up-box">
+                    <ul class="box-list white-box">
+                        <!-- 독자모델 (이미 있음) -->
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="box-item">
+                                <h3>독자모델</h3>
+                                <h4>KT의 원천기술을 기반으로 자체 개발한 AI 모델</h4>
+                                <p>국내 기술로 설계·학습된 AI 모델로 정밀한 튜닝과 검증을 통해 다양한 환경에서 안정적이고 정확한 응답을 제공합니다.</p>
+                                <div class="card-tags">
+                                    <span class="card-tag">Mi:dm Mini</span>
+                                    <span class="card-tag">Mi:dm Base</span>
+                                    <span class="card-tag">Mi:dm Pro</span>
+                                    <span class="card-tag">멀티모달</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 협력모델 -->
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="box-item">
+                                <h3>협력모델</h3>
+                                <h4>세계 최고 수준의 AI 성능에 한국형 데이터로 정밀 튜닝</h4>
+                                <p>MS 등 글로벌 선도 기업과의 협업을 통해, 최고 성능의 AI에 한국 특화 데이터를 결합해 시너지를 극대화했습니다.</p>
+                                <div class="card-tags">
+                                    <span class="card-tag">G:euM K</span>
+                                    <span class="card-tag">Phi-K (예정)</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 오픈소스 기반 모델 -->
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="box-item">
+                                <h3>오픈소스 기반 모델</h3>
+                                <h4>빠른 적용과 경제성을 고려한 오픈소스 AI 모델</h4>
+                                <p>산업별 요구에 유연하게 대응할 수 있도록 다양한 오픈소스 모델을 실용적으로 설계했습니다.</p>
+                                <div class="card-tags">
+                                    <span class="card-tag">Llama K</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 특화 모델 -->
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="box-item">
+                                <h3>특화 모델</h3>
+                                <h4>전문 분야에 맞춰 학습된 Ready-Made AI 모델</h4>
+                                <p>법률, 금융, 의료 등 특정 영역의 데이터를 기반으로 정확하고 신뢰할 수 있는 AI 경험을 제공합니다.</p>
+                                <div class="card-tags">
+                                    <span class="card-tag">법률 모델</span>
+                                    <span class="card-tag">금융 모델</span>
+                                    <span class="card-tag">교육 모델</span>
+                                    <span class="card-tag">의료 모델</span>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- 탭 -->
+        <section class="content-section model-section tabs-component">
+            <div class="content-inner">
+
+                <div class="tabs-wrapper">
+                    <nav class="tabs" role="tablist" aria-label="Tech& 탭">
+                        <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true"
+                            aria-controls="tab-panel-1" id="tab-1">Mi:dm</button>
+                        <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-2"
+                            id="tab-2">GPT K</button>
+                        <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-3"
+                            id="tab-3">Llama K</button>
+                    </nav>
+                </div>
+
+
+                <div class="tab-inner-wrapper">
+                    <!-- 1번 탭 컨텐츠 -->
+                    <div class="tabs__panel tabs__panel--active" id="tab-panel-1" role="tabpanel"
+                        aria-labelledby="tab-1">
+                        <div class="tab-section">
+                            <div class="title-wrapper">
+                                <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">KT 자체
+                                    개발 AI 모델</span>
+                                <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                    Mi:dm</h2>
+                                <h3 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">국내 AI 기술
+                                    주권 확보를 위한 KT의 언어모델(LLM)</h3>
+                                <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                    '23년 v1 한/영 Standard, Premium 등 2종 출시, '25년 v2 3종 출시
+                                </p>
+                            </div>
+
+                            <div class="btn-wrap">
+                                <button type="button" class="basic-bk-btn">체험하기</button>
+                                <a href="#" class="tech-detail-banner"
+                                    style="background-image: url('/resource/images/ai/tech/tech-detail-banner.png');">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="tab-section">
+                            <div class="sub-title-wrapper tp2">
+                                <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Mi:dm의
+                                    장점</h2>
+                            </div>
+
+                            <!-- arcodian -->
+                            <div class="kt-accordion">
+                                <div class="kt-accordion__item active">
+                                    <button class="kt-accordion__header" type="button">
+                                        국내 최초 11B 규모 상업적 활용이 가능한 오픈 소스 모델 공개
+                                        <span class="kt-accordion__icon"></span>
+                                    </button>
+                                    <div class="kt-accordion__panel">
+                                        <div class="kt-accordion__content">
+                                            한국 AI 생태계 발전을 위해 Mi:dm Mini(2.3B), Base(11B) 모델의 오픈소스 공개...
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kt-accordion__item">
+                                    <button class="kt-accordion__header" type="button">
+                                        On-device 소형 모델부터 고성능 모델까지 다양한 라인업
+                                        <span class="kt-accordion__icon"></span>
+                                    </button>
+                                    <div class="kt-accordion__panel">
+                                        <div class="kt-accordion__content">
+                                            다양한 환경과 요구에 맞춘 소형~고성능 모델 라인업을 제공합니다.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kt-accordion__item">
+                                    <button class="kt-accordion__header" type="button">
+                                        한국어에 최적화된 언어처리기술인 고유의 Tokenizer 적용
+                                        <span class="kt-accordion__icon"></span>
+                                    </button>
+                                    <div class="kt-accordion__panel">
+                                        <div class="kt-accordion__content">
+                                            한국어에 특화된 Tokenizer로 더욱 자연스러운 언어처리가 가능합니다.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kt-accordion__item">
+                                    <button class="kt-accordion__header" type="button">
+                                        글로벌 수준의 성능을 갖춘 KT 독자 모델
+                                        <span class="kt-accordion__icon"></span>
+                                    </button>
+                                    <div class="kt-accordion__panel">
+                                        <div class="kt-accordion__content">
+                                            글로벌 벤치마크에서 검증된 KT만의 독자 AI 모델을 경험해보세요.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // arcodian -->
+
+                            <div class="tab-section">
+                                <div class="sub-title-wrapper tp2">
+                                    <span data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">Mi:dm 2.1</span>
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        Mi:dm 벤치마크 결과</h2>
+                                </div>
+
+                                <div class="graph-side-wrapper">
+                                    <div class="graph-side-item">
+                                        <div class="graph-side-txts">
+                                            <div class="graph-side-txts-content">
+                                                <h3>한국 특화 역량<br>
+                                                    전반에서의 우수성 확보</h3>
+                                                <ul>
+                                                    <li>
+                                                        한국어 이해, 생성, 추론, 사회/문화, 전문지식
+                                                    </li>
+                                                    <li>
+                                                        특히, 한국어 글쓰기 실력 우수<br>
+                                                        (LogicKor, KoMT-Bench)
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="graph-side-img">
+                                            <div class="img">
+                                                <img src="/resource/images/ai/solution/model/model-mark-graph01.png"
+                                                    alt="한국어 공통능력 지표" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="graph-side-item">
+                                        <div class="graph-side-txts">
+                                            <div class="graph-side-txts-content">
+                                                <h3>글로벌 수준의 영어 공통<br>
+                                                    능력</h3>
+                                                <ul>
+                                                    <li>
+                                                        글로벌 수준의 영어 공통 능력
+                                                    </li>
+                                                    <li>
+                                                        지시이행도, 전문지식
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="graph-side-img">
+                                            <div class="img">
+                                                <img src="/resource/images/ai/solution/model/model-mark-graph02.png"
+                                                    alt="영어 공통능력 지표" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="graph-side-item">
+                                        <div class="graph-side-txts">
+                                            <div class="graph-side-txts-content">
+                                                <h3>국내외 모델 대비<br>
+                                                    최고 수준의 응답 안전성</h3>
+                                                <ul>
+                                                    <li>
+                                                        혐오/차별, 폭력, 성적컨텐츠, 자해, 정치 및 종교<br>
+                                                        중립성, 개인정보, 저작권 등 (koBBQ)
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="graph-side-img">
+                                            <div class="img">
+                                                <img src="/resource/images/ai/solution/model/model-graph-test.png"
+                                                    alt="이미지가 업데이트될 예정입니다." />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="tab-section">
+                                <div class="sub-title-wrapper tp2">
+                                    <span data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">Mi:dm 2.1</span>
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        Mi:dm 활용 사례</h2>
+                                </div>
+
+                                <div class="example-side-wrapper">
+                                    <div class="example-side-item">
+                                        <div class="example-side-left">
+                                            <div class="example-white-box">
+                                                <span>Mi:dm 2.1</span>
+                                                <h4>제목: 제품 보증서 전달 오류에 대한 사과드립니다.</h4>
+                                                <p>고객님께,<br>
+                                                    안녕하세요. [회사명]의 [발신자 이름]입니다.<br>
+                                                    우선 저희 제품을 이용해 주셔서 감사드립니다. 이번에 고객님께 잘못된 제품 보증서가 전달된 점에 대해 진심으로<br>
+                                                    사과드립니다. 내부 확인 결과, 문서 전달 과정에서 오류가 발생한 것을 확인하였으며, 이에 대한 재발 방지를 위해
+                                                    내부<br>
+                                                    프로세스를 점검하고 있습니다.<br>
+                                                    올바른 제품 보증서를 첨부하여 보내드리오니 확인 부탁드립니다. </p>
+                                            </div>
+                                        </div>
+                                        <div class="example-side-txts">
+                                            <ul>
+                                                <li>
+                                                    <dl>
+                                                        <dt>01 다국어(한국어, 영어) 지원</dt>
+                                                        <dd>한국어와 영어 모두에서 자연스럽고 일관된 응답 제공</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>02 AI 추론(Reasoning)</dt>
+                                                        <dd>주어진 정보로부터 논리적으로 판단하고 일관된 답변 도출</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>03 한국 문화 맥락에 기반한 글쓰기</dt>
+                                                        <dd>한국의 언어적·문화적 특성을 반영한 자연스러운 문장 구성</dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-section">
+                                <div class="sub-title-wrapper tp2">
+                                    <span data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">KT의 자체 기술력 기반의 모델</span>
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        Mi:dm 라인업</h2>
+                                </div>
+                                <div class="simple-box-wrapper">
+                                    <ul>
+                                        <li>Mi:dm<br>
+                                            Mini 2.3B</li>
+                                        <li>Mi:dm<br>
+                                            Base 11B</li>
+                                        <li>Mi:dm<br>
+                                            Base 11B</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- 2번 탭 컨텐츠 -->
+                    <div class="tabs__panel" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+
+                    </div>
+
+                    <!-- 3번 탭 컨텐츠 -->
+                    <div class="tabs__panel" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- KT Model 체험하기 -->
+    <section id="kt-model-section" class="kt-model-section">
+        <div class="kt-model-inner">
+            <div class="kt-model-bg">
+                <img src="/resource/images/ai/kt-model-bg.png" alt="KT Model 체험하기" />
+            </div>
+            <div class="kt-model-content">
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                    <span>경험해 보세요</span>
+                    KT만의 한국적 인공지능
+                </h2>
+                <button class="btn" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">KT Model
+                    체험하기</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <!-- Left: Info -->
+            <div class="footer-info">
+                <div class="footer-contact">비즈니스 문의 : <a href="mailto:k.intelligence@kt.com">k.intelligence@kt.com</a>
+                </div>
+                <div class="footer-links">
+                    <a href="#">이용약관</a>
+                    <span class="footer-divider">|</span>
+                    <a href="#" class="bold">개인정보처리방침</a>
+                </div>
+                <div class="footer-copyright">Copyright© KT Corp. All rights reserved.</div>
+            </div>
+            <ul class="footer-menus">
+                <li><a href="#">Solution</a></li>
+                <li><a href="#">Use Case</a></li>
+                <li><a href="#">Tech&</a></li>
+            </ul>
+            <!-- Right: Logo -->
+            <div class="footer-logo">
+                <img src="/resource/images/ai/solution/icons/footer_logo.svg" alt="KT 로고" width="60" height="40" />
+                <p class="mobile-footer-copyright">ⓒ KT Corp.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-external-links">
+                <a href="#" target="_blank" rel="noopener noreferrer">KT
+                    <img src="/resource/images/ai/solution/icons/arrow-up-right-white.svg" alt="" width="16"
+                        height="16" />
+                </a>
+                <span class="footer-divider">|</span>
+                <a href="#" target="_blank" rel="noopener noreferrer">Inside KT
+                    <img src="/resource/images/ai/solution/icons/arrow-up-right-white.svg" alt="" width="16"
+                        height="16" />
+                </a>
+                <span class="footer-divider">|</span>
+                <a href="#" target="_blank" rel="noopener noreferrer">KT Enterprise
+                    <img src="/resource/images/ai/solution/icons/arrow-up-right-white.svg" alt="" width="16"
+                        height="16" />
+                </a>
+                <span class="footer-divider">|</span>
+                <a href="#" target="_blank" rel="noopener noreferrer">About KT
+                    <img src="/resource/images/ai/solution/icons/arrow-up-right-white.svg" alt="" width="16"
+                        height="16" />
+                </a>
+            </div>
+            <div class="footer-sns">
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT Instagram (새 창)">
+                    <img src="/resource/images/ai/solution/icons/insta_pc.svg" alt="Instagram" width="28" height="28" />
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT YouTube (새 창)">
+                    <img src="/resource/images/ai/solution/icons/youtube_pc.svg" alt="YouTube" width="28" height="28" />
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT LinkedIn (새 창)">
+                    <img src="/resource/images/ai/solution/icons/linkedin_pc.svg" alt="LinkedIn" width="28"
+                        height="28" />
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Script -->
+    <script src="/js/ai/common/aos.js"></script>
+    <script src="/js/ai/common/header.js"></script>
+    <script src="/js/ai/solution.js"></script>
+    <!-- Tabs Component (공통) -->
+    <script src="/js/ai/sub_cy.js"></script>
+
+    <script>
+        AOS.init();
+
+        // 탭 메뉴 클릭 시 배경색 변경
+        document.addEventListener('DOMContentLoaded', function () {
+            var section = document.querySelector('.content-section.agent-pattern');
+            var originalBg = getComputedStyle(section).backgroundColor;
+            var tabButtons = document.querySelectorAll('.tabs__tab');
+            tabButtons.forEach(function (btn, idx) {
+                btn.addEventListener('click', function () {
+                    if (idx === 1) {
+                        section.style.backgroundColor = '#fff';
+                    } else {
+                        section.style.backgroundColor = originalBg;
+                    }
+
+                    // 탭 전환 후 AOS 새로고침
+                    setTimeout(function () {
+                        AOS.refresh();
+                    }, 100);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
