@@ -173,7 +173,7 @@ body,
   filter: invert(1);
 }
 .nav-link:hover {
-  color: var(--gray-800-color);
+  color: var(--gray-700-color);
 }
 .has-dropdown.active .nav-link img {
   transform: rotate(0deg);
@@ -379,11 +379,12 @@ body,
   color: var(--gray-500-color);
   transition: all 0.2s;
   cursor: pointer;
+  padding-bottom: 0.2rem;
 }
 .sticky-header-list li:hover {
   color: var(--black-color);
   font-weight: 800;
-  text-decoration: underline;
+  border-bottom: 1px solid var(--black-color);
 }
 .dark-header .sticky-header-list li:hover {
   color: var(--white-color);
@@ -391,13 +392,15 @@ body,
 .sticky-header-list li.active {
   color: var(--black-color);
   font-weight: 800;
-  text-decoration: underline;
+  border-bottom: 1px solid var(--black-color);
 }
 .dark-header .sticky-header-list li.active {
   color: var(--white-color);
+  border-bottom: 1px solid var(--white-color);
 }
 .dark-header .sticky-header-list li:hover {
   color: var(--white-color);
+  border-bottom: 1px solid var(--white-color);
 }
 
 /* Footer */
@@ -649,10 +652,10 @@ body,
     white-space: nowrap;
   }
 
-  section,
+  /* section,
   .pin-space {
     display: none !important;
-  }
+  } */
 
   .footer {
     margin-top: 20rem; /* 모바일 임시 높이 조정 */

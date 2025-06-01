@@ -14,6 +14,9 @@
   height: 100%;
   object-fit: cover;
 }
+.banner-section > img.mo-banner-bg1 {
+  display: none;
+}
 .banner-inner {
   max-width: 1200px;
   height: 33.75rem;
@@ -45,6 +48,9 @@
   font-size: var(--font-size-3xl);
   font-weight: 600;
   line-height: 1.48;
+}
+.banner-section p br.mo-br {
+  display: none;
 }
 .sub-banner {
   margin-top: 0;
@@ -982,4 +988,75 @@
   font-weight: 500;
   line-height: var(--line-height-172);
   letter-spacing: var(--letter-spacing-base);
+}
+
+@media (max-width: 768px) {
+  .banner-section {
+    position: relative;
+    height: 100%;
+  }
+  .banner-section > img.mo-banner-bg1 {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .banner-section > img {
+    display: none;
+  }
+  .banner-section .banner-inner {
+    max-width: 100%;
+    width: 100%;
+    height: 56rem;
+  }
+  .banner-section .banner-inner h2 {
+    font-size: 6.4rem;
+    margin-bottom: 4rem;
+  }
+  .banner-section .banner-inner h2 img {
+    width: 4.7rem;
+    height: 4.5rem;
+  }
+  .banner-section .banner-inner p {
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: var(--line-height-160);
+    letter-spacing: var(--letter-spacing-base);
+  }
+  .banner-section .banner-inner p br {
+    display: none;
+  }
+  .banner-section .banner-inner p br.mo-br {
+    display: block;
+  }
+
+  .content-wrapper {
+  }
+  .content-section {
+  }
+  .content-inner {
+  }
+  .title-wrapper {
+  }
+  .title-wrapper span {
+    font-size: 1.6rem;
+    line-height: var(--line-height-172);
+  }
+  .title-wrapper h2 {
+    margin: 2.4rem 0 3.2rem;
+    font-size: 4rem;
+    line-height: 1.32;
+  }
+  .title-wrapper p {
+    font-size: 1.7rem;
+  }
+  .sub-title {
+  }
+  .sub-title h3 {
+  }
+  .sub-title p {
+  }
 }

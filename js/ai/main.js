@@ -188,7 +188,7 @@ window.addEventListener("load", function () {
       start: "top top",
       pin: true,
       pinSpacing: true,
-      toggleActions: "play reset play reset",
+      // toggleActions: "play reset play reset",
     },
   });
 
@@ -293,8 +293,6 @@ window.addEventListener("load", function () {
     );
 })();
 
-(function () {})();
-
 // Parallax Section Animation
 (function () {
   // Element selectors
@@ -351,22 +349,18 @@ window.addEventListener("load", function () {
       trigger: section,
       start: "top top",
       end: "+=50%",
-      //   toggleActions: "play reset play reset",
-      //   pin: true,
-      //   pinSpacing: true,
-      //   markers: true,
     },
   });
 
   // Sequence: subtitles, images, description
   tl.fromTo(...fadeInY(subtitle3))
-    .fromTo(...fadeInY(".image-obj-2"))
+    .fromTo(...fadeInY(".image-obj-2"), 100, "<")
     .fromTo(...fadeInY(".image-obj-5", 100, "<", false))
     .fromTo(...fadeInY(subtitle2))
-    .fromTo(...fadeInY(".image-obj-1"))
+    .fromTo(...fadeInY(".image-obj-1", 100, "<"))
     .fromTo(...fadeInY(".image-obj-4", 100, "<", false))
     .fromTo(...fadeInY(subtitle1))
-    .fromTo(...fadeInY(".image-obj-0"))
+    .fromTo(...fadeInY(".image-obj-0", 100, "<"))
     .fromTo(...fadeInY(".image-obj-3", 100, "<", false))
     .fromTo(...fadeInY(".image-obj-6", 100, "<"))
     .fromTo(...fadeInY(description, 100, "+=0.1"));
