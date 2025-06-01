@@ -73,4 +73,27 @@ document.addEventListener('DOMContentLoaded', function () {
       panel.style.maxHeight = panel.scrollHeight + 'px';
     });
   });
+
+
+  //mid-banner 섹션 높이 세팅
+  function setMidBannerHeight() {
+    const midBannerWrappers = document.querySelectorAll('.mid-banner-wrapper');
+
+    midBannerWrappers.forEach(wrapper => {
+      const inner = wrapper.querySelector('.mid-banner-inner');
+      const bgBlack = wrapper.querySelector('.mid-banner-bg-black');
+
+      if (inner && bgBlack) {
+        const innerHeight = inner.offsetHeight;
+        bgBlack.style.height = `${innerHeight}px`;
+      }
+    });
+  }
+
+  // 초기 로드시 실행
+  setMidBannerHeight();
+
+  // 리사이즈시 높이 재설정
+  window.addEventListener('resize', setMidBannerHeight);
+
 })();
