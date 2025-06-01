@@ -23,40 +23,40 @@ window.addEventListener("load", function () {
 (function () {
   // const logo = document.querySelector(".hero-logo");
   const button = document.querySelector(".hero-btn-wrap");
-  const title1First = document.querySelector(".hero-title1-first");
-  const title1Second = document.querySelector(".hero-title1-second");
-  const title1Third = document.querySelector(".hero-title1-third");
-  const title2First = document.querySelector(".hero-title2-first");
-  const title2Second = document.querySelector(".hero-title2-second");
-  const title2Third = document.querySelector(".hero-title2-third");
+  // const title1First = document.querySelector(".hero-title1-first");
+  // const title1Second = document.querySelector(".hero-title1-second");
+  // const title1Third = document.querySelector(".hero-title1-third");
+  // const title2First = document.querySelector(".hero-title2-first");
+  // const title2Second = document.querySelector(".hero-title2-second");
+  // const title2Third = document.querySelector(".hero-title2-third");
 
   // 등장 애니메이션
-  gsap.set(title1First, { opacity: 0 });
-  gsap.set(title2First, { opacity: 0 });
-  gsap.set(title1Second, { opacity: 0 });
-  gsap.set(title2Second, { opacity: 0 });
-  gsap.set(title1Third, { opacity: 0 });
-  gsap.set(title2Third, { opacity: 0 });
+  // gsap.set(title1First, { opacity: 0 });
+  // gsap.set(title2First, { opacity: 0 });
+  // gsap.set(title1Second, { opacity: 0 });
+  // gsap.set(title2Second, { opacity: 0 });
+  // gsap.set(title1Third, { opacity: 0 });
+  // gsap.set(title2Third, { opacity: 0 });
   gsap.set(button, { opacity: 0 });
 
-  if (window.gsap) {
-    const tl = gsap.timeline({ repeat: -1 });
+  // if (window.gsap) {
+  //   const tl = gsap.timeline({ repeat: -1 });
 
-    // First set
-    tl.to(title1First, { opacity: 1, duration: 1, ease: "power2.out" })
-      .to(title2First, { opacity: 1, duration: 1, ease: "power2.out" }, "-=0.2")
-      .to([title1First, title2First], { opacity: 0, ease: "power2.out", delay: 5 })
+  //   // First set
+  //   tl.to(title1First, { opacity: 1, duration: 1, ease: "power2.out" })
+  //     .to(title2First, { opacity: 1, duration: 1, ease: "power2.out" }, "-=0.2")
+  //     .to([title1First, title2First], { opacity: 0, ease: "power2.out", delay: 5 })
 
-      // Second set
-      .to(title1Second, { opacity: 1, duration: 1, ease: "power2.out" })
-      .to(title2Second, { opacity: 1, duration: 1, ease: "power2.out" }, "-=0.2")
-      .to([title1Second, title2Second], { opacity: 0, ease: "power2.out", delay: 5 })
+  //     // Second set
+  //     .to(title1Second, { opacity: 1, duration: 1, ease: "power2.out" })
+  //     .to(title2Second, { opacity: 1, duration: 1, ease: "power2.out" }, "-=0.2")
+  //     .to([title1Second, title2Second], { opacity: 0, ease: "power2.out", delay: 5 })
 
-      // Third set
-      .to(title1Third, { opacity: 1, duration: 1, ease: "power2.out" })
-      .to(title2Third, { opacity: 1, duration: 1, ease: "power2.out" }, "-=0.2")
-      .to([title1Third, title2Third], { opacity: 0, ease: "power2.out", delay: 5 });
-  }
+  //     // Third set
+  //     .to(title1Third, { opacity: 1, duration: 1, ease: "power2.out" })
+  //     .to(title2Third, { opacity: 1, duration: 1, ease: "power2.out" }, "-=0.2")
+  //     .to([title1Third, title2Third], { opacity: 0, ease: "power2.out", delay: 5 });
+  // }
   gsap.to(button, { opacity: 1, duration: 1, delay: 1.5, ease: "power2.out" });
 
   // 롤링 애니메이션
