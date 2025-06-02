@@ -19,8 +19,6 @@
     <link rel="stylesheet" href="/css/ai/solution.css">
     <link rel="stylesheet" href="/css/ai/solution_cy.css">
 
-    <!-- Tabs Component (공통) -->
-    <script src="/js/ai/sub_cy.js"></script>
 </head>
 
 <body>
@@ -134,14 +132,11 @@
         </div>
 
         <!-- Sticky Header -->
-        <div id="sticky-header" class="sticky-header">
+        <div id="sticky-header" class="sticky-header tab-sticky-header">
             <div class="sticky-header-inner">
                 <ul class="sticky-header-list">
-                    <li data-section="parallax-depth-section">K Intelligence 구성요소</li>
-                    <li data-section="kquality-section">K Quality Framework</li>
-                    <li data-section="eco-section">K ECO</li>
-                    <li data-section="usecase-section">Use Case</li>
-                    <li data-section="news-section">새로운 소식</li>
+                    <li data-section="tab-panel-1">Solution 01</li>
+                    <li data-section="tab-panel-2">Solution 02</li>
                 </ul>
             </div>
         </div>
@@ -152,14 +147,21 @@
 
     <!-- Banner Section -->
     <section id="banner-section" class="banner-section">
+        <img src="/resource/images/ai/solution/RAI/banner-bg1.png" alt="banner" width="100%" height="100%" />
+        <img src="/resource/images/ai/solution/RAI/mo-banner-bg1.png" alt="banner" width="100%" height="100%"
+            class="mo-banner-bg1" />
+
         <img src="/resource/images/ai/solution/agent/agent-banner.png" alt="banner" width="100%" height="100%" />
         <div class="banner-inner">
             <h2 class="agent-banner-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                 <img src="/resource/images/ai/solution/agent/ico-kon.svg" alt="logo" width="53" height="52" /> on Agent
             </h2>
             <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                주어진 목표를 달성하기 위해 환경을 인식하고, 작업을 계획하며 도구를 활용해 자율적으로 행동하는 <br>
-                고객 맞춤형 AI 에이전트입니다. 이를 통해 반복적인 업무를 줄이고, 더 빠르고 정확한 의사결정을 지원합니다.
+                주어진 목표를 달성하기 위해 환경을 인식하고, <br class="mo-br" />
+                작업을 계획하며 도구를 활용해 자율적으로 <br class="mo-br" />
+                행동하는 <br>고객 맞춤형 AI 에이전트입니다. <br class="mo-br" />
+                이를 통해 반복적인 업무를 줄이고, 더 빠르고 <br class="mo-br" />
+                정확한 의사결정을 지원합니다.
             </p>
         </div>
     </section>
@@ -241,7 +243,7 @@
             <div class="content-inner">
                 <div class="title-wrapper">
                     <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        Use Case
+                        Use Cases
                     </h2>
                     <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                         K intelligence와 함께한 기업들의 변화, 성과로 증명된 유즈케이스를 확인해보세요.
@@ -421,19 +423,9 @@
         <section class="content-section agent-pattern tabs-component">
             <div class="content-inner">
 
-                <div class="tabs-wrapper">
-                    <nav class="tabs" role="tablist" aria-label="Tech& 탭">
-                        <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true"
-                            aria-controls="tab-panel-1" id="tab-1">Solution 01</button>
-                        <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-2"
-                            id="tab-2">Solution 02</button>
-                    </nav>
-                </div>
-
-
                 <div class="tab-inner-wrapper">
                     <!-- 1번 탭 컨텐츠 -->
-                    <div class="tabs__panel tabs__panel--active" id="tab-panel-1" role="tabpanel"
+                    <div class="tabs__panel__anchor tabs__panel__anchor--active" id="tab-panel-1" role="tabpanel"
                         aria-labelledby="tab-1">
 
 
@@ -497,7 +489,7 @@
                                     <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                                         <div class="list-item">
                                             <span>02</span>
-                                            <h3>신속한 개발 환경 제공</h3>
+                                            <h3>통합 개발 리소스</h3>
                                             <div class="text">
                                                 사용자는 인프라(IaC), 코드(UI 컴포넌트, API, 공통 로직), 프레임워크 등 Agent 개발에 필요한 모든 요소를
                                                 <br>
@@ -604,7 +596,7 @@
 
 
                     <!-- 2번 탭 컨텐츠 -->
-                    <div class="tabs__panel" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+                    <div class="tabs__panel__anchor" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2">
 
                         <div class="tab-section">
                             <div class="title-wrapper">
@@ -845,6 +837,9 @@
     <script src="/js/ai/common/aos.js"></script>
     <script src="/js/ai/common/header.js"></script>
     <script src="/js/ai/solution.js"></script>
+
+    <!-- Tabs Component (공통) -->
+    <script src="/js/ai/sub_cy.js"></script>
     <script>
         AOS.init();
 

@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resources</title>
 
-    <link rel="stylesheet" href="/css/ai/swiper-bundle.min.css" />
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="/css/ai/common/common.css" />
-    <!-- Reset CSS -->
-    <link rel="stylesheet" href="/css/ai/common/reset.css" />
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/ai/style.css" />
-    <link rel="stylesheet" href="/css/ai/sub_cy.css" />
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="/css/ai/common/aos.css" />
-    <!-- Tabs Component (공통) -->
-    <script src="/js/ai/sub_cy.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources</title>
+
+  <link rel="stylesheet" href="/css/ai/swiper-bundle.min.css" />
+  <!-- Common CSS -->
+  <link rel="stylesheet" href="/css/ai/common/common.css" />
+  <!-- Reset CSS -->
+  <link rel="stylesheet" href="/css/ai/common/reset.css" />
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="/css/ai/style.css" />
+  <link rel="stylesheet" href="/css/ai/sub_cy.css" />
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="/css/ai/common/aos.css" />
+  <!-- Tabs Component (공통) -->
+  <script src="/js/ai/sub_cy.js"></script>
+</head>
 
   <body>
     <!-- Header -->
@@ -107,12 +108,12 @@
                 </li>
                 <li class="mobile-menu-item">
                   <a href="#" class="mobile-menu-link"
-                    >Use Case <img src="/resource/images/ai/icons/ico-up.svg" alt=">"
+                    >Use Cases <img src="/resource/images/ai/icons/ico-up.svg" alt=">"
                   /></a>
                 </li>
                 <li class="mobile-menu-item">
                   <a href="#" class="mobile-menu-link"
-                    >Tech& <img src="/resource/images/ai/icons/ico-up.svg" alt=">"
+                    >Resources <img src="/resource/images/ai/icons/ico-up.svg" alt=">"
                   /></a>
                 </li>
               </ul>
@@ -140,280 +141,251 @@
         </div>
       </div>
 
-      <!-- Sticky Header -->
-      <div id="sticky-header" class="sticky-header">
-        <div class="sticky-header-inner">
-          <ul class="sticky-header-list">
-            <li data-section="parallax-depth-section">K Intelligence 구성요소</li>
-            <li data-section="kquality-section">K Quality Framework</li>
-            <li data-section="eco-section">K ECO</li>
-            <li data-section="usecase-section">Use Case</li>
-            <li data-section="news-section">새로운 소식</li>
-          </ul>
-        </div>
+    <!-- Sticky Header -->
+    <div id="sticky-header" class="sticky-header">
+      <!-- <div class="sticky-header-inner">
+        <ul class="sticky-header-list">
+          <li data-section="parallax-depth-section">K Intelligence 구성요소</li>
+          <li data-section="kquality-section">K Quality Framework</li>
+          <li data-section="eco-section">K ECO</li>
+          <li data-section="usecase-section">Use Case</li>
+          <li data-section="news-section">새로운 소식</li>
+        </ul>
       </div>
-    </header>
+    </div> -->
+  </header>
 
-    <div class="sub-content techPage">
-      <div class="sub-inner">
-        <div class="sub-title-wrap">
-          <h2 class="sub-title">Resources</h2>
-          <p>검증된 성과와 실제 적용 사례까지 K intelligence의 모든 기술을 담았습니다.</p>
+  <div class="sub-content techPage">
+    <div class="sub-inner">
+      <div class="sub-title-wrap">
+        <h2 class="sub-title">Resources</h2>
+        <p>검증된 성과와 실제 적용 사례까지 K intelligence의 모든 기술을 담았습니다.</p>
+      </div>
+
+      <div class="sub-conSec tabs-component">
+        <div class="flex justify-between">
+          <nav class="tabs" role="tablist" aria-label="Tech& 탭">
+            <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" aria-controls="tab-panel-1"
+              id="tab-1">
+              All
+            </button>
+            <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-2" id="tab-2">
+              What's New
+            </button>
+            <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-3" id="tab-3">
+              Technical Report
+            </button>
+            <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-4" id="tab-4">
+              Publications
+            </button>
+          </nav>
         </div>
 
-        <div class="sub-conSec tabs-component">
-          <div class="flex justify-between">
-            <nav class="tabs" role="tablist" aria-label="Tech& 탭">
-              <button
-                class="tabs__tab tabs__tab--active"
-                role="tab"
-                aria-selected="true"
-                aria-controls="tab-panel-1"
-                id="tab-1"
-              >
-                All
-              </button>
-              <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-2" id="tab-2">
-                What's New
-              </button>
-              <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-3" id="tab-3">
-                Technical Report
-              </button>
-              <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-4" id="tab-4">
-                Publications
-              </button>
-            </nav>
+        <!-- Tab Component (공통) -->
+        <div class="tabs__panel tabs__panel--active" id="tab-panel-1" role="tabpanel" aria-labelledby="tab-1">
+          <!-- All Content Here -->
+          <ul class="card-list tech-card-list" aria-label="What's New 목록">
+            <li class="card tech-card">
+              <a href="#" aria-label="KT, 자체 AI 모델 Mi:dm 2.1 공개, Mini-Base 모델은 오픈소스로 제공 상세페이지로 이동">
+                <div class="card-txts">
+                  <span class="card-category">What's New</span>
+                  <h3 class="card-title">KT, 자체 AI 모델 Mi:dm 2.1 공개, Mini-Base 모델은 오픈소스로 제공</h3>
+                  <p class="sub-desc">
+                    KT가 자체 개발한 차세대 Mi:dm 2.1 모델을 공개하고 성능과 효율성을 강화, Mini-Base 모델을
+                    오픈소스로 공개합니다.
+                  </p>
+                  <div class="card-tags">
+                    <span>Llama-K</span>
+                    <span>Midm</span>
+                    <span>GPT-K</span>
+                  </div>
+                  <time class="card-date" datetime="2025-05-16">2025.05.16</time>
+                </div>
+                <div class="card-img">
+                  <img src="/resource/images/ai/resources/sub-resources-img.png" alt="미드엠 2.1 공개 관련 추상적 이미지" />
+                </div>
+              </a>
+            </li>
+            <li class="card tech-card">
+              <a href="#" aria-label="오픈모델 기반의 경제성 있는 한국적 AI 모델, Llama-K 3.0을 출시합니다. 상세페이지로 이동">
+                <div class="card-txts">
+                  <span class="card-category">What's New</span>
+                  <h3 class="card-title">오픈모델 기반의 경제성 있는 한국적 AI 모델, Llama-K 3.0을 출시합니다.</h3>
+                  <p class="sub-desc">
+                    meta계열 AI 모델에 한국어 데이터와 평가를 반영한 한국형 대형 언어모델(LLM) Llama-K 3.0을 출시,
+                    Instruction-following 성능 대폭 향상
+                  </p>
+                  <div class="card-tags">
+                    <span>Llama-K</span>
+                    <span>Midm</span>
+                  </div>
+                  <time class="card-date" datetime="2025-05-16">2025.05.16</time>
+                </div>
+                <div class="card-img">
+                  <img src="/resource/images/ai/resources/sub-resources-img.png" alt="Llama-K 3.0 출시 관련 추상적 이미지" />
+                </div>
+              </a>
+            </li>
+            <li class="card tech-card">
+              <a href="#" aria-label="글로벌 최고 성능의 한국적 AI 모델, GPT-K를 출시합니다. 상세페이지로 이동">
+                <div class="card-txts">
+                  <span class="card-category">What's New</span>
+                  <h3 class="card-title">글로벌 최고 성능의 한국적 AI 모델, GPT-K를 출시합니다.</h3>
+                  <p class="sub-desc">
+                    GPT-4o 레퍼런스모델에 KT의 소비자 데이터셋을 학습하여, 한국어 이해와 생성 능력 대폭 향상
+                  </p>
+                  <div class="card-tags">
+                    <span>Llama-K</span>
+                    <span>Midm</span>
+                    <span>GPT-K</span>
+                  </div>
+                  <time class="card-date" datetime="2025-05-16">2025.05.16</time>
+                </div>
+                <div class="card-img">
+                  <img src="/resource/images/ai/resources/sub-resources-img.png" alt="GPT-K 출시 관련 추상적 이미지" />
+                </div>
+              </a>
+            </li>
+            <li class="card tech-card">
+              <a href="#" aria-label="Midm 2.1 Technical Report (2025) 상세페이지로 이동">
+                <div class="card-txts">
+                  <span class="card-category">What's New</span>
+                  <h3 class="card-title">Midm 2.1 Technical Report (2025)</h3>
+                  <p class="sub-desc">한국기계연구원 데이터 대량적재 및 KT AI 모델</p>
+                  <div class="card-tags">
+                    <span>Llama-K</span>
+                    <span>Midm</span>
+                    <span>GPT-K</span>
+                  </div>
+                  <time class="card-date" datetime="2025-05-16">2025.05.16</time>
+                </div>
+                <div class="card-img">
+                  <img src="/resource/images/ai/resources/sub-resources-img.png"
+                    alt="Midm 2.1 Technical Report 관련 추상적 이미지" />
+                </div>
+              </a>
+            </li>
+            <li class="card tech-card">
+              <a href="#" aria-label="안전하고 믿을 수 있는 AI를 위해 RAI Tool을 새롭게 제공합니다. 상세페이지로 이동">
+                <div class="card-txts">
+                  <span class="card-category">What's New</span>
+                  <h3 class="card-title">안전하고 믿을 수 있는 AI를 위해 RAI Tool을 새롭게 제공합니다.</h3>
+                  <p class="sub-desc">Data Compliance Tool, Evaluation Tool, Mitigation Tool 등 4종 출시</p>
+                  <div class="card-tags">
+                    <span>Llama-K</span>
+                    <span>Midm</span>
+                    <span>GPT-K</span>
+                  </div>
+                  <time class="card-date" datetime="2025-05-16">2025.05.16</time>
+                </div>
+                <div class="card-img">
+                  <img src="/resource/images/ai/resources/sub-resources-img.png" alt="RAI Tool 제공 관련 추상적 이미지" />
+                </div>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Pagination (공통) -->
+          <nav class="pagination" aria-label="페이지네이션">
+            <button class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled" aria-label="이전 페이지"
+              disabled>
+              <span class="visually-hidden">이전</span>
+            </button>
+            <button class="pagination__item pagination__item--active" aria-current="page">1</button>
+            <button class="pagination__item">2</button>
+            <button class="pagination__item">3</button>
+            <button class="pagination__item">4</button>
+            <button class="pagination__item">5</button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
+              <span class="visually-hidden">다음</span>
+            </button>
+          </nav>
+          <!-- 모바일에서만 노출되는 더보기 버튼 -->
+          <div class="mb-moreBtn">
+            <button type="button" class="moreBtn basicBtn" aria-label="더 많은 콘텐츠 불러오기"
+              aria-controls="usecase-card-list-horizontal" aria-live="polite">
+              <span aria-hidden="true">+</span>
+              <span class="visually-hidden">더보기</span>
+            </button>
           </div>
+        </div>
 
-          <!-- Tab Component (공통) -->
-          <div class="tabs__panel tabs__panel--active" id="tab-panel-1" role="tabpanel" aria-labelledby="tab-1">
-            <!-- All Content Here -->
-            <ul class="card-list tech-card-list" aria-label="What's New 목록">
-              <li class="card tech-card">
-                <a
-                  href="#"
-                  aria-label="KT, 자체 AI 모델 Mi:dm 2.1 공개, Mini-Base 모델은 오픈소스로 제공 상세페이지로 이동"
-                >
-                  <div class="card-txts">
-                    <span class="card-category">What's New</span>
-                    <h3 class="card-title">KT, 자체 AI 모델 Mi:dm 2.1 공개, Mini-Base 모델은 오픈소스로 제공</h3>
-                    <p class="sub-desc">
-                      KT가 자체 개발한 차세대 Mi:dm 2.1 모델을 공개하고 성능과 효율성을 강화, Mini-Base 모델을
-                      오픈소스로 공개합니다.
-                    </p>
-                    <div class="card-tags">
-                      <span>Llama-K</span>
-                      <span>Midm</span>
-                      <span>GPT-K</span>
-                    </div>
-                    <time class="card-date" datetime="2025-05-16">2025.05.16</time>
-                  </div>
-                  <div class="card-img">
-                    <img
-                      src="/resource/images/ai/resources/sub-resources-img.png"
-                      alt="미드엠 2.1 공개 관련 추상적 이미지"
-                    />
-                  </div>
-                </a>
-              </li>
-              <li class="card tech-card">
-                <a
-                  href="#"
-                  aria-label="오픈모델 기반의 경제성 있는 한국적 AI 모델, Llama-K 3.0을 출시합니다. 상세페이지로 이동"
-                >
-                  <div class="card-txts">
-                    <span class="card-category">What's New</span>
-                    <h3 class="card-title">오픈모델 기반의 경제성 있는 한국적 AI 모델, Llama-K 3.0을 출시합니다.</h3>
-                    <p class="sub-desc">
-                      meta계열 AI 모델에 한국어 데이터와 평가를 반영한 한국형 대형 언어모델(LLM) Llama-K 3.0을 출시,
-                      Instruction-following 성능 대폭 향상
-                    </p>
-                    <div class="card-tags">
-                      <span>Llama-K</span>
-                      <span>Midm</span>
-                    </div>
-                    <time class="card-date" datetime="2025-05-16">2025.05.16</time>
-                  </div>
-                  <div class="card-img">
-                    <img
-                      src="/resource/images/ai/resources/sub-resources-img.png"
-                      alt="Llama-K 3.0 출시 관련 추상적 이미지"
-                    />
-                  </div>
-                </a>
-              </li>
-              <li class="card tech-card">
-                <a href="#" aria-label="글로벌 최고 성능의 한국적 AI 모델, GPT-K를 출시합니다. 상세페이지로 이동">
-                  <div class="card-txts">
-                    <span class="card-category">What's New</span>
-                    <h3 class="card-title">글로벌 최고 성능의 한국적 AI 모델, GPT-K를 출시합니다.</h3>
-                    <p class="sub-desc">
-                      GPT-4o 레퍼런스모델에 KT의 소비자 데이터셋을 학습하여, 한국어 이해와 생성 능력 대폭 향상
-                    </p>
-                    <div class="card-tags">
-                      <span>Llama-K</span>
-                      <span>Midm</span>
-                      <span>GPT-K</span>
-                    </div>
-                    <time class="card-date" datetime="2025-05-16">2025.05.16</time>
-                  </div>
-                  <div class="card-img">
-                    <img
-                      src="/resource/images/ai/resources/sub-resources-img.png"
-                      alt="GPT-K 출시 관련 추상적 이미지"
-                    />
-                  </div>
-                </a>
-              </li>
-              <li class="card tech-card">
-                <a href="#" aria-label="Midm 2.1 Technical Report (2025) 상세페이지로 이동">
-                  <div class="card-txts">
-                    <span class="card-category">What's New</span>
-                    <h3 class="card-title">Midm 2.1 Technical Report (2025)</h3>
-                    <p class="sub-desc">한국기계연구원 데이터 대량적재 및 KT AI 모델</p>
-                    <div class="card-tags">
-                      <span>Llama-K</span>
-                      <span>Midm</span>
-                      <span>GPT-K</span>
-                    </div>
-                    <time class="card-date" datetime="2025-05-16">2025.05.16</time>
-                  </div>
-                  <div class="card-img">
-                    <img
-                      src="/resource/images/ai/resources/sub-resources-img.png"
-                      alt="Midm 2.1 Technical Report 관련 추상적 이미지"
-                    />
-                  </div>
-                </a>
-              </li>
-              <li class="card tech-card">
-                <a
-                  href="#"
-                  aria-label="안전하고 믿을 수 있는 AI를 위해 RAI Tool을 새롭게 제공합니다. 상세페이지로 이동"
-                >
-                  <div class="card-txts">
-                    <span class="card-category">What's New</span>
-                    <h3 class="card-title">안전하고 믿을 수 있는 AI를 위해 RAI Tool을 새롭게 제공합니다.</h3>
-                    <p class="sub-desc">Data Compliance Tool, Evaluation Tool, Mitigation Tool 등 4종 출시</p>
-                    <div class="card-tags">
-                      <span>Llama-K</span>
-                      <span>Midm</span>
-                      <span>GPT-K</span>
-                    </div>
-                    <time class="card-date" datetime="2025-05-16">2025.05.16</time>
-                  </div>
-                  <div class="card-img">
-                    <img
-                      src="/resource/images/ai/resources/sub-resources-img.png"
-                      alt="RAI Tool 제공 관련 추상적 이미지"
-                    />
-                  </div>
-                </a>
-              </li>
-            </ul>
 
-            <!-- Pagination (공통) -->
-            <nav class="pagination" aria-label="페이지네이션">
-              <button
-                class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled"
-                aria-label="이전 페이지"
-                disabled
-              >
-                <span class="visually-hidden">이전</span>
-              </button>
-              <button class="pagination__item pagination__item--active" aria-current="page">1</button>
-              <button class="pagination__item">2</button>
-              <button class="pagination__item">3</button>
-              <button class="pagination__item">4</button>
-              <button class="pagination__item">5</button>
-              <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
-                <span class="visually-hidden">다음</span>
-              </button>
-            </nav>
-          </div>
-          <div class="tabs__panel" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
-            <!-- What's New Content Here -->
 
-            <!-- Pagination (공통) -->
-            <nav class="pagination" aria-label="페이지네이션">
-              <button
-                class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled"
-                aria-label="이전 페이지"
-                disabled
-              >
-                <span class="visually-hidden">이전</span>
-              </button>
-              <button class="pagination__item pagination__item--active" aria-current="page">1</button>
-              <button class="pagination__item">2</button>
-              <button class="pagination__item">3</button>
-              <button class="pagination__item">4</button>
-              <button class="pagination__item">5</button>
-              <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
-                <span class="visually-hidden">다음</span>
-              </button>
-            </nav>
-          </div>
-          <div class="tabs__panel" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
-            <!-- Technical Report Content Here -->
 
-            <!-- Pagination (공통) -->
-            <nav class="pagination" aria-label="페이지네이션">
-              <button
-                class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled"
-                aria-label="이전 페이지"
-                disabled
-              >
-                <span class="visually-hidden">이전</span>
-              </button>
-              <button class="pagination__item pagination__item--active" aria-current="page">1</button>
-              <button class="pagination__item">2</button>
-              <button class="pagination__item">3</button>
-              <button class="pagination__item">4</button>
-              <button class="pagination__item">5</button>
-              <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
-                <span class="visually-hidden">다음</span>
-              </button>
-            </nav>
-          </div>
-          <div class="tabs__panel" id="tab-panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>
-            <!-- Publications Content Here -->
 
-            <!-- Pagination (공통) -->
-            <nav class="pagination" aria-label="페이지네이션">
-              <button
-                class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled"
-                aria-label="이전 페이지"
-                disabled
-              >
-                <span class="visually-hidden">이전</span>
-              </button>
-              <button class="pagination__item pagination__item--active" aria-current="page">1</button>
-              <button class="pagination__item">2</button>
-              <button class="pagination__item">3</button>
-              <button class="pagination__item">4</button>
-              <button class="pagination__item">5</button>
-              <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
-                <span class="visually-hidden">다음</span>
-              </button>
-            </nav>
 
-            <!-- 모바일에서만 노출되는 더보기 버튼 -->
-            <div class="mb-moreBtn">
-              <button
-                type="button"
-                class="moreBtn basicBtn"
-                aria-label="더 많은 콘텐츠 불러오기"
-                aria-controls="usecase-card-list-horizontal"
-                aria-live="polite"
-              >
-                <span aria-hidden="true">+</span>
-                <span class="visually-hidden">더보기</span>
-              </button>
-            </div>
+
+
+        <div class="tabs__panel" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+          <!-- What's New Content Here -->
+
+          <!-- Pagination (공통) -->
+          <nav class="pagination" aria-label="페이지네이션">
+            <button class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled" aria-label="이전 페이지"
+              disabled>
+              <span class="visually-hidden">이전</span>
+            </button>
+            <button class="pagination__item pagination__item--active" aria-current="page">1</button>
+            <button class="pagination__item">2</button>
+            <button class="pagination__item">3</button>
+            <button class="pagination__item">4</button>
+            <button class="pagination__item">5</button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
+              <span class="visually-hidden">다음</span>
+            </button>
+          </nav>
+        </div>
+        <div class="tabs__panel" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+          <!-- Technical Report Content Here -->
+
+          <!-- Pagination (공통) -->
+          <nav class="pagination" aria-label="페이지네이션">
+            <button class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled" aria-label="이전 페이지"
+              disabled>
+              <span class="visually-hidden">이전</span>
+            </button>
+            <button class="pagination__item pagination__item--active" aria-current="page">1</button>
+            <button class="pagination__item">2</button>
+            <button class="pagination__item">3</button>
+            <button class="pagination__item">4</button>
+            <button class="pagination__item">5</button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
+              <span class="visually-hidden">다음</span>
+            </button>
+          </nav>
+        </div>
+        <div class="tabs__panel" id="tab-panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+          <!-- Publications Content Here -->
+
+          <!-- Pagination (공통) -->
+          <nav class="pagination" aria-label="페이지네이션">
+            <button class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled" aria-label="이전 페이지"
+              disabled>
+              <span class="visually-hidden">이전</span>
+            </button>
+            <button class="pagination__item pagination__item--active" aria-current="page">1</button>
+            <button class="pagination__item">2</button>
+            <button class="pagination__item">3</button>
+            <button class="pagination__item">4</button>
+            <button class="pagination__item">5</button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
+              <span class="visually-hidden">다음</span>
+            </button>
+          </nav>
+
+          <!-- 모바일에서만 노출되는 더보기 버튼 -->
+          <div class="mb-moreBtn">
+            <button type="button" class="moreBtn basicBtn" aria-label="더 많은 콘텐츠 불러오기"
+              aria-controls="usecase-card-list-horizontal" aria-live="polite">
+              <span aria-hidden="true">+</span>
+              <span class="visually-hidden">더보기</span>
+            </button>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -432,8 +404,8 @@
         </div>
         <ul class="footer-menus">
           <li><a href="#">Solution</a></li>
-          <li><a href="#">Use Case</a></li>
-          <li><a href="#">Tech&</a></li>
+          <li><a href="#">Use Cases</a></li>
+          <li><a href="#">Resources</a></li>
         </ul>
         <!-- Right: Logo -->
         <div class="footer-logo">
@@ -477,6 +449,7 @@
       </div>
     </footer>
 
-    <script src="/js/ai/common/header.js" defer></script>
-  </body>
+  <script src="/js/ai/common/header.js" defer></script>
+</body>
+
 </html>
