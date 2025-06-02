@@ -658,7 +658,6 @@ body,
   } */
 
   .footer {
-    margin-top: 20rem; /* 모바일 임시 높이 조정 */
     padding: 6rem 2rem 4rem;
   }
   .footer-top {
@@ -768,6 +767,33 @@ body,
   .footer-sns a img {
     width: 3.2rem;
     height: 3.2rem;
+  }
+
+  .kt-model-section {
+    height: 100%;
+  }
+  .kt-model-section .kt-model-inner {
+    height: 48.6rem;
+  }
+  .kt-model-section .kt-model-bg {
+    height: 100%;
+  }
+  .kt-model-section .kt-model-bg img {
+    display: none;
+  }
+  .kt-model-section .kt-model-bg img.mo-img {
+    display: block;
+  }
+  .kt-model-section .kt-model-content {
+    height: 100%;
+    gap: 4.8rem;
+  }
+  .kt-model-section .kt-model-content .section-title {
+    text-align: center;
+    font-size: 4rem;
+  }
+  .btn {
+    font-size: 2rem;
   }
 }
 
