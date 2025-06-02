@@ -322,7 +322,7 @@
   left: unset;
 }
 
-.tabs__panel {
+.tabs__panel__anchor {
   padding-top: 10rem;
 }
 
