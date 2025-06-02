@@ -18,6 +18,12 @@
   padding-bottom: 0.7rem;
 }
 
+.sticky-header .tab-sticky-header li.active {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  line-height: normal;
+}
+
 .video-wrapper {
   position: relative;
   width: 100%;
@@ -166,8 +172,18 @@
 .kt-accordion__item {
   overflow: hidden;
   transition: box-shadow 0.2s;
+  border-top: 1px solid var(--gray-200-color);
+}
+
+.kt-accordion__item:nth-child(1) {
+  border-top: none;
+}
+
+.kt-accordion__item:nth-last-child(1) {
   border-bottom: 1px solid var(--gray-200-color);
 }
+
+
 
 .kt-accordion__header {
   width: 100%;
@@ -201,9 +217,6 @@
   padding-top: 0;
 }
 
-.kt-accordion__item.active {
-  border-bottom: 0;
-}
 
 .kt-accordion__item.active .kt-accordion__icon {
   background-image: url('/resource/images/ai/icons/icon-arcodian-minus.png');
@@ -220,6 +233,10 @@
 
 .kt-accordion__item.active .kt-accordion__panel {
   transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kt-accordion__item.active+.kt-accordion__item {
+  border-top: 0;
 }
 
 .kt-accordion__content {
@@ -279,7 +296,6 @@
 
 .content-section.tabs-component {
   background-color: var(--gray-50-color);
-  padding-top: 1.90625rem;
   transition: background-color 0.3s ease;
 }
 
@@ -304,6 +320,10 @@
   position: absolute;
   top: 2.1rem;
   left: unset;
+}
+
+.tabs__panel {
+  padding-top: 10rem;
 }
 
 .tab-inner-wrapper {

@@ -1,482 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resources</title>
 
-    <link rel="stylesheet" href="/css/ai/swiper-bundle.min.css" />
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="/css/ai/common/common.css" />
-    <!-- Reset CSS -->
-    <link rel="stylesheet" href="/css/ai/common/reset.css" />
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/ai/style.css" />
-    <link rel="stylesheet" href="/css/ai/sub_cy.css" />
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="/css/ai/common/aos.css" />
-    <!-- Tabs Component (공통) -->
-    <script src="/js/ai/sub_cy.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources</title>
 
-  <body>
-    <!-- Header -->
-    <header id="main-header" class="header">
-      <div class="header-inner">
-        <!-- Left: Logo -->
-        <div class="header-logo">
-          <a href="/ai/main/">
-            <img src="/resource/images/ai/icons/logo.svg" alt="logo" width="162" height="32" class="logo-img" />
-          </a>
-        </div>
-        <!-- Center: Navigation (Desktop) -->
-        <nav class="header-nav">
-          <div class="nav-item has-dropdown">
-            <a href="#" class="nav-link"
-              >Solution
-              <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="/ai/solution/model/">K On Model</a></li>
-              <li><a href="/ai/solution/RAG/">K On RAG</a></li>
-              <li><a href="/ai/solution/agent/">K On Agent</a></li>
-              <li><a href="/ai/solution/RAI/">K On RAI</a></li>
-              <li><a href="/ai/solution/studio/">K On Studio</a></li>
-              <li><a href="/ai/solution/cloud/">K On Cloud</a></li>
-            </ul>
-          </div>
-          <div class="nav-item"><a href="/ai/usecase/" class="nav-link">Use Cases</a></div>
-          <div class="nav-item"><a href="/ai/resources/" class="nav-link">Resources</a></div>
-        </nav>
-        <!-- Right: Links, Language, Login (Desktop) -->
-        <div class="header-right">
-          <a href="#" class="right-link">
-            Inside KT
-            <img
-              src="/resource/images/ai/icons/arrow-up-right-black.svg"
-              alt=""
-              width="16"
-              height="28"
-              class="arrow-icon"
-            />
-          </a>
-          <button class="header-btn">K on Model 체험하기</button>
-          <div class="header-lang" id="lang-dropdown">
-            <button class="lang-btn" id="lang-btn">
-              <img src="/resource/images/ai/icons/globe.svg" alt="globe" width="28" height="28" />
-              <span id="lang-current">KR</span>
-              <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
-            </button>
-            <ul class="lang-menu" id="lang-menu">
-              <li><button data-lang="KR">KR</button></li>
-              <li><button data-lang="EN">EN</button></li>
-            </ul>
-          </div>
-          <!-- 모바일 메뉴 버튼 -->
-          <button class="mobile-menu-btn" id="mobile-menu-btn">
-            <img src="/resource/images/ai/mobile/ico-menu.svg" alt="menu" width="28" height="28" />
-          </button>
-        </div>
+  <link rel="stylesheet" href="/css/ai/swiper-bundle.min.css" />
+  <!-- Common CSS -->
+  <link rel="stylesheet" href="/css/ai/common/common.css" />
+  <!-- Reset CSS -->
+  <link rel="stylesheet" href="/css/ai/common/reset.css" />
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="/css/ai/style.css" />
+  <link rel="stylesheet" href="/css/ai/sub_cy.css" />
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="/css/ai/common/aos.css" />
+  <!-- Tabs Component (공통) -->
+  <script src="/js/ai/sub_cy.js"></script>
+</head>
 
-        <!-- 모바일 메뉴 -->
-        <div class="mobile-menu" id="mobile-menu">
-          <div class="mobile-menu-inner">
-            <div class="mobile-menu-header">
-              <a href="/ai/main/" class="mobile-menu-logo">
-                <img src="/resource/images/ai/icons/logo.svg" alt="K intelligence" />
-              </a>
-              <button class="mobile-menu-close" id="mobile-menu-close">
-                <img src="/resource/images/ai/mobile/ico-close.svg" alt="close" />
-              </button>
-            </div>
-            <nav class="mobile-menu-nav">
-              <ul>
-                <li class="mobile-menu-item has-sub">
-                  <button class="mobile-menu-link" id="mobile-solution-toggle">
-                    <strong>Solution</strong>
-                    <img src="/resource/images/ai/icons/ico-up.svg" alt="펼치기" />
-                  </button>
-                  <ul class="mobile-sub-menu" id="mobile-solution-sub">
-                    <li><a href="#">K on Model</a></li>
-                    <li><a href="#">K on RAG</a></li>
-                    <li><a href="#">K on Agent</a></li>
-                    <li><a href="#">K on RAI</a></li>
-                    <li><a href="#">K on Cloud</a></li>
-                    <li><a href="#">K on Studio</a></li>
-                  </ul>
-                </li>
-                <li class="mobile-menu-item">
-                  <a href="#" class="mobile-menu-link"
-                    >Use Case <img src="/resource/images/ai/icons/ico-up.svg" alt=">"
-                  /></a>
-                </li>
-                <li class="mobile-menu-item">
-                  <a href="#" class="mobile-menu-link"
-                    >Tech& <img src="/resource/images/ai/icons/ico-up.svg" alt=">"
-                  /></a>
-                </li>
-              </ul>
-            </nav>
-            <div class="mobile-menu-bottom">
-              <div class="mobile-menu-links">
-                <a href="#" class="mobile-menu-ext-link"
-                  >inside KT <img src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부"
-                /></a>
-                <a href="#" class="mobile-menu-ext-link"
-                  >체험하기 <img src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부"
-                /></a>
-              </div>
-              <div class="mobile-menu-bottom-row">
-                <div class="mobile-menu-lang">
-                  <button class="active">KOR</button>
-                  <button>ENG</button>
-                </div>
-                <a href="mailto:k.intelligence@kt.com" class="mobile-menu-contact">
-                  <img src="/resource/images/ai/icons/mail.svg" alt="메일" /> 비지니스 문의
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+<body>
+  <!-- Header -->
+  <header id="main-header" class="header">
+    <div class="header-inner">
+      <!-- Left: Logo -->
+      <div class="header-logo">
+        <a href="/ai/main/">
+          <img src="/resource/images/ai/icons/logo.svg" alt="logo" width="162" height="32" class="logo-img" />
+        </a>
       </div>
-
-      <!-- Sticky Header -->
-      <div id="sticky-header" class="sticky-header">
-        <div class="sticky-header-inner">
-          <ul class="sticky-header-list">
-            <li data-section="parallax-depth-section">K Intelligence 구성요소</li>
-            <li data-section="kquality-section">K Quality Framework</li>
-            <li data-section="eco-section">K ECO</li>
-            <li data-section="usecase-section">Use Case</li>
-            <li data-section="news-section">새로운 소식</li>
+      <!-- Center: Navigation (Desktop) -->
+      <nav class="header-nav">
+        <div class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Solution
+            <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/ai/solution/model/">K On Model</a></li>
+            <li><a href="/ai/solution/RAG/">K On RAG</a></li>
+            <li><a href="/ai/solution/agent/">K On Agent</a></li>
+            <li><a href="/ai/solution/RAI/">K On RAI</a></li>
+            <li><a href="/ai/solution/studio/">K On Studio</a></li>
+            <li><a href="/ai/solution/cloud/">K On Cloud</a></li>
           </ul>
         </div>
-      </div>
-    </header>
-
-    <div class="sub-content techPage">
-      <div class="sub-inner">
-        <div class="sub-title-wrap">
-          <h2 class="sub-title">Resources</h2>
-          <p>검증된 성과와 실제 적용 사례까지 K intelligence의 모든 기술을 담았습니다.</p>
+        <div class="nav-item"><a href="/ai/usecase/" class="nav-link">Use Cases</a></div>
+        <div class="nav-item"><a href="/ai/resources/" class="nav-link">Resources</a></div>
+      </nav>
+      <!-- Right: Links, Language, Login (Desktop) -->
+      <div class="header-right">
+        <a href="#" class="right-link">
+          Inside KT
+          <img src="/resource/images/ai/icons/arrow-up-right-black.svg" alt="" width="16" height="28"
+            class="arrow-icon" />
+        </a>
+        <button class="header-btn">K on Model 체험하기</button>
+        <div class="header-lang" id="lang-dropdown">
+          <button class="lang-btn" id="lang-btn">
+            <img src="/resource/images/ai/icons/globe.svg" alt="globe" width="28" height="28" />
+            <span id="lang-current">KR</span>
+            <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
+          </button>
+          <ul class="lang-menu" id="lang-menu">
+            <li><button data-lang="KR">KR</button></li>
+            <li><button data-lang="EN">EN</button></li>
+          </ul>
         </div>
+        <!-- 모바일 메뉴 버튼 -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+          <img src="/resource/images/ai/mobile/ico-menu.svg" alt="menu" width="28" height="28" />
+        </button>
+      </div>
 
-        <div class="sub-conSec tabs-component">
-          <div class="flex justify-between">
-            <nav class="tabs" role="tablist" aria-label="Tech& 탭">
-              <button
-                class="tabs__tab tabs__tab--active"
-                role="tab"
-                aria-selected="true"
-                aria-controls="tab-panel-1"
-                id="tab-1"
-              >
-                All
-              </button>
-              <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-2" id="tab-2">
-                What's New
-              </button>
-              <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-3" id="tab-3">
-                Technical Report
-              </button>
-              <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-4" id="tab-4">
-                Publications
-              </button>
-            </nav>
+      <!-- 모바일 메뉴 -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-inner">
+          <div class="mobile-menu-header">
+            <a href="/ai/main/" class="mobile-menu-logo">
+              <img src="/resource/images/ai/icons/logo.svg" alt="K intelligence" />
+            </a>
+            <button class="mobile-menu-close" id="mobile-menu-close">
+              <img src="/resource/images/ai/mobile/ico-close.svg" alt="close" />
+            </button>
           </div>
-
-          <!-- Tab Component (공통) -->
-          <div class="tabs__panel tabs__panel--active" id="tab-panel-1" role="tabpanel" aria-labelledby="tab-1">
-            <!-- All Content Here -->
-            <ul class="card-list tech-card-list" aria-label="What's New 목록">
-              <li class="card tech-card">
-                <a
-                  href="#"
-                  aria-label="KT, 자체 AI 모델 Mi:dm 2.1 공개, Mini-Base 모델은 오픈소스로 제공 상세페이지로 이동"
-                >
-                  <div class="card-txts">
-                    <span class="card-category">What's New</span>
-                    <h3 class="card-title">KT, 자체 AI 모델 Mi:dm 2.1 공개, Mini-Base 모델은 오픈소스로 제공</h3>
-                    <p class="sub-desc">
-                      KT가 자체 개발한 차세대 Mi:dm 2.1 모델을 공개하고 성능과 효율성을 강화, Mini-Base 모델을
-                      오픈소스로 공개합니다.
-                    </p>
-                    <div class="card-tags">
-                      <span>Llama-K</span>
-                      <span>Midm</span>
-                      <span>GPT-K</span>
-                    </div>
-                    <time class="card-date" datetime="2025-05-16">2025.05.16</time>
-                  </div>
-                  <div class="card-img">
-                    <img
-                      src="/resource/images/ai/resources/sub-resources-img.png"
-                      alt="미드엠 2.1 공개 관련 추상적 이미지"
-                    />
-                  </div>
-                </a>
+          <nav class="mobile-menu-nav">
+            <ul>
+              <li class="mobile-menu-item has-sub">
+                <button class="mobile-menu-link" id="mobile-solution-toggle">
+                  <strong>Solution</strong>
+                  <img src="/resource/images/ai/icons/ico-up.svg" alt="펼치기" />
+                </button>
+                <ul class="mobile-sub-menu" id="mobile-solution-sub">
+                  <li><a href="#">K on Model</a></li>
+                  <li><a href="#">K on RAG</a></li>
+                  <li><a href="#">K on Agent</a></li>
+                  <li><a href="#">K on RAI</a></li>
+                  <li><a href="#">K on Cloud</a></li>
+                  <li><a href="#">K on Studio</a></li>
+                </ul>
               </li>
-              <li class="card tech-card">
-                <a
-                  href="#"
-                  aria-label="오픈모델 기반의 경제성 있는 한국적 AI 모델, Llama-K 3.0을 출시합니다. 상세페이지로 이동"
-                >
-                  <div class="card-txts">
-                    <span class="card-category">What's New</span>
-                    <h3 class="card-title">오픈모델 기반의 경제성 있는 한국적 AI 모델, Llama-K 3.0을 출시합니다.</h3>
-                    <p class="sub-desc">
-                      meta계열 AI 모델에 한국어 데이터와 평가를 반영한 한국형 대형 언어모델(LLM) Llama-K 3.0을 출시,
-                      Instruction-following 성능 대폭 향상
-                    </p>
-                    <div class="card-tags">
-                      <span>Llama-K</span>
-                      <span>Midm</span>
-                    </div>
-                    <time class="card-date" datetime="2025-05-16">2025.05.16</time>
-                  </div>
-                  <div class="card-img">
-                    <img
-                      src="/resource/images/ai/resources/sub-resources-img.png"
-                      alt="Llama-K 3.0 출시 관련 추상적 이미지"
-                    />
-                  </div>
-                </a>
+              <li class="mobile-menu-item">
+                <a href="#" class="mobile-menu-link">Use Case <img src="/resource/images/ai/icons/ico-up.svg"
+                    alt=">" /></a>
               </li>
-              <li class="card tech-card">
-                <a href="#" aria-label="글로벌 최고 성능의 한국적 AI 모델, GPT-K를 출시합니다. 상세페이지로 이동">
-                  <div class="card-txts">
-                    <span class="card-category">What's New</span>
-                    <h3 class="card-title">글로벌 최고 성능의 한국적 AI 모델, GPT-K를 출시합니다.</h3>
-                    <p class="sub-desc">
-                      GPT-4o 레퍼런스모델에 KT의 소비자 데이터셋을 학습하여, 한국어 이해와 생성 능력 대폭 향상
-                    </p>
-                    <div class="card-tags">
-                      <span>Llama-K</span>
-                      <span>Midm</span>
-                      <span>GPT-K</span>
-                    </div>
-                    <time class="card-date" datetime="2025-05-16">2025.05.16</time>
-                  </div>
-                  <div class="card-img">
-                    <img
-                      src="/resource/images/ai/resources/sub-resources-img.png"
-                      alt="GPT-K 출시 관련 추상적 이미지"
-                    />
-                  </div>
-                </a>
-              </li>
-              <li class="card tech-card">
-                <a href="#" aria-label="Midm 2.1 Technical Report (2025) 상세페이지로 이동">
-                  <div class="card-txts">
-                    <span class="card-category">What's New</span>
-                    <h3 class="card-title">Midm 2.1 Technical Report (2025)</h3>
-                    <p class="sub-desc">한국기계연구원 데이터 대량적재 및 KT AI 모델</p>
-                    <div class="card-tags">
-                      <span>Llama-K</span>
-                      <span>Midm</span>
-                      <span>GPT-K</span>
-                    </div>
-                    <time class="card-date" datetime="2025-05-16">2025.05.16</time>
-                  </div>
-                  <div class="card-img">
-                    <img
-                      src="/resource/images/ai/resources/sub-resources-img.png"
-                      alt="Midm 2.1 Technical Report 관련 추상적 이미지"
-                    />
-                  </div>
-                </a>
-              </li>
-              <li class="card tech-card">
-                <a
-                  href="#"
-                  aria-label="안전하고 믿을 수 있는 AI를 위해 RAI Tool을 새롭게 제공합니다. 상세페이지로 이동"
-                >
-                  <div class="card-txts">
-                    <span class="card-category">What's New</span>
-                    <h3 class="card-title">안전하고 믿을 수 있는 AI를 위해 RAI Tool을 새롭게 제공합니다.</h3>
-                    <p class="sub-desc">Data Compliance Tool, Evaluation Tool, Mitigation Tool 등 4종 출시</p>
-                    <div class="card-tags">
-                      <span>Llama-K</span>
-                      <span>Midm</span>
-                      <span>GPT-K</span>
-                    </div>
-                    <time class="card-date" datetime="2025-05-16">2025.05.16</time>
-                  </div>
-                  <div class="card-img">
-                    <img
-                      src="/resource/images/ai/resources/sub-resources-img.png"
-                      alt="RAI Tool 제공 관련 추상적 이미지"
-                    />
-                  </div>
-                </a>
+              <li class="mobile-menu-item">
+                <a href="#" class="mobile-menu-link">Tech& <img src="/resource/images/ai/icons/ico-up.svg"
+                    alt=">" /></a>
               </li>
             </ul>
-
-            <!-- Pagination (공통) -->
-            <nav class="pagination" aria-label="페이지네이션">
-              <button
-                class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled"
-                aria-label="이전 페이지"
-                disabled
-              >
-                <span class="visually-hidden">이전</span>
-              </button>
-              <button class="pagination__item pagination__item--active" aria-current="page">1</button>
-              <button class="pagination__item">2</button>
-              <button class="pagination__item">3</button>
-              <button class="pagination__item">4</button>
-              <button class="pagination__item">5</button>
-              <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
-                <span class="visually-hidden">다음</span>
-              </button>
-            </nav>
-          </div>
-          <div class="tabs__panel" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
-            <!-- What's New Content Here -->
-
-            <!-- Pagination (공통) -->
-            <nav class="pagination" aria-label="페이지네이션">
-              <button
-                class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled"
-                aria-label="이전 페이지"
-                disabled
-              >
-                <span class="visually-hidden">이전</span>
-              </button>
-              <button class="pagination__item pagination__item--active" aria-current="page">1</button>
-              <button class="pagination__item">2</button>
-              <button class="pagination__item">3</button>
-              <button class="pagination__item">4</button>
-              <button class="pagination__item">5</button>
-              <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
-                <span class="visually-hidden">다음</span>
-              </button>
-            </nav>
-          </div>
-          <div class="tabs__panel" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
-            <!-- Technical Report Content Here -->
-
-            <!-- Pagination (공통) -->
-            <nav class="pagination" aria-label="페이지네이션">
-              <button
-                class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled"
-                aria-label="이전 페이지"
-                disabled
-              >
-                <span class="visually-hidden">이전</span>
-              </button>
-              <button class="pagination__item pagination__item--active" aria-current="page">1</button>
-              <button class="pagination__item">2</button>
-              <button class="pagination__item">3</button>
-              <button class="pagination__item">4</button>
-              <button class="pagination__item">5</button>
-              <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
-                <span class="visually-hidden">다음</span>
-              </button>
-            </nav>
-          </div>
-          <div class="tabs__panel" id="tab-panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>
-            <!-- Publications Content Here -->
-
-            <!-- Pagination (공통) -->
-            <nav class="pagination" aria-label="페이지네이션">
-              <button
-                class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled"
-                aria-label="이전 페이지"
-                disabled
-              >
-                <span class="visually-hidden">이전</span>
-              </button>
-              <button class="pagination__item pagination__item--active" aria-current="page">1</button>
-              <button class="pagination__item">2</button>
-              <button class="pagination__item">3</button>
-              <button class="pagination__item">4</button>
-              <button class="pagination__item">5</button>
-              <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
-                <span class="visually-hidden">다음</span>
-              </button>
-            </nav>
-
-            <!-- 모바일에서만 노출되는 더보기 버튼 -->
-            <div class="mb-moreBtn">
-              <button
-                type="button"
-                class="moreBtn basicBtn"
-                aria-label="더 많은 콘텐츠 불러오기"
-                aria-controls="usecase-card-list-horizontal"
-                aria-live="polite"
-              >
-                <span aria-hidden="true">+</span>
-                <span class="visually-hidden">더보기</span>
-              </button>
+          </nav>
+          <div class="mobile-menu-bottom">
+            <div class="mobile-menu-links">
+              <a href="#" class="mobile-menu-ext-link">inside KT <img
+                  src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부" /></a>
+              <a href="#" class="mobile-menu-ext-link">체험하기 <img src="/resource/images/ai/icons/arrow-up-right20.svg"
+                  alt="외부" /></a>
+            </div>
+            <div class="mobile-menu-bottom-row">
+              <div class="mobile-menu-lang">
+                <button class="active">KOR</button>
+                <button>ENG</button>
+              </div>
+              <a href="mailto:k.intelligence@kt.com" class="mobile-menu-contact">
+                <img src="/resource/images/ai/icons/mail.svg" alt="메일" /> 비지니스 문의
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-top">
-        <!-- Left: Info -->
-        <div class="footer-info">
-          <div class="footer-contact">
-            비즈니스 문의 : <a href="mailto:k.intelligence@kt.com">k.intelligence@kt.com</a>
-          </div>
-          <div class="footer-links">
-            <a href="#">이용약관</a>
-            <span class="footer-divider">|</span>
-            <a href="#" class="bold">개인정보처리방침</a>
-          </div>
-          <div class="footer-copyright">Copyright© KT Corp. All rights reserved.</div>
-        </div>
-        <ul class="footer-menus">
-          <li><a href="#">Solution</a></li>
-          <li><a href="#">Use Case</a></li>
-          <li><a href="#">Tech&</a></li>
+    <!-- Sticky Header -->
+    <div id="sticky-header" class="sticky-header">
+      <div class="sticky-header-inner">
+        <ul class="sticky-header-list">
+          <li data-section="parallax-depth-section">K Intelligence 구성요소</li>
+          <li data-section="kquality-section">K Quality Framework</li>
+          <li data-section="eco-section">K ECO</li>
+          <li data-section="usecase-section">Use Case</li>
+          <li data-section="news-section">새로운 소식</li>
         </ul>
-        <!-- Right: Logo -->
-        <div class="footer-logo">
-          <img src="/resource/images/ai/icons/footer_logo.svg" alt="KT 로고" width="60" height="40" />
-          <p class="mobile-footer-copyright">ⓒ KT Corp.</p>
-        </div>
       </div>
-      <div class="footer-bottom">
-        <div class="footer-external-links">
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >KT
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-          <span class="footer-divider">|</span>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >Inside KT
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-          <span class="footer-divider">|</span>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >KT Enterprise
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-          <span class="footer-divider">|</span>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >About KT
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-        </div>
-        <div class="footer-sns">
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT Instagram (새 창)">
-            <img src="/resource/images/ai/icons/insta_pc.svg" alt="Instagram" width="28" height="28" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT YouTube (새 창)">
-            <img src="/resource/images/ai/icons/youtube_pc.svg" alt="YouTube" width="28" height="28" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT LinkedIn (새 창)">
-            <img src="/resource/images/ai/icons/linkedin_pc.svg" alt="LinkedIn" width="28" height="28" />
-          </a>
-        </div>
-      </div>
-    </footer>
+    </div>
+  </header>
 
-    <script src="/js/ai/common/header.js" defer></script>
-  </body>
+  <div class="sub-content techPage">
+    <div class="sub-inner">
+      <div class="sub-title-wrap">
+        <h2 class="sub-title">Resources</h2>
+        <p>검증된 성과와 실제 적용 사례까지 K intelligence의 모든 기술을 담았습니다.</p>
+      </div>
+
+      <div class="sub-conSec tabs-component">
+        <div class="flex justify-between">
+          <nav class="tabs" role="tablist" aria-label="Tech& 탭">
+            <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" aria-controls="tab-panel-1"
+              id="tab-1">
+              All
+            </button>
+            <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-2" id="tab-2">
+              What's New
+            </button>
+            <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-3" id="tab-3">
+              Technical Report
+            </button>
+            <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-4" id="tab-4">
+              Publications
+            </button>
+          </nav>
+        </div>
+
+        <!-- Tab Component (공통) -->
+        <div class="tabs__panel tabs__panel--active" id="tab-panel-1" role="tabpanel" aria-labelledby="tab-1">
+          <!-- All Content Here -->
+          <ul class="card-list tech-card-list" aria-label="What's New 목록">
+            <li class="card tech-card">
+              <a href="#" aria-label="KT, 자체 AI 모델 Mi:dm 2.1 공개, Mini-Base 모델은 오픈소스로 제공 상세페이지로 이동">
+                <div class="card-txts">
+                  <span class="card-category">What's New</span>
+                  <h3 class="card-title">KT, 자체 AI 모델 Mi:dm 2.1 공개, Mini-Base 모델은 오픈소스로 제공</h3>
+                  <p class="sub-desc">
+                    KT가 자체 개발한 차세대 Mi:dm 2.1 모델을 공개하고 성능과 효율성을 강화, Mini-Base 모델을
+                    오픈소스로 공개합니다.
+                  </p>
+                  <div class="card-tags">
+                    <span>Llama-K</span>
+                    <span>Midm</span>
+                    <span>GPT-K</span>
+                  </div>
+                  <time class="card-date" datetime="2025-05-16">2025.05.16</time>
+                </div>
+                <div class="card-img">
+                  <img src="/resource/images/ai/resources/sub-resources-img.png" alt="미드엠 2.1 공개 관련 추상적 이미지" />
+                </div>
+              </a>
+            </li>
+            <li class="card tech-card">
+              <a href="#" aria-label="오픈모델 기반의 경제성 있는 한국적 AI 모델, Llama-K 3.0을 출시합니다. 상세페이지로 이동">
+                <div class="card-txts">
+                  <span class="card-category">What's New</span>
+                  <h3 class="card-title">오픈모델 기반의 경제성 있는 한국적 AI 모델, Llama-K 3.0을 출시합니다.</h3>
+                  <p class="sub-desc">
+                    meta계열 AI 모델에 한국어 데이터와 평가를 반영한 한국형 대형 언어모델(LLM) Llama-K 3.0을 출시,
+                    Instruction-following 성능 대폭 향상
+                  </p>
+                  <div class="card-tags">
+                    <span>Llama-K</span>
+                    <span>Midm</span>
+                  </div>
+                  <time class="card-date" datetime="2025-05-16">2025.05.16</time>
+                </div>
+                <div class="card-img">
+                  <img src="/resource/images/ai/resources/sub-resources-img.png" alt="Llama-K 3.0 출시 관련 추상적 이미지" />
+                </div>
+              </a>
+            </li>
+            <li class="card tech-card">
+              <a href="#" aria-label="글로벌 최고 성능의 한국적 AI 모델, GPT-K를 출시합니다. 상세페이지로 이동">
+                <div class="card-txts">
+                  <span class="card-category">What's New</span>
+                  <h3 class="card-title">글로벌 최고 성능의 한국적 AI 모델, GPT-K를 출시합니다.</h3>
+                  <p class="sub-desc">
+                    GPT-4o 레퍼런스모델에 KT의 소비자 데이터셋을 학습하여, 한국어 이해와 생성 능력 대폭 향상
+                  </p>
+                  <div class="card-tags">
+                    <span>Llama-K</span>
+                    <span>Midm</span>
+                    <span>GPT-K</span>
+                  </div>
+                  <time class="card-date" datetime="2025-05-16">2025.05.16</time>
+                </div>
+                <div class="card-img">
+                  <img src="/resource/images/ai/resources/sub-resources-img.png" alt="GPT-K 출시 관련 추상적 이미지" />
+                </div>
+              </a>
+            </li>
+            <li class="card tech-card">
+              <a href="#" aria-label="Midm 2.1 Technical Report (2025) 상세페이지로 이동">
+                <div class="card-txts">
+                  <span class="card-category">What's New</span>
+                  <h3 class="card-title">Midm 2.1 Technical Report (2025)</h3>
+                  <p class="sub-desc">한국기계연구원 데이터 대량적재 및 KT AI 모델</p>
+                  <div class="card-tags">
+                    <span>Llama-K</span>
+                    <span>Midm</span>
+                    <span>GPT-K</span>
+                  </div>
+                  <time class="card-date" datetime="2025-05-16">2025.05.16</time>
+                </div>
+                <div class="card-img">
+                  <img src="/resource/images/ai/resources/sub-resources-img.png"
+                    alt="Midm 2.1 Technical Report 관련 추상적 이미지" />
+                </div>
+              </a>
+            </li>
+            <li class="card tech-card">
+              <a href="#" aria-label="안전하고 믿을 수 있는 AI를 위해 RAI Tool을 새롭게 제공합니다. 상세페이지로 이동">
+                <div class="card-txts">
+                  <span class="card-category">What's New</span>
+                  <h3 class="card-title">안전하고 믿을 수 있는 AI를 위해 RAI Tool을 새롭게 제공합니다.</h3>
+                  <p class="sub-desc">Data Compliance Tool, Evaluation Tool, Mitigation Tool 등 4종 출시</p>
+                  <div class="card-tags">
+                    <span>Llama-K</span>
+                    <span>Midm</span>
+                    <span>GPT-K</span>
+                  </div>
+                  <time class="card-date" datetime="2025-05-16">2025.05.16</time>
+                </div>
+                <div class="card-img">
+                  <img src="/resource/images/ai/resources/sub-resources-img.png" alt="RAI Tool 제공 관련 추상적 이미지" />
+                </div>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Pagination (공통) -->
+          <nav class="pagination" aria-label="페이지네이션">
+            <button class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled" aria-label="이전 페이지"
+              disabled>
+              <span class="visually-hidden">이전</span>
+            </button>
+            <button class="pagination__item pagination__item--active" aria-current="page">1</button>
+            <button class="pagination__item">2</button>
+            <button class="pagination__item">3</button>
+            <button class="pagination__item">4</button>
+            <button class="pagination__item">5</button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
+              <span class="visually-hidden">다음</span>
+            </button>
+          </nav>
+        </div>
+        <div class="tabs__panel" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+          <!-- What's New Content Here -->
+
+          <!-- Pagination (공통) -->
+          <nav class="pagination" aria-label="페이지네이션">
+            <button class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled" aria-label="이전 페이지"
+              disabled>
+              <span class="visually-hidden">이전</span>
+            </button>
+            <button class="pagination__item pagination__item--active" aria-current="page">1</button>
+            <button class="pagination__item">2</button>
+            <button class="pagination__item">3</button>
+            <button class="pagination__item">4</button>
+            <button class="pagination__item">5</button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
+              <span class="visually-hidden">다음</span>
+            </button>
+          </nav>
+        </div>
+        <div class="tabs__panel" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+          <!-- Technical Report Content Here -->
+
+          <!-- Pagination (공통) -->
+          <nav class="pagination" aria-label="페이지네이션">
+            <button class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled" aria-label="이전 페이지"
+              disabled>
+              <span class="visually-hidden">이전</span>
+            </button>
+            <button class="pagination__item pagination__item--active" aria-current="page">1</button>
+            <button class="pagination__item">2</button>
+            <button class="pagination__item">3</button>
+            <button class="pagination__item">4</button>
+            <button class="pagination__item">5</button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
+              <span class="visually-hidden">다음</span>
+            </button>
+          </nav>
+        </div>
+        <div class="tabs__panel" id="tab-panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+          <!-- Publications Content Here -->
+
+          <!-- Pagination (공통) -->
+          <nav class="pagination" aria-label="페이지네이션">
+            <button class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled" aria-label="이전 페이지"
+              disabled>
+              <span class="visually-hidden">이전</span>
+            </button>
+            <button class="pagination__item pagination__item--active" aria-current="page">1</button>
+            <button class="pagination__item">2</button>
+            <button class="pagination__item">3</button>
+            <button class="pagination__item">4</button>
+            <button class="pagination__item">5</button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
+              <span class="visually-hidden">다음</span>
+            </button>
+          </nav>
+
+          <!-- 모바일에서만 노출되는 더보기 버튼 -->
+          <div class="mb-moreBtn">
+            <button type="button" class="moreBtn basicBtn" aria-label="더 많은 콘텐츠 불러오기"
+              aria-controls="usecase-card-list-horizontal" aria-live="polite">
+              <span aria-hidden="true">+</span>
+              <span class="visually-hidden">더보기</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <!-- Left: Info -->
+      <div class="footer-info">
+        <div class="footer-contact">
+          비즈니스 문의 : <a href="mailto:k.intelligence@kt.com">k.intelligence@kt.com</a>
+        </div>
+        <div class="footer-links">
+          <a href="#">이용약관</a>
+          <span class="footer-divider">|</span>
+          <a href="#" class="bold">개인정보처리방침</a>
+        </div>
+        <div class="footer-copyright">Copyright© KT Corp. All rights reserved.</div>
+      </div>
+      <ul class="footer-menus">
+        <li><a href="#">Solution</a></li>
+        <li><a href="#">Use Case</a></li>
+        <li><a href="#">Tech&</a></li>
+      </ul>
+      <!-- Right: Logo -->
+      <div class="footer-logo">
+        <img src="/resource/images/ai/icons/footer_logo.svg" alt="KT 로고" width="60" height="40" />
+        <p class="mobile-footer-copyright">ⓒ KT Corp.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-external-links">
+        <a href="#" target="_blank" rel="noopener noreferrer">KT
+          <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+        </a>
+        <span class="footer-divider">|</span>
+        <a href="#" target="_blank" rel="noopener noreferrer">Inside KT
+          <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+        </a>
+        <span class="footer-divider">|</span>
+        <a href="#" target="_blank" rel="noopener noreferrer">KT Enterprise
+          <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+        </a>
+        <span class="footer-divider">|</span>
+        <a href="#" target="_blank" rel="noopener noreferrer">About KT
+          <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+        </a>
+      </div>
+      <div class="footer-sns">
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT Instagram (새 창)">
+          <img src="/resource/images/ai/icons/insta_pc.svg" alt="Instagram" width="28" height="28" />
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT YouTube (새 창)">
+          <img src="/resource/images/ai/icons/youtube_pc.svg" alt="YouTube" width="28" height="28" />
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT LinkedIn (새 창)">
+          <img src="/resource/images/ai/icons/linkedin_pc.svg" alt="LinkedIn" width="28" height="28" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/ai/common/header.js" defer></script>
+</body>
+
 </html>

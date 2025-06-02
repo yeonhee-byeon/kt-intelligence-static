@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
 //arcodian
 (function () {
   function closeAllAccordionItems(container, exceptItem) {
@@ -95,5 +96,117 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 리사이즈시 높이 재설정
   window.addEventListener('resize', setMidBannerHeight);
+
+  // 스티키 헤더 show 클래스 토글
+  function toggleStickyHeader() {
+    const stickyHeader = document.getElementById('sticky-header');
+    const tabsComponent = document.querySelector('.tabs-component');
+
+    if (!stickyHeader || !tabsComponent) return;
+
+    function checkScroll() {
+      const tabsRect = tabsComponent.getBoundingClientRect();
+      const headerHeight = document.querySelector('#main-header').offsetHeight;
+
+      // 첫 번째 li가 active 상태일 때는 항상 show 클래스 유지
+      const firstLi = stickyHeader.querySelector('.sticky-header-list li:first-child');
+      if (firstLi && firstLi.classList.contains('active')) {
+        stickyHeader.classList.add('show');
+        return;
+      }
+
+      if (tabsRect.top <= headerHeight) {
+        stickyHeader.classList.add('show');
+      } else {
+        stickyHeader.classList.remove('show');
+      }
+    }
+
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', checkScroll);
+
+    // 초기 로드시 한번 체크
+    checkScroll();
+
+    // 솔루션 sub 탭 스티키 헤더 클릭 이벤트
+    const stickyItems = stickyHeader.querySelectorAll('.tab-sticky-header .sticky-header-list li');
+    let isScrolling = false;
+
+    stickyItems.forEach((item, index) => {
+      item.addEventListener('click', function () {
+        const targetId = this.getAttribute('data-section');
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+          isScrolling = true;
+          const headerHeight = document.querySelector('#main-header').offsetHeight;
+          const targetRect = targetSection.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const targetPosition = scrollTop + targetRect.top - headerHeight;
+
+          // 첫 번째 li 클릭 시 sticky-header show
+          if (index === 0) {
+            stickyHeader.classList.add('show');
+            window.scrollTo({
+              top: targetPosition - 2,
+              behavior: 'smooth'
+            });
+          } else {
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+
+          // 활성화된 탭 버튼 클릭
+          const tabButton = document.querySelector(`[aria-labelledby="${targetId}"]`);
+          if (tabButton) {
+            tabButton.click();
+          }
+
+          // 모든 li에서 active 클래스 제거
+          stickyItems.forEach(li => li.classList.remove('active'));
+          // 클릭된 li에 active 클래스 추가
+          this.classList.add('active');
+
+          // 스크롤이 완료된 후 isScrolling 플래그 해제
+          setTimeout(() => {
+            isScrolling = false;
+          }, 1000);
+        }
+      });
+    });
+
+    // 스크롤 시 현재 보이는 섹션에 해당하는 li에 active 클래스 추가
+    function updateActiveItem() {
+      if (isScrolling) return; // 스크롤 중에는 업데이트하지 않음
+
+      const sections = Array.from(document.querySelectorAll('.tabs__panel'));
+      const headerHeight = document.querySelector('#main-header').offsetHeight;
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        // 섹션이 헤더 아래에 위치할 때 active
+        if (rect.top <= headerHeight && rect.bottom >= headerHeight) {
+          const sectionId = section.id;
+          stickyItems.forEach(item => {
+            if (item.getAttribute('data-section') === sectionId) {
+              item.classList.add('active');
+            } else {
+              item.classList.remove('active');
+            }
+          });
+        }
+      });
+    }
+
+    // 스크롤 이벤트에 updateActiveItem 추가
+    window.addEventListener('scroll', updateActiveItem);
+  }
+
+  // 초기 로드시 실행
+  document.addEventListener('DOMContentLoaded', function () {
+    toggleStickyHeader();
+  });
 
 })();

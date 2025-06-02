@@ -19,8 +19,6 @@
     <link rel="stylesheet" href="/css/ai/solution.css">
     <link rel="stylesheet" href="/css/ai/solution_cy.css">
 
-    <!-- Tabs Component (공통) -->
-    <script src="/js/ai/sub_cy.js"></script>
 </head>
 
 <body>
@@ -134,14 +132,11 @@
         </div>
 
         <!-- Sticky Header -->
-        <div id="sticky-header" class="sticky-header">
+        <div id="sticky-header" class="sticky-header tab-sticky-header">
             <div class="sticky-header-inner">
                 <ul class="sticky-header-list">
-                    <li data-section="parallax-depth-section">K Intelligence 구성요소</li>
-                    <li data-section="kquality-section">K Quality Framework</li>
-                    <li data-section="eco-section">K ECO</li>
-                    <li data-section="usecase-section">Use Case</li>
-                    <li data-section="news-section">새로운 소식</li>
+                    <li data-section="tab-panel-1">Solution 01</li>
+                    <li data-section="tab-panel-2">Solution 02</li>
                 </ul>
             </div>
         </div>
@@ -421,16 +416,6 @@
         <section class="content-section agent-pattern tabs-component">
             <div class="content-inner">
 
-                <div class="tabs-wrapper">
-                    <nav class="tabs" role="tablist" aria-label="Tech& 탭">
-                        <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true"
-                            aria-controls="tab-panel-1" id="tab-1">Solution 01</button>
-                        <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-2"
-                            id="tab-2">Solution 02</button>
-                    </nav>
-                </div>
-
-
                 <div class="tab-inner-wrapper">
                     <!-- 1번 탭 컨텐츠 -->
                     <div class="tabs__panel tabs__panel--active" id="tab-panel-1" role="tabpanel"
@@ -604,7 +589,7 @@
 
 
                     <!-- 2번 탭 컨텐츠 -->
-                    <div class="tabs__panel" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+                    <div class="tabs__panel" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2">
 
                         <div class="tab-section">
                             <div class="title-wrapper">
@@ -845,6 +830,9 @@
     <script src="/js/ai/common/aos.js"></script>
     <script src="/js/ai/common/header.js"></script>
     <script src="/js/ai/solution.js"></script>
+
+    <!-- Tabs Component (공통) -->
+    <script src="/js/ai/sub_cy.js"></script>
     <script>
         AOS.init();
 

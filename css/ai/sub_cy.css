@@ -9,7 +9,7 @@
 
 /* Content Layout */
 .sub-content {
-  padding-top: 7.5rem;
+  padding-top: 13rem;
   padding-bottom: 10rem;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .sub-conSec {
-  margin-top: 10rem;
+  margin-top: 12.5rem;
 }
 
 /* Typography */
@@ -458,7 +458,7 @@
   }
 
   .sub-content {
-    padding-top: 5rem;
+    padding-top: 16.4rem;
     padding-bottom: 7.2rem;
   }
 
@@ -516,9 +516,9 @@
     background-image: url('/resource/images/ai/icons/mb-moreBtn.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 2rem 2rem;
-    width: 8rem;
-    height: 8rem;
+    background-size: 2.4rem 2.4rem;
+    width: 7.2rem;
+    height: 7.2rem;
     border-radius: 50%;
   }
 
@@ -529,7 +529,7 @@
   }
 
   .useCasePage .card-list-horizontal .card:nth-child(n+2) {
-    margin-top: 5rem;
+    margin-top: 6rem;
   }
 
   .tech-card .card-img {
@@ -548,11 +548,11 @@
   }
 
   .useCasePage .card-list-horizontal .card .card-txts {
-    margin-top: 1.8rem;
+    margin-top: 2rem;
   }
 
   .useCasePage .card-tags {
-    margin-top: 1.6rem;
+    margin-top: 0.8rem;
   }
 
 
