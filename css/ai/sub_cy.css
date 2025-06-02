@@ -3,6 +3,10 @@
   display: flex;
 }
 
+.content-inner {
+  width: 100%;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -458,6 +462,10 @@
   left: 2.5rem;
 }
 
+
+
+
+
 /* Mobile Styles */
 @media (max-width: 767px) {
   .sub-content {
@@ -491,9 +499,10 @@
   }
 
   .card-tags>span {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 500;
     line-height: normal;
+    padding: 0.5rem 1.2rem;
   }
 
   /* // 추후 common.css로 이동 */
@@ -665,6 +674,18 @@
   .techDetailPage .tech-detail-article {
     margin-top: 4.8rem;
     padding-top: 6.6rem;
+  }
+
+  .tech-detail-header .card-tags span {
+    background-color: var(--white-color);
+    border: 1px solid #b2b2b2;
+  }
+
+  .tech-detail-banner {
+    margin-top: 8rem;
+    height: 100%;
+    padding: 20%;
+    background-position: top;
   }
 
 }

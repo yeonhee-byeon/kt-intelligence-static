@@ -41,10 +41,8 @@
 }
 
 :root {
-  --primary-color: #ff0000;
-  /* --secondary-color: #fff; */
-  --gradation-color: linear-gradient(95deg, #fc4c41 5.99%, #8a0f0e 178.99%);
-  /* gray scale */
+  --primary-color: #ff0000;/* --secondary-color: #fff; */
+  --gradation-color: linear-gradient(95deg, #fc4c41 5.99%, #8a0f0e 178.99%);/* gray scale */
   --black-color: #000000;
   --gray-950-color: #101010;
   --gray-900-color: #333333;
@@ -59,32 +57,19 @@
   --gray-50-color: #fafafa;
   --white-color: #ffffff;
   --font-base: "Pretendard", sans-serif;
-  --font-size-sm: 0.875rem;
-  /* 14px */
-  --font-size-base: 1rem;
-  /* 16px */
-  --font-size-md: 1.125rem;
-  /* 18px */
-  --font-size-lg: 1.25rem;
-  /* 20px */
-  --font-size-xl: 1.375rem;
-  /* 22px */
-  --font-size-2xl: 1.5rem;
-  /* 24px */
-  --font-size-3xl: 1.625rem;
-  /* 26px */
-  --font-size-4xl: 1.875rem;
-  /* 30px */
-  --font-size-5xl: 2rem;
-  /* 32px */
-  --font-size-6xl: 2.5rem;
-  /* 40px */
-  --font-size-7xl: 3.5rem;
-  /* 56px */
-  --font-size-8xl: 4.5rem;
-  /* 72px */
-  --font-size-9xl: 5.625rem;
-  /* 90px */
+  --font-size-sm: 0.875rem;/* 14px */
+  --font-size-base: 1rem;/* 16px */
+  --font-size-md: 1.125rem;/* 18px */
+  --font-size-lg: 1.25rem;/* 20px */
+  --font-size-xl: 1.375rem;/* 22px */
+  --font-size-2xl: 1.5rem;/* 24px */
+  --font-size-3xl: 1.625rem;/* 26px */
+  --font-size-4xl: 1.875rem;/* 30px */
+  --font-size-5xl: 2rem;/* 32px */
+  --font-size-6xl: 2.5rem;/* 40px */
+  --font-size-7xl: 3.5rem;/* 56px */
+  --font-size-8xl: 4.5rem;/* 72px */
+  --font-size-9xl: 5.625rem;/* 90px */
   --line-height-136: 1.36;
   --line-height-140: 1.4;
   --line-height-150: 1.5;
