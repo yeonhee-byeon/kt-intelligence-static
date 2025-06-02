@@ -586,48 +586,48 @@ window.addEventListener("load", function () {
 })();
 
 // Custom Slider
-(function () {
-  const slider = document.getElementById("custom-slider");
-  const track = document.getElementById("custom-slider-track");
-  const slides = Array.from(track.children);
-  const slideCount = slides.length;
-  const slideWidth = slides[0].offsetWidth + 32;
-  let animationId;
-  let pos = 0;
-  let isPaused = false;
-  let lastTimestamp = 0;
-  const FRAME_RATE = 60; // 60fps
-  const FRAME_INTERVAL = 1000 / FRAME_RATE;
-  const MOVE_SPEED = 1;
+// (function () {
+//   const slider = document.getElementById("custom-slider");
+//   const track = document.getElementById("custom-slider-track");
+//   const slides = Array.from(track.children);
+//   const slideCount = slides.length;
+//   const slideWidth = slides[0].offsetWidth + 32;
+//   let animationId;
+//   let pos = 0;
+//   let isPaused = false;
+//   let lastTimestamp = 0;
+//   const FRAME_RATE = 60; // 60fps
+//   const FRAME_INTERVAL = 1000 / FRAME_RATE;
+//   const MOVE_SPEED = 1;
 
-  // 트랙 복제(무한루프)
-  track.innerHTML += track.innerHTML;
+//   // 트랙 복제(무한루프)
+//   track.innerHTML += track.innerHTML;
 
-  function animate(timestamp) {
-    if (!lastTimestamp) lastTimestamp = timestamp;
+//   function animate(timestamp) {
+//     if (!lastTimestamp) lastTimestamp = timestamp;
 
-    const elapsed = timestamp - lastTimestamp;
+//     const elapsed = timestamp - lastTimestamp;
 
-    if (elapsed > FRAME_INTERVAL) {
-      if (!isPaused) {
-        pos -= MOVE_SPEED;
-        if (Math.abs(pos) >= slideWidth * slideCount) {
-          pos = 0;
-        }
-        track.style.transform = `translate3d(${pos}px, 0, 0)`;
-      }
-      lastTimestamp = timestamp;
-    }
+//     if (elapsed > FRAME_INTERVAL) {
+//       if (!isPaused) {
+//         pos -= MOVE_SPEED;
+//         if (Math.abs(pos) >= slideWidth * slideCount) {
+//           pos = 0;
+//         }
+//         track.style.transform = `translate3d(${pos}px, 0, 0)`;
+//       }
+//       lastTimestamp = timestamp;
+//     }
 
-    animationId = requestAnimationFrame(animate);
-  }
+//     animationId = requestAnimationFrame(animate);
+//   }
 
-  slider.addEventListener("mouseenter", () => {
-    isPaused = true;
-  });
-  slider.addEventListener("mouseleave", () => {
-    isPaused = false;
-  });
+//   slider.addEventListener("mouseenter", () => {
+//     isPaused = true;
+//   });
+//   slider.addEventListener("mouseleave", () => {
+//     isPaused = false;
+//   });
 
-  animate();
-})();
+//   animate();
+// })();

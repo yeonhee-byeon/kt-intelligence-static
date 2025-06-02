@@ -504,7 +504,7 @@
 .pds-kon-group h3 {
   font-size: 10.625rem;
   font-weight: bold;
-  background: var(--gradation-color);
+  background: var(--gradation-color-k);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -513,6 +513,10 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
+}
+.pds-kon-group h3 img {
+  width: 7.788rem;
+  height: 7.563rem;
 }
 .pds-kon-group p {
   font-size: 2rem;
@@ -594,7 +598,8 @@
   font-size: 5rem;
   font-weight: bold;
   letter-spacing: var(--letter-spacing-md);
-  background: var(--gradation-color);
+  line-height: 1.1;
+  background: var(--gradation-color-k);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -612,6 +617,7 @@
   letter-spacing: var(--letter-spacing-md);
 }
 .pds-menu-item p {
+  margin-top: -0.75rem;
   font-size: var(--font-size-lg);
   font-weight: 700;
   color: var(--gray-800-color);
@@ -639,13 +645,13 @@
   transform: translateX(-50%);
   font-size: var(--font-size-8xl);
   font-weight: bold;
-  background: var(--gradation-color);
+  background: var(--gradation-color-k);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
   text-align: center;
-  gap: 1rem;
+  gap: 0.938rem;
 }
 .pds-cube-list {
   position: relative;
@@ -1188,9 +1194,16 @@
 .custom-slider-track {
   display: flex;
   width: max-content;
-  will-change: transform;
-  transition: none;
   gap: 2rem;
+  animation: customSliderLoop 40s linear infinite;
+}
+@keyframes customSliderLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 .custom-slide {
   flex: 0 0 25.625rem;
@@ -1263,6 +1276,10 @@
   line-height: 1.52;
   letter-spacing: -0.02em;
   margin-bottom: 0.813rem;
+}
+.usecase-btn {
+  width: fit-content;
+  margin: 4.25rem auto 0;
 }
 
 /* News Section (Figma 기반) */
@@ -1367,6 +1384,7 @@
 .kdata-icon-group img {
   width: 11.5rem;
   height: 3.5rem;
+  object-fit: contain;
 }
 .kdata-logos-row {
   display: flex;
