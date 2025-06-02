@@ -1342,6 +1342,7 @@
   font-weight: 400;
   line-height: var(--line-height-172);
   letter-spacing: -0.18px;
+  white-space: nowrap;
 }
 
 .table-advantage-wrapper .table-advantage-item-inner .table-advantage-item-content .tripple-layout .tripple-layout-item li+li {
