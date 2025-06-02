@@ -135,6 +135,7 @@
   background-color: var(--white-color);
   transition: background-color 0.3s ease;
   white-space: nowrap;
+  color: var(--gray-900-color);
 }
 
 .card-tags>span:nth-child(n + 2) {
@@ -409,7 +410,6 @@
   background-color: #eee;
   border: 0;
   font-weight: 500;
-  color: var(--gray-900-color);
 }
 
 .tech-detail-header .tech-detail-date {
@@ -425,6 +425,13 @@
   margin-top: 3.75rem;
   border-top: 1px solid #e9e9e9;
   padding-top: 6.25rem;
+}
+
+.techDetailPage .tech-detail-article img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
 }
 
 .tech-detail-bottom {
@@ -453,10 +460,6 @@
 
 /* Mobile Styles */
 @media (max-width: 767px) {
-  html {
-    font-size: 62.5% !important;
-  }
-
   .sub-content {
     padding-top: 12rem;
     padding-bottom: 7.2rem;
@@ -489,6 +492,8 @@
 
   .card-tags>span {
     font-size: 1.3rem;
+    font-weight: 500;
+    line-height: normal;
   }
 
   /* // 추후 common.css로 이동 */
@@ -632,4 +637,34 @@
   .tech-card .card-tags {
     margin-top: 0;
   }
+
+  /* resourcesDetailPage */
+  .sub-content.techDetailPage {
+    padding-top: 9.4rem;
+  }
+
+  .tech-detail-header .tech-detail-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 142%;
+    letter-spacing: -0.64px;
+    margin: 1.6rem 0 2.4rem;
+  }
+
+  .tech-detail-header .tech-detail-title br {
+    display: none;
+  }
+
+  .tech-detail-header .tech-detail-date {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 172%;
+    margin-top: 1.6rem;
+  }
+
+  .techDetailPage .tech-detail-article {
+    margin-top: 4.8rem;
+    padding-top: 6.6rem;
+  }
+
 }
