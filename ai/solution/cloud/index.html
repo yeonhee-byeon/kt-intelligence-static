@@ -1,453 +1,407 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KT Intelligence</title>
 
-    <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
-    <!-- Reset CSS -->
-    <link rel="stylesheet" href="/css/ai/common/reset.css" />
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="/css/ai/common/common.css" />
-    <!-- Sub CSS -->
-    <link rel="stylesheet" href="/css/ai/sub_cy.css" />
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/ai/solution.css" />
-    <link rel="stylesheet" href="/css/ai/solution_cy.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KT Intelligence</title>
 
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="/css/ai/common/aos.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header id="main-header" class="header">
-      <div class="header-inner">
-        <!-- Left: Logo -->
-        <div class="header-logo">
-          <a href="/ai/main/">
-            <img src="/resource/images/ai/icons/logo.svg" alt="logo" width="162" height="32" class="logo-img" />
+  <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
+  <!-- Reset CSS -->
+  <link rel="stylesheet" href="/css/ai/common/reset.css" />
+  <!-- Common CSS -->
+  <link rel="stylesheet" href="/css/ai/common/common.css" />
+  <!-- Sub CSS -->
+  <link rel="stylesheet" href="/css/ai/sub_cy.css" />
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="/css/ai/solution.css" />
+  <link rel="stylesheet" href="/css/ai/solution_cy.css" />
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="/css/ai/common/aos.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header id="main-header" class="header dark-header">
+    <div class="header-inner">
+      <!-- Left: Logo -->
+      <div class="header-logo">
+        <a href="/ai/main/">
+          <img src="/resource/images/ai/icons/logo.svg" alt="logo" width="162" height="32" class="logo-img" />
+        </a>
+      </div>
+      <!-- Center: Navigation (Desktop) -->
+      <nav class="header-nav">
+        <div class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Solution
+            <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
           </a>
+          <ul class="dropdown-menu">
+            <li><a href="/ai/solution/model/">K On Model</a></li>
+            <li><a href="/ai/solution/RAG/">K On RAG</a></li>
+            <li><a href="/ai/solution/agent/">K On Agent</a></li>
+            <li><a href="/ai/solution/RAI/">K On RAI</a></li>
+            <li><a href="/ai/solution/studio/">K On Studio</a></li>
+            <li><a href="/ai/solution/cloud/">K On Cloud</a></li>
+          </ul>
         </div>
-        <!-- Center: Navigation (Desktop) -->
-        <nav class="header-nav">
-          <div class="nav-item has-dropdown">
-            <a href="#" class="nav-link"
-              >Solution
-              <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="/ai/solution/model/">K On Model</a></li>
-              <li><a href="/ai/solution/RAG/">K On RAG</a></li>
-              <li><a href="/ai/solution/agent/">K On Agent</a></li>
-              <li><a href="/ai/solution/RAI/">K On RAI</a></li>
-              <li><a href="/ai/solution/studio/">K On Studio</a></li>
-              <li><a href="/ai/solution/cloud/">K On Cloud</a></li>
-            </ul>
-          </div>
-          <div class="nav-item"><a href="/ai/usecase/" class="nav-link">Use Cases</a></div>
-          <div class="nav-item"><a href="/ai/resources/" class="nav-link">Resources</a></div>
-        </nav>
-        <!-- Right: Links, Language, Login (Desktop) -->
-        <div class="header-right">
-          <a href="#" class="right-link">
-            Kode
-            <img
-              src="/resource/images/ai/icons/arrow-up-right-black.svg"
-              alt=""
-              width="16"
-              height="28"
-              class="arrow-icon"
-            />
+        <div class="nav-item"><a href="/ai/usecase/" class="nav-link">Use Cases</a></div>
+        <div class="nav-item"><a href="/ai/resources/" class="nav-link">Resources</a></div>
+      </nav>
+      <!-- Right: Links, Language, Login (Desktop) -->
+      <div class="header-right">
+        <a href="#" class="right-link">
+          Inside KT
+          <img src="/resource/images/ai/icons/arrow-up-right-black.svg" alt="" width="16" height="28"
+            class="arrow-icon" />
+        </a>
+        <a href="#" class="right-link">
+          Kode
+          <img src="/resource/images/ai/icons/arrow-up-right-black.svg" alt="" width="16" height="28"
+            class="arrow-icon" />
+        </a>
+        <button class="header-btn">K on Model 체험하기</button>
+        <div class="header-lang" id="lang-dropdown">
+          <button class="lang-btn" id="lang-btn">
+            <img src="/resource/images/ai/icons/globe.svg" alt="globe" width="28" height="28" />
+            <span id="lang-current">KR</span>
+            <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
+          </button>
+          <ul class="lang-menu" id="lang-menu">
+            <li><button data-lang="KR">KR</button></li>
+            <li><button data-lang="EN">EN</button></li>
+          </ul>
+        </div>
+        <!-- 모바일 메뉴 버튼 -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+          <img src="/resource/images/ai/mobile/ico-menu.svg" alt="menu" width="28" height="28" />
+        </button>
+      </div>
+    </div>
+    <!-- 모바일 메뉴 -->
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu-inner">
+        <div class="mobile-menu-header">
+          <a href="/ai/main/" class="mobile-menu-logo">
+            <img src="/resource/images/ai/icons/logo.svg" alt="K intelligence" />
           </a>
-          <button class="header-btn">K on Model 체험하기</button>
-          <div class="header-lang" id="lang-dropdown">
-            <button class="lang-btn" id="lang-btn">
-              <img src="/resource/images/ai/icons/globe.svg" alt="globe" width="28" height="28" />
-              <span id="lang-current">KR</span>
-              <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
-            </button>
-            <ul class="lang-menu" id="lang-menu">
-              <li><button data-lang="KR">KR</button></li>
-              <li><button data-lang="EN">EN</button></li>
-            </ul>
-          </div>
-          <!-- 모바일 메뉴 버튼 -->
-          <button class="mobile-menu-btn" id="mobile-menu-btn">
-            <img src="/resource/images/ai/mobile/ico-menu.svg" alt="menu" width="28" height="28" />
+          <button class="mobile-menu-close" id="mobile-menu-close">
+            <img src="/resource/images/ai/mobile/ico-close.svg" alt="close" />
           </button>
         </div>
-
-        <!-- 모바일 메뉴 -->
-        <div class="mobile-menu" id="mobile-menu">
-          <div class="mobile-menu-inner">
-            <div class="mobile-menu-header">
-              <a href="/ai/main/" class="mobile-menu-logo">
-                <img src="/resource/images/ai/icons/logo.svg" alt="K intelligence" />
-              </a>
-              <button class="mobile-menu-close" id="mobile-menu-close">
-                <img src="/resource/images/ai/mobile/ico-close.svg" alt="close" />
+        <nav class="mobile-menu-nav">
+          <ul>
+            <li class="mobile-menu-item has-sub">
+              <button class="mobile-menu-link" id="mobile-solution-toggle">
+                <strong>Solution</strong>
+                <img src="/resource/images/ai/icons/ico-up.svg" alt="펼치기" />
               </button>
-            </div>
-            <nav class="mobile-menu-nav">
-              <ul>
-                <li class="mobile-menu-item has-sub">
-                  <button class="mobile-menu-link" id="mobile-solution-toggle">
-                    <strong>Solution</strong>
-                    <img src="/resource/images/ai/icons/ico-up.svg" alt="펼치기" />
-                  </button>
-                  <ul class="mobile-sub-menu" id="mobile-solution-sub">
-                    <li><a href="#">K on Model</a></li>
-                    <li><a href="#">K on RAG</a></li>
-                    <li><a href="#">K on Agent</a></li>
-                    <li><a href="#">K on RAI</a></li>
-                    <li><a href="#">K on Cloud</a></li>
-                    <li><a href="#">K on Studio</a></li>
-                  </ul>
-                </li>
-                <li class="mobile-menu-item">
-                  <a href="#" class="mobile-menu-link"
-                    >Use Cases <img src="/resource/images/ai/icons/ico-up.svg" alt=">"
-                  /></a>
-                </li>
-                <li class="mobile-menu-item">
-                  <a href="#" class="mobile-menu-link"
-                    >Resources <img src="/resource/images/ai/icons/ico-up.svg" alt=">"
-                  /></a>
-                </li>
+              <ul class="mobile-sub-menu" id="mobile-solution-sub">
+                <li><a href="#">K on Model</a></li>
+                <li><a href="#">K on RAG</a></li>
+                <li><a href="#">K on Agent</a></li>
+                <li><a href="#">K on RAI</a></li>
+                <li><a href="#">K on Cloud</a></li>
+                <li><a href="#">K on Studio</a></li>
               </ul>
-            </nav>
-            <div class="mobile-menu-bottom">
-              <div class="mobile-menu-links">
-                <a href="#" class="mobile-menu-ext-link"
-                  >Kode <img src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부"
-                /></a>
-                <a href="#" class="mobile-menu-ext-link"
-                  >체험하기 <img src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부"
-                /></a>
-              </div>
-              <div class="mobile-menu-bottom-row">
-                <div class="mobile-menu-lang">
-                  <button class="active">KOR</button>
-                  <button>ENG</button>
-                </div>
-                <a href="mailto:k.intelligence@kt.com" class="mobile-menu-contact">
-                  <img src="/resource/images/ai/icons/mail.svg" alt="메일" /> 비지니스 문의
-                </a>
-              </div>
+            </li>
+            <li class="mobile-menu-item">
+              <a href="#" class="mobile-menu-link">Use Cases <img src="/resource/images/ai/icons/ico-up.svg"
+                  alt=">" /></a>
+            </li>
+            <li class="mobile-menu-item">
+              <a href="#" class="mobile-menu-link">Resources <img src="/resource/images/ai/icons/ico-up.svg"
+                  alt=">" /></a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile-menu-bottom">
+          <div class="mobile-menu-links">
+            <a href="#" class="mobile-menu-ext-link">inside KT <img src="/resource/images/ai/icons/arrow-up-right20.svg"
+                alt="외부" /></a>
+            <a href="#" class="mobile-menu-ext-link">Kode <img src="/resource/images/ai/icons/arrow-up-right20.svg"
+                alt="외부" /></a>
+            <a href="#" class="mobile-menu-ext-link">체험하기 <img src="/resource/images/ai/icons/arrow-up-right20.svg"
+                alt="외부" /></a>
+          </div>
+          <div class="mobile-menu-bottom-row">
+            <div class="mobile-menu-lang">
+              <button class="active">KOR</button>
+              <button>ENG</button>
             </div>
+            <a href="mailto:k.intelligence@kt.com" class="mobile-menu-contact">
+              <img src="/resource/images/ai/icons/mail.svg" alt="메일" /> 비지니스 문의
+            </a>
           </div>
         </div>
       </div>
+    </div>
+    <!-- Sticky Header -->
+    <div id="sticky-header" class="sticky-header">
+      <div class="sticky-header-inner">
+        <ul class="sticky-header-list">
+          <li data-section="parallax-depth-section">K Intelligence 구성요소</li>
+          <li data-section="kquality-section">K Quality Framework</li>
+          <li data-section="eco-section">K ECO</li>
+          <li data-section="usecase-section">Use Cases</li>
+          <li data-section="news-section">새로운 소식</li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
-      <!-- Sticky Header -->
-      <div id="sticky-header" class="sticky-header">
-        <div class="sticky-header-inner">
-          <ul class="sticky-header-list">
-            <li data-section="parallax-depth-section">K Intelligence 구성요소</li>
-            <li data-section="kquality-section">K Quality Framework</li>
-            <li data-section="eco-section">K ECO</li>
-            <li data-section="usecase-section">Use Cases</li>
-            <li data-section="news-section">새로운 소식</li>
+  <!-- Banner Section -->
+  <section id="banner-section" class="banner-section">
+    <img src="/resource/images/ai/solution/cloud/banner-bg.png" alt="banner" width="100%" height="100%" />
+    <img src="/resource/images/ai/solution/cloud/mo-banner-bg.jpg" alt="banner" width="100%" height="100%"
+      class="mo-banner-bg1" />
+
+    <div class="banner-inner">
+      <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+        <img src="/resource/images/ai/solution/ico-kon.svg" alt="logo" width="53" height="52" />
+        on Cloud
+      </h2>
+      <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+        데이터는 국내에, 성능은 글로벌 그대로. <br class="mo-br">
+        Secure Public Cloud는 보안과 확장성을 갖춘 <br class="mo-br">클라우드로, <br />
+        기업이 규제 부담 없이 클라우드를 자유롭고 <br class="mo-br">
+        안전하게 활용할 수 있도록 지원합니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <div class="content-wrapper">
+    <section class="content-section">
+      <div class="content-inner">
+        <div class="title-wrapper">
+          <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Customer Value</span>
+          <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+            데이터 주권 시대의 새로운 기준
+          </h2>
+          <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+            전 세계가 하이퍼스케일 클라우드를 활용하는 가운데, 우리나라도 미국 Big Tech 중심의<br />
+            클라우드에 의존하면서 데이터 주권에 대한 우려가 커지고 있습니다.
+          </p>
+        </div>
+
+        <!-- 도식 영역 및 컨텐츠 영역 -->
+        <div class="cloud-architecture-diagram">
+          <div class="cloud-arch-top" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+            <div class="cloud-arch-box">국내 데이터 보호 위한 한국형 규제 특화 서비스</div>
+            <div class="cloud-arch-box">글로벌 하이퍼스케일 클라우드 컴퓨팅 파워</div>
+          </div>
+          <div class="cloud-arch-middle" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+            <div class="cloud-arch-middle-line">
+              <div class="cloud-arch-middle-line-top"></div>
+              <div class="cloud-arch-middle-line-middle"></div>
+              <div class="cloud-arch-middle-line-bottom">
+                <img src="/resource/images/ai/solution/cloud/ico-arrow-bottom-gray.svg" alt="arrow" width="16"
+                  height="86" />
+              </div>
+            </div>
+            <div class="cloud-arch-main">
+              데이터 주권 보호 특화<br />
+              글로벌 수준의 한국적 클라우드 서비스 공동 제고
+            </div>
+          </div>
+          <div class="cloud-arch-bottom" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+            <div class="cloud-arch-layer">
+              <div class="cloud-arch-title">Software Layer (SaaS)</div>
+              <div class="cloud-arch-item">Biz</div>
+              <div class="cloud-arch-item">Application</div>
+            </div>
+            <div class="cloud-arch-layer">
+              <div class="cloud-arch-title">Platform Layer (PaaS)</div>
+              <div class="cloud-arch-item">DB</div>
+              <div class="cloud-arch-item">Dev tools</div>
+              <div class="cloud-arch-item">Middle wear</div>
+              <div class="dot"><img src="/resource/images/ai/solution/cloud/ico-dotted-black.png" alt="dot" /></div>
+              <div class="label">Dev Framework</div>
+            </div>
+            <div class="cloud-arch-layer">
+              <div class="cloud-arch-title">Infra Layer (IaaS)</div>
+              <div class="cloud-arch-item red">Storage</div>
+              <div class="cloud-arch-item red">Server</div>
+              <div class="cloud-arch-item red">Network</div>
+              <div class="dot"><img src="/resource/images/ai/solution/cloud/ico-dotted-red.png" alt="dot" /></div>
+              <div class="label red">KT Secure Public Cloud<br />(Hyper Scale)</div>
+            </div>
+            <div class="cloud-arch-layer">
+              <div class="cloud-arch-title">Local Data Center Layer</div>
+              <div class="cloud-arch-item">Public Cloud Data Center</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cloud-arch-bottom-content" data-aos="fade-up" data-aos-duration="800"
+          data-aos-easing="ease-out-cubic">
+          <ul class="cloud-arch-bottom-content-list">
+            <li>
+              <div class="cloud-arch-bottom-content-item">
+                <img src="/resource/images/ai/solution/cloud/ico-lock.svg" alt="lock" width="32" height="32" />
+                <h3>데이터 주권 보호 특화</h3>
+                <p>
+                  데이터를 국내에 안전하게 보관해,<br />
+                  해외 법률로 인한 위험 없이 안심하고<br />
+                  운영할 수 있습니다.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="cloud-arch-bottom-content-item">
+                <img src="/resource/images/ai/solution/cloud/ico-shield.svg" alt="shield" width="32" height="32" />
+                <h3>강력한 보안 컴플라이언스</h3>
+                <p>
+                  국내 법제도 및 산업 기준에 부합하는<br />
+                  맞춤형 보안 정책으로 민감 정보 처리<br />
+                  기업의 규제 대응 부담을 줄입니다.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="cloud-arch-bottom-content-item">
+                <img src="/resource/images/ai/solution/cloud/ico-globe.svg" alt="globe" width="32" height="32" />
+                <h3>글로벌 수준의 성능과 신뢰성</h3>
+                <p>
+                  Microsoft와 협력한 하이퍼스케일<br />
+                  컴퓨팅 인프라를 통해 높은 성능과<br />
+                  안정성을 갖춘 클라우드 서비스를<br />
+                  경험할 수 있습니다.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="cloud-arch-bottom-content-item">
+                <img src="/resource/images/ai/solution/cloud/ico-dir.svg" alt="direct" width="32" height="32" />
+                <h3>자산 통제력 강화</h3>
+                <p>
+                  고객이 직접 데이터 접근과<br />
+                  운영을 관리할 수 있어 자산에 대한<br />
+                  실질적인 통제권을 확보할 수 있습니다.
+                </p>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
-    </header>
-
-    <!-- Banner Section -->
-    <section id="banner-section" class="banner-section">
-      <img src="/resource/images/ai/solution/RAG/banner-bg.png" alt="banner" width="100%" height="100%" />
-      <div class="banner-inner">
-        <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-          <img src="/resource/images/ai/solution/ico-kon.svg" alt="logo" width="53" height="52" /> on Cloud
-        </h2>
-        <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-          데이터는 국내에, 성능은 글로벌 그대로. Secure Public Cloud는 보안과 확장성을 갖춘 클라우드로, <br />
-          기업이 규제 부담 없이 클라우드를 자유롭고 안전하게 활용할 수 있도록 지원합니다.
-        </p>
-      </div>
     </section>
 
-    <!-- Content Section -->
-    <div class="content-wrapper">
-      <section class="content-section">
-        <div class="content-inner">
-          <div class="title-wrapper">
-            <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Customer Value</span>
-            <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              데이터 주권 시대의 새로운 기준
-            </h2>
-            <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              전 세계가 하이퍼스케일 클라우드를 활용하는 가운데, 우리나라도 미국 Big Tech 중심의<br />
-              클라우드에 의존하면서 데이터 주권에 대한 우려가 커지고 있습니다.
-            </p>
-          </div>
-
-          <!-- 도식 영역 및 컨텐츠 영역 -->
-          <div class="cloud-architecture-diagram">
-            <div class="cloud-arch-top" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              <div class="cloud-arch-box">국내 데이터 보호 위한 한국형 규제 특화 서비스</div>
-              <div class="cloud-arch-box">글로벌 하이퍼스케일 클라우드 컴퓨팅 파워</div>
-            </div>
-            <div class="cloud-arch-middle" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              <div class="cloud-arch-middle-line">
-                <div class="cloud-arch-middle-line-top"></div>
-                <div class="cloud-arch-middle-line-middle"></div>
-                <div class="cloud-arch-middle-line-bottom">
-                  <img
-                    src="/resource/images/ai/solution/cloud/ico-arrow-bottom-gray.svg"
-                    alt="arrow"
-                    width="16"
-                    height="86"
-                  />
-                </div>
-              </div>
-              <div class="cloud-arch-main">
-                데이터 주권 보호 특화<br />
-                글로벌 수준의 한국적 클라우드 서비스 공동 제고
-              </div>
-            </div>
-            <div class="cloud-arch-bottom" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              <div class="cloud-arch-layer">
-                <div class="cloud-arch-title">Software Layer (SaaS)</div>
-                <div class="cloud-arch-item">Biz</div>
-                <div class="cloud-arch-item">Application</div>
-              </div>
-              <div class="cloud-arch-layer">
-                <div class="cloud-arch-title">Platform Layer (PaaS)</div>
-                <div class="cloud-arch-item">DB</div>
-                <div class="cloud-arch-item">Dev tools</div>
-                <div class="cloud-arch-item">Middle wear</div>
-                <div class="dot"><img src="/resource/images/ai/solution/cloud/ico-dotted-black.png" alt="dot" /></div>
-                <div class="label">Dev Framework</div>
-              </div>
-              <div class="cloud-arch-layer">
-                <div class="cloud-arch-title">Infra Layer (IaaS)</div>
-                <div class="cloud-arch-item red">Storage</div>
-                <div class="cloud-arch-item red">Server</div>
-                <div class="cloud-arch-item red">Network</div>
-                <div class="dot"><img src="/resource/images/ai/solution/cloud/ico-dotted-red.png" alt="dot" /></div>
-                <div class="label red">KT Secure Public Cloud<br />(Hyper Scale)</div>
-              </div>
-              <div class="cloud-arch-layer">
-                <div class="cloud-arch-title">Local Data Center Layer</div>
-                <div class="cloud-arch-item">Public Cloud Data Center</div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="cloud-arch-bottom-content"
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-easing="ease-out-cubic"
-          >
-            <ul class="cloud-arch-bottom-content-list">
-              <li>
-                <div class="cloud-arch-bottom-content-item">
-                  <img src="/resource/images/ai/solution/cloud/ico-lock.svg" alt="lock" width="32" height="32" />
-                  <h3>데이터 주권 보호 특화</h3>
-                  <p>
-                    데이터를 국내에 안전하게 보관해,<br />
-                    해외 법률로 인한 위험 없이 안심하고<br />
-                    운영할 수 있습니다.
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div class="cloud-arch-bottom-content-item">
-                  <img src="/resource/images/ai/solution/cloud/ico-shield.svg" alt="shield" width="32" height="32" />
-                  <h3>강력한 보안 컴플라이언스</h3>
-                  <p>
-                    국내 법제도 및 산업 기준에 부합하는<br />
-                    맞춤형 보안 정책으로 민감 정보 처리<br />
-                    기업의 규제 대응 부담을 줄입니다.
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div class="cloud-arch-bottom-content-item">
-                  <img src="/resource/images/ai/solution/cloud/ico-globe.svg" alt="globe" width="32" height="32" />
-                  <h3>글로벌 수준의 성능과 신뢰성</h3>
-                  <p>
-                    Microsoft와 협력한 하이퍼스케일<br />
-                    컴퓨팅 인프라를 통해 높은 성능과<br />
-                    안정성을 갖춘 클라우드 서비스를<br />
-                    경험할 수 있습니다.
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div class="cloud-arch-bottom-content-item">
-                  <img src="/resource/images/ai/solution/cloud/ico-dir.svg" alt="direct" width="32" height="32" />
-                  <h3>자산 통제력 강화</h3>
-                  <p>
-                    고객이 직접 데이터 접근과<br />
-                    운영을 관리할 수 있어 자산에 대한<br />
-                    실질적인 통제권을 확보할 수 있습니다.
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section">
-        <div class="content-inner">
-          <div class="title-wrapper">
-            <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Key Feature</span>
-            <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              K on Cloud의 기술적 차별점
-            </h2>
-            <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              데이터 주권, 보안 컴플라이언스, 암호화 보호, 자산 통제까지 모두 갖춰<br />
-              기업이 안심하고 사용할 수 있는 신뢰형 클라우드 환경을 제공합니다.
-            </p>
-          </div>
-
-          <div class="card-wrapper">
-            <ul class="card-list customer">
-              <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="card-item">
-                  <img
-                    src="/resource/images/ai/solution/cloud/card-img01.png"
-                    alt="card 이미지"
-                    width="676"
-                    height="360"
-                  />
-                </div>
-                <h3>Planning / Reasoning</h3>
-                <p>
-                  복잡한 문제를 스스로 분석하고, 해결 가능한 하위 작업(Sub-task)으로 나눈 뒤<br />
-                  계획과 추론을 통해 처리합니다.
-                </p>
-              </li>
-              <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="card-item">
-                  <img
-                    src="/resource/images/ai/solution/cloud/card-img02.png"
-                    alt="card 이미지"
-                    width="676"
-                    height="360"
-                  />
-                </div>
-                <h3>Memory</h3>
-                <p>사용자 정보와 과거 대화 이력을 기억해, 일관성 있고 개인화된 응답을 제공합니다.</p>
-              </li>
-              <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="card-item">
-                  <img
-                    src="/resource/images/ai/solution/cloud/card-img03.png"
-                    alt="card 이미지"
-                    width="676"
-                    height="360"
-                  />
-                </div>
-                <h3>Tool</h3>
-                <p>검색, API, 데이터베이스 등 외부 도구와 연동해 필요한 작업을 수행합니다.</p>
-              </li>
-              <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="card-item">
-                  <img
-                    src="/resource/images/ai/solution/cloud/card-img04.png"
-                    alt="card 이미지"
-                    width="676"
-                    height="360"
-                  />
-                </div>
-                <h3>Action</h3>
-                <p>외부 시스템과 상호작용하며 행동을 실행하고, 결과를 반영해 최종 응답을 제공합니다.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- KT Model 체험하기 -->
-    <section id="kt-model-section" class="kt-model-section">
-      <div class="kt-model-inner">
-        <div class="kt-model-bg">
-          <img src="/resource/images/ai/kt-model-bg.png" alt="KT Model 체험하기" />
-        </div>
-        <div class="kt-model-content">
-          <h2 class="section-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-            <span>경험해 보세요</span>
-            KT만의 한국적 인공지능
+    <section class="content-section">
+      <div class="content-inner">
+        <div class="title-wrapper">
+          <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Key Feature</span>
+          <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+            K on Cloud의 기술적 차별점
           </h2>
-          <button class="btn" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-            KT Model 체험하기
-          </button>
+          <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+            데이터 주권, 보안 컴플라이언스, 암호화 보호, 자산 통제까지 모두 갖춰<br />
+            기업이 안심하고 사용할 수 있는 신뢰형 클라우드 환경을 제공합니다.
+          </p>
+        </div>
+
+        <div class="card-wrapper">
+          <ul class="card-list customer">
+            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+              <div class="card-item">
+                <img src="/resource/images/ai/solution/cloud/card-img01.png" alt="card 이미지" width="676" height="360" />
+              </div>
+              <h3>Planning / Reasoning</h3>
+              <p>
+                복잡한 문제를 스스로 분석하고, 해결 가능한 하위 작업(Sub-task)으로 나눈 뒤<br />
+                계획과 추론을 통해 처리합니다.
+              </p>
+            </li>
+            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+              <div class="card-item">
+                <img src="/resource/images/ai/solution/cloud/card-img02.png" alt="card 이미지" width="676" height="360" />
+              </div>
+              <h3>Memory</h3>
+              <p>사용자 정보와 과거 대화 이력을 기억해, 일관성 있고 개인화된 응답을 제공합니다.</p>
+            </li>
+            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+              <div class="card-item">
+                <img src="/resource/images/ai/solution/cloud/card-img03.png" alt="card 이미지" width="676" height="360" />
+              </div>
+              <h3>Tool</h3>
+              <p>검색, API, 데이터베이스 등 외부 도구와 연동해 필요한 작업을 수행합니다.</p>
+            </li>
+            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+              <div class="card-item">
+                <img src="/resource/images/ai/solution/cloud/card-img04.png" alt="card 이미지" width="676" height="360" />
+              </div>
+              <h3>Action</h3>
+              <p>외부 시스템과 상호작용하며 행동을 실행하고, 결과를 반영해 최종 응답을 제공합니다.</p>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
+  </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-top">
-        <!-- Left: Info -->
-        <div class="footer-info">
-          <div class="footer-contact">
-            비즈니스 문의 : <a href="mailto:k.intelligence@kt.com">k.intelligence@kt.com</a>
-          </div>
-          <div class="footer-links">
-            <a href="#">이용약관</a>
-            <a href="#" class="bold">개인정보처리방침</a>
-          </div>
-          <div class="footer-copyright">Copyright© KT Corp. All rights reserved.</div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <!-- Left: Info -->
+      <div class="footer-info">
+        <div class="footer-contact">
+          비즈니스 문의 : <a href="mailto:k.intelligence@kt.com">k.intelligence@kt.com</a>
         </div>
-        <ul class="footer-menus">
-          <li><a href="#">Solution</a></li>
-          <li><a href="#">Use Cases</a></li>
-          <li><a href="#">Resources</a></li>
-        </ul>
-        <!-- Right: Logo -->
-        <div class="footer-logo">
-          <img src="/resource/images/ai/icons/footer_logo.svg" alt="KT 로고" width="60" height="40" />
+        <div class="footer-links">
+          <a href="#">이용약관</a>
+          <a href="#" class="bold">개인정보처리방침</a>
         </div>
+        <div class="footer-copyright">Copyright© KT Corp. All rights reserved.</div>
       </div>
-      <div class="footer-bottom">
-        <div class="footer-external-links">
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >KT
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >Kode
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >KT Enterprise
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >About KT
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-        </div>
-        <div class="footer-sns">
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT Instagram (새 창)">
-            <img src="/resource/images/ai/icons/insta_pc.svg" alt="Instagram" width="28" height="28" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT YouTube (새 창)">
-            <img src="/resource/images/ai/icons/youtube_pc.svg" alt="YouTube" width="28" height="28" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT LinkedIn (새 창)">
-            <img src="/resource/images/ai/icons/linkedin_pc.svg" alt="LinkedIn" width="28" height="28" />
-          </a>
-        </div>
-
-        <div class="mobile-footer-copyright">Copyright© KT Corp. All rights reserved.</div>
+      <ul class="footer-menus">
+        <li><a href="#">Solution</a></li>
+        <li><a href="#">Use Cases</a></li>
+        <li><a href="#">Resources</a></li>
+      </ul>
+      <!-- Right: Logo -->
+      <div class="footer-logo">
+        <img src="/resource/images/ai/icons/footer_logo.svg" alt="KT 로고" width="60" height="40" />
       </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-external-links">
+        <a href="#" target="_blank" rel="noopener noreferrer">KT
+          <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Kode
+          <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">KT Enterprise
+          <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">About KT
+          <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+        </a>
+      </div>
+      <div class="footer-sns">
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT Instagram (새 창)">
+          <img src="/resource/images/ai/icons/insta_pc.svg" alt="Instagram" width="28" height="28" />
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT YouTube (새 창)">
+          <img src="/resource/images/ai/icons/youtube_pc.svg" alt="YouTube" width="28" height="28" />
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT LinkedIn (새 창)">
+          <img src="/resource/images/ai/icons/linkedin_pc.svg" alt="LinkedIn" width="28" height="28" />
+        </a>
+      </div>
 
-    <!-- Script -->
-    <script src="/js/ai/common/aos.js"></script>
-    <script src="/js/ai/common/header.js"></script>
-    <script src="/js/ai/solution.js"></script>
-    <script>
-      AOS.init();
-    </script>
-  </body>
+      <div class="mobile-footer-copyright">Copyright© KT Corp. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="/js/ai/common/aos.js"></script>
+  <script src="/js/ai/common/header.js"></script>
+  <script src="/js/ai/solution.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
 </html>
