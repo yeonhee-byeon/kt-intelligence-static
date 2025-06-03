@@ -110,6 +110,7 @@ br.mo-br {
 }
 .content-inner {
   max-width: 86.5rem;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -184,6 +185,13 @@ br.mo-br {
   justify-content: center;
   gap: 1.25rem;
 }
+.card-list li {
+  flex: 1;
+}
+.card-list li:nth-child(4),
+.card-list li:nth-child(5) {
+  flex: 0;
+}
 .card-item {
   display: flex;
   flex-direction: column;
@@ -206,7 +214,7 @@ br.mo-br {
   color: var(--gray-900-color);
 }
 .card-item h4 {
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-3xl);
   font-weight: 700;
   line-height: var(--line-height-150);
   letter-spacing: var(--letter-spacing-md);
@@ -226,6 +234,7 @@ br.mo-br {
 }
 .card-item.icon {
   padding: 2.5rem;
+  width: 100%;
   height: 100%;
 }
 .card-item.icon .img {
@@ -317,31 +326,26 @@ br.mo-br {
   border-radius: 1.25rem;
   border: 1px solid var(--gray-300-color);
   overflow: hidden;
+  padding: 2.5rem;
 }
 .table-card-item h3 {
   width: 100%;
-  padding: 1.875rem 0;
-  border-bottom: 1px solid var(--gray-300-color);
+  padding-bottom: 1.25rem;
   color: var(--gray-900-color);
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-4xl);
   font-weight: 700;
   line-height: var(--line-height-150);
   letter-spacing: var(--letter-spacing-md);
-  background: var(--gray-100-color);
   text-align: center;
 }
 .table-card-item p {
   width: 100%;
-  padding: 2rem 0;
   color: var(--gray-900-color);
   font-size: var(--font-size-md);
   font-weight: 500;
   line-height: var(--line-height-172);
   letter-spacing: var(--letter-spacing-base);
   text-align: center;
-}
-.table-card-item.last h3 {
-  padding-bottom: 1.688rem;
 }
 .table-card-list.text {
   gap: 2rem;
@@ -530,7 +534,6 @@ br.mo-br {
 .list-wrapper > ul {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
 }
 .list-wrapper > ul > li {
   padding: 3rem 0;
@@ -558,7 +561,7 @@ br.mo-br {
 }
 .list-item h3 {
   min-width: 17.5rem;
-  margin: 0 6.25rem 0 4.063rem;
+  margin: 0 6.25rem 0 0;
   color: var(--gray-900-color);
   font-size: var(--font-size-4xl);
   font-weight: 700;
@@ -1077,7 +1080,7 @@ br.mo-br {
   .content-wrapper {
   }
   .content-section {
-    padding: 8rem 0 13.5rem;
+    padding: 8rem 0 10rem;
   }
   .content-inner {
     max-width: 100%;
@@ -1090,9 +1093,10 @@ br.mo-br {
   .title-wrapper span {
     font-size: 1.6rem;
     line-height: var(--line-height-172);
+    margin: 0 0 2rem;
   }
   .title-wrapper h2 {
-    margin: 2.4rem 0 3.2rem;
+    margin: 0 0 2.4rem;
     font-size: 4rem;
     line-height: 1.32;
   }
@@ -1119,7 +1123,7 @@ br.mo-br {
     gap: 1.6rem;
   }
   .card-list li {
-    flex: 1 1 100%;
+    flex: 1 1 100% !important;
   }
   .card-list li .card-item {
     padding: 2.2rem 2.4rem;
@@ -1236,15 +1240,18 @@ br.mo-br {
     width: 100%;
     height: 100%;
     border-radius: 1.2rem;
+    padding: 2rem 2.4rem;
   }
   .table-card-item h3 {
-    padding: 1.6rem 0;
-    font-size: 1.7rem;
-    line-height: var(--line-height-172);
+    padding: 0 0 1.2rem;
+    font-size: 2.2rem;
+    line-height: var(--line-height-156);
+    text-align: left;
   }
   .table-card-item p {
-    padding: 1.6rem 0;
+    padding: 0;
     font-size: 1.6rem;
+    text-align: left;
   }
   .table-card-list.text {
     gap: 4rem;
@@ -1381,7 +1388,7 @@ br.mo-br {
     line-height: var(--line-height-172);
   }
   .list-wrapper > ul > li .list-item h3 {
-    margin: 0.6rem 0 1.2rem;
+    margin: 0 0 1.2rem;
     font-size: 2.6rem;
     line-height: var(--line-height-140);
     letter-spacing: var(--letter-spacing-base);

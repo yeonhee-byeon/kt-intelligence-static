@@ -121,7 +121,7 @@ window.addEventListener("load", function () {
     r5 = r5 === 0 ? 1 : 0;
   }
 
-  gsap.set(subBannerBg, { opacity: 0, scale: 5, filter: "blur(50px)" });
+  gsap.set(subBannerBg, { opacity: 0, scale: 5, yPercent: -50, xPercent: -50, filter: "blur(50px)" });
   gsap.set(subBannerList1, { opacity: 0, x: -100 });
   gsap.set(subBannerList2, { opacity: 0, y: 100 });
   gsap.set(subBannerList3, { opacity: 0, y: 100 });
@@ -139,8 +139,8 @@ window.addEventListener("load", function () {
     scrollTrigger: {
       trigger: subBannerSection,
       start: "top top",
-      pin: true,
-      pinSpacing: true,
+      // pin: true,
+      // pinSpacing: true,
     },
   });
 
@@ -148,6 +148,8 @@ window.addEventListener("load", function () {
     opacity: 1,
     scale: 1,
     filter: "blur(0px)",
+    yPercent: -50,
+    xPercent: -50,
     duration: 12,
     ease: "power2.out",
   })
@@ -315,7 +317,7 @@ window.addEventListener("load", function () {
     .fromTo(...fadeInY(".image-obj-0", 100, "<"))
     .fromTo(...fadeInY(".image-obj-3", 100, "<", false))
     .fromTo(...fadeInY(".image-obj-6", 100, "<"))
-    .fromTo(...fadeInY(description, 100, "+=0.1"));
+    .fromTo(...fadeInY(description, 100));
 })();
 
 // ParallaxDepthSection (K intelligence 구성요소) 애니메이션
@@ -486,6 +488,7 @@ window.addEventListener("load", function () {
         unlockScroll();
       },
     },
+    onComplete: unlockScroll,
   });
 
   cubeTl
@@ -517,32 +520,21 @@ window.addEventListener("load", function () {
         xPercent: 50,
         duration: 0.8,
         ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-        onComplete: () => {
+      },
+      "-=0.6"
+    )
+    .to(
+      contentMenu,
+      {
+        opacity: 1,
+        duration: 0.8,
+        ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        onStart: () => {
           setActiveMenu(0);
         },
       },
-      "-=0.6"
-    );
-
-  const contentTl = gsap.timeline({
-    delay: 1.4,
-    scrollTrigger: {
-      trigger: container,
-      start: "+=520",
-      end: "+=680",
-      toggleActions: "play reset play reset",
-      onEnter: lockScroll,
-      onLeaveBack: unlockScroll,
-    },
-    onComplete: unlockScroll,
-  });
-
-  contentTl
-    .to(contentMenu, {
-      opacity: 1,
-      duration: 0.8,
-      ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-    })
+      "+=0.5"
+    )
     .to(
       menuTab,
       {
@@ -552,6 +544,35 @@ window.addEventListener("load", function () {
       },
       "<"
     );
+
+  // const contentTl = gsap.timeline({
+  //   delay: 1.4,
+  //   scrollTrigger: {
+  //     trigger: container,
+  //     start: "+=520",
+  //     end: "+=680",
+  //     toggleActions: "play reset play reset",
+  //     onEnter: lockScroll,
+  //     onLeaveBack: unlockScroll,
+  //   },
+  //   onComplete: unlockScroll,
+  // });
+
+  // contentTl
+  //   .to(contentMenu, {
+  //     opacity: 1,
+  //     duration: 0.8,
+  //     ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+  //   })
+  //   .to(
+  //     menuTab,
+  //     {
+  //       opacity: 1,
+  //       duration: 0.8,
+  //       ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+  //     },
+  //     "<"
+  //   );
 
   // 마지막 큐브/타이틀/설명 등장
   const cubeTl2 = gsap.timeline({
@@ -586,7 +607,7 @@ window.addEventListener("load", function () {
 })();
 
 // Custom Slider
-(function () {
-  const copy = document.querySelector(".custom-slider-track").cloneNode(true);
-  document.querySelector(".custom-slider").appendChild(copy);
-})();
+// (function () {
+//   const copy = document.querySelector(".custom-slider-track").cloneNode(true);
+//   document.querySelector(".custom-slider").appendChild(copy);
+// })();
