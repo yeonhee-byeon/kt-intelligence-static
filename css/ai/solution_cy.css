@@ -1619,14 +1619,13 @@
   }
 
   .card-wrapper.horizontal-wrapper {
-    overflow: hidden;
+    width: 100vw;
   }
 
   .card-list-horizontal {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    overflow-y: visible;
     -webkit-overflow-scrolling: touch;
     gap: 1.6rem;
     padding-bottom: 0.5rem;
@@ -1647,12 +1646,13 @@
   }
 
   .card-list-horizontal>.card:first-child {
-    margin-left: 0 !important;
+    margin-left: 2rem;
   }
 
   .card-list-horizontal {
     padding-left: 0;
     padding-right: 1rem;
+    overflow-y: visible;
   }
 
   .card-list-horizontal>.card {
@@ -1732,9 +1732,12 @@
   }
 
 
+  /* 나중 해제*/
   .agent-pattern-diagram,
   .orchestrator-diagram,
-  .cloud-architecture-diagram {
+  .cloud-architecture-diagram,
+  .table-advantage-wrapper .table-advantage-item-inner,
+  .diamond-wrapper {
     overflow-x: hidden;
   }
 
@@ -1806,6 +1809,19 @@
 
   .agent-pattern.tabs-component .table-card-list.pattern-top10-grid {
     display: block;
+  }
+
+  .divided-table-card-wrapper .table-card-item p {
+    border-top: 0;
+  }
+
+  .divided-table-card-wrapper .table-card-item {
+    height: auto;
+  }
+
+  .tab-section .list-wrapper>ul>li:nth-last-child(1) {
+    border-bottom: 0;
+    padding-bottom: 0;
   }
 
   .pattern-top10-grid .pattern-card {
@@ -1896,6 +1912,36 @@
 
   .cloud-arch-bottom-content-list li::after {
     display: none;
+  }
+
+
+  /* studio page */
+  .tripple-box-wrapper .tripple-box-list {
+    display: block;
+  }
+
+  .tripple-box-wrapper .tripple-box-list li {
+    width: 100%;
+  }
+
+  .tripple-box-wrapper .tripple-box-list li+li {
+    margin-top: 4rem;
+  }
+
+  .tripple-box-wrapper .tripple-box-list li h3 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 140%;
+    /* 36.4px */
+    letter-spacing: -0.26px;
+  }
+
+  .tripple-box-wrapper .tripple-box-list li p {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 168%;
+    /* 26.88px */
   }
 
 }
