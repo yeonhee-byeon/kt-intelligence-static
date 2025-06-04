@@ -41,8 +41,10 @@
 }
 
 :root {
-  --primary-color: #ff0000; /* --secondary-color: #fff; */
-  --gradation-color: linear-gradient(95deg, #fc4c41 5.99%, #8a0f0e 178.99%); /* gray scale */
+  --primary-color: #ff0000;
+  /* --secondary-color: #fff; */
+  --gradation-color: linear-gradient(95deg, #fc4c41 5.99%, #8a0f0e 178.99%);
+  /* gray scale */
   --gradation-color-k: linear-gradient(136deg, #fc4c41 -45.78%, #8a0f0e 195.82%);
   --black-color: #000000;
   --gray-950-color: #101010;
@@ -58,19 +60,32 @@
   --gray-50-color: #fafafa;
   --white-color: #ffffff;
   --font-base: "Pretendard", sans-serif;
-  --font-size-sm: 0.875rem; /* 14px */
-  --font-size-base: 1rem; /* 16px */
-  --font-size-md: 1.125rem; /* 18px */
-  --font-size-lg: 1.25rem; /* 20px */
-  --font-size-xl: 1.375rem; /* 22px */
-  --font-size-2xl: 1.5rem; /* 24px */
-  --font-size-3xl: 1.625rem; /* 26px */
-  --font-size-4xl: 1.875rem; /* 30px */
-  --font-size-5xl: 2rem; /* 32px */
-  --font-size-6xl: 2.5rem; /* 40px */
-  --font-size-7xl: 3.5rem; /* 56px */
-  --font-size-8xl: 4.5rem; /* 72px */
-  --font-size-9xl: 5.625rem; /* 90px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-base: 1rem;
+  /* 16px */
+  --font-size-md: 1.125rem;
+  /* 18px */
+  --font-size-lg: 1.25rem;
+  /* 20px */
+  --font-size-xl: 1.375rem;
+  /* 22px */
+  --font-size-2xl: 1.5rem;
+  /* 24px */
+  --font-size-3xl: 1.625rem;
+  /* 26px */
+  --font-size-4xl: 1.875rem;
+  /* 30px */
+  --font-size-5xl: 2rem;
+  /* 32px */
+  --font-size-6xl: 2.5rem;
+  /* 40px */
+  --font-size-7xl: 3.5rem;
+  /* 56px */
+  --font-size-8xl: 4.5rem;
+  /* 72px */
+  --font-size-9xl: 5.625rem;
+  /* 90px */
   --line-height-136: 1.36;
   --line-height-140: 1.4;
   --line-height-150: 1.5;
@@ -194,9 +209,11 @@ body,
 .nav-link:hover {
   color: var(--gray-800-color);
 }
+
 .nav-link:hover img {
   filter: invert(0.4);
 }
+
 .has-dropdown.active .nav-link img {
   transform: rotate(0deg);
 }
@@ -271,12 +288,15 @@ body,
 .right-link:hover {
   color: var(--gray-800-color);
 }
+
 .right-link:hover img {
   filter: invert(0.4);
 }
+
 .dark-header .right-link:hover img {
   filter: invert(0.4);
 }
+
 .right-link img {
   width: 1rem;
   height: 1.75rem;
@@ -318,12 +338,15 @@ body,
   font-size: var(--font-size-base);
   font-weight: bold;
 }
+
 .lang-btn:hover span {
   color: var(--gray-800-color);
 }
+
 .lang-btn:hover img {
   filter: invert(0.4);
 }
+
 .lang-btn img {
   width: 1.75rem;
   height: 1.75rem;
@@ -332,12 +355,15 @@ body,
 .dark-header .lang-btn img {
   filter: invert(1);
 }
+
 .dark-header .lang-btn:hover span {
   color: var(--gray-800-color);
 }
+
 .dark-header .lang-btn:hover img {
   filter: invert(0.4);
 }
+
 .lang-btn span {
   font-size: var(--font-size-base);
   font-weight: 700;
@@ -528,11 +554,13 @@ body,
   font-size: 0.95rem;
   color: var(--gray-400-color);
 }
+
 .footer-links a:first-child {
   display: flex;
   align-items: center;
   gap: 0.875rem;
 }
+
 .footer-links a:first-child::after {
   content: "";
   display: block;
@@ -594,6 +622,7 @@ body,
   text-decoration: none;
   transition: color 0.2s;
 }
+
 .footer-external-links a::after {
   content: "";
   display: block;
@@ -621,11 +650,13 @@ body,
   gap: 1rem;
   margin-top: 0;
 }
-.footer-sns > div {
+
+.footer-sns>div {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
+
 .footer-sns a img {
   width: 1.75rem;
   height: 1.75rem;
@@ -691,9 +722,11 @@ body,
   height: 100%;
   object-fit: cover;
 }
+
 .kt-model-bg img.mo-img {
   display: none;
 }
+
 .kt-model-content {
   position: relative;
   z-index: 1;
@@ -748,6 +781,7 @@ body,
 }
 
 @media (max-width: 767px) {
+
   /* mobile에서 노출 클래스 */
   .pc-only {
     display: none !important;
@@ -841,6 +875,7 @@ body,
     height: 3.8rem;
     object-fit: contain;
   }
+
   .mobile-footer-copyright {
     color: var(--gray-700-color);
     font-size: 1.4rem;
@@ -904,6 +939,7 @@ body,
   .footer-links a:first-child::after {
     height: 1.4rem;
   }
+
   .footer-links a:first-child {
     gap: 1.2rem;
   }
@@ -929,6 +965,7 @@ body,
     font-weight: 500;
     gap: 0.6rem;
   }
+
   .footer-external-links a:after {
     content: none;
   }
