@@ -99,36 +99,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 스티키 헤더 show 클래스 토글
   function toggleStickyHeader() {
-    const stickyHeader = document.getElementById('sticky-header');
+    const stickyHeader = document.querySelector('.tab-sticky-header');
     const tabsComponent = document.querySelector('.tabs-component');
 
     if (!stickyHeader || !tabsComponent) return;
 
+    // 플래그: 첫 번째 li 클릭 후 일정 시간 동안 show 유지
+    let forceShowStickyHeader = false;
+
     function checkScroll() {
       const tabsRect = tabsComponent.getBoundingClientRect();
       const headerHeight = document.querySelector('#main-header').offsetHeight;
+      const inRange = tabsRect.top <= headerHeight && tabsRect.bottom > headerHeight;
 
-      // 첫 번째 li가 active 상태일 때는 항상 show 클래스 유지
       const firstLi = stickyHeader.querySelector('.sticky-header-list li:first-child');
       if (firstLi && firstLi.classList.contains('active')) {
-        stickyHeader.classList.add('show');
+        // 첫 번째 li가 active이거나, forceShowStickyHeader가 true면 show 유지
+        if (inRange || forceShowStickyHeader) {
+          stickyHeader.classList.add('show');
+        } else {
+          stickyHeader.classList.remove('show');
+        }
         return;
       }
 
-      if (tabsRect.top <= headerHeight) {
+      if (inRange) {
         stickyHeader.classList.add('show');
       } else {
         stickyHeader.classList.remove('show');
       }
     }
 
-    // 스크롤 이벤트 리스너 추가
     window.addEventListener('scroll', checkScroll);
-
-    // 초기 로드시 한번 체크
     checkScroll();
 
-    // 솔루션 sub 탭 스티키 헤더 클릭 이벤트
     const stickyItems = stickyHeader.querySelectorAll('.tab-sticky-header .sticky-header-list li');
     let isScrolling = false;
 
@@ -144,13 +148,18 @@ document.addEventListener('DOMContentLoaded', function () {
           const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
           const targetPosition = scrollTop + targetRect.top - headerHeight;
 
-          // 첫 번째 li 클릭 시 sticky-header show
           if (index === 0) {
+            // 첫 번째 li 클릭 시 일정 시간 동안 show 유지
+            forceShowStickyHeader = true;
             stickyHeader.classList.add('show');
             window.scrollTo({
-              top: targetPosition - 2,
+              top: targetPosition + 3,
               behavior: 'smooth'
             });
+            setTimeout(() => {
+              forceShowStickyHeader = false;
+              checkScroll(); // 플래그 해제 후 상태 재확인
+            }, 800); // 스크롤 애니메이션 시간에 맞게 조정
           } else {
             window.scrollTo({
               top: targetPosition,
@@ -164,12 +173,9 @@ document.addEventListener('DOMContentLoaded', function () {
             tabButton.click();
           }
 
-          // 모든 li에서 active 클래스 제거
           stickyItems.forEach(li => li.classList.remove('active'));
-          // 클릭된 li에 active 클래스 추가
           this.classList.add('active');
 
-          // 스크롤이 완료된 후 isScrolling 플래그 해제
           setTimeout(() => {
             isScrolling = false;
           }, 1000);
@@ -181,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateActiveItem() {
       if (isScrolling) return; // 스크롤 중에는 업데이트하지 않음
 
-      const sections = Array.from(document.querySelectorAll('.tabs__panel'));
+      const sections = Array.from(document.querySelectorAll('.tabs__panel__anchor'));
       const headerHeight = document.querySelector('#main-header').offsetHeight;
 
       sections.forEach(section => {
