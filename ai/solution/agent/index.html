@@ -808,27 +808,6 @@
     <script src="/js/ai/sub_cy.js"></script>
     <script>
         AOS.init();
-
-        // 탭 메뉴 클릭 시 배경색 변경
-        document.addEventListener('DOMContentLoaded', function () {
-            var section = document.querySelector('.content-section.agent-pattern');
-            var originalBg = getComputedStyle(section).backgroundColor;
-            var tabButtons = document.querySelectorAll('.tabs__tab');
-            tabButtons.forEach(function (btn, idx) {
-                btn.addEventListener('click', function () {
-                    if (idx === 1) {
-                        section.style.backgroundColor = '#fff';
-                    } else {
-                        section.style.backgroundColor = originalBg;
-                    }
-
-                    // 탭 전환 후 AOS 새로고침
-                    setTimeout(function () {
-                        AOS.refresh();
-                    }, 100);
-                });
-            });
-        });
     </script>
 </body>
 
