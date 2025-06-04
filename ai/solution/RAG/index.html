@@ -1,791 +1,718 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KT Intelligence</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>KT Intelligence</title>
 
-    <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
-    <!-- Reset CSS -->
-    <link rel="stylesheet" href="/css/ai/common/reset.css" />
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="/css/ai/common/common.css" />
-    <!-- Sub CSS -->
-    <link rel="stylesheet" href="/css/ai/sub_cy.css" />
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/ai/solution.css" />
+        <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
+        <!-- Reset CSS -->
+        <link rel="stylesheet" href="/css/ai/common/reset.css" />
+        <!-- Common CSS -->
+        <link rel="stylesheet" href="/css/ai/common/common.css" />
+        <!-- Sub CSS -->
+        <link rel="stylesheet" href="/css/ai/sub_cy.css" />
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="/css/ai/solution.css" />
 
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="/css/ai/common/aos.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header id="main-header" class="header">
-      <div class="header-inner">
-        <!-- Left: Logo -->
-        <div class="header-logo">
-          <a href="/ai/main/">
-            <img src="/resource/images/ai/icons/logo.svg" alt="logo" width="162" height="32" class="logo-img" />
-          </a>
-        </div>
-        <!-- Center: Navigation (Desktop) -->
-        <nav class="header-nav">
-          <div class="nav-item has-dropdown">
-            <a href="#" class="nav-link"
-              >Solution
-              <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="/ai/solution/model/">K On Model</a></li>
-              <li><a href="/ai/solution/RAG/">K On RAG</a></li>
-              <li><a href="/ai/solution/agent/">K On Agent</a></li>
-              <li><a href="/ai/solution/RAI/">K On RAI</a></li>
-              <li><a href="/ai/solution/studio/">K On Studio</a></li>
-              <li><a href="/ai/solution/cloud/">K On Cloud</a></li>
-            </ul>
-          </div>
-          <div class="nav-item"><a href="/ai/usecase/" class="nav-link">Use Cases</a></div>
-          <div class="nav-item"><a href="/ai/resources/" class="nav-link">Resources</a></div>
-        </nav>
-        <!-- Right: Links, Language, Login (Desktop) -->
-        <div class="header-right">
-          <a href="#" class="right-link">
-            Kode
-            <img
-              src="/resource/images/ai/icons/arrow-up-right-black.svg"
-              alt=""
-              width="16"
-              height="28"
-              class="arrow-icon"
-            />
-          </a>
-          <button class="header-btn">K on Model 체험하기</button>
-          <div class="header-lang" id="lang-dropdown">
-            <button class="lang-btn" id="lang-btn">
-              <img src="/resource/images/ai/icons/globe.svg" alt="globe" width="28" height="28" />
-              <span id="lang-current">KR</span>
-              <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
-            </button>
-            <ul class="lang-menu" id="lang-menu">
-              <li><button data-lang="KR">KR</button></li>
-              <li><button data-lang="EN">EN</button></li>
-            </ul>
-          </div>
-          <!-- 모바일 메뉴 버튼 -->
-          <button class="mobile-menu-btn" id="mobile-menu-btn">
-            <img src="/resource/images/ai/mobile/ico-menu.svg" alt="menu" width="28" height="28" />
-          </button>
-        </div>
-
-        <!-- 모바일 메뉴 -->
-        <div class="mobile-menu" id="mobile-menu">
-          <div class="mobile-menu-inner">
-            <div class="mobile-menu-header">
-              <a href="/ai/main/" class="mobile-menu-logo">
-                <img src="/resource/images/ai/icons/logo.svg" alt="K intelligence" />
-              </a>
-              <button class="mobile-menu-close" id="mobile-menu-close">
-                <img src="/resource/images/ai/mobile/ico-close.svg" alt="close" />
-              </button>
-            </div>
-            <nav class="mobile-menu-nav">
-              <ul>
-                <li class="mobile-menu-item has-sub">
-                  <button class="mobile-menu-link" id="mobile-solution-toggle">
-                    <strong>Solution</strong>
-                    <img src="/resource/images/ai/icons/ico-up.svg" alt="펼치기" />
-                  </button>
-                  <ul class="mobile-sub-menu" id="mobile-solution-sub">
-                    <li><a href="#">K on Model</a></li>
-                    <li><a href="#">K on RAG</a></li>
-                    <li><a href="#">K on Agent</a></li>
-                    <li><a href="#">K on RAI</a></li>
-                    <li><a href="#">K on Cloud</a></li>
-                    <li><a href="#">K on Studio</a></li>
-                  </ul>
-                </li>
-                <li class="mobile-menu-item">
-                  <a href="#" class="mobile-menu-link"
-                    >Use Cases <img src="/resource/images/ai/icons/ico-up.svg" alt=">"
-                  /></a>
-                </li>
-                <li class="mobile-menu-item">
-                  <a href="#" class="mobile-menu-link"
-                    >Resources <img src="/resource/images/ai/icons/ico-up.svg" alt=">"
-                  /></a>
-                </li>
-              </ul>
-            </nav>
-            <div class="mobile-menu-bottom">
-              <div class="mobile-menu-links">
-                <a href="#" class="mobile-menu-ext-link"
-                  >Kode <img src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부"
-                /></a>
-                <a href="#" class="mobile-menu-ext-link"
-                  >체험하기 <img src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부"
-                /></a>
-              </div>
-              <div class="mobile-menu-bottom-row">
-                <div class="mobile-menu-lang">
-                  <button class="active">KOR</button>
-                  <button>ENG</button>
+        <!-- AOS CSS -->
+        <link rel="stylesheet" href="/css/ai/common/aos.css" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header id="main-header" class="header">
+            <div class="header-inner">
+                <!-- Left: Logo -->
+                <div class="header-logo">
+                    <a href="/ai/main/">
+                        <img src="/resource/images/ai/icons/logo.svg" alt="logo" width="162" height="32" class="logo-img" />
+                    </a>
                 </div>
-                <a href="mailto:k.intelligence@kt.com" class="mobile-menu-contact">
-                  <img src="/resource/images/ai/icons/mail.svg" alt="메일" /> 비지니스 문의
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sticky Header -->
-      <div id="sticky-header" class="sticky-header">
-        <div class="sticky-header-inner">
-          <ul class="sticky-header-list">
-            <li data-section="parallax-depth-section">K Intelligence 구성요소</li>
-            <li data-section="kquality-section">K Quality Framework</li>
-            <li data-section="eco-section">K ECO</li>
-            <li data-section="usecase-section">Use Cases</li>
-            <li data-section="news-section">새로운 소식</li>
-          </ul>
-        </div>
-      </div>
-    </header>
-
-    <!-- Banner Section -->
-    <section id="banner-section" class="banner-section">
-      <img src="/resource/images/ai/solution/RAG/banner-bg.png" alt="banner" width="100%" height="100%" />
-      <img
-        src="/resource/images/ai/solution/RAG/mo-banner-bg.png"
-        alt="banner"
-        width="100%"
-        height="100%"
-        class="mo-banner-bg"
-      />
-      <div class="banner-inner">
-        <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-          <img src="/resource/images/ai/solution/ico-kon.svg" alt="logo" width="53" height="52" /> on RAG
-        </h2>
-        <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-          KT의 RAG(Retrieval-Augmented<br class="mo-br" />
-          Generation) 기술은 AI 에이전트가 사용자의 질문<br class="mo-br" />에 정확하고 개인화된<br />
-          답변을 제공하도록 지원합니<br class="mo-br" />다. 이를 통해 고객은 더 빠르게, 더 믿을 수 있는 정<br
-            class="mo-br"
-          />보를 실시간으로 얻을 수 있습니다.
-        </p>
-      </div>
-    </section>
-
-    <!-- Content Section -->
-    <div class="content-wrapper">
-      <section class="content-section">
-        <div class="content-inner">
-          <div class="title-wrapper">
-            <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Customer Value</span>
-            <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              RAG 기술이 바꾸는 AI 응답의 기준
-            </h2>
-            <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              KT의 RAG 기술은 외부 데이터와 내부 지식을 실시간으로 참조해, 최신 정보 근거 기반의 답변을 제공<br
-                class="mo-br"
-              />합니다.<br />
-              반복적인 정보 탐색과 검증을 줄여 정확도<br class="mo-br" />를 높이고, 언제 어디서나 신뢰할 수<br
-                class="mo-br"
-              />
-              있는 정보와 맞춤형 솔루션을 제공합니다.
-            </p>
-          </div>
-
-          <div class="card-wrapper">
-            <ul class="card-list customer">
-              <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="card-item">
-                  <img src="/resource/images/ai/solution/RAG/card-img01.png" alt="" width="676" height="441" />
-                </div>
-                <h3>정확하고 신뢰할 수 있는 정보 제공</h3>
-                <p>
-                  외부와 내부 정보를 실시간으로 참조해, 최신성과 신뢰성을 갖춘 답변을 제공합니다.<br />
-                  이를 통해 언제 어디서나 정확한 정보와 맞춤형 솔루션을 전달합니다.
-                </p>
-              </li>
-              <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="card-item">
-                  <img src="/resource/images/ai/solution/RAG/card-img02.png" alt="" width="676" height="441" />
-                </div>
-                <h3>업무 생산성 및 퀄리티 향상</h3>
-                <p>
-                  KT의 RAG 기술은 정보 탐색과 검증을 자동화해 정확도를 높이고, 고객센터부터<br />
-                  보고서 작성까지 다양한 업무의 효율과 만족도를 향상시킵니다.
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section class="content-section">
-        <div class="content-inner">
-          <div class="title-wrapper">
-            <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">K on RAG Solution</span>
-            <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              K on RAG<br class="mo-br" />
-              솔루션 구성
-            </h2>
-            <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              폭넓은 데이터 전처리 기능과 고성능 검색<br class="mo-br" />
-              기술을 통해, 다양한 정보를 더 빠르고 정확하게 활용할 수 있습니다.
-            </p>
-          </div>
-          <div class="shape-wrapper" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-            <img src="/resource/images/ai/solution/RAG/shape-img.png" alt="" width="100%" height="100%" />
-            <div class="shape-header">
-              <div class="shape-title">DocuSee</div>
-              <div class="shape-title full">IntelliSearch</div>
-            </div>
-            <div class="shape-flow">
-              <!-- 1행: 상단 흐름도 -->
-              <div class="shape-row">
-                <div class="shape-box">
-                  <span>Document</span>
-                  <img src="/resource/images/ai/solution/RAG/ico-file.svg" alt="Document" />
-                </div>
-                <div class="shape-box">
-                  <span>Vector Store/DB</span>
-                  <img src="/resource/images/ai/solution/RAG/ico-db.svg" alt="Vector Store/DB" />
-                </div>
-                <div class="shape-box lg mr-130">
-                  <span>Context</span>
-                  <div class="img-wrapper">
-                    <div class="img">
-                      <img src="/resource/images/ai/solution/RAG/ico-search.svg" alt="Context" />
-                      <p>질의 + <br />검색결과</p>
+                <!-- Center: Navigation (Desktop) -->
+                <nav class="header-nav">
+                    <div class="nav-item has-dropdown">
+                        <a href="#" class="nav-link"
+                            >Solution
+                            <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ai/solution/model/">K On Model</a></li>
+                            <li><a href="/ai/solution/RAG/">K On RAG</a></li>
+                            <li><a href="/ai/solution/agent/">K On Agent</a></li>
+                            <li><a href="/ai/solution/RAI/">K On RAI</a></li>
+                            <li><a href="/ai/solution/studio/">K On Studio</a></li>
+                            <li><a href="/ai/solution/cloud/">K On Cloud</a></li>
+                        </ul>
                     </div>
-                    <div class="img">
-                      <img src="/resource/images/ai/solution/RAG/ico-prompt.svg" alt="Prompt" />
-                      <p>Prompt <br />Template</p>
+                    <div class="nav-item"><a href="/ai/usecase/" class="nav-link">Use Cases</a></div>
+                    <div class="nav-item"><a href="/ai/resources/" class="nav-link">Resources</a></div>
+                </nav>
+                <!-- Right: Links, Language, Login (Desktop) -->
+                <div class="header-right">
+                    <a href="#" class="right-link">
+                        Kode
+                        <img src="/resource/images/ai/icons/arrow-up-right-black.svg" alt="" width="16" height="28" class="arrow-icon" />
+                    </a>
+                    <button class="header-btn">K on Model 체험하기</button>
+                    <div class="header-lang" id="lang-dropdown">
+                        <button class="lang-btn" id="lang-btn">
+                            <img src="/resource/images/ai/icons/globe.svg" alt="globe" width="28" height="28" />
+                            <span id="lang-current">KR</span>
+                            <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
+                        </button>
+                        <ul class="lang-menu" id="lang-menu">
+                            <li><button data-lang="KR">KR</button></li>
+                            <li><button data-lang="EN">EN</button></li>
+                        </ul>
                     </div>
-                  </div>
+                    <!-- 모바일 메뉴 버튼 -->
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <img src="/resource/images/ai/mobile/ico-menu.svg" alt="menu" width="28" height="28" />
+                    </button>
                 </div>
-                <div class="shape-box mr-130">
-                  <span>Fine-tuned sLLM</span>
-                  <img src="/resource/images/ai/solution/RAG/ico-brain.svg" alt="Fine-tuned sLLM" />
+
+                <!-- 모바일 메뉴 -->
+                <div class="mobile-menu" id="mobile-menu">
+                    <div class="mobile-menu-inner">
+                        <div class="mobile-menu-header">
+                            <a href="/ai/main/" class="mobile-menu-logo">
+                                <img src="/resource/images/ai/icons/logo.svg" alt="K intelligence" />
+                            </a>
+                            <button class="mobile-menu-close" id="mobile-menu-close">
+                                <img src="/resource/images/ai/mobile/ico-close.svg" alt="close" />
+                            </button>
+                        </div>
+                        <nav class="mobile-menu-nav">
+                            <ul>
+                                <li class="mobile-menu-item has-sub">
+                                    <button class="mobile-menu-link" id="mobile-solution-toggle">
+                                        <strong>Solution</strong>
+                                        <img src="/resource/images/ai/icons/ico-up.svg" alt="펼치기" />
+                                    </button>
+                                    <ul class="mobile-sub-menu" id="mobile-solution-sub">
+                                        <li><a href="/ai/solution/model/">K on Model</a></li>
+                                        <li><a href="/ai/solution/RAG/">K on RAG</a></li>
+                                        <li><a href="/ai/solution/agent/">K on Agent</a></li>
+                                        <li><a href="/ai/solution/RAI/">K on RAI</a></li>
+                                        <li><a href="/ai/solution/cloud/">K on Cloud</a></li>
+                                        <li><a href="/ai/solution/studio/">K on Studio</a></li>
+                                    </ul>
+                                </li>
+                                <li class="mobile-menu-item">
+                                    <a href="/ai/usecase/" class="mobile-menu-link">Use Cases</a>
+                                </li>
+                                <li class="mobile-menu-item">
+                                    <a href="/ai/resources/" class="mobile-menu-link">Resources</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="mobile-menu-bottom">
+                            <div class="mobile-menu-links">
+                                <a href="#" class="mobile-menu-ext-link">Kode 바로가기<img src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부" /></a>
+                                <a href="#" class="mobile-menu-ext-link">K on Model 체험하기 <img src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부" /></a>
+                            </div>
+                            <div class="mobile-menu-bottom-row">
+                                <div class="mobile-menu-lang">
+                                    <button class="active">KOR</button>
+                                    <button>ENG</button>
+                                </div>
+                                <a href="mailto:k.intelligence@kt.com" class="mobile-menu-contact"> <img src="/resource/images/ai/icons/mail.svg" alt="메일" /> 비지니스 문의하기 </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="shape-box small">
-                  <img src="/resource/images/ai/solution/RAG/ico-answer.svg" alt="Answer" />
-                  <span>Answer</span>
+            </div>
+
+            <!-- Sticky Header -->
+            <div id="sticky-header" class="sticky-header">
+                <div class="sticky-header-inner">
+                    <ul class="sticky-header-list">
+                        <li data-section="parallax-depth-section">K Intelligence 구성요소</li>
+                        <li data-section="kquality-section">K Quality Framework</li>
+                        <li data-section="eco-section">K ECO</li>
+                        <li data-section="usecase-section">Use Cases</li>
+                        <li data-section="news-section">새로운 소식</li>
+                    </ul>
                 </div>
-              </div>
-              <!-- 2행: 하단 연결 -->
-              <div class="shape-row shape-row-bottom">
-                <div class="shape-box small">
-                  <img src="/resource/images/ai/solution/RAG/ico-question.svg" alt="Question" />
-                  <span>Question</span>
-                  <p>
-                    Embedding
-                    <img src="/resource/images/ai/solution/RAG/ico-flow-arrow-top.png" alt="flow-arrow" class="top" />
-                  </p>
+            </div>
+        </header>
+
+        <!-- Banner Section -->
+        <section id="banner-section" class="banner-section">
+            <img src="/resource/images/ai/solution/RAG/banner-bg.png" alt="banner" width="100%" height="100%" />
+            <img src="/resource/images/ai/solution/RAG/mo-banner-bg.png" alt="banner" width="100%" height="100%" class="mo-banner-bg" />
+            <div class="banner-inner">
+                <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic"><img src="/resource/images/ai/solution/ico-kon.svg" alt="logo" width="53" height="52" /> on RAG</h2>
+                <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                    KT의 RAG(Retrieval-Augmented<br class="mo-br" />
+                    Generation) 기술은 AI 에이전트가 사용자의 질문<br class="mo-br" />에 정확하고 개인화된<br />
+                    답변을 제공하도록 지원합니<br class="mo-br" />다. 이를 통해 고객은 더 빠르게, 더 믿을 수 있는 정<br class="mo-br" />보를 실시간으로 얻을 수 있습니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <div class="content-wrapper">
+            <section class="content-section">
+                <div class="content-inner">
+                    <div class="title-wrapper">
+                        <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Customer Value</span>
+                        <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">RAG 기술이 바꾸는 AI 응답의 기준</h2>
+                        <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            KT의 RAG 기술은 외부 데이터와 내부 지식을 실시간으로 참조해, 최신 정보 근거 기반의 답변을 제공<br class="mo-br" />합니다.<br />
+                            반복적인 정보 탐색과 검증을 줄여 정확도<br class="mo-br" />를 높이고, 언제 어디서나 신뢰할 수<br class="mo-br" />
+                            있는 정보와 맞춤형 솔루션을 제공합니다.
+                        </p>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <ul class="card-list customer">
+                            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                <div class="card-item">
+                                    <img src="/resource/images/ai/solution/RAG/card-img01.png" alt="" width="676" height="441" />
+                                </div>
+                                <h3>정확하고 신뢰할 수 있는 정보 제공</h3>
+                                <p>
+                                    외부와 내부 정보를 실시간으로 참조해, 최신성과 신뢰성을 갖춘 답변을 제공합니다.<br />
+                                    이를 통해 언제 어디서나 정확한 정보와 맞춤형 솔루션을 전달합니다.
+                                </p>
+                            </li>
+                            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                <div class="card-item">
+                                    <img src="/resource/images/ai/solution/RAG/card-img02.png" alt="" width="676" height="441" />
+                                </div>
+                                <h3>업무 생산성 및 퀄리티 향상</h3>
+                                <p>
+                                    KT의 RAG 기술은 정보 탐색과 검증을 자동화해 정확도를 높이고, 고객센터부터<br />
+                                    보고서 작성까지 다양한 업무의 효율과 만족도를 향상시킵니다.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="shape-box md">
-                  <img src="/resource/images/ai/solution/RAG/ico-pretrained.svg" alt="Pretrained sLLM" />
-                  <span>Pretrained sLLM</span>
-                  <p>
-                    Training
-                    <img src="/resource/images/ai/solution/RAG/ico-flow-arrow-top.png" alt="flow-arrow" class="top" />
-                  </p>
-                </div>
-              </div>
-              <!-- 하단 타이틀 -->
-              <!-- <div class="shape-footer">
+            </section>
+            <section class="content-section">
+                <div class="content-inner">
+                    <div class="title-wrapper">
+                        <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">K on RAG Solution</span>
+                        <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            K on RAG<br class="mo-br" />
+                            솔루션 구성
+                        </h2>
+                        <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            폭넓은 데이터 전처리 기능과 고성능 검색<br class="mo-br" />
+                            기술을 통해, 다양한 정보를 더 빠르고 정확하게 활용할 수 있습니다.
+                        </p>
+                    </div>
+                    <div class="shape-wrapper" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        <img src="/resource/images/ai/solution/RAG/shape-img.png" alt="" width="100%" height="100%" />
+                        <div class="shape-header">
+                            <div class="shape-title">DocuSee</div>
+                            <div class="shape-title full">IntelliSearch</div>
+                        </div>
+                        <div class="shape-flow">
+                            <!-- 1행: 상단 흐름도 -->
+                            <div class="shape-row">
+                                <div class="shape-box">
+                                    <span>Document</span>
+                                    <img src="/resource/images/ai/solution/RAG/ico-file.svg" alt="Document" />
+                                </div>
+                                <div class="shape-box">
+                                    <span>Vector Store/DB</span>
+                                    <img src="/resource/images/ai/solution/RAG/ico-db.svg" alt="Vector Store/DB" />
+                                </div>
+                                <div class="shape-box lg mr-130">
+                                    <span>Context</span>
+                                    <div class="img-wrapper">
+                                        <div class="img">
+                                            <img src="/resource/images/ai/solution/RAG/ico-search.svg" alt="Context" />
+                                            <p>질의 + <br />검색결과</p>
+                                        </div>
+                                        <div class="img">
+                                            <img src="/resource/images/ai/solution/RAG/ico-prompt.svg" alt="Prompt" />
+                                            <p>Prompt <br />Template</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shape-box mr-130">
+                                    <span>Fine-tuned sLLM</span>
+                                    <img src="/resource/images/ai/solution/RAG/ico-brain.svg" alt="Fine-tuned sLLM" />
+                                </div>
+                                <div class="shape-box small">
+                                    <img src="/resource/images/ai/solution/RAG/ico-answer.svg" alt="Answer" />
+                                    <span>Answer</span>
+                                </div>
+                            </div>
+                            <!-- 2행: 하단 연결 -->
+                            <div class="shape-row shape-row-bottom">
+                                <div class="shape-box small">
+                                    <img src="/resource/images/ai/solution/RAG/ico-question.svg" alt="Question" />
+                                    <span>Question</span>
+                                    <p>
+                                        Embedding
+                                        <img src="/resource/images/ai/solution/RAG/ico-flow-arrow-top.png" alt="flow-arrow" class="top" />
+                                    </p>
+                                </div>
+                                <div class="shape-box md">
+                                    <img src="/resource/images/ai/solution/RAG/ico-pretrained.svg" alt="Pretrained sLLM" />
+                                    <span>Pretrained sLLM</span>
+                                    <p>
+                                        Training
+                                        <img src="/resource/images/ai/solution/RAG/ico-flow-arrow-top.png" alt="flow-arrow" class="top" />
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- 하단 타이틀 -->
+                            <!-- <div class="shape-footer">
                 <div class="shape-title full">RAG Studio</div>
               </div> -->
-              <!-- 뒷 배경 박스 및 텍스트 -->
-              <div class="shape-background">
-                <div class="shape-background-box fir">
-                  <p>Chunking</p>
-                  <img src="/resource/images/ai/solution/RAG/ico-flow-arrow.png" alt="flow-arrow" />
-                  <p>Embedding</p>
-                </div>
-                <div class="shape-background-box sec">
-                  <p>Retrieve</p>
-                  <img src="/resource/images/ai/solution/RAG/ico-flow-arrow.png" alt="flow-arrow" />
-                  <p>Passage<br />Rank & Filter</p>
-                </div>
-                <div class="shape-background-box last">
-                  <div>
-                    <p>Augment</p>
-                    <img src="/resource/images/ai/solution/RAG/ico-flow-arrow-right.png" alt="flow-arrow" />
-                  </div>
-                  <div>
-                    <p>Generate</p>
-                    <img src="/resource/images/ai/solution/RAG/ico-flow-arrow-right.png" alt="flow-arrow" />
-                  </div>
-                </div>
-              </div>
+                            <!-- 뒷 배경 박스 및 텍스트 -->
+                            <div class="shape-background">
+                                <div class="shape-background-box fir">
+                                    <p>Chunking</p>
+                                    <img src="/resource/images/ai/solution/RAG/ico-flow-arrow.png" alt="flow-arrow" />
+                                    <p>Embedding</p>
+                                </div>
+                                <div class="shape-background-box sec">
+                                    <p>Retrieve</p>
+                                    <img src="/resource/images/ai/solution/RAG/ico-flow-arrow.png" alt="flow-arrow" />
+                                    <p>Passage<br />Rank & Filter</p>
+                                </div>
+                                <div class="shape-background-box last">
+                                    <div>
+                                        <p>Augment</p>
+                                        <img src="/resource/images/ai/solution/RAG/ico-flow-arrow-right.png" alt="flow-arrow" />
+                                    </div>
+                                    <div>
+                                        <p>Generate</p>
+                                        <img src="/resource/images/ai/solution/RAG/ico-flow-arrow-right.png" alt="flow-arrow" />
+                                    </div>
+                                </div>
+                            </div>
 
-              <p class="solution-description">
-                * Docu See : 다양한 형태의 문서를 구조 분석하는 전처리엔진<br />
-                * IntelliSearch : 지능형 검색 엔진
-              </p>
+                            <p class="solution-description">
+                                * Docu See : 다양한 형태의 문서를 구조 분석하는 전처리엔진<br />
+                                * IntelliSearch : 지능형 검색 엔진
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content-section bg-gray-50">
+                <div class="content-inner">
+                    <div class="title-wrapper">
+                        <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Solution 01</span>
+                        <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            지능형 검색엔진<br />
+                            IntelliSearch
+                        </h2>
+                        <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            지능형 검색엔진 IntelliSearch는 키워드와<br class="mo-br" />
+                            벡터 기반을 통합한<br />
+                            하이브리드 검색, 다중<br class="mo-br" />
+                            질의 처리, 맞춤형 파인튜닝까지 지원하는<br class="mo-br" />
+                            RAG 최적화 All-in-one 솔루션입니다.
+                        </p>
+                    </div>
+
+                    <div class="box-wrapper box-wrapper-rag">
+                        <div class="sub-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <h3>IntelliSearch 특징</h3>
+                        </div>
+                        <ul class="box-list">
+                            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                <div class="box-item">
+                                    <h3>RAG 성능 향상</h3>
+                                    <ul>
+                                        <li>키워드 기반 검색과 벡터 기반 검색 결과를 통합한 하이브리드 검색 결과 제공</li>
+                                        <li>질의 확장을 통한 Multi-Query 검색 기능 적용</li>
+                                        <li>Query Decomposition을 통한 Dynamic Search 전략</li>
+                                        <li>고성능 Embedding, Re-ranker 자체 모델</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                <div class="box-item">
+                                    <h3>KT 임베딩 / Re-ranker 모델</h3>
+                                    <ul>
+                                        <li>한국어, 영어를 지원하는 bi-lingual 임베딩 모델 제공</li>
+                                        <li>SaaS형 고객 대상 범용 모델 및 On-Premise형 고객을 위한 Fine-tuning 기능 제공</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                <div class="box-item">
+                                    <h3>고객 맞춤 기능</h3>
+                                    <ul>
+                                        <li>고객 데이터 기반의 임베딩 모델 파인튜닝과 고객별 요구사항에 따른 검색 구성, 색인 구성 지원</li>
+                                        <li>상황별 검색/응답 성능 확보를 위한 RAG 파이프라인 구성 (10가지 이상의 옵션 제공)</li>
+                                        <li>데이터 준비-학습-추론-배포 All-in-one 서비스</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                <div class="box-item">
+                                    <h3>Agentic RAG Pattern 및 Reasoning 기능 제공 (예정)</h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="table-card-wrapper">
+                        <div class="sub-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <p>IntelliSearch 핵심모듈</p>
+                            <h3>RAG 특화 모델 3종</h3>
+                        </div>
+                        <ul class="table-card-list text">
+                            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                <div class="table-card-item">
+                                    <h3>
+                                        <!-- <span>KT Embedding Bi-lingual Model</span> -->
+                                        Embedding Model
+                                    </h3>
+                                    <ul>
+                                        <li>
+                                            <h4>What is</h4>
+                                            <p>단어, 문장, 문서 등을 벡터 형태로 변환</p>
+                                            <p>한・영 검색에 특화된 KT 자체 개발 임베딩 모델</p>
+                                        </li>
+                                        <li>
+                                            <h4>Advantages</h4>
+                                            <p>한국어・영어에 최적화된 언어 처리 기술</p>
+                                            <span>(금융, 공공, 의료, 법률, 커머스 등 다양한 산업 분야에서 고르게 검증된 성능)</span>
+                                            <p>글로벌 수준의 성능을 갖춘 KT 독자 모델</p>
+                                            <span>(MTEB 성능 검증)</span>
+                                        </li>
+                                        <li>
+                                            <h4>Benchmarks</h4>
+                                            <p>한국어 데이터 전반적 성능 우위</p>
+                                            <span>(vs. bge-m3)</span>
+                                            <p>금융, 공공, 법률, 의료, 커머스 분야</p>
+                                            <p>영어 데이터 전반적 성능 우위</p>
+                                            <span>(vs. bge-m3)</span>
+                                            <p>MTEB(eng, v2) 기준 평균 11%p 우위</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                <div class="table-card-item">
+                                    <h3>
+                                        <!-- <span>KT Embedding Bi-lingual Model</span> -->
+                                        Reranker Model
+                                    </h3>
+                                    <ul>
+                                        <li>
+                                            <h4>What is</h4>
+                                            <p>검색된 문서들과 질문 간 유사도를 산정하여 우선순위 재정렬</p>
+                                            <p>한/영 검색에 특화된 KT 자체 개발 Reranking 모델</p>
+                                        </li>
+                                        <li>
+                                            <h4>Advantages</h4>
+                                            <p>한국어・영어에 최적화된 언어 처리 기술</p>
+                                            <span>(금융, 공공, 의료, 법률, 커머스 등 다양한 산업 분야에서 고르게 검증된 성능)</span>
+                                            <p>글로벌 수준의 성능을 갖춘 KT 독자 모델</p>
+                                            <span>(MTEB 성능 검증)</span>
+                                        </li>
+                                        <li>
+                                            <h4>Benchmarks</h4>
+                                            <p>한국어 데이터 전반적 성능 우위</p>
+                                            <span>(vs. bge-reranker-v2-m3)<br />2%p 성능우위</span>
+                                            <p>영어 데이터 전반적 성능 우위</p>
+                                            <span>(vs. bge-m3)</span>
+                                            <p>MTEB(eng, v2) 기준 평균 11%p 우위</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                <div class="table-card-item">
+                                    <h3>
+                                        <!-- <span>KT Embedding Bi-lingual Model</span> -->
+                                        Instruction Model
+                                    </h3>
+                                    <ul>
+                                        <li>
+                                            <h4>What is</h4>
+                                            <p>문서에 부가 정보를 더하고, 검색 방식 최적화와 응답 정합성 검증까지 지원하는 AI 모델</p>
+                                            <p>Modular & Agentic RAG를 위한 특화된 Instruction 모델</p>
+                                            <p>Llama K/Mi:dm 기반으로 RAG 특화 Instruction을 SFT하여 RAG 성능 향상</p>
+                                            <p>chatGPT 대비 비용 효율적 모델</p>
+                                        </li>
+                                        <li>
+                                            <h4>Advantages</h4>
+                                            <p>RAG 성능 향상을 위한 Data Enrichment, Query Reasoning, Verification 기능 제공</p>
+                                            <p>ChatGPT 4o와 같은 대형 LLM 모델과 유사 또는 좋은 성능을 내는 RAG Task 기능 제공</p>
+                                        </li>
+                                        <li>
+                                            <h4>Benchmarks</h4>
+                                            <p>Data Enrichment, Query Reasoning, Verification 관련 성능 분석</p>
+                                            <p>ChatGPT 4o-mini < KT-RAG-Instruct-1<br />< GPT 4o</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-inner">
+                    <div class="title-wrapper">
+                        <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Solution 02</span>
+                        <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            문서 전처리 AI<br class="mo-br" />
+                            엔진<br />
+                            Docu see
+                        </h2>
+                        <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            문서 전처리 AI 엔진 Docu see는 텍스트, 표,<br class="mo-br" />
+                            이미지 등 문서 요소를 자동 인식해 AI가 이해하기<br class="mo-br" />
+                            쉬운 구조로<br />
+                            정리하는 분석 솔루션입니다.<br class="mo-br" />
+                            문단 순서, 표 구조, 문서 유형까지 정밀하게<br class="mo-br" />
+                            처리해 RAG 성능을 높입니다.
+                        </p>
+                    </div>
+                    <div class="after-upload" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        <img src="/resource/images/ai/solution/RAG/after-open.png" alt="after-upload" />
+                        <img src="/resource/images/ai/solution/RAG/mo-after-open.png" alt="after-upload" class="mo-img" />
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section pt-160">
+                <div class="content-inner">
+                    <div class="title-wrapper">
+                        <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Use Cases</h2>
+                        <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            K intelligence와 함께한 기업들의 변화,<br class="mo-br" />
+                            성과로 증명된 유즈케이스를 확인해보세요.
+                        </p>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <ul class="card-list-horizontal">
+                            <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                <div class="card-inner">
+                                    <div class="card-img">
+                                        <img src="/resource/images/ai/usecase/sub_useCase_sec01.png" alt="" />
+                                    </div>
+                                    <div class="card-txts">
+                                        <h3 class="sub-title-sm">My K</h3>
+                                        <p class="sub-desc">KT는 마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게 KT는 마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게..</p>
+                                        <div class="card-tags">
+                                            <span class="card-tag">고객사례</span>
+                                            <span class="card-tag">사용자 피드백</span>
+                                            <span class="card-tag">사용자 피드백</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                <div class="card-inner">
+                                    <div class="card-img">
+                                        <img src="/resource/images/ai/usecase/sub_useCase_sec02.png" alt="" />
+                                    </div>
+                                    <div class="card-txts">
+                                        <h3 class="sub-title-sm">기가지니</h3>
+                                        <p class="sub-desc">KT는 마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게 KT는 마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게..</p>
+                                        <div class="card-tags">
+                                            <span class="card-tag">KT사례</span>
+                                            <span class="card-tag">GPT-3</span>
+                                            <span class="card-tag">GPT-4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                <div class="card-inner">
+                                    <div class="card-img">
+                                        <img src="/resource/images/ai/usecase/sub_useCase_sec03.png" alt="" />
+                                    </div>
+                                    <div class="card-txts">
+                                        <h3 class="sub-title-sm">기가지니</h3>
+                                        <p class="sub-desc">KT는 마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게 KT는 마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게..</p>
+                                        <div class="card-tags">
+                                            <span class="card-tag">KT사례</span>
+                                            <span class="card-tag">GPT-3</span>
+                                            <span class="card-tag">GPT-4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                <div class="card-inner">
+                                    <div class="card-img">
+                                        <img src="/resource/images/ai/usecase/sub_useCase_sec04.png" alt="" />
+                                    </div>
+                                    <div class="card-txts">
+                                        <h3 class="sub-title-sm">기가지니</h3>
+                                        <p class="sub-desc">KT는 마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게 KT는 마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게..</p>
+                                        <div class="card-tags">
+                                            <span class="card-tag">KT사례</span>
+                                            <span class="card-tag">GPT-3</span>
+                                            <span class="card-tag">GPT-4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <ul class="card-list-horizontal swiper-container">
+                            <div class="swiper-wrapper">
+                                <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                    <div class="card-inner">
+                                        <div class="card-img">
+                                            <img src="/resource/images/ai/usecase/sub_useCase_sec01.png" alt="" />
+                                        </div>
+                                        <div class="card-txts">
+                                            <h3 class="sub-title-sm">My K</h3>
+                                            <div class="card-tags">
+                                                <span class="card-tag">고객사례</span>
+                                                <span class="card-tag">사용자 피드백</span>
+                                                <span class="card-tag">사용자 피드백</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                    <div class="card-inner">
+                                        <div class="card-img">
+                                            <img src="/resource/images/ai/usecase/sub_useCase_sec02.png" alt="" />
+                                        </div>
+                                        <div class="card-txts">
+                                            <h3 class="sub-title-sm">기가지니</h3>
+                                            <div class="card-tags">
+                                                <span class="card-tag">KT사례</span>
+                                                <span class="card-tag">GPT-3</span>
+                                                <span class="card-tag">GPT-4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                    <div class="card-inner">
+                                        <div class="card-img">
+                                            <img src="/resource/images/ai/usecase/sub_useCase_sec03.png" alt="" />
+                                        </div>
+                                        <div class="card-txts">
+                                            <h3 class="sub-title-sm">기가지니</h3>
+                                            <div class="card-tags">
+                                                <span class="card-tag">KT사례</span>
+                                                <span class="card-tag">GPT-3</span>
+                                                <span class="card-tag">GPT-4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                    <div class="card-inner">
+                                        <div class="card-img">
+                                            <img src="/resource/images/ai/usecase/sub_useCase_sec04.png" alt="" />
+                                        </div>
+                                        <div class="card-txts">
+                                            <h3 class="sub-title-sm">기가지니</h3>
+                                            <div class="card-tags">
+                                                <span class="card-tag">KT사례</span>
+                                                <span class="card-tag">GPT-3</span>
+                                                <span class="card-tag">GPT-4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </ul>
+                        <div class="btnWrap basicBtn-wrapper" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <a href="#">
+                                <button type="button" class="basic-bk-btn">전체보기</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- KT Model 체험하기 -->
+        <section id="kt-model-section" class="kt-model-section">
+            <div class="kt-model-inner">
+                <div class="kt-model-bg">
+                    <img src="/resource/images/ai/kt-model-bg.png" alt="KT Model 체험하기" />
+                    <img src="/resource/images/ai/mo-kt-model-bg.png" alt="KT Model 체험하기" class="mo-img" />
+                </div>
+                <div class="kt-model-content">
+                    <h2 class="section-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        <span>경험해 보세요</span>
+                        KT만의 한국적<br class="mo-br" />
+                        인공지능
+                    </h2>
+                    <button class="btn" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">KT Model 체험하기</button>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section class="content-section bg-gray-50">
-        <div class="content-inner">
-          <div class="title-wrapper">
-            <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Solution 01</span>
-            <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              지능형 검색엔진<br />
-              IntelliSearch
-            </h2>
-            <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              지능형 검색엔진 IntelliSearch는 키워드와<br class="mo-br" />
-              벡터 기반을 통합한<br />
-              하이브리드 검색, 다중<br class="mo-br" />
-              질의 처리, 맞춤형 파인튜닝까지 지원하는<br class="mo-br" />
-              RAG 최적화 All-in-one 솔루션입니다.
-            </p>
-          </div>
+        </section>
 
-          <div class="box-wrapper box-wrapper-rag">
-            <div class="sub-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              <h3>IntelliSearch 특징</h3>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-top">
+                <!-- Left: Info -->
+                <div class="footer-info">
+                    <div class="footer-contact">비즈니스 문의 : <a href="mailto:k.intelligence@kt.com">k.intelligence@kt.com</a></div>
+                    <div class="footer-links">
+                        <a href="#">이용약관</a>
+                        <a href="#" class="bold">개인정보처리방침</a>
+                    </div>
+                    <div class="footer-copyright">Copyright© KT Corp. All rights reserved.</div>
+                </div>
+                <ul class="footer-menus">
+                    <li><a href="#">Solution</a></li>
+                    <li><a href="#">Use Cases</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul>
+                <!-- Right: Logo -->
+                <div class="footer-logo">
+                    <img src="/resource/images/ai/icons/footer_logo.svg" alt="KT 로고" width="60" height="40" />
+                </div>
             </div>
-            <ul class="box-list">
-              <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="box-item">
-                  <h3>RAG 성능 향상</h3>
-                  <ul>
-                    <li>키워드 기반 검색과 벡터 기반 검색 결과를 통합한 하이브리드 검색 결과 제공</li>
-                    <li>질의 확장을 통한 Multi-Query 검색 기능 적용</li>
-                    <li>Query Decomposition을 통한 Dynamic Search 전략</li>
-                    <li>고성능 Embedding, Re-ranker 자체 모델</li>
-                  </ul>
+            <div class="footer-bottom">
+                <div class="footer-external-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        >KT
+                        <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        >Kode
+                        <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        >KT Enterprise
+                        <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        >About KT
+                        <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+                    </a>
                 </div>
-              </li>
-              <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="box-item">
-                  <h3>KT 임베딩 / Re-ranker 모델</h3>
-                  <ul>
-                    <li>한국어, 영어를 지원하는 bi-lingual 임베딩 모델 제공</li>
-                    <li>SaaS형 고객 대상 범용 모델 및 On-Premise형 고객을 위한 Fine-tuning 기능 제공</li>
-                  </ul>
+                <div class="footer-sns">
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT Instagram (새 창)">
+                        <img src="/resource/images/ai/icons/insta_pc.svg" alt="Instagram" width="28" height="28" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT YouTube (새 창)">
+                        <img src="/resource/images/ai/icons/youtube_pc.svg" alt="YouTube" width="28" height="28" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT LinkedIn (새 창)">
+                        <img src="/resource/images/ai/icons/linkedin_pc.svg" alt="LinkedIn" width="28" height="28" />
+                    </a>
                 </div>
-              </li>
-              <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="box-item">
-                  <h3>고객 맞춤 기능</h3>
-                  <ul>
-                    <li>고객 데이터 기반의 임베딩 모델 파인튜닝과 고객별 요구사항에 따른 검색 구성, 색인 구성 지원</li>
-                    <li>상황별 검색/응답 성능 확보를 위한 RAG 파이프라인 구성 (10가지 이상의 옵션 제공)</li>
-                    <li>데이터 준비-학습-추론-배포 All-in-one 서비스</li>
-                  </ul>
-                </div>
-              </li>
-              <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="box-item">
-                  <h3>Agentic RAG Pattern 및 Reasoning 기능 제공 (예정)</h3>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="table-card-wrapper">
-            <div class="sub-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              <p>IntelliSearch 핵심모듈</p>
-              <h3>RAG 특화 모델 3종</h3>
+
+                <div class="mobile-footer-copyright">Copyright© KT Corp. All rights reserved.</div>
             </div>
-            <ul class="table-card-list text">
-              <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="table-card-item">
-                  <h3>
-                    <!-- <span>KT Embedding Bi-lingual Model</span> -->
-                    Embedding Model
-                  </h3>
-                  <ul>
-                    <li>
-                      <h4>What is</h4>
-                      <p>단어, 문장, 문서 등을 벡터 형태로 변환</p>
-                      <p>한・영 검색에 특화된 KT 자체 개발 임베딩 모델</p>
-                    </li>
-                    <li>
-                      <h4>Advantages</h4>
-                      <p>한국어・영어에 최적화된 언어 처리 기술</p>
-                      <span>(금융, 공공, 의료, 법률, 커머스 등 다양한 산업 분야에서 고르게 검증된 성능)</span>
-                      <p>글로벌 수준의 성능을 갖춘 KT 독자 모델</p>
-                      <span>(MTEB 성능 검증)</span>
-                    </li>
-                    <li>
-                      <h4>Benchmarks</h4>
-                      <p>한국어 데이터 전반적 성능 우위</p>
-                      <span>(vs. bge-m3)</span>
-                      <p>금융, 공공, 법률, 의료, 커머스 분야</p>
-                      <p>영어 데이터 전반적 성능 우위</p>
-                      <span>(vs. bge-m3)</span>
-                      <p>MTEB(eng, v2) 기준 평균 11%p 우위</p>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="table-card-item">
-                  <h3>
-                    <!-- <span>KT Embedding Bi-lingual Model</span> -->
-                    Reranker Model
-                  </h3>
-                  <ul>
-                    <li>
-                      <h4>What is</h4>
-                      <p>검색된 문서들과 질문 간 유사도를 산정하여 우선순위 재정렬</p>
-                      <p>한/영 검색에 특화된 KT 자체 개발 Reranking 모델</p>
-                    </li>
-                    <li>
-                      <h4>Advantages</h4>
-                      <p>한국어・영어에 최적화된 언어 처리 기술</p>
-                      <span>(금융, 공공, 의료, 법률, 커머스 등 다양한 산업 분야에서 고르게 검증된 성능)</span>
-                      <p>글로벌 수준의 성능을 갖춘 KT 독자 모델</p>
-                      <span>(MTEB 성능 검증)</span>
-                    </li>
-                    <li>
-                      <h4>Benchmarks</h4>
-                      <p>한국어 데이터 전반적 성능 우위</p>
-                      <span>(vs. bge-reranker-v2-m3)<br />2%p 성능우위</span>
-                      <p>영어 데이터 전반적 성능 우위</p>
-                      <span>(vs. bge-m3)</span>
-                      <p>MTEB(eng, v2) 기준 평균 11%p 우위</p>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="table-card-item">
-                  <h3>
-                    <!-- <span>KT Embedding Bi-lingual Model</span> -->
-                    Instruction Model
-                  </h3>
-                  <ul>
-                    <li>
-                      <h4>What is</h4>
-                      <p>문서에 부가 정보를 더하고, 검색 방식 최적화와 응답 정합성 검증까지 지원하는 AI 모델</p>
-                      <p>Modular & Agentic RAG를 위한 특화된 Instruction 모델</p>
-                      <p>Llama K/Mi:dm 기반으로 RAG 특화 Instruction을 SFT하여 RAG 성능 향상</p>
-                      <p>chatGPT 대비 비용 효율적 모델</p>
-                    </li>
-                    <li>
-                      <h4>Advantages</h4>
-                      <p>RAG 성능 향상을 위한 Data Enrichment, Query Reasoning, Verification 기능 제공</p>
-                      <p>ChatGPT 4o와 같은 대형 LLM 모델과 유사 또는 좋은 성능을 내는 RAG Task 기능 제공</p>
-                    </li>
-                    <li>
-                      <h4>Benchmarks</h4>
-                      <p>Data Enrichment, Query Reasoning, Verification 관련 성능 분석</p>
-                      <p>ChatGPT 4o-mini < KT-RAG-Instruct-1<br />< GPT 4o</p>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+        </footer>
 
-        <div class="content-inner">
-          <div class="title-wrapper">
-            <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Solution 02</span>
-            <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              문서 전처리 AI<br class="mo-br" />
-              엔진<br />
-              Docu see
-            </h2>
-            <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              문서 전처리 AI 엔진 Docu see는 텍스트, 표,<br class="mo-br" />
-              이미지 등 문서 요소를 자동 인식해 AI가 이해하기<br class="mo-br" />
-              쉬운 구조로<br />
-              정리하는 분석 솔루션입니다.<br class="mo-br" />
-              문단 순서, 표 구조, 문서 유형까지 정밀하게<br class="mo-br" />
-              처리해 RAG 성능을 높입니다.
-            </p>
-          </div>
-          <div class="after-upload" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-            <img src="/resource/images/ai/solution/RAG/after-open.png" alt="after-upload" />
-            <img src="/resource/images/ai/solution/RAG/mo-after-open.png" alt="after-upload" class="mo-img" />
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section pt-160">
-        <div class="content-inner">
-          <div class="title-wrapper">
-            <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Use Cases</h2>
-            <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              K intelligence와 함께한 기업들의 변화,<br class="mo-br" />
-              성과로 증명된 유즈케이스를 확인해보세요.
-            </p>
-          </div>
-
-          <div class="card-wrapper">
-            <ul class="card-list-horizontal">
-              <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="card-inner">
-                  <div class="card-img">
-                    <img src="/resource/images/ai/usecase/sub_useCase_sec01.png" alt="" />
-                  </div>
-                  <div class="card-txts">
-                    <h3 class="sub-title-sm">My K</h3>
-                    <p class="sub-desc">
-                      KT는 마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게 KT는
-                      마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게..
-                    </p>
-                    <div class="card-tags">
-                      <span class="card-tag">고객사례</span>
-                      <span class="card-tag">사용자 피드백</span>
-                      <span class="card-tag">사용자 피드백</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="card-inner">
-                  <div class="card-img">
-                    <img src="/resource/images/ai/usecase/sub_useCase_sec02.png" alt="" />
-                  </div>
-                  <div class="card-txts">
-                    <h3 class="sub-title-sm">기가지니</h3>
-                    <p class="sub-desc">
-                      KT는 마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게 KT는
-                      마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게..
-                    </p>
-                    <div class="card-tags">
-                      <span class="card-tag">KT사례</span>
-                      <span class="card-tag">GPT-3</span>
-                      <span class="card-tag">GPT-4</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="card-inner">
-                  <div class="card-img">
-                    <img src="/resource/images/ai/usecase/sub_useCase_sec03.png" alt="" />
-                  </div>
-                  <div class="card-txts">
-                    <h3 class="sub-title-sm">기가지니</h3>
-                    <p class="sub-desc">
-                      KT는 마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게 KT는
-                      마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게..
-                    </p>
-                    <div class="card-tags">
-                      <span class="card-tag">KT사례</span>
-                      <span class="card-tag">GPT-3</span>
-                      <span class="card-tag">GPT-4</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="card-inner">
-                  <div class="card-img">
-                    <img src="/resource/images/ai/usecase/sub_useCase_sec04.png" alt="" />
-                  </div>
-                  <div class="card-txts">
-                    <h3 class="sub-title-sm">기가지니</h3>
-                    <p class="sub-desc">
-                      KT는 마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게 KT는
-                      마이케이티 앱에 GPT-K 기반 AI 고객 지원 기능을 도입하였으며, 챗봇을 통해 보다 손쉽게..
-                    </p>
-                    <div class="card-tags">
-                      <span class="card-tag">KT사례</span>
-                      <span class="card-tag">GPT-3</span>
-                      <span class="card-tag">GPT-4</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-
-            <ul class="card-list-horizontal swiper-container">
-              <div class="swiper-wrapper">
-                <li
-                  class="card swiper-slide"
-                  data-aos="fade-up"
-                  data-aos-duration="800"
-                  data-aos-easing="ease-out-cubic"
-                >
-                  <div class="card-inner">
-                    <div class="card-img">
-                      <img src="/resource/images/ai/usecase/sub_useCase_sec01.png" alt="" />
-                    </div>
-                    <div class="card-txts">
-                      <h3 class="sub-title-sm">My K</h3>
-                      <div class="card-tags">
-                        <span class="card-tag">고객사례</span>
-                        <span class="card-tag">사용자 피드백</span>
-                        <span class="card-tag">사용자 피드백</span>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="card swiper-slide"
-                  data-aos="fade-up"
-                  data-aos-duration="800"
-                  data-aos-easing="ease-out-cubic"
-                >
-                  <div class="card-inner">
-                    <div class="card-img">
-                      <img src="/resource/images/ai/usecase/sub_useCase_sec02.png" alt="" />
-                    </div>
-                    <div class="card-txts">
-                      <h3 class="sub-title-sm">기가지니</h3>
-                      <div class="card-tags">
-                        <span class="card-tag">KT사례</span>
-                        <span class="card-tag">GPT-3</span>
-                        <span class="card-tag">GPT-4</span>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="card swiper-slide"
-                  data-aos="fade-up"
-                  data-aos-duration="800"
-                  data-aos-easing="ease-out-cubic"
-                >
-                  <div class="card-inner">
-                    <div class="card-img">
-                      <img src="/resource/images/ai/usecase/sub_useCase_sec03.png" alt="" />
-                    </div>
-                    <div class="card-txts">
-                      <h3 class="sub-title-sm">기가지니</h3>
-                      <div class="card-tags">
-                        <span class="card-tag">KT사례</span>
-                        <span class="card-tag">GPT-3</span>
-                        <span class="card-tag">GPT-4</span>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="card swiper-slide"
-                  data-aos="fade-up"
-                  data-aos-duration="800"
-                  data-aos-easing="ease-out-cubic"
-                >
-                  <div class="card-inner">
-                    <div class="card-img">
-                      <img src="/resource/images/ai/usecase/sub_useCase_sec04.png" alt="" />
-                    </div>
-                    <div class="card-txts">
-                      <h3 class="sub-title-sm">기가지니</h3>
-                      <div class="card-tags">
-                        <span class="card-tag">KT사례</span>
-                        <span class="card-tag">GPT-3</span>
-                        <span class="card-tag">GPT-4</span>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </div>
-            </ul>
-            <div
-              class="btnWrap basicBtn-wrapper"
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-easing="ease-out-cubic"
-            >
-              <a href="#">
-                <button type="button" class="basic-bk-btn">전체보기</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- KT Model 체험하기 -->
-    <section id="kt-model-section" class="kt-model-section">
-      <div class="kt-model-inner">
-        <div class="kt-model-bg">
-          <img src="/resource/images/ai/kt-model-bg.png" alt="KT Model 체험하기" />
-          <img src="/resource/images/ai/mo-kt-model-bg.png" alt="KT Model 체험하기" class="mo-img" />
-        </div>
-        <div class="kt-model-content">
-          <h2 class="section-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-            <span>경험해 보세요</span>
-            KT만의 한국적<br class="mo-br" />
-            인공지능
-          </h2>
-          <button class="btn" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-            KT Model 체험하기
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-top">
-        <!-- Left: Info -->
-        <div class="footer-info">
-          <div class="footer-contact">
-            비즈니스 문의 : <a href="mailto:k.intelligence@kt.com">k.intelligence@kt.com</a>
-          </div>
-          <div class="footer-links">
-            <a href="#">이용약관</a>
-            <a href="#" class="bold">개인정보처리방침</a>
-          </div>
-          <div class="footer-copyright">Copyright© KT Corp. All rights reserved.</div>
-        </div>
-        <ul class="footer-menus">
-          <li><a href="#">Solution</a></li>
-          <li><a href="#">Use Cases</a></li>
-          <li><a href="#">Resources</a></li>
-        </ul>
-        <!-- Right: Logo -->
-        <div class="footer-logo">
-          <img src="/resource/images/ai/icons/footer_logo.svg" alt="KT 로고" width="60" height="40" />
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-external-links">
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >KT
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >Kode
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >KT Enterprise
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >About KT
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-        </div>
-        <div class="footer-sns">
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT Instagram (새 창)">
-            <img src="/resource/images/ai/icons/insta_pc.svg" alt="Instagram" width="28" height="28" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT YouTube (새 창)">
-            <img src="/resource/images/ai/icons/youtube_pc.svg" alt="YouTube" width="28" height="28" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT LinkedIn (새 창)">
-            <img src="/resource/images/ai/icons/linkedin_pc.svg" alt="LinkedIn" width="28" height="28" />
-          </a>
-        </div>
-
-        <div class="mobile-footer-copyright">Copyright© KT Corp. All rights reserved.</div>
-      </div>
-    </footer>
-
-    <!-- Script -->
-    <script src="/js/ai/common/aos.js"></script>
-    <script src="/js/ai/common/header.js"></script>
-    <script src="/js/ai/common/swiper-bundle.min.js"></script>
-    <script src="/js/ai/solution.js"></script>
-    <script>
-      AOS.init();
-    </script>
-  </body>
+        <!-- Script -->
+        <script src="/js/ai/common/aos.js"></script>
+        <script src="/js/ai/common/header.js"></script>
+        <script src="/js/ai/common/swiper-bundle.min.js"></script>
+        <script src="/js/ai/solution.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </body>
 </html>

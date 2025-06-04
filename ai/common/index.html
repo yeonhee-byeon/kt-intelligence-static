@@ -1,210 +1,192 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KT intelligence 공통영역</title>
-    <!-- Reset CSS -->
-    <link rel="stylesheet" href="/css/ai/common/reset.css" />
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="/css/ai/common/common.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header id="main-header" class="header">
-      <div class="header-inner">
-        <!-- Left: Logo -->
-        <div class="header-logo">
-          <a href="/ai/main/">
-            <img src="/resource/images/ai/icons/logo.svg" alt="logo" width="162" height="32" class="logo-img" />
-          </a>
-        </div>
-        <!-- Center: Navigation (Desktop) -->
-        <nav class="header-nav">
-          <div class="nav-item has-dropdown">
-            <a href="#" class="nav-link"
-              >Solution
-              <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="/ai/solution/model/">K On Model</a></li>
-              <li><a href="/ai/solution/RAG/">K On RAG</a></li>
-              <li><a href="/ai/solution/agent/">K On Agent</a></li>
-              <li><a href="/ai/solution/RAI/">K On RAI</a></li>
-              <li><a href="/ai/solution/studio/">K On Studio</a></li>
-              <li><a href="/ai/solution/cloud/">K On Cloud</a></li>
-            </ul>
-          </div>
-          <div class="nav-item"><a href="/ai/usecase/" class="nav-link">Use Cases</a></div>
-          <div class="nav-item"><a href="/ai/resources/" class="nav-link">Resources</a></div>
-        </nav>
-        <!-- Right: Links, Language, Login (Desktop) -->
-        <div class="header-right">
-          <a href="#" class="right-link">
-            Kode
-            <img
-              src="/resource/images/ai/icons/arrow-up-right-black.svg"
-              alt=""
-              width="16"
-              height="28"
-              class="arrow-icon"
-            />
-          </a>
-          <button class="header-btn">K on Model 체험하기</button>
-          <div class="header-lang" id="lang-dropdown">
-            <button class="lang-btn" id="lang-btn">
-              <img src="/resource/images/ai/icons/globe.svg" alt="globe" width="28" height="28" />
-              <span id="lang-current">KR</span>
-              <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
-            </button>
-            <ul class="lang-menu" id="lang-menu">
-              <li><button data-lang="KR">KR</button></li>
-              <li><button data-lang="EN">EN</button></li>
-            </ul>
-          </div>
-          <!-- 모바일 메뉴 버튼 -->
-          <button class="mobile-menu-btn" id="mobile-menu-btn">
-            <img src="/resource/images/ai/mobile/ico-menu.svg" alt="menu" width="28" height="28" />
-          </button>
-        </div>
-
-        <!-- 모바일 메뉴 -->
-        <div class="mobile-menu" id="mobile-menu">
-          <div class="mobile-menu-inner">
-            <div class="mobile-menu-header">
-              <a href="/ai/main/" class="mobile-menu-logo">
-                <img src="/resource/images/ai/icons/logo.svg" alt="K intelligence" />
-              </a>
-              <button class="mobile-menu-close" id="mobile-menu-close">
-                <img src="/resource/images/ai/mobile/ico-close.svg" alt="close" />
-              </button>
-            </div>
-            <nav class="mobile-menu-nav">
-              <ul>
-                <li class="mobile-menu-item has-sub">
-                  <button class="mobile-menu-link" id="mobile-solution-toggle">
-                    <strong>Solution</strong>
-                    <img src="/resource/images/ai/icons/ico-up.svg" alt="펼치기" />
-                  </button>
-                  <ul class="mobile-sub-menu" id="mobile-solution-sub">
-                    <li><a href="#">K on Model</a></li>
-                    <li><a href="#">K on RAG</a></li>
-                    <li><a href="#">K on Agent</a></li>
-                    <li><a href="#">K on RAI</a></li>
-                    <li><a href="#">K on Cloud</a></li>
-                    <li><a href="#">K on Studio</a></li>
-                  </ul>
-                </li>
-                <li class="mobile-menu-item">
-                  <a href="#" class="mobile-menu-link"
-                    >Use Cases <img src="/resource/images/ai/icons/ico-up.svg" alt=">"
-                  /></a>
-                </li>
-                <li class="mobile-menu-item">
-                  <a href="#" class="mobile-menu-link"
-                    >Resources <img src="/resource/images/ai/icons/ico-up.svg" alt=">"
-                  /></a>
-                </li>
-              </ul>
-            </nav>
-            <div class="mobile-menu-bottom">
-              <div class="mobile-menu-links">
-                <a href="#" class="mobile-menu-ext-link"
-                  >Kode <img src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부"
-                /></a>
-                <a href="#" class="mobile-menu-ext-link"
-                  >체험하기 <img src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부"
-                /></a>
-              </div>
-              <div class="mobile-menu-bottom-row">
-                <div class="mobile-menu-lang">
-                  <button class="active">KOR</button>
-                  <button>ENG</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>KT intelligence 공통영역</title>
+        <!-- Reset CSS -->
+        <link rel="stylesheet" href="/css/ai/common/reset.css" />
+        <!-- Common CSS -->
+        <link rel="stylesheet" href="/css/ai/common/common.css" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header id="main-header" class="header">
+            <div class="header-inner">
+                <!-- Left: Logo -->
+                <div class="header-logo">
+                    <a href="/ai/main/">
+                        <img src="/resource/images/ai/icons/logo.svg" alt="logo" width="162" height="32" class="logo-img" />
+                    </a>
                 </div>
-                <a href="mailto:k.intelligence@kt.com" class="mobile-menu-contact">
-                  <img src="/resource/images/ai/icons/mail.svg" alt="메일" /> 비지니스 문의
-                </a>
-              </div>
+                <!-- Center: Navigation (Desktop) -->
+                <nav class="header-nav">
+                    <div class="nav-item has-dropdown">
+                        <a href="#" class="nav-link"
+                            >Solution
+                            <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ai/solution/model/">K On Model</a></li>
+                            <li><a href="/ai/solution/RAG/">K On RAG</a></li>
+                            <li><a href="/ai/solution/agent/">K On Agent</a></li>
+                            <li><a href="/ai/solution/RAI/">K On RAI</a></li>
+                            <li><a href="/ai/solution/studio/">K On Studio</a></li>
+                            <li><a href="/ai/solution/cloud/">K On Cloud</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-item"><a href="/ai/usecase/" class="nav-link">Use Cases</a></div>
+                    <div class="nav-item"><a href="/ai/resources/" class="nav-link">Resources</a></div>
+                </nav>
+                <!-- Right: Links, Language, Login (Desktop) -->
+                <div class="header-right">
+                    <a href="#" class="right-link">
+                        Kode
+                        <img src="/resource/images/ai/icons/arrow-up-right-black.svg" alt="" width="16" height="28" class="arrow-icon" />
+                    </a>
+                    <button class="header-btn">K on Model 체험하기</button>
+                    <div class="header-lang" id="lang-dropdown">
+                        <button class="lang-btn" id="lang-btn">
+                            <img src="/resource/images/ai/icons/globe.svg" alt="globe" width="28" height="28" />
+                            <span id="lang-current">KR</span>
+                            <img src="/resource/images/ai/icons/dropdown.svg" alt="dropdown" class="dropdown-icon" />
+                        </button>
+                        <ul class="lang-menu" id="lang-menu">
+                            <li><button data-lang="KR">KR</button></li>
+                            <li><button data-lang="EN">EN</button></li>
+                        </ul>
+                    </div>
+                    <!-- 모바일 메뉴 버튼 -->
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <img src="/resource/images/ai/mobile/ico-menu.svg" alt="menu" width="28" height="28" />
+                    </button>
+                </div>
+
+                <!-- 모바일 메뉴 -->
+                <div class="mobile-menu" id="mobile-menu">
+                    <div class="mobile-menu-inner">
+                        <div class="mobile-menu-header">
+                            <a href="/ai/main/" class="mobile-menu-logo">
+                                <img src="/resource/images/ai/icons/logo.svg" alt="K intelligence" />
+                            </a>
+                            <button class="mobile-menu-close" id="mobile-menu-close">
+                                <img src="/resource/images/ai/mobile/ico-close.svg" alt="close" />
+                            </button>
+                        </div>
+                        <nav class="mobile-menu-nav">
+                            <ul>
+                                <li class="mobile-menu-item has-sub">
+                                    <button class="mobile-menu-link" id="mobile-solution-toggle">
+                                        <strong>Solution</strong>
+                                        <img src="/resource/images/ai/icons/ico-up.svg" alt="펼치기" />
+                                    </button>
+                                    <ul class="mobile-sub-menu" id="mobile-solution-sub">
+                                        <li><a href="/ai/solution/model/">K on Model</a></li>
+                                        <li><a href="/ai/solution/RAG/">K on RAG</a></li>
+                                        <li><a href="/ai/solution/agent/">K on Agent</a></li>
+                                        <li><a href="/ai/solution/RAI/">K on RAI</a></li>
+                                        <li><a href="/ai/solution/cloud/">K on Cloud</a></li>
+                                        <li><a href="/ai/solution/studio/">K on Studio</a></li>
+                                    </ul>
+                                </li>
+                                <li class="mobile-menu-item">
+                                    <a href="/ai/usecase/" class="mobile-menu-link">Use Cases</a>
+                                </li>
+                                <li class="mobile-menu-item">
+                                    <a href="/ai/resources/" class="mobile-menu-link">Resources</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="mobile-menu-bottom">
+                            <div class="mobile-menu-links">
+                                <a href="#" class="mobile-menu-ext-link">Kode 바로가기<img src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부" /></a>
+                                <a href="#" class="mobile-menu-ext-link">K on Model 체험하기 <img src="/resource/images/ai/icons/arrow-up-right20.svg" alt="외부" /></a>
+                            </div>
+                            <div class="mobile-menu-bottom-row">
+                                <div class="mobile-menu-lang">
+                                    <button class="active">KOR</button>
+                                    <button>ENG</button>
+                                </div>
+                                <a href="mailto:k.intelligence@kt.com" class="mobile-menu-contact"> <img src="/resource/images/ai/icons/mail.svg" alt="메일" /> 비지니스 문의하기 </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Sticky Header -->
-      <div id="sticky-header" class="sticky-header">
-        <div class="sticky-header-inner">
-          <ul class="sticky-header-list">
-            <li data-section="parallax-depth-section">K Intelligence 구성요소</li>
-            <li data-section="kquality-section">K Quality Framework</li>
-            <li data-section="eco-section">K ECO</li>
-            <li data-section="usecase-section">Use Cases</li>
-            <li data-section="news-section">새로운 소식</li>
-          </ul>
-        </div>
-      </div>
-    </header>
+            <!-- Sticky Header -->
+            <div id="sticky-header" class="sticky-header">
+                <div class="sticky-header-inner">
+                    <ul class="sticky-header-list">
+                        <li data-section="parallax-depth-section">K Intelligence 구성요소</li>
+                        <li data-section="kquality-section">K Quality Framework</li>
+                        <li data-section="eco-section">K ECO</li>
+                        <li data-section="usecase-section">Use Cases</li>
+                        <li data-section="news-section">새로운 소식</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
 
-    <div class="dummy-section" style="height: 200vh"></div>
+        <div class="dummy-section" style="height: 200vh"></div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-top">
-        <!-- Left: Info -->
-        <div class="footer-info">
-          <div class="footer-contact">
-            비즈니스 문의 : <a href="mailto:k.intelligence@kt.com">k.intelligence@kt.com</a>
-          </div>
-          <div class="footer-links">
-            <a href="#">이용약관</a>
-            <a href="#" class="bold">개인정보처리방침</a>
-          </div>
-          <div class="footer-copyright">Copyright© KT Corp. All rights reserved.</div>
-        </div>
-        <ul class="footer-menus">
-          <li><a href="#">Solution</a></li>
-          <li><a href="#">Use Cases</a></li>
-          <li><a href="#">Resources</a></li>
-        </ul>
-        <!-- Right: Logo -->
-        <div class="footer-logo">
-          <img src="/resource/images/ai/icons/footer_logo.svg" alt="KT 로고" width="60" height="40" />
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-external-links">
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >KT
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >Kode
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >KT Enterprise
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >About KT
-            <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
-          </a>
-        </div>
-        <div class="footer-sns">
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT Instagram (새 창)">
-            <img src="/resource/images/ai/icons/insta_pc.svg" alt="Instagram" width="28" height="28" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT YouTube (새 창)">
-            <img src="/resource/images/ai/icons/youtube_pc.svg" alt="YouTube" width="28" height="28" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT LinkedIn (새 창)">
-            <img src="/resource/images/ai/icons/linkedin_pc.svg" alt="LinkedIn" width="28" height="28" />
-          </a>
-        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-top">
+                <!-- Left: Info -->
+                <div class="footer-info">
+                    <div class="footer-contact">비즈니스 문의 : <a href="mailto:k.intelligence@kt.com">k.intelligence@kt.com</a></div>
+                    <div class="footer-links">
+                        <a href="#">이용약관</a>
+                        <a href="#" class="bold">개인정보처리방침</a>
+                    </div>
+                    <div class="footer-copyright">Copyright© KT Corp. All rights reserved.</div>
+                </div>
+                <ul class="footer-menus">
+                    <li><a href="#">Solution</a></li>
+                    <li><a href="#">Use Cases</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul>
+                <!-- Right: Logo -->
+                <div class="footer-logo">
+                    <img src="/resource/images/ai/icons/footer_logo.svg" alt="KT 로고" width="60" height="40" />
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-external-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        >KT
+                        <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        >Kode
+                        <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        >KT Enterprise
+                        <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        >About KT
+                        <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+                    </a>
+                </div>
+                <div class="footer-sns">
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT Instagram (새 창)">
+                        <img src="/resource/images/ai/icons/insta_pc.svg" alt="Instagram" width="28" height="28" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT YouTube (새 창)">
+                        <img src="/resource/images/ai/icons/youtube_pc.svg" alt="YouTube" width="28" height="28" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KT LinkedIn (새 창)">
+                        <img src="/resource/images/ai/icons/linkedin_pc.svg" alt="LinkedIn" width="28" height="28" />
+                    </a>
+                </div>
 
-        <div class="mobile-footer-copyright">Copyright© KT Corp. All rights reserved.</div>
-      </div>
-    </footer>
+                <div class="mobile-footer-copyright">Copyright© KT Corp. All rights reserved.</div>
+            </div>
+        </footer>
 
-    <script src="/js/ai/common/header.js"></script>
-  </body>
+        <script src="/js/ai/common/header.js"></script>
+    </body>
 </html>
