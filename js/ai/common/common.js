@@ -27,6 +27,10 @@ function includeCommonLayout(options = {}) {
             .then(res => res.text())
             .then(data => {
                 document.querySelector('.kt-model-section').innerHTML = data;
+                // KT Model 삽입 후 AOS 다시 초기화
+                if (window.AOS && typeof window.AOS.init === 'function') {
+                    window.AOS.init();
+                }
             });
     }
     // footer
