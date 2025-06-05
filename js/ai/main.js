@@ -667,7 +667,7 @@ window.addEventListener("load", function () {
       onEnter: lockScroll,
       onLeaveBack: unlockScroll,
       onEnterBack: () => {
-        gsap.set(textGroup, { opacity: 0 });
+        gsap.set(textGroup, { opacity: 0, zIndex: 3 });
       },
     },
     onComplete: unlockScroll,
@@ -703,7 +703,7 @@ window.addEventListener("load", function () {
       onLeaveBack: () => {
         setActiveMenu(-1);
         unlockScroll();
-        gsap.set(textGroup, { opacity: 1 });
+        gsap.set(textGroup, { opacity: 1, zIndex: 4 });
       },
     },
     onComplete: unlockScroll,
@@ -747,6 +747,7 @@ window.addEventListener("load", function () {
         opacity: 1,
         duration: 0.8,
         ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        zIndex: 4,
         onStart: () => {
           setActiveMenu(0);
         },
@@ -776,7 +777,7 @@ window.addEventListener("load", function () {
   });
 
   cubeTl2
-    .to(textGroup, { opacity: 0, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" }, "<")
+    .to(textGroup, { opacity: 0, zIndex: 3, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" }, "<")
     .to(cubeItems[6], { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
     .to(cubeTitle, { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
     .to(cubeDesc, { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" });
