@@ -27,47 +27,110 @@ window.addEventListener("load", function () {
 })();
 
 (function () {
-  const video = document.getElementById("scrollVideo");
-  let videoDuration = 0;
-  let targetTime = 0;
-  let currentTime = 0;
+  // const video = document.getElementById("scrollVideo");
+  // let videoDuration = 0;
+  // let targetTime = 0;
+  // let currentTime = 0;
 
-  const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
+  // const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
 
-  // 부드러운 업데이트 루프
-  const smoothUpdate = () => {
-    if (!video) return;
+  // // 부드러운 업데이트 루프
+  // const smoothUpdate = () => {
+  //   if (!video) return;
 
-    // 부드러운 보간 계산 (0.1은 보간 속도, 필요시 0.05~0.2 사이로 조절 가능)
-    currentTime = lerp(currentTime, targetTime, 0.1);
+  //   // 부드러운 보간 계산 (0.1은 보간 속도, 필요시 0.05~0.2 사이로 조절 가능)
+  //   currentTime = lerp(currentTime, targetTime, 0.1);
 
-    // 너무 자주 설정 시 프레임 드랍 유발 → 조건부 갱신
-    if (Math.abs(video.currentTime - currentTime) > 0.01) {
-      video.currentTime = currentTime;
-    }
+  //   // 너무 자주 설정 시 프레임 드랍 유발 → 조건부 갱신
+  //   if (Math.abs(video.currentTime - currentTime) > 0.01) {
+  //     video.currentTime = currentTime;
+  //   }
 
-    requestAnimationFrame(smoothUpdate);
-  };
+  //   requestAnimationFrame(smoothUpdate);
+  // };
 
-  requestAnimationFrame(smoothUpdate);
+  // requestAnimationFrame(smoothUpdate);
 
-  video.addEventListener("loadedmetadata", () => {
-    videoDuration = video.duration;
+  // video.addEventListener("loadedmetadata", () => {
+  //   videoDuration = video.duration;
 
-    ScrollTrigger.create({
+  //   ScrollTrigger.create({
+  //     trigger: ".sub-banner-video-section",
+  //     start: "top top",
+  //     //   end: "+=500%",
+  //     id: "sub-banner-video",
+  //     //   pin: true,
+  //     //   pinSpacing: true,
+  //     scrub: true,
+  //     onUpdate: (self) => {
+  //       const progress = self.progress;
+  //       targetTime = progress * videoDuration;
+  //     },
+  //   });
+  // });
+
+  console.clear();
+
+  const video = document.querySelector("#scrollVideo");
+  let src = video.currentSrc || video.src;
+  console.log(video, src);
+
+  function once(el, event, fn, opts) {
+    var onceFn = function (e) {
+      el.removeEventListener(event, onceFn);
+      fn.apply(this, arguments);
+    };
+    el.addEventListener(event, onceFn, opts);
+    return onceFn;
+  }
+
+  once(document.documentElement, "touchstart", function (e) {
+    video.play();
+    video.pause();
+  });
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline({
+    defaults: { duration: 1 },
+    scrollTrigger: {
       trigger: ".sub-banner-video-section",
       start: "top top",
-      //   end: "+=500%",
-      id: "sub-banner-video",
-      //   pin: true,
-      //   pinSpacing: true,
+      end: "bottom bottom",
       scrub: true,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        targetTime = progress * videoDuration;
-      },
-    });
+    },
   });
+
+  once(video, "loadedmetadata", () => {
+    tl.fromTo(
+      video,
+      {
+        currentTime: 0,
+      },
+      {
+        currentTime: video.duration || 1,
+      }
+    );
+  });
+
+  setTimeout(function () {
+    if (window["fetch"]) {
+      fetch(src)
+        .then((response) => response.blob())
+        .then((response) => {
+          var blobURL = URL.createObjectURL(response);
+
+          var t = video.currentTime;
+          once(document.documentElement, "touchstart", function (e) {
+            video.play();
+            video.pause();
+          });
+
+          video.setAttribute("src", blobURL);
+          video.currentTime = t + 0.005;
+        });
+    }
+  }, 1000);
 })();
 
 // ===== sub-banner-section =====
