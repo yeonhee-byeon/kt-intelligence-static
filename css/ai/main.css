@@ -1499,6 +1499,11 @@ br {
     white-space: nowrap;
   }
 
+  .sub-banner-video-section {
+  }
+  .sub-banner-video-section > div > video {
+    object-fit: contain;
+  }
   .sub-banner-section {
   }
   .sub-banner-section .sub-banner-inner > ul > li > * {

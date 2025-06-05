@@ -1,6 +1,7 @@
 const bannerSection = document.querySelector("#banner-section");
 // const subBannerSection = document.querySelector("#sub-banner-section");
 if (bannerSection) {
+    const header = document.querySelector("#main-header");
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {

@@ -1092,6 +1092,9 @@ br.mo-br {
   .content-section {
     padding: 8rem 0 10rem;
   }
+  .content-section.bg-gray-50 {
+    padding: 10rem 0 0;
+  }
   .content-inner {
     max-width: 100%;
     width: 100%;
@@ -1243,9 +1246,9 @@ br.mo-br {
     background: url(/resource/images/ai/solution/RAI/mo-ico-dot-arrow.png) no-repeat center center;
   }
   .table-card-list > li:last-child {
-    margin-top: 2.8rem;
-    padding-top: 4rem;
-    border-top: 1px solid var(--gray-200-color);
+    /* margin-top: 2.8rem; */
+    /* padding-top: 4rem; */
+    /* border-top: 1px solid var(--gray-200-color); */
   }
   .table-card-item {
     width: 100%;
@@ -1266,7 +1269,7 @@ br.mo-br {
     text-align: left;
   }
   .table-card-list.text {
-    gap: 4rem;
+    gap: 1.6rem;
   }
   .table-card-list.text > li {
     flex: 1;
@@ -1281,7 +1284,7 @@ br.mo-br {
   .table-card-list.text > li .table-card-item ul {
     min-height: 100%;
     padding: 0;
-    gap: 4rem;
+    gap: 2rem;
   }
   .table-card-list.text > li .table-card-item ul li {
     font-size: 1.7rem;
