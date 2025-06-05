@@ -662,7 +662,7 @@ window.addEventListener("load", function () {
     scrollTrigger: {
       trigger: container,
       start: "-10% top",
-      end: "+=600",
+      end: "+=700",
       toggleActions: "play reset play reset",
       onEnter: lockScroll,
       onLeaveBack: unlockScroll,
@@ -695,8 +695,8 @@ window.addEventListener("load", function () {
   const cubeTl = gsap.timeline({
     scrollTrigger: {
       trigger: container,
-      start: "+=520",
-      end: "+=680",
+      start: "+=700",
+      end: "+=800",
       toggleActions: "play none none reset",
       id: "parallax-depth-cube",
       onEnter: lockScroll,
@@ -759,8 +759,8 @@ window.addEventListener("load", function () {
   const cubeTl2 = gsap.timeline({
     scrollTrigger: {
       trigger: container,
-      start: "+=1200",
-      end: "+=600",
+      start: "+=1500",
+      end: "+=800",
       toggleActions: "play none none reset",
       onEnter: () => {
         savedActiveIndex = activeIndex;
