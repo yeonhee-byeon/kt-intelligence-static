@@ -473,18 +473,20 @@ br {
 /* ParallaxDepthSection Styles */
 .parallax-depth-section {
   width: 100%;
-  min-height: 100vh;
+  min-height: 300vh;
   background: var(--black-color);
   color: var(--white-color);
+  position: relative;
 }
 .pds-inner {
+  position: sticky;
+  top: 0;
   margin: 0 auto;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 7.625rem;
-  position: relative;
   background: var(--black-color);
   padding: 6rem 15rem;
   overflow: hidden;
@@ -707,34 +709,34 @@ br {
   top: 0;
   right: 50%;
 }
-.pds-cube-list li:nth-child(1) {
+.pds-cube-list li.cube-object-1 {
   width: 37.75rem;
-  height: 22.188rem;
-  transform: translate(50%, 76%);
+  height: 23.125rem;
+  transform: translate(50%, 70%);
   filter: drop-shadow(5.6px 5.6px 8.8px rgba(0, 0, 0, 0.25));
 }
-.pds-cube-list li:nth-child(2) {
+.pds-cube-list li.cube-object-2 {
   width: 25.438rem;
   height: 26rem;
 }
-.pds-cube-list li:nth-child(3) {
+.pds-cube-list li.cube-object-3 {
   width: 12.875rem;
   height: 15.688rem;
 }
-.pds-cube-list li:nth-child(4) {
+.pds-cube-list li.cube-object-4 {
   width: 12.875rem;
   height: 15.688rem;
 }
-.pds-cube-list li:nth-child(5) {
+.pds-cube-list li.cube-object-5 {
   width: 12.875rem;
   height: 15.688rem;
 }
-.pds-cube-list li:nth-child(6) {
+.pds-cube-list li.cube-object-6 {
   width: 37.75rem;
   height: 24.188rem;
   z-index: -1;
 }
-.pds-cube-list li:nth-child(7) {
+.pds-cube-list li.cube-object-7 {
   width: 46.438rem;
   height: 45.25rem;
   top: 0;

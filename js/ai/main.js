@@ -15,7 +15,6 @@ window.addEventListener("load", function () {
   }, 10);
   if (window.gsap && window.ScrollTrigger) {
     window.ScrollTrigger.refresh();
-    console.log("gsap 초기화");
   }
 });
 
@@ -73,7 +72,6 @@ window.addEventListener("load", function () {
 
   const video = document.querySelector("#scrollVideo");
   let src = video.currentSrc || video.src;
-  console.log(video, src);
 
   function once(el, event, fn, opts) {
     var onceFn = function (e) {
@@ -581,7 +579,7 @@ window.addEventListener("load", function () {
 
 // ParallaxDepthSection (K intelligence 구성요소) 애니메이션
 (function () {
-  const section = document.querySelector(".pds-inner");
+  const section = document.querySelector(".parallax-depth-section");
   if (!section || !window.gsap || !window.ScrollTrigger) return;
 
   // 주요 엘리먼트
@@ -597,12 +595,12 @@ window.addEventListener("load", function () {
 
   // 큐브 이미지 경로
   const imagePaths = [
+    { src: "/resource/images/ai/k-cube/k-rai.svg", active: "/resource/images/ai/k-cube/k-rai-act.svg" },
     { src: "/resource/images/ai/k-cube/k-spc.svg", active: "/resource/images/ai/k-cube/k-spc-act.svg" },
     { src: "/resource/images/ai/k-cube/k-studio.svg", active: "/resource/images/ai/k-cube/k-studio-act.svg" },
     { src: "/resource/images/ai/k-cube/k-model.svg", active: "/resource/images/ai/k-cube/k-model-act.svg" },
     { src: "/resource/images/ai/k-cube/k-rag.svg", active: "/resource/images/ai/k-cube/k-rag-act.svg" },
     { src: "/resource/images/ai/k-cube/k-agent.svg", active: "/resource/images/ai/k-cube/k-agent-act.svg" },
-    { src: "/resource/images/ai/k-cube/k-rai.svg", active: "/resource/images/ai/k-cube/k-rai-act.svg" },
   ];
 
   let activeIndex = 0;
@@ -611,18 +609,12 @@ window.addEventListener("load", function () {
 
   // 메뉴/큐브 활성화 및 이미지 교체
   function setActiveMenu(index) {
-    menuItems[0].classList.toggle("active", index === 0);
-    menuItems[1].classList.toggle("active", index === 5);
-    menuItems[2].classList.toggle("active", index === 1);
-    menuItems[3].classList.toggle("active", index === 2);
-    menuItems[4].classList.toggle("active", index === 3);
-    menuItems[5].classList.toggle("active", index === 4);
-    menuTabItems[0].classList.toggle("active", index === 0);
-    menuTabItems[1].classList.toggle("active", index === 5);
-    menuTabItems[2].classList.toggle("active", index === 1);
-    menuTabItems[3].classList.toggle("active", index === 2);
-    menuTabItems[4].classList.toggle("active", index === 3);
-    menuTabItems[5].classList.toggle("active", index === 4);
+    menuItems.forEach((li, i) => {
+      li.classList.toggle("active", index === i);
+    });
+    menuTabItems.forEach((li, i) => {
+      li.classList.toggle("active", index === i);
+    });
     cubeItems.forEach((li, i) => {
       const img = li.querySelector("img");
       if (!img) return;
@@ -642,19 +634,7 @@ window.addEventListener("load", function () {
   menuTabItems.forEach((li, i) => {
     li.addEventListener("mouseenter", () => {
       activeIndex = i;
-      if (i === 0) {
-        setActiveMenu(0);
-      } else if (i === 1) {
-        setActiveMenu(5);
-      } else if (i === 2) {
-        setActiveMenu(1);
-      } else if (i === 3) {
-        setActiveMenu(2);
-      } else if (i === 4) {
-        setActiveMenu(3);
-      } else if (i === 5) {
-        setActiveMenu(4);
-      }
+      setActiveMenu(activeIndex);
     });
   });
 
@@ -700,22 +680,22 @@ window.addEventListener("load", function () {
   ScrollTrigger.create({
     trigger: section,
     start: "top top",
-    end: "+=2500",
-    pin: true,
-    pinSpacing: true,
     id: "parallax-depth-section",
+    onLeave: () => {
+      gsap.set(textGroup, { opacity: 0, zIndex: 3 });
+    },
   });
 
   gsap.set(titleGroup, { opacity: 0, y: 30 });
   gsap.set(konGroup, { opacity: 0, y: 30 });
-  gsap.set(textGroup, { opacity: 0 });
-  gsap.set(cubeItems[0], { opacity: 0 });
+  gsap.set(textGroup, { opacity: 0, zIndex: 3 });
+  gsap.set(cubeItems[1], { opacity: 0 });
   // 큐브 초기 위치
-  gsap.set(cubeItems[1], { yPercent: -400, xPercent: 50 });
-  gsap.set(cubeItems[2], { yPercent: -400, xPercent: 22 });
-  gsap.set(cubeItems[3], { yPercent: -400, xPercent: 50 });
-  gsap.set(cubeItems[4], { yPercent: -400, xPercent: 78 });
-  gsap.set(cubeItems[5], { yPercent: 400, xPercent: 50 });
+  gsap.set(cubeItems[2], { yPercent: -400, xPercent: 50 });
+  gsap.set(cubeItems[3], { yPercent: -400, xPercent: 22 });
+  gsap.set(cubeItems[4], { yPercent: -400, xPercent: 50 });
+  gsap.set(cubeItems[5], { yPercent: -400, xPercent: 78 });
+  gsap.set(cubeItems[0], { yPercent: 400, xPercent: 50 });
   gsap.set(cubeItems[6], { opacity: 0 });
   gsap.set(cubeTitle, { opacity: 0 });
   gsap.set(cubeDesc, { opacity: 0 });
@@ -725,7 +705,7 @@ window.addEventListener("load", function () {
     scrollTrigger: {
       trigger: container,
       start: "-10% top",
-      end: "+=700",
+      end: "+=680",
       toggleActions: "play reset play reset",
       onEnter: lockScroll,
       onLeaveBack: unlockScroll,
@@ -758,44 +738,43 @@ window.addEventListener("load", function () {
   const cubeTl = gsap.timeline({
     scrollTrigger: {
       trigger: container,
-      start: "+=700",
-      end: "+=800",
+      start: "+=600",
+      end: "+=600",
       toggleActions: "play none none reset",
       id: "parallax-depth-cube",
       onEnter: lockScroll,
       onLeaveBack: () => {
         setActiveMenu(-1);
         unlockScroll();
-        gsap.set(textGroup, { opacity: 1, zIndex: 4 });
       },
     },
     onComplete: unlockScroll,
   });
 
   cubeTl
-    .to(cubeItems[0], { opacity: 1, duration: 0.3, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
+    .to(cubeItems[1], { opacity: 1, duration: 0.3, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
     .to(
-      cubeItems[1],
-      { yPercent: 34, xPercent: 50, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
+      cubeItems[2],
+      { yPercent: 30, xPercent: 50, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
       "-=0.3"
     )
     .to(
-      cubeItems[2],
-      { yPercent: 76, xPercent: 22, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
-      "-=0.6"
-    )
-    .to(
       cubeItems[3],
-      { yPercent: 90, xPercent: 50, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
+      { yPercent: 70, xPercent: 22, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
       "-=0.6"
     )
     .to(
       cubeItems[4],
-      { yPercent: 103, xPercent: 78, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
+      { yPercent: 83, xPercent: 50, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
       "-=0.6"
     )
     .to(
       cubeItems[5],
+      { yPercent: 96, xPercent: 78, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
+      "-=0.6"
+    )
+    .to(
+      cubeItems[0],
       {
         yPercent: 75,
         xPercent: 50,
@@ -803,27 +782,39 @@ window.addEventListener("load", function () {
         ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
       },
       "-=0.6"
-    )
-    .to(
-      textGroup,
-      {
-        opacity: 1,
-        duration: 0.8,
-        ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-        zIndex: 4,
-        onStart: () => {
-          setActiveMenu(0);
-        },
-      },
-      "+=0.5"
     );
+
+  const textTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: "+=600",
+      end: "+=600",
+      id: "parallax-depth-text",
+      toggleActions: "play reset play reset",
+    },
+  });
+
+  textTl.to(
+    textGroup,
+    {
+      opacity: 1,
+      duration: 0.8,
+      ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      zIndex: 4,
+      onStart: () => {
+        setActiveMenu(0);
+      },
+    },
+    "+=2"
+  );
 
   // 마지막 큐브/타이틀/설명 등장
   const cubeTl2 = gsap.timeline({
     scrollTrigger: {
       trigger: container,
-      start: "+=1500",
-      end: "+=800",
+      start: "+=1200",
+      end: "+=600",
+      id: "parallax-depth-cube2",
       toggleActions: "play none none reset",
       onEnter: () => {
         savedActiveIndex = activeIndex;
@@ -840,7 +831,7 @@ window.addEventListener("load", function () {
   });
 
   cubeTl2
-    .to(textGroup, { opacity: 0, zIndex: 3, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" }, "<")
+    .to(textGroup, { opacity: 0, zIndex: 3 })
     .to(cubeItems[6], { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
     .to(cubeTitle, { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
     .to(cubeDesc, { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" });
