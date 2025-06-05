@@ -637,7 +637,7 @@ window.addEventListener("load", function () {
   ScrollTrigger.create({
     trigger: section,
     start: "top top",
-    end: "+=2000",
+    end: "+=2500",
     pin: true,
     pinSpacing: true,
     id: "parallax-depth-section",
