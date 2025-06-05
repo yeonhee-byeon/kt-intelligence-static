@@ -39,7 +39,7 @@ window.addEventListener("load", function () {
     if (!video) return;
 
     // 부드러운 보간 계산 (0.1은 보간 속도, 필요시 0.05~0.2 사이로 조절 가능)
-    currentTime = lerp(currentTime, targetTime, 0.05);
+    currentTime = lerp(currentTime, targetTime, 0.1);
 
     // 너무 자주 설정 시 프레임 드랍 유발 → 조건부 갱신
     if (Math.abs(video.currentTime - currentTime) > 0.01) {
