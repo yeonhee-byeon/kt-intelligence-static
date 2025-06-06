@@ -592,6 +592,7 @@ window.addEventListener("load", function () {
   const menuItems = section.querySelectorAll(".pds-menu-item");
   const cubeItems = section.querySelectorAll(".pds-cube-item");
   const menuTabItems = section.querySelectorAll(".pds-menu-tab ul li");
+  const mobileMenu = section.querySelectorAll(".mobile-accordion");
 
   // 큐브 이미지 경로
   const imagePaths = [
@@ -699,142 +700,308 @@ window.addEventListener("load", function () {
   gsap.set(cubeItems[6], { opacity: 0 });
   gsap.set(cubeTitle, { opacity: 0 });
   gsap.set(cubeDesc, { opacity: 0 });
+  gsap.set(mobileMenu, { opacity: 0 });
 
-  // 타이틀/설명 등장
-  const titleTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: container,
-      start: "-10% top",
-      end: "+=680",
-      toggleActions: "play reset play reset",
-      onEnter: lockScroll,
-      onLeaveBack: unlockScroll,
-      onEnterBack: () => {
-        gsap.set(textGroup, { opacity: 0, zIndex: 3 });
+  const createDesktopTimeline = () => {
+    // 타이틀/설명 등장
+    const titleTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "-10% top",
+        end: "+=680",
+        toggleActions: "play reset play reset",
+        onEnter: lockScroll,
+        onLeaveBack: unlockScroll,
+        onEnterBack: () => {
+          gsap.set(textGroup, { opacity: 0, zIndex: 3 });
+        },
       },
-    },
-    onComplete: unlockScroll,
-  });
+      onComplete: unlockScroll,
+    });
 
-  titleTl
-    .to(titleGroup, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-    })
-    .to(
-      konGroup,
-      {
+    titleTl
+      .to(titleGroup, {
         opacity: 1,
         y: 0,
         duration: 0.8,
         ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-      },
-      "-=0.6"
-    );
+      })
+      .to(
+        konGroup,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        },
+        "-=0.6"
+      );
 
-  // 큐브 이동 애니메이션
-  const cubeTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: container,
-      start: "+=600",
-      end: "+=600",
-      toggleActions: "play none none reset",
-      id: "parallax-depth-cube",
-      onEnter: lockScroll,
-      onLeaveBack: () => {
-        setActiveMenu(-1);
-        unlockScroll();
+    // 큐브 이동 애니메이션
+    const cubeTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "+=600",
+        end: "+=600",
+        toggleActions: "play none none reset",
+        id: "parallax-depth-cube",
+        onEnter: lockScroll,
+        onLeaveBack: () => {
+          setActiveMenu(-1);
+          unlockScroll();
+        },
       },
-    },
-    onComplete: unlockScroll,
-  });
+      onComplete: unlockScroll,
+    });
 
-  cubeTl
-    .to(cubeItems[1], { opacity: 1, duration: 0.3, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
-    .to(
-      cubeItems[2],
-      { yPercent: 30, xPercent: 50, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
-      "-=0.3"
-    )
-    .to(
-      cubeItems[3],
-      { yPercent: 70, xPercent: 22, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
-      "-=0.6"
-    )
-    .to(
-      cubeItems[4],
-      { yPercent: 83, xPercent: 50, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
-      "-=0.6"
-    )
-    .to(
-      cubeItems[5],
-      { yPercent: 96, xPercent: 78, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
-      "-=0.6"
-    )
-    .to(
-      cubeItems[0],
+    cubeTl
+      .to(cubeItems[1], { opacity: 1, duration: 0.3, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
+      .to(
+        cubeItems[2],
+        { yPercent: 30, xPercent: 50, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
+        "-=0.3"
+      )
+      .to(
+        cubeItems[3],
+        { yPercent: 70, xPercent: 22, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
+        "-=0.6"
+      )
+      .to(
+        cubeItems[4],
+        { yPercent: 83, xPercent: 50, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
+        "-=0.6"
+      )
+      .to(
+        cubeItems[5],
+        { yPercent: 96, xPercent: 78, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
+        "-=0.6"
+      )
+      .to(
+        cubeItems[0],
+        {
+          yPercent: 75,
+          xPercent: 50,
+          duration: 0.8,
+          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        },
+        "-=0.6"
+      );
+
+    const textTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "+=600",
+        end: "+=600",
+        id: "parallax-depth-text",
+        toggleActions: "play reset play reset",
+      },
+    });
+
+    textTl.to(
+      textGroup,
       {
-        yPercent: 75,
-        xPercent: 50,
+        opacity: 1,
         duration: 0.8,
         ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        zIndex: 4,
+        onStart: () => {
+          setActiveMenu(0);
+        },
       },
-      "-=0.6"
+      "+=2"
     );
 
-  const textTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: container,
-      start: "+=600",
-      end: "+=600",
-      id: "parallax-depth-text",
-      toggleActions: "play reset play reset",
-    },
+    // 마지막 큐브/타이틀/설명 등장
+    const cubeTl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "+=1200",
+        end: "+=600",
+        id: "parallax-depth-cube2",
+        toggleActions: "play none none reset",
+        onEnter: () => {
+          savedActiveIndex = activeIndex;
+          resetAllCubeImages();
+          setActiveMenu(7);
+          lockScroll();
+        },
+        onLeaveBack: () => {
+          setActiveMenu(savedActiveIndex);
+          unlockScroll();
+        },
+      },
+      onComplete: unlockScroll,
+    });
+
+    cubeTl2
+      .to(textGroup, { opacity: 0, zIndex: 3 })
+      .to(cubeItems[6], { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
+      .to(cubeTitle, { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
+      .to(cubeDesc, { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" });
+
+    return [titleTl, cubeTl, textTl, cubeTl2];
+  };
+
+  const createMobileTimeline = () => {
+    // 타이틀/설명 등장
+    const titleTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "-10% top",
+        end: "+=680",
+        toggleActions: "play reset play reset",
+        onEnter: lockScroll,
+        onLeaveBack: unlockScroll,
+        onEnterBack: () => {
+          gsap.set(textGroup, { opacity: 0, zIndex: 3 });
+        },
+      },
+      onComplete: unlockScroll,
+    });
+
+    titleTl
+      .to(titleGroup, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      })
+      .to(
+        konGroup,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        },
+        "-=0.6"
+      );
+
+    // 큐브 이동 애니메이션
+    const cubeTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "+=600",
+        end: "+=600",
+        toggleActions: "play none none reset",
+        id: "parallax-depth-cube",
+        onEnter: lockScroll,
+        onLeaveBack: () => {
+          setActiveMenu(-1);
+          unlockScroll();
+        },
+      },
+      onComplete: unlockScroll,
+    });
+
+    cubeTl
+      .to(cubeItems[1], { opacity: 1, duration: 0.3, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
+      .to(
+        cubeItems[2],
+        { yPercent: 10, xPercent: 50, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
+        "-=0.3"
+      )
+      .to(
+        cubeItems[3],
+        { yPercent: 36, xPercent: 22, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
+        "-=0.6"
+      )
+      .to(
+        cubeItems[4],
+        { yPercent: 49, xPercent: 50, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
+        "-=0.6"
+      )
+      .to(
+        cubeItems[5],
+        { yPercent: 62, xPercent: 78, duration: 0.8, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" },
+        "-=0.6"
+      )
+      .to(
+        cubeItems[0],
+        {
+          yPercent: 50,
+          xPercent: 50,
+          duration: 0.8,
+          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        },
+        "-=0.6"
+      );
+
+    const textTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "+=600",
+        end: "+=600",
+        id: "parallax-depth-text",
+        toggleActions: "play reset play reset",
+      },
+    });
+
+    textTl.to(
+      mobileMenu,
+      {
+        opacity: 1,
+        duration: 0.8,
+        ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        zIndex: 4,
+        onStart: () => {
+          setActiveMenu(0);
+        },
+      },
+      "+=2"
+    );
+
+    // 마지막 큐브/타이틀/설명 등장
+    const cubeTl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "+=1200",
+        end: "+=600",
+        id: "parallax-depth-cube2",
+        toggleActions: "play none none reset",
+        onEnter: () => {
+          savedActiveIndex = activeIndex;
+          resetAllCubeImages();
+          setActiveMenu(7);
+          lockScroll();
+        },
+        onLeaveBack: () => {
+          setActiveMenu(savedActiveIndex);
+          unlockScroll();
+        },
+      },
+      onComplete: unlockScroll,
+    });
+
+    cubeTl2
+      .to(textGroup, { opacity: 0, zIndex: 3 })
+      .to(cubeItems[6], { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
+      .to(cubeTitle, { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
+      .to(cubeDesc, { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" });
+
+    return [titleTl, cubeTl, textTl, cubeTl2];
+  };
+
+  // Initialize animations based on screen size
+  let currentTimeline;
+
+  const initAnimation = () => {
+    if (currentTimeline) {
+      currentTimeline.kill();
+    }
+
+    currentTimeline = window.innerWidth <= 768 ? createMobileTimeline() : createDesktopTimeline();
+  };
+
+  // Initial setup
+  initAnimation();
+
+  // Handle resize
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(initAnimation, 250);
   });
-
-  textTl.to(
-    textGroup,
-    {
-      opacity: 1,
-      duration: 0.8,
-      ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-      zIndex: 4,
-      onStart: () => {
-        setActiveMenu(0);
-      },
-    },
-    "+=2"
-  );
-
-  // 마지막 큐브/타이틀/설명 등장
-  const cubeTl2 = gsap.timeline({
-    scrollTrigger: {
-      trigger: container,
-      start: "+=1200",
-      end: "+=600",
-      id: "parallax-depth-cube2",
-      toggleActions: "play none none reset",
-      onEnter: () => {
-        savedActiveIndex = activeIndex;
-        resetAllCubeImages();
-        setActiveMenu(7);
-        lockScroll();
-      },
-      onLeaveBack: () => {
-        setActiveMenu(savedActiveIndex);
-        unlockScroll();
-      },
-    },
-    onComplete: unlockScroll,
-  });
-
-  cubeTl2
-    .to(textGroup, { opacity: 0, zIndex: 3 })
-    .to(cubeItems[6], { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
-    .to(cubeTitle, { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
-    .to(cubeDesc, { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" });
 
   // 초기화
   setActiveMenu(-1);
@@ -849,6 +1016,7 @@ window.addEventListener("load", function () {
   items.forEach((item) => {
     const btn = item.querySelector(".mobile-accordion-btn");
     const panel = item.querySelector(".mobile-accordion-panel");
+    const img = item.querySelector("img");
     if (!btn || !panel) return;
     btn.addEventListener("click", function () {
       const isOpen = btn.getAttribute("aria-expanded") === "true";
@@ -856,10 +1024,12 @@ window.addEventListener("load", function () {
       items.forEach((i) => {
         const b = i.querySelector(".mobile-accordion-btn");
         const p = i.querySelector(".mobile-accordion-panel");
+        const img = i.querySelector("img");
         if (b && p) {
           b.setAttribute("aria-expanded", "false");
           p.setAttribute("aria-hidden", "true");
           p.classList.remove("open");
+          if (img) img.src = img.src.replace("ico-kon.svg", "ico-kon-gray.svg");
         }
       });
       // Open this panel if it was closed
@@ -867,6 +1037,7 @@ window.addEventListener("load", function () {
         btn.setAttribute("aria-expanded", "true");
         panel.setAttribute("aria-hidden", "false");
         panel.classList.add("open");
+        if (img) img.src = img.src.replace("ico-kon-gray.svg", "ico-kon.svg");
       }
     });
   });
