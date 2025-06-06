@@ -76,27 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-  //mid-banner 섹션 높이 세팅
-  function setMidBannerHeight() {
-    const midBannerWrappers = document.querySelectorAll('.mid-banner-wrapper');
-
-    midBannerWrappers.forEach(wrapper => {
-      const inner = wrapper.querySelector('.mid-banner-inner');
-      const bgBlack = wrapper.querySelector('.mid-banner-bg-black');
-
-      if (inner && bgBlack) {
-        const innerHeight = inner.offsetHeight;
-        bgBlack.style.height = `${innerHeight}px`;
-      }
-    });
-  }
-
-  // 초기 로드시 실행
-  setMidBannerHeight();
-
-  // 리사이즈시 높이 재설정
-  window.addEventListener('resize', setMidBannerHeight);
-
   // 스티키 헤더 show 클래스 토글
   function toggleStickyHeader() {
     const stickyHeader = document.querySelector('.tab-sticky-header');
@@ -111,6 +90,14 @@ document.addEventListener('DOMContentLoaded', function () {
       const tabsRect = tabsComponent.getBoundingClientRect();
       const headerHeight = document.querySelector('#main-header').offsetHeight;
       const inRange = tabsRect.top <= headerHeight && tabsRect.bottom > headerHeight;
+
+      // 배경색 영역 체크
+      const blackStyleSection = document.querySelector('.bg-black-style');
+      if (blackStyleSection) {
+        const blackStyleRect = blackStyleSection.getBoundingClientRect();
+        const isInBlackStyle = blackStyleRect.top <= headerHeight && blackStyleRect.bottom > headerHeight;
+        stickyHeader.classList.toggle('black-style', isInBlackStyle);
+      }
 
       const firstLi = stickyHeader.querySelector('.sticky-header-list li:first-child');
       if (firstLi && firstLi.classList.contains('active')) {
@@ -153,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
             forceShowStickyHeader = true;
             stickyHeader.classList.add('show');
             window.scrollTo({
-              top: targetPosition + 3,
+              top: targetPosition + 2,
               behavior: 'smooth'
             });
             setTimeout(() => {
@@ -162,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 800); // 스크롤 애니메이션 시간에 맞게 조정
           } else {
             window.scrollTo({
-              top: targetPosition,
+              top: targetPosition + 3,
               behavior: 'smooth'
             });
           }
