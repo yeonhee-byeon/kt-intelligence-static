@@ -71,12 +71,8 @@
 }
 
 .card-list-horizontal .card {
-  flex: 0 0 calc(33.333333333333336% - 1.5rem);
-  max-width: calc(33.333333333333336% - 1.5rem);
-}
-
-.card-list-horizontal .card:nth-child(n+4) {
-  margin-top: 5rem;
+  flex: 0 0 calc(25% - 1.5rem);
+  max-width: calc(25% - 1.5rem);
 }
 
 .card-list-horizontal .card .sub-desc {
@@ -94,7 +90,7 @@
 .card-list-horizontal .card-img {
   border-radius: 1.25rem;
   background: var(--white-color);
-  height: 36.125rem;
+  height: 27rem;
 }
 
 .card-list-horizontal .card-img img {
@@ -114,6 +110,9 @@
   color: var(--gray-900-color);
   flex-wrap: wrap;
   margin-top: -0.375rem;
+}
+
+.useCasePage .card-tags {
   max-width: 22rem;
 }
 
@@ -290,6 +289,26 @@
   height: 100%;
   display: block;
 }
+
+
+/* Use Case Page */
+.useCasePage .card-list-horizontal .card {
+  flex: 0 0 calc(33.333333333333336% - 1.5rem);
+  max-width: calc(33.333333333333336% - 1.5rem);
+}
+
+.useCasePage .card-list-horizontal {
+  flex-wrap: wrap;
+}
+
+.useCasePage .card-list-horizontal .card-img {
+  height: 36.125rem;
+}
+
+.useCasePage .card-list-horizontal .card:nth-child(n+4) {
+  margin-top: 5rem;
+}
+
 
 
 /* Tech Page */
@@ -540,6 +559,10 @@
   .useCasePage .card-list-horizontal .card {
     flex: 0 0 calc(100% - 1rem);
     max-width: calc(100% - 1rem);
+  }
+
+  .useCasePage .card-list-horizontal .card-img {
+    width: 36.125rem;
   }
 
   .useCasePage .card-list-horizontal .card:nth-child(n+2) {
