@@ -25,432 +25,354 @@ window.addEventListener("load", function () {
   gsap.to(button, { opacity: 1, duration: 1, delay: 1.5, ease: "power2.out" });
 })();
 
+// ===== sub-banner-section =====
 (function () {
-  // const video = document.getElementById("scrollVideo");
-  // let videoDuration = 0;
-  // let targetTime = 0;
-  // let currentTime = 0;
+  const subBannerSection = document.querySelector(".sub-banner-section");
+  if (!subBannerSection) return;
 
-  // const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
+  const video = document.querySelector(".sub-banner-inner > video");
+  const subBannerList1 = document.querySelector(".sub-banner-item.sub-banner-item1");
+  const subBannerList2 = document.querySelector(".sub-banner-item.sub-banner-item2");
+  const subBannerList3 = document.querySelector(".sub-banner-item.sub-banner-item3");
+  const subBannerList4 = document.querySelector(".sub-banner-item.sub-banner-item4");
+  const subBannerList5 = document.querySelector(".sub-banner-item.sub-banner-item5");
+  const subBannerList6First = document.querySelector(".sub-banner-item6-first");
+  const subBannerList6Second = document.querySelector(".sub-banner-item6-second");
 
-  // // 부드러운 업데이트 루프
-  // const smoothUpdate = () => {
-  //   if (!video) return;
+  const chars = [...subBannerList6First.textContent.trim()];
+  subBannerList6First.textContent = "";
+  chars.forEach((char) => {
+    const span = document.createElement("span");
+    span.textContent = char;
+    subBannerList6First.appendChild(span);
+  });
+  const chars2 = [...subBannerList6Second.textContent.trim()];
+  subBannerList6Second.textContent = "";
+  chars2.forEach((char) => {
+    const span = document.createElement("span");
+    span.textContent = char;
+    subBannerList6Second.appendChild(span);
+  });
+  const spansFirst = subBannerList6First.querySelectorAll("span");
+  const spansSecond = subBannerList6Second.querySelectorAll("span");
 
-  //   // 부드러운 보간 계산 (0.1은 보간 속도, 필요시 0.05~0.2 사이로 조절 가능)
-  //   currentTime = lerp(currentTime, targetTime, 0.1);
-
-  //   // 너무 자주 설정 시 프레임 드랍 유발 → 조건부 갱신
-  //   if (Math.abs(video.currentTime - currentTime) > 0.01) {
-  //     video.currentTime = currentTime;
-  //   }
-
-  //   requestAnimationFrame(smoothUpdate);
-  // };
-
-  // requestAnimationFrame(smoothUpdate);
-
-  // video.addEventListener("loadedmetadata", () => {
-  //   videoDuration = video.duration;
-
-  //   ScrollTrigger.create({
-  //     trigger: ".sub-banner-video-section",
-  //     start: "top top",
-  //     //   end: "+=500%",
-  //     id: "sub-banner-video",
-  //     //   pin: true,
-  //     //   pinSpacing: true,
-  //     scrub: true,
-  //     onUpdate: (self) => {
-  //       const progress = self.progress;
-  //       targetTime = progress * videoDuration;
-  //     },
-  //   });
-  // });
-
-  console.clear();
-
-  const video = document.querySelector("#scrollVideo");
-  let src = video.currentSrc || video.src;
-
-  function once(el, event, fn, opts) {
-    var onceFn = function (e) {
-      el.removeEventListener(event, onceFn);
-      fn.apply(this, arguments);
-    };
-    el.addEventListener(event, onceFn, opts);
-    return onceFn;
+  // 필수 요소가 없으면 실행하지 않음
+  if (
+    !video ||
+    !subBannerList1 ||
+    !subBannerList2 ||
+    !subBannerList3 ||
+    !subBannerList4 ||
+    !subBannerList5 ||
+    !subBannerList6First ||
+    !subBannerList6Second
+  ) {
+    return;
   }
 
-  once(document.documentElement, "touchstart", function (e) {
-    video.play();
-    video.pause();
-  });
+  const numberWrap = document.querySelector(".number-wrap");
+  const number = document.querySelector(".number-wrap li");
+  if (!numberWrap || !number) return;
 
-  gsap.registerPlugin(ScrollTrigger);
+  // sub-banner-item4
+  const nb1_4 = subBannerList4.querySelector(".nb1 .number-wrap");
+  const nb2_4 = subBannerList4.querySelector(".nb2 .number-wrap");
+  if (!nb1_4 || !nb2_4) return;
 
-  let tl = gsap.timeline({
-    defaults: { duration: 1 },
-    scrollTrigger: {
-      trigger: ".sub-banner-video-section",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-    },
-  });
+  const numberHeight4 = nb1_4.querySelector("li")?.offsetHeight;
+  if (!numberHeight4) return;
 
-  once(video, "loadedmetadata", () => {
-    tl.fromTo(
-      video,
-      {
-        currentTime: 0,
-      },
-      {
-        currentTime: video.duration || 1,
-      }
-    );
-  });
+  let r4 = 0;
+  const counterTimeline4 = gsap.timeline();
+  const count4 = (i) => -(numberHeight4 * (i + 10 * r4));
+  function countAnimation4(n, m) {
+    counterTimeline4.clear();
+    counterTimeline4
+      .add("start")
+      .to(nb1_4, { y: count4(n), duration: 1, ease: "Power2.easeOut" }, "start")
+      .to(nb2_4, { y: count4(m), duration: 1, ease: "Power2.easeOut" }, "start+=0.3");
+    r4 = r4 === 0 ? 1 : 0;
+  }
 
-  setTimeout(function () {
-    if (window["fetch"]) {
-      fetch(src)
-        .then((response) => response.blob())
-        .then((response) => {
-          var blobURL = URL.createObjectURL(response);
+  // sub-banner-item5
+  const nb1_5 = subBannerList5.querySelector(".nb1 .number-wrap");
+  const nb2_5 = subBannerList5.querySelector(".nb2 .number-wrap");
+  if (!nb1_5 || !nb2_5) return;
 
-          var t = video.currentTime;
-          once(document.documentElement, "touchstart", function (e) {
-            video.play();
-            video.pause();
-          });
+  const numberHeight5 = nb1_5.querySelector("li")?.offsetHeight;
+  if (!numberHeight5) return;
 
-          video.setAttribute("src", blobURL);
-          video.currentTime = t + 0.005;
-        });
+  let r5 = 0;
+  const counterTimeline5 = gsap.timeline();
+  const count5 = (i) => -(numberHeight5 * (i + 10 * r5));
+  function countAnimation5(n, m) {
+    counterTimeline5.clear();
+    counterTimeline5
+      .add("start")
+      .to(nb1_5, { y: count5(n), duration: 1, ease: "Power2.easeOut" }, "start")
+      .to(nb2_5, { y: count5(m), duration: 1, ease: "Power2.easeOut" }, "start+=0.3");
+    r5 = r5 === 0 ? 1 : 0;
+  }
+
+  // Initial settings
+  const initialSettings = () => {
+    // gsap.set(video, { yPercent: -50, xPercent: -50 });
+    gsap.set(subBannerList1, { opacity: 0, x: -100 });
+    gsap.set(subBannerList2, { opacity: 0, y: 100 });
+    gsap.set(subBannerList3, { opacity: 0, y: 100 });
+    gsap.set(subBannerList4, { opacity: 0 });
+    gsap.set(subBannerList5, { opacity: 0 });
+    gsap.set(spansFirst, { opacity: 0 });
+    gsap.set(spansSecond, { opacity: 0 });
+  };
+
+  let videoDuration = 0;
+  let targetTime = 0;
+  let currentTime = 0;
+
+  const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
+
+  // 부드러운 업데이트 루프
+  const smoothUpdate = () => {
+    if (!video) return;
+
+    // 부드러운 보간 계산 (0.1은 보간 속도, 필요시 0.05~0.2 사이로 조절 가능)
+    currentTime = lerp(currentTime, targetTime, 0.05);
+
+    // 너무 자주 설정 시 프레임 드랍 유발 → 조건부 갱신
+    if (Math.abs(video.currentTime - currentTime) > 0.01) {
+      video.currentTime = currentTime;
     }
-  }, 1000);
+
+    requestAnimationFrame(smoothUpdate);
+  };
+
+  requestAnimationFrame(smoothUpdate);
+
+  // ScrollTrigger 생성 전 GSAP 존재 확인
+  if (!window.gsap || !window.ScrollTrigger) return;
+
+  // Animation timeline for desktop
+  const createDesktopTimeline = () => {
+    video.addEventListener("loadedmetadata", () => {
+      videoDuration = video.duration;
+
+      const tl = gsap.timeline({
+        ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        scrollTrigger: {
+          trigger: subBannerSection,
+          start: "top top",
+          end: "bottom bottom",
+          id: "sub-banner-section",
+          scrub: 1.5,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            targetTime = progress * videoDuration;
+          },
+        },
+      });
+
+      tl.to(subBannerList1, {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+      })
+        .to(
+          subBannerList1,
+          {
+            opacity: 0,
+            duration: 1,
+          },
+          "+=0.5"
+        )
+        .to(subBannerList2, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+        })
+        .to(subBannerList3, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+        })
+        .to(
+          [subBannerList2, subBannerList3],
+          {
+            opacity: 0,
+            duration: 0.5,
+            onComplete: () => {
+              countAnimation4(2, 4);
+              countAnimation5(5, 8);
+            },
+          },
+          "+=0.5"
+        )
+        .to([subBannerList4, subBannerList5], {
+          opacity: 1,
+          duration: 1,
+        })
+        .to(
+          [subBannerList4, subBannerList5],
+          {
+            opacity: 0,
+            duration: 1,
+          },
+          "+=0.5"
+        )
+        .to(spansFirst, {
+          opacity: 1,
+          autoAlpha: 1,
+          stagger: 0.1,
+        })
+        .to(spansSecond, {
+          opacity: 1,
+          autoAlpha: 1,
+          stagger: 0.1,
+        });
+
+      return tl;
+    });
+  };
+
+  // Animation timeline for mobile
+  const createMobileTimeline = () => {
+    const tl = gsap.timeline({
+      repeat: -1,
+      repeatDelay: 2,
+      scrollTrigger: {
+        trigger: subBannerSection,
+        start: "top top",
+      },
+    });
+
+    tl.to(video, {
+      yPercent: -50,
+      xPercent: 0,
+      duration: 12,
+      ease: "power2.out",
+    })
+      .to(
+        subBannerList1,
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        },
+        "-=12"
+      )
+      .to(
+        subBannerList1,
+        {
+          opacity: 0,
+          duration: 1,
+          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        },
+        "-=11"
+      )
+      .to(
+        subBannerList2,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        },
+        "-=10"
+      )
+      .to(
+        subBannerList3,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        },
+        "-=9.5"
+      )
+      .to(
+        [subBannerList2, subBannerList3],
+        {
+          opacity: 0,
+          duration: 0.5,
+          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+          onComplete: () => {
+            countAnimation4(2, 4);
+            countAnimation5(5, 8);
+          },
+        },
+        "-=7"
+      )
+      .to(
+        [subBannerList4, subBannerList5],
+        {
+          opacity: 1,
+          duration: 1,
+          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        },
+        "-=6.5"
+      )
+      .to(
+        [subBannerList4, subBannerList5],
+        {
+          opacity: 0,
+          duration: 1,
+          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        },
+        "-=4.5"
+      )
+      .to(
+        subBannerList6First,
+        {
+          opacity: 1,
+          letterSpacing: "-0.005rem",
+          fontSize: "2.6rem",
+          duration: 1.5,
+          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        },
+        "-=4"
+      )
+      .to(
+        subBannerList6Second,
+        {
+          opacity: 1,
+          letterSpacing: "-0.005rem",
+          fontSize: "3.6rem",
+          duration: 2,
+          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        },
+        "-=3.5"
+      );
+
+    return tl;
+  };
+
+  // Initialize animations based on screen size
+  let currentTimeline;
+
+  const initAnimation = () => {
+    initialSettings();
+
+    // if (currentTimeline) {
+    //   currentTimeline.kill();
+    // }
+
+    currentTimeline = window.innerWidth <= 768 ? createMobileTimeline() : createDesktopTimeline();
+  };
+
+  // Initial setup
+  initAnimation();
+
+  // Handle resize
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(initAnimation, 250);
+  });
 })();
 
-// ===== sub-banner-section =====
-// (function () {
-//   const subBannerSection = document.querySelector(".sub-banner-section");
-//   if (!subBannerSection) return;
-
-//   const video = document.querySelector(".sub-banner-inner > video");
-//   const subBannerList1 = document.querySelector(".sub-banner-item.sub-banner-item1");
-//   const subBannerList2 = document.querySelector(".sub-banner-item.sub-banner-item2");
-//   const subBannerList3 = document.querySelector(".sub-banner-item.sub-banner-item3");
-//   const subBannerList4 = document.querySelector(".sub-banner-item.sub-banner-item4");
-//   const subBannerList5 = document.querySelector(".sub-banner-item.sub-banner-item5");
-//   const subBannerList6First = document.querySelector(".sub-banner-item6-first");
-//   const subBannerList6Second = document.querySelector(".sub-banner-item6-second");
-
-//   // 필수 요소가 없으면 실행하지 않음
-//   if (
-//     !video ||
-//     !subBannerList1 ||
-//     !subBannerList2 ||
-//     !subBannerList3 ||
-//     !subBannerList4 ||
-//     !subBannerList5 ||
-//     !subBannerList6First ||
-//     !subBannerList6Second
-//   ) {
-//     return;
-//   }
-
-//   const numberWrap = document.querySelector(".number-wrap");
-//   const number = document.querySelector(".number-wrap li");
-//   if (!numberWrap || !number) return;
-
-//   // sub-banner-item4
-//   const nb1_4 = subBannerList4.querySelector(".nb1 .number-wrap");
-//   const nb2_4 = subBannerList4.querySelector(".nb2 .number-wrap");
-//   if (!nb1_4 || !nb2_4) return;
-
-//   const numberHeight4 = nb1_4.querySelector("li")?.offsetHeight;
-//   if (!numberHeight4) return;
-
-//   let r4 = 0;
-//   const counterTimeline4 = gsap.timeline();
-//   const count4 = (i) => -(numberHeight4 * (i + 10 * r4));
-//   function countAnimation4(n, m) {
-//     counterTimeline4.clear();
-//     counterTimeline4
-//       .add("start")
-//       .to(nb1_4, { y: count4(n), duration: 1, ease: "Power2.easeOut" }, "start")
-//       .to(nb2_4, { y: count4(m), duration: 1, ease: "Power2.easeOut" }, "start+=0.3");
-//     r4 = r4 === 0 ? 1 : 0;
-//   }
-
-//   // sub-banner-item5
-//   const nb1_5 = subBannerList5.querySelector(".nb1 .number-wrap");
-//   const nb2_5 = subBannerList5.querySelector(".nb2 .number-wrap");
-//   if (!nb1_5 || !nb2_5) return;
-
-//   const numberHeight5 = nb1_5.querySelector("li")?.offsetHeight;
-//   if (!numberHeight5) return;
-
-//   let r5 = 0;
-//   const counterTimeline5 = gsap.timeline();
-//   const count5 = (i) => -(numberHeight5 * (i + 10 * r5));
-//   function countAnimation5(n, m) {
-//     counterTimeline5.clear();
-//     counterTimeline5
-//       .add("start")
-//       .to(nb1_5, { y: count5(n), duration: 1, ease: "Power2.easeOut" }, "start")
-//       .to(nb2_5, { y: count5(m), duration: 1, ease: "Power2.easeOut" }, "start+=0.3");
-//     r5 = r5 === 0 ? 1 : 0;
-//   }
-
-//   // Initial settings
-//   const initialSettings = () => {
-//     // gsap.set(video, { yPercent: -50, xPercent: -50 });
-//     gsap.set(subBannerList1, { opacity: 0, x: -100 });
-//     gsap.set(subBannerList2, { opacity: 0, y: 100 });
-//     gsap.set(subBannerList3, { opacity: 0, y: 100 });
-//     gsap.set(subBannerList4, { opacity: 0 });
-//     gsap.set(subBannerList5, { opacity: 0 });
-//     gsap.set(subBannerList6First, { opacity: 0, letterSpacing: "20rem", fontSize: "0.2rem" });
-//     gsap.set(subBannerList6Second, { opacity: 0, letterSpacing: "20rem", fontSize: "0.2rem" });
-//   };
-
-//   let videoDuration = 0;
-//   let targetTime = 0;
-//   let currentTime = 0;
-
-//   const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
-
-//   // 부드러운 업데이트 루프
-//   const smoothUpdate = () => {
-//     if (!video) return;
-
-//     // 부드러운 보간 계산 (0.1은 보간 속도, 필요시 0.05~0.2 사이로 조절 가능)
-//     currentTime = lerp(currentTime, targetTime, 0.05);
-
-//     // 너무 자주 설정 시 프레임 드랍 유발 → 조건부 갱신
-//     if (Math.abs(video.currentTime - currentTime) > 0.01) {
-//       video.currentTime = currentTime;
-//     }
-
-//     requestAnimationFrame(smoothUpdate);
-//   };
-
-//   requestAnimationFrame(smoothUpdate);
-
-//   // ScrollTrigger 생성 전 GSAP 존재 확인
-//   if (!window.gsap || !window.ScrollTrigger) return;
-
-//   // Animation timeline for desktop
-//   const createDesktopTimeline = () => {
-//     video.addEventListener("loadedmetadata", () => {
-//       videoDuration = video.duration;
-
-//       const tl = gsap.timeline({
-//         ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-//         scrollTrigger: {
-//           trigger: subBannerSection,
-//           start: "top top",
-//           end: "bottom bottom",
-//           id: "sub-banner-section",
-//           scrub: true,
-//           onUpdate: (self) => {
-//             const progress = self.progress;
-//             targetTime = progress * videoDuration;
-//           },
-//         },
-//       });
-
-//       tl.to(subBannerList1, {
-//         opacity: 1,
-//         x: 0,
-//         duration: 1,
-//       })
-//         .to(subBannerList1, {
-//           opacity: 0,
-//           duration: 1,
-//         })
-//         .to(subBannerList2, {
-//           opacity: 1,
-//           y: 0,
-//           duration: 0.6,
-//         })
-//         .to(subBannerList3, {
-//           opacity: 1,
-//           y: 0,
-//           duration: 0.6,
-//         })
-//         .to([subBannerList2, subBannerList3], {
-//           opacity: 0,
-//           duration: 0.5,
-//           onComplete: () => {
-//             countAnimation4(2, 4);
-//             countAnimation5(5, 8);
-//           },
-//         })
-//         .to([subBannerList4, subBannerList5], {
-//           opacity: 1,
-//           duration: 1,
-//         })
-//         .to([subBannerList4, subBannerList5], {
-//           opacity: 0,
-//           duration: 1,
-//         })
-//         .to(subBannerList6First, {
-//           opacity: 1,
-//           letterSpacing: "-0.03rem",
-//           fontSize: "4rem",
-//           duration: 1.5,
-//         })
-//         .to(subBannerList6Second, {
-//           opacity: 1,
-//           letterSpacing: "-0.03rem",
-//           fontSize: "4rem",
-//           duration: 2,
-//         });
-
-//       return tl;
-//     });
-//   };
-
-//   // Animation timeline for mobile
-//   const createMobileTimeline = () => {
-//     const tl = gsap.timeline({
-//       repeat: -1,
-//       repeatDelay: 2,
-//       scrollTrigger: {
-//         trigger: subBannerSection,
-//         start: "top top",
-//       },
-//     });
-
-//     tl.to(video, {
-//       yPercent: -50,
-//       xPercent: 0,
-//       duration: 12,
-//       ease: "power2.out",
-//     })
-//       .to(
-//         subBannerList1,
-//         {
-//           opacity: 1,
-//           x: 0,
-//           duration: 1,
-//           ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-//         },
-//         "-=12"
-//       )
-//       .to(
-//         subBannerList1,
-//         {
-//           opacity: 0,
-//           duration: 1,
-//           ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-//         },
-//         "-=11"
-//       )
-//       .to(
-//         subBannerList2,
-//         {
-//           opacity: 1,
-//           y: 0,
-//           duration: 0.6,
-//           ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-//         },
-//         "-=10"
-//       )
-//       .to(
-//         subBannerList3,
-//         {
-//           opacity: 1,
-//           y: 0,
-//           duration: 0.6,
-//           ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-//         },
-//         "-=9.5"
-//       )
-//       .to(
-//         [subBannerList2, subBannerList3],
-//         {
-//           opacity: 0,
-//           duration: 0.5,
-//           ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-//           onComplete: () => {
-//             countAnimation4(2, 4);
-//             countAnimation5(5, 8);
-//           },
-//         },
-//         "-=7"
-//       )
-//       .to(
-//         [subBannerList4, subBannerList5],
-//         {
-//           opacity: 1,
-//           duration: 1,
-//           ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-//         },
-//         "-=6.5"
-//       )
-//       .to(
-//         [subBannerList4, subBannerList5],
-//         {
-//           opacity: 0,
-//           duration: 1,
-//           ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-//         },
-//         "-=4.5"
-//       )
-//       .to(
-//         subBannerList6First,
-//         {
-//           opacity: 1,
-//           letterSpacing: "-0.005rem",
-//           fontSize: "2.6rem",
-//           duration: 1.5,
-//           ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-//         },
-//         "-=4"
-//       )
-//       .to(
-//         subBannerList6Second,
-//         {
-//           opacity: 1,
-//           letterSpacing: "-0.005rem",
-//           fontSize: "3.6rem",
-//           duration: 2,
-//           ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-//         },
-//         "-=3.5"
-//       );
-
-//     return tl;
-//   };
-
-//   // Initialize animations based on screen size
-//   let currentTimeline;
-
-//   const initAnimation = () => {
-//     initialSettings();
-
-//     if (currentTimeline) {
-//       currentTimeline.kill();
-//     }
-
-//     currentTimeline = window.innerWidth <= 768 ? createMobileTimeline() : createDesktopTimeline();
-//   };
-
-//   // Initial setup
-//   initAnimation();
-
-//   // Handle resize
-//   let resizeTimeout;
-//   window.addEventListener("resize", () => {
-//     clearTimeout(resizeTimeout);
-//     resizeTimeout = setTimeout(initAnimation, 250);
-//   });
-// })();
-
 // Parallax Section Animation
+
 (function () {
   // Element selectors
   const section = document.getElementById("parallax-section");
@@ -559,9 +481,9 @@ window.addEventListener("load", function () {
   let currentTimeline;
 
   const initAnimation = () => {
-    if (currentTimeline) {
-      currentTimeline.kill();
-    }
+    // if (currentTimeline) {
+    //   currentTimeline.kill();
+    // }
 
     currentTimeline = window.innerWidth <= 768 ? createMobileTimeline() : createDesktopTimeline();
   };
@@ -588,6 +510,7 @@ window.addEventListener("load", function () {
   const konGroup = section.querySelector(".pds-kon-group");
   const textGroup = section.querySelector(".pds-menu");
   const cubeTitle = section.querySelector(".pds-cube-title");
+  const cubeList = section.querySelector(".pds-cube-list");
   const cubeDesc = section.querySelector(".pds-cube-desc");
   const menuItems = section.querySelectorAll(".pds-menu-item");
   const cubeItems = section.querySelectorAll(".pds-cube-item");
@@ -783,6 +706,11 @@ window.addEventListener("load", function () {
           xPercent: 50,
           duration: 0.8,
           ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+          onComplete: () => {
+            setTimeout(() => {
+              setActiveMenu(savedActiveIndex);
+            }, 500);
+          },
         },
         "-=0.6"
       );
@@ -794,6 +722,9 @@ window.addEventListener("load", function () {
         end: "+=600",
         id: "parallax-depth-text",
         toggleActions: "play reset play reset",
+        onEnterBack: () => {
+          setActiveMenu(savedActiveIndex);
+        },
       },
     });
 
@@ -804,9 +735,6 @@ window.addEventListener("load", function () {
         duration: 0.8,
         ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
         zIndex: 4,
-        onStart: () => {
-          setActiveMenu(0);
-        },
       },
       "+=2"
     );
@@ -974,7 +902,7 @@ window.addEventListener("load", function () {
     });
 
     cubeTl2
-      .to(textGroup, { opacity: 0, zIndex: 3 })
+      .to(cubeList, { yPercent: 40, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
       .to(cubeItems[6], { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
       .to(cubeTitle, { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" })
       .to(cubeDesc, { opacity: 1, duration: 0.5, ease: "cubic-bezier(0.215, 0.61, 0.355, 1)" });
@@ -983,12 +911,12 @@ window.addEventListener("load", function () {
   };
 
   // Initialize animations based on screen size
-  let currentTimeline;
+  // let currentTimeline;
 
   const initAnimation = () => {
-    if (currentTimeline) {
-      currentTimeline.kill();
-    }
+    // if (currentTimeline) {
+    //   currentTimeline.kill();
+    // }
 
     currentTimeline = window.innerWidth <= 768 ? createMobileTimeline() : createDesktopTimeline();
   };

@@ -41,7 +41,7 @@
 }
 
 :root {
-  --primary-color: #ff0000;
+  --primary-color: #fe2e36;
   /* --secondary-color: #fff; */
   --gradation-color: linear-gradient(95deg, #fc4c41 5.99%, #8a0f0e 178.99%);
   /* gray scale */
@@ -49,6 +49,7 @@
   --black-color: #000000;
   --gray-950-color: #101010;
   --gray-900-color: #333333;
+  --gray-850-color: #373737;
   --gray-800-color: #555555;
   --gray-700-color: #707070;
   --gray-600-color: #999999;
