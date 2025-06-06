@@ -353,9 +353,9 @@ window.addEventListener("load", function () {
   const initAnimation = () => {
     initialSettings();
 
-    if (currentTimeline) {
-      currentTimeline.kill();
-    }
+    // if (currentTimeline) {
+    //   currentTimeline.kill();
+    // }
 
     currentTimeline = window.innerWidth <= 768 ? createMobileTimeline() : createDesktopTimeline();
   };
@@ -481,9 +481,9 @@ window.addEventListener("load", function () {
   let currentTimeline;
 
   const initAnimation = () => {
-    if (currentTimeline) {
-      currentTimeline.kill();
-    }
+    // if (currentTimeline) {
+    //   currentTimeline.kill();
+    // }
 
     currentTimeline = window.innerWidth <= 768 ? createMobileTimeline() : createDesktopTimeline();
   };
@@ -706,6 +706,11 @@ window.addEventListener("load", function () {
           xPercent: 50,
           duration: 0.8,
           ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+          onComplete: () => {
+            setTimeout(() => {
+              setActiveMenu(savedActiveIndex);
+            }, 500);
+          },
         },
         "-=0.6"
       );
@@ -717,6 +722,9 @@ window.addEventListener("load", function () {
         end: "+=600",
         id: "parallax-depth-text",
         toggleActions: "play reset play reset",
+        onEnterBack: () => {
+          setActiveMenu(savedActiveIndex);
+        },
       },
     });
 
@@ -727,9 +735,6 @@ window.addEventListener("load", function () {
         duration: 0.8,
         ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
         zIndex: 4,
-        onStart: () => {
-          setActiveMenu(0);
-        },
       },
       "+=2"
     );
@@ -906,12 +911,12 @@ window.addEventListener("load", function () {
   };
 
   // Initialize animations based on screen size
-  let currentTimeline;
+  // let currentTimeline;
 
   const initAnimation = () => {
-    if (currentTimeline) {
-      currentTimeline.kill();
-    }
+    // if (currentTimeline) {
+    //   currentTimeline.kill();
+    // }
 
     currentTimeline = window.innerWidth <= 768 ? createMobileTimeline() : createDesktopTimeline();
   };
