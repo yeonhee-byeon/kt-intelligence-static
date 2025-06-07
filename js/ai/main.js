@@ -8,25 +8,15 @@ window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
 
-// 새로고침 후 상단 이동 및 GSAP 초기화
-window.addEventListener("load", function () {
-  setTimeout(function () {
-    window.scrollTo(0, 0);
-  }, 10);
-  if (window.gsap && window.ScrollTrigger) {
-    window.ScrollTrigger.refresh();
-  }
-});
-
-// HeroSection 등장 및 롤링 애니메이션
-(function () {
+// ===== 애니메이션 함수 정의 =====
+function initHeroSectionAnimation() {
   const button = document.querySelector(".hero-btn-wrap");
+  if (!button || !window.gsap) return;
   gsap.set(button, { opacity: 0 });
   gsap.to(button, { opacity: 1, duration: 1, delay: 1.5, ease: "power2.out" });
-})();
+}
 
-// ===== sub-banner-section =====
-(function () {
+function initSubBannerSectionAnimation() {
   const subBannerSection = document.querySelector(".sub-banner-section");
   if (!subBannerSection) return;
 
@@ -369,11 +359,9 @@ window.addEventListener("load", function () {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(initAnimation, 250);
   });
-})();
+}
 
-// Parallax Section Animation
-
-(function () {
+function initParallaxSectionAnimation() {
   // Element selectors
   const section = document.getElementById("parallax-section");
   const subtitle1 = document.getElementById("subtitle1");
@@ -497,10 +485,9 @@ window.addEventListener("load", function () {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(initAnimation, 250);
   });
-})();
+}
 
-// ParallaxDepthSection (K intelligence 구성요소) 애니메이션
-(function () {
+function initParallaxDepthSectionAnimation() {
   const section = document.querySelector(".parallax-depth-section");
   if (!section || !window.gsap || !window.ScrollTrigger) return;
 
@@ -934,10 +921,9 @@ window.addEventListener("load", function () {
   // 초기화
   setActiveMenu(-1);
   setTimeout(() => ScrollTrigger.refresh(), 0);
-})();
+}
 
-// Mobile Accordion Functionality
-(function () {
+function initMobileAccordion() {
   const accordion = document.querySelector(".mobile-accordion");
   if (!accordion) return;
   const items = accordion.querySelectorAll(".mobile-accordion-item");
@@ -969,4 +955,19 @@ window.addEventListener("load", function () {
       }
     });
   });
-})();
+}
+
+// ===== 페이지 로드 후 애니메이션 실행 =====
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    window.scrollTo(0, 0);
+  }, 10);
+  if (window.gsap && window.ScrollTrigger) {
+    window.ScrollTrigger.refresh();
+  }
+  initHeroSectionAnimation();
+  initSubBannerSectionAnimation();
+  initParallaxSectionAnimation();
+  initParallaxDepthSectionAnimation();
+  initMobileAccordion();
+});

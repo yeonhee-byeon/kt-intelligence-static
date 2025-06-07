@@ -19,7 +19,7 @@ br.mo-br {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 .banner-section > img.mo-banner-bg {
   display: none;
@@ -44,15 +44,17 @@ br.mo-br {
   text-shadow: 1px 4px 40px rgba(0, 0, 0, 0.4);
 }
 .banner-section h2 img {
-  width: 6.75rem;
-  height: 6.5rem;
+  width: 11.75rem;
+  height: 11.5rem;
+  margin: 0 -2.5rem -2.8rem 0;
 }
 .banner-section p {
   color: var(--white-color);
   font-size: var(--font-size-3xl);
-  font-weight: 700;
-  line-height: var(--line-height-150);
+  font-weight: 600;
+  line-height: 1.48;
   letter-spacing: var(--letter-spacing-md);
+  text-shadow: 1px 4px 40px rgba(0, 0, 0, 0.4);
 }
 .sub-banner {
   margin-top: 0;
