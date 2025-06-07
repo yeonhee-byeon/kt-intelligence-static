@@ -132,22 +132,22 @@ br.mo-br {
 }
 .title-wrapper span {
   color: var(--primary-color);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
   font-weight: 700;
   line-height: var(--line-height-150);
   letter-spacing: var(--letter-spacing-md);
 }
 .title-wrapper h2 {
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-  font-size: var(--font-size-7xl);
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
+  font-size: var(--font-size-8xl);
   font-weight: 700;
   line-height: var(--line-height-136);
   letter-spacing: var(--letter-spacing-md);
 }
 .title-wrapper p {
   color: var(--gray-900-color);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-2xl);
   font-weight: 500;
   line-height: var(--line-height-172);
   letter-spacing: var(--letter-spacing-md);
@@ -1142,7 +1142,7 @@ br.mo-br {
     height: 100%;
   }
   .card-list li .card-item h3 {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     line-height: 1.32;
     letter-spacing: var(--letter-spacing-base);
   }
@@ -1154,7 +1154,7 @@ br.mo-br {
   }
   .card-list li .card-item p {
     font-size: 1.6rem;
-    line-height: var(--line-height-172);
+    line-height: 1.68;
     letter-spacing: var(--letter-spacing-base);
   }
   .card-list li .card-item.icon .img {

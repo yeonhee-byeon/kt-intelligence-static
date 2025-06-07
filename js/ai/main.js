@@ -20,7 +20,7 @@ function initSubBannerSectionAnimation() {
   const subBannerSection = document.querySelector(".sub-banner-section");
   if (!subBannerSection) return;
 
-  const video = document.querySelector(".sub-banner-inner > video");
+  const video = document.querySelector(".sub-banner-video");
   const subBannerList1 = document.querySelector(".sub-banner-item.sub-banner-item1");
   const subBannerList2 = document.querySelector(".sub-banner-item.sub-banner-item2");
   const subBannerList3 = document.querySelector(".sub-banner-item.sub-banner-item3");
@@ -47,6 +47,7 @@ function initSubBannerSectionAnimation() {
   const spansSecond = subBannerList6Second.querySelectorAll("span");
 
   // 필수 요소가 없으면 실행하지 않음
+
   if (
     !video ||
     !subBannerList1 ||
@@ -142,9 +143,17 @@ function initSubBannerSectionAnimation() {
   // ScrollTrigger 생성 전 GSAP 존재 확인
   if (!window.gsap || !window.ScrollTrigger) return;
 
+  const onVideoReady = (video, callback) => {
+    if (video.readyState >= 1) {
+      callback();
+    } else {
+      video.addEventListener("loadedmetadata", () => callback());
+    }
+  };
+
   // Animation timeline for desktop
   const createDesktopTimeline = () => {
-    video.addEventListener("loadedmetadata", () => {
+    onVideoReady(video, () => {
       videoDuration = video.duration;
 
       const tl = gsap.timeline({
@@ -226,115 +235,84 @@ function initSubBannerSectionAnimation() {
 
   // Animation timeline for mobile
   const createMobileTimeline = () => {
-    const tl = gsap.timeline({
-      repeat: -1,
-      repeatDelay: 2,
-      scrollTrigger: {
-        trigger: subBannerSection,
-        start: "top top",
-      },
-    });
+    onVideoReady(video, () => {
+      videoDuration = video.duration;
 
-    tl.to(video, {
-      yPercent: -50,
-      xPercent: 0,
-      duration: 12,
-      ease: "power2.out",
-    })
-      .to(
-        subBannerList1,
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-        },
-        "-=12"
-      )
-      .to(
-        subBannerList1,
-        {
-          opacity: 0,
-          duration: 1,
-          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-        },
-        "-=11"
-      )
-      .to(
-        subBannerList2,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-        },
-        "-=10"
-      )
-      .to(
-        subBannerList3,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-        },
-        "-=9.5"
-      )
-      .to(
-        [subBannerList2, subBannerList3],
-        {
-          opacity: 0,
-          duration: 0.5,
-          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-          onComplete: () => {
-            countAnimation4(2, 4);
-            countAnimation5(5, 8);
+      const tl = gsap.timeline({
+        ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        scrollTrigger: {
+          trigger: subBannerSection,
+          start: "top top",
+          end: "bottom bottom",
+          id: "sub-banner-section",
+          scrub: 1.5,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            targetTime = progress * videoDuration;
           },
         },
-        "-=7"
-      )
-      .to(
-        [subBannerList4, subBannerList5],
-        {
-          opacity: 1,
-          duration: 1,
-          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-        },
-        "-=6.5"
-      )
-      .to(
-        [subBannerList4, subBannerList5],
-        {
-          opacity: 0,
-          duration: 1,
-          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-        },
-        "-=4.5"
-      )
-      .to(
-        subBannerList6First,
-        {
-          opacity: 1,
-          letterSpacing: "-0.005rem",
-          fontSize: "2.6rem",
-          duration: 1.5,
-          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-        },
-        "-=4"
-      )
-      .to(
-        subBannerList6Second,
-        {
-          opacity: 1,
-          letterSpacing: "-0.005rem",
-          fontSize: "3.6rem",
-          duration: 2,
-          ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-        },
-        "-=3.5"
-      );
+      });
 
-    return tl;
+      tl.to(subBannerList1, {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+      })
+        .to(
+          subBannerList1,
+          {
+            opacity: 0,
+            duration: 1,
+          },
+          "+=0.5"
+        )
+        .to(subBannerList2, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+        })
+        .to(subBannerList3, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+        })
+        .to(
+          [subBannerList2, subBannerList3],
+          {
+            opacity: 0,
+            duration: 0.5,
+            onComplete: () => {
+              countAnimation4(2, 4);
+              countAnimation5(5, 8);
+            },
+          },
+          "+=0.5"
+        )
+        .to([subBannerList4, subBannerList5], {
+          opacity: 1,
+          duration: 1,
+        })
+        .to(
+          [subBannerList4, subBannerList5],
+          {
+            opacity: 0,
+            duration: 1,
+          },
+          "+=0.5"
+        )
+        .to(spansFirst, {
+          opacity: 1,
+          autoAlpha: 1,
+          stagger: 0.1,
+        })
+        .to(spansSecond, {
+          opacity: 1,
+          autoAlpha: 1,
+          stagger: 0.1,
+        });
+
+      return tl;
+    });
   };
 
   // Initialize animations based on screen size
@@ -965,6 +943,7 @@ window.addEventListener("load", function () {
   if (window.gsap && window.ScrollTrigger) {
     window.ScrollTrigger.refresh();
   }
+  console.log("load");
   initHeroSectionAnimation();
   initSubBannerSectionAnimation();
   initParallaxSectionAnimation();
