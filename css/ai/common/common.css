@@ -423,7 +423,7 @@ body,
 
 .mobile-menu-btn {
   width: 2.4rem;
-  height: 1.8rem;
+  height: 2.4rem;
 }
 
 .mobile-menu-btn img {
@@ -1063,7 +1063,7 @@ body,
   bottom: 0;
   background: #fff;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow-y: auto;
   font-family: "Pretendard", sans-serif;
 }
@@ -1123,12 +1123,12 @@ body,
 }
 
 .mobile-menu-item.has-sub img {
-  transform: rotate(0deg);
+  transform: rotate(180deg);
   transition: transform 0.2s;
 }
 
 .mobile-menu-item.has-sub.open img {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
 }
 
 .mobile-sub-menu {

@@ -91,6 +91,7 @@
   border-radius: 1.25rem;
   background: var(--white-color);
   height: 27rem;
+  overflow: hidden;
 }
 
 .card-list-horizontal .card-img img {
@@ -98,9 +99,6 @@
   width: 100%;
   height: 100%;
 }
-
-
-
 
 /* Card Tags */
 .card-tags {
@@ -116,7 +114,7 @@
   max-width: 22rem;
 }
 
-.card-tags>span {
+.card-tags > span {
   border-radius: 100px;
   border: 1px solid var(--gray-300-color);
   padding: 0.3125rem 0.75rem;
@@ -131,12 +129,12 @@
   margin-right: 4px;
 }
 
-.card-tags>span:nth-child(1) {
+.card-tags > span:nth-child(1) {
   border: 0;
   background-color: var(--gray-200-color);
 }
 
-.card-tags>span:nth-last-child(1) {
+.card-tags > span:nth-last-child(1) {
   margin-right: 0;
 }
 
@@ -162,7 +160,7 @@
 }
 
 .tabs__tab::after {
-  content: '';
+  content: "";
   display: block;
   width: 1%;
   height: 1.25rem;
@@ -239,13 +237,13 @@
 }
 
 .pagination__arrow--prev {
-  background: url('/resource/images/ai/icons/chevron-left.png') no-repeat center center;
+  background: url("/resource/images/ai/icons/chevron-left.png") no-repeat center center;
   background-size: 1.5rem 1.5625rem;
   margin-right: 3px;
 }
 
 .pagination__arrow--next {
-  background: url('/resource/images/ai/icons/chevron-right.png') no-repeat center center;
+  background: url("/resource/images/ai/icons/chevron-right.png") no-repeat center center;
   background-size: 1.5rem 1.5625rem;
   margin-left: 3px;
 }
@@ -290,7 +288,6 @@
   display: block;
 }
 
-
 /* Use Case Page */
 .useCasePage .card-list-horizontal .card {
   flex: 0 0 calc(33.333333333333336% - 1.5rem);
@@ -305,11 +302,9 @@
   height: 36.125rem;
 }
 
-.useCasePage .card-list-horizontal .card:nth-child(n+4) {
+.useCasePage .card-list-horizontal .card:nth-child(n + 4) {
   margin-top: 5rem;
 }
-
-
 
 /* Tech Page */
 .tech-card-list {
@@ -334,7 +329,7 @@
   cursor: pointer;
 }
 
-.tech-card:nth-child(n+2) {
+.tech-card:nth-child(n + 2) {
   margin-top: -1px;
 }
 
@@ -394,7 +389,7 @@
   margin-top: 1.25rem;
 }
 
-.tech-card .card-tags>span:nth-child(1) {
+.tech-card .card-tags > span:nth-child(1) {
   background-color: var(--white-color);
   border: 1px solid var(--gray-500-color);
 }
@@ -481,10 +476,6 @@
   left: 2.5rem;
 }
 
-
-
-
-
 /* Mobile Styles */
 @media (max-width: 767px) {
   .sub-content {
@@ -517,7 +508,7 @@
     font-size: 2.2rem;
   }
 
-  .card-tags>span {
+  .card-tags > span {
     font-size: 1.4rem;
     font-weight: 500;
     line-height: normal;
@@ -546,7 +537,7 @@
     margin: 6rem auto 0;
     width: fit-content;
     background-color: var(--gray-100-color);
-    background-image: url('/resource/images/ai/icons/mb-moreBtn.png');
+    background-image: url("/resource/images/ai/icons/mb-moreBtn.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 2.4rem 2.4rem;
@@ -565,7 +556,7 @@
     width: 36.125rem;
   }
 
-  .useCasePage .card-list-horizontal .card:nth-child(n+2) {
+  .useCasePage .card-list-horizontal .card:nth-child(n + 2) {
     margin-top: 6rem;
   }
 
@@ -574,11 +565,10 @@
     padding-bottom: 63%;
   }
 
-  .useCasePage .card-tags>span:nth-child(1) {
+  .useCasePage .card-tags > span:nth-child(1) {
     background-color: #ebebeb;
     border: 0;
   }
-
 
   .useCasePage .card-list-horizontal .card .sub-desc {
     display: none;
@@ -591,7 +581,6 @@
   .useCasePage .card-tags {
     margin-top: 0.8rem;
   }
-
 
   /* resourcesPage */
   .techPage .tabs {
@@ -635,7 +624,7 @@
     border-top: 0;
   }
 
-  .tech-card:nth-child(n+2) {
+  .tech-card:nth-child(n + 2) {
     margin-top: 6rem;
   }
 
@@ -710,5 +699,4 @@
     padding: 20%;
     background-position: top;
   }
-
 }
