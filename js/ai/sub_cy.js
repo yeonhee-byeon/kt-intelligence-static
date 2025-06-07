@@ -92,11 +92,20 @@ document.addEventListener('DOMContentLoaded', function () {
       const inRange = tabsRect.top <= headerHeight && tabsRect.bottom > headerHeight;
 
       // 배경색 영역 체크
-      const blackStyleSection = document.querySelector('.bg-black-style');
-      if (blackStyleSection) {
-        const blackStyleRect = blackStyleSection.getBoundingClientRect();
-        const isInBlackStyle = blackStyleRect.top <= headerHeight && blackStyleRect.bottom > headerHeight;
-        stickyHeader.classList.toggle('black-style', isInBlackStyle);
+      const blackStyleSections = document.querySelectorAll('.bg-black-style');
+      blackStyleSections.forEach(section => {
+        const sectionRect = section.getBoundingClientRect();
+        const isInBlackStyle = sectionRect.top <= headerHeight && sectionRect.bottom > headerHeight;
+        if (isInBlackStyle) {
+          stickyHeader.classList.add('black-style');
+          return;
+        }
+      });
+      if (!Array.from(blackStyleSections).some(section => {
+        const sectionRect = section.getBoundingClientRect();
+        return sectionRect.top <= headerHeight && sectionRect.bottom > headerHeight;
+      })) {
+        stickyHeader.classList.remove('black-style');
       }
 
       const firstLi = stickyHeader.querySelector('.sticky-header-list li:first-child');
