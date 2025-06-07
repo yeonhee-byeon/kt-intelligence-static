@@ -1154,7 +1154,7 @@ br.mo-br {
   }
   .card-list li .card-item p {
     font-size: 1.6rem;
-    line-height: var(--line-height-172);
+    line-height: 1.68;
     letter-spacing: var(--letter-spacing-base);
   }
   .card-list li .card-item.icon .img {
