@@ -14,11 +14,39 @@
   margin-bottom: 0;
 }
 
+.title-wrapper h2.sub-big-h2 {
+  font-size: var(--font-size-7xl);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 136%;
+  /* 76.16px */
+  letter-spacing: -1.12px;
+}
+
 .title-wrapper h3 {
   font-size: var(--font-size-xl);
   font-weight: 500;
   line-height: var(--line-height-172);
   letter-spacing: -0.52px;
+}
+
+.title-wrapper h3.sub-big-h3 {
+  font-size: var(--font-size-3xl);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  /* 39px */
+  letter-spacing: -0.52px;
+}
+
+.title-wrapper h3.sub-big-h3+p {
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 172%;
+  /* 37.84px */
+  letter-spacing: -0.44px;
+  margin-top: 1.25rem;
 }
 
 .title-wrapper.big-title-wrapper h2 {
@@ -150,7 +178,7 @@
 }
 
 .sub-title-wrapper.tp2 h2 {
-  font-size: var(--font-size-7xl);
+  font-size: 2.625rem;
 }
 
 .content-section .basicBtn-wrapper {
@@ -516,13 +544,22 @@
   border-top: 1px solid var(--gray-200-color, #E8E8E8);
 }
 
-.tab-section .list-wrapper>ul>li:nth-child(1) {
+.tab-section .list-wrapper>ul>li:nth-child(1),
+.bg-black-style .tab-section .list-wrapper>ul>li:nth-child(1) {
   border-top: 0;
 }
 
 .tab-section .list-wrapper>ul>li:nth-last-child(1) {
   border-bottom: 1px solid var(--gray-200-color, #E8E8E8);
   padding-bottom: 3rem;
+}
+
+.bg-black-style .tab-section .list-wrapper>ul>li {
+  border-top: 1px solid #373737;
+}
+
+.bg-black-style .tab-section .list-wrapper>ul>li:nth-last-child(1) {
+  border-bottom: 1px solid #373737;
 }
 
 
@@ -809,6 +846,10 @@
   color: var(--gray-700-color);
 }
 
+.model-line-up .card-tags>span:nth-child(1) {
+  background-color: transparent;
+}
+
 .model-believe-box .box-item {
   padding: 2.5rem;
 }
@@ -869,6 +910,16 @@
 
 .gpt-benefit-box .box-list li h3 {
   margin-bottom: 1.25rem;
+}
+
+.gpt-benefit-box.liama-benefit-box .box-list li .box-item {
+  height: 23.625rem;
+  background-color: transparent;
+  border: 1px solid #373737;
+}
+
+.gpt-benefit-box.liama-benefit-box .box-list li h3 {
+  color: var(--white-color);
 }
 
 .line-up-box h3 {
