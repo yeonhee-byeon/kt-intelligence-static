@@ -90,7 +90,6 @@
 .card-list-horizontal .card-img {
   border-radius: 1.25rem;
   background: var(--white-color);
-  height: 27rem;
   overflow: hidden;
 }
 
@@ -114,7 +113,7 @@
   max-width: 22rem;
 }
 
-.card-tags > span {
+.card-tags>span {
   border-radius: 100px;
   border: 1px solid var(--gray-300-color);
   padding: 0.3125rem 0.75rem;
@@ -129,12 +128,12 @@
   margin-right: 4px;
 }
 
-.card-tags > span:nth-child(1) {
+.card-tags>span:nth-child(1) {
   border: 0;
   background-color: var(--gray-200-color);
 }
 
-.card-tags > span:nth-last-child(1) {
+.card-tags>span:nth-last-child(1) {
   margin-right: 0;
 }
 
@@ -400,7 +399,7 @@
   margin-top: 1.25rem;
 }
 
-.tech-card .card-tags > span:nth-child(1) {
+.tech-card .card-tags>span:nth-child(1) {
   background-color: var(--white-color);
   border: 1px solid var(--gray-300-color);
 }
@@ -490,8 +489,7 @@
   border: 1px solid var(--gray-300-color);
 }
 
-.tech-banner-wrapper .tech-banner-item {
-}
+.tech-banner-wrapper .tech-banner-item {}
 
 .tech-banner-wrapper .tech-banner-item .tech-banner-txts {
   display: flex;
@@ -579,7 +577,7 @@
     letter-spacing: -0.22px;
   }
 
-  .card-tags > span {
+  .card-tags>span {
     font-size: 1.4rem;
     font-weight: 500;
     line-height: normal;
@@ -654,7 +652,7 @@
     padding-bottom: 63%;
   }
 
-  .useCasePage .card-tags > span:nth-child(1) {
+  .useCasePage .card-tags>span:nth-child(1) {
     background-color: #ebebeb;
     border: 0;
   }
