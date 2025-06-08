@@ -494,8 +494,6 @@
   border: 1px solid var(--gray-300-color);
 }
 
-.tech-banner-wrapper .tech-banner-item {}
-
 .tech-banner-wrapper .tech-banner-item .tech-banner-txts {
   display: flex;
   align-items: center;
@@ -598,6 +596,11 @@
     padding: 0.5rem 1.2rem;
     margin-left: 0.4rem;
     margin-right: 0;
+  }
+
+  /* btn */
+  .basic-bk-btn {
+    border-radius: 0.8rem;
   }
 
   /* // 추후 common.css로 이동 */
@@ -809,5 +812,40 @@
     height: 100%;
     padding: 20%;
     background-position: top;
+  }
+
+  .tech-banner-wrapper {
+    border-radius: 1.2rem;
+  }
+
+  .tech-banner-wrapper .tech-banner-item .tech-banner-txts {
+    height: 12.4rem;
+    display: block;
+  }
+
+  .tech-banner-wrapper .tech-banner-item .tech-banner-txts span {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 140%;
+    /* 28px */
+    letter-spacing: -0.2px;
+    padding-top: 1.9rem;
+  }
+
+  .tech-banner-wrapper .tech-banner-item .tech-banner-txts span.hasIcon {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    right: 0;
+    margin-top: 1.3rem;
+    padding-top: 0;
+  }
+
+  .tech-banner-wrapper .tech-banner-item .tech-banner-txts span.hasIcon:after {
+    width: 2rem;
+    height: 2rem;
+    top: -1px;
+    right: -20.5px;
   }
 }
