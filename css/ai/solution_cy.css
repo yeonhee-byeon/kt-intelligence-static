@@ -1384,15 +1384,7 @@
   width: 100%;
 }
 
-.card-list.customer.infra-box {
-  gap: 6rem;
-}
 
-.card-list.customer.infra-box li h3 {
-  margin: 0;
-  top: 2rem;
-  left: 2rem;
-}
 
 
 /* Mobile Styles */
@@ -1729,6 +1721,16 @@
   }
 
   /* cloud Page */
+  .card-list.customer.infra-box {
+    gap: 6rem;
+  }
+
+  .card-list.customer.infra-box li h3 {
+    margin: 0;
+    top: 2rem;
+    left: 2rem;
+  }
+
   .cloud-arch-bottom-content-list {
     height: auto;
   }
