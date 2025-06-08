@@ -577,16 +577,20 @@
     letter-spacing: -0.22px;
   }
 
+  .card-tags {
+    margin-left: -0.4rem;
+  }
+
   .card-tags>span {
     font-size: 1.4rem;
     font-weight: 500;
     line-height: normal;
     padding: 0.5rem 1.2rem;
-    margin-top: 0;
+    margin-left: 0.4rem;
+    margin-right: 0;
   }
 
   /* // 추후 common.css로 이동 */
-
   .pagination {
     display: none;
   }
