@@ -99,19 +99,111 @@
             </p>
           </div>
           <div class="shape-wrapper" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-            <img src="/resource/images/ai/solution/RAG/shape-img.png" alt="" width="1384" height="520" />
+            <img src="/resource/images/ai/solution/RAG/shape-img.png" alt="" width="100%" height="100%" />
+            <div class="shape-header">
+              <div class="shape-title">DocuSee</div>
+              <div class="shape-title full">Search AI</div>
+            </div>
+            <div class="shape-flow">
+              <!-- 1행: 상단 흐름도 -->
+              <div class="shape-row">
+                <div class="shape-box gap-11">
+                  <span>
+                    Document
+                    <em>pdf, doc, xls, pptx</em>
+                  </span>
+                  <img src="/resource/images/ai/solution/RAG/ico-file.svg" alt="Document" />
+                </div>
+                <div class="shape-box">
+                  <span>Vector Store/DB</span>
+                  <img src="/resource/images/ai/solution/RAG/ico-db.svg" alt="Vector Store/DB" />
+                </div>
+                <div class="shape-box lg mr-130">
+                  <span>Context</span>
+                  <div class="img-wrapper">
+                    <div class="img">
+                      <img src="/resource/images/ai/solution/RAG/ico-search.svg" alt="Context" />
+                      <p>질의 + <br />검색결과</p>
+                    </div>
+                    <div class="img">
+                      <img src="/resource/images/ai/solution/RAG/ico-prompt.svg" alt="Prompt" />
+                      <p>Prompt <br />Template</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="shape-box mr-130">
+                  <span>Fine-tuned sLLM</span>
+                  <img src="/resource/images/ai/solution/RAG/ico-brain.svg" alt="Fine-tuned sLLM" />
+                </div>
+                <div class="shape-box small">
+                  <img src="/resource/images/ai/solution/RAG/ico-answer.svg" alt="Answer" />
+                  <span>Answer</span>
+                </div>
+              </div>
+              <!-- 2행: 하단 연결 -->
+              <div class="shape-row shape-row-bottom">
+                <div class="shape-box small">
+                  <img src="/resource/images/ai/solution/RAG/ico-question.svg" alt="Question" />
+                  <span>Question</span>
+                  <p>
+                    Embedding
+                    <img src="/resource/images/ai/solution/RAG/ico-flow-arrow-top.png" alt="flow-arrow" class="top" />
+                  </p>
+                </div>
+                <div class="shape-box md">
+                  <img src="/resource/images/ai/solution/RAG/ico-pretrained.svg" alt="Pretrained sLLM" />
+                  <span>Pretrained sLLM</span>
+                  <p>
+                    Training
+                    <img src="/resource/images/ai/solution/RAG/ico-flow-arrow-top.png" alt="flow-arrow" class="top" />
+                  </p>
+                </div>
+              </div>
+              <!-- 하단 타이틀 -->
+              <!-- <div class="shape-footer">
+                <div class="shape-title full">RAG Studio</div>
+              </div> -->
+              <!-- 뒷 배경 박스 및 텍스트 -->
+              <div class="shape-background">
+                <div class="shape-background-box fir">
+                  <p>Chunking</p>
+                  <img src="/resource/images/ai/solution/RAG/ico-flow-arrow.png" alt="flow-arrow" />
+                  <p>Embedding</p>
+                </div>
+                <div class="shape-background-box sec">
+                  <p>Retrieve</p>
+                  <img src="/resource/images/ai/solution/RAG/ico-flow-arrow.png" alt="flow-arrow" />
+                  <p>Passage<br />Rank & Filter</p>
+                </div>
+                <div class="shape-background-box last">
+                  <div>
+                    <p>Augment</p>
+                    <img src="/resource/images/ai/solution/RAG/ico-flow-arrow-right.png" alt="flow-arrow" />
+                  </div>
+                  <div>
+                    <p>Generate</p>
+                    <img src="/resource/images/ai/solution/RAG/ico-flow-arrow-right.png" alt="flow-arrow" />
+                  </div>
+                </div>
+              </div>
+
+              <p class="solution-description">
+                * Document AI : 다양한 형태의 문서를 구조분석하는 전처리엔진<br />
+                * Search AI : 지능형 검색 엔진
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="content-section bg-black">
+      <section class="content-section bg-black search-ai-section">
         <div class="content-inner">
           <div class="title-wrapper">
             <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Solution 01</span>
             <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Search AI</h2>
             <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-              지능형 검색엔진 IntelliSearch는 키워드와 벡터 기반을 통합한<br />
-              하이브리드 검색, 다중 질의 처리,<br class="mo-br" />
+              고성능 검색을 제공하는 지능형 검색엔진으로 하이브리드 검색,<br />
+              다중 질의 처리,<br class="mo-br" />
               맞춤형 파인튜닝까지 지원하는 RAG 최적화 All-in-one 솔루션입니다.
             </p>
           </div>
@@ -137,7 +229,7 @@
                   <h3>KT 임베딩 / Re-ranker 모델</h3>
                   <ul>
                     <li>한국어, 영어를 지원하는 bi-lingual 임베딩 모델 제공</li>
-                    <li>SaaS형 고객 대상 범용 모델 및 On-Premise형 고객을 위한 Fine-tuning 기능 제공</li>
+                    <li>SaaS형 고객 대상 범용 모델 및 On-Premise형 고객을 위한 Fine-tuning 기능 <br />제공</li>
                   </ul>
                 </div>
               </li>
@@ -145,7 +237,10 @@
                 <div class="box-item">
                   <h3>고객 맞춤 기능</h3>
                   <ul>
-                    <li>고객 데이터 기반의 임베딩 모델 파인튜닝과 고객별 요구사항에 따른 검색 구성, 색인 구성 지원</li>
+                    <li>
+                      고객 데이터 기반의 임베딩 모델 파인튜닝과 고객별 요구사항에 따른 검색 구성,<br />
+                      색인 구성 지원
+                    </li>
                     <li>상황별 검색/응답 성능 확보를 위한 RAG 파이프라인 구성 (10가지 이상의 옵션 제공)</li>
                     <li>데이터 준비-학습-추론-배포 All-in-one 서비스</li>
                   </ul>
@@ -180,7 +275,10 @@
                     <li>
                       <h4>Advantages</h4>
                       <p>한국어・영어에 최적화된 언어 처리 기술</p>
-                      <span>(금융, 공공, 의료, 법률, 커머스 등 다양한 산업 분야에서 고르게 검증된 성능)</span>
+                      <span
+                        >(금융, 공공, 의료, 법률, 커머스 등 다양한 산업 분야에서 고르게<br />
+                        검증된 성능)</span
+                      >
                       <p>글로벌 수준의 성능을 갖춘 KT 독자 모델</p>
                       <span>(MTEB 성능 검증)</span>
                     </li>
@@ -206,12 +304,18 @@
                     <li>
                       <h4>What is</h4>
                       <p>검색된 문서들과 질문 간 유사도를 산정하여 우선순위 재정렬</p>
-                      <p>한/영 검색에 특화된 KT 자체 개발 Reranking 모델</p>
+                      <p>
+                        한/영 검색에 특화된 KT 자체 개발 Reranking<br />
+                        모델
+                      </p>
                     </li>
                     <li>
                       <h4>Advantages</h4>
                       <p>한국어・영어에 최적화된 언어 처리 기술</p>
-                      <span>(금융, 공공, 의료, 법률, 커머스 등 다양한 산업 분야에서 고르게 검증된 성능)</span>
+                      <span
+                        >(금융, 공공, 의료, 법률, 커머스 등 다양한 산업 분야에서 고르게<br />
+                        검증된 성능)</span
+                      >
                       <p>글로벌 수준의 성능을 갖춘 KT 독자 모델</p>
                       <span>(MTEB 성능 검증)</span>
                     </li>
@@ -221,7 +325,7 @@
                       <span>(vs. bge-reranker-v2-m3)<br />2%p 성능우위</span>
                       <p>영어 데이터 전반적 성능 우위</p>
                       <span>(vs. bge-m3)</span>
-                      <p>MTEB(eng, v2) 기준 평균 11%p 우위</p>
+                      <p>MTEB(eng, v2) 기준 평균 3%p 우위</p>
                     </li>
                   </ul>
                 </div>
@@ -238,7 +342,6 @@
                       <p>문서에 부가 정보를 더하고, 검색 방식 최적화와 응답 정합성 검증까지 지원하는 AI 모델</p>
                       <p>Modular & Agentic RAG를 위한 특화된 Instruction 모델</p>
                       <p>Llama K/Mi:dm 기반으로 RAG 특화 Instruction을 SFT하여 RAG 성능 향상</p>
-                      <p>chatGPT 대비 비용 효율적 모델</p>
                     </li>
                     <li>
                       <h4>Advantages</h4>
@@ -411,7 +514,7 @@
               <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                 <div class="card-inner">
                   <div class="card-img">
-                    <img src="/resource/images/ai/usecase/sub_useCase_sec01.png" alt="" />
+                    <img src="/resource/images/ai/solution/RAG/img-usecase01.png" alt="" />
                   </div>
                   <div class="card-txts">
                     <h3 class="sub-title-sm">My K</h3>
@@ -419,9 +522,10 @@
                       AI를 입은 마이케이티 앱, 복잡하고 다양한 통신 업무를 한방에 맞춤형으로 해결해주는 Agent를 탑재
                     </p>
                     <div class="card-tags">
-                      <span class="card-tag">고객사례</span>
-                      <span class="card-tag">사용자 피드백</span>
-                      <span class="card-tag">사용자 피드백</span>
+                      <span class="card-tag">KT사례</span>
+                      <span class="card-tag">Multi-Agent</span>
+                      <span class="card-tag">RAG</span>
+                      <span class="card-tag">Search AI</span>
                     </div>
                   </div>
                 </div>
@@ -429,17 +533,17 @@
               <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                 <div class="card-inner">
                   <div class="card-img">
-                    <img src="/resource/images/ai/usecase/sub_useCase_sec02.png" alt="" />
+                    <img src="/resource/images/ai/solution/RAG/img-usecase02.png" alt="" />
                   </div>
                   <div class="card-txts">
-                    <h3 class="sub-title-sm">기가지니</h3>
+                    <h3 class="sub-title-sm">사장이지</h3>
                     <p class="sub-desc">
                       하나의 앱으로 효율적인 매장 운영 기능 통합제공, 전문 지식을 학습한 AI Agent가 실시간 질문에 대답
                     </p>
                     <div class="card-tags">
                       <span class="card-tag">KT사례</span>
-                      <span class="card-tag">GPT-3</span>
-                      <span class="card-tag">GPT-4</span>
+                      <span class="card-tag">Agent</span>
+                      <span class="card-tag">RAG</span>
                     </div>
                   </div>
                 </div>
@@ -447,15 +551,16 @@
               <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                 <div class="card-inner">
                   <div class="card-img">
-                    <img src="/resource/images/ai/usecase/sub_useCase_sec03.png" alt="" />
+                    <img src="/resource/images/ai/solution/RAG/img-usecase03.png" alt="" />
                   </div>
                   <div class="card-txts">
-                    <h3 class="sub-title-sm">기가지니</h3>
+                    <h3 class="sub-title-sm">KT 100번 고객센터</h3>
                     <p class="sub-desc">AI 상담 어시스트와 보이스봇으로 더 똑똑하게 상담하는 KT 100번 고객센터</p>
                     <div class="card-tags">
                       <span class="card-tag">KT사례</span>
-                      <span class="card-tag">GPT-3</span>
-                      <span class="card-tag">GPT-4</span>
+                      <span class="card-tag">믿:음2.0</span>
+                      <span class="card-tag">음성합성</span>
+                      <span class="card-tag">RAG</span>
                     </div>
                   </div>
                 </div>
@@ -463,17 +568,17 @@
               <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                 <div class="card-inner">
                   <div class="card-img">
-                    <img src="/resource/images/ai/usecase/sub_useCase_sec04.png" alt="" />
+                    <img src="/resource/images/ai/solution/RAG/img-usecase04.png" alt="" />
                   </div>
                   <div class="card-txts">
-                    <h3 class="sub-title-sm">기가지니</h3>
+                    <h3 class="sub-title-sm">KT공인전자문서센터</h3>
                     <p class="sub-desc">
                       전자문서를 안전하게 보관하고 보관기간동안 내용 및 송·수신 이력 등을 증명해주는 국가공인센터
                     </p>
                     <div class="card-tags">
                       <span class="card-tag">KT사례</span>
-                      <span class="card-tag">GPT-3</span>
-                      <span class="card-tag">GPT-4</span>
+                      <span class="card-tag">RAG</span>
+                      <span class="card-tag">DocumentAI</span>
                     </div>
                   </div>
                 </div>
@@ -490,7 +595,7 @@
                 >
                   <div class="card-inner">
                     <div class="card-img">
-                      <img src="/resource/images/ai/usecase/sub_useCase_sec01.png" alt="" />
+                      <img src="/resource/images/ai/solution/RAG/img-usecase01.png" alt="" />
                     </div>
                     <div class="card-txts">
                       <h3 class="sub-title-sm">My K</h3>
@@ -510,7 +615,7 @@
                 >
                   <div class="card-inner">
                     <div class="card-img">
-                      <img src="/resource/images/ai/usecase/sub_useCase_sec02.png" alt="" />
+                      <img src="/resource/images/ai/solution/RAG/img-usecase02.png" alt="" />
                     </div>
                     <div class="card-txts">
                       <h3 class="sub-title-sm">기가지니</h3>
@@ -530,7 +635,7 @@
                 >
                   <div class="card-inner">
                     <div class="card-img">
-                      <img src="/resource/images/ai/usecase/sub_useCase_sec03.png" alt="" />
+                      <img src="/resource/images/ai/solution/RAG/img-usecase03.png" alt="" />
                     </div>
                     <div class="card-txts">
                       <h3 class="sub-title-sm">기가지니</h3>
@@ -550,7 +655,7 @@
                 >
                   <div class="card-inner">
                     <div class="card-img">
-                      <img src="/resource/images/ai/usecase/sub_useCase_sec04.png" alt="" />
+                      <img src="/resource/images/ai/solution/RAG/img-usecase04.png" alt="" />
                     </div>
                     <div class="card-txts">
                       <h3 class="sub-title-sm">기가지니</h3>
@@ -564,14 +669,9 @@
                 </li>
               </div>
             </ul>
-            <div
-              class="btnWrap basicBtn-wrapper"
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-easing="ease-out-cubic"
-            >
+            <div class="btnWrap" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
               <a href="#">
-                <button type="button" class="basic-bk-btn">전체보기</button>
+                <button type="button" class="btn">전체보기</button>
               </a>
             </div>
           </div>
@@ -590,6 +690,7 @@
     <script src="/js/ai/solution.js"></script>
     <script>
       includeCommonLayout();
+      checkHeader({ target: ".search-ai-section" });
     </script>
 
     <script src="/js/ai/common/aos.js"></script>

@@ -20,19 +20,27 @@
 //     observer.observe(bannerSection);
 // }
 
-// function checkHeader() {
-//     const header = document.querySelector("#main-header");
-//     const contentSection = document.querySelector(".content-wrapper");
-//     const contentSectionRect = contentSection.getBoundingClientRect();
+function checkHeader({ isDark = false, target = "" } = {}) {
+  if (!target) return;
+  const header = document.querySelector("#main-header");
+  const contentSection = document.querySelector(target);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting || isDark) {
+          header.classList.add("dark-header");
+        } else {
+          header.classList.remove("dark-header");
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
 
-//     if (contentSectionRect.top < 0) {
-//         header.classList.remove("dark-header");
-//     } else {
-//         header.classList.add("dark-header");
-//     }
-// }
-
-// window.addEventListener("scroll", checkHeader);
+  observer.observe(contentSection);
+}
 
 const cardListHorizontal = document.querySelector(".card-list-horizontal.swiper-container");
 function initMobileSwiper() {
