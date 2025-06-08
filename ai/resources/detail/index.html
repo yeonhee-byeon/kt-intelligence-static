@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docs</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Docs</title>
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="/css/ai/common/common.css" />
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="/css/ai/common/reset.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/css/ai/sub_cy.css" />
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="/css/ai/common/aos.css" />
+  </head>
 
-  <link rel="stylesheet" href="/css/ai/swiper-bundle.min.css" />
-  <!-- Common CSS -->
-  <link rel="stylesheet" href="/css/ai/common/common.css" />
-  <!-- Reset CSS -->
-  <link rel="stylesheet" href="/css/ai/common/reset.css" />
-  <!-- Style CSS -->
-  <link rel="stylesheet" href="/css/ai/style.css" />
-  <link rel="stylesheet" href="/css/ai/sub_cy.css" />
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="/css/ai/common/aos.css" />
-</head>
+  <body>
+    <!-- Header -->
+    <header id="main-header" class="header">
+      <div class="header-inner"></div>
+    </header>
 
-<body>
-  <!-- Header -->
-  <header id="main-header" class="header">
-    <div class="header-inner"></div>
-  </header>
-
-  <div class="sub-content techDetailPage">
-    <div class="sub-inner">
-      <div class="tech-detail-header">
-        <span class="tech-detail-category">What's New</span>
-        <h1 class="tech-detail-title">KT, 자체 AI 모델 Mi:dm 2.1 공개<br />Mini-Base 모델은 오픈소스로 제공</h1>
-        <div class="card-tags">
-          <span>Llama-K</span>
-          <span>Midm</span>
-          <span>GPT-K</span>
+    <div class="sub-content techDetailPage">
+      <div class="sub-inner">
+        <div class="tech-detail-header">
+          <span class="tech-detail-category">What's New</span>
+          <h1 class="tech-detail-title">KT, 자체 AI 모델 Mi:dm 2.1 공개<br />Mini-Base 모델은 오픈소스로 제공</h1>
+          <div class="card-tags">
+            <span>Llama-K</span>
+            <span>Midm</span>
+            <span>GPT-K</span>
+          </div>
+          <time class="tech-detail-date" datetime="2025-05-16">2025.05.16</time>
         </div>
-        <time class="tech-detail-date" datetime="2025-05-16">2025.05.16</time>
-      </div>
 
-      <!-- 게시글 본문 영역 (관리자 에디터/HTML 입력용) -->
-      <article class="tech-detail-article" id="tech-detail-article">
-        <!--
+        <!-- 게시글 본문 영역 (관리자 에디터/HTML 입력용) -->
+        <article class="tech-detail-article" id="tech-detail-article">
+          <!--
                       ※ 관리자 페이지에서 등록한 게시글의 본문(HTML)이 이 영역에 삽입됩니다.
                       예시:
                       <h2>본문 제목</h2>
@@ -47,43 +44,43 @@
                       <img src="..." alt="..." />
                       ...
                     -->
-        <img class="pc-only" src="/resource/images/ai/resources/techDetail_test.png" alt="" />
-        <img class="mobile-show" src="/resource/images/ai/resources/techDetail_test_mobile.png" alt="" />
-      </article>
+          <img class="pc-only" src="/resource/images/ai/resources/techDetail_test.png" alt="" />
+          <img class="mobile-show" src="/resource/images/ai/resources/techDetail_test_mobile.png" alt="" />
+        </article>
 
-      <div class="tech-detail-bottom">
-        <button type="button" class="basic-bk-btn">돌아가기</button>
+        <div class="tech-detail-bottom">
+          <button type="button" class="basic-bk-btn">돌아가기</button>
 
-
-        <div class="tech-banner-wrapper">
-          <a href="">
-            <div class="tech-banner-item pc-only">
-              <div class="tech-banner-txts"
-                style="background-image: url(/resource/images/ai/resources/tech-detail-banner-pc.png);">
-                <span>K intelligence를 만든 사람이 궁금하다면?</span>
-                <span class="hasIcon">Kode로 보러가기</span>
+          <div class="tech-banner-wrapper">
+            <a href="">
+              <div class="tech-banner-item pc-only">
+                <div
+                  class="tech-banner-txts"
+                  style="background-image: url(/resource/images/ai/resources/tech-detail-banner-pc.png)"
+                >
+                  <span>K intelligence를 만든 사람이 궁금하다면?</span>
+                  <span class="hasIcon">Kode로 보러가기</span>
+                </div>
               </div>
-            </div>
 
-            <div class="tech-banner-item mobile-show"
-              style="background-image: url(/resource/images/ai/resources/tech-detail-banner-mo.png);">
-            </div>
-          </a>
+              <div
+                class="tech-banner-item mobile-show"
+                style="background-image: url(/resource/images/ai/resources/tech-detail-banner-mo.png)"
+              ></div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-  </footer>
+    <!-- Footer -->
+    <footer class="footer"></footer>
 
-  <!-- Script -->
-  <script src="/js/ai/solution.js"></script>
-  <script src="/js/ai/common/common.js"></script>
-  <script>
-    includeCommonLayout();
-  </script>
-</body>
-
+    <!-- Script -->
+    <script src="/js/ai/solution.js"></script>
+    <script src="/js/ai/common/common.js"></script>
+    <script>
+      includeCommonLayout({ skipKtModel: true });
+    </script>
+  </body>
 </html>
