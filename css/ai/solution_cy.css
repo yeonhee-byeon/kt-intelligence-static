@@ -337,7 +337,6 @@
 }
 
 /* agent page */
-
 .agent-key-graph-wrapper {
   position: relative;
 }
@@ -517,7 +516,7 @@
 
 .divided-table-card-wrapper .table-card-item {
   padding: 0;
-  height: 21.3125rem;
+  gap: 1.2rem;
   background: transparent;
   border: 1px solid #373737;
 }
@@ -632,172 +631,20 @@
 }
 
 
-
-/* Multi-Model Orchestrator 도식 */
 .orchestrator-diagram {
   width: 100%;
 }
 
-.orchestrator-diagram .diagram-row {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  gap: 3.5rem;
-}
-
-.orchestrator-diagram .diagram-block {
-  background: #fafafa;
-  border-radius: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  justify-content: center;
-}
-
-.orchestrator-diagram .user-block,
-.orchestrator-diagram .agent-block {
-  min-width: 11.25rem;
-  min-height: 30.625rem;
-  background: #fff;
-  border: 1px solid #eee;
-  box-shadow: none;
-  font-size: 2rem;
-  font-weight: 700;
-  justify-content: center;
-  position: relative;
-}
-
-.orchestrator-diagram .user-block:after,
-.orchestrator-diagram .agent-block:after {
+.orchestrator-diagram .img img {
   display: block;
-  content: "";
-  width: 2.4375rem;
-  height: 0.5rem;
-  background: url('/resource/images/ai/solution/agent/Orchestrator-line01.png') no-repeat center/contain;
-  position: absolute;
-  top: 15rem;
-  left: 11.8rem;
-}
-
-
-.orchestrator-diagram .diagram-title {
-  font-size: var(--font-size-3xl);
-  font-style: normal;
-  font-weight: 700;
-  line-height: var(--line-height-150);
-  /* 39px */
-  letter-spacing: -0.52px;
-}
-
-.orchestrator-diagram .orchestrator-block {
-  background: #fff;
-  border: 1px solid #eee;
-  box-shadow: none;
-  padding: 3.8125rem 3.375rem 2.375rem 3.375rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
-}
-
-.orchestrator-diagram .orchestrator-title {
-  font-size: var(--font-size-4xl);
-  font-weight: 700;
-  line-height: var(--line-height-150);
-  letter-spacing: -0.6px;
-  position: absolute;
-  top: -1.5rem;
-  left: 25.5rem;
-  background-color: var(--white-color);
-  display: block;
-  padding: 0 1.5rem;
-}
-
-.orchestrator-diagram .orchestrator-inner {
-  display: flex;
-  flex-direction: row;
-  gap: 2.5rem;
-  width: 100%;
-  position: relative;
-  min-height: 260px;
-}
-
-.orchestrator-diagram .orchestrator-inner .flex {
-  gap: 6.625rem;
-  width: 100%;
-  gap: 6.625rem;
-}
-
-.orchestrator-diagram .orchestrator-inner .flex .table-card-wrapper:nth-child(1) .table-card-list {
-  flex-direction: column;
-}
-
-.orchestrator-diagram .orchestrator-inner .flex .table-card-wrapper:nth-child(1) .table-card-list .table-card-item {
-  min-width: 24.375rem;
-}
-
-.orchestrator-diagram .orchestrator-inner .flex .table-card-wrapper:nth-child(1) .table-card-list .table-card-item p {
-  min-height: auto;
-}
-
-.orchestrator-diagram .orchestrator-inner .flex .table-card-wrapper:nth-child(1) .table-card-list .table-card-item span {
-  display: block;
-  text-align: center;
-  font-family: Pretendard;
-  font-size: var(--font-size-md);
-  font-weight: 500;
-  line-height: var(--line-height-172);
-  letter-spacing: -0.18px;
-}
-
-.orchestrator-diagram .orchestrator-inner .flex .table-card-wrapper:nth-child(2) {
-  position: relative;
-}
-
-.orchestrator-diagram .orchestrator-inner .flex .table-card-wrapper:nth-child(2)::after {
-  display: block;
-  content: "";
-  width: 16.3rem;
-  height: 17.925rem;
-  background: url('/resource/images/ai/solution/agent/Orchestrator-line02.png') no-repeat center/contain;
-  position: absolute;
-  top: 10.1rem;
-  left: -6.4rem;
-}
-
-.orchestrator-diagram .orchestrator-inner .flex .table-card-wrapper:nth-child(2) .table-card-list .table-card-item .llms-list {
-  min-height: 24.35rem;
-  padding: 2.25rem 0;
-}
-
-.orchestrator-diagram .orchestrator-inner .flex .table-card-wrapper:nth-child(2) .table-card-list .table-card-item .llms-list li {
-  border-radius: 0.5rem;
-  border: 1px solid #F5C7C7;
-  background: #F9E7E7;
-  text-align: center;
-  padding: 0.625rem 0;
-  min-width: 11.625rem;
-  font-weight: 500;
-  line-height: var(--line-height-172);
-  /* 30.96px */
-  letter-spacing: -0.18px;
-  font-size: var(--font-size-md);
-}
-
-.orchestrator-diagram .orchestrator-inner .flex .table-card-wrapper:nth-child(2) .table-card-list .table-card-item .llms-list li:nth-child(n+2) {
-  margin-top: 1rem;
-}
-
-.orchestrator-diagram .orchestrator-inner .flex .table-card-wrapper:nth-child(2) .table-card-list .table-card-item .llms-list li:nth-last-child(1) {
-  margin-top: 5.75rem;
 }
 
 .list-wrapper.Orchestrator-wrapper .list-item h3 {
   max-width: 19.5625rem;
   min-width: 19.5625rem;
   margin-right: 3.5rem;
+  color: var(--black-color);
 }
 
 .list-wrapper.Orchestrator-wrapper .list-item.has-number span {
@@ -805,18 +652,18 @@
 }
 
 /* model page */
-#tab-panel-1 {
+.solution-model-wrapper #tab-panel-1 {
   background-image: url('/resource/images/ai/solution/model/title-only-bg-01.png');
   background-size: 64.625rem auto;
   background-position: top center;
 }
 
-#tab-panel-2 {
+.solution-model-wrapper #tab-panel-2 {
   background-image: url('/resource/images/ai/solution/model/title-only-bg-02.png');
   background-size: 105.25rem auto;
 }
 
-#tab-panel-3 {
+.solution-model-wrapper #tab-panel-3 {
   background-image: url('/resource/images/ai/solution/model/title-only-bg-03.png');
   background-size: 105.25rem auto;
 }
@@ -1523,6 +1370,29 @@
   margin-top: 0.375rem;
 }
 
+/* cloud page */
+.cloud-architecture-diagram {
+  margin: 0;
+}
+
+.cloud-architecture-diagram .img {
+  width: 100%;
+}
+
+.cloud-architecture-diagram .img img {
+  display: block;
+  width: 100%;
+}
+
+.card-list.customer.infra-box {
+  gap: 6rem;
+}
+
+.card-list.customer.infra-box li h3 {
+  margin: 0;
+  top: 2rem;
+  left: 2rem;
+}
 
 
 /* Mobile Styles */
@@ -1572,6 +1442,10 @@
 
   .tab-section {
     gap: 4rem;
+  }
+
+  .tab-section.gap10 {
+    gap: 2.4rem;
   }
 
   .video-wrapper,
@@ -1659,6 +1533,11 @@
     letter-spacing: -0.26px;
   }
 
+  .double-card-wrapper .double-card .double-card-inner .double-card-img h3 {
+    top: 2rem;
+    left: 2rem;
+  }
+
   .double-card-wrapper .double-card .double-card-inner .double-txts p {
     font-size: 1.6rem;
     font-style: normal;
@@ -1737,6 +1616,10 @@
     border-top: 1px solid var(--gray-200-color, #E8E8E8);
   }
 
+  .bg-black-style .tab-section .list-wrapper>ul>li:nth-child(1) .list-item {
+    border-top: 1px solid #373737;
+  }
+
   .tab-section .list-wrapper>ul>li:nth-last-child(1) .list-item {
     padding-bottom: 4rem;
   }
@@ -1768,8 +1651,8 @@
 
   .agent-pattern.tabs-component .table-card-item p {
     padding: 0;
-    margin-top: 1.2rem;
     min-height: auto;
+    margin-top: 0;
   }
 
   .agent-pattern.tabs-component .table-card-list>li:last-child {
@@ -1839,6 +1722,11 @@
     margin-top: 0.8rem;
   }
 
+  .list-wrapper.Orchestrator-wrapper .list-item h3 {
+    max-width: 100%;
+    min-width: 100%;
+    margin-right: 0;
+  }
 
   /* cloud Page */
   .cloud-arch-bottom-content-list {
@@ -1922,23 +1810,23 @@
   }
 
   /* model page */
-  #tab-panel-1,
-  #tab-panel-2,
-  #tab-panel-3 {
+  .solution-model-wrapper #tab-panel-1,
+  .solution-model-wrapper #tab-panel-2,
+  .solution-model-wrapper #tab-panel-3 {
     background-image: initial;
   }
 
-  .tabs__panel__anchor>.tab-section.only-title {
+  .solution-model-wrapper .tabs__panel__anchor>.tab-section.only-title {
     position: relative;
   }
 
-  .tabs__panel__anchor>.tab-section.only-title .title-wrapper,
-  .tabs__panel__anchor>.tab-section.only-title .btn-wrap {
+  .solution-model-wrapper .tabs__panel__anchor>.tab-section.only-title .title-wrapper,
+  .solution-model-wrapper .tabs__panel__anchor>.tab-section.only-title .btn-wrap {
     position: relative;
     z-index: 1;
   }
 
-  .tabs__panel__anchor>.tab-section.only-title:after {
+  .solution-model-wrapper .tabs__panel__anchor>.tab-section.only-title:after {
     display: block;
     content: '';
     width: 100vw;
@@ -1952,17 +1840,17 @@
   }
 
 
-  #tab-panel-1>.tab-section.only-title:after {
+  .solution-model-wrapper #tab-panel-1>.tab-section.only-title:after {
     background-image: url('/resource/images/ai/solution/model/title-only-bg-01_mo.png');
     padding-bottom: 48rem;
   }
 
-  #tab-panel-2>.tab-section.only-title:after {
+  .solution-model-wrapper #tab-panel-2>.tab-section.only-title:after {
     background-image: url('/resource/images/ai/solution/model/title-only-bg-02_mo.png');
     padding-bottom: 48rem;
   }
 
-  #tab-panel-3>.tab-section.only-title:after {
+  .solution-model-wrapper #tab-panel-3>.tab-section.only-title:after {
     background-image: url('/resource/images/ai/solution/model/title-only-bg-03_mo.png');
     padding-bottom: 48rem;
   }

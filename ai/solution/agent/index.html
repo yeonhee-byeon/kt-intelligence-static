@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>K Agent</title>
 
-    <link rel="stylesheet" href="/css/ai/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
     <!-- Common CSS -->
     <link rel="stylesheet" href="/css/ai/common/common.css" />
     <!-- Reset CSS -->
@@ -42,10 +42,9 @@
 
     <!-- Banner Section -->
     <section id="banner-section" class="banner-section">
-        <img class="pc-only" src="/resource/images/ai/solution/agent/agent-banner.png" alt="banner" width="100%"
-            height="100%" />
-        <img class="mobile-show" src="/resource/images/ai/solution/agent/mo-banner-bg.jpg" alt="banner" width="100%"
-            height="100%" class="mo-banner-bg1" />
+        <img src="/resource/images/ai/solution/agent/agent-banner.png" alt="banner" width="100%" height="100%" />
+        <img src="/resource/images/ai/solution/agent/agent-banner-mo.png" alt="banner" width="100%" height="100%"
+            class="mo-banner-bg" />
 
         <img src="/resource/images/ai/solution/agent/agent-banner.png" alt="banner" width="100%" height="100%" />
         <div class="banner-inner">
@@ -65,15 +64,14 @@
 
 
 
-
-
     <!-- Content Section -->
     <div class="content-wrapper">
         <section class="content-section">
             <div class="content-inner">
                 <div class="title-wrapper">
                     <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Key Feature</span>
-                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">스스로 판단하고 실행하는 AI
+                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">스스로 판단하고 실행하는<br
+                            class="mo-br"> AI
                         Agent</h2>
                     <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                         주어진 목표를 달성하기 위해 주변 환경을 인식하고, 필요한 작업을 스스로<br>
@@ -128,7 +126,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="agent-key-graph-wrapper">
+                <div class="agent-key-graph-wrapper" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-easing="ease-out-cubic">
                     <div class="graph-inner">
                         <div class="graph-item">
                             <img src="/resource/images/ai/solution/agent/Key Features-graph.png" alt="graph"
@@ -146,20 +145,19 @@
         <section class="content-section">
             <div class="content-inner">
                 <div class="title-wrapper">
-                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        Use Cases
-                    </h2>
+                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Use Cases</h2>
                     <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        K intelligence와 함께한 기업들의 변화, <br class="mo-br"> 증명된 유즈케이스를 확인해보세요.
+                        K intelligence와 함께한 기업들의 변화,<br class="mo-br" />
+                        성과로 증명된 유즈케이스를 확인해보세요.
                     </p>
                 </div>
 
-                <div class="card-wrapper horizontal-wrapper">
+                <div class="card-wrapper">
                     <ul class="card-list-horizontal">
                         <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                             <div class="card-inner">
                                 <div class="card-img">
-                                    <img src="/resource/images/ai/solution/agent/sub_useCase_sec01.png" alt="">
+                                    <img src="/resource/images/ai/solution/RAG/img-usecase01.png" alt="" />
                                 </div>
                                 <div class="card-txts">
                                     <h3 class="sub-title-sm">My K</h3>
@@ -170,7 +168,7 @@
                                         <span class="card-tag">KT사례</span>
                                         <span class="card-tag">Multi-Agent</span>
                                         <span class="card-tag">RAG</span>
-                                        <span class="card-tag">Intellisearch</span>
+                                        <span class="card-tag">Search AI</span>
                                     </div>
                                 </div>
                             </div>
@@ -178,25 +176,7 @@
                         <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                             <div class="card-inner">
                                 <div class="card-img">
-                                    <img src="/resource/images/ai/solution/agent/sub_useCase_sec02.png" alt="">
-                                </div>
-                                <div class="card-txts">
-                                    <h3 class="sub-title-sm">지니TV</h3>
-                                    <p class="sub-desc">
-                                        자연스러운 대화로 콘텐츠 탐색이 가능한 LLM 기반 미디어 Agent,실시간 자막 생성이 적용된 AI TV
-                                    </p>
-                                    <div class="card-tags">
-                                        <span class="card-tag">KT사례</span>
-                                        <span class="card-tag">Multi-Agent</span>
-                                        <span class="card-tag">음성합성</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="card-inner">
-                                <div class="card-img">
-                                    <img src="/resource/images/ai/solution/agent/sub_useCase_sec03.png" alt="">
+                                    <img src="/resource/images/ai/solution/RAG/img-usecase02.png" alt="" />
                                 </div>
                                 <div class="card-txts">
                                     <h3 class="sub-title-sm">사장이지</h3>
@@ -214,28 +194,111 @@
                         <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                             <div class="card-inner">
                                 <div class="card-img">
-                                    <img src="/resource/images/ai/solution/agent/sub_useCase_sec04.png" alt="">
+                                    <img src="/resource/images/ai/solution/RAG/img-usecase03.png" alt="" />
                                 </div>
                                 <div class="card-txts">
                                     <h3 class="sub-title-sm">KT 100번 고객센터</h3>
+                                    <p class="sub-desc">AI 상담 어시스트와 보이스봇으로 더 똑똑하게 상담하는 KT 100번 고객센터</p>
+                                    <div class="card-tags">
+                                        <span class="card-tag">KT사례</span>
+                                        <span class="card-tag">믿:음2.0</span>
+                                        <span class="card-tag">음성합성</span>
+                                        <span class="card-tag">RAG</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="card-inner">
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/solution/RAG/img-usecase04.png" alt="" />
+                                </div>
+                                <div class="card-txts">
+                                    <h3 class="sub-title-sm">KT공인전자문서센터</h3>
                                     <p class="sub-desc">
-                                        AI 상담 어시스트와 보이스봇으로 더 똑똑하게
-                                        상담하는 KT 100번 고객센터
+                                        전자문서를 안전하게 보관하고 보관기간동안 내용 및 송·수신 이력 등을 증명해주는 국가공인센터
                                     </p>
                                     <div class="card-tags">
                                         <span class="card-tag">KT사례</span>
-                                        <span class="card-tag">믿:음 2.0</span>
-                                        <span class="card-tag">음성합성</span>
-                                        <span class="card-tag">음성인식</span>
+                                        <span class="card-tag">RAG</span>
+                                        <span class="card-tag">DocumentAI</span>
                                     </div>
                                 </div>
                             </div>
                         </li>
                     </ul>
-                    <div class="btnWrap basicBtn-wrapper" data-aos="fade-up" data-aos-duration="800"
-                        data-aos-easing="ease-out-cubic">
-                        <a href="">
-                            <button type="button" class="basic-bk-btn wide-btn">전체보기</button>
+
+                    <ul class="card-list-horizontal swiper-container">
+                        <div class="swiper-wrapper">
+                            <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic">
+                                <div class="card-inner">
+                                    <div class="card-img">
+                                        <img src="/resource/images/ai/solution/RAG/img-usecase01.png" alt="" />
+                                    </div>
+                                    <div class="card-txts">
+                                        <h3 class="sub-title-sm">My K</h3>
+                                        <div class="card-tags">
+                                            <span class="card-tag">고객사례</span>
+                                            <span class="card-tag">사용자 피드백</span>
+                                            <span class="card-tag">사용자 피드백</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic">
+                                <div class="card-inner">
+                                    <div class="card-img">
+                                        <img src="/resource/images/ai/solution/RAG/img-usecase02.png" alt="" />
+                                    </div>
+                                    <div class="card-txts">
+                                        <h3 class="sub-title-sm">기가지니</h3>
+                                        <div class="card-tags">
+                                            <span class="card-tag">KT사례</span>
+                                            <span class="card-tag">GPT-3</span>
+                                            <span class="card-tag">GPT-4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic">
+                                <div class="card-inner">
+                                    <div class="card-img">
+                                        <img src="/resource/images/ai/solution/RAG/img-usecase03.png" alt="" />
+                                    </div>
+                                    <div class="card-txts">
+                                        <h3 class="sub-title-sm">기가지니</h3>
+                                        <div class="card-tags">
+                                            <span class="card-tag">KT사례</span>
+                                            <span class="card-tag">GPT-3</span>
+                                            <span class="card-tag">GPT-4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic">
+                                <div class="card-inner">
+                                    <div class="card-img">
+                                        <img src="/resource/images/ai/solution/RAG/img-usecase04.png" alt="" />
+                                    </div>
+                                    <div class="card-txts">
+                                        <h3 class="sub-title-sm">기가지니</h3>
+                                        <div class="card-tags">
+                                            <span class="card-tag">KT사례</span>
+                                            <span class="card-tag">GPT-3</span>
+                                            <span class="card-tag">GPT-4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                    <div class="btnWrap" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        <a href="#">
+                            <button type="button" class="btn">전체보기</button>
                         </a>
                     </div>
                 </div>
@@ -265,8 +328,9 @@
                                 <h3>Agent Pattern</h3>
                                 <img class="pc-only" src="/resource/images/ai/solution/agent/Agent Tech_01.png"
                                     alt="icon code" />
-                                <img class="mobile-show" src="/resource/images/ai/solution/agent/Agent-Tech_01_mo.jpg"
-                                    alt="">
+                                <img class="mobile-show" src="/resource/images/ai/solution/agent/Agent Tech_01_mo.png"
+                                    alt="icon code" />
+
                             </div>
                             <div class="double-txts">
                                 <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
@@ -284,8 +348,8 @@
                                 <h3>Multi-Model Orchestrator</h3>
                                 <img class="pc-only" src="/resource/images/ai/solution/agent/Agent Tech_02.png"
                                     alt="icon code" />
-                                <img class="mobile-show" src="/resource/images/ai/solution/agent/Agent-Tech_01_mo.jpg"
-                                    alt="">
+                                <img class="mobile-show" src="/resource/images/ai/solution/agent/Agent Tech_02_mo.png"
+                                    alt="icon code" />
                             </div>
                             <div class="double-txts">
                                 <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
@@ -342,8 +406,9 @@
                                     <ul>
                                         <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                                             <div class="list-item has-number">
-                                                <span>01</span>
-                                                <h3>신속한 개발 환경 제공</h3>
+                                                <h3 data-aos="fade-up" data-aos-duration="800"
+                                                    data-aos-easing="ease-out-cubic">신속한 개발
+                                                    환경 제공</h3>
                                                 <div class="text">
                                                     사용자는 목적에 맞게 설계된 Well-Architected Agent 템플릿을 활용하여 개발 시간을 대폭 단축할 수
                                                     있습니다.<br>
@@ -356,7 +421,6 @@
                                         </li>
                                         <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                                             <div class="list-item has-number">
-                                                <span>02</span>
                                                 <h3>통합 개발 리소스</h3>
                                                 <div class="text">
                                                     사용자는 인프라(IaC), 코드(UI 컴포넌트, API, 공통 로직), 프레임워크 등 Agent 개발에 필요한 모든 요소를
@@ -568,8 +632,7 @@
                 <div class="content-inner">
                     <div class="tab-inner-wrapper">
                         <!-- 2번 탭 컨텐츠 -->
-                        <div class="tabs__panel__anchor mo-pt-0" id="tab-panel-2" role="tabpanel"
-                            aria-labelledby="tab-2">
+                        <div class="tabs__panel__anchor" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2">
 
                             <div class="tab-section">
                                 <div class="title-wrapper only-title">
@@ -591,57 +654,9 @@
                                 <!-- Multi-Model Orchestrator 도식 -->
                                 <div class="orchestrator-diagram" data-aos="fade-up" data-aos-duration="800"
                                     data-aos-easing="ease-out-cubic">
-                                    <div class="diagram-row">
-                                        <div class="diagram-block user-block">
-                                            <div class="diagram-title">User</div>
-                                        </div>
-                                        <div class="diagram-block agent-block">
-                                            <div class="diagram-title">Agent</div>
-                                        </div>
-                                        <div class="diagram-block orchestrator-block">
-                                            <div class="orchestrator-title">Orchestrator</div>
-                                            <div class="orchestrator-inner">
-                                                <div class="flex">
-                                                    <div class="table-card-wrapper">
-                                                        <ul class="table-card-list">
-                                                            <li>
-                                                                <div class="table-card-item">
-                                                                    <h3>LLM Router</h3>
-                                                                    <p>
-                                                                        <span>Routing Model</span>
-                                                                        <span>Pre-mapped data</span>
-                                                                    </p>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="table-card-item">
-                                                                    <h3>Tools</h3>
-                                                                    <p>
-                                                                        <span>Web Search</span>
-                                                                        <span>Rag, Calculator</span>
-                                                                    </p>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="table-card-wrapper">
-                                                        <ul class="table-card-list">
-                                                            <li>
-                                                                <div class="table-card-item">
-                                                                    <h3>LLMS</h3>
-                                                                    <ul class="llms-list">
-                                                                        <li>Midm</li>
-                                                                        <li>Finance</li>
-                                                                        <li>GPT4</li>
-                                                                        <li>GPT4o-K</li>
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="img">
+                                        <img src="/resource/images/ai/solution/agent/agent-Orchestrator-graph.png"
+                                            alt="">
                                     </div>
                                 </div>
                             </div>
@@ -724,15 +739,18 @@
 
 
     <!-- Script -->
-    <script src="/js/ai/solution.js"></script>
     <script src="/js/ai/common/common.js"></script>
+    <script src="/js/ai/solution.js"></script>
+
     <script>
         includeCommonLayout();
     </script>
     <script src="/js/ai/common/aos.js"></script>
+    <script src="/js/ai/common/swiper-bundle.min.js"></script>
 
     <!-- Tabs Component (공통) -->
     <script src="/js/ai/sub_cy.js"></script>
+
     <script>
         AOS.init();
     </script>

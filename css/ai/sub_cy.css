@@ -1,4 +1,8 @@
 /* Common Layout */
+.mo-br {
+  display: none;
+}
+
 .flex {
   display: flex;
 }
@@ -299,6 +303,7 @@
 
 .useCasePage .card-list-horizontal {
   flex-wrap: wrap;
+  justify-content: left;
 }
 
 .useCasePage .card-list-horizontal .card-img {
@@ -543,6 +548,10 @@
 
 /* Mobile Styles */
 @media (max-width: 767px) {
+  .mo-br {
+    display: block;
+  }
+
   .sub-content {
     padding-top: 12rem;
     padding-bottom: 10rem;
@@ -567,6 +576,7 @@
 
   .sub-title-wrap p {
     font-size: 1.8rem;
+    word-break: keep-all;
   }
 
   .sub-title-sm {
@@ -626,8 +636,8 @@
   }
 
   .useCasePage .card-list-horizontal .card {
-    flex: 0 0 calc(100% - 1rem);
-    max-width: calc(100% - 1rem);
+    flex: 0 0 calc(100%);
+    max-width: calc(100%);
   }
 
   .useCasePage .card-list-horizontal .card-img {
@@ -648,7 +658,7 @@
   }
 
   .useCasePage .card-list-horizontal .card:nth-child(n + 2) {
-    margin-top: 6rem;
+    margin-top: 4rem;
   }
 
   .tech-card .card-img {
@@ -668,6 +678,7 @@
     line-height: 168%;
     /* 26.88px */
     margin-top: 0.8rem;
+    word-break: keep-all;
   }
 
   .useCasePage .card-list-horizontal .card .sub-desc br {
