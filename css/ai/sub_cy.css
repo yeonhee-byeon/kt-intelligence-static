@@ -696,7 +696,7 @@
     margin-top: 0.2rem;
   }
 
-  /* resourcesPage */
+  /* resources page */
   .techPage .tabs {
     overflow-x: auto;
     white-space: nowrap;
@@ -708,6 +708,10 @@
     /* Firefox */
     -ms-overflow-style: none;
     /* IE and Edge */
+  }
+
+  .tabs__tab::after {
+    top: 14px;
   }
 
   .techPage .tabs::-webkit-scrollbar {
@@ -807,6 +811,10 @@
     border: 1px solid #b2b2b2;
   }
 
+  .tech-detail-header .card-tags span:nth-child(1) {
+    border: 1px solid #b2b2b2;
+  }
+
   .tech-detail-banner {
     margin-top: 8rem;
     height: 100%;
@@ -830,6 +838,7 @@
     /* 28px */
     letter-spacing: -0.2px;
     padding-top: 1.9rem;
+    color: var(--gray-900-color);
   }
 
   .tech-banner-wrapper .tech-banner-item .tech-banner-txts span.hasIcon {
