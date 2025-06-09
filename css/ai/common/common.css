@@ -264,7 +264,6 @@ body,
 .dropdown-icon {
     width: 0.5rem;
     height: 2rem;
-    margin-left: 0.4rem;
     transition: transform 0.2s;
     transform: rotate(180deg);
 }
@@ -1054,7 +1053,12 @@ body,
     }
 
     .btn {
+        min-width: 16rem;
+        padding: 1.4rem 3.2rem;
         font-size: 2rem;
+        line-height: var(--line-height-172);
+        letter-spacing: var(--letter-spacing-base);
+        border-radius: 0.8rem;
     }
 }
 
