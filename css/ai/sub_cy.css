@@ -544,6 +544,23 @@
   top: 0.075rem;
 }
 
+.KonModel-link {
+  color: #F00;
+  font-family: Pretendard;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 172%;
+  /* 41.28px */
+  letter-spacing: -0.24px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+
 /* Mobile Styles */
 @media (max-width: 767px) {
   .mo-br {
@@ -856,5 +873,16 @@
     height: 2rem;
     top: -1px;
     right: -20.5px;
+  }
+
+  .KonModel-link {
+    color: #F00;
+    font-family: Pretendard;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 160%;
+    /* 32px */
+    letter-spacing: -0.2px;
+    text-underline-position: from-font;
   }
 }
