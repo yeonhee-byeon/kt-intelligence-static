@@ -177,6 +177,7 @@
   font-weight: 500;
   letter-spacing: -0.4px;
   margin-bottom: 0rem;
+  margin-top: 0.75rem;
 }
 
 .bg-black-style .sub-title-wrapper h2+span.gray-sm {
@@ -487,7 +488,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5rem;
+  gap: 3.75rem;
   padding-bottom: 10rem;
   width: 100%;
 }
@@ -668,14 +669,18 @@
 }
 
 .list-wrapper.Orchestrator-wrapper .list-item h3 {
-  max-width: 19.5625rem;
-  min-width: 19.5625rem;
-  margin-right: 3.5rem;
+  max-width: 15.875rem;
+  min-width: 15.875rem;
+  margin-right: 6.25rem;
   color: var(--black-color);
 }
 
 .list-wrapper.Orchestrator-wrapper .list-item.has-number span {
   margin-right: 0;
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  line-height: 172%;
+  letter-spacing: -0.18px;
 }
 
 /* model page */
@@ -687,12 +692,12 @@
 
 .solution-model-wrapper #tab-panel-2 {
   background-image: url('/resource/images/ai/solution/model/title-only-bg-02.png');
-  background-size: 105.25rem auto;
+  background-size: 103.3125rem auto;
 }
 
 .solution-model-wrapper #tab-panel-3 {
   background-image: url('/resource/images/ai/solution/model/title-only-bg-03.png');
-  background-size: 105.25rem auto;
+  background-size: 103.3125rem auto;
 }
 
 .content-section.tabs-component.model-section {
