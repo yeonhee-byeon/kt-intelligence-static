@@ -105,7 +105,7 @@
 
 /* Card Tags */
 .card-tags {
-    font-size: 0.8125rem;
+    font-size: var(--font-size-sm);
     display: flex;
     justify-content: left;
     color: var(--gray-900-color);
@@ -117,10 +117,11 @@
     max-width: 22rem;
 }
 
-.card-tags>span {
+.card-tags > span {
     border-radius: 100px;
     border: 1px solid var(--gray-300-color);
-    padding: 0.3125rem 0.75rem;
+    padding: 0.313rem 0.75rem;
+    font-size: var(--font-size-sm);
     display: flex;
     align-items: center;
     width: fit-content;
@@ -132,12 +133,12 @@
     margin-right: 0.25rem;
 }
 
-.card-tags>span:nth-child(1) {
+.card-tags > span:nth-child(1) {
     border: 0;
     background-color: var(--gray-200-color);
 }
 
-.card-tags>span:nth-last-child(1) {
+.card-tags > span:nth-last-child(1) {
     margin-right: 0;
 }
 
@@ -163,7 +164,7 @@
 }
 
 .tabs__tab::after {
-    content: "";
+    content: '';
     display: block;
     width: 1%;
     height: 1.25rem;
@@ -179,7 +180,7 @@
 
 .tabs__tab--active,
 .tabs__tab:focus,
-.tabs__tab[aria-selected="true"] {
+.tabs__tab[aria-selected='true'] {
     color: var(--black-color);
 }
 
@@ -240,13 +241,13 @@
 }
 
 .pagination__arrow--prev {
-    background: url("/resource/images/ai/icons/chevron-left.png") no-repeat center center;
+    background: url('/resource/images/ai/icons/chevron-left.png') no-repeat center center;
     background-size: 1.5rem 1.5625rem;
     margin-right: 3px;
 }
 
 .pagination__arrow--next {
-    background: url("/resource/images/ai/icons/chevron-right.png") no-repeat center center;
+    background: url('/resource/images/ai/icons/chevron-right.png') no-repeat center center;
     background-size: 1.5rem 1.5625rem;
     margin-left: 3px;
 }
@@ -263,12 +264,12 @@
 
 /* Buttons */
 .basic-bk-btn {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-xl);
     font-weight: 700;
-    line-height: 170%;
-    letter-spacing: -0.52px;
+    line-height: var(--line-height-172);
+    letter-spacing: var(--letter-spacing-md);
     background-color: var(--black-color);
-    padding: 1.15625rem 1.9375rem;
+    padding: 1rem 1.5rem;
     border-radius: 0.625rem;
     color: var(--white-color);
     display: block;
@@ -404,7 +405,7 @@
     margin-top: 1.25rem;
 }
 
-.tech-card .card-tags>span:nth-child(1) {
+.tech-card .card-tags > span:nth-child(1) {
     background-color: var(--white-color);
     border: 1px solid var(--gray-300-color);
 }
@@ -532,8 +533,8 @@
 
 .tech-banner-wrapper .tech-banner-item .tech-banner-txts span.hasIcon:after {
     display: block;
-    content: "";
-    background-image: url("/resource/images/ai/icons/arrow-right.png");
+    content: '';
+    background-image: url('/resource/images/ai/icons/arrow-right.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -605,7 +606,7 @@
         margin-left: -0.4rem;
     }
 
-    .card-tags>span {
+    .card-tags > span {
         font-size: 1.3rem;
         font-weight: 400;
         line-height: 1.4;
@@ -640,7 +641,7 @@
         margin: 5.6rem auto 0;
         width: fit-content;
         background-color: var(--gray-100-color);
-        background-image: url("/resource/images/ai/icons/mb-moreBtn.png");
+        background-image: url('/resource/images/ai/icons/mb-moreBtn.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: 2.4rem 2.4rem;
@@ -685,7 +686,7 @@
         padding-bottom: 63%;
     }
 
-    .useCasePage .card-tags>span:nth-child(1) {
+    .useCasePage .card-tags > span:nth-child(1) {
         background-color: #ebebeb;
         border: 0;
     }

@@ -694,7 +694,7 @@ body,
     background: var(--black-color);
     color: var(--white-color);
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 0.625rem;
     padding: 1.25rem 2.5rem;
     font-size: var(--font-size-3xl);
     font-weight: 700;
@@ -704,11 +704,20 @@ body,
     min-width: 12.5rem;
 }
 
+.btn.md {
+    min-width: unset;
+    padding: 1rem 2rem;
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-172);
+    letter-spacing: var(--letter-spacing-md);
+}
+
 .btn.sm {
     min-width: 10.625rem;
     font-size: var(--font-size-xl);
     line-height: var(--line-height-172);
-    padding: 1rem 2.969rem;
+    letter-spacing: var(--letter-spacing-md);
+    padding: 1rem 1.5rem;
 }
 
 .btn.white {

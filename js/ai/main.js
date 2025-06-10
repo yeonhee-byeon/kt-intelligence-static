@@ -147,14 +147,23 @@ function initSubBannerSectionAnimation() {
 
     // Initial settings
     const initialSettings = () => {
-        // gsap.set(video, { yPercent: -50, xPercent: -50 });
-        gsap.set(subBannerList1, { opacity: 0, x: -100 });
-        gsap.set(subBannerList2, { opacity: 0, y: 100 });
-        gsap.set(subBannerList3, { opacity: 0, y: 100 });
-        gsap.set(subBannerList4, { opacity: 0 });
-        gsap.set(subBannerList5, { opacity: 0 });
-        gsap.set(spansFirst, { opacity: 0 });
-        gsap.set(spansSecond, { opacity: 0 });
+        if (window.innerWidth <= 768) {
+            gsap.set(subBannerList1, { opacity: 0, x: -20 });
+            gsap.set(subBannerList2, { opacity: 0, y: 20 });
+            gsap.set(subBannerList3, { opacity: 0, y: 20 });
+            gsap.set(subBannerList4, { opacity: 0 });
+            gsap.set(subBannerList5, { opacity: 0 });
+            gsap.set(spansFirst, { opacity: 0 });
+            gsap.set(spansSecond, { opacity: 0 });
+        } else {
+            gsap.set(subBannerList1, { opacity: 0, x: -100 });
+            gsap.set(subBannerList2, { opacity: 0, y: 100 });
+            gsap.set(subBannerList3, { opacity: 0, y: 100 });
+            gsap.set(subBannerList4, { opacity: 0 });
+            gsap.set(subBannerList5, { opacity: 0 });
+            gsap.set(spansFirst, { opacity: 0 });
+            gsap.set(spansSecond, { opacity: 0 });
+        }
     };
 
     let videoDuration = 0;
@@ -512,10 +521,7 @@ function initParallaxSectionAnimation() {
 
     // Handle resize
     let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(initAnimation, 250);
-    });
+    window.addEventListener('resize', ScrollTrigger.refresh);
 }
 
 function initParallaxDepthSectionAnimation() {
