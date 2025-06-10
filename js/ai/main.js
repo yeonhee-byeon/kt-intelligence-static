@@ -326,8 +326,14 @@ function initSubBannerSectionAnimation() {
     let resizeTimeout;
     window.addEventListener("resize", () => {
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(initAnimation, 250);
+        resizeTimeout = setTimeout(() => {
+            initAnimation();
+            setTimeout(() => ScrollTrigger.refresh(), 0);
+        }, 250);
     });
+
+    // 초기화
+    setTimeout(() => ScrollTrigger.refresh(), 0);
 }
 
 function initParallaxSectionAnimation() {
@@ -538,6 +544,7 @@ function initParallaxDepthSectionAnimation() {
 
     // GSAP 애니메이션 초기 세팅
     gsap.registerPlugin(ScrollTrigger);
+
     ScrollTrigger.create({
         trigger: section,
         start: "top top",
@@ -579,23 +586,12 @@ function initParallaxDepthSectionAnimation() {
             onComplete: unlockScroll,
         });
 
-        titleTl
-            .to(titleGroup, {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-            })
-            .to(
-                konGroup,
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-                },
-                "-=0.6"
-            );
+        titleTl.to(titleGroup, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        });
 
         // 큐브 이동 애니메이션
         const cubeTl = gsap.timeline({
@@ -802,29 +798,35 @@ function initParallaxDepthSectionAnimation() {
     };
 
     // Initialize animations based on screen size
-    // let currentTimeline;
+    let currentTimeline;
 
     const initAnimation = () => {
-        // if (currentTimeline) {
-        //   currentTimeline.kill();
-        // }
-
+        if (currentTimeline) {
+            if (Array.isArray(currentTimeline)) {
+                currentTimeline.forEach((tl) => tl && typeof tl.kill === "function" && tl.kill());
+            } else if (typeof currentTimeline.kill === "function") {
+                currentTimeline.kill();
+            }
+        }
+        console.log("initAnimation");
         currentTimeline = window.innerWidth <= 768 ? createMobileTimeline() : createDesktopTimeline();
     };
 
     // Initial setup
     initAnimation();
 
-    // Handle resize
-    let resizeTimeout;
     window.addEventListener("resize", () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(initAnimation, 250);
+        ScrollTrigger.update();
+
+        // if (window.innerWidth <= 768) {
+        //     createMobileTimeline();
+        // } else {
+        //     createDesktopTimeline();
+        // }
     });
 
     // 초기화
     setActiveMenu(-1);
-    setTimeout(() => ScrollTrigger.refresh(), 0);
 }
 
 function initMobileAccordion() {
