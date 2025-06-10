@@ -1533,6 +1533,18 @@ br {
         line-height: 1.18;
         letter-spacing: -0.02em;
     }
+    .sub-banner-section .sub-banner-inner > ul > li h2 * {
+        font-size: 2.6rem;
+        font-weight: 400;
+        line-height: var(--line-height-152);
+        letter-spacing: -0.005em;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li h2.sub-banner-item6-second * {
+        font-size: 3.6rem;
+        font-weight: 700;
+        line-height: 1.42;
+        letter-spacing: 0.15em;
+    }
     .sub-banner-section .sub-banner-inner > ul > li {
         flex-direction: column;
     }
@@ -1840,7 +1852,7 @@ br {
         width: 1.44rem;
         height: 1.4rem;
     }
-    .mobile-accordion-btn[aria-expanded="true"] h3 {
+    .mobile-accordion-btn[aria-expanded='true'] h3 {
         color: #fe2e36;
     }
     .mobile-accordion-panel {
@@ -1939,7 +1951,8 @@ br {
         align-items: center;
         gap: 3.2rem;
         padding: 4rem 2rem;
-        background: url(/resource/images/ai/k-eco/mo-k-eco-top-bg.png) no-repeat center center / cover;
+        background: url(/resource/images/ai/k-eco/mo-k-eco-top-bg.png) no-repeat center center /
+            cover;
     }
     .eco-section .eco-title {
         font-size: 2.2rem;
@@ -2010,15 +2023,18 @@ br {
     }
     .eco-section .eco-bottom .eco-bottom-card:nth-child(1) {
         height: 46.4rem;
-        background: url(/resource/images/ai/k-eco/mo-k-eco-bottom-bg-1.png) no-repeat center center / cover;
+        background: url(/resource/images/ai/k-eco/mo-k-eco-bottom-bg-1.png) no-repeat center center /
+            cover;
     }
     .eco-section .eco-bottom .eco-bottom-card:nth-child(2) {
         height: 43.9rem;
-        background: url(/resource/images/ai/k-eco/mo-k-eco-bottom-bg-2.png) no-repeat center center / cover;
+        background: url(/resource/images/ai/k-eco/mo-k-eco-bottom-bg-2.png) no-repeat center center /
+            cover;
     }
     .eco-section .eco-bottom .eco-bottom-card:nth-child(3) {
         height: 36.5rem;
-        background: url(/resource/images/ai/k-eco/mo-k-eco-bottom-bg-3.png) no-repeat center center / cover;
+        background: url(/resource/images/ai/k-eco/mo-k-eco-bottom-bg-3.png) no-repeat center center /
+            cover;
     }
     .eco-section .eco-bottom .eco-bottom-card .eco-bottom-title {
         padding: 0;
