@@ -186,9 +186,13 @@ function initSubBannerSectionAnimation() {
 
     const onVideoReady = (video, callback) => {
         if (video.readyState >= 1) {
+            video.play();
             callback();
         } else {
-            video.addEventListener('loadedmetadata', () => callback());
+            video.addEventListener('loadedmetadata', () => {
+                video.play();
+                callback();
+            });
         }
     };
 
