@@ -28,7 +28,7 @@ br.mo-br {
     display: none;
 }
 .banner-inner {
-    max-width: 1200px;
+    /* max-width: 1200px; */
     height: 33.75rem;
     margin: 0 auto;
     display: flex;
@@ -57,7 +57,7 @@ br.mo-br {
     font-weight: 600;
     line-height: 1.48;
     letter-spacing: var(--letter-spacing-md);
-    text-shadow: 1px 4px 40px rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 4px 40px rgba(0, 0, 0, 0.3), 1px 4px 60px #000;
 }
 .sub-banner {
     margin-top: 0;
@@ -95,7 +95,7 @@ br.mo-br {
     background: var(--white-color);
 }
 .content-section {
-    padding: 7.75rem 0 11.875rem;
+    padding: 10rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -249,7 +249,7 @@ br.mo-br {
     color: var(--gray-900-color);
     font-size: var(--font-size-md);
     font-weight: 500;
-    line-height: 1.55;
+    line-height: var(--line-height-172);
     letter-spacing: var(--letter-spacing-base);
 }
 .card-item span {
@@ -566,7 +566,7 @@ br.mo-br {
     font-weight: 700;
     line-height: var(--line-height-150);
     letter-spacing: var(--letter-spacing-md);
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
 }
 .box-item p {
     color: var(--gray-900-color);
@@ -588,6 +588,7 @@ br.mo-br {
     font-weight: 700;
     line-height: var(--line-height-150);
     letter-spacing: var(--letter-spacing-md);
+    margin-bottom: 1.25rem;
 }
 .box-wrapper-rag .box-list li ul {
     display: flex;
@@ -686,7 +687,7 @@ br.mo-br {
     margin-top: 0.25rem;
 }
 .list-item h3 {
-    min-width: 17.5rem;
+    min-width: 15.5rem;
     margin: 0 6.25rem 0 0;
     color: var(--gray-900-color);
     font-size: var(--font-size-4xl);

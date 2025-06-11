@@ -355,9 +355,10 @@
 /* agent page */
 .agent-key-graph-wrapper {
     position: relative;
+    margin-top: 2rem;
 }
 
-.agent-key-graph-wrapper:before {
+/* .agent-key-graph-wrapper:before {
     display: block;
     content: '';
     width: 100%;
@@ -366,7 +367,7 @@
     top: -2.5rem;
     left: 0;
     position: absolute;
-}
+} */
 
 .list-item.has-number span {
     margin-right: 4.0625rem;
@@ -569,7 +570,7 @@
 }
 
 .tab-section .list-wrapper {
-    padding: 0 7.375rem 3rem;
+    padding: 0 7rem 3rem;
 }
 
 .tab-section .list-wrapper > ul {
