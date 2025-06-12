@@ -107,6 +107,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+    word-break: keep-all;
 }
 
 html,
@@ -181,6 +182,7 @@ body,
 .header-logo-ext {
     display: none;
 }
+
 .header-nav {
     display: flex;
     align-items: center;
@@ -670,7 +672,7 @@ body,
     margin-top: 0;
 }
 
-.footer-sns > div {
+.footer-sns>div {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -814,6 +816,7 @@ body,
 }
 
 @media (max-width: 768px) {
+
     /* mobile에서 노출 클래스 */
     .pc-only {
         display: none !important;
@@ -873,6 +876,7 @@ body,
     .sticky-header {
         top: 99%;
     }
+
     .sticky-header-inner {
         width: 100%;
         justify-content: flex-start;
