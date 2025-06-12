@@ -313,6 +313,9 @@ br.mo-br {
     flex: 1 0 calc(100% / 2 - 2rem);
     position: relative;
 }
+.card-list.customer.triple li {
+    flex: 1 0 calc(100% / 3 - 2rem);
+}
 .card-list.customer .card-item {
     padding: 0;
     width: 100%;
@@ -331,7 +334,7 @@ br.mo-br {
     position: absolute;
     top: 1.875rem;
     left: 1.875rem;
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-3xl);
     font-weight: 700;
     line-height: var(--line-height-150);
     letter-spacing: var(--letter-spacing-md);
@@ -380,6 +383,9 @@ br.mo-br {
 .table-card-list > li:nth-child(3n):after {
     display: none;
 }
+.table-card-wrapper .table-card-list.text.sm .table-card-item ul {
+    min-height: 18.038rem;
+}
 .table-card-item {
     display: flex;
     flex-direction: column;
@@ -400,6 +406,14 @@ br.mo-br {
     line-height: var(--line-height-150);
     letter-spacing: var(--letter-spacing-md);
     text-align: center;
+}
+.table-card-item h3 p {
+    margin-top: -0.5rem;
+    color: var(--gray-900-color);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    line-height: var(--line-height-172);
+    letter-spacing: var(--letter-spacing-md);
 }
 .table-card-item p {
     width: 100%;
@@ -1223,6 +1237,9 @@ br.mo-br {
 .architecture-diagram .table-list .table-row-2 .table-col-2 .table-col.long {
     flex: 1 0 calc(100% / 4 - 2rem);
 }
+.architecture-diagram .table-list .table-row-2 .table-col-2 .table-col.long2 {
+    flex: 1 0 calc(100% / 3 - 2rem);
+}
 .architecture-diagram .table-list .table-row-2 .table-col-2 .table-col.long .table-item ul {
     gap: 2rem;
 }
@@ -1242,6 +1259,7 @@ br.mo-br {
 .architecture-diagram .table-list .table-col:first-child .table-title {
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: rgba(254, 46, 54, 0.1);
@@ -1253,6 +1271,25 @@ br.mo-br {
     font-weight: 700;
     line-height: var(--line-height-150);
     letter-spacing: var(--letter-spacing-md);
+}
+.architecture-diagram .table-list .table-col:first-child .table-title.top {
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.75rem;
+}
+.architecture-diagram .table-list .table-col .table-title strong {
+    color: var(--primary-color);
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    line-height: var(--line-height-150);
+    letter-spacing: var(--letter-spacing-md);
+}
+.architecture-diagram .table-list .table-col .table-title span {
+    color: var(--primary-color);
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    line-height: var(--line-height-172);
+    letter-spacing: var(--letter-spacing-base);
 }
 .architecture-diagram .table-list .table-col .table-item {
     min-height: 26.688rem;
@@ -1273,11 +1310,25 @@ br.mo-br {
     letter-spacing: var(--letter-spacing-md);
     margin-bottom: 1.25rem;
 }
+.architecture-diagram .table-list .table-col .table-item h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    line-height: var(--line-height-150);
+    letter-spacing: var(--letter-spacing-md);
+    margin-bottom: 0.75rem;
+}
 .architecture-diagram .table-list .table-col .table-item h3 {
     font-size: var(--font-size-3xl);
     font-weight: 700;
     line-height: var(--line-height-150);
     letter-spacing: var(--letter-spacing-md);
+    margin-bottom: 0.75rem;
+}
+.architecture-diagram .table-list .table-col .table-item p {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    line-height: var(--line-height-172);
+    letter-spacing: var(--letter-spacing-base);
     margin-bottom: 0.75rem;
 }
 .architecture-diagram .table-list .table-col .table-item ul {
@@ -1307,6 +1358,37 @@ br.mo-br {
     margin-top: 0.75rem;
     flex-shrink: 0;
     background: var(--gray-900-color);
+}
+.architecture-diagram .table-list .table-col .table-item.text ul {
+    padding: 1.875rem 0;
+    flex-direction: row;
+    gap: 2rem;
+}
+.architecture-diagram .table-list .table-col .table-item.text ul li {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    line-height: var(--line-height-172);
+    letter-spacing: var(--letter-spacing-base);
+    white-space: nowrap;
+}
+.architecture-diagram .table-list .table-col .table-item.text ul li:before {
+    display: none;
+}
+.architecture-diagram .table-list .table-col .table-item.xl ul {
+    gap: 3rem;
+}
+.architecture-diagram .table-list .table-col .table-item.xl ul li {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    line-height: var(--line-height-150);
+    letter-spacing: var(--letter-spacing-md);
+}
+.architecture-diagram .table-list .table-col .table-item.row ul {
+    flex-direction: row;
+    gap: 2rem;
+}
+.architecture-diagram .table-list .table-col .table-item.row ul li {
+    white-space: nowrap;
 }
 .architecture-diagram .table-list .table-col .table-item.center {
     align-items: center;
