@@ -82,6 +82,13 @@
 
 .card-list-horizontal .card .sub-desc {
     margin: 0.75rem 0 1.375rem;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: keep-all;
 }
 
 .card-list-horizontal .card-txts {
@@ -2047,6 +2054,10 @@
 @media (max-width: 767px) {
 
     /* Common Layout */
+    .sticky-header.tab-sticky-header .sticky-header-inner {
+        justify-content: center;
+    }
+
     .mo-br {
         display: block;
     }
@@ -2380,7 +2391,6 @@
         display: none;
         flex-wrap: nowrap;
         justify-content: flex-start;
-        overflow: hidden;
     }
 
     .content-inner {
@@ -2540,6 +2550,14 @@
         width: 100vw;
     }
 
+    .card-list-horizontal .card .sub-desc {
+        margin: 0.8rem 0 1.6rem;
+        font-size: 1.6rem;
+        line-height: 168%;
+        letter-spacing: 0;
+        -webkit-line-clamp: 1;
+    }
+
     .card-list-horizontal::-webkit-scrollbar {
         display: none;
     }
@@ -2551,10 +2569,6 @@
 
     .card-list-horizontal>.card:first-child {
         margin-left: 0 !important;
-    }
-
-    .card-list-horizontal .card .sub-desc {
-        display: none;
     }
 
     .card-list-horizontal .card-tags {
@@ -2845,7 +2859,7 @@
         width: 100vw;
         background-position: top;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         position: absolute;
         top: -9.8rem;
         left: -2rem;
@@ -2854,17 +2868,20 @@
 
     .solution-model-wrapper #tab-panel-1>.tab-section.only-title:after {
         background-image: url('/resource/images/ai/solution/model/title-only-bg-01_mo.png');
-        padding-bottom: 48rem;
+        padding-bottom: 0rem;
+        height: 50vh;
     }
 
     .solution-model-wrapper #tab-panel-2>.tab-section.only-title:after {
         background-image: url('/resource/images/ai/solution/model/title-only-bg-02_mo.png');
-        padding-bottom: 48rem;
+        padding-bottom: 0rem;
+        height: 50vh;
     }
 
     .solution-model-wrapper #tab-panel-3>.tab-section.only-title:after {
         background-image: url('/resource/images/ai/solution/model/title-only-bg-03_mo.png');
-        padding-bottom: 48rem;
+        padding-bottom: 0rem;
+        height: 50vh;
     }
 
     .tripple-box-wrapper .tripple-box-list li .img h3 {
