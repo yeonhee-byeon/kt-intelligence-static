@@ -67,6 +67,14 @@
 }
 
 /* Card Common Styles */
+.card-list-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+
 .card-list-horizontal .card {
     flex: 0 0 calc(25% - 1.5rem);
     max-width: calc(25% - 1.5rem);
@@ -2367,6 +2375,13 @@
     }
 
     /* ***************************************solution page ****************************************** */
+
+    .card-list-horizontal {
+        display: none;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
 
     .content-inner {
         gap: 4rem;
