@@ -1254,6 +1254,13 @@ br {
     position: relative;
     overflow: hidden;
 }
+.custom-slide .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.165rem;
+    overflow: hidden;
+}
 .custom-slide img {
     vertical-align: top;
     width: 100%;
@@ -1277,17 +1284,12 @@ br {
     object-fit: cover;
 }
 .usecase-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    padding: 1.875rem 2rem 2rem;
-    background: linear-gradient(180deg, rgba(237, 237, 237, 0) 0%, rgba(237, 237, 237, 0.7) 100%);
-    backdrop-filter: blur(1px);
+    padding: 1rem 0 0;
 }
 .usecase-labels {
     display: flex;
@@ -1304,11 +1306,11 @@ br {
     line-height: 1.4;
     border-radius: 99999px;
     padding: 0.313rem 0.75rem;
-    border: 1px solid var(--gray-800-color);
+    border: 1px solid var(--gray-300-color);
 }
-.usecase-label.black {
-    background: var(--gray-900-color);
-    color: var(--white-color);
+.usecase-label.gray {
+    background: var(--gray-200-color);
+    color: var(--gray-900-color);
     border: 0;
 }
 .usecase-name {
@@ -1318,7 +1320,19 @@ br {
     font-weight: 700;
     line-height: var(--line-height-152);
     letter-spacing: var(--letter-spacing-md);
-    margin-bottom: 0.813rem;
+    margin-bottom: 0.75rem;
+}
+.usecase-desc {
+    color: var(--gray-800-color);
+    font-size: var(--font-size-md);
+    font-weight: 400;
+    line-height: var(--line-height-172);
+    margin-bottom: 1.375rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 .usecase-btn {
     width: fit-content;
