@@ -1,1322 +1,955 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>K Model</title>
 
-        <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
-        <!-- Common CSS -->
-        <link rel="stylesheet" href="/css/ai/common/common.css" />
-        <!-- Reset CSS -->
-        <link rel="stylesheet" href="/css/ai/common/reset.css" />
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="/css/ai/sub_cy.css" />
-        <!-- AOS CSS -->
-        <link rel="stylesheet" href="/css/ai/common/aos.css" />
-        <link rel="stylesheet" href="/css/ai/solution.css" />
-        <link rel="stylesheet" href="/css/ai/solution_cy.css" />
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K Model</title>
 
-    <style>
-        html {
-            overflow-x: hidden;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="/css/ai/common/common.css" />
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="/css/ai/common/reset.css" />
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="/css/ai/common/aos.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/css/ai/solution.css" />
+    <link rel="stylesheet" href="/css/ai/solution_cy.css" />
+</head>
 
-    <body>
-        <!-- Header -->
-        <header id="main-header" class="header">
-            <div class="header-inner"></div>
+<style>
+    html {
+        overflow-x: hidden;
+    }
+</style>
 
-            <!-- Sticky Header -->
-            <div id="sticky-header" class="sticky-header tab-sticky-header">
-                <div class="sticky-header-inner">
-                    <ul class="sticky-header-list">
-                        <li data-section="tab-panel-1">믿:음2.0</li>
-                        <li data-section="tab-panel-2">GPT K</li>
-                        <li data-section="tab-panel-3">Llama K</li>
+<body>
+    <!-- Header -->
+    <header id="main-header" class="header">
+        <div class="header-inner"></div>
+
+        <!-- Sticky Header -->
+        <div id="sticky-header" class="sticky-header tab-sticky-header">
+            <div class="sticky-header-inner">
+                <ul class="sticky-header-list">
+                    <li data-section="tab-panel-1">믿:음2.0</li>
+                    <li data-section="tab-panel-2">GPT K</li>
+                    <li data-section="tab-panel-3">Llama K</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section id="banner-section" class="banner-section">
+        <img src="/resource/images/ai/solution/model/model-banner.png" alt="banner" width="100%" height="100%" />
+        <img src="/resource/images/ai/solution/model/model-banner-mo.png" alt="banner" width="100%" height="100%"
+            class="mo-banner-bg" />
+        <div class="banner-inner">
+            <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                <img src="/resource/images/ai/solution/ico-kon.svg" alt="logo" width="53" height="52" />
+                Model
+            </h2>
+            <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                신뢰성과 안전성을 모두 갖춘, 가장 한국적인 AI 모델 K Model은 검증된 데이터와
+                안정된 인프라와<br />
+                높은 성능을 바탕으로 기업이 안심하고 사용할 수 있는 AI 경험을 제공합니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <div class="content-wrapper solution-model-wrapper">
+        <!-- K Model 장점 -->
+        <section class="content-section">
+            <div class="content-inner">
+                <div class="title-wrapper">
+                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Advantages</span>
+                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        K Model 장점
+                    </h2>
+                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        저작권 걱정 없는 고품질 데이터로 학습하고, <br class="mo-br" />국내에서
+                        안전하게 운영되어 정확하고 <br class="mo-br" />신뢰할 수 있는 AI를
+                        제공합니다.
+                    </p>
+                </div>
+                <div class="tripple-box-wrapper">
+                    <ul class="tripple-box-list">
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="tripple-box-item">
+                                <div class="img">
+                                    <h3>
+                                        신뢰할 수 있는 데이터로<br /><br class="mo-br" />
+                                        학습한 모델
+                                    </h3>
+                                    <img src="/resource/images/ai/solution/model/model-benefit-02.png"
+                                        alt="학습한 모델 이미지" />
+                                </div>
+                                <p>
+                                    책임 있게 수집된 데이터, 정확하고 안전한<br /><br class="mo-br" />
+                                    AI의 시작점입니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="tripple-box-item">
+                                <div class="img">
+                                    <h3>품질과 신뢰성이 <br />검증된 AI</h3>
+                                    <img src="/resource/images/ai/solution/model/model-benefit-01.png"
+                                        alt="학습한 모델 이미지" />
+                                </div>
+                                <p>
+                                    성능 평가와 신뢰성 검증을 통해 우수한 성능과 높은<br /><br class="mo-br" />
+                                    안정성을 확보했습니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="tripple-box-item">
+                                <div class="img">
+                                    <h3>
+                                        해외 반출이 없는 <br />
+                                        안전한 인프라
+                                    </h3>
+                                    <img src="/resource/images/ai/solution/model/model-benefit-03.png"
+                                        alt="학습한 모델 이미지" />
+                                </div>
+                                <p>
+                                    해당 서비스는 Microsoft Azure SPC 기반의<br /><br class="mo-br" />
+                                    국내 리전에서 안전하게 운영됩니다.
+                                </p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </header>
+        </section>
 
-        <!-- Banner Section -->
-        <section id="banner-section" class="banner-section">
-            <img
-                src="/resource/images/ai/solution/model/model-banner.png"
-                alt="banner"
-                width="100%"
-                height="100%"
-            />
-            <img
-                src="/resource/images/ai/solution/model/model-banner-mo.png"
-                alt="banner"
-                width="100%"
-                height="100%"
-                class="mo-banner-bg"
-            />
-            <div class="banner-inner">
-                <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                    <img
-                        src="/resource/images/ai/solution/ico-kon.svg"
-                        alt="logo"
-                        width="53"
-                        height="52"
-                    />
-                    Model
-                </h2>
-                <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                    신뢰성과 안전성을 모두 갖춘, 가장 한국적인 AI 모델 K Model은 검증된 데이터와
-                    안정된 인프라와<br />
-                    높은 성능을 바탕으로 기업이 안심하고 사용할 수 있는 AI 경험을 제공합니다.
-                </p>
+        <!-- 라인업 -->
+        <section class="content-section">
+            <div class="content-inner">
+                <div class="title-wrapper">
+                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">K Model</span>
+                    <h2 class="no-desc" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        라인업
+                    </h2>
+                </div>
+                <div class="box-wrapper line-up-box">
+                    <ul class="box-list model-line-up">
+                        <!-- 독자모델 (이미 있음) -->
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="box-item">
+                                <h3>KT 독자 모델</h3>
+                                <h4>KT의 원천기술을 기반으로 자체 개발한 AI 모델</h4>
+                                <p>
+                                    국내 기술로 설계·학습된 AI 모델로 정밀한 튜닝과 검증을 통해
+                                    다양한 <br />환경에서 안정적이고 정확한 응답을 제공합니다.
+                                </p>
+                                <div class="card-tags">
+                                    <span class="card-tag">믿:음2.0 mini</span>
+                                    <span class="card-tag">믿:음2.0 base</span>
+                                    <span class="card-tag">믿:음2.0 pro (예정)</span>
+                                    <span class="card-tag">멀티모달</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 협력모델 -->
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="box-item">
+                                <h3>협력 모델</h3>
+                                <h4>세계 최고 수준의 AI 성능에 한국형 데이터로 정밀 튜닝</h4>
+                                <p>
+                                    MS 등 글로벌 선도 기업과의 협업을 통해, 최고 성능의 AI에
+                                    한국 특화 데이터를 <br />결합해 시너지를 극대화했습니다.
+                                </p>
+                                <div class="card-tags">
+                                    <span class="card-tag">GPT K</span>
+                                    <span class="card-tag">Phi-K (예정)</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 오픈소스 기반 모델 -->
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="box-item">
+                                <h3>오픈소스 기반 모델</h3>
+                                <h4>유연한 적용과 경제성을 고려한 오픈소스 기반 AI 모델</h4>
+                                <p>
+                                    산업별 요구에 유연하게 대응할 수 있도록 다양한 오픈소스
+                                    모델을<br />
+                                    실용적으로 설계했습니다.
+                                </p>
+                                <div class="card-tags">
+                                    <span class="card-tag">Llama K</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 특화 모델 -->
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="box-item">
+                                <h3>특화 모델</h3>
+                                <h4>전문 분야에 맞춰 학습된 Ready-Made AI 모델</h4>
+                                <p>
+                                    법률, 금융, 의료 등 특정 영역의 데이터를 기반으로 정확하고
+                                    신뢰할 수<br />
+                                    있는 AI 경험을 제공합니다.
+                                </p>
+                                <div class="card-tags">
+                                    <span class="card-tag">법률 모델</span>
+                                    <span class="card-tag">금융 모델</span>
+                                    <span class="card-tag">교육 모델</span>
+                                    <span class="card-tag">의료 모델</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Content Section -->
-        <div class="content-wrapper solution-model-wrapper">
-            <!-- K Model 장점 -->
-            <section class="content-section">
+        <!-- 탭 -->
+        <section class="content-section model-section tabs-component">
+            <div class="bg-black-style">
                 <div class="content-inner">
-                    <div class="title-wrapper">
-                        <span
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                            >Advantages</span
-                        >
-                        <h2
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                        >
-                            K Model 장점
-                        </h2>
-                        <p
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                        >
-                            저작권 걱정 없는 고품질 데이터로 학습하고, <br class="mo-br" />국내에서
-                            안전하게 운영되어 정확하고 <br class="mo-br" />신뢰할 수 있는 AI를
-                            제공합니다.
-                        </p>
-                    </div>
-                    <div class="tripple-box-wrapper">
-                        <ul class="tripple-box-list">
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="tripple-box-item">
-                                    <div class="img">
-                                        <h3>
-                                            신뢰할 수 있는 데이터로<br /><br class="mo-br" />
-                                            학습한 모델
-                                        </h3>
-                                        <img
-                                            src="/resource/images/ai/solution/model/model-benefit-02.png"
-                                            alt="학습한 모델 이미지"
-                                        />
-                                    </div>
-                                    <p>
-                                        책임 있게 수집된 데이터, 정확하고 안전한<br /><br
-                                            class="mo-br"
-                                        />
-                                        AI의 시작점입니다.
-                                    </p>
-                                </div>
-                            </li>
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="tripple-box-item">
-                                    <div class="img">
-                                        <h3>품질과 신뢰성이 <br />검증된 AI</h3>
-                                        <img
-                                            src="/resource/images/ai/solution/model/model-benefit-01.png"
-                                            alt="학습한 모델 이미지"
-                                        />
-                                    </div>
-                                    <p>
-                                        성능 평가와 신뢰성 검증을 통해 우수한 성능과 높은<br /><br
-                                            class="mo-br"
-                                        />
-                                        안정성을 확보했습니다.
-                                    </p>
-                                </div>
-                            </li>
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="tripple-box-item">
-                                    <div class="img">
-                                        <h3>
-                                            해외 반출이 없는 <br />
-                                            안전한 인프라
-                                        </h3>
-                                        <img
-                                            src="/resource/images/ai/solution/model/model-benefit-03.png"
-                                            alt="학습한 모델 이미지"
-                                        />
-                                    </div>
-                                    <p>
-                                        해당 서비스는 Microsoft Azure SPC 기반의<br /><br
-                                            class="mo-br"
-                                        />
-                                        국내 리전에서 안전하게 운영됩니다.
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 라인업 -->
-            <section class="content-section">
-                <div class="content-inner">
-                    <div class="title-wrapper">
-                        <span
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                            >K Model</span
-                        >
-                        <h2
-                            class="no-desc"
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                        >
-                            라인업
-                        </h2>
-                    </div>
-                    <div class="box-wrapper line-up-box">
-                        <ul class="box-list model-line-up">
-                            <!-- 독자모델 (이미 있음) -->
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="box-item">
-                                    <h3>KT 독자 모델</h3>
-                                    <h4>KT의 원천기술을 기반으로 자체 개발한 AI 모델</h4>
-                                    <p>
-                                        국내 기술로 설계·학습된 AI 모델로 정밀한 튜닝과 검증을 통해
-                                        다양한 <br />환경에서 안정적이고 정확한 응답을 제공합니다.
-                                    </p>
-                                    <div class="card-tags">
-                                        <span class="card-tag">믿:음2.0 mini</span>
-                                        <span class="card-tag">믿:음2.0 base</span>
-                                        <span class="card-tag">믿:음2.0 pro (예정)</span>
-                                        <span class="card-tag">멀티모달</span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- 협력모델 -->
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="box-item">
-                                    <h3>협력 모델</h3>
-                                    <h4>세계 최고 수준의 AI 성능에 한국형 데이터로 정밀 튜닝</h4>
-                                    <p>
-                                        MS 등 글로벌 선도 기업과의 협업을 통해, 최고 성능의 AI에
-                                        한국 특화 데이터를 <br />결합해 시너지를 극대화했습니다.
-                                    </p>
-                                    <div class="card-tags">
-                                        <span class="card-tag">GPT K</span>
-                                        <span class="card-tag">Phi-K (예정)</span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- 오픈소스 기반 모델 -->
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="box-item">
-                                    <h3>오픈소스 기반 모델</h3>
-                                    <h4>유연한 적용과 경제성을 고려한 오픈소스 기반 AI 모델</h4>
-                                    <p>
-                                        산업별 요구에 유연하게 대응할 수 있도록 다양한 오픈소스
-                                        모델을<br />
-                                        실용적으로 설계했습니다.
-                                    </p>
-                                    <div class="card-tags">
-                                        <span class="card-tag">Llama K</span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- 특화 모델 -->
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="box-item">
-                                    <h3>특화 모델</h3>
-                                    <h4>전문 분야에 맞춰 학습된 Ready-Made AI 모델</h4>
-                                    <p>
-                                        법률, 금융, 의료 등 특정 영역의 데이터를 기반으로 정확하고
-                                        신뢰할 수<br />
-                                        있는 AI 경험을 제공합니다.
-                                    </p>
-                                    <div class="card-tags">
-                                        <span class="card-tag">법률 모델</span>
-                                        <span class="card-tag">금융 모델</span>
-                                        <span class="card-tag">교육 모델</span>
-                                        <span class="card-tag">의료 모델</span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 탭 -->
-            <section class="content-section model-section tabs-component">
-                <div class="bg-black-style">
-                    <div class="content-inner">
-                        <div class="tab-inner-wrapper">
-                            <!-- 1번 탭 컨텐츠 -->
-                            <div
-                                class="tabs__panel__anchor tabs__panel__anchor--active"
-                                id="tab-panel-1"
-                                role="tabpanel"
-                                aria-labelledby="tab-1"
-                            >
-                                <div class="tab-section only-title">
-                                    <div class="title-wrapper">
-                                        <span
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                            >KT 독자 모델</span
-                                        >
-                                        <h2
-                                            class="sub-big-h2"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            믿:음2.0
-                                        </h2>
-                                        <h3
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            국내 AI 기술 주권 확보를 위한 <br class="mo-br" />
-                                            KT의 자체 개발 언어모델(LLM)
-                                        </h3>
-                                    </div>
-
-                                    <div
-                                        class="btn-wrap"
-                                        data-aos="fade-up"
-                                        data-aos-duration="800"
-                                        data-aos-easing="ease-out-cubic"
-                                    >
-                                        <button type="button" class="btn md white">
-                                            모델 체험하기
-                                        </button>
-                                    </div>
+                    <div class="tab-inner-wrapper">
+                        <!-- 1번 탭 컨텐츠 -->
+                        <div class="tabs__panel__anchor tabs__panel__anchor--active" id="tab-panel-1" role="tabpanel"
+                            aria-labelledby="tab-1">
+                            <div class="tab-section only-title">
+                                <div class="title-wrapper">
+                                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">KT
+                                        독자 모델</span>
+                                    <h2 class="sub-big-h2" data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">
+                                        믿:음2.0
+                                    </h2>
+                                    <h3 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        국내 AI 기술 주권 확보를 위한 <br class="mo-br" />
+                                        KT의 자체 개발 언어모델(LLM)
+                                    </h3>
                                 </div>
 
-                                <div class="tab-section">
-                                    <div class="sub-title-wrapper tp2">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            믿:음의 장점
-                                        </h2>
-                                    </div>
+                                <div class="btn-wrap" data-aos="fade-up" data-aos-duration="800"
+                                    data-aos-easing="ease-out-cubic">
+                                    <button type="button" class="btn md white">
+                                        모델 체험하기
+                                    </button>
+                                </div>
+                            </div>
 
-                                    <div class="box-wrapper model-believe-box">
-                                        <ul class="box-list">
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        국내 최초 11B 규모 상업적<br />
-                                                        활용이 가능한 오픈 소스 모델 공개
-                                                    </h3>
-                                                    <p>
-                                                        한국 AI 생태계 발전을 위해
-                                                        <br class="mo-br" />
-                                                        믿:음 Mini(2.3B), Base(11B) 모델의
-                                                        <br class="mo-br" />
-                                                        오픈소스 공개
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        On-device 소형 모델부터<br /><br
-                                                            class="mo-br"
-                                                        />
-                                                        고성능 모델까지 다양한 라인업
-                                                    </h3>
-                                                    <p>
-                                                        Mini(2.3B), Base(11B), Pro(41B) 모델을
-                                                        성능과 GPU 자원에 맞춰 유연하게 선택
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        한국어에 최적화된 언어처리기술인 고유의
-                                                        <br />
-                                                        Tokenizer 적용
-                                                    </h3>
-                                                    <p>
-                                                        한국어에 특화된 고유 토크나이저로 압축률을
-                                                        높이고 추론 효율성 향상
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        글로벌 수준의 성능을 갖춘<br /><br
-                                                            class="mo-br"
-                                                        />
-                                                        KT 독자 모델
-                                                    </h3>
-                                                    <p>
-                                                        원천기술과 축적된 노하우를 바탕으로,
-                                                        <br class="mo-br" />최신 AI 기술의 빠른 적용
-                                                    </p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                            <div class="tab-section">
+                                <div class="sub-title-wrapper tp2">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        믿:음의 장점
+                                    </h2>
                                 </div>
 
-                                <div class="tab-section gap10">
-                                    <div class="sub-title-wrapper">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            활용 사례
-                                        </h2>
-                                        <span
-                                            class="gray-sm"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                            >믿:음2.0</span
-                                        >
-                                    </div>
-
-                                    <div class="example-side-wrapper">
-                                        <div class="example-side-item">
-                                            <div
-                                                class="video-wrapper"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="video-inner">
-                                                    <video
-                                                        src="/resource/videos/ai/main-hero-video.mp4"
-                                                        playsinline
-                                                        controls
-                                                    ></video>
-                                                </div>
+                                <div class="box-wrapper model-believe-box">
+                                    <ul class="box-list">
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    국내 최초 11B 규모 상업적<br />
+                                                    활용이 가능한 오픈 소스 모델 공개
+                                                </h3>
+                                                <p>
+                                                    한국 AI 생태계 발전을 위해
+                                                    <br class="mo-br" />
+                                                    믿:음 Mini(2.3B), Base(11B) 모델의
+                                                    <br class="mo-br" />
+                                                    오픈소스 공개
+                                                </p>
                                             </div>
-
-                                            <div
-                                                class="example-side-txts"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <dl>
-                                                    <dt>다국어(한국어, 영어) 지원</dt>
-                                                    <dd>
-                                                        한국어와 영어 모두에서 자연스럽고 <br />
-                                                        일관된 응답 제공
-                                                    </dd>
-                                                </dl>
-                                                <dl>
-                                                    <dt>AI 추론(Reasoning)</dt>
-                                                    <dd>
-                                                        주어진 정보로부터 논리적으로 판단하고 <br />
-                                                        일관된 답변 도출
-                                                    </dd>
-                                                </dl>
-                                                <dl>
-                                                    <dt>한국 문화 맥락에 기반한 글쓰기</dt>
-                                                    <dd>
-                                                        한국의 언어적·문화적 특성을 반영한 <br />
-                                                        자연스러운 문장 구성
-                                                    </dd>
-                                                </dl>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    On-device 소형 모델부터<br /><br class="mo-br" />
+                                                    고성능 모델까지 다양한 라인업
+                                                </h3>
+                                                <p>
+                                                    Mini(2.3B), Base(11B), Pro(41B) 모델을
+                                                    성능과 GPU 자원에 맞춰 유연하게 선택
+                                                </p>
                                             </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    한국어에 최적화된 언어처리기술인 고유의
+                                                    <br />
+                                                    Tokenizer 적용
+                                                </h3>
+                                                <p>
+                                                    한국어에 특화된 고유 토크나이저로 압축률을
+                                                    높이고 추론 효율성 향상
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    글로벌 수준의 성능을 갖춘<br /><br class="mo-br" />
+                                                    KT 독자 모델
+                                                </h3>
+                                                <p>
+                                                    원천기술과 축적된 노하우를 바탕으로,
+                                                    <br class="mo-br" />최신 AI 기술의 빠른 적용
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="tab-section gap10">
+                                <div class="sub-title-wrapper">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        활용 사례
+                                    </h2>
+                                    <span class="gray-sm" data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">믿:음2.0</span>
+                                </div>
+
+                                <div class="example-side-wrapper">
+                                    <div class="example-side-item">
+                                        <div class="video-wrapper" data-aos="fade-up" data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic">
+                                            <div class="video-inner">
+                                                <video src="/resource/videos/ai/main-hero-video.mp4" playsinline
+                                                    controls></video>
+                                            </div>
+                                        </div>
+
+                                        <div class="example-side-txts" data-aos="fade-up" data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic">
+                                            <dl>
+                                                <dt>다국어(한국어, 영어) 지원</dt>
+                                                <dd>
+                                                    한국어와 영어 모두에서 자연스럽고 <br />
+                                                    일관된 응답 제공
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>AI 추론(Reasoning)</dt>
+                                                <dd>
+                                                    주어진 정보로부터 논리적으로 판단하고 <br />
+                                                    일관된 답변 도출
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>한국 문화 맥락에 기반한 글쓰기</dt>
+                                                <dd>
+                                                    한국의 언어적·문화적 특성을 반영한 <br />
+                                                    자연스러운 문장 구성
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-section gap10">
+                                <div class="sub-title-wrapper">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        믿:음2.0 라인업
+                                    </h2>
+                                </div>
+
+                                <div class="example-side-wrapper">
+                                    <div class="example-side-item">
+                                        <div class="example-side-txts model-line-up" data-aos="fade-up"
+                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <dl>
+                                                <dt>믿:음2.0 mini</dt>
+                                                <dd>
+                                                    소형 디바이스에서 구동할 수 있도록<br />경량화한
+                                                    On-Device향 모델
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>믿:음2.0 base</dt>
+                                                <dd>
+                                                    성능과 효율의 밸런스를 갖춘<br />
+                                                    균형 잡힌 모델
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>믿:음2.0 pro (예정)</dt>
+                                                <dd>
+                                                    Frontier급<br />
+                                                    고성능 모델
+                                                </dd>
+                                            </dl>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="tab-section gap10">
-                                    <div class="sub-title-wrapper">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            믿:음2.0 라인업
-                                        </h2>
-                                    </div>
-
-                                    <div class="example-side-wrapper">
-                                        <div class="example-side-item">
-                                            <div
-                                                class="example-side-txts model-line-up"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <dl>
-                                                    <dt>믿:음2.0 mini</dt>
-                                                    <dd>
-                                                        소형 디바이스에서 구동할 수 있도록<br />경량화한
-                                                        On-Device향 모델
-                                                    </dd>
-                                                </dl>
-                                                <dl>
-                                                    <dt>믿:음2.0 base</dt>
-                                                    <dd>
-                                                        성능과 효율의 밸런스를 갖춘<br />
-                                                        균형 잡힌 모델
-                                                    </dd>
-                                                </dl>
-                                                <dl>
-                                                    <dt>믿:음2.0 pro (예정)</dt>
-                                                    <dd>
-                                                        Frontier급<br />
-                                                        고성능 모델
-                                                    </dd>
-                                                </dl>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="btn-wrap"
-                                        data-aos="fade-up"
-                                        data-aos-duration="800"
-                                        data-aos-easing="ease-out-cubic"
-                                    >
-                                        <button type="button" class="basic-bk-btn">
-                                            모델 자세히 보기
-                                        </button>
-                                    </div>
+                                <div class="btn-wrap" data-aos="fade-up" data-aos-duration="800"
+                                    data-aos-easing="ease-out-cubic">
+                                    <button type="button" class="basic-bk-btn">
+                                        모델 자세히 보기
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="bg-bright-fff">
-                    <div class="content-inner">
-                        <div class="tab-inner-wrapper">
-                            <!-- 2번 탭 컨텐츠 -->
-                            <div
-                                class="tabs__panel__anchor"
-                                id="tab-panel-2"
-                                role="tabpanel"
-                                aria-labelledby="tab-2"
-                            >
-                                <div class="tab-section only-title">
-                                    <div class="title-wrapper">
-                                        <span
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                            >KT-MS 협력모델</span
-                                        >
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            GPT K
-                                        </h2>
-                                        <h3
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            글로벌 최고 성능의 GPT-4o에 KT <br class="mo-br" />
-                                            *소버린 데이터(Sovereign Data)를<br
-                                                class="mo-br"
-                                            /><br />
-                                            학습해 한국어와 역사·문화·정서에 특화된 모델
-                                        </h3>
-                                        <p
-                                            class="gray-desc"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            소버린 데이터* 한국 고유의 언어/문화/산업 데이터로
-                                            이루어진 KT독자적 학습 자산으로서<br />
-                                            한국의 맥락을 정밀하게 반영한 AI 개발의 핵심 요소
-                                        </p>
-                                    </div>
-
-                                    <div
-                                        class="btn-wrap"
-                                        data-aos="fade-up"
-                                        data-aos-duration="800"
-                                        data-aos-easing="ease-out-cubic"
-                                    >
-                                        <button type="button" class="btn md">모델 체험하기</button>
-                                    </div>
-                                </div>
-
-                                <div class="tab-section">
-                                    <div class="sub-title-wrapper tp2">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            GPT K의 장점
-                                        </h2>
-                                    </div>
-                                    <div class="gpt-benefit-box">
-                                        <ul class="box-list white-box">
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        한국어와 영어<br /><br class="mo-br" />
-                                                        모두에서 뛰어난 성능
-                                                    </h3>
-                                                    <p>
-                                                        GPT-4o 원본모델의 성능 우위를 유지하면서,
-                                                        <br />
-                                                        한국어는 모든 도메인 영역에서 성능
-                                                        개선(언어,<br />
-                                                        문학, 교육 커뮤니케이션, 예술,경제, 사회,
-                                                        인문,<br />
-                                                        공학, 과학)
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        한국적인 축적 지식과<br /><br
-                                                            class="mo-br"
-                                                        />
-                                                        민감도 인지 향상
-                                                    </h3>
-                                                    <p>
-                                                        Elpis데이터 및 SFT*/ RLHF** 학습을 통해<br />
-                                                        한국 고유 지식 정교화<br />
-                                                        *SFT: Supervised Fine-tuning<br />
-                                                        **RLHF: Reinforcement Learning from Human
-                                                        Feedback
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        글로벌 최고 수준의 성능을<br /><br
-                                                            class="mo-br"
-                                                        />
-                                                        갖춘 한국적 AI 모델
-                                                    </h3>
-                                                    <p>
-                                                        기반 모델(GPT-4o)의 Catastrophic
-                                                        forgetting<br />
-                                                        없이 한국어 성능만 개선
-                                                    </p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="tab-section gap10">
-                                    <div class="sub-title-wrapper tp2">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            활용 사례 비교
-                                        </h2>
-                                        <span
-                                            class="gray-sm"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                            >GPT-4o vs GPT K</span
-                                        >
-                                    </div>
-
-                                    <div class="example-side-wrapper">
-                                        <div class="example-side-item">
-                                            <div
-                                                class="video-wrapper"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="video-inner">
-                                                    <video
-                                                        src="/resource/videos/ai/main-hero-video.mp4"
-                                                        playsinline
-                                                        controls
-                                                    ></video>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="example-side-txts"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <dl>
-                                                    <dt>매끄러운 영어-한국어 번역</dt>
-                                                    <dd>
-                                                        이메일 내용을 번역하여 한국어에서 사용되는
-                                                        어투, <br />어체, 문맥상의 뉘앙스를 비교
-                                                    </dd>
-                                                </dl>
-                                                <dl>
-                                                    <dt>한국적 지식</dt>
-                                                    <dd>
-                                                        한국의 정서와 문화를 비롯해 역사・지리・사회
-                                                        <br />
-                                                        구조 등 전반에 걸친 맥락적 이해
-                                                    </dd>
-                                                </dl>
-                                                <dl>
-                                                    <dt>사설 등 글쓰기 비교</dt>
-                                                    <dd>
-                                                        사설을 비롯한 다양한 글쓰기 유형 간의 표현
-                                                        방식과<br />
-                                                        구조 비교
-                                                    </dd>
-                                                </dl>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-section gap10">
-                                    <div class="sub-title-wrapper">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            GPT K 라인업
-                                        </h2>
-                                    </div>
-
-                                    <div class="example-side-wrapper">
-                                        <div class="example-side-item">
-                                            <div
-                                                class="example-side-txts model-line-up"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <dl>
-                                                    <dt>GPT K</dt>
-                                                    <dd>
-                                                        KT와 Microsoft 협업으로 탄생한 한국적 AI
-                                                    </dd>
-                                                </dl>
-                                                <dl>
-                                                    <dt>Phi-K</dt>
-                                                    <dd>곧 공개될 예정입니다.</dd>
-                                                </dl>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="btn-wrap"
-                                        data-aos="fade-up"
-                                        data-aos-duration="800"
-                                        data-aos-easing="ease-out-cubic"
-                                    >
-                                        <button type="button" class="btn md">
-                                            모델 자세히 보기
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-black-style">
-                    <div class="content-inner">
-                        <div class="tab-inner-wrapper">
-                            <!-- 3번 탭 컨텐츠 -->
-                            <div
-                                class="tabs__panel__anchor"
-                                id="tab-panel-3"
-                                role="tabpanel"
-                                aria-labelledby="tab-3"
-                            >
-                                <div class="tab-section only-title">
-                                    <div class="title-wrapper">
-                                        <span
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                            >오픈소스 기반 모델</span
-                                        >
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            Llama K
-                                        </h2>
-                                        <h3
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            Meta의 Llama 3.x가 지원하지 않는 한국어에 대해 자체
-                                            데이터와 학습 노하우를<br />
-                                            적용해 성능은 유지하고 한국어 능력을 대폭 강화한 비용
-                                            효율적 모델
-                                        </h3>
-                                    </div>
-
-                                    <div
-                                        class="btn-wrap"
-                                        data-aos="fade-up"
-                                        data-aos-duration="800"
-                                        data-aos-easing="ease-out-cubic"
-                                    >
-                                        <button type="button" class="btn md white">
-                                            모델 체험하기
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="tab-section">
-                                    <div class="sub-title-wrapper tp2">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            Llama K의 장점
-                                        </h2>
-                                    </div>
-                                    <div class="gpt-benefit-box liama-benefit-box">
-                                        <ul class="box-list white-box">
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        Llama 원본모델의 성능<br />
-                                                        손실 없이, 한국어 이해/생성<br />
-                                                        능력까지 대폭 향상
-                                                    </h3>
-                                                    <p>
-                                                        LogicKor (Korean real-world use-case
-                                                        <br />benchmak) 기준 전분야 상승. 특히
-                                                        글쓰기 ,이해 <br />추론 영역 (수치 업데이트
-                                                        예정)
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        한국어 지시 이행<br />(Instruction-following)<br />
-                                                        성능 대폭 향상
-                                                    </h3>
-                                                    <p>
-                                                        오픈소스 모델이 상용 모델 대비 성능이 낮았던
-                                                        한국어 지시 이행(Task Following) 영역에서
-                                                        비약적인 성능 향상을 달성 (수치 업데이트
-                                                        예정)<br />
-                                                        높임법 종결어미등 한국어 특화 영역 7개
-                                                        항목과<br />
-                                                        공공분야 포맷 이행 영역 적용
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        한국어 Reasoning<br />
-                                                        코딩,수학 영역 최적화 학습<br />
-                                                        기법 적용
-                                                    </h3>
-                                                    <p>
-                                                        KT 독자적인 한국어 리워드모델 기반 최신
-                                                        online <br />RL 기술 활용
-                                                    </p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="tab-section gap10">
-                                    <div class="sub-title-wrapper tp2">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            활용 사례 비교
-                                        </h2>
-                                        <span
-                                            class="gray-sm"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                            >Llama 70B vs Llama K 74B</span
-                                        >
-                                    </div>
-
-                                    <div class="example-side-wrapper">
-                                        <div class="example-side-item">
-                                            <div
-                                                class="video-wrapper"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="video-inner">
-                                                    <video
-                                                        src="/resource/videos/ai/main-hero-video.mp4"
-                                                        playsinline
-                                                        controls
-                                                    ></video>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="example-side-txts"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <dl>
-                                                    <dt>한국어 지시 이행 영역</dt>
-                                                    <dd>
-                                                        사용자의 요청이나 명령을 한국어로 정확히
-                                                        이해하고, 그에 맞는 응답이나 행동을 수행하는
-                                                        능력
-                                                    </dd>
-                                                </dl>
-                                                <dl>
-                                                    <dt>추론(Reasoning) 문제</dt>
-                                                    <dd>
-                                                        주어진 정보를 바탕으로 숨겨진 의미나 논리적
-                                                        결론을 도출하는 문제 유형
-                                                    </dd>
-                                                </dl>
-                                                <dl>
-                                                    <dt>공공 포맷 리포트 작성</dt>
-                                                    <dd>
-                                                        공공기관의 형식 기준에 따라 구조화된 공식<br />
-                                                        보고서 작성 방식
-                                                    </dd>
-                                                </dl>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-section gap10">
-                                    <div class="sub-title-wrapper">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            Llama K 라인업
-                                        </h2>
-                                    </div>
-
-                                    <div class="example-side-wrapper">
-                                        <div class="example-side-item">
-                                            <div
-                                                class="example-side-txts model-line-up"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <dl>
-                                                    <dt>Llama K 11B</dt>
-                                                    <dd>일반적인 성능의 기본 모델</dd>
-                                                </dl>
-                                                <dl>
-                                                    <dt>Llama K 74B</dt>
-                                                    <dd>
-                                                        Enterprise급 성능 요구에 적합한 고성능 모델
-                                                    </dd>
-                                                </dl>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="btn-wrap"
-                                        data-aos="fade-up"
-                                        data-aos-duration="800"
-                                        data-aos-easing="ease-out-cubic"
-                                    >
-                                        <button type="button" class="btn md white">
-                                            모델 자세히 보기
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="content-section pt-160">
+            <div class="bg-bright-fff">
                 <div class="content-inner">
-                    <div class="title-wrapper">
-                        <span
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                            >K Model</span
-                        >
-                        <h2
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                        >
-                            Use Cases
-                        </h2>
-                        <p
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                        >
-                            K intelligence와 함께한 기업들의 변화,<br class="mo-br" />
-                            성과로 증명된 유즈케이스를 확인해보세요.
-                        </p>
-                    </div>
+                    <div class="tab-inner-wrapper">
+                        <!-- 2번 탭 컨텐츠 -->
+                        <div class="tabs__panel__anchor" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2">
+                            <div class="tab-section only-title">
+                                <div class="title-wrapper">
+                                    <span data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">KT-MS 협력모델</span>
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        GPT K
+                                    </h2>
+                                    <h3 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        글로벌 최고 성능의 GPT-4o에 KT <br class="mo-br" />
+                                        *소버린 데이터(Sovereign Data)를<br class="mo-br" /><br />
+                                        학습해 한국어와 역사·문화·정서에 특화된 모델
+                                    </h3>
+                                    <p class="gray-desc" data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">
+                                        소버린 데이터* 한국 고유의 언어/문화/산업 데이터로
+                                        이루어진 KT독자적 학습 자산으로서<br />
+                                        한국의 맥락을 정밀하게 반영한 AI 개발의 핵심 요소
+                                    </p>
+                                </div>
 
-                    <div class="card-wrapper">
-                        <ul class="card-list-horizontal">
-                            <li
-                                class="card"
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
+                                <div class="btn-wrap" data-aos="fade-up" data-aos-duration="800"
+                                    data-aos-easing="ease-out-cubic">
+                                    <button type="button" class="btn md">모델 체험하기</button>
+                                </div>
+                            </div>
+
+                            <div class="tab-section">
+                                <div class="sub-title-wrapper tp2">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        GPT K의 장점
+                                    </h2>
+                                </div>
+                                <div class="gpt-benefit-box">
+                                    <ul class="box-list white-box">
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    한국어와 영어<br /><br class="mo-br" />
+                                                    모두에서 뛰어난 성능
+                                                </h3>
+                                                <p>
+                                                    GPT-4o 원본모델의 성능 우위를 유지하면서,
+                                                    <br />
+                                                    한국어는 모든 도메인 영역에서 성능
+                                                    개선(언어,<br />
+                                                    문학, 교육 커뮤니케이션, 예술,경제, 사회,
+                                                    인문,<br />
+                                                    공학, 과학)
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    한국적인 축적 지식과<br /><br class="mo-br" />
+                                                    민감도 인지 향상
+                                                </h3>
+                                                <p>
+                                                    Elpis데이터 및 SFT*/ RLHF** 학습을 통해<br />
+                                                    한국 고유 지식 정교화<br />
+                                                    *SFT: Supervised Fine-tuning<br />
+                                                    **RLHF: Reinforcement Learning from Human
+                                                    Feedback
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    글로벌 최고 수준의 성능을<br /><br class="mo-br" />
+                                                    갖춘 한국적 AI 모델
+                                                </h3>
+                                                <p>
+                                                    기반 모델(GPT-4o)의 Catastrophic
+                                                    forgetting<br />
+                                                    없이 한국어 성능만 개선
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-section gap10">
+                                <div class="sub-title-wrapper tp2">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        활용 사례 비교
+                                    </h2>
+                                    <span class="gray-sm" data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">GPT-4o vs GPT K</span>
+                                </div>
+
+                                <div class="example-side-wrapper">
+                                    <div class="example-side-item">
+                                        <div class="video-wrapper" data-aos="fade-up" data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic">
+                                            <div class="video-inner">
+                                                <video src="/resource/videos/ai/main-hero-video.mp4" playsinline
+                                                    controls></video>
+                                            </div>
+                                        </div>
+                                        <div class="example-side-txts" data-aos="fade-up" data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic">
+                                            <dl>
+                                                <dt>매끄러운 영어-한국어 번역</dt>
+                                                <dd>
+                                                    이메일 내용을 번역하여 한국어에서 사용되는
+                                                    어투, <br />어체, 문맥상의 뉘앙스를 비교
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>한국적 지식</dt>
+                                                <dd>
+                                                    한국의 정서와 문화를 비롯해 역사・지리・사회
+                                                    <br />
+                                                    구조 등 전반에 걸친 맥락적 이해
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>사설 등 글쓰기 비교</dt>
+                                                <dd>
+                                                    사설을 비롯한 다양한 글쓰기 유형 간의 표현
+                                                    방식과<br />
+                                                    구조 비교
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-section gap10">
+                                <div class="sub-title-wrapper">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        GPT K 라인업
+                                    </h2>
+                                </div>
+
+                                <div class="example-side-wrapper">
+                                    <div class="example-side-item">
+                                        <div class="example-side-txts model-line-up" data-aos="fade-up"
+                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <dl>
+                                                <dt>GPT K</dt>
+                                                <dd>
+                                                    KT와 Microsoft 협업으로 탄생한 한국적 AI
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>Phi-K</dt>
+                                                <dd>곧 공개될 예정입니다.</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="btn-wrap" data-aos="fade-up" data-aos-duration="800"
+                                    data-aos-easing="ease-out-cubic">
+                                    <button type="button" class="btn md">
+                                        모델 자세히 보기
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-black-style">
+                <div class="content-inner">
+                    <div class="tab-inner-wrapper">
+                        <!-- 3번 탭 컨텐츠 -->
+                        <div class="tabs__panel__anchor" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3">
+                            <div class="tab-section only-title">
+                                <div class="title-wrapper">
+                                    <span data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">오픈소스 기반 모델</span>
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        Llama K
+                                    </h2>
+                                    <h3 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        Meta의 Llama 3.x가 지원하지 않는 한국어에 대해 자체
+                                        데이터와 학습 노하우를<br />
+                                        적용해 성능은 유지하고 한국어 능력을 대폭 강화한 비용
+                                        효율적 모델
+                                    </h3>
+                                </div>
+
+                                <div class="btn-wrap" data-aos="fade-up" data-aos-duration="800"
+                                    data-aos-easing="ease-out-cubic">
+                                    <button type="button" class="btn md white">
+                                        모델 체험하기
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="tab-section">
+                                <div class="sub-title-wrapper tp2">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        Llama K의 장점
+                                    </h2>
+                                </div>
+                                <div class="gpt-benefit-box liama-benefit-box">
+                                    <ul class="box-list white-box">
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    Llama 원본모델의 성능<br />
+                                                    손실 없이, 한국어 이해/생성<br />
+                                                    능력까지 대폭 향상
+                                                </h3>
+                                                <p>
+                                                    LogicKor (Korean real-world use-case
+                                                    <br />benchmak) 기준 전분야 상승. 특히
+                                                    글쓰기 ,이해 <br />추론 영역 (수치 업데이트
+                                                    예정)
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    한국어 지시 이행<br />(Instruction-following)<br />
+                                                    성능 대폭 향상
+                                                </h3>
+                                                <p>
+                                                    오픈소스 모델이 상용 모델 대비 성능이 낮았던
+                                                    한국어 지시 이행(Task Following) 영역에서
+                                                    비약적인 성능 향상을 달성 (수치 업데이트
+                                                    예정)<br />
+                                                    높임법 종결어미등 한국어 특화 영역 7개
+                                                    항목과<br />
+                                                    공공분야 포맷 이행 영역 적용
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    한국어 Reasoning<br />
+                                                    코딩,수학 영역 최적화 학습<br />
+                                                    기법 적용
+                                                </h3>
+                                                <p>
+                                                    KT 독자적인 한국어 리워드모델 기반 최신
+                                                    online <br />RL 기술 활용
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-section gap10">
+                                <div class="sub-title-wrapper tp2">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        활용 사례 비교
+                                    </h2>
+                                    <span class="gray-sm" data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">Llama 70B vs Llama K 74B</span>
+                                </div>
+
+                                <div class="example-side-wrapper">
+                                    <div class="example-side-item">
+                                        <div class="video-wrapper" data-aos="fade-up" data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic">
+                                            <div class="video-inner">
+                                                <video src="/resource/videos/ai/main-hero-video.mp4" playsinline
+                                                    controls></video>
+                                            </div>
+                                        </div>
+                                        <div class="example-side-txts" data-aos="fade-up" data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic">
+                                            <dl>
+                                                <dt>한국어 지시 이행 영역</dt>
+                                                <dd>
+                                                    사용자의 요청이나 명령을 한국어로 정확히
+                                                    이해하고, 그에 맞는 응답이나 행동을 수행하는
+                                                    능력
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>추론(Reasoning) 문제</dt>
+                                                <dd>
+                                                    주어진 정보를 바탕으로 숨겨진 의미나 논리적
+                                                    결론을 도출하는 문제 유형
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>공공 포맷 리포트 작성</dt>
+                                                <dd>
+                                                    공공기관의 형식 기준에 따라 구조화된 공식<br />
+                                                    보고서 작성 방식
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-section gap10">
+                                <div class="sub-title-wrapper">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        Llama K 라인업
+                                    </h2>
+                                </div>
+
+                                <div class="example-side-wrapper">
+                                    <div class="example-side-item">
+                                        <div class="example-side-txts model-line-up" data-aos="fade-up"
+                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <dl>
+                                                <dt>Llama K 11B</dt>
+                                                <dd>일반적인 성능의 기본 모델</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>Llama K 74B</dt>
+                                                <dd>
+                                                    Enterprise급 성능 요구에 적합한 고성능 모델
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="btn-wrap" data-aos="fade-up" data-aos-duration="800"
+                                    data-aos-easing="ease-out-cubic">
+                                    <button type="button" class="btn md white">
+                                        모델 자세히 보기
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section pt-160">
+            <div class="content-inner">
+                <div class="title-wrapper">
+                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">K Model</span>
+                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        Use Cases
+                    </h2>
+                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        K intelligence와 함께한 기업들의 변화,<br class="mo-br" />
+                        성과로 증명된 유즈케이스를 확인해보세요.
+                    </p>
+                </div>
+
+                <div class="card-wrapper">
+                    <ul class="card-list-horizontal">
+                        <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="card-inner">
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/usecase/image01.png" alt="" />
+                                </div>
+                                <div class="card-txts">
+                                    <h3 class="sub-title-sm">My K</h3>
+                                    <p class="sub-desc">
+                                        AI를 입은 마이케이티 앱, 복잡하고 다양한 통신 업무를
+                                        한방에 맞춤형으로 해결해주는 Agent를 탑재
+                                    </p>
+                                    <div class="card-tags">
+                                        <span class="card-tag">KT사례</span>
+                                        <span class="card-tag">RAG</span>
+                                        <span class="card-tag">Multi-Agent</span>
+                                        <span class="card-tag">Search AI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="card-inner">
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/usecase/image02.png" alt="" />
+                                </div>
+                                <div class="card-txts">
+                                    <h3 class="sub-title-sm">지니TV</h3>
+                                    <p class="sub-desc">
+                                        자연스러운 대화로 콘텐츠 탐색이 가능한 LLM 기반 미디어
+                                        Agent,실시간 자막 생성이 적용된 AI TV
+                                    </p>
+                                    <div class="card-tags">
+                                        <span class="card-tag">KT사례</span>
+                                        <span class="card-tag">Multi-Agent</span>
+                                        <span class="card-tag">음성합성</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="card-inner">
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/usecase/image04.png" alt="" />
+                                </div>
+                                <div class="card-txts">
+                                    <h3 class="sub-title-sm">사장이지</h3>
+                                    <p class="sub-desc">
+                                        하나의 앱으로 효율적인 매장 운영 기능 통합제공, 전문
+                                        지식을 학습한 AI Agent가 실시간 질문에 대답
+                                    </p>
+                                    <div class="card-tags">
+                                        <span class="card-tag">KT사례</span>
+                                        <span class="card-tag">RAG</span>
+                                        <span class="card-tag">Agent</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="card-inner">
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/usecase/image03.png" alt="" />
+                                </div>
+                                <div class="card-txts">
+                                    <h3 class="sub-title-sm">KT 100번 고객센터</h3>
+                                    <p class="sub-desc">
+                                        AI 상담 어시스트와 보이스봇으로 더 똑똑하게 상담하는 KT
+                                        100번 고객센터
+                                    </p>
+                                    <div class="card-tags">
+                                        <span class="card-tag">KT사례</span>
+                                        <span class="card-tag">믿:음2.0</span>
+                                        <span class="card-tag">음성합성</span>
+                                        <span class="card-tag">음성인식</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="card-list-horizontal swiper-container">
+                        <div class="swiper-wrapper">
+                            <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic">
                                 <div class="card-inner">
                                     <div class="card-img">
-                                        <img src="/resource/images/ai/usecase/image01.png" alt="" />
+                                        <img src="/resource/images/ai/solution/RAG/img-usecase01.png" alt="" />
                                     </div>
                                     <div class="card-txts">
                                         <h3 class="sub-title-sm">My K</h3>
-                                        <p class="sub-desc">
-                                            AI를 입은 마이케이티 앱, 복잡하고 다양한 통신 업무를
-                                            한방에 맞춤형으로 해결해주는 Agent를 탑재
-                                        </p>
                                         <div class="card-tags">
-                                            <span class="card-tag">KT사례</span>
-                                            <span class="card-tag">RAG</span>
-                                            <span class="card-tag">Multi-Agent</span>
-                                            <span class="card-tag">Search AI</span>
+                                            <span class="card-tag">고객사례</span>
+                                            <span class="card-tag">사용자 피드백</span>
+                                            <span class="card-tag">사용자 피드백</span>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li
-                                class="card"
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
+                            <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic">
                                 <div class="card-inner">
                                     <div class="card-img">
-                                        <img src="/resource/images/ai/usecase/image02.png" alt="" />
+                                        <img src="/resource/images/ai/solution/RAG/img-usecase02.png" alt="" />
                                     </div>
                                     <div class="card-txts">
-                                        <h3 class="sub-title-sm">지니TV</h3>
-                                        <p class="sub-desc">
-                                            자연스러운 대화로 콘텐츠 탐색이 가능한 LLM 기반 미디어
-                                            Agent,실시간 자막 생성이 적용된 AI TV
-                                        </p>
+                                        <h3 class="sub-title-sm">기가지니</h3>
                                         <div class="card-tags">
                                             <span class="card-tag">KT사례</span>
-                                            <span class="card-tag">Multi-Agent</span>
-                                            <span class="card-tag">음성합성</span>
+                                            <span class="card-tag">GPT-3</span>
+                                            <span class="card-tag">GPT-4</span>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li
-                                class="card"
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
+                            <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic">
                                 <div class="card-inner">
                                     <div class="card-img">
-                                        <img src="/resource/images/ai/usecase/image04.png" alt="" />
+                                        <img src="/resource/images/ai/solution/RAG/img-usecase03.png" alt="" />
                                     </div>
                                     <div class="card-txts">
-                                        <h3 class="sub-title-sm">사장이지</h3>
-                                        <p class="sub-desc">
-                                            하나의 앱으로 효율적인 매장 운영 기능 통합제공, 전문
-                                            지식을 학습한 AI Agent가 실시간 질문에 대답
-                                        </p>
+                                        <h3 class="sub-title-sm">기가지니</h3>
                                         <div class="card-tags">
                                             <span class="card-tag">KT사례</span>
-                                            <span class="card-tag">RAG</span>
-                                            <span class="card-tag">Agent</span>
+                                            <span class="card-tag">GPT-3</span>
+                                            <span class="card-tag">GPT-4</span>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li
-                                class="card"
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
+                            <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic">
                                 <div class="card-inner">
                                     <div class="card-img">
-                                        <img src="/resource/images/ai/usecase/image03.png" alt="" />
+                                        <img src="/resource/images/ai/solution/RAG/img-usecase04.png" alt="" />
                                     </div>
                                     <div class="card-txts">
-                                        <h3 class="sub-title-sm">KT 100번 고객센터</h3>
-                                        <p class="sub-desc">
-                                            AI 상담 어시스트와 보이스봇으로 더 똑똑하게 상담하는 KT
-                                            100번 고객센터
-                                        </p>
+                                        <h3 class="sub-title-sm">기가지니</h3>
                                         <div class="card-tags">
                                             <span class="card-tag">KT사례</span>
-                                            <span class="card-tag">믿:음2.0</span>
-                                            <span class="card-tag">음성합성</span>
-                                            <span class="card-tag">음성인식</span>
+                                            <span class="card-tag">GPT-3</span>
+                                            <span class="card-tag">GPT-4</span>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                        </ul>
-
-                        <ul class="card-list-horizontal swiper-container">
-                            <div class="swiper-wrapper">
-                                <li
-                                    class="card swiper-slide"
-                                    data-aos="fade-up"
-                                    data-aos-duration="800"
-                                    data-aos-easing="ease-out-cubic"
-                                >
-                                    <div class="card-inner">
-                                        <div class="card-img">
-                                            <img
-                                                src="/resource/images/ai/solution/RAG/img-usecase01.png"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="card-txts">
-                                            <h3 class="sub-title-sm">My K</h3>
-                                            <div class="card-tags">
-                                                <span class="card-tag">고객사례</span>
-                                                <span class="card-tag">사용자 피드백</span>
-                                                <span class="card-tag">사용자 피드백</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li
-                                    class="card swiper-slide"
-                                    data-aos="fade-up"
-                                    data-aos-duration="800"
-                                    data-aos-easing="ease-out-cubic"
-                                >
-                                    <div class="card-inner">
-                                        <div class="card-img">
-                                            <img
-                                                src="/resource/images/ai/solution/RAG/img-usecase02.png"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="card-txts">
-                                            <h3 class="sub-title-sm">기가지니</h3>
-                                            <div class="card-tags">
-                                                <span class="card-tag">KT사례</span>
-                                                <span class="card-tag">GPT-3</span>
-                                                <span class="card-tag">GPT-4</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li
-                                    class="card swiper-slide"
-                                    data-aos="fade-up"
-                                    data-aos-duration="800"
-                                    data-aos-easing="ease-out-cubic"
-                                >
-                                    <div class="card-inner">
-                                        <div class="card-img">
-                                            <img
-                                                src="/resource/images/ai/solution/RAG/img-usecase03.png"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="card-txts">
-                                            <h3 class="sub-title-sm">기가지니</h3>
-                                            <div class="card-tags">
-                                                <span class="card-tag">KT사례</span>
-                                                <span class="card-tag">GPT-3</span>
-                                                <span class="card-tag">GPT-4</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li
-                                    class="card swiper-slide"
-                                    data-aos="fade-up"
-                                    data-aos-duration="800"
-                                    data-aos-easing="ease-out-cubic"
-                                >
-                                    <div class="card-inner">
-                                        <div class="card-img">
-                                            <img
-                                                src="/resource/images/ai/solution/RAG/img-usecase04.png"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="card-txts">
-                                            <h3 class="sub-title-sm">기가지니</h3>
-                                            <div class="card-tags">
-                                                <span class="card-tag">KT사례</span>
-                                                <span class="card-tag">GPT-3</span>
-                                                <span class="card-tag">GPT-4</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </div>
-                        </ul>
-                        <div
-                            class="btnWrap"
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                        >
-                            <a href="#">
-                                <button type="button" class="btn sm">전체보기</button>
-                            </a>
                         </div>
+                    </ul>
+                    <div class="btnWrap" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        <a href="#">
+                            <button type="button" class="btn sm">전체보기</button>
+                        </a>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+    </div>
 
-        <!-- KT Model 체험하기 -->
-        <section id="kt-model-section" class="kt-model-section"></section>
+    <!-- KT Model 체험하기 -->
+    <section id="kt-model-section" class="kt-model-section"></section>
 
-        <!-- Footer -->
-        <footer class="footer"></footer>
+    <!-- Footer -->
+    <footer class="footer"></footer>
 
-        <!-- Script -->
-        <script src="/js/ai/common/common.js"></script>
-        <script src="/js/ai/solution.js"></script>
+    <!-- Script -->
+    <script src="/js/ai/common/common.js"></script>
+    <script src="/js/ai/solution.js"></script>
 
-        <script>
-            includeCommonLayout();
-        </script>
-        <script src="/js/ai/common/aos.js"></script>
-        <script src="/js/ai/common/swiper-bundle.min.js"></script>
+    <script>
+        includeCommonLayout();
+    </script>
+    <script src="/js/ai/common/aos.js"></script>
+    <script src="/js/ai/common/swiper-bundle.min.js"></script>
 
-        <!-- Tabs Component (공통) -->
-        <script src="/js/ai/sub_cy.js"></script>
+    <!-- Tabs Component (공통) -->
+    <script src="/js/ai/sub_cy.js"></script>
 
-        <script>
-            AOS.init();
+    <script>
+        AOS.init();
 
-            // 탭 전환 후 AOS 새로고침
-            document.addEventListener('DOMContentLoaded', function () {
-                var tabButtons = document.querySelectorAll('.tabs__tab');
-                tabButtons.forEach(function (btn) {
-                    btn.addEventListener('click', function () {
-                        // 탭 전환 후 AOS 새로고침
-                        setTimeout(function () {
-                            AOS.refresh();
-                        }, 100);
-                    });
+        // 탭 전환 후 AOS 새로고침
+        document.addEventListener('DOMContentLoaded', function () {
+            var tabButtons = document.querySelectorAll('.tabs__tab');
+            tabButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    // 탭 전환 후 AOS 새로고침
+                    setTimeout(function () {
+                        AOS.refresh();
+                    }, 100);
                 });
             });
-        </script>
-    </body>
+        });
+    </script>
+</body>
+
 </html>
