@@ -672,7 +672,7 @@ body,
     margin-top: 0;
 }
 
-.footer-sns>div {
+.footer-sns > div {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -816,7 +816,6 @@ body,
 }
 
 @media (max-width: 768px) {
-
     /* mobile에서 노출 클래스 */
     .pc-only {
         display: none !important;
@@ -1221,7 +1220,7 @@ body,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 6rem 0 2.4rem;
+    padding: 0 0 2.4rem;
 }
 
 .mobile-menu-lang {
