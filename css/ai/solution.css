@@ -1789,6 +1789,7 @@ br.mo-br {
     .title-wrapper span {
         font-size: 1.6rem;
         line-height: var(--line-height-172);
+        letter-spacing: var(--letter-spacing-base);
         margin: 0 0 0.8rem;
     }
 
