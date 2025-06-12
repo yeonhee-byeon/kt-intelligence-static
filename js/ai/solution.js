@@ -47,8 +47,9 @@ function initMobileSwiper() {
     if (window.innerWidth < 768) {
         if (!window.mobileSwiper) {
             window.mobileSwiper = new Swiper('.card-list-horizontal.swiper-container', {
-                slidesPerView: 1.2,
                 spaceBetween: 16,
+                slidesPerView: 'auto',
+                centeredSlides: true,
             });
         }
     } else {
