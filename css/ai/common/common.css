@@ -788,6 +788,110 @@ body,
     font-weight: 400;
 }
 
+/* =========================
+   이용약관(terms) 스타일
+   ========================= */
+.terms-main {
+    max-width: 86.5rem;
+    margin: 0 auto;
+    width: 100%;
+    padding: 7.25rem 0 10rem;
+}
+.terms-section {
+    max-width: 48rem;
+    width: 100%;
+    margin: 0 auto;
+}
+.terms-title {
+    color: #000;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: var(--line-height-152);
+    letter-spacing: var(--letter-spacing-md);
+    text-align: center;
+    padding-bottom: 3.75rem;
+    margin-bottom: 3.75rem;
+    border-bottom: 1px solid var(--gray-200-color);
+}
+.terms-list {
+    counter-reset: terms;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3.75rem;
+}
+.terms-heading {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    line-height: var(--line-height-150);
+    letter-spacing: var(--letter-spacing-md);
+    margin-bottom: 1.25rem;
+}
+.terms-heading.mb-12 {
+    margin-bottom: 0.75rem;
+}
+.terms-heading ~ .terms-heading {
+    margin-top: 3.75rem;
+}
+.terms-item h3 {
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    line-height: var(--line-height-172);
+    letter-spacing: var(--letter-spacing-base);
+    margin-bottom: 0.75rem;
+}
+.terms-item p {
+    color: var(--gray-900-color);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-172);
+}
+.terms-def-list {
+    font-size: var(--font-size-base);
+    color: var(--gray-800-color);
+    line-height: var(--line-height-170);
+    margin-bottom: 0.5rem;
+}
+.terms-def-list {
+    list-style: decimal inside;
+    margin-left: 1.2rem;
+    padding-left: 0.5rem;
+}
+.terms-def-list ul {
+    list-style: disc inside;
+    margin-left: 1.2rem;
+    padding-left: 0.5rem;
+    margin-top: 0.3rem;
+}
+.terms-def-list li {
+    margin-bottom: 0.3rem;
+    font-size: var(--font-size-base);
+    color: var(--gray-800-color);
+    line-height: var(--line-height-170);
+}
+.terms-contact {
+    font-size: var(--font-size-base);
+    color: var(--gray-700-color);
+    margin-top: 2.5rem;
+    line-height: 1.7;
+}
+.terms-contact .link-primary {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* 포커스 및 접근성 */
+.terms-title:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+.terms-heading:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
 @media (min-width: 769px) {
     .mobile-menu-btn {
         display: none !important;
@@ -1081,6 +1185,45 @@ body,
         line-height: var(--line-height-172);
         letter-spacing: var(--letter-spacing-base);
         border-radius: 0.8rem;
+    }
+
+    /* 이용약관 */
+    .terms-main {
+        margin-top: 12rem;
+        padding: 0 2rem;
+    }
+
+    .terms-title {
+        padding-bottom: 4rem;
+        margin-bottom: 6rem;
+        font-size: 4.8rem;
+        line-height: 1.4;
+    }
+
+    .terms-heading {
+        font-size: 2.6rem;
+        line-height: 1.4;
+        letter-spacing: var(--letter-spacing-base);
+        margin-bottom: 2rem;
+    }
+
+    .terms-list {
+        gap: 6rem;
+    }
+
+    .terms-item h3 {
+        font-size: 1.6rem;
+        line-height: 1.56;
+        margin-bottom: 1.2rem;
+    }
+
+    .terms-item p {
+        font-size: 1.6rem;
+        line-height: 1.68;
+    }
+
+    .terms-item p br {
+        display: block;
     }
 }
 

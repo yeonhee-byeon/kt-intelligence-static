@@ -1,12 +1,12 @@
 // 스크롤 위치 복원 방지
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-}
+// if ('scrollRestoration' in history) {
+//     history.scrollRestoration = 'manual';
+// }
 
 // 새로고침/이동 직전 스크롤 위치 초기화
-window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-};
+// window.onbeforeunload = function () {
+//     window.scrollTo(0, 0);
+// };
 
 // ===== 애니메이션 함수 정의 =====
 function initHeroSectionAnimation() {
@@ -101,6 +101,7 @@ function initSubBannerSectionAnimation() {
         return;
     }
 
+    // 카운터 애니메이션 함수
     const numberWrap = document.querySelector('.number-wrap');
     const number = document.querySelector('.number-wrap li');
     if (!numberWrap || !number) return;
@@ -110,13 +111,15 @@ function initSubBannerSectionAnimation() {
     const nb2_4 = subBannerList4.querySelector('.nb2 .number-wrap');
     if (!nb1_4 || !nb2_4) return;
 
-    const numberHeight4 = nb1_4.querySelector('li')?.offsetHeight;
+    let numberHeight4 = nb1_4.querySelector('li')?.offsetHeight;
     if (!numberHeight4) return;
 
     let r4 = 0;
     const counterTimeline4 = gsap.timeline();
     const count4 = (i) => -(numberHeight4 * (i + 10 * r4));
+    let lastCount4 = [0, 0]; // 마지막 카운트 값 저장
     function countAnimation4(n, m) {
+        lastCount4 = [n, m];
         counterTimeline4.clear();
         counterTimeline4
             .add('start')
@@ -130,13 +133,15 @@ function initSubBannerSectionAnimation() {
     const nb2_5 = subBannerList5.querySelector('.nb2 .number-wrap');
     if (!nb1_5 || !nb2_5) return;
 
-    const numberHeight5 = nb1_5.querySelector('li')?.offsetHeight;
+    let numberHeight5 = nb1_5.querySelector('li')?.offsetHeight;
     if (!numberHeight5) return;
 
     let r5 = 0;
     const counterTimeline5 = gsap.timeline();
     const count5 = (i) => -(numberHeight5 * (i + 10 * r5));
+    let lastCount5 = [0, 0]; // 마지막 카운트 값 저장
     function countAnimation5(n, m) {
+        lastCount5 = [n, m];
         counterTimeline5.clear();
         counterTimeline5
             .add('start')
@@ -145,27 +150,7 @@ function initSubBannerSectionAnimation() {
         r5 = r5 === 0 ? 1 : 0;
     }
 
-    // Initial settings
-    const initialSettings = () => {
-        if (window.innerWidth <= 768) {
-            gsap.set(subBannerList1, { opacity: 0, x: -20 });
-            gsap.set(subBannerList2, { opacity: 0, y: 20 });
-            gsap.set(subBannerList3, { opacity: 0, y: 20 });
-            gsap.set(subBannerList4, { opacity: 0 });
-            gsap.set(subBannerList5, { opacity: 0 });
-            gsap.set(spansFirst, { opacity: 0 });
-            gsap.set(spansSecond, { opacity: 0 });
-        } else {
-            gsap.set(subBannerList1, { opacity: 0, x: -100 });
-            gsap.set(subBannerList2, { opacity: 0, y: 100 });
-            gsap.set(subBannerList3, { opacity: 0, y: 100 });
-            gsap.set(subBannerList4, { opacity: 0 });
-            gsap.set(subBannerList5, { opacity: 0 });
-            gsap.set(spansFirst, { opacity: 0 });
-            gsap.set(spansSecond, { opacity: 0 });
-        }
-    };
-
+    // 비디오 재생 관련
     let videoDuration = 0;
     let targetTime = 0;
     let currentTime = 0;
@@ -329,6 +314,10 @@ function initSubBannerSectionAnimation() {
                     opacity: 1,
                     y: 0,
                     duration: 0.6,
+                    onComplete: () => {
+                        countAnimation4(0, 0);
+                        countAnimation5(0, 0);
+                    },
                 })
                 .to(
                     [subBannerList2, subBannerList3],
@@ -370,34 +359,55 @@ function initSubBannerSectionAnimation() {
     };
 
     // Initialize animations based on screen size
-    let currentTimeline;
+    let currentTimeline = gsap.matchMedia();
 
-    const initAnimation = () => {
-        initialSettings();
-
-        // if (currentTimeline) {
-        //   currentTimeline.kill();
-        // }
-
-        currentTimeline =
-            window.innerWidth <= 768 ? createMobileTimeline() : createDesktopTimeline();
+    // Initial settings
+    const initialSettings = () => {
+        if (window.innerWidth <= 768) {
+            gsap.set(subBannerList1, { opacity: 0, x: -20 });
+            gsap.set(subBannerList2, { opacity: 0, y: 20 });
+            gsap.set(subBannerList3, { opacity: 0, y: 20 });
+            gsap.set(subBannerList4, { opacity: 0 });
+            gsap.set(subBannerList5, { opacity: 0 });
+            gsap.set(spansFirst, { opacity: 0 });
+            gsap.set(spansSecond, { opacity: 0 });
+        } else {
+            gsap.set(subBannerList1, { opacity: 0, x: -100 });
+            gsap.set(subBannerList2, { opacity: 0, y: 100 });
+            gsap.set(subBannerList3, { opacity: 0, y: 100 });
+            gsap.set(subBannerList4, { opacity: 0 });
+            gsap.set(subBannerList5, { opacity: 0 });
+            gsap.set(spansFirst, { opacity: 0 });
+            gsap.set(spansSecond, { opacity: 0 });
+        }
     };
 
-    // Initial setup
-    initAnimation();
-
-    // Handle resize
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            initAnimation();
-            setTimeout(() => ScrollTrigger.refresh(), 0);
-        }, 250);
+    currentTimeline.add('(min-width: 769px)', () => {
+        initialSettings();
+        createDesktopTimeline();
+    });
+    currentTimeline.add('(max-width: 768px)', () => {
+        initialSettings();
+        createMobileTimeline();
     });
 
-    // 초기화
-    setTimeout(() => ScrollTrigger.refresh(), 0);
+    // 리사이즈 시 숫자 위치 갱신
+    window.addEventListener('resize', () => {
+        // 높이 재계산
+        numberHeight4 = nb1_4.querySelector('li')?.offsetHeight;
+        numberHeight5 = nb1_5.querySelector('li')?.offsetHeight;
+        // 현재 카운트 위치로 다시 이동
+        if (typeof lastCount4[0] === 'number' && typeof lastCount4[1] === 'number') {
+            counterTimeline4.clear();
+            gsap.set(nb1_4, { y: count4(lastCount4[0]) });
+            gsap.set(nb2_4, { y: count4(lastCount4[1]) });
+        }
+        if (typeof lastCount5[0] === 'number' && typeof lastCount5[1] === 'number') {
+            counterTimeline5.clear();
+            gsap.set(nb1_5, { y: count5(lastCount5[0]) });
+            gsap.set(nb2_5, { y: count5(lastCount5[1]) });
+        }
+    });
 }
 
 function initParallaxSectionAnimation() {
@@ -487,33 +497,31 @@ function initParallaxSectionAnimation() {
         });
 
         // Mobile sequence with adjusted timing and positions
-        tl.fromTo(
-            description,
-            { opacity: 0, y: 50 },
-            { opacity: 1, y: 0, duration: 0.8, ease: 'cubic-bezier(0.215, 0.61, 0.355, 1)' },
-        )
-            .fromTo(...fadeInY(subtitle3, 50))
-            .fromTo(...fadeInY('.image-obj-2', 50, '<'))
-            .fromTo(...fadeInY(subtitle2, 50))
-            .fromTo(...fadeInY('.image-obj-1', 50, '<'))
-            .fromTo(...fadeInY('.image-obj-4', 50, '<', false))
-            .fromTo(...fadeInY(subtitle1, 50))
-            .fromTo(...fadeInY('.image-obj-3', 50, '<'))
-            .fromTo(...fadeInY('.image-obj-6', 50, '<'));
+        tl.fromTo(...fadeInY(subtitle3))
+            .fromTo(...fadeInY('.image-obj-2'), 100, '<')
+            .fromTo(...fadeInY('.image-obj-5', 100, '<', false))
+            .fromTo(...fadeInY(subtitle2))
+            .fromTo(...fadeInY('.image-obj-1', 100, '<'))
+            .fromTo(...fadeInY('.image-obj-4', 100, '<', false))
+            .fromTo(...fadeInY(subtitle1))
+            .fromTo(...fadeInY('.image-obj-0', 100, '<'))
+            .fromTo(...fadeInY('.image-obj-3', 100, '<', false))
+            .fromTo(...fadeInY('.image-obj-6', 100, '<'))
+            .fromTo(...fadeInY(description, 100));
 
         return tl;
     };
 
     // Initialize animations based on screen size
-    let currentTimeline;
+    let currentTimeline = gsap.matchMedia();
 
     const initAnimation = () => {
-        // if (currentTimeline) {
-        //   currentTimeline.kill();
-        // }
-
-        currentTimeline =
-            window.innerWidth <= 768 ? createMobileTimeline() : createDesktopTimeline();
+        currentTimeline.add('(min-width: 769px)', () => {
+            createDesktopTimeline();
+        });
+        currentTimeline.add('(max-width: 768px)', () => {
+            createMobileTimeline();
+        });
     };
 
     // Initial setup
@@ -523,6 +531,73 @@ function initParallaxSectionAnimation() {
     let resizeTimeout;
     window.addEventListener('resize', ScrollTrigger.refresh);
 }
+
+// 큐브 이미지 경로
+const imagePaths = [
+    {
+        src: '/resource/images/ai/k-cube/k-rai.svg',
+        active: '/resource/images/ai/k-cube/k-rai-act.svg',
+    },
+    {
+        src: '/resource/images/ai/k-cube/k-spc.svg',
+        active: '/resource/images/ai/k-cube/k-spc-act.svg',
+    },
+    {
+        src: '/resource/images/ai/k-cube/k-studio.svg',
+        active: '/resource/images/ai/k-cube/k-studio-act.svg',
+    },
+    {
+        src: '/resource/images/ai/k-cube/k-model.svg',
+        active: '/resource/images/ai/k-cube/k-model-act.svg',
+    },
+    {
+        src: '/resource/images/ai/k-cube/k-rag.svg',
+        active: '/resource/images/ai/k-cube/k-rag-act.svg',
+    },
+    {
+        src: '/resource/images/ai/k-cube/k-agent.svg',
+        active: '/resource/images/ai/k-cube/k-agent-act.svg',
+    },
+];
+
+const menuItems = document.querySelectorAll('.pds-menu-item');
+const menuTabItems = document.querySelectorAll('.pds-menu-tab ul li');
+const cubeItems = document.querySelectorAll('.pds-cube-item');
+
+let activeIndex = 0;
+let savedActiveIndex = 0;
+let isScrollLocked = false;
+
+// 메뉴/큐브 활성화 및 이미지 교체
+function setActiveMenu(index) {
+    menuItems.forEach((li, i) => {
+        li.classList.toggle('active', index === i);
+    });
+    menuTabItems.forEach((li, i) => {
+        li.classList.toggle('active', index === i);
+    });
+    cubeItems.forEach((li, i) => {
+        const img = li.querySelector('img');
+        if (!img) return;
+        if (i === index && imagePaths[i]) img.src = imagePaths[i].active;
+        else if (imagePaths[i]) img.src = imagePaths[i].src;
+    });
+}
+
+function resetAllCubeImages() {
+    cubeItems.forEach((li, i) => {
+        const img = li.querySelector('img');
+        if (img && imagePaths[i]) img.src = imagePaths[i].src;
+    });
+}
+
+// 탭 메뉴 클릭 이벤트
+menuTabItems.forEach((li, i) => {
+    li.addEventListener('mouseenter', () => {
+        activeIndex = i;
+        setActiveMenu(activeIndex);
+    });
+});
 
 function initParallaxDepthSectionAnimation() {
     const section = document.querySelector('.parallax-depth-section');
@@ -536,73 +611,8 @@ function initParallaxDepthSectionAnimation() {
     const cubeTitle = section.querySelector('.pds-cube-title');
     const cubeList = section.querySelector('.pds-cube-list');
     const cubeDesc = section.querySelector('.pds-cube-desc');
-    const menuItems = section.querySelectorAll('.pds-menu-item');
     const cubeItems = section.querySelectorAll('.pds-cube-item');
-    const menuTabItems = section.querySelectorAll('.pds-menu-tab ul li');
-    const mobileMenu = section.querySelectorAll('.mobile-accordion');
-
-    // 큐브 이미지 경로
-    const imagePaths = [
-        {
-            src: '/resource/images/ai/k-cube/k-rai.svg',
-            active: '/resource/images/ai/k-cube/k-rai-act.svg',
-        },
-        {
-            src: '/resource/images/ai/k-cube/k-spc.svg',
-            active: '/resource/images/ai/k-cube/k-spc-act.svg',
-        },
-        {
-            src: '/resource/images/ai/k-cube/k-studio.svg',
-            active: '/resource/images/ai/k-cube/k-studio-act.svg',
-        },
-        {
-            src: '/resource/images/ai/k-cube/k-model.svg',
-            active: '/resource/images/ai/k-cube/k-model-act.svg',
-        },
-        {
-            src: '/resource/images/ai/k-cube/k-rag.svg',
-            active: '/resource/images/ai/k-cube/k-rag-act.svg',
-        },
-        {
-            src: '/resource/images/ai/k-cube/k-agent.svg',
-            active: '/resource/images/ai/k-cube/k-agent-act.svg',
-        },
-    ];
-
-    let activeIndex = 0;
-    let savedActiveIndex = 0;
-    let isScrollLocked = false;
-
-    // 메뉴/큐브 활성화 및 이미지 교체
-    function setActiveMenu(index) {
-        menuItems.forEach((li, i) => {
-            li.classList.toggle('active', index === i);
-        });
-        menuTabItems.forEach((li, i) => {
-            li.classList.toggle('active', index === i);
-        });
-        cubeItems.forEach((li, i) => {
-            const img = li.querySelector('img');
-            if (!img) return;
-            if (i === index && imagePaths[i]) img.src = imagePaths[i].active;
-            else if (imagePaths[i]) img.src = imagePaths[i].src;
-        });
-    }
-
-    function resetAllCubeImages() {
-        cubeItems.forEach((li, i) => {
-            const img = li.querySelector('img');
-            if (img && imagePaths[i]) img.src = imagePaths[i].src;
-        });
-    }
-
-    // 탭 메뉴 클릭 이벤트
-    menuTabItems.forEach((li, i) => {
-        li.addEventListener('mouseenter', () => {
-            activeIndex = i;
-            setActiveMenu(activeIndex);
-        });
-    });
+    const mobileMenu = section.querySelectorAll('.mobile-pds-menu');
 
     function lockScroll() {
         if (isScrollLocked) return;
@@ -1019,19 +1029,17 @@ function initParallaxDepthSectionAnimation() {
     };
 
     // Initialize animations based on screen size
-    let currentTimeline;
+    let currentTimeline = gsap.matchMedia();
 
     const initAnimation = () => {
-        if (currentTimeline) {
-            if (Array.isArray(currentTimeline)) {
-                currentTimeline.forEach((tl) => tl && typeof tl.kill === 'function' && tl.kill());
-            } else if (typeof currentTimeline.kill === 'function') {
-                currentTimeline.kill();
-            }
-        }
-        console.log('initAnimation');
-        currentTimeline =
-            window.innerWidth <= 768 ? createMobileTimeline() : createDesktopTimeline();
+        // currentTimeline.clear();
+
+        currentTimeline.add('(min-width: 769px)', () => {
+            createDesktopTimeline();
+        });
+        currentTimeline.add('(max-width: 768px)', () => {
+            createMobileTimeline();
+        });
     };
 
     // Initial setup
@@ -1039,57 +1047,46 @@ function initParallaxDepthSectionAnimation() {
 
     window.addEventListener('resize', () => {
         ScrollTrigger.update();
-
-        // if (window.innerWidth <= 768) {
-        //     createMobileTimeline();
-        // } else {
-        //     createDesktopTimeline();
-        // }
     });
 
     // 초기화
     setActiveMenu(-1);
 }
 
-function initMobileAccordion() {
-    const accordion = document.querySelector('.mobile-accordion');
-    if (!accordion) return;
-    const items = accordion.querySelectorAll('.mobile-accordion-item');
-    items.forEach((item) => {
-        const btn = item.querySelector('.mobile-accordion-btn');
-        const panel = item.querySelector('.mobile-accordion-panel');
-        const img = item.querySelector('img');
-        if (!btn || !panel) return;
-        btn.addEventListener('click', function () {
-            const isOpen = btn.getAttribute('aria-expanded') === 'true';
-            // Close all panels
-            items.forEach((i) => {
-                const b = i.querySelector('.mobile-accordion-btn');
-                const p = i.querySelector('.mobile-accordion-panel');
-                const img = i.querySelector('img');
-                if (b && p) {
-                    b.setAttribute('aria-expanded', 'false');
-                    p.setAttribute('aria-hidden', 'true');
-                    p.classList.remove('open');
-                    if (img) img.src = img.src.replace('ico-kon.svg', 'ico-kon-gray.svg');
-                }
-            });
-            // Open this panel if it was closed
-            if (!isOpen) {
-                btn.setAttribute('aria-expanded', 'true');
-                panel.setAttribute('aria-hidden', 'false');
-                panel.classList.add('open');
-                if (img) img.src = img.src.replace('ico-kon-gray.svg', 'ico-kon.svg');
-            }
-        });
+function initMobileMenu() {
+    const pdsSection = document.querySelector('.mobile-pds-menu');
+    const ecoSection = document.querySelector('.eco-partners-mobile');
+
+    if (!pdsSection || !ecoSection || !window.Swiper) return;
+
+    const pdsMenuSwiper = new Swiper('.mobile-pds-menu .swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 14,
+        centeredSlides: true,
+        speed: 500,
+        effect: 'slide',
+        on: {
+            slideChange: function () {
+                const activeIndex = this.activeIndex;
+                setActiveMenu(activeIndex);
+            },
+        },
+    });
+
+    const ecoSwiper = new Swiper('.eco-partners-mobile .swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 14,
+        // centeredSlides: true,
+        speed: 500,
+        effect: 'slide',
     });
 }
 
 // ===== 페이지 로드 후 애니메이션 실행 =====
 window.addEventListener('load', function () {
-    setTimeout(function () {
-        window.scrollTo(0, 0);
-    }, 10);
+    // setTimeout(function () {
+    //     window.scrollTo(0, 0);
+    // }, 10);
     if (window.gsap && window.ScrollTrigger) {
         window.ScrollTrigger.refresh();
     }
@@ -1097,5 +1094,5 @@ window.addEventListener('load', function () {
     initSubBannerSectionAnimation();
     initParallaxSectionAnimation();
     initParallaxDepthSectionAnimation();
-    initMobileAccordion();
+    initMobileMenu();
 });
