@@ -16,6 +16,10 @@
 }
 
 /* Content Layout */
+.content-section.pt-160 {
+    padding-top: 10rem;
+}
+
 .sub-content {
     padding-top: 7.5rem;
     padding-bottom: 10rem;
@@ -41,6 +45,7 @@
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
+    margin-top: 7.5rem;
 }
 
 .sub-title-wrap p {
