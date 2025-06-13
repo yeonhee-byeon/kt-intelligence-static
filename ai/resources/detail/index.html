@@ -50,12 +50,12 @@
 
 
                 <!-- 작업요청 -->
-                <section>
+                <section class="post-custom">
                     <h3 class="fz-sm">
                         KT가 자체 개발한 AI 모델 믿:음2.1 모델 3종을 출시하고, mini와 base 모델을 오픈소스로 공개합니다.
                     </h3>
                     <div class="img">
-                        <img src="" alt="">
+                        <img src="/resource/images/ai/resources/post01/post01.png" alt="">
                     </div>
                     <p>KT의 AI 모델 ‘믿음 믿:음(이하, Mi:dm)’은 국내 AI 기술 주권 확보를 위한 KT의 언어모델(LLM)로, 2023년 1.0
                         버전 Standard, Premium 2종을 출시한 이래로, KT AICC, 지니TV, AI 통화비서, 100번 콜센터 등 KT 서비스에
@@ -72,7 +72,7 @@
                     </p>
                 </section>
 
-                <section>
+                <section class="post-custom">
                     <h3>문서기반 QA 성능 강화</h3>
                     <p>믿:음2.1에는 Distillation를 적용하여 성능 저하를 최소화하면서도 모델 사이즈를 줄인 경량화 모델 mini가 새로이
                         추가되었습니다. 또한 Parallelism 구현으로 학습 속도를 개선하였고, 성능 측면에선 문서이해/QA 등 시장 요구 능력을 집중 강화하였으며 긴 길이의 문서 입력을 위한
@@ -82,11 +82,11 @@
                     <p>사용성 개선을 위해 고객 요구 기능들을 업데이트 하였는데, 특히 업무효율화를 위해 문서 기반의 QA 성능을 대폭 개선 하였고, 국내외 모델 대비 성능평가에서도 큰 점수차로
                         우위를 기록했습니다. (휴먼평가 문서기반 QA 93점. 2등 대비 +7점)</p>
                     <div class="img">
-                        <img src="" alt="">
+                        <img src="/resource/images/ai/resources/post01/post02.png" alt="">
                     </div>
                 </section>
 
-                <section>
+                <section class="post-custom">
                     <h3>Architecture & Method</h3>
                     <p>Mi:dm은 Transformer 구조를 활용한 decoder-only 모델입니다. 제한된 컴퓨팅자원 하에서 성능을 극대화하기
                         위하여 8B 규모의 Core 모델을 바탕으로 Depth-up-Scaling (DuS) 하여 11.5B 규모의 base 모델을 생성했습니다. mini 는 base 모델을 두
@@ -98,7 +98,7 @@
                         SFT -> Fusion RL 단계로 학습을 진행하였습니다.</p>
                 </section>
 
-                <section>
+                <section class="post-custom">
                     <h3>한국어에 최적화된 고유의 Tokenizer</h3>
                     <p>Pre-training 단계에서 사용하는 Tokenizer는 LLM 성능은 물론 연산 효율에도 영향을 미치는 핵심 요소로서, Mi:dm에는 한국어와 영어에 효과적인 KT
                         고유의 bi-lingual bbpe (byte-level bpe) Tokenizer를 적용했습니다. KT의 Tokenizer는 한국어에 대해 국내 타사 모델 대비 최대
@@ -109,11 +109,11 @@
                         위해 Tokenizer 학습 시 ‘조사’ 에만 pre tokenization 을 적용하였고, 이를
                         통해 한국어의 특성을 잘 반영하면서 압축률도 향상된 한국어 Tokenizer를 개발할 수 있었습니다.</p>
                     <div class="img">
-                        <img src="" alt="">
+                        <img src="/resource/images/ai/resources/post01/post03.png" alt="">
                     </div>
                 </section>
 
-                <section>
+                <section class="post-custom">
                     <h3>Evaluation 1<br>
                         한국 특화 능력 전 분야에서 최고 수준 달성</h3>
                     <p>
@@ -122,19 +122,23 @@
                         능력이 내/외부(국내/국외) 모델 대비 모든 영역에서 우위를 기록하였으며, 특히 심화 지식을 요하는 어려운 문항에서 강점을 보였습니다.
                     </p>
                     <ul>
-                        <li>*Hard K-Pragmatics, Ko-ComprehensiveGen-, K-Referential 모두 1위</li>
+                        <li>
+                            <div class="detail-inform">
+                                <span>Hard K-Pragmatics, Ko-ComprehensiveGen-, K-Referential 모두 1위</span>
+                            </div>
+                        </li>
                     </ul>
                     <div class="img">
-                        <img src="" alt="">
+                        <img src="/resource/images/ai/resources/post01/post04.png" alt="">
                         <h5>한국 특화 능력</h5>
                     </div>
                     <div class="img">
-                        <img src="" alt="">
+                        <img src="/resource/images/ai/resources/post01/post05.png" alt="">
                         <h5>한국 특화 능력-Hard (K-Pragmatic/ComprehesiveGen/Referential)</h5>
                     </div>
                 </section>
 
-                <section>
+                <section class="post-custom">
                     <h3>
                         Evaluation 2<br>
                         영어 공통 능력은 글로벌 수준 보유
@@ -142,15 +146,19 @@
                     <p>영어 공통 능력의 경우, 추론/수학 영역을 제외하고는 글로벌 모델들과 유사한 수준을 보였으며, 특히 전문지식(Bio/Med) 영역에서 우위가
                         있습니다.</p>
                     <ul>
-                        <li>*Hard K-Pragmatics, Ko-ComprehensiveGen-, K-Referential 모두 1위</li>
+                        <li>
+                            <div class="detail-inform">
+                                <span>Hard K-Pragmatics, Ko-ComprehensiveGen-, K-Referential 모두 1위</span>
+                            </div>
+                        </li>
                     </ul>
                     <div class="img">
-                        <img src="" alt="">
+                        <img src="/resource/images/ai/resources/post01/post06.png" alt="">
                         <h5>영어 공통 능력</h5>
                     </div>
                 </section>
 
-                <section>
+                <section class="post-custom">
                     <h3>
                         Responsible AI<br>
                         국내외 모델 중 답변의 안전성 가장 우수
@@ -167,7 +175,7 @@
                         평가를 진행하며 안정성과 공정성을 향상시키고 있습니다. 특히 공정성을 평가하는 지표인 KoBBQ(한국어), BBQ에서 국내외 모델 대비 각각 1, 2위 결과를 받았습니다.
                     </p>
                     <div class="img">
-                        <img src="" alt="">
+                        <img src="/resource/images/ai/resources/post01/post07.png" alt="">
                         <h5>Security 평가 Set ㅣ Hard K-Pragmatics, Ko-ComprehensiveGen-, K-Referential 모두 1위</h5>
                     </div>
 
@@ -181,16 +189,18 @@
                 <div class="tech-detail-article-list">
                     <h3>Technical Resources</h3>
                     <ul>
-                        <li><a href="#">믿:음2.0 Technical Report 바로가기</a></li>
-                        <li>
-                            <a href="#">믿:음2.0 Model Download 바로가기 </a>
-                            <span>ㅣ *일정 조건을 만족하면 상업적 목적으로도 자유롭게 이용
-                                가능합니다.</span>
+                        <li><a href="#">Mi:dm 2.0 Technical Report 바로가기</a></li>
+                        <li class="has-icon">
+                            <a href="#">Mi:dm 2.0 Model Download 바로가기 </a>
+                            <div class="detail-inform"><em>ㅣ </em><span>일정 조건을 만족하면 상업적 목적으로도 자유롭게 이용
+                                    가능합니다.</span></div>
                         </li>
                         <li><a href="#">K on Studio(AI개발도구) 바로가기 </a></li>
-                        <li>
-                            <span>
-                                *향후 Microsoft Azure를 통해 믿:음API를 제공할 예정입니다.</span>
+                        <li class="mo-has-border has-icon">
+                            <div class="detail-inform">
+                                <span>향후 Microsoft Azure를 통해 Mi:dm API를
+                                    제공할 예정입니다.</span>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -210,7 +220,7 @@
                             <p>August 2024, Best Paper, LLM Agents Workshop ICLR 2024</p>
                         </li>
                     </ul>
-                    <ul class="gap-12">
+                    <ul class="pdf-ul">
                         <li><a href="#">PDF 바로보기</a></li>
                         <li><a href="#">PDF 다운로드</a></li>
                     </ul>
@@ -219,7 +229,7 @@
             </article>
 
             <div class="tech-detail-bottom">
-                <button type="button" class="basic-bk-btn wide-btn">돌아가기</button>
+                <button type="button" onClick="history.back()" class="basic-bk-btn docs-back">돌아가기</button>
 
                 <div class="tech-banner-wrapper">
                     <a href="">
