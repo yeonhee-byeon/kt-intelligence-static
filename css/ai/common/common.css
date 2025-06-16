@@ -812,7 +812,7 @@ body,
     letter-spacing: var(--letter-spacing-md);
     text-align: center;
     padding-bottom: 3.75rem;
-    margin-bottom: 3.75rem;
+    margin-bottom: 6.25rem;
     border-bottom: 1px solid var(--gray-200-color);
 }
 .terms-sub-title {
@@ -919,6 +919,9 @@ body,
     color: var(--gray-900-color);
     font-size: var(--font-size-sm);
 }
+.terms-item .terms-table {
+    width: 100%;
+}
 .terms-item table {
     width: 100%;
     border-collapse: collapse;
@@ -969,17 +972,6 @@ body,
     font-size: var(--font-size-sm);
     line-height: var(--line-height-140);
     text-align: center;
-}
-
-/* 포커스 및 접근성 */
-.terms-title:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-.terms-heading:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
 }
 
 @media (min-width: 769px) {
@@ -1298,6 +1290,18 @@ body,
         line-height: 1.4;
     }
 
+    .terms-sub-title {
+        font-size: 1.6rem;
+        line-height: 1.68;
+        text-align: left;
+    }
+
+    .terms-item .terms-sub-desc {
+        font-size: 1.4rem;
+        line-height: 1.68;
+        text-align: left;
+    }
+
     .terms-heading {
         font-size: 2.6rem;
         line-height: 1.4;
@@ -1322,6 +1326,65 @@ body,
 
     .terms-item p br {
         display: block;
+    }
+
+    .terms-item .terms-table {
+        overflow-x: auto;
+    }
+
+    .terms-item table {
+        margin: 1.3rem 0;
+    }
+
+    .terms-item table th {
+        padding: 0.8rem 0;
+        font-size: 1.6rem;
+        line-height: 1.56;
+    }
+    .terms-item table td.br-1 {
+        border-right: 1px solid var(--gray-200-color);
+    }
+    .terms-item table td {
+        padding: 2rem 5rem;
+    }
+    .terms-item .terms-table.img table td {
+        padding: 2rem 0;
+    }
+    .terms-item table th,
+    .terms-item table td {
+        white-space: nowrap;
+    }
+
+    .terms-item table td:nth-child(1) img {
+        width: 24.2rem;
+        height: auto;
+    }
+    .terms-item table td:nth-child(2) img {
+        width: 20.6rem;
+        height: auto;
+    }
+    .terms-item table td:nth-child(3) img {
+        width: 23rem;
+        height: auto;
+    }
+
+    .terms-item table td p {
+        color: var(--black-color);
+    }
+
+    .terms-item ol > li,
+    .terms-item ol > li span {
+        font-size: 1.6rem;
+        line-height: 1.6;
+    }
+
+    .terms-item > ul > li {
+        font-size: 1.6rem;
+        line-height: 1.6;
+    }
+
+    .terms-item > ul > li::marker {
+        font-size: 1rem;
     }
 }
 
