@@ -672,7 +672,7 @@ body,
     margin-top: 0;
 }
 
-.footer-sns > div {
+.footer-sns>div {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -797,11 +797,13 @@ body,
     width: 100%;
     padding: 7.25rem 0 10rem;
 }
+
 .terms-section {
     max-width: 48rem;
     width: 100%;
     margin: 0 auto;
 }
+
 .terms-title {
     color: #000;
     font-size: 3rem;
@@ -813,6 +815,7 @@ body,
     margin-bottom: 3.75rem;
     border-bottom: 1px solid var(--gray-200-color);
 }
+
 .terms-list {
     counter-reset: terms;
     list-style: none;
@@ -822,6 +825,7 @@ body,
     flex-direction: column;
     gap: 3.75rem;
 }
+
 .terms-heading {
     font-size: var(--font-size-3xl);
     font-weight: 700;
@@ -829,12 +833,15 @@ body,
     letter-spacing: var(--letter-spacing-md);
     margin-bottom: 1.25rem;
 }
+
 .terms-heading.mb-12 {
     margin-bottom: 0.75rem;
 }
-.terms-heading ~ .terms-heading {
+
+.terms-heading~.terms-heading {
     margin-top: 3.75rem;
 }
+
 .terms-item h3 {
     font-size: var(--font-size-md);
     font-weight: 700;
@@ -842,40 +849,47 @@ body,
     letter-spacing: var(--letter-spacing-base);
     margin-bottom: 0.75rem;
 }
+
 .terms-item p {
     color: var(--gray-900-color);
     font-size: var(--font-size-base);
     line-height: var(--line-height-172);
 }
+
 .terms-def-list {
     font-size: var(--font-size-base);
     color: var(--gray-800-color);
     line-height: var(--line-height-170);
     margin-bottom: 0.5rem;
 }
+
 .terms-def-list {
     list-style: decimal inside;
     margin-left: 1.2rem;
     padding-left: 0.5rem;
 }
+
 .terms-def-list ul {
     list-style: disc inside;
     margin-left: 1.2rem;
     padding-left: 0.5rem;
     margin-top: 0.3rem;
 }
+
 .terms-def-list li {
     margin-bottom: 0.3rem;
     font-size: var(--font-size-base);
     color: var(--gray-800-color);
     line-height: var(--line-height-170);
 }
+
 .terms-contact {
     font-size: var(--font-size-base);
     color: var(--gray-700-color);
     margin-top: 2.5rem;
     line-height: 1.7;
 }
+
 .terms-contact .link-primary {
     color: var(--primary-color);
     text-decoration: underline;
@@ -887,6 +901,7 @@ body,
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
+
 .terms-heading:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
@@ -919,13 +934,22 @@ body,
     display: none !important;
 }
 
+.both {
+    display: block !important;
+}
+
 @media (max-width: 768px) {
+
     /* mobile에서 노출 클래스 */
     .pc-only {
         display: none !important;
     }
 
     .mobile-show {
+        display: block !important;
+    }
+
+    .both {
         display: block !important;
     }
 

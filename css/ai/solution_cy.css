@@ -1956,6 +1956,26 @@
 
 .example-content .example-inner h4 {
     color: var(--primary-color) !important;
+    width: fit-content;
+    position: relative;
+}
+
+.example-content .example-inner h4:after {
+    display: block;
+    content: '';
+    background-image: url('/resource/images/ai/icons/arrow-down-bk.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    right: -2.2rem;
+    top: 0.3rem;
+}
+
+.bg-black-style .example-content .example-inner h4:after {
+    background-image: url('/resource/images/ai/icons/arrow-down-wh.png');
 }
 
 .example-content .example-inner .simple-box-wrapper {
@@ -3365,5 +3385,16 @@
 
     .gpt-benefit-box .box-list li h3 {
         margin-bottom: 1.2rem;
+    }
+
+    .flex.example-double {
+        flex-wrap: wrap;
+    }
+
+    .example-content,
+    .example-content .example-inner .exam-items,
+    .flex.example-double .example-content .example-inner .exam-items,
+    .flex.example-double .example-content {
+        width: 100%;
     }
 }
