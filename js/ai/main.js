@@ -706,7 +706,7 @@ function initParallaxDepthSectionAnimation() {
         const cubeTl = gsap.timeline({
             scrollTrigger: {
                 trigger: container,
-                start: '+=600',
+                start: '+=610',
                 end: '+=600',
                 toggleActions: 'play none none reset',
                 id: 'parallax-depth-cube',
@@ -1088,7 +1088,10 @@ window.addEventListener('load', function () {
     //     window.scrollTo(0, 0);
     // }, 10);
     if (window.gsap && window.ScrollTrigger) {
-        window.ScrollTrigger.refresh();
+        setTimeout(() => {
+            window.ScrollTrigger.refresh();
+        }, 100);
+        // window.ScrollTrigger.refresh();
     }
     initHeroSectionAnimation();
     initSubBannerSectionAnimation();
