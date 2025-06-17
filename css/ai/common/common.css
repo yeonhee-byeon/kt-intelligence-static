@@ -1289,6 +1289,19 @@ body,
         border-radius: 0.8rem;
     }
 
+    .btn.md {
+        padding: 1.6rem 2.8rem;
+        font-size: 1.7rem;
+        line-height: var(--line-height-172);
+    }
+
+    .btn.sm {
+        min-width: 13.2rem;
+        padding: 1.3rem 2.4rem;
+        font-size: 1.7rem;
+        line-height: var(--line-height-172);
+    }
+
     /* 이용약관 */
     .terms-main {
         margin-top: 12rem;

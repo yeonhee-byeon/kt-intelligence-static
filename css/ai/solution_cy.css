@@ -1562,7 +1562,7 @@
 }
 
 .box-item .card-tags>span:nth-child(n + 2) {
-    margin-left: 0.5rem;
+    margin-left: 0;
 }
 
 .gpt-benefit-box .box-list {
