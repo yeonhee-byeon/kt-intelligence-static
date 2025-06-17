@@ -3455,7 +3455,7 @@
         height: 33.5rem;
     }
 
-    .example-content .example-inner .exam-item,
+    .example-content .example-inner .exam-items,
     .flex.example-double .example-content .example-inner .exam-items {
         width: calc(100% - 0.6rem);
         height: 31.6rem;
