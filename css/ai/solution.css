@@ -2236,6 +2236,10 @@ br.mo-br {
         line-height: 1.56;
     }
 
+    .bg-black-style .list-wrapper > ul > li .list-item h3 {
+        color: var(--white-color);
+    }
+
     .shape-wrapper {
         flex-direction: column;
     }
