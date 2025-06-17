@@ -2631,6 +2631,14 @@
     }
 
     /* detail page */
+    .techPage .sub-title-wrap .sub-title {
+        margin-top: 0;
+    }
+
+    .techPage .tabs__tab {
+        padding: 0;
+    }
+
     .sub-content.techDetailPage {
         padding-top: 9.4rem;
     }
