@@ -1378,6 +1378,12 @@ br.mo-br {
     align-items: center;
     justify-content: center;
     margin-top: 8rem;
+    text-align: center;
+}
+
+.btnWrap a {
+    display: inline-block;
+    width: fit-content;
 }
 
 /* 가로 카드 모바일 버전 */
@@ -1419,6 +1425,10 @@ br.mo-br {
 
 .architecture-diagram .table-list .table-row:not(:first-child) {
     margin-top: 2rem;
+}
+
+.architecture-diagram .table-list .mobile-img {
+    display: none;
 }
 
 .architecture-diagram .table-list .table-col {
@@ -2221,6 +2231,11 @@ br.mo-br {
         background: var(--gray-800-color);
     }
 
+    .list-wrapper.sm .list-item h3 {
+        font-size: 2.2rem;
+        line-height: 1.56;
+    }
+
     .shape-wrapper {
         flex-direction: column;
     }
@@ -2344,11 +2359,15 @@ br.mo-br {
 
     .report-wrapper .report-btn-wrap.mobile-btn-wrap {
         display: flex;
+        gap: 0.8rem;
+        margin: 0 1.45rem;
     }
 
     .report-wrapper .report-btn-wrap .btn {
+        min-width: auto;
         padding: 1.6rem 2.8rem;
         font-size: 1.7rem;
-        line-height: 1.42;
+        line-height: 1.72;
+        letter-spacing: normal;
     }
 }
