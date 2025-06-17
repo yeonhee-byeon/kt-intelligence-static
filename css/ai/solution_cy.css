@@ -757,6 +757,39 @@
 }
 
 
+.tech-detail-article .post-custom ul.innerList li {
+    color: var(--gray-900-color);
+    font-size: 1.0625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 172%;
+    letter-spacing: -0.17px;
+    margin-top: 1.25rem;
+    padding-left: 0.625rem;
+    position: relative;
+}
+
+.tech-detail-article .post-custom ul.innerList li:nth-child(1) {
+    padding-left: 0;
+}
+
+.tech-detail-article .post-custom ul.innerList li:nth-child(1):before {
+    display: none;
+}
+
+.tech-detail-article .post-custom ul.innerList li:before {
+    display: block;
+    content: '';
+    width: 0.25rem;
+    height: 0.25rem;
+    background-color: var(--gray-900-color);
+    border-radius: 100%;
+    position: absolute;
+    top: 0.9rem;
+    left: 0;
+}
+
+
 
 /* ***************************************solution page ****************************************** */
 /* sticky */
@@ -2830,6 +2863,23 @@
 
     .tech-detail-article-list .pdf-ul li+li {
         margin-top: 2rem;
+    }
+
+    .tech-detail-article .post-custom ul.innerList li {
+        color: var(--gray-900-color);
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 180%;
+        letter-spacing: 0px;
+        margin-top: 0.8rem;
+        padding-left: 1rem;
+    }
+
+    .tech-detail-article .post-custom ul.innerList li:before {
+        top: 1.2rem;
+        width: 0.4rem;
+        height: 0.4rem;
     }
 
     /* ***************************************solution page ****************************************** */
