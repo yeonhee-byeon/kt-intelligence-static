@@ -1921,7 +1921,7 @@
     position: relative;
 }
 
-.example-content .example-inner:after {
+/* .example-content .example-inner:after {
     display: block;
     content: '';
     width: 98%;
@@ -1930,7 +1930,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-}
+} */
 
 .example-content .example-inner h4,
 .example-content .example-inner h3 {
@@ -1976,7 +1976,7 @@
     background-color: var(--gray-700-color);
 }
 
-.bg-black-style .example-content .example-inner:after {
+/* .bg-black-style .example-content .example-inner:after {
     display: block;
     content: '';
     width: 100%;
@@ -1985,7 +1985,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-}
+} */
 
 
 .bg-black-style .example-content .example-inner p {
