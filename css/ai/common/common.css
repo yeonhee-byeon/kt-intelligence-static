@@ -250,10 +250,10 @@ body,
     left: -1.25rem;
     top: 100%;
     background: var(--white-color);
-    border: 1px solid var(--gray-900-color);
-    border-radius: 0.375rem;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    padding: 1.25rem 2rem 1.25rem 1.25rem;
+    border: 1px solid var(--gray-200-color);
+    border-radius: 0.625rem;
+    box-shadow: 0px 8px 6px 0px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem 0.5rem;
     opacity: 0;
     pointer-events: none;
     transition: all 0.2s;
@@ -263,11 +263,15 @@ body,
 .dropdown-menu li.menu-title {
     color: var(--gray-900-color);
     font-size: 0.688rem;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1;
     letter-spacing: var(--letter-spacing-base);
     white-space: nowrap;
     margin-bottom: 0.375rem;
+}
+
+.dropdown-menu li {
+    padding: 0 2rem 0 1.25rem;
 }
 
 .dropdown-menu li a {
@@ -414,16 +418,15 @@ body,
 .lang-menu {
     display: none;
     position: absolute;
-    right: 0.5rem;
+    right: -0.2rem;
     top: 100%;
     background: var(--white-color);
     border: 1px solid var(--gray-200-color);
     border-radius: 0.5rem;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    padding: 1rem 0.875rem;
+    padding: 0.5rem 0.875rem;
     z-index: 100;
     flex-direction: column;
-    gap: 1rem;
 }
 
 .lang-menu.active {
@@ -431,6 +434,7 @@ body,
 }
 
 .lang-menu button {
+    padding: 0.5rem 0;
     background: none;
     border: none;
     color: var(--gray-900-color);
