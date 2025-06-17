@@ -1923,6 +1923,20 @@
     position: relative;
 }
 
+<<<<<<< Updated upstream
+=======
+.example-content .example-inner:after {
+    display: block;
+    content: '';
+    width: 98%;
+    height: 7.3125rem;
+    background: linear-gradient(180deg, rgba(19, 19, 19, 0.00) -6.63%, #131313 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+>>>>>>> Stashed changes
 .example-content .example-inner h4,
 .example-content .example-inner h3 {
     color: #000;
