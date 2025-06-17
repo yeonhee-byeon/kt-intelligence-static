@@ -1921,12 +1921,9 @@
     position: relative;
 }
 
-<<<<<<< Updated upstream
 /* .example-content .example-inner:after {
-=======
 
 .example-content .example-inner:after {
->>>>>>> Stashed changes
     display: block;
     content: '';
     width: 98%;
