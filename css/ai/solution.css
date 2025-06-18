@@ -785,7 +785,7 @@ br.mo-br {
 
 .list-wrapper > ul > li {
     padding: 3rem 0;
-    border-top: 1px solid var(--gray-300-color);
+    border-top: 1px solid var(--gray-200-color);
 }
 
 .list-wrapper > ul > li:first-child {
@@ -875,7 +875,7 @@ br.mo-br {
 
 .list-wrapper.border > ul > li:last-child {
     padding: 3rem 0;
-    border-bottom: 1px solid var(--gray-300-color);
+    border-bottom: 1px solid var(--gray-200-color);
 }
 
 .kt-model-section {
