@@ -184,20 +184,46 @@ if (stickyHeader && parallaxSection) {
     const mobileSolutionSub = document.getElementById('mobile-solution-sub');
     const mobileLangBtns = document.querySelectorAll('.mobile-menu-lang button');
 
+    // iOS Safari 대응: --vh 변수 설정 및 body scroll lock
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    let lastScrollY = 0;
+    function setIOSVh() {
+        document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+    }
+    function lockBodyScrollIOS() {
+        lastScrollY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${lastScrollY}px`;
+        document.body.style.width = '100%';
+    }
+    function unlockBodyScrollIOS() {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, lastScrollY);
+    }
+
     // 메뉴 열기
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', function () {
             mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            document.documentElement.style.overflow = 'hidden';
+            document.body.classList.add('scroll-lock');
+            if (isIOS) {
+                setIOSVh();
+                window.addEventListener('resize', setIOSVh);
+                lockBodyScrollIOS();
+            }
         });
     }
     // 메뉴 닫기
     if (mobileMenuClose && mobileMenu) {
         mobileMenuClose.addEventListener('click', function () {
             mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-            document.documentElement.style.overflow = '';
+            document.body.classList.remove('scroll-lock');
+            if (isIOS) {
+                window.removeEventListener('resize', setIOSVh);
+                unlockBodyScrollIOS();
+            }
         });
     }
     // Solution 아코디언
