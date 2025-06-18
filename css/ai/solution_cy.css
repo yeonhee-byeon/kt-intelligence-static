@@ -2945,6 +2945,10 @@
         word-break: keep-all;
     }
 
+    .title-wrapper h3+p {
+        margin-top: 2rem;
+    }
+
     .sub-title-wrapper h2 {
         font-size: 3rem;
         line-height: 1.42;
