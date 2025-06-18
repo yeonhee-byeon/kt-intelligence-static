@@ -1284,6 +1284,7 @@ body,
         font-size: 4rem;
     }
 
+    /* Button */
     .btn {
         min-width: 16rem;
         padding: 1.4rem 3.2rem;
