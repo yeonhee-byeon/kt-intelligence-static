@@ -1280,6 +1280,7 @@ body,
     }
 
     .kt-model-section .kt-model-content .section-title {
+        gap: 0;
         text-align: center;
         font-size: 4rem;
     }

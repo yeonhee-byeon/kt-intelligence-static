@@ -841,7 +841,7 @@
 }
 
 .title-wrapper h3 {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-3xl);
     font-weight: 700;
     line-height: var(--line-height-172);
     letter-spacing: -0.52px;
