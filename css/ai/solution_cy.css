@@ -161,14 +161,15 @@
 }
 
 /* Tabs */
-.tabs {
+.techPage .tabs {
     display: flex;
     align-items: center;
     gap: 3rem;
     margin-bottom: 1.875rem;
+    margin-top: 12.5rem;
 }
 
-.tabs__tab {
+.techPage .tabs__tab {
     background: none;
     border: none;
     outline: none;
@@ -181,7 +182,7 @@
     position: relative;
 }
 
-.tabs__tab::after {
+.techPage .tabs__tab::after {
     content: '';
     display: block;
     width: 1%;
@@ -1594,18 +1595,18 @@
 }
 
 /* model page */
-.solution-model-wrapper #tab-panel-1 {
+.solution-model-wrapper .tab-inner-wrapper>#tab-panel-1 {
     background-image: url('/resource/images/ai/solution/model/title-only-bg-01.png');
     background-size: 64.625rem auto;
     background-position: top center;
 }
 
-.solution-model-wrapper #tab-panel-2 {
+.solution-model-wrapper .tab-inner-wrapper>#tab-panel-2 {
     background-image: url('/resource/images/ai/solution/model/title-only-bg-02.png');
     background-size: 103.3125rem auto;
 }
 
-.solution-model-wrapper #tab-panel-3 {
+.solution-model-wrapper .tab-inner-wrapper>#tab-panel-3 {
     background-image: url('/resource/images/ai/solution/model/title-only-bg-03.png');
     background-size: 103.3125rem auto;
 }
@@ -1915,7 +1916,7 @@
     cursor: pointer;
 }
 
-.example-side-item .example-side-txts.top-tab-txts dl.active {
+.example-side-item .example-side-txts.top-tab-txts dl.tabs__tab--active {
     border: 1px solid #999;
     background: #131313;
 }
@@ -2595,14 +2596,14 @@
         display: none;
     }
 
-    .tabs__tab {
+    .techPage .tabs__tab {
         font-size: 2rem;
         font-weight: 700;
         line-height: 156%;
         letter-spacing: -0.2px;
     }
 
-    .tabs__panel {
+    .techPage .tabs__panel {
         padding-top: 4rem;
     }
 
@@ -2718,9 +2719,10 @@
         /* Firefox */
         -ms-overflow-style: none;
         /* IE and Edge */
+        margin-top: 8rem;
     }
 
-    .tabs__tab::after {
+    .techPage .tabs__tab::after {
         top: 14px;
     }
 
