@@ -390,6 +390,36 @@
     object-position: center;
 }
 
+.tech-card .card-img .titTxts {
+    font-weight: 600;
+    font-size: var(--font-size-6xl);
+    line-height: 120%;
+    letter-spacing: -0.8px;
+    position: absolute;
+    width: 100%;
+    list-style: 100%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-card .card-img .titTxts span {
+    color: var(--primary-color);
+}
+
+.tech-card .card-img .titTxts.vertical {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+    font-weight: 600;
+    font-size: var(--font-size-5xl);
+    line-height: 140%;
+    letter-spacing: -0.8px;
+    text-align: center;
+}
+
 .tech-card .card-txts {
     flex: 1 1 auto;
     display: flex;
@@ -2669,7 +2699,23 @@
         letter-spacing: -0.18px;
     }
 
+    .tech-card .card-img .titTxts {
+        font-weight: 600;
+        font-size: 3.2rem;
+        letter-spacing: -0.6px;
+    }
 
+    .tech-card .card-img .titTxts span {
+        color: var(--primary-color);
+    }
+
+    .tech-card .card-img .titTxts.vertical {
+        font-weight: 600;
+        font-size: 2.6rem;
+        line-height: 140%;
+        letter-spacing: -0.5px;
+        text-align: center;
+    }
 
     /* detail page */
     .techPage .sub-title-wrap .sub-title {
