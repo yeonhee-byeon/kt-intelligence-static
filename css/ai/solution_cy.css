@@ -21,7 +21,7 @@
 }
 
 .sub-content {
-    padding-top: 7.5rem;
+    padding-top: 13rem;
     padding-bottom: 10rem;
 }
 
@@ -45,7 +45,7 @@
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
-    margin-top: 7.5rem;
+    margin-top: 0;
 }
 
 .sub-title-wrap p {
@@ -314,7 +314,11 @@
     display: block;
 }
 
-/* Use Case Page */
+/* UseCase Page */
+.useCasePage .sub-conSec {
+    padding: 0 7.5rem;
+}
+
 .useCasePage .card-list-horizontal .card {
     flex: 0 0 calc(33.333333333333336% - 1.5rem);
     max-width: calc(33.333333333333336% - 1.5rem);
@@ -326,11 +330,11 @@
 }
 
 .useCasePage .card-list-horizontal .card-img {
-    height: 36.125rem;
+    height: 29.5625rem;
 }
 
 .useCasePage .card-list-horizontal .card:nth-child(n + 4) {
-    margin-top: 5rem;
+    margin-top: 4rem;
 }
 
 /* resources Page */
@@ -2372,7 +2376,7 @@
     }
 
     .sub-content {
-        padding-top: 5rem;
+        padding-top: 12rem;
         padding-bottom: 10rem;
     }
 
@@ -2487,7 +2491,10 @@
         /* 29.24px */
     }
 
-    /* useCasePage */
+    /* useCase Page */
+    .useCasePage .sub-conSec {
+        padding: 0;
+    }
 
     .useCasePage .card-list-horizontal li.card .card-txts h3 {
         margin-bottom: 0;
