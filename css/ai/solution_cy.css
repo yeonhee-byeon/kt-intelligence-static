@@ -763,12 +763,20 @@
     margin-bottom: 0;
 }
 
+.tech-detail-article .post-custom .ta-center {
+    text-align: center;
+}
+
+.tech-detail-article .post-custom h3.ta-center {
+    margin-bottom: 2.5rem;
+}
+
 .tech-detail-article .post-custom .img {
     margin: 2.5rem 0;
     padding: 0 2rem;
 }
 
-.tech-detail-article .post-custom .img h5 {
+.tech-detail-article .post-custom h5 {
     color: var(--gray-600-color);
     text-align: center;
     font-size: var(--font-size-base);
@@ -826,11 +834,11 @@
     position: relative;
 }
 
-.tech-detail-article .post-custom ul.innerList li:nth-child(1) {
+.tech-detail-article .post-custom ul.innerList li.inTit {
     padding-left: 0;
 }
 
-.tech-detail-article .post-custom ul.innerList li:nth-child(1):before {
+.tech-detail-article .post-custom ul.innerList li.inTit:before {
     display: none;
 }
 
@@ -846,7 +854,94 @@
     left: 0;
 }
 
+/* 테이블 스타일 적용 요청 - pc */
+.tech-detail-article .table-wrapper {
+    margin-top: 3.75rem;
+}
 
+.tech-detail-article .table-wrapper+.table-wrapper {
+    margin-top: 2.5rem;
+}
+
+.tech-detail-article .table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--gray-200-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.tech-detail-article .table-wrapper th,
+.tech-detail-article .table-wrapper td {
+    border: 1px solid var(--gray-200-color);
+    padding: 1rem;
+    font-size: var(--font-size-base);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tech-detail-article .table-wrapper thead th {
+    background-color: var(--gray-100-color);
+    font-weight: 600;
+    padding: 1.25rem 1rem;
+}
+
+.tech-detail-article .table-wrapper tbody td {
+    color: var(--gray-800-color);
+}
+
+.tech-detail-article .table-wrapper tbody tr:hover {
+    background-color: var(--gray-50-color);
+}
+
+.tech-detail-article .table-wrapper>h5 {
+    margin-top: 1.25rem;
+    text-align: right;
+    font-size: var(--font-size-sm);
+    color: var(--gray-600-color);
+    font-weight: 500;
+}
+
+.tech-detail-article .table-wrapper .table-info {
+    margin-bottom: 1.25rem;
+}
+
+.tech-detail-article .table-wrapper .table-info h5 {
+    text-align: left;
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    color: var(--gray-900-color);
+    margin: 0;
+}
+
+.tech-detail-article .table-wrapper .table-info p {
+    text-align: left;
+    font-size: var(--font-size-sm);
+    color: var(--gray-600-color);
+    margin-top: 0.5rem;
+    line-height: 1.6;
+}
+
+.tech-detail-article .post-custom .nestedList {
+    margin-top: 1.25rem;
+}
+
+.tech-detail-article .post-custom .nestedList>li {
+    padding-left: 0;
+    font-weight: 600;
+}
+
+.tech-detail-article .post-custom .nestedList>li::before {
+    display: none;
+}
+
+.tech-detail-article .post-custom .nestedList .depth2 {
+    padding-left: 0.625rem;
+}
+
+.tech-detail-article .post-custom .nestedList .depth2 li {
+    font-weight: 400;
+}
 
 /* ***************************************solution page ****************************************** */
 /* sticky */
@@ -2850,7 +2945,7 @@
         padding: 0 2rem;
     }
 
-    .tech-detail-article .post-custom .img h5 {
+    .tech-detail-article .post-custom h5 {
         color: var(--gray-600-color);
         text-align: center;
         font-size: 1.4rem;
@@ -2887,94 +2982,74 @@
         letter-spacing: 0px;
     }
 
-    .tech-detail-article-list {
-        gap: 2rem;
+
+    /* 테이블 스타일 적용 요청 - mo */
+    .tech-detail-article .table-wrapper {
+        overflow-x: auto;
+        padding-bottom: 1rem;
     }
 
-    .tech-detail-article-list h3 {
-        font-size: 2.4rem;
-        font-weight: 700;
-        line-height: 160%;
-        letter-spacing: -0.24px;
-        margin-bottom: 0.8rem;
+    .tech-detail-article .table-wrapper::-webkit-scrollbar {
+        height: 4px;
     }
 
-    .tech-detail-article-list ul li {
-        display: block;
+    .tech-detail-article .table-wrapper::-webkit-scrollbar-thumb {
+        background-color: var(--gray-300-color);
+        border-radius: 4px;
     }
 
-    .tech-detail-article-list ul li.mo-has-border {
-        margin-top: 2.8rem;
-        padding-top: 3.2rem;
-        border-top: 1px solid var(--gray-200-color);
+    .tech-detail-article .table-wrapper::-webkit-scrollbar-track {
+        background-color: transparent;
     }
 
-    .detail-inform span {
-        align-items: baseline;
+    .tech-detail-article .table-wrapper table {
+        width: max-content;
     }
 
-    .detail-inform span::before {
+    .tech-detail-article .table-wrapper th,
+    .tech-detail-article .table-wrapper td {
+        padding: 1.2rem 1.5rem;
+        font-size: 1.4rem;
+        white-space: nowrap;
+    }
+
+    .tech-detail-article .table-wrapper>h5 {
+        font-size: 1.3rem;
+        white-space: nowrap;
+        margin-top: 1.6rem;
+    }
+
+    .tech-detail-article .table-wrapper .table-info {
+        margin-bottom: 1.6rem;
+    }
+
+    .tech-detail-article .table-wrapper .table-info h5 {
+        font-size: 1.5rem;
+        white-space: initial;
+    }
+
+    .tech-detail-article .table-wrapper .table-info p {
+        font-size: 1.3rem;
+        white-space: initial;
+        line-height: 1.6;
+    }
+
+    .tech-detail-article .post-custom .nestedList {
+        margin-top: 1.2rem;
+    }
+
+    .tech-detail-article .post-custom .nestedList>li {
         font-size: 1.6rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 180%;
-        margin-right: 2px;
+        line-height: 1.8;
     }
 
-
-    .tech-detail-article-list ul li span,
-    .tech-detail-article-list ul li em {
-        font-size: 1.6rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 180%;
-        /* 28.8px */
-    }
-
-    .tech-detail-article-list ul li a {
-        font-size: 1.6rem;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 180%;
-        /* 28.8px */
-        letter-spacing: -0.16px;
-    }
-
-    .tech-detail-article-list ul li em {
-        display: none;
-    }
-
-    .tech-detail-article-list ul li p {
-        font-size: 1.6rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 180%;
-        /* 28.8px */
-    }
-
-    .tech-detail-article-list .pdf-ul {
-        gap: 0;
-    }
-
-    .tech-detail-article-list .pdf-ul li+li {
-        margin-top: 2rem;
-    }
-
-    .tech-detail-article .post-custom ul.innerList li {
-        color: var(--gray-900-color);
-        font-size: 1.6rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 180%;
-        letter-spacing: 0px;
-        margin-top: 0.8rem;
+    .tech-detail-article .post-custom .nestedList .depth2 {
         padding-left: 1rem;
     }
 
-    .tech-detail-article .post-custom ul.innerList li:before {
-        top: 1.2rem;
-        width: 0.4rem;
-        height: 0.4rem;
+    .tech-detail-article .post-custom .nestedList .depth2 li {
+        font-size: 1.6rem;
+        line-height: 1.8;
     }
 
     /* ***************************************solution page ****************************************** */
