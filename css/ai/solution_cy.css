@@ -1905,6 +1905,22 @@
     width: 100%;
 }
 
+.example-side-item .example-side-txts.top-tab-txts {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.example-side-item .example-side-txts.top-tab-txts dl {
+    transition: background 0.3s ease-in;
+    cursor: pointer;
+}
+
+.example-side-item .example-side-txts.top-tab-txts dl.active {
+    border: 1px solid #999;
+    background: #131313;
+}
+
+
 .example-side-item .example-side-txts dl {
     border-radius: 1.25rem;
     padding: 2.5rem;
@@ -3627,6 +3643,10 @@
         flex-direction: column;
         gap: 1.6rem;
         margin-top: 1.6rem;
+    }
+
+    .example-side-item .example-side-txts.top-tab-txts {
+        margin-bottom: 1.6rem;
     }
 
     .example-side-item .example-side-txts dl {
