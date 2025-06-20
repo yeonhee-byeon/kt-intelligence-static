@@ -749,6 +749,19 @@ body.scroll-lock {
     color: var(--black-color);
 }
 
+.btn.main {
+    min-width: unset;
+    background: var(--white-color);
+    color: var(--black-color);
+    border: 0;
+    padding: 0.563rem 1.5rem;
+    border-radius: 0.375rem;
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    line-height: var(--line-height-172);
+    letter-spacing: normal;
+}
+
 /* KT Model Section */
 .kt-model-section {
     width: 100%;
