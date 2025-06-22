@@ -1,4 +1,4 @@
-// Tabs Component (공통)
+// Tabs Component
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.tabs').forEach(function (tabs) {
     // tabs를 감싸는 가장 가까운 .tabs-component를 컨테이너로 사용
@@ -33,6 +33,73 @@ document.addEventListener('DOMContentLoaded', function () {
           });
         }
       }
+    });
+  });
+});
+
+// Solution Model Inner Tabs
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.inner-tabs-container').forEach(function (container) {
+    const triggers = container.querySelectorAll('.inner-tab-trigger');
+    const contents = container.querySelectorAll('.inner-tab-content');
+
+    // Initial setup: hide all but active
+    contents.forEach(function (content) {
+      content.style.transition = 'opacity 0.3s ease-in-out';
+      if (!content.classList.contains('active')) {
+        content.style.opacity = '0';
+        content.style.position = 'absolute';
+        content.style.visibility = 'hidden';
+        content.style.zIndex = '-1';
+      } else {
+        content.style.position = 'relative';
+      }
+    });
+
+    function fadeOut(element, callback) {
+      element.style.opacity = '0';
+      setTimeout(function () {
+        element.style.position = 'absolute';
+        element.style.visibility = 'hidden';
+        element.style.zIndex = '-1';
+        if (callback) {
+          callback();
+        }
+      }, 300); // transition duration
+    }
+
+    function fadeIn(element) {
+      element.style.position = 'relative';
+      element.style.visibility = 'visible';
+      element.style.zIndex = '1';
+      setTimeout(function () {
+        element.style.opacity = '1';
+      }, 20); // allow visibility to apply before starting transition
+    }
+
+    triggers.forEach(function (clickedTrigger, index) {
+      clickedTrigger.addEventListener('click', function () {
+
+        if (clickedTrigger.classList.contains('active')) return;
+
+        let currentActiveTrigger = container.querySelector('.inner-tab-trigger.active');
+        let currentActiveContent = container.querySelector('.inner-tab-content.active');
+
+        if (currentActiveTrigger) {
+          currentActiveTrigger.classList.remove('active');
+        }
+        clickedTrigger.classList.add('active');
+
+        const newContent = contents[index];
+
+        if (currentActiveContent && newContent) {
+          fadeOut(currentActiveContent, function () {
+            currentActiveContent.classList.remove('active');
+            newContent.classList.add('active');
+            fadeIn(newContent);
+          });
+        }
+      });
     });
   });
 });
