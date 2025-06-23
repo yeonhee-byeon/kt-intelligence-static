@@ -960,19 +960,37 @@
     border-bottom: 2px solid var(--white-color);
 }
 
-/* banner section */
-.banner-inner p {
-    text-shadow: 1px 4px 40px rgba(0, 0, 0, 0.3), 1px 4px 60px #000;
-}
-
 /* title */
 .title-wrapper .no-desc {
     margin-bottom: 0;
 }
 
+.open-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.open-planned {
+    text-align: center !important;
+    background-color: var(--gray-600-color) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-sm) !important;
+    line-height: var(--line-height-170) !important;
+    letter-spacing: 0 !important;
+    color: var(--white-color) !important;
+    padding: 0 0.875rem !important;
+    height: 2rem !important;
+    line-height: 2rem !important;
+    display: flex !important;
+    width: fit-content !important;
+    align-items: center !important;
+    border-radius: 6.1875rem !important;
+    margin-left: 1rem !important;
+}
+
 .title-wrapper h3 {
     font-size: var(--font-size-3xl);
-    font-weight: 700;
+    font-weight: 500;
     line-height: var(--line-height-172);
     letter-spacing: -0.52px;
     color: var(--gray-900-color);
@@ -1268,7 +1286,7 @@
 }
 
 .content-inner .card-list-horizontal+.btnWrap {
-    margin-top: 8rem;
+    margin-top: 5rem;
 }
 
 /* agent page */
@@ -1595,6 +1613,10 @@
 }
 
 /* model page */
+.banner-section .model-topBanner {
+    background: linear-gradient(274.61deg, #FFFFFF 39.12%, #CDCDCD 122.78%);
+}
+
 .solution-model-wrapper .tab-inner-wrapper>#tab-panel-1 {
     background-image: url('/resource/images/ai/solution/model/title-only-bg-01.png');
     background-size: 64.625rem auto;
@@ -1912,11 +1934,11 @@
 }
 
 .example-side-item .example-side-txts.top-tab-txts dl {
-    transition: background 0.3s ease-in;
+    transition: background 0.5s ease-in;
     cursor: pointer;
 }
 
-.example-side-item .example-side-txts.top-tab-txts dl.tabs__tab--active {
+.example-side-item .example-side-txts.top-tab-txts dl.active {
     border: 1px solid #999;
     background: #131313;
 }
@@ -2019,7 +2041,7 @@
 }
 
 .flex.example-double .example-content .example-inner .exam-items {
-    width: 34.3rem;
+    width: 34.1rem;
 }
 
 .example-con-wrapper {

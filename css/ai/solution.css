@@ -49,11 +49,10 @@ br.mo-br {
 .banner-section h2 {
     font-weight: 600;
     font-size: 6.25rem;
-    line-height: normal;
+    line-height: 1rem;
     letter-spacing: var(--letter-spacing-md);
-    margin-bottom: 1.25rem;
+    margin-bottom: 2rem;
     color: var(--primary-color);
-    text-shadow: 1px 4px 40px rgba(0, 0, 0, 0.4);
 }
 
 .banner-section h2 img {
@@ -64,10 +63,9 @@ br.mo-br {
 .banner-section p {
     color: var(--black-color);
     font-size: var(--font-size-3xl);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.48;
     letter-spacing: var(--letter-spacing-md);
-    text-shadow: 1px 4px 40px rgba(0, 0, 0, 0.3), 1px 4px 60px #000;
 }
 
 .sub-banner {
