@@ -16,60 +16,6 @@ function initHeroSectionAnimation() {
     gsap.to(button, { opacity: 1, duration: 1, delay: 1.5, ease: 'power2.out' });
 }
 
-function initSubBannerSectionAnimation() {
-    const section = document.getElementById('sub-banner-section');
-    if (!section) return;
-
-    const countElements = section.querySelectorAll('.rolling-number');
-    if (!countElements.length) return;
-
-    const animateCount = (element, targetNum) => {
-        let startNum = 0;
-        const duration = 2000; // 2초 동안 애니메이션
-        const frameDuration = 1000 / 60; // 60fps
-        const totalFrames = duration / frameDuration;
-
-        // 이징 함수 추가 - easeOutQuad
-        const easeOutQuad = (t) => t * (2 - t);
-
-        let frame = 0;
-        const counter = setInterval(() => {
-            frame++;
-            const progress = frame / totalFrames;
-
-            if (progress >= 1) {
-                element.textContent = String(targetNum).padStart(2, '0');
-                clearInterval(counter);
-            } else {
-                // 이징 적용하여 부드러운 움직임 구현
-                const easedProgress = easeOutQuad(progress);
-                const currentNum = Math.floor(targetNum * easedProgress);
-                element.textContent = String(currentNum).padStart(2, '0');
-            }
-        }, frameDuration);
-    };
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    animateCount(countElements[0], 24);
-                    animateCount(countElements[1], 58);
-                    observer.unobserve(entry.target); // 한번만 실행
-                }
-            });
-        },
-        {
-            threshold: 0.5,
-            rootMargin: '0px 0px -10% 0px',
-        },
-    );
-
-    countElements.forEach((element) => {
-        observer.observe(element);
-    });
-}
-
 function initParallaxSectionAnimation() {
     const section = document.querySelector('.parallax-section');
     if (!section || !window.gsap || !window.ScrollTrigger) return;
@@ -102,7 +48,7 @@ function initParallaxSectionAnimation() {
                 ease: 'none',
                 scrollTrigger: {
                     trigger: section,
-                    start: 'top center',
+                    start: 'top top',
                     end: 'bottom bottom',
                     scrub: 1, // 부드러운 스크롤 효과
                     toggleActions: 'play none none reverse',
@@ -149,70 +95,134 @@ function initParallaxDepthSectionAnimation() {
     const cubeItems = section.querySelectorAll('.cube-item');
     if (!cubeItems.length) return;
 
-    const tl = gsap.timeline({
-        ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
-        scrollTrigger: {
-            trigger: section,
-            start: 'top center',
-            end: 'bottom center',
+    let wheelNavInstance; // 휠 네비게이션 인스턴스
+    ScrollTrigger.matchMedia({
+        all: function () {
+            const tl = gsap.timeline({
+                ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top center',
+                    end: 'bottom center',
+                    id: 'start-tl',
+                    markers: true,
+                },
+            });
+
+            tl.fromTo(
+                '.cube-item',
+                { opacity: 0, yPercent: -10 },
+                {
+                    opacity: 1,
+                    yPercent: 0,
+                    duration: 0.4,
+                    stagger: 0.2,
+                },
+            )
+                .fromTo('.cube-wrapper', { xPercent: 0 }, { xPercent: 34, duration: 0.3 })
+                .fromTo(
+                    '.list-wrap ul',
+                    { opacity: 0, xPercent: 10, yPercent: -10 },
+                    {
+                        opacity: 1,
+                        xPercent: 0,
+                        yPercent: 0,
+                        duration: 0.3,
+                        onComplete: () => {
+                            console.log('onComplete');
+                        },
+                    },
+                    '<',
+                );
+
+            ScrollTrigger.create({
+                trigger: '.component-content',
+                start: 'top top',
+                end: '+=1200', // 충분한 스크롤 공간 확보
+                pin: true,
+                pinSpacing: true,
+                id: 'depth-pin',
+                onEnter: () => {
+                    wheelNavInstance = new WheelNavigation(0);
+                },
+                onLeave: () => {
+                    console.log('onLeave');
+                    if (wheelNavInstance) {
+                        wheelNavInstance.destroy();
+                        wheelNavInstance = null;
+                    }
+                },
+                onEnterBack: () => {
+                    console.log('onEnterBack');
+                    const lastIndex =
+                        document.querySelectorAll('.parallax-depth-section .list-wrap ul li')
+                            .length - 1;
+                    wheelNavInstance = new WheelNavigation(lastIndex);
+                },
+                onLeaveBack: () => {
+                    console.log('onLeaveBack');
+                    if (wheelNavInstance) {
+                        wheelNavInstance.destroy();
+                        wheelNavInstance = null;
+                    }
+                },
+            });
+
+            const tl2 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.component-content',
+                    start: '+=1',
+                    end: '+=1300',
+                    id: 'depth-pin2',
+                    pin: true,
+                    pinSpacing: true,
+                    markers: true,
+                    scrub: 1,
+                    onEnter: () => {
+                        console.log('onEnter2');
+                        wheelNavInstance = new WheelNavigation(-1);
+                    },
+                },
+            });
+
+            tl2.fromTo('.list-wrap ul', { opacity: 1 }, { opacity: 0, duration: 0.5 })
+                .fromTo(
+                    '.cube-wrapper',
+                    { xPercent: 34 },
+                    {
+                        xPercent: 0,
+                        duration: 0.5,
+                        ease: 'power2.inOut',
+                    },
+                    '<',
+                )
+                .fromTo('.component-content', { scale: 1 }, { scale: 0.8, ease: 'power2.inOut' })
+                .fromTo(
+                    '.cube-last-text',
+                    { opacity: 0 },
+                    {
+                        opacity: 1,
+                        duration: 0.3,
+                        ease: 'power2.inOut',
+                        onComplete: () => {
+                            // 애니메이션 완료 후 AOS 재설정
+                            if (window.AOS) {
+                                setTimeout(() => {
+                                    AOS.refreshHard();
+                                }, 200);
+                            }
+                        },
+                    },
+                    '-=0.2',
+                );
         },
     });
 
-    tl.fromTo(
-        '.cube-item',
-        { opacity: 0, y: -100 },
-        {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            stagger: 0.2,
-        },
-    )
-        .fromTo(
-            '.cube-wrapper',
-            { xPercent: 0, yPercent: 0 },
-            { xPercent: 34, yPercent: -5, duration: 0.3 },
-        )
-        .fromTo(
-            '.list-wrap ul',
-            { opacity: 0, xPercent: 10, yPercent: -10 },
-            { opacity: 1, xPercent: 0, yPercent: 0, duration: 0.3 },
-            '<',
-        );
-
-    let wheelNavInstance;
-
-    ScrollTrigger.create({
-        trigger: '.component-content',
-        start: 'top top',
-        end: '+=3000', // 충분한 스크롤 공간 확보
-        pin: true,
-        pinSpacing: true,
-        markers: true,
-        id: 'depth-pin',
-        onEnter: () => {
-            wheelNavInstance = new WheelNavigation();
-        },
-        onLeave: () => {
-            if (wheelNavInstance) {
-                wheelNavInstance.destroy();
-                wheelNavInstance = null;
-            }
-        },
-        onEnterBack: () => {
-            wheelNavInstance = new WheelNavigation();
-        },
-        onLeaveBack: () => {
-            if (wheelNavInstance) {
-                wheelNavInstance.destroy();
-                wheelNavInstance = null;
-            }
-        },
-    });
+    window.addEventListener('resize', () => ScrollTrigger.update);
 }
 
 class WheelNavigation {
-    constructor() {
+    constructor(startIndex = 0) {
         this.listItems = document.querySelectorAll('.list-wrap ul li');
         this.cubeItems = document.querySelectorAll('.cube-wrapper .cube-item');
         this.cubeItems = Array.from(this.cubeItems).reverse();
@@ -225,7 +235,7 @@ class WheelNavigation {
             return;
         }
 
-        this.currentIndex = 0;
+        this.currentIndex = startIndex;
         this.isAnimating = false;
         this.boundHandleWheel = this.handleWheel.bind(this);
 
@@ -233,27 +243,30 @@ class WheelNavigation {
     }
 
     init() {
-        // Cube items setup: all visible, do not set z-index
+        // Deactivate all items first
+        this.listItems.forEach((item) => {
+            item.classList.remove('active');
+            gsap.set(item, { opacity: 0 });
+        });
         this.cubeItems.forEach((item, index) => {
             const img = item.querySelector('img');
             if (img && imagePaths[index]) {
                 img.src = imagePaths[index].src;
             }
-            gsap.set(item, {
-                opacity: 1,
-                // zIndex: index === 0 ? 1 : 0, // z-index 제거
-            });
         });
 
-        // List items setup
-        gsap.set(this.listItems, { opacity: 0 });
-        gsap.set(this.listItems[0], { opacity: 1 });
-        this.listItems[0].classList.add('active');
+        if (this.currentIndex === -1) {
+            return;
+        }
+        // Activate the item at currentIndex
+        const initialListItem = this.listItems[this.currentIndex];
+        const initialCubeImg = this.cubeItems[this.currentIndex].querySelector('img');
 
-        // Set active image for the first cube item
-        const initialCubeImg = this.cubeItems[0].querySelector('img');
-        if (initialCubeImg && imagePaths[0]) {
-            initialCubeImg.src = imagePaths[0].active;
+        initialListItem.classList.add('active');
+        gsap.set(initialListItem, { opacity: 1 });
+
+        if (initialCubeImg && imagePaths[this.currentIndex]) {
+            initialCubeImg.src = imagePaths[this.currentIndex].active;
         }
 
         window.addEventListener('wheel', this.boundHandleWheel, { passive: false });
@@ -337,7 +350,7 @@ class WheelNavigation {
         this.listItems[oldIndex].classList.remove('active');
         tl.to(this.listItems[oldIndex], {
             opacity: 0,
-            duration: 0.4,
+            duration: 0.5,
             ease: 'power2.inOut',
         });
 
@@ -346,7 +359,7 @@ class WheelNavigation {
             this.listItems[newIndex],
             {
                 opacity: 1,
-                duration: 0.4,
+                duration: 0.5,
                 ease: 'power2.inOut',
             },
             '>-0.2',
@@ -393,17 +406,13 @@ window.addEventListener('load', function () {
     if (window.gsap && window.ScrollToPlugin) {
         gsap.registerPlugin(ScrollToPlugin);
     }
-    // setTimeout(function () {
-    //     window.scrollTo(0, 0);
-    // }, 10);
     if (window.gsap && window.ScrollTrigger) {
         setTimeout(() => {
             window.ScrollTrigger.refresh();
         }, 100);
-        // window.ScrollTrigger.refresh();
     }
     initHeroSectionAnimation();
-    initSubBannerSectionAnimation();
+    // initSubBannerSectionAnimation();
     initParallaxSectionAnimation();
     initParallaxDepthSectionAnimation();
     initMobileMenu();
