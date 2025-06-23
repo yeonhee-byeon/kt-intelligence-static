@@ -52,20 +52,22 @@ br.mo-br {
     line-height: 1rem;
     letter-spacing: var(--letter-spacing-md);
     margin-bottom: 2rem;
-    color: var(--primary-color);
+    color: var(--white-color);
 }
 
 .banner-section h2 img {
     width: 6.65rem;
     height: 6.56rem;
+    text-shadow: 1px 4px 3.75rem #000, 1px 4px 2.5rem rgba(0, 0, 0, 0.30);
 }
 
 .banner-section p {
-    color: var(--black-color);
+    color: var(--white-color);
     font-size: var(--font-size-3xl);
     font-weight: 700;
     line-height: 1.48;
     letter-spacing: var(--letter-spacing-md);
+    text-shadow: 1px 4px 3.75rem #000, 1px 4px 2.5rem rgba(0, 0, 0, 0.30);
 }
 
 .sub-banner {
@@ -168,7 +170,7 @@ br.mo-br {
 
 .title-wrapper span {
     color: var(--primary-color);
-    font-size: var(--font-size-2xl);
+    font-size: 2rem;
     font-weight: 700;
     line-height: var(--line-height-150);
     letter-spacing: var(--letter-spacing-md);
@@ -1720,6 +1722,7 @@ br.mo-br {
         height: 100%;
         margin-top: 6.9rem;
         padding: 0 1.9rem;
+        background: linear-gradient(275deg, #FFF 39.12%, #CDCDCD 122.78%);
     }
 
     .banner-section>img.mo-banner-bg {
@@ -1750,9 +1753,8 @@ br.mo-br {
     }
 
     .banner-section .banner-inner h2 img {
-        width: 12.25rem;
-        height: 11.888rem;
-        margin: 0 -2.5rem -3rem 0;
+        width: 6.8rem;
+        height: 6.6rem;
     }
 
     .banner-section .banner-inner p {
@@ -1760,7 +1762,6 @@ br.mo-br {
         font-weight: 700;
         line-height: var(--line-height-160);
         letter-spacing: var(--letter-spacing-base);
-        text-shadow: 1px 4px 24px rgba(0, 0, 0, 0.6);
     }
 
     .sub-banner img {
@@ -1845,7 +1846,9 @@ br.mo-br {
         line-height: var(--line-height-172);
     }
 
-    .card-wrapper {}
+    .overgrid-inner .card-wrapper.mt-20 {
+        margin-top: 0;
+    }
 
     .card-list {
         gap: 1.6rem;
@@ -1943,8 +1946,7 @@ br.mo-br {
 
     .card-list.customer li h3 {
         margin: 0;
-        top: 2rem;
-        left: 2.4rem;
+        margin-top: 1.9rem;
         font-size: 2.2rem;
         line-height: 1.56;
         letter-spacing: var(--letter-spacing-base);

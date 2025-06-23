@@ -943,6 +943,34 @@
 }
 
 /* ***************************************solution page ****************************************** */
+
+/* auto video */
+.card-list.customer .card-item.auto-video-wrapper img {
+    z-index: 1;
+}
+
+.auto-video-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.auto-video-wrapper .video-play-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.auto-video-wrapper:hover .video-play-wrapper {
+    opacity: 1;
+}
+
+
+
 /* top-banner bg*/
 .banner-section .model-topBanner {
     background: linear-gradient(274.61deg, #FFFFFF 39.12%, #CDCDCD 122.78%);
@@ -995,6 +1023,10 @@
     align-items: center !important;
     border-radius: 6.1875rem !important;
     margin-left: 1rem !important;
+}
+
+.open-planned.top-center {
+    display: none !important;
 }
 
 .open-planned.center {
@@ -1668,17 +1700,13 @@
 }
 
 .tripple-box-wrapper .tripple-box-list li .img h3 {
-    position: absolute;
-    top: 1.875rem;
-    left: 1.875rem;
-    color: var(--white-color);
     font-size: var(--font-size-3xl);
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
     /* 39px */
     letter-spacing: -0.52px;
-    text-shadow: 1px 4px 50px rgba(0, 0, 0, 0.4), 0px 4px 40px rgba(0, 0, 0, 0.3);
+    margin: 1.5rem 0 0.75rem;
 }
 
 .tripple-box-wrapper .tripple-box-list li .img img {
@@ -1694,7 +1722,6 @@
     /* 30.96px */
     letter-spacing: -0.18px;
     color: var(--gray-900-color);
-    margin-top: 1.5rem;
 }
 
 .model-line-up .box-item {
@@ -2952,7 +2979,6 @@
         text-underline-position: from-font;
     }
 
-
     .tech-detail-article .post-custom+.post-custom {
         margin-top: 8rem;
     }
@@ -3096,6 +3122,26 @@
 
     /* ***************************************solution page ****************************************** */
 
+    /* 오픈예정 */
+    .open-planned {
+        font-size: 1.3rem !important;
+        height: 3rem !important;
+        line-height: 3rem !important;
+        margin-left: 0.8rem !important;
+        padding: 0 1.2rem !important;
+        border-radius: 1.5rem !important;
+    }
+
+    .open-planned.top-center {
+        display: block !important;
+        margin-left: 0 !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .open-planned.pc-only {
+        display: none !important;
+    }
+
     .card-list-horizontal {
         display: none;
         flex-wrap: nowrap;
@@ -3109,7 +3155,7 @@
     .title-wrapper h3 {
         font-size: 1.7rem;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 500;
         line-height: 168%;
         /* 28.56px */
         word-break: keep-all;
@@ -3519,6 +3565,11 @@
 
 
     /* studio page */
+
+    .solution-model-wrapper .tab-inner-wrapper>#tab-panel-1 {
+        background-image: none;
+    }
+
     .tripple-box-wrapper .tripple-box-list {
         display: block;
     }
@@ -3528,15 +3579,16 @@
     }
 
     .tripple-box-wrapper .tripple-box-list li+li {
-        margin-top: 4rem;
+        margin-top: 6rem;
     }
 
     .tripple-box-wrapper .tripple-box-list li h3 {
-        font-size: 2.6rem;
+        font-size: 2.2rem;
         font-weight: 700;
-        line-height: 140%;
+        line-height: 156%;
         /* 36.4px */
-        letter-spacing: -0.26px;
+        letter-spacing: -0.22px;
+        margin: 2rem 0 1.2rem;
     }
 
     .tripple-box-wrapper .tripple-box-list li p {
@@ -3545,7 +3597,6 @@
         font-weight: 500;
         line-height: 168%;
         /* 26.88px */
-        margin-top: 2rem;
     }
 
     .table-card-wrapper .table-card-list.text.line-up-card-list>li .table-card-item h3 {
@@ -3580,7 +3631,7 @@
     .solution-model-wrapper #tab-panel-1,
     .solution-model-wrapper #tab-panel-2,
     .solution-model-wrapper #tab-panel-3 {
-        background-image: initial;
+        background-image: initial !important;
     }
 
     .solution-model-wrapper .tabs__panel__anchor>.tab-section.only-title {
@@ -3678,7 +3729,7 @@
     .example-side-item .example-side-txts dl {
         position: relative;
         padding: 20px;
-        border: 1px solid #444;
+        border: 1px solid var(--gray-300-color);
         border-radius: 12px;
         cursor: pointer;
     }
@@ -3731,6 +3782,10 @@
         width: 100%;
     }
 
+    .flex.example-double .example-con-wrapper {
+        padding: 2.6rem 2.6rem 0 2.6rem;
+    }
+
     .example-content {
         height: 33.5rem;
     }
@@ -3741,10 +3796,10 @@
         height: 31.6rem;
     }
 
-    .example-con-wrapper,
+    /* .example-con-wrapper,
     .flex.example-double .example-con-wrapper {
         padding: 2.6rem 2.6rem 0 2.6rem;
-    }
+    } */
 
     .example-content .example-inner h4,
     .example-content .example-inner h3 {

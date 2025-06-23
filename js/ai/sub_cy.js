@@ -104,7 +104,26 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// auto video
+document.addEventListener('DOMContentLoaded', function () {
+  const videoWrappers = document.querySelectorAll('.auto-video-wrapper');
 
+  videoWrappers.forEach(wrapper => {
+    const video = wrapper.querySelector('video');
+    if (video) {
+      wrapper.addEventListener('mouseenter', () => {
+        video.currentTime = 0;
+        video.play().catch(error => {
+          console.error("Video play failed:", error);
+        });
+      });
+
+      wrapper.addEventListener('mouseleave', () => {
+        video.pause();
+      });
+    }
+  });
+});
 
 //arcodian
 (function () {
