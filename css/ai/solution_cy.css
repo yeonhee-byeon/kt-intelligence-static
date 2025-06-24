@@ -162,7 +162,8 @@
 .techPage .tabs {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    justify-content: center;
+    gap: 5rem;
     margin-bottom: 1.875rem;
     margin-top: 12.5rem;
 }
@@ -187,7 +188,7 @@
     height: 1.25rem;
     background-color: var(--gray-200-color);
     position: absolute;
-    left: -1.5rem;
+    left: -2.5rem;
     top: 0.975rem;
 }
 
@@ -424,7 +425,7 @@
     display: flex;
     flex-direction: column;
     height: auto;
-    padding: 4.41rem 0;
+    padding: 5.21875rem 0;
 }
 
 .tech-card .card-category {
@@ -439,6 +440,22 @@
     color: var(--black-color);
     margin: 1.5rem 0 0.5rem 0;
     line-height: 172%;
+    position: relative;
+    width: fit-content;
+}
+
+.tech-card.hasNew .card-title:after {
+    display: block;
+    content: '';
+    width: 2.375rem;
+    height: 1.25rem;
+    position: absolute;
+    right: -3rem;
+    top: 0.75rem;
+    background-image: url('/resource/images/ai/icons/new-mark.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .tech-card .card-date {
@@ -464,6 +481,7 @@
 .techPage .empty-content-notice {
     padding: 15rem 0 18.1875rem;
     border-bottom: 1px solid var(--gray-200-color);
+    border-top: 1px solid var(--gray-200-color);
 }
 
 .techPage .empty-content-notice img {
@@ -1033,12 +1051,34 @@
     margin: 0 auto !important;
 }
 
+.has-relative {
+    position: relative;
+}
+
+.open-planned.top-banner {
+    font-size: var(--font-size-base) !important;
+    line-height: 172% !important;
+    /* 27.52px */
+    margin-left: 1.75rem !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    height: 2.75rem !important;
+    line-height: 2.75rem !important;
+    position: absolute;
+    right: -7.7rem;
+    top: 2.85rem;
+    padding: 0 1.25rem !important;
+}
+
 .title-wrapper h3 {
     font-size: var(--font-size-3xl);
     font-weight: 500;
     line-height: var(--line-height-172);
     letter-spacing: -0.52px;
     color: var(--gray-900-color);
+}
+
+.title-wrapper h3.bold {
+    font-weight: 700;
 }
 
 .title-wrapper h3+p {
@@ -1552,7 +1592,7 @@
 }
 
 .tab-section .list-wrapper {
-    padding: 0 7rem 3rem;
+    padding: 0 7rem 0rem;
 }
 
 .tab-section .list-wrapper>ul {
@@ -2650,7 +2690,7 @@
     .techPage .tabs__tab {
         font-size: 2rem;
         font-weight: 700;
-        line-height: 156%;
+        line-height: 1;
         letter-spacing: -0.2px;
     }
 
@@ -2771,10 +2811,18 @@
         -ms-overflow-style: none;
         /* IE and Edge */
         margin-top: 8rem;
+        justify-content: left;
+        gap: 2.4rem;
+    }
+
+    .tabs__tab--active,
+    .tabs__tab:focus,
+    .tabs__tab[aria-selected='true'] {
+        border-bottom: 2px solid #000;
     }
 
     .techPage .tabs__tab::after {
-        top: 14px;
+        display: none;
     }
 
     .techPage .tabs::-webkit-scrollbar {
@@ -2819,6 +2867,28 @@
         line-height: 156%;
         letter-spacing: -0.22px;
         margin: 0;
+    }
+
+    .tech-card.hasNew .card-title:after {
+        display: none;
+    }
+
+    .tech-card.hasNew .card-img {
+        position: relative;
+    }
+
+    .tech-card.hasNew .card-img:after {
+        display: block;
+        content: '';
+        width: 4rem;
+        height: 2.2rem;
+        position: absolute;
+        left: 1.2rem;
+        top: 1.2rem;
+        background-image: url('/resource/images/ai/icons/new-mark.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 
     .tech-card .card-date {
@@ -3140,6 +3210,17 @@
 
     .open-planned.pc-only {
         display: none !important;
+    }
+
+    .open-planned.top-banner.mobile-show {
+        position: initial !important;
+        font-size: 1.3rem !important;
+        margin-left: 0 !important;
+        margin-bottom: 2.4rem !important;
+        padding: 0 1.4rem !important;
+        height: 3.4rem !important;
+        line-height: 3.4rem !important;
+        border-radius: 1.7rem !important;
     }
 
     .card-list-horizontal {
@@ -3513,11 +3594,6 @@
         gap: 6rem;
     }
 
-    .card-list.customer.infra-box li h3 {
-        margin: 0;
-        top: 2rem;
-        left: 2rem;
-    }
 
     .cloud-arch-bottom-content-list {
         height: auto;
@@ -3777,7 +3853,10 @@
         gap: 1.6rem;
     }
 
-    .example-content,
+    .example-content {
+        width: calc(100% - 5.2rem);
+    }
+
     .flex.example-double .example-content {
         width: 100%;
     }

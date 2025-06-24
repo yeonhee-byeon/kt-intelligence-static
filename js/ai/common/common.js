@@ -30,6 +30,14 @@ function includeCommonLayout(options = {}) {
                 }
             });
     }
+
+    //resources Detail banner
+    fetch("/ai/common/resourcesBanner")
+        .then((res) => res.text())
+        .then((data) => {
+            document.querySelector(".tech-banner-sec").innerHTML = data;
+        });
+
     // footer
     fetch("/ai/common/footer")
         .then((res) => res.text())

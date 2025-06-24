@@ -53,12 +53,14 @@ br.mo-br {
     letter-spacing: var(--letter-spacing-md);
     margin-bottom: 2rem;
     color: var(--white-color);
+    text-shadow: 1px 4px 3.75rem #000, 1px 4px 2.5rem rgba(0, 0, 0, 0.30);
 }
 
 .banner-section h2 img {
     width: 6.65rem;
     height: 6.56rem;
-    text-shadow: 1px 4px 3.75rem #000, 1px 4px 2.5rem rgba(0, 0, 0, 0.30);
+    display: inline-block;
+    /* box-shadow 보장 */
 }
 
 .banner-section p {
@@ -143,6 +145,10 @@ br.mo-br {
     flex-direction: column;
     align-items: center;
     gap: 3.75rem;
+}
+
+.content-inner.gap0 {
+    gap: 0;
 }
 
 .con-wrapper {
@@ -1705,6 +1711,10 @@ br.mo-br {
         padding-top: 0 !important;
     }
 
+    .content-inner.gap0 {
+        gap: 4rem;
+    }
+
     br {
         display: none;
     }
@@ -1762,6 +1772,14 @@ br.mo-br {
         font-weight: 700;
         line-height: var(--line-height-160);
         letter-spacing: var(--letter-spacing-base);
+    }
+
+    .banner-section h2 {
+        text-shadow: none;
+    }
+
+    .banner-section p {
+        text-shadow: 1px 4px 24px rgba(0, 0, 0, 0.60);
     }
 
     .sub-banner img {
@@ -2342,6 +2360,14 @@ br.mo-br {
         width: 0.4rem;
         height: 0.4rem;
         margin-top: 1rem;
+    }
+
+    .architecture-diagram .table-list .table-col:first-child .table-title {
+        font-weight: 700;
+        font-size: 2.2rem;
+        line-height: 156%;
+        letter-spacing: -0.2px;
+        text-align: center;
     }
 
     .architecture-diagram .table-list .table-col:first-child .table-title.gray {
