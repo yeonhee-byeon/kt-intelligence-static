@@ -2663,11 +2663,10 @@
     /* overgrid */
     .content-inner.overgrid-inner {
         padding: 0;
-        margin-left: -2px;
     }
 
     .content-inner.overgrid-inner .card-wrapper .card-list-horizontal.swiper-container {
-        padding-right: 4rem;
+        padding-left: 2rem;
     }
 
     .content-inner.overgrid-inner .card-wrapper .card-list-horizontal .card.swiper-slide:nth-last-child(1) {

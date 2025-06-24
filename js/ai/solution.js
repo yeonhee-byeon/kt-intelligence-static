@@ -49,7 +49,7 @@ function initMobileSwiper() {
             window.mobileSwiper = new Swiper('.card-list-horizontal.swiper-container', {
                 spaceBetween: 16,
                 slidesPerView: 'auto',
-                centeredSlides: true,
+                centeredSlides: false,
             });
         }
     } else {
