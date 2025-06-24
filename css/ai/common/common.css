@@ -511,7 +511,7 @@ body.scroll-lock {
 
 .sticky-header-list li {
     font-size: var(--font-size-2xl);
-    font-weight: 600;
+    font-weight: 700;
     color: var(--gray-500-color);
     transition: color 0.2s;
     cursor: pointer;
@@ -521,7 +521,7 @@ body.scroll-lock {
 
 .sticky-header-list li:hover {
     color: var(--black-color);
-    font-weight: 600;
+    font-weight: 700;
     border-bottom: 2px solid var(--black-color);
 }
 
@@ -531,7 +531,6 @@ body.scroll-lock {
 
 .sticky-header-list li.active {
     color: var(--black-color);
-    font-weight: 800;
     border-bottom: 2px solid var(--black-color);
 }
 

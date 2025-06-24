@@ -97,7 +97,7 @@ if (kqualitySection) {
             });
         },
         {
-            threshold: 0.7,
+            threshold: 0.3,
         },
     );
     observer.observe(kqualitySection);
