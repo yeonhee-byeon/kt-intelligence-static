@@ -1,12 +1,12 @@
 // 스크롤 위치 복원 방지
-// if ('scrollRestoration' in history) {
-//     history.scrollRestoration = 'manual';
-// }
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
 
 // 새로고침/이동 직전 스크롤 위치 초기화
-// window.onbeforeunload = function () {
-//     window.scrollTo(0, 0);
-// };
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
 
 // ===== 애니메이션 함수 정의 =====
 function initHeroSectionAnimation() {
@@ -98,6 +98,7 @@ function initParallaxDepthSectionAnimation() {
     let wheelNavInstance; // 휠 네비게이션 인스턴스
     ScrollTrigger.matchMedia({
         all: function () {
+            let tlComplete = false;
             const tl = gsap.timeline({
                 ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
                 scrollTrigger: {
@@ -105,7 +106,6 @@ function initParallaxDepthSectionAnimation() {
                     start: 'top center',
                     end: 'bottom center',
                     id: 'start-tl',
-                    markers: true,
                 },
             });
 
@@ -117,19 +117,39 @@ function initParallaxDepthSectionAnimation() {
                     yPercent: 0,
                     duration: 0.4,
                     stagger: 0.2,
+                    onStart: () => {
+                        gsap.set('.cube-wrapper', { xPercent: 0 });
+                    },
                 },
             )
                 .fromTo('.cube-wrapper', { xPercent: 0 }, { xPercent: 34, duration: 0.3 })
                 .fromTo(
                     '.list-wrap ul',
-                    { opacity: 0, xPercent: 10, yPercent: -10 },
+                    { opacity: 0, xPercent: 52, yPercent: -12 },
                     {
                         opacity: 1,
                         xPercent: 0,
                         yPercent: 0,
                         duration: 0.3,
                         onComplete: () => {
-                            console.log('onComplete');
+                            tlComplete = true;
+                        },
+                    },
+                    '<',
+                )
+                .fromTo(
+                    '.list-wrap ul li:first-child',
+                    { opacity: 0 },
+                    {
+                        opacity: 1,
+                        duration: 0.3,
+                        onStart: () => {
+                            const img = document.querySelector(
+                                '.cube-wrapper .cube-item.cube-item-6 img',
+                            );
+                            if (img) {
+                                img.src = imagePaths[0].active;
+                            }
                         },
                     },
                     '<',
@@ -143,7 +163,14 @@ function initParallaxDepthSectionAnimation() {
                 pinSpacing: true,
                 id: 'depth-pin',
                 onEnter: () => {
-                    wheelNavInstance = new WheelNavigation(0);
+                    const checkComplete = () => {
+                        if (tlComplete) {
+                            wheelNavInstance = new WheelNavigation(0);
+                        } else {
+                            requestAnimationFrame(checkComplete);
+                        }
+                    };
+                    requestAnimationFrame(checkComplete);
                 },
                 onLeave: () => {
                     console.log('onLeave');
@@ -165,6 +192,40 @@ function initParallaxDepthSectionAnimation() {
                         wheelNavInstance.destroy();
                         wheelNavInstance = null;
                     }
+
+                    const imgs = document.querySelectorAll('.cube-wrapper .cube-item img');
+                    const listItems = document.querySelectorAll('.list-wrap ul li');
+                    if (imgs && listItems) {
+                        imgs.forEach((img) => {
+                            if (img.src.includes('k-model')) {
+                                img.src = imagePaths[0].active;
+                            } else if (img.src.includes('k-rag')) {
+                                img.src = imagePaths[1].src;
+                            } else if (img.src.includes('k-agent')) {
+                                img.src = imagePaths[2].src;
+                            } else if (img.src.includes('k-studio')) {
+                                img.src = imagePaths[3].src;
+                            } else if (img.src.includes('k-rai')) {
+                                img.src = imagePaths[4].src;
+                            } else if (img.src.includes('k-infra')) {
+                                img.src = imagePaths[5].src;
+                            }
+                        });
+
+                        listItems.forEach((item) => {
+                            if (item.classList.contains('active')) {
+                                item.classList.remove('active');
+                            }
+                            listItems[0].classList.add('active');
+
+                            gsap.set(item, { opacity: 0 });
+                            gsap.to(listItems[0], {
+                                opacity: 1,
+                                duration: 0.3,
+                                ease: 'power2.inOut',
+                            });
+                        });
+                    }
                 },
             });
 
@@ -176,11 +237,18 @@ function initParallaxDepthSectionAnimation() {
                     id: 'depth-pin2',
                     pin: true,
                     pinSpacing: true,
-                    markers: true,
                     scrub: 1,
                     onEnter: () => {
                         console.log('onEnter2');
                         wheelNavInstance = new WheelNavigation(-1);
+                    },
+                    onLeave: () => {
+                        console.log('onLeave2');
+                        if (wheelNavInstance) {
+                            console.log('destroy');
+                            wheelNavInstance.destroy();
+                            wheelNavInstance = null;
+                        }
                     },
                 },
             });
@@ -412,7 +480,6 @@ window.addEventListener('load', function () {
         }, 100);
     }
     initHeroSectionAnimation();
-    // initSubBannerSectionAnimation();
     initParallaxSectionAnimation();
     initParallaxDepthSectionAnimation();
     initMobileMenu();
