@@ -165,6 +165,10 @@ function initParallaxDepthSectionAnimation() {
                 onEnter: () => {
                     const checkComplete = () => {
                         if (tlComplete) {
+                            if (wheelNavInstance) {
+                                wheelNavInstance.destroy();
+                                wheelNavInstance = null;
+                            }
                             wheelNavInstance = new WheelNavigation(0);
                         } else {
                             requestAnimationFrame(checkComplete);
@@ -173,26 +177,26 @@ function initParallaxDepthSectionAnimation() {
                     requestAnimationFrame(checkComplete);
                 },
                 onLeave: () => {
-                    console.log('onLeave');
                     if (wheelNavInstance) {
                         wheelNavInstance.destroy();
                         wheelNavInstance = null;
                     }
                 },
                 onEnterBack: () => {
-                    console.log('onEnterBack');
                     const lastIndex =
                         document.querySelectorAll('.parallax-depth-section .list-wrap ul li')
                             .length - 1;
-                    wheelNavInstance = new WheelNavigation(lastIndex);
-                },
-                onLeaveBack: () => {
-                    console.log('onLeaveBack');
                     if (wheelNavInstance) {
                         wheelNavInstance.destroy();
                         wheelNavInstance = null;
                     }
-
+                    wheelNavInstance = new WheelNavigation(lastIndex);
+                },
+                onLeaveBack: () => {
+                    if (wheelNavInstance) {
+                        wheelNavInstance.destroy();
+                        wheelNavInstance = null;
+                    }
                     const imgs = document.querySelectorAll('.cube-wrapper .cube-item img');
                     const listItems = document.querySelectorAll('.list-wrap ul li');
                     if (imgs && listItems) {
@@ -286,7 +290,22 @@ function initParallaxDepthSectionAnimation() {
         },
     });
 
-    window.addEventListener('resize', () => ScrollTrigger.update);
+    // 리사이즈 시 WheelNavigation만 재생성
+    window.addEventListener('resize', () => {
+        if (wheelNavInstance) {
+            wheelNavInstance.destroy();
+            wheelNavInstance = null;
+        }
+        // 현재 활성화된 li 인덱스 파악 (없으면 0)
+        // const activeIndex = (() => {
+        //     const items = document.querySelectorAll('.list-wrap ul li');
+        //     for (let i = 0; i < items.length; i++) {
+        //         if (items[i].classList.contains('active')) return i;
+        //     }
+        //     return 0;
+        // })();
+        // wheelNavInstance = new WheelNavigation(activeIndex);
+    });
 }
 
 class WheelNavigation {

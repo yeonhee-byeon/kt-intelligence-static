@@ -1121,6 +1121,17 @@ br {
     margin: 7.625rem auto 0;
     gap: 2.5rem;
 }
+.eco-bottom-card ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.eco-bottom-card ul li img {
+    width: auto;
+    height: 2.163rem;
+    object-fit: contain;
+}
 
 /* Use Case Swiper Section */
 .usecase-section {
