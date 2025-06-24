@@ -183,6 +183,63 @@ br {
     letter-spacing: 0.38px;
     padding: 0.5rem 1rem;
 }
+/* .rolling-number-wrap {
+    height: 12.5rem;
+    overflow: hidden;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.rolling-number-wrap .rolling-number {
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 1s cubic-bezier(0.33, 1, 0.68, 1);
+    will-change: transform;
+}
+.rolling-number-wrap .rolling-number span {
+    font-size: 12.5rem;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: var(--letter-spacing-md);
+    display: block;
+    text-align: center;
+} */
+.sub-banner-section .sub-banner-inner > ul > li .count-up .rolling-number {
+    display: flex;
+    color: var(--white-color);
+    font-size: 12.5rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: var(--letter-spacing-md);
+}
+
+.sub-banner-section .sub-banner-inner > ul > li .count-up .countup-digit-container {
+    height: 12.5rem; /* 한 숫자 높이에 맞춰 조정 */
+    overflow: hidden;
+    position: relative;
+}
+
+.sub-banner-section .sub-banner-inner > ul > li .count-up .countup-digit {
+    display: flex;
+    flex-direction: column;
+    transition: transform 1s cubic-bezier(0.33, 1, 0.68, 1);
+    will-change: transform;
+}
+.sub-banner-section .sub-banner-inner > ul > li .count-up .countup-digit span {
+    font-size: 12.5rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: var(--letter-spacing-md);
+    display: block;
+    text-align: center;
+    width: 7.5rem; /* 자릿수 폭 고정 (디자인에 따라 조정) */
+    padding: 0;
+}
+
 .sub-banner-section .sub-banner-inner > ul > li .sub-banner-item6 h2 {
     line-height: 0;
 }
@@ -199,15 +256,6 @@ br {
     color: var(--white-color);
     font-weight: 700;
     font-size: 4rem;
-}
-
-.sub-banner-section .sub-banner-inner > ul > li .rolling-number {
-    color: #fff;
-    text-align: center;
-    font-size: 12.5rem;
-    font-weight: 600;
-    line-height: 100%;
-    letter-spacing: var(--letter-spacing-md);
 }
 
 /* Info Case Section */
@@ -365,7 +413,7 @@ br {
 .image-obj-1 {
     width: 20.125rem;
     height: 26.813rem;
-    top: 30%;
+    top: -9%;
     left: 14%;
 }
 .image-obj-2 {
@@ -389,7 +437,7 @@ br {
 .image-obj-5 {
     width: 12.75rem;
     height: 17rem;
-    top: 70%;
+    top: 28%;
     right: 14%;
 }
 .image-obj-6 {
@@ -1267,7 +1315,7 @@ br {
 
 /* News Section (Figma 기반) */
 .news-section {
-    padding: 8rem 0 10rem 0;
+    padding: 8rem 0 0;
 }
 .news-inner {
     max-width: 86.5rem;
@@ -1283,7 +1331,7 @@ br {
     margin: 6.25rem auto 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 2.875rem;
+    gap: 2rem;
 }
 .news-content {
     display: flex;
@@ -1294,11 +1342,14 @@ br {
     box-shadow: none;
     border-radius: 0;
     transition: background 0.2s;
-    padding-bottom: 2.75rem;
+    padding-bottom: 3.75rem;
 }
 .news-list li:first-child .news-content {
     padding-top: 2rem;
     border-top: 1px solid #e0e0e0;
+}
+.news-list li:last-child .news-content {
+    border-bottom: 0;
 }
 .news-meta {
     color: var(--gray-600-color);

@@ -3,7 +3,7 @@ if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
-// 새로고침/이동 직전 스크롤 위치 초기화
+// // 새로고침/이동 직전 스크롤 위치 초기화
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 };
@@ -14,6 +14,128 @@ function initHeroSectionAnimation() {
     if (!button || !window.gsap) return;
     gsap.set(button, { opacity: 0 });
     gsap.to(button, { opacity: 1, duration: 1, delay: 1.5, ease: 'power2.out' });
+}
+
+function countUpDigitsReverse(selector, options = {}) {
+    const el = document.querySelector(selector);
+    if (!el) return;
+    const targetStr = el.dataset.target || '';
+    const duration = options.duration || 1200;
+    el.innerHTML = '';
+
+    for (let i = 0; i < targetStr.length; i++) {
+        const digitTarget = parseInt(targetStr[i], 10);
+        const container = document.createElement('div');
+        container.className = 'countup-digit-container';
+
+        const digitCol = document.createElement('div');
+        digitCol.className = 'countup-digit';
+
+        // 목표값부터 0까지 역순으로 span 생성
+        for (let n = digitTarget; n >= 0; n--) {
+            const span = document.createElement('span');
+            span.textContent = n;
+            digitCol.appendChild(span);
+        }
+
+        container.appendChild(digitCol);
+        el.appendChild(container);
+
+        // 초기 위치는 translateY(0) (목표값 노출)
+        digitCol.style.transform = `translateY(-${digitTarget * 12.5}rem)`;
+        digitCol.style.transition = `transform ${duration}ms cubic-bezier(0.33,1,0.68,1)`;
+
+        setTimeout(() => {
+            digitCol.style.transform = `translateY(0)`; // 아래에서 위로 이동
+        }, 80 * i);
+    }
+}
+
+function initIntroSectionAnimation() {
+    const section = document.querySelector('.sub-banner-section');
+    if (!section || !window.gsap) return;
+
+    const title1 = section.querySelector('ul li h2 span:first-child');
+    const title2 = section.querySelector('ul li h2 span:last-child');
+    const desc1 = section.querySelector('ul li p:first-child');
+    const desc2 = section.querySelector('ul li p:last-child');
+    const countUp = section.querySelectorAll('.count-up');
+
+    const tl = gsap.timeline({
+        ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
+        scrollTrigger: {
+            trigger: section,
+            start: 'top bottom-=30%',
+            end: 'bottom bottom',
+        },
+    });
+
+    tl.fromTo(
+        title1,
+        {
+            opacity: 0,
+            yPercent: 100,
+        },
+        {
+            opacity: 1,
+            yPercent: 0,
+            duration: 0.4,
+        },
+    )
+        .fromTo(
+            title2,
+            {
+                opacity: 0,
+                yPercent: 100,
+            },
+            {
+                opacity: 1,
+                yPercent: 0,
+                duration: 0.4,
+            },
+            '-=0.2',
+        )
+        .fromTo(
+            desc1,
+            {
+                opacity: 0,
+                yPercent: 100,
+            },
+            {
+                opacity: 1,
+                yPercent: 0,
+                duration: 0.4,
+            },
+        )
+        .fromTo(
+            desc2,
+            {
+                opacity: 0,
+                yPercent: 100,
+            },
+            {
+                opacity: 1,
+                yPercent: 0,
+                duration: 0.4,
+            },
+            '-=0.2',
+        )
+        .fromTo(
+            countUp,
+            {
+                opacity: 0,
+                yPercent: 50,
+            },
+            {
+                opacity: 1,
+                yPercent: 0,
+                duration: 0.4,
+                onComplete: () => {
+                    countUpDigitsReverse('.count-item-1', { duration: 2000 });
+                    countUpDigitsReverse('.count-item-2', { duration: 2000 });
+                },
+            },
+        );
 }
 
 function initParallaxSectionAnimation() {
@@ -30,32 +152,91 @@ function initParallaxSectionAnimation() {
             trigger: section,
             start: 'top top',
             end: 'bottom bottom',
-            scrub: 1,
+            // scrub: 1,
             pin: true,
             pinSpacing: false,
         },
     });
 
+    gsap.fromTo(
+        '.parallax-titles, .parallax-description',
+        {
+            opacity: 0,
+        },
+        {
+            opacity: 1,
+            duration: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: section,
+                start: 'top center',
+                end: 'center center',
+                scrub: 1,
+            },
+        },
+    );
+
     // 각 이미지별 패럴렉스 애니메이션
     images.forEach((img, index) => {
+        // 이미지별로 다른 속도 적용
+        const speeds = [1, 1, 1, 1.4, 1];
+        const speed = speeds[index] || 1;
+
         tl.fromTo(
             img,
             {
                 y: '0', // 시작 위치 (화면 하단)
             },
             {
-                y: '-200vh', // 최종 위치 (원래 위치)
+                y: `-${200 * speed}vh`, // 속도에 따른 최종 위치 조정
                 ease: 'none',
                 scrollTrigger: {
                     trigger: section,
                     start: 'top top',
                     end: 'bottom bottom',
-                    scrub: 1, // 부드러운 스크롤 효과
+                    scrub: 1,
                     toggleActions: 'play none none reverse',
                 },
             },
         );
     });
+
+    gsap.fromTo(
+        images[1],
+        {
+            opacity: 0,
+            xPercent: -20,
+        },
+        {
+            opacity: 1,
+            xPercent: 0,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: section,
+                start: 'top bottom',
+                end: 'top center',
+                scrub: 1,
+            },
+        },
+    );
+    gsap.fromTo(
+        images[4],
+        {
+            opacity: 0,
+            xPercent: 20,
+        },
+        {
+            opacity: 1,
+            xPercent: 0,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: section,
+                start: 'top center',
+                end: 'top top',
+                scrub: 1,
+            },
+        },
+    );
 
     return tl;
 }
@@ -499,6 +680,7 @@ window.addEventListener('load', function () {
         }, 100);
     }
     initHeroSectionAnimation();
+    initIntroSectionAnimation();
     initParallaxSectionAnimation();
     initParallaxDepthSectionAnimation();
     initMobileMenu();
