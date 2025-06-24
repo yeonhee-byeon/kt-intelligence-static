@@ -919,6 +919,20 @@
     font-weight: 500;
 }
 
+.tech-detail-article .table-wrapper>h5 a {
+    letter-spacing: var(--letter-spacing-base);
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+}
+
+.tech-detail-article .table-wrapper>h5 a:nth-child(n+2) {
+    margin-left: 0.1rem;
+}
+
 .tech-detail-article .table-wrapper .table-info {
     margin-bottom: 1.25rem;
 }
