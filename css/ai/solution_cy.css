@@ -1075,14 +1075,13 @@
     font-size: var(--font-size-base) !important;
     line-height: 172% !important;
     /* 27.52px */
-    margin-left: 1.75rem !important;
     background-color: #A6A6A6 !important;
     height: 2.75rem !important;
     line-height: 2.75rem !important;
     position: absolute;
-    right: -7.5rem;
+    right: -7.7rem;
     top: 2.85rem;
-    padding: 0 1.25rem !important;
+    padding: 0 1.5rem !important;
 }
 
 .open-planned.top-banner.mobile-show {
