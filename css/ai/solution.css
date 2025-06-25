@@ -1109,7 +1109,7 @@ br.mo-br {
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 0.6rem;
-    padding-left: 1rem;
+    padding-left: 0.8rem;
 }
 
 .shape-box .img-wrapper .img {
@@ -1118,6 +1118,11 @@ br.mo-br {
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
+}
+
+.shape-box .img-wrapper .img:first-child {
+    padding-right: 0.5rem;
+    border-right: 1px solid var(--gray-200-color);
 }
 
 .shape-box .img-wrapper .img img {
