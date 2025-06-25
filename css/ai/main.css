@@ -898,6 +898,7 @@ br {
 .eco-partner-card:nth-child(1) img {
     max-width: 8.938rem;
     max-height: 1.938rem;
+    object-fit: contain;
 }
 .eco-partner-card:nth-child(2),
 .eco-partner-card:nth-child(3) {
@@ -906,18 +907,22 @@ br {
 .eco-partner-card:nth-child(2) img:nth-child(1) {
     max-width: 10rem;
     max-height: 1.625rem;
+    object-fit: contain;
 }
 .eco-partner-card:nth-child(2) img:nth-child(2) {
     max-width: 6.5rem;
     max-height: 1.688rem;
+    object-fit: contain;
 }
 .eco-partner-card:nth-child(3) img:nth-child(1) {
     max-width: 9rem;
     max-height: 1.625rem;
+    object-fit: contain;
 }
 .eco-partner-card:nth-child(3) img:nth-child(2) {
     max-width: 6rem;
     max-height: 1.625rem;
+    object-fit: contain;
 }
 .eco-partner-logos {
     display: flex;
@@ -969,7 +974,6 @@ br {
     padding: 3.375rem 0 0 3.375rem;
     font-size: 2.125rem;
     font-weight: 700;
-    color: var(--gray-900-color);
     margin-bottom: 1rem;
     line-height: 1.28;
     letter-spacing: -0.02em;
@@ -1021,19 +1025,17 @@ br {
 .research-badges .eco-badge:nth-child(1) img {
     width: 3.5rem;
     height: 3.5rem;
+    object-fit: contain;
 }
 .research-badges .eco-badge:nth-child(2) img {
-    width: 5.688rem;
-    height: 1.625rem;
-    margin-bottom: 0.813rem;
+    width: 3.063rem;
+    height: 3.063rem;
+    object-fit: contain;
 }
 .research-badges .eco-badge:nth-child(3) img {
     width: 3.063rem;
     height: 3.063rem;
-}
-.research-badges .eco-badge:nth-child(4) img {
-    width: 3.063rem;
-    height: 3.063rem;
+    object-fit: contain;
 }
 .innovation-badges .eco-badge {
     width: 7.375rem;
@@ -1043,6 +1045,7 @@ br {
     width: 1.938rem;
     height: 1.563rem;
     margin: 0.6rem 0 0.5rem;
+    object-fit: contain;
 }
 .innovation-badges .eco-badge:nth-child(2) {
     gap: 1.313rem;
@@ -1051,6 +1054,7 @@ br {
     width: 5.938rem;
     height: 0.875rem;
     margin-top: 1.2rem;
+    object-fit: contain;
 }
 .innovation-badges .eco-badge:nth-child(3) {
     gap: 0.938rem;
@@ -1058,6 +1062,7 @@ br {
 .innovation-badges .eco-badge:nth-child(3) img {
     width: 2.125rem;
     height: 2.375rem;
+    object-fit: contain;
 }
 .eco-badge em {
     font-size: 1.625rem;
