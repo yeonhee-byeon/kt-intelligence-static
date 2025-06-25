@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initial setup: hide all but active
     contents.forEach(function (content) {
-      content.style.transition = 'opacity 0.3s ease-in-out';
+      content.style.transition = 'opacity 0.4s ease-in-out';
       if (!content.classList.contains('active')) {
         content.style.opacity = '0';
         content.style.position = 'absolute';
@@ -104,8 +104,127 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// auto video
 
+// Solution Model Inner Tabs swiper
+const modelTabs = document.querySelector('.mobile-model-tabs');
+function initTabMobileSwiper() {
+  if (window.innerWidth < 768) {
+    if (!window.mobileTabSwiper) {
+      window.mobileTabSwiper = new Swiper('.mobile-model-tabs', {
+        spaceBetween: 12,
+        slidesPerView: 'auto',
+        centeredSlides: false,
+        on: {
+          slideChange: function () {
+            syncMobileTabContent(this.activeIndex);
+          },
+          tap: function (swiper, e) {
+            const clickedIdx = swiper.clickedIndex;
+            if (typeof clickedIdx === 'number' && clickedIdx !== swiper.activeIndex) {
+              swiper.slideTo(clickedIdx);
+            }
+            syncMobileTabContent(swiper.activeIndex);
+          }
+        }
+      });
+      // data-index 부여 (dl, div 모두)
+      assignMobileTabIndexes();
+      syncMobileTabContent(window.mobileTabSwiper.activeIndex || 0);
+    }
+    // 모바일에서는 .mobile-model-tabs .inner-tab-trigger에 직접 클릭 이벤트 제거
+    const mobileTriggers = document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger');
+    mobileTriggers.forEach(trigger => {
+      trigger.onclick = null;
+    });
+  } else {
+    if (window.mobileTabSwiper) {
+      window.mobileTabSwiper.destroy();
+      window.mobileTabSwiper = null;
+    }
+  }
+}
+
+// 모바일 탭/컨텐츠에 data-index 부여
+function assignMobileTabIndexes() {
+  const triggers = document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger');
+  const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
+  triggers.forEach((el, idx) => {
+    el.setAttribute('data-index', idx);
+  });
+  contents.forEach((el, idx) => {
+    el.setAttribute('data-index', idx);
+  });
+}
+
+function syncMobileTabContent(activeIdx) {
+  if (window.innerWidth >= 768) return;
+  const triggers = document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger');
+  const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
+  triggers.forEach((el, idx) => {
+    const tIdx = el.getAttribute('data-index');
+    if (parseInt(tIdx) === activeIdx) {
+      el.classList.add('active');
+      el.style.opacity = '1';
+      el.style.transition = 'opacity';
+    } else {
+      el.classList.remove('active');
+      el.style.opacity = '0.6';
+      el.style.transition = 'opacity';
+    }
+  });
+  contents.forEach((el, idx) => {
+    const cIdx = el.getAttribute('data-index');
+    if (parseInt(cIdx) === activeIdx) {
+      el.classList.add('active');
+      el.style.opacity = '1';
+      el.style.transition = 'opacity';
+      el.style.visibility = 'visible';
+      el.style.zIndex = '1';
+      el.style.position = 'relative';
+    } else {
+      el.classList.remove('active');
+      el.style.opacity = '0';
+      el.style.transition = 'opacity';
+      el.style.visibility = 'hidden';
+      el.style.zIndex = '-1';
+      el.style.position = 'absolute';
+    }
+  });
+}
+
+if (modelTabs) {
+  window.addEventListener('resize', function () {
+    initTabMobileSwiper();
+    if (window.innerWidth < 768) assignMobileTabIndexes();
+  });
+  window.addEventListener('DOMContentLoaded', function () {
+    initTabMobileSwiper();
+    if (window.innerWidth < 768) assignMobileTabIndexes();
+  });
+}
+
+function initInnerTabClick() {
+  if (window.innerWidth >= 768) {
+    const triggers = document.querySelectorAll('.example-side-txts.top-tab-txts .inner-tab-trigger');
+    const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
+    triggers.forEach((trigger, idx) => {
+      trigger.onclick = function () {
+        triggers.forEach((el, i) => {
+          el.classList.toggle('active', i === idx);
+          if (contents[i]) contents[i].classList.toggle('active', i === idx);
+        });
+      };
+    });
+  } else {
+    // PC가 아니면 .example-side-txts.top-tab-txts .inner-tab-trigger 클릭 이벤트 제거
+    const triggers = document.querySelectorAll('.example-side-txts.top-tab-txts .inner-tab-trigger');
+    triggers.forEach(trigger => {
+      trigger.onclick = null;
+    });
+  }
+}
+window.addEventListener('DOMContentLoaded', initInnerTabClick);
+window.addEventListener('resize', initInnerTabClick);
 
 //arcodian
 (function () {
@@ -273,13 +392,47 @@ document.addEventListener('DOMContentLoaded', function () {
     // 스크롤 이벤트에 updateActiveItem 추가
     window.addEventListener('scroll', updateActiveItem);
   }
-
   // 초기 로드시 실행
   document.addEventListener('DOMContentLoaded', function () {
     toggleStickyHeader();
   });
 
 })();
+
+
+// 모바일에서 스크롤 시 탭 active 동기화 (강제 초기화)
+function syncMobileTabActiveByScroll() {
+  if (window.innerWidth >= 768) return;
+  const triggers = document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger');
+  const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
+  const header = document.querySelector('#main-header');
+  const headerHeight = header ? header.offsetHeight : 0;
+  const viewportHeight = window.innerHeight;
+  let foundIdx = -1;
+  contents.forEach((content, idx) => {
+    const rect = content.getBoundingClientRect();
+    // 화면 상단 기준(헤더 아래)에서 컨텐츠가 40% 이상 보이면 해당 탭 active
+    const visibleTop = Math.max(rect.top, headerHeight);
+    const visibleBottom = Math.min(rect.bottom, viewportHeight);
+    const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+    const contentHeight = rect.height;
+    if (contentHeight > 0 && visibleHeight / contentHeight > 0.4 && foundIdx === -1) {
+      foundIdx = idx;
+    }
+  });
+  // 항상 모든 탭의 active를 먼저 제거
+  triggers.forEach((el) => el.classList.remove('active'));
+  // 해당 섹션만 active
+  if (foundIdx !== -1) {
+    triggers[foundIdx].classList.add('active');
+  }
+}
+window.addEventListener('scroll', syncMobileTabActiveByScroll);
+
+
+
+
+
 
 // ====== K Model 순차 영상 자동재생 (IntersectionObserver + 모바일 분기) ======
 (function () {
@@ -432,3 +585,5 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 })();
 // ====== // K Model 순차 영상 자동재생 ======
+
+
