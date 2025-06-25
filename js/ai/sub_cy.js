@@ -400,29 +400,31 @@ window.addEventListener('resize', initInnerTabClick);
 })();
 
 
-// 모바일에서 스크롤 시 탭 active 동기화
+// 모바일에서 스크롤 시 탭 active 동기화 (강제 초기화)
 function syncMobileTabActiveByScroll() {
   if (window.innerWidth >= 768) return;
   const triggers = document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger');
   const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
-  const scrollY = window.scrollY || window.pageYOffset;
-  let found = false;
+  const header = document.querySelector('#main-header');
+  const headerHeight = header ? header.offsetHeight : 0;
+  const viewportHeight = window.innerHeight;
+  let foundIdx = -1;
   contents.forEach((content, idx) => {
     const rect = content.getBoundingClientRect();
-    const top = rect.top + window.scrollY;
-    const bottom = rect.bottom + window.scrollY;
-    const header = document.querySelector('#main-header');
-    const headerHeight = header ? header.offsetHeight : 0;
-    if (!found && scrollY + headerHeight >= top && scrollY + headerHeight < bottom) {
-      triggers.forEach((el, i) => {
-        el.classList.toggle('active', i === idx);
-      });
-      found = true;
+    // 화면 상단 기준(헤더 아래)에서 컨텐츠가 40% 이상 보이면 해당 탭 active
+    const visibleTop = Math.max(rect.top, headerHeight);
+    const visibleBottom = Math.min(rect.bottom, viewportHeight);
+    const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+    const contentHeight = rect.height;
+    if (contentHeight > 0 && visibleHeight / contentHeight > 0.4 && foundIdx === -1) {
+      foundIdx = idx;
     }
   });
-  // 어떤 섹션에도 해당하지 않으면 모두 비활성화
-  if (!found) {
-    triggers.forEach((el) => el.classList.remove('active'));
+  // 항상 모든 탭의 active를 먼저 제거
+  triggers.forEach((el) => el.classList.remove('active'));
+  // 해당 섹션만 active
+  if (foundIdx !== -1) {
+    triggers[foundIdx].classList.add('active');
   }
 }
 window.addEventListener('scroll', syncMobileTabActiveByScroll);
