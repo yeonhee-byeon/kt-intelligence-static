@@ -1722,6 +1722,225 @@
 }
 
 
+/* Agent Pattern Framework 도식 */
+.agent-pattern-diagram {
+    width: 100%;
+    border-radius: 1.25rem;
+    border: 1px solid #373737;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 12.125rem 5.75rem 4.875rem;
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+    line-height: var(--line-height-172);
+    /* 37.84px */
+    letter-spacing: -0.44px;
+    position: relative;
+}
+
+.agent-pattern-diagram .diagram-nums {
+    display: flex;
+    position: absolute;
+    top: 4.75rem;
+    left: 21.1875rem;
+}
+
+.agent-pattern-diagram .diagram-nums .numBox {
+    border: 1px solid #373737;
+    border-radius: 0.75rem;
+    width: 12.8125rem;
+    height: 4.9375rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: var(--font-size-xl);
+    line-height: 172%;
+    letter-spacing: -0.4px;
+    background-color: #131313;
+    color: var(--white-color);
+    justify-content: center;
+}
+
+.agent-pattern-diagram .diagram-nums .numBox:nth-child(2) {
+    margin: 0 17.625rem 0 3.625rem;
+}
+
+.agent-pattern-diagram .diagram-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.agent-pattern-diagram .diagram-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.agent-pattern-diagram .pattern-types {
+    gap: 2rem;
+    margin-left: 3.6875rem;
+}
+
+.agent-pattern-diagram .agent-types {
+    gap: 1.5rem;
+    background: none;
+    box-shadow: none;
+    min-width: 12.75rem;
+    background-color: var(--black-color);
+}
+
+.agent-pattern-diagram .agent-type {
+    padding: 2.9375rem 2.5rem;
+    min-width: 12.75rem;
+    border-radius: 1.25rem;
+    border: 1px solid #373737;
+    position: relative;
+    z-index: 0;
+    color: var(--white-color);
+    white-space: nowrap;
+}
+
+.agent-pattern-diagram .agent-type:last-child {
+    margin-bottom: 0;
+}
+
+.agent-pattern-diagram .agent-patterns {
+    min-width: 12.75rem;
+    padding: 10rem 3.81rem;
+    justify-content: center;
+    min-width: 12.75rem;
+    border-radius: 1.25rem;
+    border: 1px solid #373737;
+    margin-left: 2.75rem;
+    position: relative;
+    background-color: var(--black-color);
+}
+
+.agent-pattern-diagram .agent-patterns:after {
+    display: block;
+    content: "";
+    width: 52.0625rem;
+    height: 20rem;
+    height: 100%;
+    background: url('/resource/images/ai/solution/agent/Agent-Pattern-Framework-line01.png') no-repeat center/contain;
+    position: absolute;
+    top: 0;
+    left: -5.2rem;
+    z-index: -1;
+}
+
+.agent-pattern-diagram .agent-patterns-icon {
+    width: 3rem;
+    height: 3rem;
+    background: url('/resource/images/ai/solution/agent/Patterns-icon.png') no-repeat center/contain;
+    margin-bottom: 2rem;
+}
+
+.agent-pattern-diagram .diagram-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.3;
+    color: var(--white-color);
+}
+
+.agent-pattern-diagram .pattern-type {
+    min-width: 12.75rem;
+    min-height: 13.3rem;
+    border-radius: 1.25rem;
+    border: 1px solid #373737;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: var(--white-color);
+    background-color: var(--black-color);
+}
+
+.agent-pattern-diagram .pattern-type:last-child {
+    margin-bottom: 0;
+}
+
+.agent-pattern-diagram .pattern-logic {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: none;
+    box-shadow: none;
+    min-width: 12.75rem;
+    margin-left: 2rem;
+}
+
+
+.agent-pattern-diagram .logic-primitive {
+    background-image: url('/resource/images/ai/solution/agent/diagram-primitive.png');
+    background-size: 106%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 12.7rem;
+    height: 13.3rem;
+    border: 1px solid #373737;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    color: var(--white-color);
+}
+
+.agent-pattern-diagram .logic-primitive:after {
+    display: block;
+    content: "";
+    width: 4.875rem;
+    height: 4.5rem;
+    background: url('/resource/images/ai/solution/agent/Framework-line02.png') no-repeat center/contain;
+    position: absolute;
+    top: 12rem;
+    left: 4rem;
+}
+
+.agent-pattern-diagram .agent-capability {
+    min-width: 12.75rem;
+    min-height: 28.7rem;
+    justify-content: center;
+    border: 1px solid #373737;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    margin-left: 2.8125rem;
+}
+
+.agent-pattern-diagram .agent-capability-icon {
+    width: 3rem;
+    height: 3rem;
+    background: url('/resource/images/ai/solution/agent/Agent Capability-icon.png') no-repeat center/contain;
+    margin-bottom: 2rem;
+}
+
+/* 점선 화살표 */
+.agent-pattern-diagram .diagram-arrow {
+    width: 40px;
+    height: 2px;
+    background: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agent-pattern-diagram .arrow-right:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+    border-top: 2px dashed #bbb;
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+
+
 /* model page */
 .solution-model-wrapper .tab-inner-wrapper>#tab-panel-1 {
     background-image: url('/resource/images/ai/solution/model/title-only-bg-01.png');
@@ -2382,9 +2601,9 @@
 .diamond-wrapper .box-item {
     padding: 2.5rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* flex-direction: column;
+    align-items: center; */
+    justify-content: left;
     width: 100%;
     height: 100%;
     background-color: var(--white-color);
