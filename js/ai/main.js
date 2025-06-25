@@ -310,6 +310,20 @@ function initParallaxDepthSectionAnimation() {
     if (!cubeItems.length) return;
 
     let wheelNavInstance; // 휠 네비게이션 인스턴스
+    let isUserScrolling = false; // 사용자가 직접 스크롤하고 있는지 추적
+    let scrollTimeout;
+
+    // 스크롤 상태 추적
+    const trackScrollState = () => {
+        isUserScrolling = true;
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            isUserScrolling = false;
+        }, 150);
+    };
+
+    window.addEventListener('scroll', trackScrollState, { passive: true });
+
     ScrollTrigger.matchMedia({
         all: function () {
             let tlComplete = false;
@@ -393,11 +407,43 @@ function initParallaxDepthSectionAnimation() {
                 },
                 onLeave: () => {
                     enableScroll();
-                    if (wheelNavInstance) {
-                        wheelNavInstance.destroy();
-                        wheelNavInstance = null;
-                    }
+                    setTimeout(() => {
+                        if (wheelNavInstance) {
+                            wheelNavInstance.destroy();
+                            wheelNavInstance = null;
+                        }
+                    }, 400);
                     tl.progress(1);
+
+                    const imgs = document.querySelectorAll('.cube-wrapper .cube-item img');
+                    const listItems = document.querySelectorAll('.list-wrap ul li');
+                    if (imgs && listItems) {
+                        setTimeout(() => {
+                            imgs.forEach((img) => {
+                                if (img.src.includes('k-model')) {
+                                    img.src = imagePaths[0].src;
+                                } else if (img.src.includes('k-rag')) {
+                                    img.src = imagePaths[1].src;
+                                } else if (img.src.includes('k-agent')) {
+                                    img.src = imagePaths[2].src;
+                                } else if (img.src.includes('k-studio')) {
+                                    img.src = imagePaths[3].src;
+                                } else if (img.src.includes('k-rai')) {
+                                    img.src = imagePaths[4].src;
+                                } else if (img.src.includes('k-infra')) {
+                                    img.src = imagePaths[5].src;
+                                }
+                            });
+
+                            listItems.forEach((item) => {
+                                if (item.classList.contains('active')) {
+                                    item.classList.remove('active');
+                                }
+
+                                gsap.set(item, { opacity: 0 });
+                            });
+                        }, 400);
+                    }
                 },
                 onEnterBack: () => {
                     disableScroll();
@@ -459,9 +505,6 @@ function initParallaxDepthSectionAnimation() {
                     pin: true,
                     pinSpacing: true,
                     scrub: 1,
-                    onEnter: () => {
-                        wheelNavInstance = new WheelNavigation(-1);
-                    },
                     onLeave: () => {
                         if (wheelNavInstance) {
                             wheelNavInstance.destroy();
@@ -510,17 +553,15 @@ function initParallaxDepthSectionAnimation() {
             wheelNavInstance.destroy();
             wheelNavInstance = null;
         }
-        // 현재 활성화된 li 인덱스 파악 (없으면 0)
-        // const activeIndex = (() => {
-        //     const items = document.querySelectorAll('.list-wrap ul li');
-        //     for (let i = 0; i < items.length; i++) {
-        //         if (items[i].classList.contains('active')) return i;
-        //     }
-        //     return 0;
-        // })();
-        // wheelNavInstance = new WheelNavigation(activeIndex);
     });
+
+    // cleanup function
+    return () => {
+        window.removeEventListener('scroll', trackScrollState);
+        clearTimeout(scrollTimeout);
+    };
 }
+
 class WheelNavigation {
     constructor(startIndex = 0) {
         this.listItems = document.querySelectorAll('.list-wrap ul li');
@@ -538,6 +579,8 @@ class WheelNavigation {
         this.currentIndex = startIndex;
         this.isAnimating = false;
         this.boundHandleWheel = this.handleWheel.bind(this);
+        this.lastScrollTime = 0;
+        this.scrollCooldown = 100; // 100ms 쿨다운
 
         this.init();
     }
@@ -577,59 +620,62 @@ class WheelNavigation {
     }
 
     handleWheel(e) {
+        const currentTime = Date.now();
+        // 쿨다운 체크
+        if (currentTime - this.lastScrollTime < this.scrollCooldown) {
+            e.preventDefault();
+            return;
+        }
         if (this.isAnimating) {
             e.preventDefault();
             return;
         }
 
+        this.lastScrollTime = currentTime;
         const direction = e.deltaY > 0 ? 1 : -1;
 
-        // Check for unpinning conditions
+        const st = ScrollTrigger.getById('depth-pin');
+        const scrollY = window.scrollY || window.pageYOffset;
+        const isInPinRange = st && scrollY >= st.start && scrollY <= st.end;
+
         const isExitingTop = direction === -1 && this.currentIndex === 0;
         const isExitingBottom = direction === 1 && this.currentIndex === this.listItems.length - 1;
 
-        if (isExitingTop || isExitingBottom) {
+        if ((isExitingTop || isExitingBottom) && isInPinRange) {
+            // pin 구간 내부일 때만 강제 이동
             e.preventDefault();
             this.isAnimating = true;
-            const st = ScrollTrigger.getById('depth-pin');
-
-            if (st && window.gsap && window.ScrollToPlugin) {
-                let scrollY;
-                if (isExitingTop) {
-                    scrollY = st.start - 1; // Scroll to just before the pin starts
-                } else {
-                    // isExitingBottom
-                    scrollY = st.end + 1; // Scroll to just after the pin ends
-                }
+            if (window.gsap && window.ScrollToPlugin) {
+                let targetY = isExitingTop ? st.start - 1 : st.end + 1;
+                const scrollDistance = Math.abs(targetY - scrollY);
+                const duration = scrollDistance > 2000 ? 0.8 : 0.5;
+                const ease = scrollDistance > 2000 ? 'power1.inOut' : 'power2.inOut';
 
                 gsap.to(window, {
-                    scrollTo: scrollY,
-                    duration: 0.5, // 애니메이션 시간을 1.5초로 늘림
-                    ease: 'power2.inOut', // 부드러운 이징 추가
+                    scrollTo: targetY,
+                    duration,
+                    ease,
                     onComplete: () => {
                         setTimeout(() => {
-                            // 딜레이 추가
                             this.isAnimating = false;
-                        }, 500);
+                        }, 200);
                     },
                 });
             } else {
                 setTimeout(() => {
-                    // 딜레이 추가
                     this.isAnimating = false;
-                }, 500);
+                }, 200);
             }
             return;
         }
 
+        // 이하 원본 유지
         e.preventDefault();
         const nextIndex = this.currentIndex + direction;
-
         if (nextIndex >= 0 && nextIndex < this.listItems.length) {
-            // 휠 이벤트 처리에 딜레이 추가
             setTimeout(() => {
                 this.animateTo(nextIndex);
-            }, 100);
+            }, 50);
         }
     }
 
@@ -660,7 +706,7 @@ class WheelNavigation {
         this.listItems[oldIndex].classList.remove('active');
         tl.to(this.listItems[oldIndex], {
             opacity: 0,
-            duration: 0.5,
+            duration: 0.3, // 애니메이션 시간 단축
             ease: 'power2.inOut',
         });
 
@@ -669,10 +715,10 @@ class WheelNavigation {
             this.listItems[newIndex],
             {
                 opacity: 1,
-                duration: 0.5,
+                duration: 0.3, // 애니메이션 시간 단축
                 ease: 'power2.inOut',
             },
-            '>-0.2',
+            '>-0.1',
         );
     }
 }

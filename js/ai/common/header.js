@@ -150,7 +150,7 @@ if (stickyHeaderList && componentSections.length > 0) {
         },
         {
             rootMargin: '-40% 0px',
-            threshold: 0.05,
+            threshold: 0.01,
         },
     );
     componentSections.forEach((section) => {
