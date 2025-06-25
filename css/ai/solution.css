@@ -53,7 +53,6 @@ br.mo-br {
     letter-spacing: var(--letter-spacing-md);
     margin-bottom: 2rem;
     color: var(--white-color);
-    text-shadow: 1px 4px 3.75rem #000, 1px 4px 2.5rem rgba(0, 0, 0, 0.30);
 }
 
 .banner-section h2 img {
@@ -63,13 +62,28 @@ br.mo-br {
     /* box-shadow 보장 */
 }
 
+.banner-section .banner-inner.logo-bk img {
+    display: none;
+}
+
+.banner-section .banner-inner.logo-bk img.k-logo-bk {
+    display: inline-block;
+}
+
+.banner-section .banner-inner.logo-bk h2 {
+    color: var(--black-color);
+}
+
 .banner-section p {
     color: var(--white-color);
     font-size: var(--font-size-3xl);
     font-weight: 700;
     line-height: 1.48;
     letter-spacing: var(--letter-spacing-md);
-    text-shadow: 1px 4px 3.75rem #000, 1px 4px 2.5rem rgba(0, 0, 0, 0.30);
+}
+
+.banner-section .banner-inner.logo-bk p {
+    color: var(--black-color);
 }
 
 .sub-banner {
