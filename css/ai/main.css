@@ -1316,6 +1316,7 @@ br {
 /* News Section (Figma 기반) */
 .news-section {
     padding: 8rem 0 0;
+    position: relative;
 }
 .news-inner {
     max-width: 86.5rem;

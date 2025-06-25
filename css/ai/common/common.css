@@ -768,6 +768,17 @@ body.scroll-lock {
     width: 100%;
     height: 42.688rem;
     background: var(--white-color);
+    position: relative;
+}
+.kt-model-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9.688rem;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    z-index: 1;
 }
 
 .kt-model-inner {
