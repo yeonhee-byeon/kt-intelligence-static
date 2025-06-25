@@ -136,6 +136,9 @@ br.mo-br {
 .content-section ~ .content-section {
     padding: 0 0 10rem;
 }
+.content-section:last-child {
+    padding-bottom: 0;
+}
 
 .content-section.bg-gray-50 {
     padding: 10rem 0;
