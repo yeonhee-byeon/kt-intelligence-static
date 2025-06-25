@@ -980,6 +980,7 @@
 /* auto video */
 .card-list.customer .card-item.auto-video-wrapper img {
     z-index: 1;
+    transition: opacity 0.4s ease-in-out;
 }
 
 .auto-video-wrapper {
@@ -1084,6 +1085,10 @@
     padding: 0 1.25rem !important;
 }
 
+.open-planned.top-banner.mobile-show {
+    display: none !important;
+}
+
 .title-wrapper h3 {
     font-size: var(--font-size-3xl);
     font-weight: 500;
@@ -1167,6 +1172,7 @@
     object-fit: cover;
     display: block;
     border-radius: 20px;
+    cursor: default;
 }
 
 .video-inner span {
