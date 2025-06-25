@@ -816,6 +816,10 @@
     margin-top: 1.25rem;
 }
 
+.tech-detail-article .post-custom p b {
+    font-weight: 600;
+}
+
 .tech-detail-article .post-custom ul {
     margin-top: 1.25rem;
 }
