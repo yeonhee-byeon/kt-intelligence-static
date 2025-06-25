@@ -392,13 +392,45 @@ window.addEventListener('resize', initInnerTabClick);
     // 스크롤 이벤트에 updateActiveItem 추가
     window.addEventListener('scroll', updateActiveItem);
   }
-
   // 초기 로드시 실행
   document.addEventListener('DOMContentLoaded', function () {
     toggleStickyHeader();
   });
 
 })();
+
+
+// 모바일에서 스크롤 시 탭 active 동기화
+function syncMobileTabActiveByScroll() {
+  if (window.innerWidth >= 768) return;
+  const triggers = document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger');
+  const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
+  const scrollY = window.scrollY || window.pageYOffset;
+  let found = false;
+  contents.forEach((content, idx) => {
+    const rect = content.getBoundingClientRect();
+    const top = rect.top + window.scrollY;
+    const bottom = rect.bottom + window.scrollY;
+    const header = document.querySelector('#main-header');
+    const headerHeight = header ? header.offsetHeight : 0;
+    if (!found && scrollY + headerHeight >= top && scrollY + headerHeight < bottom) {
+      triggers.forEach((el, i) => {
+        el.classList.toggle('active', i === idx);
+      });
+      found = true;
+    }
+  });
+  // 어떤 섹션에도 해당하지 않으면 모두 비활성화
+  if (!found) {
+    triggers.forEach((el) => el.classList.remove('active'));
+  }
+}
+window.addEventListener('scroll', syncMobileTabActiveByScroll);
+
+
+
+
+
 
 // ====== K Model 순차 영상 자동재생 (IntersectionObserver + 모바일 분기) ======
 (function () {
@@ -551,6 +583,5 @@ window.addEventListener('resize', initInnerTabClick);
   });
 })();
 // ====== // K Model 순차 영상 자동재생 ======
-
 
 
