@@ -2681,6 +2681,11 @@
     }
 
     /* overgrid */
+    .content-inner .overInPadding {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
     .content-inner.overgrid-inner {
         padding: 0;
     }
@@ -3876,6 +3881,8 @@
 
     .example-side-item .example-side-txts.top-tab-txts {
         margin-bottom: 1.6rem;
+        flex-direction: row;
+        gap: 0;
     }
 
     .example-side-item .example-side-txts dl {
@@ -3901,6 +3908,25 @@
         line-height: 168%;
         /* 26.88px */
         word-break: keep-all;
+    }
+
+    .moTab-swiper-wrapper {
+        overflow-x: hidden;
+    }
+
+    .moTab-swiper-wrapper .mobile-model-tabs.swiper-container {
+        padding-left: 2rem;
+    }
+
+    .moTab-swiper-wrapper .mobile-model-tabs.swiper-container .swiper-slide {
+        flex: 1 0 86%;
+        max-width: unset;
+        min-height: 18.6rem;
+        padding: 2.6rem;
+    }
+
+    .moTab-swiper-wrapper .mobile-model-tabs.swiper-container .swiper-slide:nth-last-child(1) {
+        margin-right: 2rem;
     }
 
     .gpt-benefit-box .box-list {
@@ -3939,6 +3965,10 @@
 
     .flex.example-double .example-con-wrapper {
         padding: 2.6rem 2.6rem 0 2.6rem;
+    }
+
+    .example-con-wrapper.mo-mr20 {
+        margin: 0 2rem;
     }
 
     .example-content {
