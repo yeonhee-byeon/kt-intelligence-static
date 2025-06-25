@@ -2254,13 +2254,22 @@
 }
 
 .example-side-item .example-side-txts.top-tab-txts dl {
-    transition: background 0.5s ease-in;
+    transition: border 0.5s ease-in;
     cursor: pointer;
+    background: #131313;
+}
+
+.example-side-item .example-side-txts.single-box {
+    justify-content: center;
+}
+
+.example-side-item .example-side-txts.single-box dl {
+    width: 42.25rem;
 }
 
 .example-side-item .example-side-txts.top-tab-txts dl.active {
-    border: 1px solid #999;
-    background: #131313;
+    border: 1px solid var(--primary-color);
+
 }
 
 
@@ -2365,28 +2374,22 @@
 }
 
 .example-con-wrapper {
-    border: 1px solid var(--gray-300-color);
     border-radius: 1.25rem;
-    padding: 2.5rem 0 0 0;
+    padding: 0rem 0 0 0;
+    width: 100%;
 }
 
 .example-content {
-    width: 40.625rem;
-    height: 26.75rem;
-    border-top: 1px solid #e6e6e6;
-    border-left: 1px solid #e6e6e6;
-    border-right: 1px solid #e6e6e6;
+    width: 100%;
+    padding: 2.5rem 0;
     margin: 0 auto;
-    border-top-left-radius: 1.25rem;
-    border-top-right-radius: 1.25rem;
-    display: flex;
-    align-items: end;
+
 }
 
 .example-content .example-inner .exam-items {
     padding: 0 2.5rem 2.5rem 2.5rem;
-    width: 39.9rem;
-    height: calc(26.75rem - 2.5rem);
+    width: calc(100% - 0.625rem);
+    height: 23.75rem;
     overflow-y: scroll;
     position: relative;
 }
@@ -2418,7 +2421,7 @@
 }
 
 .example-content .example-inner h3 {
-    margin: 1.875rem 0 1.25rem;
+    margin: 0.875rem 0 1.25rem;
 }
 
 .example-content .example-inner p {
@@ -2441,9 +2444,8 @@
 }
 
 .bg-black-style .example-content {
-    border-top: 1px solid var(--gray-850-color);
-    border-left: 1px solid var(--gray-850-color);
-    border-right: 1px solid var(--gray-850-color);
+    border: 1px solid var(--gray-850-color);
+    border-radius: 1.25rem;
 }
 
 .bg-black-style .example-content .example-inner .exam-items::-webkit-scrollbar-thumb {
@@ -2455,7 +2457,15 @@
 }
 
 .bg-black-style .example-con-wrapper {
-    border: 1px solid var(--gray-850-color);
+    border: 0;
+}
+
+.example-content .example-inner .ex-in-tit {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #131313;
+    padding-bottom: 1rem;
 }
 
 .example-content .example-inner h4 {
@@ -4200,7 +4210,7 @@
     }
 
     .example-content {
-        height: 33.5rem;
+        height: 36.5rem;
     }
 
     .example-content .example-inner .exam-items,
@@ -4238,6 +4248,8 @@
         line-height: 168%;
         /* 26.88px */
     }
+
+    .example-content .example-inner .exam-items {}
 
     .example-content .example-inner .exam-items::-webkit-scrollbar {
         width: 0.4rem;
