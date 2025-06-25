@@ -146,6 +146,11 @@ function initParallaxSectionAnimation() {
     const images = section.querySelectorAll('.parallax-images img');
     const container = section.querySelector('.parallax-container');
 
+    ScrollTrigger.matchMedia({
+        '(max-width: 768px)': function () {
+            gsap.set(images[3], { scaleX: -1 });
+        },
+    });
     // 컨테이너 고정 애니메이션
     const tl = gsap.timeline({
         scrollTrigger: {
@@ -179,7 +184,7 @@ function initParallaxSectionAnimation() {
     // 각 이미지별 패럴렉스 애니메이션
     images.forEach((img, index) => {
         // 이미지별로 다른 속도 적용
-        const speeds = [1, 1, 1, 1.4, 1];
+        const speeds = [1, 1, 1, 1, 1];
         const speed = speeds[index] || 1;
 
         tl.fromTo(
@@ -371,7 +376,6 @@ function initParallaxDepthSectionAnimation() {
                 pin: true,
                 pinSpacing: true,
                 id: 'depth-pin',
-                markers: true,
                 onEnter: () => {
                     disableScroll();
                     const checkComplete = () => {
@@ -393,6 +397,7 @@ function initParallaxDepthSectionAnimation() {
                         wheelNavInstance.destroy();
                         wheelNavInstance = null;
                     }
+                    tl.progress(1);
                 },
                 onEnterBack: () => {
                     disableScroll();
@@ -437,10 +442,8 @@ function initParallaxDepthSectionAnimation() {
                             listItems[0].classList.add('active');
 
                             gsap.set(item, { opacity: 0 });
-                            gsap.to(listItems[0], {
+                            gsap.set(listItems[0], {
                                 opacity: 1,
-                                duration: 0.3,
-                                ease: 'power2.inOut',
                             });
                         });
                     }
@@ -601,13 +604,20 @@ class WheelNavigation {
 
                 gsap.to(window, {
                     scrollTo: scrollY,
-                    duration: 0.5,
+                    duration: 0.5, // 애니메이션 시간을 1.5초로 늘림
+                    ease: 'power2.inOut', // 부드러운 이징 추가
                     onComplete: () => {
-                        this.isAnimating = false;
+                        setTimeout(() => {
+                            // 딜레이 추가
+                            this.isAnimating = false;
+                        }, 500);
                     },
                 });
             } else {
-                this.isAnimating = false;
+                setTimeout(() => {
+                    // 딜레이 추가
+                    this.isAnimating = false;
+                }, 500);
             }
             return;
         }
@@ -616,7 +626,10 @@ class WheelNavigation {
         const nextIndex = this.currentIndex + direction;
 
         if (nextIndex >= 0 && nextIndex < this.listItems.length) {
-            this.animateTo(nextIndex);
+            // 휠 이벤트 처리에 딜레이 추가
+            setTimeout(() => {
+                this.animateTo(nextIndex);
+            }, 100);
         }
     }
 

@@ -987,15 +987,8 @@ br {
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 1.25rem;
-    margin-top: 6.688rem;
-}
-.research-badges {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: fit-content;
     gap: 0.75rem;
-    margin: 3rem auto 0;
+    margin-top: 6.688rem;
 }
 .innovation-badges {
     display: flex;
@@ -1505,6 +1498,12 @@ br {
         flex-direction: column;
         align-items: center;
     }
+    .sub-banner-section .sub-banner-inner > ul > li:nth-child(3) {
+        gap: 2rem;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li.column {
+        gap: 0;
+    }
     .sub-banner-section .sub-banner-inner > ul > li h2 {
         gap: 0;
         margin-bottom: 2.8rem;
@@ -1528,7 +1527,9 @@ br {
         margin-bottom: 5rem;
     }
     .sub-banner-section .sub-banner-inner > ul > li .count-up {
+        min-width: 20.2rem;
         padding: 2.4rem 4rem;
+        font-size: 10rem;
         align-items: center;
         gap: 1.2rem;
     }
@@ -1545,6 +1546,7 @@ br {
         line-height: normal;
         letter-spacing: var(--letter-spacing-md);
         width: auto;
+        line-height: 1;
     }
     .sub-banner-section .sub-banner-inner > ul > li .count-up .countup-digit-container {
         height: 10rem;
@@ -1555,19 +1557,15 @@ br {
     }
 
     /* Parallax Section */
-    .parallax-section {
-        height: 200vh;
-    }
     .parallax-section .parallax-container {
-        padding: 26.7rem 4.5rem;
         flex-direction: column;
-        justify-content: flex-end;
-        gap: 1.25rem;
+        justify-content: center;
+        gap: 2.8rem;
     }
     .parallax-section .parallax-container .parallax-description {
-        font-size: 1.7rem;
-        line-height: 1.56;
+        font-size: 2rem;
         font-weight: 600;
+        line-height: 1.5;
         letter-spacing: var(--letter-spacing-base);
         margin: 0;
     }
@@ -1578,85 +1576,92 @@ br {
         line-height: normal;
     }
     .parallax-section .parallax-container .parallax-titles li.subtitle3 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         font-weight: 700;
         letter-spacing: var(--letter-spacing-md);
     }
     .parallax-section .parallax-container .parallax-titles li.subtitle2 {
-        font-size: 6.4rem;
+        font-size: 6.7rem;
         font-weight: 800;
         letter-spacing: var(--letter-spacing-md);
     }
     .parallax-section .parallax-container .parallax-titles li.subtitle1 {
-        font-size: 8.2rem;
+        font-size: 8.5rem;
         font-weight: 800;
         letter-spacing: var(--letter-spacing-md);
     }
-    .parallax-section .parallax-container .parallax-images {
-        display: flex;
-        flex-direction: column;
-        gap: 1.6rem;
-    }
     .parallax-section .parallax-images img:nth-child(1) {
-        width: 8.4rem;
-        height: 11.2rem;
-        top: 5%;
-        left: -7%;
+        width: 15.8rem;
+        height: 21.1rem;
+        top: 160%;
+        left: 5%;
     }
     .parallax-section .parallax-images img:nth-child(2) {
-        width: 11.2rem;
-        height: 15rem;
-        top: 9%;
-        left: 9%;
+        width: 15.8rem;
+        height: 21.3rem;
+        top: 7.4%;
+        left: 6%;
     }
     .parallax-section .parallax-images img:nth-child(3) {
-        width: 11.5rem;
-        height: 8.6rem;
-        top: 84%;
-        left: -2%;
+        width: 15.8rem;
+        height: 11.8rem;
+        top: 131%;
+        right: -11%;
     }
     .parallax-section .parallax-images img:nth-child(4) {
-        width: 9.4rem;
-        height: 7.1rem;
-        top: 78.7%;
-        left: 19.6%;
+        width: 15.8rem;
+        height: 22.1rem;
+        top: 89.7%;
+        left: -10.3%;
     }
     .parallax-section .parallax-images img:nth-child(5) {
-        width: 9.2rem;
-        height: 12.8rem;
-        top: 14%;
+        width: 15.8rem;
+        height: 22.1rem;
+        top: 48%;
         right: -4%;
     }
-    .parallax-section .parallax-images img:nth-child(6) {
-        width: 9.9rem;
-        height: 13.2rem;
-        top: 74%;
+
+    /* Parallax Depth Section */
+    .parallax-depth-section {
     }
-    .parallax-section .parallax-images img:nth-child(7) {
-        display: none;
+    .parallax-depth-section .component-title {
     }
 
+    /* KData Section */
     .kdata-section {
-        padding: 4rem 0 5.2rem;
+        padding: 5rem 0;
     }
     .kdata-section .kdata-inner {
+        gap: 3.2rem;
         flex-direction: column-reverse;
     }
     .kdata-section .kdata-title {
         font-size: 2rem;
-        font-weight: 500;
+        font-weight: 600;
         line-height: var(--line-height-150);
         letter-spacing: var(--letter-spacing-base);
         gap: 0;
     }
     .kdata-title strong {
         display: contents;
+        font-weight: 600;
     }
     .kdata-icon-group {
         gap: 3.6rem;
     }
+    .kdata-icon-group img {
+        height: 4.8rem;
+    }
+    .kdata-icons-row:before,
+    .kdata-icons-row:after {
+        width: 4rem;
+        height: 10.3rem;
+        margin-top: -3rem;
+    }
 
+    /* KQuality Section */
     .kquality-section {
+        display: none;
         padding: 13.2rem 2rem 10rem;
     }
     .kquality-section .kquality-inner {
@@ -1733,6 +1738,7 @@ br {
     }
 
     .eco-section {
+        display: none;
         padding: 13.2rem 2rem 10rem;
     }
     .eco-section .eco-top {
@@ -1994,6 +2000,7 @@ br {
     }
 
     .usecase-section {
+        display: none;
         padding: 0 2rem 10rem;
         position: relative;
         z-index: 1;
@@ -2006,6 +2013,7 @@ br {
     }
 
     .news-section {
+        display: none;
         padding: 0 2rem;
     }
     .news-inner {
