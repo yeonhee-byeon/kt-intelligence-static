@@ -424,13 +424,10 @@ function initParallaxDepthSectionAnimation() {
                     pinSpacing: true,
                     scrub: 1,
                     onEnter: () => {
-                        console.log('onEnter2');
                         wheelNavInstance = new WheelNavigation(-1);
                     },
                     onLeave: () => {
-                        console.log('onLeave2');
                         if (wheelNavInstance) {
-                            console.log('destroy');
                             wheelNavInstance.destroy();
                             wheelNavInstance = null;
                         }
