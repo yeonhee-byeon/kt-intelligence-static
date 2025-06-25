@@ -216,10 +216,29 @@ function initInnerTabClick() {
       };
     });
   } else {
-    // PC가 아니면 .example-side-txts.top-tab-txts .inner-tab-trigger 클릭 이벤트 제거
     const triggers = document.querySelectorAll('.example-side-txts.top-tab-txts .inner-tab-trigger');
-    triggers.forEach(trigger => {
-      trigger.onclick = null;
+    const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
+    triggers.forEach((trigger, idx) => {
+      trigger.onclick = function () {
+        triggers.forEach((el, i) => {
+          el.classList.toggle('active', i === idx);
+          if (contents[i]) contents[i].classList.toggle('active', i === idx);
+        });
+        // 모바일에서 탭 클릭 시 .tabs__panel__anchor로 스크롤 이동
+        const anchor = document.querySelectorAll('.tabs__panel__anchor')[idx];
+        if (anchor) {
+          // const header = document.querySelector('#main-header');
+          // const headerHeight = header ? header.offsetHeight : 0;
+          const headerHeight = 0; // 고정값 50px 사용
+          const rect = anchor.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const targetPosition = scrollTop + rect.top - headerHeight - 30;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      };
     });
   }
 }
@@ -323,16 +342,19 @@ window.addEventListener('resize', initInnerTabClick);
       item.addEventListener('click', function () {
         const targetId = this.getAttribute('data-section');
         const targetSection = document.getElementById(targetId);
+        const isPC = window.innerWidth >= 768;
+        let headerHeight = isPC
+          ? (document.querySelector('#main-header')?.offsetHeight || 0)
+          : 50; // 모바일은 50px 고정
 
         if (targetSection) {
           isScrolling = true;
-          const headerHeight = document.querySelector('#main-header').offsetHeight;
           const targetRect = targetSection.getBoundingClientRect();
           const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
           const targetPosition = scrollTop + targetRect.top - headerHeight;
 
+          // 첫 번째 li 클릭 시 일정 시간 동안 show 유지
           if (index === 0) {
-            // 첫 번째 li 클릭 시 일정 시간 동안 show 유지
             forceShowStickyHeader = true;
             stickyHeader.classList.add('show');
             window.scrollTo({
@@ -369,10 +391,11 @@ window.addEventListener('resize', initInnerTabClick);
     // 스크롤 시 현재 보이는 섹션에 해당하는 li에 active 클래스 추가
     function updateActiveItem() {
       if (isScrolling) return; // 스크롤 중에는 업데이트하지 않음
-
       const sections = Array.from(document.querySelectorAll('.tabs__panel__anchor'));
-      const headerHeight = document.querySelector('#main-header').offsetHeight;
-
+      const isPC = window.innerWidth >= 768;
+      const headerHeight = isPC
+        ? (document.querySelector('#main-header')?.offsetHeight || 0)
+        : 50;
       sections.forEach(section => {
         const rect = section.getBoundingClientRect();
         // 섹션이 헤더 아래에 위치할 때 active
