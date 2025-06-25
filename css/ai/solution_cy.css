@@ -3656,6 +3656,10 @@
         padding-bottom: 0rem !important;
     }
 
+    .pattern-graph.shape-wrapper {
+        margin-top: 4rem;
+    }
+
     .tab-section.mo-pb-60 {
         padding-bottom: 6rem;
     }
@@ -3664,7 +3668,7 @@
         padding-top: 0;
     }
 
-    .content-section.tabs-component .bg-bright-fafafa {
+    .agent-pattern-diagram .img .content-section.tabs-component .bg-bright-fafafa {
         background: linear-gradient(180deg, #fafafa 1.55%, #fff 6.13%);
     }
 
