@@ -147,6 +147,11 @@ br {
 .sub-banner-section .sub-banner-inner > ul > li:nth-child(3) {
     gap: 5.5rem;
 }
+.sub-banner-section .sub-banner-inner > ul > li > h2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
 .sub-banner-section .sub-banner-inner > ul > li > h2 > span {
     display: block;
     color: var(--white-color);
@@ -175,7 +180,7 @@ br {
     border-radius: 1.25rem;
     padding: 2.5rem;
 }
-.sub-banner-section .sub-banner-inner > ul > li .count-up span {
+.sub-banner-section .sub-banner-inner > ul > li .count-up > span {
     color: var(--white-color);
     font-size: var(--font-size-3xl);
     font-weight: 600;
@@ -183,31 +188,6 @@ br {
     letter-spacing: 0.38px;
     padding: 0.5rem 1rem;
 }
-/* .rolling-number-wrap {
-    height: 12.5rem;
-    overflow: hidden;
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.rolling-number-wrap .rolling-number {
-    color: #fff;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    transition: transform 1s cubic-bezier(0.33, 1, 0.68, 1);
-    will-change: transform;
-}
-.rolling-number-wrap .rolling-number span {
-    font-size: 12.5rem;
-    font-weight: 600;
-    line-height: 100%;
-    letter-spacing: var(--letter-spacing-md);
-    display: block;
-    text-align: center;
-} */
 .sub-banner-section .sub-banner-inner > ul > li .count-up .rolling-number {
     display: flex;
     color: var(--white-color);
@@ -230,6 +210,7 @@ br {
     will-change: transform;
 }
 .sub-banner-section .sub-banner-inner > ul > li .count-up .countup-digit span {
+    color: var(--white-color);
     font-size: 12.5rem;
     font-weight: 600;
     line-height: 1;
@@ -238,24 +219,6 @@ br {
     text-align: center;
     width: 7.5rem; /* 자릿수 폭 고정 (디자인에 따라 조정) */
     padding: 0;
-}
-
-.sub-banner-section .sub-banner-inner > ul > li .sub-banner-item6 h2 {
-    line-height: 0;
-}
-.sub-banner-section .sub-banner-inner > ul > li h2 * {
-    text-align: center;
-    font-size: 4rem;
-    font-weight: 400;
-    line-height: var(--line-height-172);
-    letter-spacing: var(--letter-spacing-lg);
-    color: var(--white-color);
-    height: 6.875rem;
-}
-.sub-banner-section .sub-banner-inner > ul > li h2.sub-banner-item6-second * {
-    color: var(--white-color);
-    font-weight: 700;
-    font-size: 4rem;
 }
 
 /* Info Case Section */
@@ -1534,74 +1497,64 @@ br {
         white-space: nowrap;
     }
 
-    .sub-banner-video-section {
-    }
-    .sub-banner-video-section > div > video {
-        object-fit: contain;
-    }
-    .sub-banner-video {
-        display: none;
-    }
-    .sub-banner-section .sub-banner-inner > video.mobile-sub-banner-video {
-        display: block;
-    }
-    .sub-banner-section {
-    }
-    .sub-banner-section .sub-banner-inner > ul > li > * {
-        font-size: 5.8rem;
-        line-height: 1.18;
-        letter-spacing: -0.02em;
-    }
-    .sub-banner-section .sub-banner-inner > ul > li h2 * {
-        font-size: 2.6rem;
-        font-weight: 400;
-        line-height: var(--line-height-152);
-        letter-spacing: -0.005em;
-    }
-    .sub-banner-section .sub-banner-inner > ul > li h2.sub-banner-item6-second * {
-        font-size: 3.6rem;
-        font-weight: 700;
-        line-height: 1.42;
-        letter-spacing: 0.15em;
+    /* Sub Banner Section */
+    .sub-banner-section .sub-banner-inner > ul {
+        gap: 0;
     }
     .sub-banner-section .sub-banner-inner > ul > li {
         flex-direction: column;
+        align-items: center;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li h2 {
+        gap: 0;
+        margin-bottom: 2.8rem;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li h2 span {
+        display: inline;
+        font-size: 3.6rem;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: normal;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li > p {
+        color: var(--gray-600-color);
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: var(--letter-spacing-base);
+        text-align: center;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li > p:last-child {
+        margin-bottom: 5rem;
     }
     .sub-banner-section .sub-banner-inner > ul > li .count-up {
-        gap: 1.6rem;
-        font-size: 11rem;
-        line-height: 1;
+        padding: 2.4rem 4rem;
+        align-items: center;
+        gap: 1.2rem;
     }
-    .sub-banner-section .sub-banner-inner > ul > li .count-up span {
-        font-size: 2.6rem;
-        font-weight: 600;
-        line-height: 1.42;
-    }
-    .sub-banner-section .sub-banner-inner > ul > li .rolling-number {
-        height: 11rem;
-    }
-    .sub-banner-section .sub-banner-inner > ul > li .rolling-number .count-wrap div {
-        height: 11rem;
-    }
-    .sub-banner-section .sub-banner-inner > ul > li .rolling-number .number-wrap li {
-        font-size: 11rem;
-        line-height: 1;
-    }
-    .sub-banner-section .sub-banner-inner > ul > li .sub-banner-item6 {
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-    }
-    .sub-banner-section .sub-banner-inner > ul > li .sub-banner-item6 h2 {
-        font-size: 2.6rem;
-        font-weight: 400;
-        line-height: 1.4;
-        letter-spacing: -0.005em;
-    }
-    .sub-banner-section .sub-banner-inner > img {
-        height: 54%;
+    .sub-banner-section .sub-banner-inner > ul > li .count-up > span {
+        padding: 0.8rem 1.6rem;
+        font-size: 1.6rem;
+        line-height: normal;
+        letter-spacing: var(--letter-spacing-base);
     }
 
+    .sub-banner-section .sub-banner-inner > ul > li .count-up .rolling-number {
+        display: flex;
+        font-size: 10rem;
+        line-height: normal;
+        letter-spacing: var(--letter-spacing-md);
+        width: auto;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li .count-up .countup-digit-container {
+        height: 10rem;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li .count-up .countup-digit span {
+        font-size: 10rem;
+        width: auto;
+    }
+
+    /* Parallax Section */
     .parallax-section {
         height: 200vh;
     }

@@ -65,7 +65,7 @@ window.addEventListener('scroll', () => {
 });
 
 // 구성요소 영역에서 dark-header 클래스 토글
-const depthSection = document.querySelector('.parallax-depth-section');
+const depthSection = document.querySelector('.parallax-depth-section .component-content');
 const kqualitySection = document.querySelector('.kquality-section');
 if (depthSection) {
     const observer = new IntersectionObserver(

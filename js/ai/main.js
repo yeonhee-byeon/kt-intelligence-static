@@ -269,6 +269,34 @@ const imagePaths = [
     },
 ];
 
+function disableScroll() {
+    document.addEventListener('wheel', preventDefault, { passive: false });
+    document.addEventListener('touchmove', preventDefault, { passive: false });
+    document.addEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
+    // 추가 이벤트들
+    document.addEventListener('scroll', preventDefault, { passive: false });
+    document.addEventListener('DOMMouseScroll', preventDefault, { passive: false }); // Firefox
+}
+
+function enableScroll() {
+    document.removeEventListener('wheel', preventDefault);
+    document.removeEventListener('touchmove', preventDefault);
+    document.removeEventListener('keydown', preventDefaultForScrollKeys);
+    document.removeEventListener('scroll', preventDefault);
+    document.removeEventListener('DOMMouseScroll', preventDefault);
+}
+
+function preventDefault(e) {
+    e.preventDefault();
+}
+
+function preventDefaultForScrollKeys(e) {
+    const keys = [32, 33, 34, 35, 36, 37, 38, 39, 40]; // 스크롤 관련 키들
+    if (keys.includes(e.keyCode)) {
+        e.preventDefault();
+    }
+}
+
 function initParallaxDepthSectionAnimation() {
     const section = document.querySelector('.parallax-depth-section .component-content');
     if (!section || !window.gsap || !window.ScrollTrigger) return;
@@ -339,11 +367,13 @@ function initParallaxDepthSectionAnimation() {
             ScrollTrigger.create({
                 trigger: '.component-content',
                 start: 'top top',
-                end: '+=1200', // 충분한 스크롤 공간 확보
+                end: '+=8000', // 충분한 스크롤 공간 확보
                 pin: true,
                 pinSpacing: true,
                 id: 'depth-pin',
+                markers: true,
                 onEnter: () => {
+                    disableScroll();
                     const checkComplete = () => {
                         if (tlComplete) {
                             if (wheelNavInstance) {
@@ -358,12 +388,14 @@ function initParallaxDepthSectionAnimation() {
                     requestAnimationFrame(checkComplete);
                 },
                 onLeave: () => {
+                    enableScroll();
                     if (wheelNavInstance) {
                         wheelNavInstance.destroy();
                         wheelNavInstance = null;
                     }
                 },
                 onEnterBack: () => {
+                    disableScroll();
                     const lastIndex =
                         document.querySelectorAll('.parallax-depth-section .list-wrap ul li')
                             .length - 1;
@@ -374,6 +406,7 @@ function initParallaxDepthSectionAnimation() {
                     wheelNavInstance = new WheelNavigation(lastIndex);
                 },
                 onLeaveBack: () => {
+                    enableScroll();
                     if (wheelNavInstance) {
                         wheelNavInstance.destroy();
                         wheelNavInstance = null;
@@ -485,7 +518,6 @@ function initParallaxDepthSectionAnimation() {
         // wheelNavInstance = new WheelNavigation(activeIndex);
     });
 }
-
 class WheelNavigation {
     constructor(startIndex = 0) {
         this.listItems = document.querySelectorAll('.list-wrap ul li');
