@@ -105,25 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // auto video
-document.addEventListener('DOMContentLoaded', function () {
-  const videoWrappers = document.querySelectorAll('.auto-video-wrapper');
 
-  videoWrappers.forEach(wrapper => {
-    const video = wrapper.querySelector('video');
-    if (video) {
-      wrapper.addEventListener('mouseenter', () => {
-        video.currentTime = 0;
-        video.play().catch(error => {
-          console.error("Video play failed:", error);
-        });
-      });
-
-      wrapper.addEventListener('mouseleave', () => {
-        video.pause();
-      });
-    }
-  });
-});
 
 //arcodian
 (function () {
@@ -298,3 +280,155 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 })();
+
+// ====== K Model 순차 영상 자동재생 (IntersectionObserver + 모바일 분기) ======
+(function () {
+  // 유틸: 이미지/비디오 show/hide
+  function showVideo(wrapper) {
+    const img = wrapper.querySelector('img');
+    const videoWrap = wrapper.querySelector('.video-play-wrapper');
+    if (img) img.style.opacity = 0;
+    if (videoWrap) videoWrap.style.opacity = 1;
+  }
+  function showImage(wrapper) {
+    const img = wrapper.querySelector('img');
+    const videoWrap = wrapper.querySelector('.video-play-wrapper');
+    if (img) img.style.opacity = 1;
+    if (videoWrap) videoWrap.style.opacity = 0;
+  }
+
+  // 순차 재생 컨트롤러 (PC)
+  function SequentialVideoPlayer(container) {
+    this.container = container;
+    this.wrappers = Array.from(container.querySelectorAll('.auto-video-wrapper'));
+    this.videos = this.wrappers.map(w => w.querySelector('video'));
+    this.currentIdx = 0;
+    this.isPlaying = false;
+    this.loop = true;
+    this._onEnded = this._onEnded.bind(this);
+  }
+  SequentialVideoPlayer.prototype.play = function () {
+    if (this.isPlaying || this.wrappers.length === 0) return;
+    this.isPlaying = true;
+    this.currentIdx = 0;
+    this._playCurrent();
+  };
+  SequentialVideoPlayer.prototype._playCurrent = function () {
+    this.wrappers.forEach(showImage);
+    const wrapper = this.wrappers[this.currentIdx];
+    const video = this.videos[this.currentIdx];
+    showVideo(wrapper);
+    video.currentTime = 0;
+    video.loop = false;
+    video.removeEventListener('ended', this._onEnded);
+    video.addEventListener('ended', this._onEnded);
+    video.play().catch(() => { });
+  };
+  SequentialVideoPlayer.prototype._onEnded = function () {
+    showImage(this.wrappers[this.currentIdx]);
+    this.currentIdx++;
+    if (this.currentIdx >= this.videos.length) {
+      if (this.loop) {
+        this.currentIdx = 0;
+      } else {
+        this.isPlaying = false;
+        return;
+      }
+    }
+    this._playCurrent();
+  };
+  SequentialVideoPlayer.prototype.stop = function () {
+    this.isPlaying = false;
+    this.videos.forEach((video, idx) => {
+      video.pause();
+      video.currentTime = 0;
+      showImage(this.wrappers[idx]);
+      video.removeEventListener('ended', this._onEnded);
+    });
+  };
+
+  // 모바일: 모든 영상 동시 무한재생
+  function playAllVideos(wrappers, videos) {
+    wrappers.forEach(showVideo);
+    videos.forEach(video => {
+      video.loop = true;
+      video.currentTime = 0;
+      video.play().catch(() => { });
+    });
+  }
+  function stopAllVideos(wrappers, videos) {
+    videos.forEach((video, idx) => {
+      video.pause();
+      video.currentTime = 0;
+      showImage(wrappers[idx]);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('video-play-trigger-01');
+    if (!container) return;
+    const wrappers = Array.from(container.querySelectorAll('.auto-video-wrapper'));
+    const videos = wrappers.map(w => w.querySelector('video'));
+    wrappers.forEach(showImage);
+
+    // PC: 기존 IntersectionObserver 순차재생
+    // 모바일: AOS 등장 후 전체 영상 무한재생
+    function isMobile() {
+      return window.innerWidth <= 767;
+    }
+
+    let observer;
+    let aosIn = false;
+
+    function handleEnter() {
+      if (isMobile()) {
+        playAllVideos(wrappers, videos);
+        aosIn = true;
+      } else {
+        player.play();
+      }
+    }
+    function handleLeave() {
+      if (isMobile()) {
+        stopAllVideos(wrappers, videos);
+        aosIn = false;
+      } else {
+        player.stop();
+      }
+    }
+
+    // PC용 순차재생 인스턴스
+    const player = new SequentialVideoPlayer(container);
+
+    // 옵저버 등록 (PC/모바일 공통)
+    observer = new window.IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            handleEnter();
+          } else {
+            handleLeave();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(container);
+
+    // 모바일: AOS 등장 후 바로 재생 (IntersectionObserver가 즉시 트리거됨)
+    // 리사이즈 대응: PC<->모바일 전환 시 상태 초기화
+    window.addEventListener('resize', function () {
+      if (isMobile()) {
+        if (aosIn) {
+          playAllVideos(wrappers, videos);
+        } else {
+          stopAllVideos(wrappers, videos);
+        }
+      } else {
+        stopAllVideos(wrappers, videos);
+        player.stop();
+      }
+    });
+  });
+})();
+// ====== // K Model 순차 영상 자동재생 ======
