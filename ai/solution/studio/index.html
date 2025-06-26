@@ -1,141 +1,219 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- SEO -->
+        <link rel="icon" href="/resource/images/ai/KT_16.ico" />
+        <title>K Studio | 누구나 쉽게 활용하는 생성형 AI 플랫폼 - K Intelligence</title>
+        <meta
+            name="description"
+            content="KT의 K Studio는 생성형 AI 도입 과정을 간소화한 올인원 플랫폼으로, 맞춤형 AI 서비스를 쉽고 빠르게 구축하고 운영할 수 있습니다."
+        />
+        <meta
+            name="keywords"
+            content="K Studio, 생성형 AI 플랫폼, KT AI, AI 개발 툴, 노코드 AI, K Intelligence, AI 서비스 제작, 인터페이스 스튜디오, 누구나 쓰는 AI, 한국형 AI 플랫폼"
+        />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- SEO -->
-    <link rel="icon" href="/resource/images/ai/KT_16.ico" />
-    <title>K Studio | 누구나 쉽게 활용하는 생성형 AI 플랫폼 - K Intelligence</title>
-    <meta name="description" content="KT의 K Studio는 생성형 AI 도입 과정을 간소화한 올인원 플랫폼으로, 맞춤형 AI 서비스를 쉽고 빠르게 구축하고 운영할 수 있습니다.">
-    <meta name="keywords"
-        content="K Studio, 생성형 AI 플랫폼, KT AI, AI 개발 툴, 노코드 AI, K Intelligence, AI 서비스 제작, 인터페이스 스튜디오, 누구나 쓰는 AI, 한국형 AI 플랫폼">
+        <!-- SNS 공유용 -->
+        <meta
+            property="og:title"
+            content="K Studio | 누구나 쉽게 활용하는 생성형 AI 플랫폼 - K Intelligence"
+        />
+        <meta
+            property="og:description"
+            content="KT의 K Studio는 생성형 AI 도입 과정을 간소화한 올인원 플랫폼으로, 맞춤형 AI 서비스를 쉽고 빠르게 구축하고 운영할 수 있습니다."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="KT AI" />
 
-    <!-- SNS 공유용 -->
-    <meta property="og:title" content="K Studio | 누구나 쉽게 활용하는 생성형 AI 플랫폼 - K Intelligence">
-    <meta property="og:description"
-        content="KT의 K Studio는 생성형 AI 도입 과정을 간소화한 올인원 플랫폼으로, 맞춤형 AI 서비스를 쉽고 빠르게 구축하고 운영할 수 있습니다.">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="KT AI">
+        <!-- Common CSS -->
+        <link rel="stylesheet" href="/css/ai/common/common.css" />
+        <!-- Reset CSS -->
+        <link rel="stylesheet" href="/css/ai/common/reset.css" />
+        <!-- AOS CSS -->
+        <link rel="stylesheet" href="/css/ai/common/aos.css" />
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="/css/ai/solution.css" />
+        <link rel="stylesheet" href="/css/ai/solution_cy.css" />
+    </head>
 
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="/css/ai/common/common.css" />
-    <!-- Reset CSS -->
-    <link rel="stylesheet" href="/css/ai/common/reset.css" />
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="/css/ai/common/aos.css" />
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/ai/solution.css" />
-    <link rel="stylesheet" href="/css/ai/solution_cy.css" />
-</head>
+    <body>
+        <!-- Header -->
+        <header id="main-header" class="header">
+            <div class="header-inner"></div>
+        </header>
 
-<body>
-    <!-- Header -->
-    <header id="main-header" class="header">
-        <div class="header-inner"></div>
-    </header>
-
-    <!-- Banner Section -->
-    <section id="banner-section" class="banner-section">
-        <img class="pc-only bg-topBanner" src="/resource/images/ai/solution/studio/studio-banner.png" alt="banner"
-            width="100%" height="100%" />
-        <img class="mobile-show" src="/resource/images/ai/solution/studio/mo-banner-bg.png" alt="banner" width="100%"
-            height="100%" />
-        <div class="banner-inner logo-bk">
-            <h2>
-                <img src="/resource/images/ai/solution/ico-kon.svg" alt="logo" width="53" height="52" />
-                <img src="/resource/images/ai/solution/ico-kon_bk.svg" alt="logo" width="53" height="52"
-                    class="k-logo-bk">
-                Studio
-            </h2>
-            <p>
-                K Studio는 생성형 AI 도입의 복잡한 과정을 간소화한 All-in-One 플랫폼으로 <br>
-                맞춤형 AI를 쉽고 빠르게 구축하고 운영할 수 있습니다.
-            </p>
-        </div>
-    </section>
-
-    <div class="content-wrapper">
-        <section class="content-section">
-            <div class="content-inner">
-                <div class="title-wrapper">
-                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Customer
-                        Value</span>
-                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        생성형 AI 도입의 한계를 해결한 플랫폼
-                    </h2>
-                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        No Code 학습 환경과 Drag&Drop 방식으로 누구나 쉽게 생성형 AI를 구현할 수 있으며,<br>검증 가능한 RAG모델, 다양한 학습 방식, 오픈소스 연동 및
-                        Playground 제공으로 고객 맞춤형 AI 구축이 가능합니다.
-                    </p>
-                </div>
-                <div class="diamond-wrapper">
-                    <ul class="box-list white-box pc-only">
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="box-item">
-                                <h3>누구나 쉽게 만드는 생성형 AI</h3>
-                                <p>
-                                    No Code와 Drag&Drop 방식으로, 비전문가도 손쉽게 생성형 AI를
-                                    <br />구축하고 활용할 수 있습니다.
-                                </p>
-                            </div>
-                        </li>
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="box-item">
-                                <h3>유연한 LLM 학습 환경</h3>
-                                <p>
-                                    Fine-Tuning, PEFT, RLHF 등 다양한 고도화 학습 방식으로 조직
-                                    <br />
-                                    특화 요구에 유연하게 대응합니다.
-                                </p>
-                            </div>
-                        </li>
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="box-item">
-                                <h3>간편한 모델 연동과 실험 환경</h3>
-                                <p>
-                                    Hugging Face에 등록된 오픈소스 모델을 등록, 관리할 수 있는<br>
-                                    카탈로그와 RAG 성능 검증을 위한 Playground를 제공합니다.
-                                </p>
-                            </div>
-                        </li>
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="box-item">
-                                <h3>RAG 모델 기반 맞춤형 학습</h3>
-                                <p>
-                                    국내 RAG 리더보드로 검증받은 성능 우위 모델 기반으로, <br>
-                                    고객 맞춤형 학습과 운영 사이클을 제공합니다.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="shape-wrapper" data-aos="fade-up" data-aos-duration="800"
-                        data-aos-easing="ease-out-cubic">
-                        <img src="/resource/images/ai/solution/studio/studio-graph01.png" alt="누구나 쉽게 만드는 생성형 AI No Code와 Drag&Drop 방식으로, 비전문가도 손쉽게 생성형 AI를 구축하고 활용할 수 있습니다. 검증된 RAG 기반 맞춤형 학습 국내 RAG 리더보드로 검증받은 성능 우위 모델 기반으로, 
-고객 맞춤형 학습과 운영 사이클을 제공합니다. 유연한 LLM 학습 환경 Fine-Tuning, PEFT, RLHF 등 다양한 고도화 학습 방식으로 조직 특화 요구에 유연하게 대응합니다. 간편한 모델 연동과 실험 환경 Hugging Face에 등록된 오픈소스 모델을 등록, 관리할 수 있는
-카탈로그와 RAG 성능 검증을 위한 Playground를 제공합니다.">
-                    </div>
-                </div>
+        <!-- Banner Section -->
+        <section id="banner-section" class="banner-section">
+            <img
+                class="pc-only bg-topBanner"
+                src="/resource/images/ai/solution/studio/studio-banner.png"
+                alt="banner"
+                width="100%"
+                height="100%"
+            />
+            <img
+                class="mobile-show"
+                src="/resource/images/ai/solution/studio/mo-banner-bg.png"
+                alt="banner"
+                width="100%"
+                height="100%"
+            />
+            <div class="banner-inner logo-bk">
+                <h2>
+                    <img
+                        src="/resource/images/ai/solution/ico-kon.svg"
+                        alt="logo"
+                        width="53"
+                        height="52"
+                    />
+                    <img
+                        src="/resource/images/ai/solution/ico-kon_bk.svg"
+                        alt="logo"
+                        width="53"
+                        height="52"
+                        class="k-logo-bk"
+                    />
+                    Studio
+                </h2>
+                <p>
+                    K Studio는 생성형 AI 도입의 복잡한 과정을 간소화한 All-in-One 플랫폼으로 <br />
+                    맞춤형 AI를 쉽고 빠르게 구축하고 운영할 수 있습니다.
+                </p>
             </div>
         </section>
 
-        <section class="content-section">
-            <div class="content-inner">
-                <div class="title-wrapper">
-                    <span data-aos="fade-up" data-aos-duration="800"
-                        data-aos-easing="ease-out-cubic">Architecture</span>
-                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        K Studio 구조
-                    </h2>
-                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        고객의 니즈에 맞춰 Public, Multi/Hybrid <br class="mo-br">
-                        클라우드 등 다양한 인프라 환경에서 <br class="mo-br">
-                        AI Full Stack을 제공합니다.
-                    </p>
+        <div class="content-wrapper">
+            <section class="content-section">
+                <div class="content-inner">
+                    <div class="title-wrapper">
+                        <span
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                            >Customer Value</span
+                        >
+                        <h2
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            생성형 AI 도입의 한계를 해결한 플랫폼
+                        </h2>
+                        <p
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            No Code 학습 환경과 Drag&Drop 방식으로 누구나 쉽게 생성형 AI를 구현할 수
+                            있으며,<br />검증 가능한 RAG모델, 다양한 학습 방식, 오픈소스 연동 및
+                            Playground 제공으로 고객 맞춤형 AI 구축이 가능합니다.
+                        </p>
+                    </div>
+                    <div class="diamond-wrapper">
+                        <ul class="box-list white-box pc-only">
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="box-item">
+                                    <h3>누구나 쉽게 만드는 생성형 AI</h3>
+                                    <p>
+                                        No Code와 Drag&Drop 방식으로, 비전문가도 손쉽게 생성형 AI를
+                                        <br />구축하고 활용할 수 있습니다.
+                                    </p>
+                                </div>
+                            </li>
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="box-item">
+                                    <h3>유연한 LLM 학습 환경</h3>
+                                    <p>
+                                        Fine-Tuning, PEFT, RLHF 등 다양한 고도화 학습 방식으로 조직
+                                        <br />
+                                        특화 요구에 유연하게 대응합니다.
+                                    </p>
+                                </div>
+                            </li>
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="box-item">
+                                    <h3>간편한 모델 연동과 실험 환경</h3>
+                                    <p>
+                                        Hugging Face에 등록된 오픈소스 모델을 등록, 관리할 수
+                                        있는<br />
+                                        카탈로그와 RAG 성능 검증을 위한 Playground를 제공합니다.
+                                    </p>
+                                </div>
+                            </li>
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="box-item">
+                                    <h3>RAG 모델 기반 맞춤형 학습</h3>
+                                    <p>
+                                        국내 RAG 리더보드로 검증받은 성능 우위 모델 기반으로, <br />
+                                        고객 맞춤형 학습과 운영 사이클을 제공합니다.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div
+                            class="shape-wrapper"
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            <img
+                                src="/resource/images/ai/solution/studio/studio-graph01.png"
+                                alt="누구나 쉽게 만드는 생성형 AI No Code와 Drag&Drop 방식으로, 비전문가도 손쉽게 생성형 AI를 구축하고 활용할 수 있습니다. 검증된 RAG 기반 맞춤형 학습 국내 RAG 리더보드로 검증받은 성능 우위 모델 기반으로, 
+고객 맞춤형 학습과 운영 사이클을 제공합니다. 유연한 LLM 학습 환경 Fine-Tuning, PEFT, RLHF 등 다양한 고도화 학습 방식으로 조직 특화 요구에 유연하게 대응합니다. 간편한 모델 연동과 실험 환경 Hugging Face에 등록된 오픈소스 모델을 등록, 관리할 수 있는
+카탈로그와 RAG 성능 검증을 위한 Playground를 제공합니다."
+                            />
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <div class="table-advantage-wrapper">
-                    <!-- <div class="table-advantage-item">
+            <section class="content-section">
+                <div class="content-inner">
+                    <div class="title-wrapper">
+                        <span
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                            >Architecture</span
+                        >
+                        <h2
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            K Studio 구조
+                        </h2>
+                        <p
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            고객의 니즈에 맞춰 Public, Multi/Hybrid <br class="mo-br" />
+                            클라우드 등 다양한 인프라 환경에서 <br class="mo-br" />
+                            AI Full Stack을 제공합니다.
+                        </p>
+                    </div>
+
+                    <div class="table-advantage-wrapper">
+                        <!-- <div class="table-advantage-item">
                             <div
                                 class="table-advantage-item-inner"
                                 data-aos="fade-up"
@@ -264,135 +342,160 @@
                             </div>
                         </div> -->
 
-                    <div class="architecture-diagram pc-only" data-aos="fade-up" data-aos-duration="800"
-                        data-aos-easing="ease-out-cubic">
-                        <!-- Table 형태 리스트 -->
-                        <div class="table-list">
-                            <div class="table-row table-row-2">
-                                <div class="table-col">
-                                    <div class="table-title top">
-                                        <strong>Service</strong><span>서비스 구성을<br />
-                                            위한 환경 및<br />
-                                            Tool 제공</span>
-                                    </div>
-                                </div>
-                                <div class="table-col-2">
+                        <div
+                            class="architecture-diagram pc-only"
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            <!-- Table 형태 리스트 -->
+                            <div class="table-list">
+                                <div class="table-row table-row-2">
                                     <div class="table-col">
-                                        <div class="table-item center text">
-                                            <ul>
-                                                <li>지식형 챗봇</li>
-                                                <li>워크플로우 챗봇</li>
-                                                <li>AICC 연계 상담 요약</li>
-                                                <li>보고서 초안 생성</li>
-                                                <li>변환/번역</li>
-                                                <li>마케팅 홍보</li>
-                                            </ul>
+                                        <div class="table-title top">
+                                            <strong>Service</strong
+                                            ><span
+                                                >서비스 구성을<br />
+                                                위한 환경 및<br />
+                                                Tool 제공</span
+                                            >
                                         </div>
                                     </div>
+                                    <div class="table-col-2">
+                                        <div class="table-col">
+                                            <div class="table-item center text">
+                                                <ul>
+                                                    <li>지식형 챗봇</li>
+                                                    <li>워크플로우 챗봇</li>
+                                                    <li>AICC 연계 상담 요약</li>
+                                                    <li>보고서 초안 생성</li>
+                                                    <li>변환/번역</li>
+                                                    <li>마케팅 홍보</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="table-col">
+                                            <div class="table-item center row">
+                                                <h2>Service Builder</h2>
+                                                <ul>
+                                                    <li>워크플로우 기반 Agent 생성</li>
+                                                    <li>No Code 기반 Drag&Drop 방식 구성</li>
+                                                    <li>Custom API 제공</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-row table-row-2">
                                     <div class="table-col">
-                                        <div class="table-item center row">
-                                            <h2>Service Builder</h2>
-                                            <ul>
-                                                <li>워크플로우 기반 Agent 생성</li>
-                                                <li>No Code 기반 Drag&Drop 방식 구성</li>
-                                                <li>Custom API 제공</li>
-                                            </ul>
+                                        <div class="table-title top">
+                                            <strong>Platform</strong>
+                                            <span>
+                                                고객사 전용 모델의 최적화를 위한<br />
+                                                AI Platform
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="table-col-2">
+                                        <div class="table-col long2">
+                                            <div class="table-item">
+                                                <h2>LLM</h2>
+                                                <p>
+                                                    AI 모델 개발 및 관리를 위한<br />
+                                                    종합 솔루션
+                                                </p>
+                                                <ul>
+                                                    <li>다양한 LLM 모델 지원</li>
+                                                    <li>모델 학습 및 미세조정(Fine-tuning) 기능</li>
+                                                    <li>모델 버전 관리 및 배포 자동화(예정)</li>
+                                                    <li>성능 모니터링 및 최적화 도구</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="table-col long2">
+                                            <div class="table-item">
+                                                <h3>RAG</h3>
+                                                <p>정확하고 맥락에 맞는 AI 응답 생성</p>
+                                                <ul>
+                                                    <li>효율적인 데이터 인덱싱 및 검색 기능</li>
+                                                    <li>컨텍스트 기반 정보 검색 및 추출</li>
+                                                    <li>AI 모델과 검색기 엔진의 통합</li>
+                                                    <li>사용자 정의 지식베이스 구축 및 관리</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="table-col long2">
+                                            <div class="table-item">
+                                                <h3>LLMOps</h3>
+                                                <p>직관적인 UI기반 AI 개발/운영 플랫폼</p>
+                                                <ul>
+                                                    <li>
+                                                        웹 기반 사용자 인터페이스로<br />
+                                                        쉬운 접근성
+                                                    </li>
+                                                    <li>AI 모델의 원활한 배표 및 스케일링</li>
+                                                    <li>
+                                                        실시간 협업 도구 및 프로젝트<br />
+                                                        관리 기능
+                                                    </li>
+                                                    <li>데이터 보안 및 개인정보 보호</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="table-row table-row-2">
-                                <div class="table-col">
-                                    <div class="table-title top">
-                                        <strong>Platform</strong>
-                                        <span>
-                                            고객사 전용 모델의 최적화를 위한<br />
-                                            AI Platform
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="table-col-2">
-                                    <div class="table-col long2">
-                                        <div class="table-item">
-                                            <h2>LLM</h2>
-                                            <p>
-                                                AI 모델 개발 및 관리를 위한<br />
-                                                종합 솔루션
-                                            </p>
-                                            <ul>
-                                                <li>다양한 LLM 모델 지원</li>
-                                                <li>모델 학습 및 미세조정(Fine-tuning) 기능</li>
-                                                <li>모델 버전 관리 및 배포 자동화(예정)</li>
-                                                <li>성능 모니터링 및 최적화 도구</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="table-col long2">
-                                        <div class="table-item">
-                                            <h3>RAG</h3>
-                                            <p>정확하고 맥락에 맞는 AI 응답 생성</p>
-                                            <ul>
-                                                <li>효율적인 데이터 인덱싱 및 검색 기능</li>
-                                                <li>컨텍스트 기반 정보 검색 및 추출</li>
-                                                <li>AI 모델과 검색기 엔진의 통합</li>
-                                                <li>사용자 정의 지식베이스 구축 및 관리</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="table-col long2">
-                                        <div class="table-item">
-                                            <h3>LLMOps</h3>
-                                            <p>직관적인 UI기반 AI 개발/운영 플랫폼</p>
-                                            <ul>
-                                                <li>
-                                                    웹 기반 사용자 인터페이스로<br />
-                                                    쉬운 접근성
-                                                </li>
-                                                <li>AI 모델의 원활한 배표 및 스케일링</li>
-                                                <li>
-                                                    실시간 협업 도구 및 프로젝트<br />
-                                                    관리 기능
-                                                </li>
-                                                <li>데이터 보안 및 개인정보 보호</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table-row table-row-2">
-                                <div class="table-col">
-                                    <div class="table-title top">
-                                        <strong>Infra</strong><span>다양한 상황과<br />
-                                            니즈에 맞춘<br />
-                                            인프라 제공</span>
-                                    </div>
-                                </div>
-                                <div class="table-col-2">
+                                <div class="table-row table-row-2">
                                     <div class="table-col">
-                                        <div class="table-item center text xl">
-                                            <ul>
-                                                <li>On-Premise</li>
-                                                <li>Public Cloud
-                                                    <br>
-                                                    <span class="open-planned center">공개 예정</span>
-                                                </li>
-                                                <li>Private Cloud<br>
-                                                    <span class="open-planned center">공개 예정</span>
-                                                </li>
-                                                <li>Multi/Hybrid Cloud<br>
-                                                    <span class="open-planned center">공개 예정</span>
-                                                </li>
-                                            </ul>
+                                        <div class="table-title top">
+                                            <strong>Infra</strong
+                                            ><span
+                                                >다양한 상황과<br />
+                                                니즈에 맞춘<br />
+                                                인프라 제공</span
+                                            >
+                                        </div>
+                                    </div>
+                                    <div class="table-col-2">
+                                        <div class="table-col">
+                                            <div class="table-item center text xl">
+                                                <ul>
+                                                    <li>On-Premise</li>
+                                                    <li>
+                                                        Public Cloud
+                                                        <br />
+                                                        <span class="open-planned center"
+                                                            >공개 예정</span
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        Private Cloud<br />
+                                                        <span class="open-planned center"
+                                                            >공개 예정</span
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        Multi/Hybrid Cloud<br />
+                                                        <span class="open-planned center"
+                                                            >공개 예정</span
+                                                        >
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="shape-wrapper" data-aos="fade-up" data-aos-duration="800"
-                        data-aos-easing="ease-out-cubic">
-                        <img src="/resource/images/ai/solution/studio/studio-graph02.png" alt="Service 서비스 구성을
+                        <div
+                            class="shape-wrapper"
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            <img
+                                src="/resource/images/ai/solution/studio/studio-graph02.png"
+                                alt="Service 서비스 구성을
 위한  환경 및
 Tool 제공 지식형 챗봇 워크플로우 챗봇 AICC 연계 상담 요약 보고서 초안 생성 변환/번역 마케팅 홍보 Service Builder 워크플로우 기반 Agent 생성 No Code 기반 Drag&Drop 방식 구성 Custom API 제공 Platform 고객사 전용 모델의
 최적화를 위한
@@ -402,217 +505,307 @@ AI Platform LLM AI 모델 개발 및 관리를 위한
 쉬운 접근성 AI 모델의 원활한 배표 및 스케일링 실시간 협업 도구 및 프로젝트
 관리 기능 데이터 보안 및 개인정보 보호 Infra 다양한 상황과
 니즈에 맞춘
-인프라 제공 On-Premise Public Cloud Private Cloud Multi/Hybrid Cloud">
+인프라 제공 On-Premise Public Cloud Private Cloud Multi/Hybrid Cloud"
+                            />
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="content-section">
-            <div class="content-inner">
-                <div class="title-wrapper">
-                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">K Studio</span>
-                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        K Studio의 강력한 기능
-                    </h2>
-                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        복잡한 AI 개발 없이, 대화형 서비스부터 문서 검색, 운영 모니터링까지
-                        <br />
-                        필요한 기능을 빠르게 구현하고 안정적으로 운영할 수 있습니다.
-                    </p>
-                </div>
+            <section class="content-section">
+                <div class="content-inner">
+                    <div class="title-wrapper">
+                        <span
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                            >K Studio</span
+                        >
+                        <h2
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            K Studio의 강력한 기능
+                        </h2>
+                        <p
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            복잡한 AI 개발 없이, 대화형 서비스부터 문서 검색, 운영 모니터링까지
+                            <br />
+                            필요한 기능을 빠르게 구현하고 안정적으로 운영할 수 있습니다.
+                        </p>
+                    </div>
 
-                <div class="card-wrapper" id="video-play-trigger-01">
-                    <ul class="card-list customer triple">
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="card-item auto-video-wrapper" id="video-play-item-01-01">
-                                <img src="/resource/images/ai/solution/studio/K Studio-01.png" alt="" width="676"
-                                    height="441" />
-                                <div class="video-play-wrapper">
-                                    <div class="video-inner">
-                                        <video src="/resource/images/ai/solution/studio/K Studio-01.mp4" muted loop
-                                            playsinline></video>
+                    <div class="card-wrapper" id="video-play-trigger-01">
+                        <ul class="card-list customer triple">
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div
+                                    class="card-item auto-video-wrapper"
+                                    id="video-play-item-01-01"
+                                >
+                                    <img
+                                        src="/resource/images/ai/solution/studio/K Studio-01.png"
+                                        alt=""
+                                        width="676"
+                                        height="441"
+                                    />
+                                    <div class="video-play-wrapper">
+                                        <div class="video-inner">
+                                            <video
+                                                src="/resource/videos/ai/solution/studio/K Studio-01.mp4"
+                                                muted
+                                                loop
+                                                playsinline
+                                            ></video>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <h3>Multi-Turn 대화 AI 어시스턴트</h3>
-                            <p>
-                                다중 발화를 이해하고 맥락을 이어가는 고도화된 대화형 AI로,<br />
-                                고객 응대와 업무 자동화를 효과적으로 지원합니다.
-                            </p>
-                        </li>
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="card-item auto-video-wrapper" id="video-play-item-01-02">
-                                <img src="/resource/images/ai/solution/studio/K Studio-02.png" alt="" width="676"
-                                    height="441" />
-                                <div class="video-play-wrapper">
-                                    <div class="video-inner">
-                                        <video src="/resource/images/ai/solution/studio/K Studio-02.mp4" muted loop
-                                            playsinline></video>
+                                <h3>Multi-Turn 대화 AI 어시스턴트</h3>
+                                <p>
+                                    다중 발화를 이해하고 맥락을 이어가는 고도화된 대화형 AI로,<br />
+                                    고객 응대와 업무 자동화를 효과적으로 지원합니다.
+                                </p>
+                            </li>
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div
+                                    class="card-item auto-video-wrapper"
+                                    id="video-play-item-01-02"
+                                >
+                                    <img
+                                        src="/resource/images/ai/solution/studio/K Studio-02.png"
+                                        alt=""
+                                        width="676"
+                                        height="441"
+                                    />
+                                    <div class="video-play-wrapper">
+                                        <div class="video-inner">
+                                            <video
+                                                src="/resource/videos/ai/solution/studio/K Studio-02.mp4"
+                                                muted
+                                                loop
+                                                playsinline
+                                            ></video>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <h3>기업 문서 지능형 검색 엔진</h3>
-                            <p>
-                                기업 내 방대한 문서에서 필요한 정보를 빠르고 정확하게<br />
-                                찾아주는 RAG 기반 검색 기능을 제공합니다.
-                            </p>
-                        </li>
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="card-item auto-video-wrapper" id="video-play-item-01-03">
-                                <img src="/resource/images/ai/solution/studio/K Studio-03.png" alt="" width="676"
-                                    height="441" />
-                                <div class="video-play-wrapper">
-                                    <div class="video-inner">
-                                        <video src="/resource/images/ai/solution/studio/K Studio-03.mp4" muted loop
-                                            playsinline></video>
+                                <h3>기업 문서 지능형 검색 엔진</h3>
+                                <p>
+                                    기업 내 방대한 문서에서 필요한 정보를 빠르고 정확하게<br />
+                                    찾아주는 RAG 기반 검색 기능을 제공합니다.
+                                </p>
+                            </li>
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div
+                                    class="card-item auto-video-wrapper"
+                                    id="video-play-item-01-03"
+                                >
+                                    <img
+                                        src="/resource/images/ai/solution/studio/K Studio-03.png"
+                                        alt=""
+                                        width="676"
+                                        height="441"
+                                    />
+                                    <div class="video-play-wrapper">
+                                        <div class="video-inner">
+                                            <video
+                                                src="/resource/videos/ai/solution/studio/K Studio-03.mp4"
+                                                muted
+                                                loop
+                                                playsinline
+                                            ></video>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <h3>실시간 AI 모델 성능 모니터링</h3>
-                            <p>
-                                배포된 모델의 성능을 실시간으로 확인하고 분석할 수 있는 <br />
-                                대시보드를 통해, 안정적이고 효율적인 운영이 가능합니다.
-                            </p>
-                        </li>
-                    </ul>
+                                <h3>실시간 AI 모델 성능 모니터링</h3>
+                                <p>
+                                    배포된 모델의 성능을 실시간으로 확인하고 분석할 수 있는 <br />
+                                    대시보드를 통해, 안정적이고 효율적인 운영이 가능합니다.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="content-section mo-pb-0">
-            <div class="content-inner">
-                <div class="title-wrapper">
-                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">다양한 최신 LLM 모델
-                        제공</span>
-                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        제공 모델 라인업
-                    </h2>
-                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        KT는 자체 개발한 LLM은 물론, 오픈소스 기반
-                        모델과 Microsoft 협력 모델, <br>외부 3rd Party
-                        모델까지 폭넓게 보유 및 제공합니다.
-                    </p>
+            <section class="content-section mo-pb-0">
+                <div class="content-inner">
+                    <div class="title-wrapper">
+                        <span
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                            >다양한 최신 LLM 모델 제공</span
+                        >
+                        <h2
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            제공 모델 라인업
+                        </h2>
+                        <p
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            KT는 자체 개발한 LLM은 물론, 오픈소스 기반 모델과 Microsoft 협력 모델,
+                            <br />외부 3rd Party 모델까지 폭넓게 보유 및 제공합니다.
+                        </p>
+                    </div>
+
+                    <div class="table-card-wrapper">
+                        <ul class="table-card-list text sm studio-table-card-list">
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="table-card-item">
+                                    <h3>
+                                        <!-- <span>KT Embedding Bi-lingual Model</span> -->
+                                        믿:음2.0
+                                        <p>국내 AI 기술 주권을 위한 한국형 LLM</p>
+                                    </h3>
+                                    <ul>
+                                        <li>
+                                            <h4>What is</h4>
+                                            <p>KT 자체 개발 고객 전용 Private LLM</p>
+                                            <p>
+                                                고객 데이터 기반 맞춤형 Fine-Tuning 및 Task 최적화
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <h4>Advantages</h4>
+                                            <p>KT 내재화 기술을 통한 추론 비용 절감</p>
+                                            <p>모델 경량화 통한 다양한 시스템 유연 적용</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="table-card-item">
+                                    <h3 class="open-wrapper">
+                                        <!-- <span>KT Embedding Bi-lingual Model</span> -->
+                                        GPT K <span class="open-planned">공개 예정</span>
+                                    </h3>
+                                    <p>한국 제도와 문화를 이해하는 Microsoft 협력모델</p>
+                                    <ul>
+                                        <li>
+                                            <h4>What is</h4>
+                                            <p>GPT-4o 기반, 한국 제도·문화 반영</p>
+                                            <p>Microsoft 공동 개발 한국 특화 고성능 모델</p>
+                                        </li>
+                                        <li>
+                                            <h4>Advantages</h4>
+                                            <p>높은 정확도, 지속적 성능 개선</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="table-card-item">
+                                    <h3 class="open-wrapper">
+                                        <!-- <span>KT Embedding Bi-lingual Model</span> -->
+                                        Llama K <span class="open-planned">공개 예정</span>
+                                    </h3>
+                                    <p>Meta 오픈소스 모델 기반 KT 대규모 학습 데이터셋 적용</p>
+                                    <ul>
+                                        <li>
+                                            <h4>What is</h4>
+                                            <p>다양한 언어·주제 학습 오픈소스 모델</p>
+                                            <p>대규모 데이터 기반 폭넓은 지식 처리</p>
+                                        </li>
+                                        <li>
+                                            <h4>Advantages</h4>
+                                            <p>복잡한 언어 구조 이해, 자연스러운 대화 생성</p>
+                                            <p>고급 생성 및 다목적 활용에 유리</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="table-card-item">
+                                    <h3>
+                                        <!-- <span>KT Embedding Bi-lingual Model</span> -->
+                                        Solar LLM
+                                        <p>3rd Party와 협력한 도메인 특화 모델</p>
+                                    </h3>
+                                    <ul>
+                                        <li>
+                                            <h4>What is</h4>
+                                            <p>도메인 특화형 설계 협력 모델</p>
+                                            <p>Customization 및 Fine-Tuning 최적화 구조</p>
+                                        </li>
+                                        <li>
+                                            <h4>Advantages</h4>
+                                            <p>대화, 번역, 분석 등 산업별 업무에 특화된 API 제공</p>
+                                            <p>고객 환경에 맞춘 유연한 적용 지원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="btnWrap mt-20"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                        data-aos-easing="ease-out-cubic"
+                    >
+                        <a href="https://kai.kt.co.kr/studio/main" target="_blank">
+                            <button type="button" class="btn md">K Studio 바로가기</button>
+                        </a>
+                    </div>
                 </div>
+            </section>
+        </div>
 
-                <div class="table-card-wrapper">
-                    <ul class="table-card-list text sm studio-table-card-list">
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="table-card-item">
-                                <h3>
-                                    <!-- <span>KT Embedding Bi-lingual Model</span> -->
-                                    믿:음2.0
-                                    <p>국내 AI 기술 주권을 위한 한국형 LLM</p>
-                                </h3>
-                                <ul>
-                                    <li>
-                                        <h4>What is</h4>
-                                        <p>KT 자체 개발 고객 전용 Private LLM</p>
-                                        <p>
-                                            고객 데이터 기반 맞춤형 Fine-Tuning 및 Task 최적화
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h4>Advantages</h4>
-                                        <p>KT 내재화 기술을 통한 추론 비용 절감</p>
-                                        <p>모델 경량화 통한 다양한 시스템 유연 적용</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="table-card-item">
-                                <h3 class="open-wrapper">
-                                    <!-- <span>KT Embedding Bi-lingual Model</span> -->
-                                    GPT K <span class="open-planned">공개 예정</span>
-                                </h3>
-                                <p>한국 제도와 문화를 이해하는 Microsoft 협력모델</p>
-                                <ul>
-                                    <li>
-                                        <h4>What is</h4>
-                                        <p>GPT-4o 기반, 한국 제도·문화 반영</p>
-                                        <p>Microsoft 공동 개발 한국 특화 고성능 모델</p>
-                                    </li>
-                                    <li>
-                                        <h4>Advantages</h4>
-                                        <p>높은 정확도, 지속적 성능 개선</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="table-card-item">
-                                <h3 class="open-wrapper">
-                                    <!-- <span>KT Embedding Bi-lingual Model</span> -->
-                                    Llama K <span class="open-planned">공개 예정</span>
-                                </h3>
-                                <p>Meta 오픈소스 모델 기반 KT 대규모 학습 데이터셋 적용</p>
-                                <ul>
-                                    <li>
-                                        <h4>What is</h4>
-                                        <p>다양한 언어·주제 학습 오픈소스 모델</p>
-                                        <p>대규모 데이터 기반 폭넓은 지식 처리</p>
-                                    </li>
-                                    <li>
-                                        <h4>Advantages</h4>
-                                        <p>복잡한 언어 구조 이해, 자연스러운 대화 생성</p>
-                                        <p>고급 생성 및 다목적 활용에 유리</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="table-card-item">
-                                <h3>
-                                    <!-- <span>KT Embedding Bi-lingual Model</span> -->
-                                    Solar LLM
-                                    <p>3rd Party와 협력한 도메인 특화 모델</p>
-                                </h3>
-                                <ul>
-                                    <li>
-                                        <h4>What is</h4>
-                                        <p>도메인 특화형 설계 협력 모델</p>
-                                        <p>Customization 및 Fine-Tuning 최적화 구조</p>
-                                    </li>
-                                    <li>
-                                        <h4>Advantages</h4>
-                                        <p>대화, 번역, 분석 등 산업별 업무에 특화된 API 제공</p>
-                                        <p>고객 환경에 맞춘 유연한 적용 지원</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+        <!-- KT Model 체험하기 -->
+        <section id="kt-model-section" class="kt-model-section"></section>
 
-                <div class="btnWrap mt-20" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                    <a href="https://kai.kt.co.kr/studio/main" target="_blank">
-                        <button type="button" class="btn md">K Studio 바로가기</button>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
+        <!-- Footer -->
+        <footer class="footer"></footer>
 
-    <!-- KT Model 체험하기 -->
-    <section id="kt-model-section" class="kt-model-section"></section>
+        <!-- Script -->
+        <script src="/js/ai/solution.js"></script>
+        <script src="/js/ai/common/common.js"></script>
+        <script>
+            includeCommonLayout();
+        </script>
+        <script src="/js/ai/common/aos.js"></script>
 
-    <!-- Footer -->
-    <footer class="footer"></footer>
-
-    <!-- Script -->
-    <script src="/js/ai/solution.js"></script>
-    <script src="/js/ai/common/common.js"></script>
-    <script>
-        includeCommonLayout();
-    </script>
-    <script src="/js/ai/common/aos.js"></script>
-
-    <!-- Tabs Component (공통) -->
-    <script src="/js/ai/sub_cy.js"></script>
-    <script>
-        AOS.init();
-    </script>
-</body>
-
+        <!-- Tabs Component (공통) -->
+        <script src="/js/ai/sub_cy.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </body>
 </html>

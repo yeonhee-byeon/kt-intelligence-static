@@ -1,152 +1,239 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- SEO -->
+        <link rel="icon" href="/resource/images/ai/KT_16.ico" />
+        <title>K Agent | 고객 맞춤형 AI 에이전트 - K Intelligence</title>
+        <meta
+            name="description"
+            content="K Agent는 고객 상황을 인식하고 자율적으로 업무를 수행하는 AI 에이전트로, 반복 작업을 줄이고 빠르고 정확한 의사결정을 지원합니다."
+        />
+        <meta
+            name="keywords"
+            content="K Agent, AI 에이전트, KT AI, 고객 맞춤형 AI, 대화형 AI, 자동화 상담, K Intelligence, AI 챗봇, 업무 지원 에이전트, 한국형 AI"
+        />
 
-    <!-- SEO -->
-    <link rel="icon" href="/resource/images/ai/KT_16.ico" />
-    <title>K Agent | 고객 맞춤형 AI 에이전트 - K Intelligence</title>
-    <meta name="description" content="K Agent는 고객 상황을 인식하고 자율적으로 업무를 수행하는 AI 에이전트로, 반복 작업을 줄이고 빠르고 정확한 의사결정을 지원합니다." />
-    <meta name="keywords"
-        content="K Agent, AI 에이전트, KT AI, 고객 맞춤형 AI, 대화형 AI, 자동화 상담, K Intelligence, AI 챗봇, 업무 지원 에이전트, 한국형 AI" />
+        <!-- SNS 공유용 -->
+        <meta property="og:title" content="K Agent | 고객 맞춤형 AI 에이전트 - K Intelligence" />
+        <meta
+            property="og:description"
+            content="K Agent는 고객 상황을 인식하고 자율적으로 업무를 수행하는 AI 에이전트로, 반복 작업을 줄이고 빠르고 정확한 의사결정을 지원합니다."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="KT AI" />
 
-    <!-- SNS 공유용 -->
-    <meta property="og:title" content="K Agent | 고객 맞춤형 AI 에이전트 - K Intelligence" />
-    <meta property="og:description"
-        content="K Agent는 고객 상황을 인식하고 자율적으로 업무를 수행하는 AI 에이전트로, 반복 작업을 줄이고 빠르고 정확한 의사결정을 지원합니다." />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="KT AI" />
+        <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
+        <!-- Common CSS -->
+        <link rel="stylesheet" href="/css/ai/common/common.css" />
+        <!-- Reset CSS -->
+        <link rel="stylesheet" href="/css/ai/common/reset.css" />
+        <!-- AOS CSS -->
+        <link rel="stylesheet" href="/css/ai/common/aos.css" />
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="/css/ai/solution.css" />
+        <link rel="stylesheet" href="/css/ai/solution_cy.css" />
+    </head>
 
-    <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="/css/ai/common/common.css" />
-    <!-- Reset CSS -->
-    <link rel="stylesheet" href="/css/ai/common/reset.css" />
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="/css/ai/common/aos.css" />
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/ai/solution.css" />
-    <link rel="stylesheet" href="/css/ai/solution_cy.css" />
-</head>
+    <body>
+        <!-- Header -->
+        <header id="main-header" class="header">
+            <div class="header-inner"></div>
 
-<body>
-    <!-- Header -->
-    <header id="main-header" class="header">
-        <div class="header-inner"></div>
-
-        <!-- Sticky Header -->
-        <div id="sticky-header" class="sticky-header tab-sticky-header">
-            <div class="sticky-header-inner">
-                <ul class="sticky-header-list">
-                    <li data-section="tab-panel-1">Agent Pattern</li>
-                    <li data-section="tab-panel-2">Multi-Model Orchestrator</li>
-                </ul>
-            </div>
-        </div>
-    </header>
-
-    <!-- Banner Section -->
-    <section id="banner-section" class="banner-section">
-        <img src="/resource/images/ai/solution/agent/agent-banner.png" alt="banner" width="100%" height="100%"
-            class="bg-topBanner" />
-        <img src="/resource/images/ai/solution/agent/agent-banner-mo.png" alt="banner" width="100%" height="100%"
-            class="mo-banner-bg" />
-
-        <img src="/resource/images/ai/solution/agent/agent-banner.png" alt="banner" width="100%" height="100%" />
-        <div class="banner-inner logo-bk">
-            <h2 class="agent-banner-title">
-                <img src="/resource/images/ai/solution/ico-kon.svg" alt="logo" width="53" height="52" />
-                <img src="/resource/images/ai/solution/ico-kon_bk.svg" alt="logo" width="53" height="52"
-                    class="k-logo-bk" />
-                Agent
-            </h2>
-            <p>
-                주어진 목표를 달성하기 위해 환경을 인식하고, 작업을 작업을 계획하며, 도구를 활용해 자율적으로 행동하는<br>
-                고객 맞춤형 AI Agent입니다. 이를 통해 반복적인 업무를 줄이고, 더 빠르고 정확한 의사결정을 지원합니다.
-            </p>
-        </div>
-    </section>
-
-    <!-- Content Section -->
-    <div class="content-wrapper">
-        <section class="content-section">
-            <div class="content-inner">
-                <div class="title-wrapper">
-                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Key
-                        Features</span>
-                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        스스로 판단하고 실행하는<br class="mo-br" />
-                        AI Agent
-                    </h2>
-                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        주어진 목표를 달성하기 위해 주변 환경을 인식하고, 필요한 작업을
-                        스스로<br />
-                        계획・판단하여 최적의 결과를 제공하는 고객 맞춤형 응용 AI입니다.
-                    </p>
-                </div>
-                <div class="box-wrapper">
-                    <ul class="box-list white-box">
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="box-item icon">
-                                <div class="img">
-                                    <img src="/resource/images/ai/solution/agent/ico-plan.png" alt="icon code"
-                                        width="32" height="32" />
-                                </div>
-                                <h3>Planner</h3>
-                                <p>
-                                    주어진 입력과 맥락 정보를 기반으로 상황을 판단하고 의미를 해석하며, <br>
-                                    추론 결과를 바탕으로 목표 달성을 위한 실행 전략을 수립합니다.
-                                </p>
-                            </div>
-                        </li>
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="box-item">
-                                <div class="img">
-                                    <img src="/resource/images/ai/solution/agent/ico-memory.png" alt="icon code"
-                                        width="32" height="32" />
-                                </div>
-                                <h3>Memory</h3>
-                                <p>
-                                    사용자 정보와 대화 이력을 저장·활용하여,<br />
-                                    개인화된 응답을 제공하는 기능입니다.
-                                </p>
-                            </div>
-                        </li>
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="box-item">
-                                <div class="img">
-                                    <img src="/resource/images/ai/solution/agent/ico-tool.png" alt="icon code"
-                                        width="32" height="32" />
-                                </div>
-                                <h3>Agent/Tool Execution</h3>
-                                <p>
-                                    외부 Agent와 검색, API, 데이터베이스 등 외부 도구와<br>
-                                    연동해 필요한 작업을 수행합니다.
-                                </p>
-                            </div>
-                        </li>
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="box-item">
-                                <div class="img">
-                                    <img src="/resource/images/ai/solution/agent/ico-action.png" alt="icon code"
-                                        width="32" height="32" />
-                                </div>
-                                <h3>Generation</h3>
-                                <p>
-                                    Agent의 Planning 결과를 실제 실행으로 연결시켜, <br>최종 결과물을 제공합니다.
-                                </p>
-                            </div>
-                        </li>
+            <!-- Sticky Header -->
+            <div id="sticky-header" class="sticky-header tab-sticky-header">
+                <div class="sticky-header-inner">
+                    <ul class="sticky-header-list">
+                        <li data-section="tab-panel-1">Agent Pattern</li>
+                        <li data-section="tab-panel-2">Multi-Model Orchestrator</li>
                     </ul>
-                    <div class="agent-key-graph-wrapper" data-aos="fade-up" data-aos-duration="800"
-                        data-aos-easing="ease-out-cubic">
-                        <div class="graph-inner">
-                            <div class="graph-item">
-                                <!-- 이미지 태그 내부 alt 중복 삽입 오류 -->
-                                <img src="/resource/images/ai/solution/agent/Key Features-graph.png" width="100%"
-                                    height="100%" alt="AI Agent 상호작용 User Planning / Reasoning Memory Action Action Context-Specific sLM
+                </div>
+            </div>
+        </header>
+
+        <!-- Banner Section -->
+        <section id="banner-section" class="banner-section">
+            <img
+                src="/resource/images/ai/solution/agent/agent-banner.png"
+                alt="banner"
+                width="100%"
+                height="100%"
+                class="bg-topBanner"
+            />
+            <img
+                src="/resource/images/ai/solution/agent/agent-banner-mo.png"
+                alt="banner"
+                width="100%"
+                height="100%"
+                class="mo-banner-bg"
+            />
+
+            <img
+                src="/resource/images/ai/solution/agent/agent-banner.png"
+                alt="banner"
+                width="100%"
+                height="100%"
+            />
+            <div class="banner-inner logo-bk">
+                <h2 class="agent-banner-title">
+                    <img
+                        src="/resource/images/ai/solution/ico-kon.svg"
+                        alt="logo"
+                        width="53"
+                        height="52"
+                    />
+                    <img
+                        src="/resource/images/ai/solution/ico-kon_bk.svg"
+                        alt="logo"
+                        width="53"
+                        height="52"
+                        class="k-logo-bk"
+                    />
+                    Agent
+                </h2>
+                <p>
+                    주어진 목표를 달성하기 위해 환경을 인식하고, 작업을 작업을 계획하며, 도구를
+                    활용해 자율적으로 행동하는<br />
+                    고객 맞춤형 AI Agent입니다. 이를 통해 반복적인 업무를 줄이고, 더 빠르고 정확한
+                    의사결정을 지원합니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <div class="content-wrapper">
+            <section class="content-section">
+                <div class="content-inner">
+                    <div class="title-wrapper">
+                        <span
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                            >Key Features</span
+                        >
+                        <h2
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            스스로 판단하고 실행하는<br class="mo-br" />
+                            AI Agent
+                        </h2>
+                        <p
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            주어진 목표를 달성하기 위해 주변 환경을 인식하고, 필요한 작업을
+                            스스로<br />
+                            계획・판단하여 최적의 결과를 제공하는 고객 맞춤형 응용 AI입니다.
+                        </p>
+                    </div>
+                    <div class="box-wrapper">
+                        <ul class="box-list white-box">
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="box-item icon">
+                                    <div class="img">
+                                        <img
+                                            src="/resource/images/ai/solution/agent/ico-plan.png"
+                                            alt="icon code"
+                                            width="32"
+                                            height="32"
+                                        />
+                                    </div>
+                                    <h3>Planner</h3>
+                                    <p>
+                                        주어진 입력과 맥락 정보를 기반으로 상황을 판단하고 의미를
+                                        해석하며, <br />
+                                        추론 결과를 바탕으로 목표 달성을 위한 실행 전략을
+                                        수립합니다.
+                                    </p>
+                                </div>
+                            </li>
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="box-item">
+                                    <div class="img">
+                                        <img
+                                            src="/resource/images/ai/solution/agent/ico-memory.png"
+                                            alt="icon code"
+                                            width="32"
+                                            height="32"
+                                        />
+                                    </div>
+                                    <h3>Memory</h3>
+                                    <p>
+                                        사용자 정보와 대화 이력을 저장·활용하여,<br />
+                                        개인화된 응답을 제공하는 기능입니다.
+                                    </p>
+                                </div>
+                            </li>
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="box-item">
+                                    <div class="img">
+                                        <img
+                                            src="/resource/images/ai/solution/agent/ico-tool.png"
+                                            alt="icon code"
+                                            width="32"
+                                            height="32"
+                                        />
+                                    </div>
+                                    <h3>Agent/Tool Execution</h3>
+                                    <p>
+                                        외부 Agent와 검색, API, 데이터베이스 등 외부 도구와<br />
+                                        연동해 필요한 작업을 수행합니다.
+                                    </p>
+                                </div>
+                            </li>
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="box-item">
+                                    <div class="img">
+                                        <img
+                                            src="/resource/images/ai/solution/agent/ico-action.png"
+                                            alt="icon code"
+                                            width="32"
+                                            height="32"
+                                        />
+                                    </div>
+                                    <h3>Generation</h3>
+                                    <p>
+                                        Agent의 Planning 결과를 실제 실행으로 연결시켜, <br />최종
+                                        결과물을 제공합니다.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div
+                            class="agent-key-graph-wrapper"
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            <div class="graph-inner">
+                                <div class="graph-item">
+                                    <!-- 이미지 태그 내부 alt 중복 삽입 오류 -->
+                                    <img
+                                        src="/resource/images/ai/solution/agent/Key Features-graph.png"
+                                        width="100%"
+                                        height="100%"
+                                        alt="AI Agent 상호작용 User Planning / Reasoning Memory Action Action Context-Specific sLM
                                     Knowledge / File / DB
                                     (w/ RAG) Enterprise System
                                     (HR, ERP, CRM 등) Web Search / API / Python
@@ -154,534 +241,804 @@
                                     Long-Team
                                     Chat History
                                     Task 수행 log
-                                    User Profile" />
-                                <!--// 이미지 태그 내부 alt 중복 삽입 오류 -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="content-inner">
-                <div class="title-wrapper">
-                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Agent Tech</span>
-                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        K Agent 핵심 기술
-                    </h2>
-                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        Agent Pattern과 Multi-Model Orchestrator를 기반으로, <br />
-                        Agent를 빠르고 정확하게 개발하고, 상황에 따라 최적의 AI 모델과 도구를
-                        자동으로 연결해 실행합니다.
-                    </p>
-                </div>
-
-                <div class="card-wrapper" id="video-play-trigger-01">
-                    <ul class="card-list customer">
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="card-item auto-video-wrapper" id="video-play-item-01-01">
-                                <img src="/resource/images/ai/solution/agent/Agent Tech-01.png" alt="" width="676"
-                                    height="441" />
-                                <div class="video-play-wrapper">
-                                    <div class="video-inner">
-                                        <video src="/resource/images/ai/solution/agent/Agent Tech-01.mp4" muted loop
-                                            playsinline></video>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3>Agent Pattern</h3>
-                            <p>
-                                Agent를 정확하고 빠르게 개발할 수 있도록, 목적별 아키텍처와 템플릿을 <br />
-                                표준화한 Agent Pattern을 제공합니다.
-                            </p>
-                        </li>
-                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="card-item auto-video-wrapper" id="video-play-item-01-02">
-                                <img src="/resource/images/ai/solution/agent/Agent Tech-02.png" alt="" width="676"
-                                    height="441" />
-                                <div class="video-play-wrapper">
-                                    <div class="video-inner">
-                                        <video src="/resource/images/ai/solution/agent/Agent Tech-02.mp4" muted loop
-                                            playsinline></video>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="open-planned top-center"
-                                style="margin-top: 2rem; margin-bottom: 0 !important">공개 예정</span>
-                            <h3 class="open-wrapper">
-                                Multi-Model Orchestrator
-                                <span class="open-planned pc-only">공개 예정</span>
-                            </h3>
-                            <p>
-                                사용 목적에 따라 가장 적합한 AI 모델과 도구를 자동으로
-                                선택해주는 기능으로, <br />
-                                복잡한 설정 없이 최적의 성능을 구현할 수 있도록
-                                지원합니다.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section agent-pattern tabs-component">
-            <div class="bg-black-style">
-                <div class="content-inner">
-                    <div class="tab-inner-wrapper">
-                        <!-- 1번 탭 컨텐츠 -->
-                        <div class="tabs__panel__anchor tabs__panel__anchor--active" id="tab-panel-1" role="tabpanel"
-                            aria-labelledby="tab-1">
-                            <div class="tab-section">
-                                <div class="title-wrapper only-title">
-                                    <span data-aos="fade-up" data-aos-duration="800"
-                                        data-aos-easing="ease-out-cubic">Technology 01</span>
-                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                        Agent Pattern
-                                    </h2>
-                                    <h3 class="sub-big-h3" data-aos="fade-up" data-aos-duration="800"
-                                        data-aos-easing="ease-out-cubic">
-                                        AI Agent의 빠른 개발과 배포를 위한
-                                        <br class="mo-br" />표준 프레임워크
-                                    </h3>
-                                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                        목적과 상황에 맞게 표준화된 Agent Pattern을 기반으로
-                                        Agent를 효율적으로 개발할 수 있도록 합니다.<br />
-                                        이를 통해 고객은 개발 비용과 기간을 줄이고
-                                        보다
-                                        안정적이고 일관된 품질의 Agent 서비스를 빠르게 확보할 수
-                                        있습니다.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="tab-section">
-                                <div class="sub-title-wrapper">
-                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                        Agent Pattern 특징
-                                    </h2>
-                                </div>
-                                <div class="list-wrapper">
-                                    <ul>
-                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <div class="list-item has-number">
-                                                <h3>신속한 개발 환경 제공</h3>
-                                                <div class="text">
-                                                    사용자는 목적에 맞게 설계된 Well-Architected
-                                                    Agent 템플릿을 활용하여 개발 기간을 대폭
-                                                    단축할 수 있습니다.<br />
-                                                    다양한 도메인과 상황에 맞춘 패턴을
-                                                    재사용함으로써 개발 생산성이 향상됩니다.
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <div class="list-item has-number">
-                                                <h3>통합 개발 리소스</h3>
-                                                <div class="text">
-                                                    사용자는 인프라(IaC), 코드(UI 컴포넌트, API,
-                                                    공통 로직), 프레임워크 등 Agent 개발에
-                                                    필요한 모든 요소를 표준화 <br />된 형태로
-                                                    제공받을 수 있습니다. 이를 통해 반복적인
-                                                    작업은 줄이고, 핵심 기능 개발에 집중할 수
-                                                    있습니다.
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <div class="list-item has-number">
-                                                <h3>개발 퀄리티 보장</h3>
-                                                <div class="text">
-                                                    표준화된 Pattern 기반 개발 방식을 통해,
-                                                    누구나 일정 수준 이상의 품질을 갖춘 Agent를
-                                                    안정적으로 구현할 수<br />
-                                                    있습니다. 또한 프롬프트 관리, 로깅,
-                                                    모니터링, 성능 평가 등 전 과정에 대한 명확한
-                                                    가이드라인을 제공해, <br />개발 효율성과
-                                                    안정성을 함께 높여줍니다.
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="tab-section">
-                                <div class="sub-title-wrapper">
-                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                        Agent Pattern <br class="mo-br" />Framework
-                                    </h2>
-                                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                        AI Agent의 빠른 개발과 배포를 위해 필요한<br class="mo-br" />
-                                        템플릿, 도구, 아키텍처를 사전에 구성한<br class="mo-br" />
-                                        프레임워크입니다.
-                                    </p>
-                                </div>
-
-                                <div class="table-card-wrapper divided-table-card-wrapper agent-frameWork">
-                                    <ul class="table-card-list">
-                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic"
-                                            data-aos-offset="100">
-                                            <div class="table-card-item">
-                                                <h3>01 Agent Pattern Layer</h3>
-                                                <p>
-                                                    Agent의 목적과 시나리오(미디어 추천, 고객
-                                                    응대,<br />
-                                                    문서 검색)에 따라 필요한 행동 양식을 구조화
-                                                    한<br />
-                                                    설계 단위
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic"
-                                            data-aos-offset="100">
-                                            <div class="table-card-item">
-                                                <h3>02 Pattern Type Layer</h3>
-                                                <p>
-                                                    <span>Primitive Pattern : 단일 기능, 단일
-                                                        목적을 가진<br />
-                                                        기본 구조의 Pattern (정보 검색, 챗봇,
-                                                        요약 등)</span>
-
-                                                    <span>Advanced Pattern : 복수의 Primitive
-                                                        Pattern을<br />
-                                                        연결하거나, 계획, 실행, 검증과 같은 복합
-                                                        구조를<br />
-                                                        갖는 Pattern</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic"
-                                            data-aos-offset="100">
-                                            <div class="table-card-item">
-                                                <h3>03 Agent Capability</h3>
-                                                <p>
-                                                    Agent의 각 패턴이 제대로 동작하기 위한 기술셋,<br />
-                                                    인프라, 컴포넌트 계층
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
-
-                                    <!-- Agent Pattern Framework 도식 -->
-                                    <div class="pc-only">
-                                        <div class="agent-pattern-diagram" data-aos="fade-up" data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic">
-                                            <div class="diagram-col">
-                                                <div class="diagram-nums">
-                                                    <div class="numBox">01</div>
-                                                    <div class="numBox">02</div>
-                                                    <div class="numBox">03</div>
-                                                </div>
-                                            </div>
-                                            <div class="diagram-row">
-                                                <div class="diagram-block agent-types">
-                                                    <div class="agent-type">Media Agent</div>
-                                                    <div class="agent-type">B2C Agent</div>
-                                                    <div class="agent-type">B2B Agent</div>
-                                                </div>
-                                                <div class="diagram-block agent-patterns">
-                                                    <div class="diagram-icon agent-patterns-icon"></div>
-                                                    <div class="diagram-title">Agent<br>Patterns</div>
-                                                </div>
-                                                <div class="diagram-block pattern-types">
-                                                    <div class="pattern-type">Primitive<br>
-                                                        Pattern</div>
-                                                    <div class="pattern-type">Advanced<br>Pattern</div>
-                                                </div>
-                                                <div class="diagram-block pattern-logic">
-                                                    <div class="logic-primitive"></div>
-                                                    <div class="logic-primitive"></div>
-                                                </div>
-                                                <div class="diagram-block agent-capability">
-                                                    <div class="diagram-icon agent-capability-icon"></div>
-                                                    <div class="diagram-title">Agent<br>
-                                                        Capability</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mobile-show">
-                                        <div class="shape-wrapper pattern-graph" data-aos="fade-up"
-                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <img src="/resource/images/ai/solution/agent/agent-pattern-diagram.png"
-                                                alt="">
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="tab-section">
-                                <div class="sub-title-wrapper">
-                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                        KT Agent Pattern <br class="mo-br" />Top-10
-                                    </h2>
-                                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                        AI Agent 개발 시 반복적으로 활용되는
-                                        <br class="mo-br" />상위 10개 패턴을 정의하고, 이를
-                                        기반으로 <br class="mo-br" />순차적으로 개발을 진행하고
-                                        있습니다.
-                                    </p>
-                                </div>
-
-                                <div class="pattern-top-wrapper">
-                                    <!-- kt agent pattern top 10 -->
-                                    <div class="table-card-list pattern-top10-grid">
-                                        <!-- 1행: 4개 -->
-                                        <div class="pattern-card table-card-item" data-aos="fade-up"
-                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <h3>
-                                                지식 검색, 처리<br /><span>Knowledge Search, Processing</span>
-                                            </h3>
-                                            <p>
-                                                <span>Pattern 01</span>
-                                                RAG(Retrieval-Augmented Generation) 기술과
-                                                대규모 언어모델을 통해, <br>
-                                                문서에서 필요한 정보를
-                                                검색하고 이를 바탕으로 답변을 생성
-                                            </p>
-                                        </div>
-                                        <div class="pattern-card table-card-item" data-aos="fade-up"
-                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <h3>
-                                                대화, 상호작용<br /><span>Conversational AI</span>
-                                            </h3>
-                                            <p>
-                                                <span>Pattern 02</span>
-                                                대규모 언어 모델(LLM)을 활용한 챗봇으로,
-                                                사용자와 자연스럽게 대화
-                                            </p>
-                                        </div>
-                                        <div class="pattern-card table-card-item" data-aos="fade-up"
-                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <h3>
-                                                콘텐츠 생성<br /><span>Generative AI, Content Generation</span>
-                                            </h3>
-                                            <p>
-                                                <span>Pattern 03</span>
-                                                생성형 AI를 활용하여 문서, 이미지, 영상 등의
-                                                콘텐츠 생성
-                                            </p>
-                                        </div>
-                                        <div class="pattern-card table-card-item" data-aos="fade-up"
-                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <h3>
-                                                개인화 추천<br /><span>Personalized Recommendations</span>
-                                            </h3>
-                                            <p>
-                                                <span>Pattern 04</span>
-                                                고객 성향과 행동 데이터를 분석하고, 이를
-                                                바탕으로 개인화된 추천 서비스 제공
-                                            </p>
-                                        </div>
-                                        <!-- 2행: 첫번째 카드가 두 칸 차지, 나머지 2개 -->
-                                        <div class="pattern-card table-card-item" data-aos="fade-up"
-                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <h3>
-                                                프로세스 자동화, 실행<br /><span>Workflow Automation</span>
-                                            </h3>
-                                            <p>
-                                                <span>Pattern 05</span>
-                                                반복 업무나 시스템 연계를 자동화하고, 실제
-                                                실행(업무 처리)까지 수행하여 효율성 향상<br />(필요
-                                                시, 예측 모델이나 센서 데이터를 함께 활용해 자동
-                                                제어까지 실현)
-                                            </p>
-                                        </div>
-                                        <div class="pattern-card table-card-item" data-aos="fade-up"
-                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <h3>
-                                                복합 추론, Multi-Agent<br /><span>Complex Reasoning, Multi-Agent</span>
-                                            </h3>
-                                            <p>
-                                                <span>Pattern 06</span>
-                                                여러 Agent가 협력하여 다중 리소스를 활용해
-                                                복잡한 문제를 해결
-                                            </p>
-                                        </div>
-                                        <div class="pattern-card table-card-item" data-aos="fade-up"
-                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <h3>
-                                                예측, 의사결정 지원<br /><span>Forecasting, Decision Making</span>
-                                            </h3>
-                                            <p>
-                                                <span>Pattern 07</span>
-                                                데이터에 기반한 예측 모델을 사용하여, 의사결정에
-                                                필요한 정보를 제공하는 패턴
-                                            </p>
-                                        </div>
-                                        <!-- 3행: 첫번째 카드가 두 칸 차지, 나머지 2개 -->
-                                        <div class="pattern-card table-card-item" data-aos="fade-up"
-                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <h3>
-                                                문서 처리, 정보 추출<br /><span>Document Processing, Information
-                                                    Extraction</span>
-                                            </h3>
-                                            <p>
-                                                <span>Pattern 08</span>
-                                                OCR(Optical Character Recognition) 기술로 문서를
-                                                인식하고, 테이블과 같은<br />
-                                                레이아웃을 이해하고 의미있는 정보를 자동으로
-                                                추출
-                                            </p>
-                                        </div>
-                                        <div class="pattern-card table-card-item" data-aos="fade-up"
-                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <h3>
-                                                음성 인식, 처리<br /><span>Voice Processing</span>
-                                            </h3>
-                                            <p>
-                                                <span>Pattern 09</span>
-                                                음성을 인식하여 텍스트로 변환하고, 이를 바탕으로
-                                                필요한 서비스 제공
-                                            </p>
-                                        </div>
-                                        <div class="pattern-card table-card-item" data-aos="fade-up"
-                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <h3>
-                                                컴퓨터 비전, 처리<br /><span>Vision Processing</span>
-                                            </h3>
-                                            <p>
-                                                <span>Pattern 10</span>
-                                                컴퓨터 비전 기술을 통해 이미지, 영상을 분석하고,
-                                                필요한 정보를 추출
-                                            </p>
-                                        </div>
-                                    </div>
+                                    User Profile"
+                                    />
+                                    <!--// 이미지 태그 내부 alt 중복 삽입 오류 -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="bg-bright-fff">
+            <section class="content-section">
                 <div class="content-inner">
-                    <div class="tab-inner-wrapper">
-                        <!-- 2번 탭 컨텐츠 -->
-                        <div class="tabs__panel__anchor" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2">
-                            <div class="tab-section">
-                                <div class="title-wrapper only-title">
-                                    <span class="open-planned top-center" data-aos="fade-up" data-aos-duration="800"
-                                        data-aos-easing="ease-out-cubic">공개 예정</span>
-                                    <span data-aos="fade-up" data-aos-duration="800"
-                                        data-aos-easing="ease-out-cubic">Technology 02</span>
-                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic"
-                                        class="open-wrapper">
-                                        Multi-Model Orchestrator
-                                        <span class="open-planned pc-only">공개 예정</span>
-                                    </h2>
-                                    <h3 class="sub-big-h3 bold" data-aos="fade-up" data-aos-duration="800"
-                                        data-aos-easing="ease-out-cubic">
-                                        AI 응답 품질은 높이고 비용은 <br class="mo-br"> 스마트 라우팅 기술
-                                    </h3>
-                                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                        Orchestrator는 질문의 성격에 따라 가장 적합한 AI 모델과 자동으로 연결해주는 스마트 라우팅 기술입니다.<br> 불필요한 고비용 모델
-                                        사용은 줄여 효율적인 AI 운영이 가능합니다.
-                                    </p>
+                    <div class="title-wrapper">
+                        <span
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                            >Agent Tech</span
+                        >
+                        <h2
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            K Agent 핵심 기술
+                        </h2>
+                        <p
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            Agent Pattern과 Multi-Model Orchestrator를 기반으로, <br />
+                            Agent를 빠르고 정확하게 개발하고, 상황에 따라 최적의 AI 모델과 도구를
+                            자동으로 연결해 실행합니다.
+                        </p>
+                    </div>
+
+                    <div class="card-wrapper" id="video-play-trigger-01">
+                        <ul class="card-list customer">
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div
+                                    class="card-item auto-video-wrapper"
+                                    id="video-play-item-01-01"
+                                >
+                                    <img
+                                        src="/resource/images/ai/solution/agent/Agent Tech-01.png"
+                                        alt=""
+                                        width="676"
+                                        height="441"
+                                    />
+                                    <div class="video-play-wrapper">
+                                        <div class="video-inner">
+                                            <video
+                                                src="/resource/videos/ai/solution/agent/Agent Tech-01.mp4"
+                                                muted
+                                                loop
+                                                playsinline
+                                            ></video>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3>Agent Pattern</h3>
+                                <p>
+                                    Agent를 정확하고 빠르게 개발할 수 있도록, 목적별 아키텍처와
+                                    템플릿을 <br />
+                                    표준화한 Agent Pattern을 제공합니다.
+                                </p>
+                            </li>
+                            <li
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div
+                                    class="card-item auto-video-wrapper"
+                                    id="video-play-item-01-02"
+                                >
+                                    <img
+                                        src="/resource/images/ai/solution/agent/Agent Tech-02.png"
+                                        alt=""
+                                        width="676"
+                                        height="441"
+                                    />
+                                    <div class="video-play-wrapper">
+                                        <div class="video-inner">
+                                            <video
+                                                src="/resource/videos/ai/solution/agent/Agent Tech-02.mp4"
+                                                muted
+                                                loop
+                                                playsinline
+                                            ></video>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span
+                                    class="open-planned top-center"
+                                    style="margin-top: 2rem; margin-bottom: 0 !important"
+                                    >공개 예정</span
+                                >
+                                <h3 class="open-wrapper">
+                                    Multi-Model Orchestrator
+                                    <span class="open-planned pc-only">공개 예정</span>
+                                </h3>
+                                <p>
+                                    사용 목적에 따라 가장 적합한 AI 모델과 도구를 자동으로
+                                    선택해주는 기능으로, <br />
+                                    복잡한 설정 없이 최적의 성능을 구현할 수 있도록 지원합니다.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section agent-pattern tabs-component">
+                <div class="bg-black-style">
+                    <div class="content-inner">
+                        <div class="tab-inner-wrapper">
+                            <!-- 1번 탭 컨텐츠 -->
+                            <div
+                                class="tabs__panel__anchor tabs__panel__anchor--active"
+                                id="tab-panel-1"
+                                role="tabpanel"
+                                aria-labelledby="tab-1"
+                            >
+                                <div class="tab-section">
+                                    <div class="title-wrapper only-title">
+                                        <span
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                            >Technology 01</span
+                                        >
+                                        <h2
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                        >
+                                            Agent Pattern
+                                        </h2>
+                                        <h3
+                                            class="sub-big-h3"
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                        >
+                                            AI Agent의 빠른 개발과 배포를 위한
+                                            <br class="mo-br" />표준 프레임워크
+                                        </h3>
+                                        <p
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                        >
+                                            목적과 상황에 맞게 표준화된 Agent Pattern을 기반으로
+                                            Agent를 효율적으로 개발할 수 있도록 합니다.<br />
+                                            이를 통해 고객은 개발 비용과 기간을 줄이고 보다
+                                            안정적이고 일관된 품질의 Agent 서비스를 빠르게 확보할 수
+                                            있습니다.
+                                        </p>
+                                    </div>
                                 </div>
 
-                                <!-- Multi-Model Orchestrator 도식 -->
-                                <!-- <div class="orchestrator-diagram" data-aos="fade-up" data-aos-duration="800"
+                                <div class="tab-section">
+                                    <div class="sub-title-wrapper">
+                                        <h2
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                        >
+                                            Agent Pattern 특징
+                                        </h2>
+                                    </div>
+                                    <div class="list-wrapper">
+                                        <ul>
+                                            <li
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <div class="list-item has-number">
+                                                    <h3>신속한 개발 환경 제공</h3>
+                                                    <div class="text">
+                                                        사용자는 목적에 맞게 설계된 Well-Architected
+                                                        Agent 템플릿을 활용하여 개발 기간을 대폭
+                                                        단축할 수 있습니다.<br />
+                                                        다양한 도메인과 상황에 맞춘 패턴을
+                                                        재사용함으로써 개발 생산성이 향상됩니다.
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <div class="list-item has-number">
+                                                    <h3>통합 개발 리소스</h3>
+                                                    <div class="text">
+                                                        사용자는 인프라(IaC), 코드(UI 컴포넌트, API,
+                                                        공통 로직), 프레임워크 등 Agent 개발에
+                                                        필요한 모든 요소를 표준화 <br />된 형태로
+                                                        제공받을 수 있습니다. 이를 통해 반복적인
+                                                        작업은 줄이고, 핵심 기능 개발에 집중할 수
+                                                        있습니다.
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <div class="list-item has-number">
+                                                    <h3>개발 퀄리티 보장</h3>
+                                                    <div class="text">
+                                                        표준화된 Pattern 기반 개발 방식을 통해,
+                                                        누구나 일정 수준 이상의 품질을 갖춘 Agent를
+                                                        안정적으로 구현할 수<br />
+                                                        있습니다. 또한 프롬프트 관리, 로깅,
+                                                        모니터링, 성능 평가 등 전 과정에 대한 명확한
+                                                        가이드라인을 제공해, <br />개발 효율성과
+                                                        안정성을 함께 높여줍니다.
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="tab-section">
+                                    <div class="sub-title-wrapper">
+                                        <h2
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                        >
+                                            Agent Pattern <br class="mo-br" />Framework
+                                        </h2>
+                                        <p
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                        >
+                                            AI Agent의 빠른 개발과 배포를 위해 필요한<br
+                                                class="mo-br"
+                                            />
+                                            템플릿, 도구, 아키텍처를 사전에 구성한<br
+                                                class="mo-br"
+                                            />
+                                            프레임워크입니다.
+                                        </p>
+                                    </div>
+
+                                    <div
+                                        class="table-card-wrapper divided-table-card-wrapper agent-frameWork"
+                                    >
+                                        <ul class="table-card-list">
+                                            <li
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                                data-aos-offset="100"
+                                            >
+                                                <div class="table-card-item">
+                                                    <h3>01 Agent Pattern Layer</h3>
+                                                    <p>
+                                                        Agent의 목적과 시나리오(미디어 추천, 고객
+                                                        응대,<br />
+                                                        문서 검색)에 따라 필요한 행동 양식을 구조화
+                                                        한<br />
+                                                        설계 단위
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                                data-aos-offset="100"
+                                            >
+                                                <div class="table-card-item">
+                                                    <h3>02 Pattern Type Layer</h3>
+                                                    <p>
+                                                        <span
+                                                            >Primitive Pattern : 단일 기능, 단일
+                                                            목적을 가진<br />
+                                                            기본 구조의 Pattern (정보 검색, 챗봇,
+                                                            요약 등)</span
+                                                        >
+
+                                                        <span
+                                                            >Advanced Pattern : 복수의 Primitive
+                                                            Pattern을<br />
+                                                            연결하거나, 계획, 실행, 검증과 같은 복합
+                                                            구조를<br />
+                                                            갖는 Pattern</span
+                                                        >
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                                data-aos-offset="100"
+                                            >
+                                                <div class="table-card-item">
+                                                    <h3>03 Agent Capability</h3>
+                                                    <p>
+                                                        Agent의 각 패턴이 제대로 동작하기 위한
+                                                        기술셋,<br />
+                                                        인프라, 컴포넌트 계층
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                        <!-- Agent Pattern Framework 도식 -->
+                                        <div class="pc-only">
+                                            <div
+                                                class="agent-pattern-diagram"
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <div class="diagram-col">
+                                                    <div class="diagram-nums">
+                                                        <div class="numBox">01</div>
+                                                        <div class="numBox">02</div>
+                                                        <div class="numBox">03</div>
+                                                    </div>
+                                                </div>
+                                                <div class="diagram-row">
+                                                    <div class="diagram-block agent-types">
+                                                        <div class="agent-type">Media Agent</div>
+                                                        <div class="agent-type">B2C Agent</div>
+                                                        <div class="agent-type">B2B Agent</div>
+                                                    </div>
+                                                    <div class="diagram-block agent-patterns">
+                                                        <div
+                                                            class="diagram-icon agent-patterns-icon"
+                                                        ></div>
+                                                        <div class="diagram-title">
+                                                            Agent<br />Patterns
+                                                        </div>
+                                                    </div>
+                                                    <div class="diagram-block pattern-types">
+                                                        <div class="pattern-type">
+                                                            Primitive<br />
+                                                            Pattern
+                                                        </div>
+                                                        <div class="pattern-type">
+                                                            Advanced<br />Pattern
+                                                        </div>
+                                                    </div>
+                                                    <div class="diagram-block pattern-logic">
+                                                        <div class="logic-primitive"></div>
+                                                        <div class="logic-primitive"></div>
+                                                    </div>
+                                                    <div class="diagram-block agent-capability">
+                                                        <div
+                                                            class="diagram-icon agent-capability-icon"
+                                                        ></div>
+                                                        <div class="diagram-title">
+                                                            Agent<br />
+                                                            Capability
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mobile-show">
+                                            <div
+                                                class="shape-wrapper pattern-graph"
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <img
+                                                    src="/resource/images/ai/solution/agent/agent-pattern-diagram.png"
+                                                    alt=""
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-section">
+                                    <div class="sub-title-wrapper">
+                                        <h2
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                        >
+                                            KT Agent Pattern <br class="mo-br" />Top-10
+                                        </h2>
+                                        <p
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                        >
+                                            AI Agent 개발 시 반복적으로 활용되는
+                                            <br class="mo-br" />상위 10개 패턴을 정의하고, 이를
+                                            기반으로 <br class="mo-br" />순차적으로 개발을 진행하고
+                                            있습니다.
+                                        </p>
+                                    </div>
+
+                                    <div class="pattern-top-wrapper">
+                                        <!-- kt agent pattern top 10 -->
+                                        <div class="table-card-list pattern-top10-grid">
+                                            <!-- 1행: 4개 -->
+                                            <div
+                                                class="pattern-card table-card-item"
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <h3>
+                                                    지식 검색, 처리<br /><span
+                                                        >Knowledge Search, Processing</span
+                                                    >
+                                                </h3>
+                                                <p>
+                                                    <span>Pattern 01</span>
+                                                    RAG(Retrieval-Augmented Generation) 기술과
+                                                    대규모 언어모델을 통해, <br />
+                                                    문서에서 필요한 정보를 검색하고 이를 바탕으로
+                                                    답변을 생성
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="pattern-card table-card-item"
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <h3>
+                                                    대화, 상호작용<br /><span
+                                                        >Conversational AI</span
+                                                    >
+                                                </h3>
+                                                <p>
+                                                    <span>Pattern 02</span>
+                                                    대규모 언어 모델(LLM)을 활용한 챗봇으로,
+                                                    사용자와 자연스럽게 대화
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="pattern-card table-card-item"
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <h3>
+                                                    콘텐츠 생성<br /><span
+                                                        >Generative AI, Content Generation</span
+                                                    >
+                                                </h3>
+                                                <p>
+                                                    <span>Pattern 03</span>
+                                                    생성형 AI를 활용하여 문서, 이미지, 영상 등의
+                                                    콘텐츠 생성
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="pattern-card table-card-item"
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <h3>
+                                                    개인화 추천<br /><span
+                                                        >Personalized Recommendations</span
+                                                    >
+                                                </h3>
+                                                <p>
+                                                    <span>Pattern 04</span>
+                                                    고객 성향과 행동 데이터를 분석하고, 이를
+                                                    바탕으로 개인화된 추천 서비스 제공
+                                                </p>
+                                            </div>
+                                            <!-- 2행: 첫번째 카드가 두 칸 차지, 나머지 2개 -->
+                                            <div
+                                                class="pattern-card table-card-item"
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <h3>
+                                                    프로세스 자동화, 실행<br /><span
+                                                        >Workflow Automation</span
+                                                    >
+                                                </h3>
+                                                <p>
+                                                    <span>Pattern 05</span>
+                                                    반복 업무나 시스템 연계를 자동화하고, 실제
+                                                    실행(업무 처리)까지 수행하여 효율성 향상<br />(필요
+                                                    시, 예측 모델이나 센서 데이터를 함께 활용해 자동
+                                                    제어까지 실현)
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="pattern-card table-card-item"
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <h3>
+                                                    복합 추론, Multi-Agent<br /><span
+                                                        >Complex Reasoning, Multi-Agent</span
+                                                    >
+                                                </h3>
+                                                <p>
+                                                    <span>Pattern 06</span>
+                                                    여러 Agent가 협력하여 다중 리소스를 활용해
+                                                    복잡한 문제를 해결
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="pattern-card table-card-item"
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <h3>
+                                                    예측, 의사결정 지원<br /><span
+                                                        >Forecasting, Decision Making</span
+                                                    >
+                                                </h3>
+                                                <p>
+                                                    <span>Pattern 07</span>
+                                                    데이터에 기반한 예측 모델을 사용하여, 의사결정에
+                                                    필요한 정보를 제공하는 패턴
+                                                </p>
+                                            </div>
+                                            <!-- 3행: 첫번째 카드가 두 칸 차지, 나머지 2개 -->
+                                            <div
+                                                class="pattern-card table-card-item"
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <h3>
+                                                    문서 처리, 정보 추출<br /><span
+                                                        >Document Processing, Information
+                                                        Extraction</span
+                                                    >
+                                                </h3>
+                                                <p>
+                                                    <span>Pattern 08</span>
+                                                    OCR(Optical Character Recognition) 기술로 문서를
+                                                    인식하고, 테이블과 같은<br />
+                                                    레이아웃을 이해하고 의미있는 정보를 자동으로
+                                                    추출
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="pattern-card table-card-item"
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <h3>
+                                                    음성 인식, 처리<br /><span
+                                                        >Voice Processing</span
+                                                    >
+                                                </h3>
+                                                <p>
+                                                    <span>Pattern 09</span>
+                                                    음성을 인식하여 텍스트로 변환하고, 이를 바탕으로
+                                                    필요한 서비스 제공
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="pattern-card table-card-item"
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <h3>
+                                                    컴퓨터 비전, 처리<br /><span
+                                                        >Vision Processing</span
+                                                    >
+                                                </h3>
+                                                <p>
+                                                    <span>Pattern 10</span>
+                                                    컴퓨터 비전 기술을 통해 이미지, 영상을 분석하고,
+                                                    필요한 정보를 추출
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-bright-fff">
+                    <div class="content-inner">
+                        <div class="tab-inner-wrapper">
+                            <!-- 2번 탭 컨텐츠 -->
+                            <div
+                                class="tabs__panel__anchor"
+                                id="tab-panel-2"
+                                role="tabpanel"
+                                aria-labelledby="tab-2"
+                            >
+                                <div class="tab-section">
+                                    <div class="title-wrapper only-title">
+                                        <span
+                                            class="open-planned top-center"
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                            >공개 예정</span
+                                        >
+                                        <span
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                            >Technology 02</span
+                                        >
+                                        <h2
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                            class="open-wrapper"
+                                        >
+                                            Multi-Model Orchestrator
+                                            <span class="open-planned pc-only">공개 예정</span>
+                                        </h2>
+                                        <h3
+                                            class="sub-big-h3 bold"
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                        >
+                                            AI 응답 품질은 높이고 비용은 <br class="mo-br" />
+                                            스마트 라우팅 기술
+                                        </h3>
+                                        <p
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                        >
+                                            Orchestrator는 질문의 성격에 따라 가장 적합한 AI 모델과
+                                            자동으로 연결해주는 스마트 라우팅 기술입니다.<br />
+                                            불필요한 고비용 모델 사용은 줄여 효율적인 AI 운영이
+                                            가능합니다.
+                                        </p>
+                                    </div>
+
+                                    <!-- Multi-Model Orchestrator 도식 -->
+                                    <!-- <div class="orchestrator-diagram" data-aos="fade-up" data-aos-duration="800"
                                     data-aos-easing="ease-out-cubic">
                                     <div class="img">
                                         <img src="/resource/images/ai/solution/agent/agent-Orchestrator-graph.png" alt=" Orchestrator User Agent LLM Router Routing Model Pre-mapped data Tools Web
                                             Search, RAG, Calculator LLMS 믿:음2.0 Finance GPT K GPT-4o" />
                                     </div>
                                 </div> -->
-                            </div>
-
-                            <div class="tab-section gap10">
-                                <div class="sub-title-wrapper">
-                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                        KT Orchestrator 특징
-                                    </h2>
                                 </div>
-                                <div class="list-wrapper Orchestrator-wrapper">
-                                    <ul>
-                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <div class="list-item has-number">
-                                                <h3>
-                                                    실시간 모델 라우팅
-                                                    <span class="sub-text-bk">(Real-Time Dynamic Routing)
-                                                    </span>
-                                                </h3>
-                                                <div class="text">
-                                                    사용자의 쿼리를 분석해 가장 적합한 AI 모델을
-                                                    실시간으로 예측·선택하고, <br />즉시
-                                                    연결합니다.
+
+                                <div class="tab-section gap10">
+                                    <div class="sub-title-wrapper">
+                                        <h2
+                                            data-aos="fade-up"
+                                            data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic"
+                                        >
+                                            KT Orchestrator 특징
+                                        </h2>
+                                    </div>
+                                    <div class="list-wrapper Orchestrator-wrapper">
+                                        <ul>
+                                            <li
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <div class="list-item has-number">
+                                                    <h3>
+                                                        실시간 모델 라우팅
+                                                        <span class="sub-text-bk"
+                                                            >(Real-Time Dynamic Routing)
+                                                        </span>
+                                                    </h3>
+                                                    <div class="text">
+                                                        사용자의 쿼리를 분석해 가장 적합한 AI 모델을
+                                                        실시간으로 예측·선택하고, <br />즉시
+                                                        연결합니다.
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <div class="list-item has-number">
-                                                <h3>
-                                                    비용 최적화<br />
-                                                    <span class="sub-text-bk">(Cost Optimization)</span>
-                                                </h3>
-                                                <div class="text">
-                                                    유사한 응답 품질을 제공할 수 있는 모델이
-                                                    있다면, 불필요하게 고비용의 기본 모델을
-                                                    사용하지 않고<br />
-                                                    더 효율적인 모델로 자동 라우팅합니다.
+                                            </li>
+                                            <li
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <div class="list-item has-number">
+                                                    <h3>
+                                                        비용 최적화<br />
+                                                        <span class="sub-text-bk"
+                                                            >(Cost Optimization)</span
+                                                        >
+                                                    </h3>
+                                                    <div class="text">
+                                                        유사한 응답 품질을 제공할 수 있는 모델이
+                                                        있다면, 불필요하게 고비용의 기본 모델을
+                                                        사용하지 않고<br />
+                                                        더 효율적인 모델로 자동 라우팅합니다.
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <div class="list-item has-number">
-                                                <h3>
-                                                    무중단 통합<br />
-                                                    <span class="sub-text-bk">(Seamless Integration)</span>
-                                                </h3>
-                                                <div class="text">
-                                                    Orchestrator를 사용하는 애플리케이션은 어떤
-                                                    모델이 사용되는지 신경 쓸 필요가
-                                                    없습니다.<br />
-                                                    모델이 추가되거나 제거되어도 별도 수정 없이
-                                                    그대로 동작합니다.
+                                            </li>
+                                            <li
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <div class="list-item has-number">
+                                                    <h3>
+                                                        무중단 통합<br />
+                                                        <span class="sub-text-bk"
+                                                            >(Seamless Integration)</span
+                                                        >
+                                                    </h3>
+                                                    <div class="text">
+                                                        Orchestrator를 사용하는 애플리케이션은 어떤
+                                                        모델이 사용되는지 신경 쓸 필요가
+                                                        없습니다.<br />
+                                                        모델이 추가되거나 제거되어도 별도 수정 없이
+                                                        그대로 동작합니다.
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                                            <div class="list-item has-number">
-                                                <h3>
-                                                    OpenAI 호환 지원<br />
-                                                    <span class="sub-text-bk">(Supports OpenAI Spec)</span>
-                                                </h3>
-                                                <div class="text">
-                                                    OpenAI API 규격을 준수해, 별도의 추가 작업
-                                                    없이 엔드포인트 변경만으로 쉽게 <br />적용할
-                                                    수 있습니다.
+                                            </li>
+                                            <li
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
+                                                <div class="list-item has-number">
+                                                    <h3>
+                                                        OpenAI 호환 지원<br />
+                                                        <span class="sub-text-bk"
+                                                            >(Supports OpenAI Spec)</span
+                                                        >
+                                                    </h3>
+                                                    <div class="text">
+                                                        OpenAI API 규격을 준수해, 별도의 추가 작업
+                                                        없이 엔드포인트 변경만으로 쉽게 <br />적용할
+                                                        수 있습니다.
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="content-section mo-pb-0">
-            <div class="content-inner overgrid-inner">
-                <div class="title-wrapper">
-                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">K Agent</span>
-                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        Use Cases
-                    </h2>
-                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        K intelligence와 함께한 기업들의 변화,<br class="mo-br" />
-                        성과로 증명된 유즈케이스를 확인해보세요.
-                    </p>
-                </div>
+            <section class="content-section mo-pb-0">
+                <div class="content-inner overgrid-inner">
+                    <div class="title-wrapper">
+                        <span
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                            >K Agent</span
+                        >
+                        <h2
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            Use Cases
+                        </h2>
+                        <p
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            K intelligence와 함께한 기업들의 변화,<br class="mo-br" />
+                            성과로 증명된 유즈케이스를 확인해보세요.
+                        </p>
+                    </div>
 
-                <div class="card-wrapper">
-                    <ul class="card-list-horizontal">
-                        <!-- <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                    <div class="card-wrapper">
+                        <ul class="card-list-horizontal">
+                            <!-- <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                             <div class="card-inner">
                                 <div class="card-img">
                                     <img src="/resource/images/ai/usecase/image01.png" alt="" />
@@ -701,46 +1058,56 @@
                                 </div>
                             </div>
                         </li> -->
-                        <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="card-inner">
-                                <div class="card-img">
-                                    <img src="/resource/images/ai/usecase/image02.png" alt="" />
-                                </div>
-                                <div class="card-txts">
-                                    <h3 class="sub-title-sm">지니TV</h3>
-                                    <p class="sub-desc">
-                                        자연스러운 대화로 콘텐츠 탐색이 가능한 LLM 기반 미디어
-                                        Agent,실시간 자막 생성이 적용된 AI TV
-                                    </p>
-                                    <div class="card-tags">
-                                        <span class="card-tag">KT사례</span>
-                                        <span class="card-tag">Agent</span>
-                                        <span class="card-tag">음성인식</span>
-                                        <span class="card-tag">음성합성</span>
+                            <li
+                                class="card"
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="card-inner">
+                                    <div class="card-img">
+                                        <img src="/resource/images/ai/usecase/image02.png" alt="" />
+                                    </div>
+                                    <div class="card-txts">
+                                        <h3 class="sub-title-sm">지니TV</h3>
+                                        <p class="sub-desc">
+                                            자연스러운 대화로 콘텐츠 탐색이 가능한 LLM 기반 미디어
+                                            Agent,실시간 자막 생성이 적용된 AI TV
+                                        </p>
+                                        <div class="card-tags">
+                                            <span class="card-tag">KT사례</span>
+                                            <span class="card-tag">Agent</span>
+                                            <span class="card-tag">음성인식</span>
+                                            <span class="card-tag">음성합성</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <div class="card-inner">
-                                <div class="card-img">
-                                    <img src="/resource/images/ai/usecase/image04.png" alt="" />
-                                </div>
-                                <div class="card-txts">
-                                    <h3 class="sub-title-sm">사장이지</h3>
-                                    <p class="sub-desc">
-                                        하나의 앱으로 효율적인 매장 운영 기능 통합제공, 전문
-                                        지식을 학습한 AI Agent가 실시간 질문에 대답
-                                    </p>
-                                    <div class="card-tags">
-                                        <span class="card-tag">KT사례</span>
-                                        <span class="card-tag">RAG</span>
-                                        <span class="card-tag">Agent</span>
+                            </li>
+                            <li
+                                class="card"
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="card-inner">
+                                    <div class="card-img">
+                                        <img src="/resource/images/ai/usecase/image04.png" alt="" />
+                                    </div>
+                                    <div class="card-txts">
+                                        <h3 class="sub-title-sm">사장이지</h3>
+                                        <p class="sub-desc">
+                                            하나의 앱으로 효율적인 매장 운영 기능 통합제공, 전문
+                                            지식을 학습한 AI Agent가 실시간 질문에 대답
+                                        </p>
+                                        <div class="card-tags">
+                                            <span class="card-tag">KT사례</span>
+                                            <span class="card-tag">RAG</span>
+                                            <span class="card-tag">Agent</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <!-- <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            </li>
+                            <!-- <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                             <div class="card-inner">
                                 <div class="card-img">
                                     <img src="/resource/images/ai/usecase/image03.png" alt="" />
@@ -760,11 +1127,11 @@
                                 </div>
                             </div>
                         </li> -->
-                    </ul>
+                        </ul>
 
-                    <ul class="card-list-horizontal swiper-container">
-                        <div class="swiper-wrapper">
-                            <!-- <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                        <ul class="card-list-horizontal swiper-container">
+                            <div class="swiper-wrapper">
+                                <!-- <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
                                 data-aos-easing="ease-out-cubic">
                                 <div class="card-inner">
                                     <div class="card-img">
@@ -785,47 +1152,61 @@
                                     </div>
                                 </div>
                             </li> -->
-                            <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic">
-                                <div class="card-inner">
-                                    <div class="card-img">
-                                        <img src="/resource/images/ai/usecase/image02.png" alt="" />
-                                    </div>
-                                    <div class="card-txts">
-                                        <h3 class="sub-title-sm">지니TV</h3>
-                                        <p class="sub-desc">
-                                            자연스러운 대화로 콘텐츠 탐색이 가능한 LLM 기반
-                                            미디어 Agent,실시간 자막 생성이 적용된 AI TV
-                                        </p>
-                                        <div class="card-tags">
-                                            <span class="card-tag">KT사례</span>
-                                            <span class="card-tag">Multi-Agent</span>
-                                            <span class="card-tag">음성합성</span>
+                                <li
+                                    class="card swiper-slide"
+                                    data-aos="fade-up"
+                                    data-aos-duration="800"
+                                    data-aos-easing="ease-out-cubic"
+                                >
+                                    <div class="card-inner">
+                                        <div class="card-img">
+                                            <img
+                                                src="/resource/images/ai/usecase/image02.png"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="card-txts">
+                                            <h3 class="sub-title-sm">지니TV</h3>
+                                            <p class="sub-desc">
+                                                자연스러운 대화로 콘텐츠 탐색이 가능한 LLM 기반
+                                                미디어 Agent,실시간 자막 생성이 적용된 AI TV
+                                            </p>
+                                            <div class="card-tags">
+                                                <span class="card-tag">KT사례</span>
+                                                <span class="card-tag">Multi-Agent</span>
+                                                <span class="card-tag">음성합성</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic">
-                                <div class="card-inner">
-                                    <div class="card-img">
-                                        <img src="/resource/images/ai/usecase/image04.png" alt="" />
-                                    </div>
-                                    <div class="card-txts">
-                                        <h3 class="sub-title-sm">사장이지</h3>
-                                        <p class="sub-desc">
-                                            하나의 앱으로 효율적인 매장 운영 기능 통합제공, 전문
-                                            지식을 학습한 AI Agent가 실시간 질문에 대답
-                                        </p>
-                                        <div class="card-tags">
-                                            <span class="card-tag">KT사례</span>
-                                            <span class="card-tag">RAG</span>
-                                            <span class="card-tag">Agent</span>
+                                </li>
+                                <li
+                                    class="card swiper-slide"
+                                    data-aos="fade-up"
+                                    data-aos-duration="800"
+                                    data-aos-easing="ease-out-cubic"
+                                >
+                                    <div class="card-inner">
+                                        <div class="card-img">
+                                            <img
+                                                src="/resource/images/ai/usecase/image04.png"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="card-txts">
+                                            <h3 class="sub-title-sm">사장이지</h3>
+                                            <p class="sub-desc">
+                                                하나의 앱으로 효율적인 매장 운영 기능 통합제공, 전문
+                                                지식을 학습한 AI Agent가 실시간 질문에 대답
+                                            </p>
+                                            <div class="card-tags">
+                                                <span class="card-tag">KT사례</span>
+                                                <span class="card-tag">RAG</span>
+                                                <span class="card-tag">Agent</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                            <!-- <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                                </li>
+                                <!-- <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
                                 data-aos-easing="ease-out-cubic">
                                 <div class="card-inner">
                                     <div class="card-img">
@@ -846,40 +1227,44 @@
                                     </div>
                                 </div>
                             </li> -->
+                            </div>
+                        </ul>
+                        <div
+                            class="btnWrap"
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            data-aos-easing="ease-out-cubic"
+                        >
+                            <a href="/ai/usecase/">
+                                <button type="button" class="btn sm">전체보기</button>
+                            </a>
                         </div>
-                    </ul>
-                    <div class="btnWrap" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        <a href="/ai/usecase/">
-                            <button type="button" class="btn sm">전체보기</button>
-                        </a>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
+        </div>
 
-    <!-- KT Model 체험하기 -->
-    <section id="kt-model-section" class="kt-model-section"></section>
+        <!-- KT Model 체험하기 -->
+        <section id="kt-model-section" class="kt-model-section"></section>
 
-    <!-- Footer -->
-    <footer class="footer"></footer>
+        <!-- Footer -->
+        <footer class="footer"></footer>
 
-    <!-- Script -->
-    <script src="/js/ai/common/common.js"></script>
-    <script src="/js/ai/solution.js"></script>
+        <!-- Script -->
+        <script src="/js/ai/common/common.js"></script>
+        <script src="/js/ai/solution.js"></script>
 
-    <script>
-        includeCommonLayout();
-    </script>
-    <script src="/js/ai/common/aos.js"></script>
-    <script src="/js/ai/common/swiper-bundle.min.js"></script>
+        <script>
+            includeCommonLayout();
+        </script>
+        <script src="/js/ai/common/aos.js"></script>
+        <script src="/js/ai/common/swiper-bundle.min.js"></script>
 
-    <!-- Tabs Component (공통) -->
-    <script src="/js/ai/sub_cy.js"></script>
+        <!-- Tabs Component (공통) -->
+        <script src="/js/ai/sub_cy.js"></script>
 
-    <script>
-        AOS.init();
-    </script>
-</body>
-
+        <script>
+            AOS.init();
+        </script>
+    </body>
 </html>
