@@ -1795,7 +1795,7 @@
 }
 
 .agent-pattern-diagram .agent-type {
-    padding: 2.9375rem 2.5rem;
+    padding: 3.1rem 2.5rem;
     min-width: 12.75rem;
     border-radius: 1.25rem;
     border: 1px solid #373737;
@@ -1851,7 +1851,7 @@
 
 .agent-pattern-diagram .pattern-type {
     min-width: 12.75rem;
-    min-height: 13.3rem;
+    min-height: 13.6rem;
     border-radius: 1.25rem;
     border: 1px solid #373737;
     display: flex;
@@ -1882,7 +1882,7 @@
     background-repeat: no-repeat;
     background-position: center;
     width: 12.7rem;
-    height: 13.3rem;
+    height: 13.6rem;
     border: 1px solid #373737;
     border-radius: 1.25rem;
     overflow: hidden;
@@ -1902,7 +1902,7 @@
 
 .agent-pattern-diagram .agent-capability {
     min-width: 12.75rem;
-    min-height: 28.7rem;
+    min-height: 29.4rem;
     justify-content: center;
     border: 1px solid #373737;
     border-radius: 1.25rem;
@@ -1937,6 +1937,312 @@
     position: absolute;
     left: 0;
     top: 50%;
+}
+
+/* k-agent-architecture */
+.agent-graph-wrapper {
+    margin-top: 2rem;
+    border: 1px solid var(--gray-300-color);
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+}
+
+.agent-graph-wrapper .k-agent-title {
+    font-weight: 700;
+    font-size: var(--font-size-3xl);
+    line-height: 150%;
+    letter-spacing: -0.5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.k-agent-container {
+    border: 1px solid var(--gray-300-color);
+    border-radius: 1.25rem;
+    width: 47.125rem;
+    padding: 2.5rem 4.25rem 2.5rem 8.625rem;
+    margin-left: 18.625rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4.25rem;
+    position: relative;
+}
+
+.k-agent-container:after {
+    display: block;
+    content: '';
+    width: 58.8125rem;
+    height: 48.8125rem;
+    position: absolute;
+    top: 18.5rem;
+    left: -8.25rem;
+    background-image: url('/resource/images/ai/solution/agent/key-features-graph.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.memory-section {
+    margin-top: -1.75rem;
+    position: relative;
+}
+
+.memory-section:after {
+    display: block;
+    content: '';
+    height: 3.75rem;
+    width: 0.75rem;
+    position: absolute;
+    top: 11.5rem;
+    left: 16.3rem;
+    background-image: url('/resource/images/ai/solution/agent/KeyFeatures-graph-arrow03.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+}
+
+.agent-orchestrator-section {
+    position: relative;
+}
+
+.agent-orchestrator-section:after {
+    display: block;
+    content: '';
+    height: 3rem;
+    width: 0.75rem;
+    position: absolute;
+    top: 30.2rem;
+    left: 16.3rem;
+    background-image: url('/resource/images/ai/solution/agent/KeyFeatures-graph-arrow01.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+}
+
+
+.k-agent-container .memory-section,
+.agent-orchestrator-section,
+.multi-model-title,
+.uiux-section,
+.multi-model-orchestrator-section .model,
+.query-box,
+.response-box {
+    border-radius: 1.25rem;
+    border: 1px solid var(--gray-300-color);
+    text-align: center;
+}
+
+.orchestrator-steps .orchestrator-step,
+.memory-section .memory-type {
+    background-color: var(--gray-100-color);
+    border-radius: 0.5rem;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-size: var(--font-size-xl);
+    line-height: 172%;
+    letter-spacing: -0.4px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.memory-title,
+.agent-orchestrator-title,
+.multi-model-title,
+.multi-model-orchestrator-section .model,
+.mcp-hub-title,
+.agent-hub-title,
+.uiux-title,
+.query-box,
+.response-box {
+    font-weight: 700;
+    font-size: var(--font-size-3xl);
+    line-height: 150%;
+    letter-spacing: -0.5px;
+    vertical-align: middle;
+}
+
+.memory-title,
+.agent-orchestrator-title {
+    margin-bottom: 1.25rem;
+}
+
+.memory-section,
+.agent-orchestrator-section {
+    padding: 1.875rem 7.1875rem;
+}
+
+.memory-type,
+.orchestrator-step {
+    padding: 1.25rem;
+}
+
+.memory-types {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.memory-types .memory-type {
+    width: 9.5625rem;
+    padding: 0.625rem 0;
+}
+
+.orchestrator-step {
+    width: 19.8125rem;
+    margin: 0 auto;
+}
+
+.orchestrator-step+.orchestrator-step {
+    margin-top: 3.75rem;
+}
+
+.multi-model-title {
+    padding: 1.875rem;
+    position: relative;
+}
+
+.multi-model-title:after {
+    display: block;
+    content: '';
+    height: 3rem;
+    width: 0.75rem;
+    position: absolute;
+    top: 7.2rem;
+    left: 16.3rem;
+    background-image: url('/resource/images/ai/solution/agent/KeyFeatures-graph-arrow01.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+}
+
+.multi-model-orchestrator-section .models {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4.25rem;
+}
+
+.multi-model-orchestrator-section .model {
+    padding: 1.25rem 2.3125rem;
+}
+
+.uiux-section {
+    position: absolute;
+    width: 8.75rem;
+    height: 44.1875rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #fff;
+    top: 7.4375rem;
+    left: -4.5rem;
+}
+
+.k-agent-architecture {
+    position: relative;
+}
+
+.query-response-section {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 3.75rem;
+    left: 0;
+    top: 21rem;
+}
+
+.query-response-section .query-box,
+.query-response-section .response-box {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agent-hub-section,
+.mcp-hub-section {
+    width: 11.75rem;
+    height: 17.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.25rem;
+    border: 1px solid var(--gray-300-color);
+    text-align: center;
+}
+
+.mcp-hub-section {
+    position: relative;
+}
+
+.agent-orchestrator-section:after {
+    display: block;
+    content: '';
+    height: 3rem;
+    width: 0.75rem;
+    position: absolute;
+    top: 30.2rem;
+    left: 16.3rem;
+    background-image: url('/resource/images/ai/solution/agent/KeyFeatures-graph-arrow01.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+}
+
+
+.mcp-hub-section .mcp-desc {
+    font-weight: 400;
+    font-size: var(--font-size-sm);
+    line-height: 140%;
+    text-align: center;
+    vertical-align: middle;
+    max-width: 6rem;
+    min-width: 6rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.mcp-hub-section {
+    margin-top: 1.5rem;
+    position: relative;
+}
+
+.mcp-hub-section:after {
+    display: block;
+    content: '';
+    height: 0.75rem;
+    width: 7.25rem;
+    position: absolute;
+    top: 8.2rem;
+    left: -7.7rem;
+    background-image: url('/resource/images/ai/solution/agent/KeyFeatures-graph-arrow02.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+}
+
+
+.mcp-hub-section .mcp-hub-list div {
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    line-height: 172%;
+    letter-spacing: -0.2px;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 1rem;
+}
+
+.agent-graph-right {
+    position: absolute;
+    right: 0;
+    top: 19rem;
 }
 
 /* model page */
