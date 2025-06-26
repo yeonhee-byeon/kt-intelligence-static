@@ -453,7 +453,7 @@
     position: absolute;
     right: -3rem;
     top: 0.75rem;
-    background-image: url('/resource/images/ai/icons/new-mark.png');
+    background-image: url('/resource/images/ai/icons/new-mark_pc.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1731,7 +1731,7 @@
     display: flex;
     justify-content: center;
     margin-top: 2rem;
-    padding: 12.125rem 5.75rem 4.875rem;
+    padding: 2.5rem 5.75rem;
     font-size: var(--font-size-xl);
     font-weight: 500;
     line-height: var(--line-height-172);
@@ -2112,6 +2112,21 @@
     top: 7.2rem;
     left: 16.3rem;
     background-image: url('/resource/images/ai/solution/agent/KeyFeatures-graph-arrow01.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+}
+
+.multi-model-title:before {
+    display: block;
+    content: '';
+    height: 2.25rem;
+    width: 26.0625rem;
+    position: absolute;
+    top: 8rem;
+    left: 3.9rem;
+    background-image: url('/resource/images/ai/solution/agent/KeyFeatures-graph-arrow04.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
