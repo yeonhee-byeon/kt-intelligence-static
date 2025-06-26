@@ -1778,6 +1778,7 @@ br {
         background: none;
     }
     .cube-last-text > img {
+        display: block;
         width: 100%;
         height: auto;
         object-fit: contain;
