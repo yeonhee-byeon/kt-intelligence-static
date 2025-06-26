@@ -61,81 +61,176 @@ function initIntroSectionAnimation() {
     const desc2 = section.querySelector('ul li p:last-child');
     const countUp = section.querySelectorAll('.count-up');
 
-    const tl = gsap.timeline({
-        ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
-        scrollTrigger: {
-            trigger: section,
-            start: 'top bottom-=30%',
-            end: 'bottom bottom',
+    ScrollTrigger.matchMedia({
+        '(min-width: 769px)': function () {
+            const tl = gsap.timeline({
+                ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top bottom-=30%',
+                    end: 'bottom bottom',
+                },
+            });
+
+            tl.fromTo(
+                title1,
+                {
+                    opacity: 0,
+                    yPercent: 100,
+                },
+                {
+                    opacity: 1,
+                    yPercent: 0,
+                    duration: 0.4,
+                },
+            )
+                .fromTo(
+                    title2,
+                    {
+                        opacity: 0,
+                        yPercent: 100,
+                    },
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 0.4,
+                    },
+                    '-=0.2',
+                )
+                .fromTo(
+                    desc1,
+                    {
+                        opacity: 0,
+                        yPercent: 100,
+                    },
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 0.4,
+                    },
+                )
+                .fromTo(
+                    desc2,
+                    {
+                        opacity: 0,
+                        yPercent: 100,
+                    },
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 0.4,
+                    },
+                    '-=0.2',
+                )
+                .fromTo(
+                    countUp,
+                    {
+                        opacity: 0,
+                        yPercent: 50,
+                    },
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 0.4,
+                        onComplete: () => {
+                            countUpDigitsReverse('.count-item-1', { duration: 2000 });
+                            countUpDigitsReverse('.count-item-2', { duration: 2000 });
+                        },
+                    },
+                );
+        },
+        '(max-width: 768px)': function () {
+            const tl = gsap.timeline({
+                ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top bottom-=30%',
+                    end: 'bottom bottom',
+                },
+            });
+
+            tl.fromTo(
+                title1,
+                {
+                    opacity: 0,
+                    yPercent: 100,
+                },
+                {
+                    opacity: 1,
+                    yPercent: 0,
+                    duration: 0.4,
+                },
+            )
+                .fromTo(
+                    title2,
+                    {
+                        opacity: 0,
+                        yPercent: 100,
+                    },
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 0.4,
+                    },
+                    '-=0.2',
+                )
+                .fromTo(
+                    desc1,
+                    {
+                        opacity: 0,
+                        yPercent: 100,
+                    },
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 0.4,
+                    },
+                )
+                .fromTo(
+                    desc2,
+                    {
+                        opacity: 0,
+                        yPercent: 100,
+                    },
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 0.4,
+                    },
+                    '-=0.2',
+                )
+                .fromTo(
+                    countUp[0],
+                    {
+                        opacity: 0,
+                        yPercent: 50,
+                    },
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 0.4,
+                        onStart: () => {
+                            countUpDigitsReverse('.count-item-1', { duration: 2000 });
+                        },
+                    },
+                )
+                .fromTo(
+                    countUp[1],
+                    {
+                        opacity: 0,
+                        yPercent: 50,
+                    },
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 0.4,
+                        onStart: () => {
+                            countUpDigitsReverse('.count-item-2', { duration: 2000 });
+                        },
+                    },
+                );
         },
     });
-
-    tl.fromTo(
-        title1,
-        {
-            opacity: 0,
-            yPercent: 100,
-        },
-        {
-            opacity: 1,
-            yPercent: 0,
-            duration: 0.4,
-        },
-    )
-        .fromTo(
-            title2,
-            {
-                opacity: 0,
-                yPercent: 100,
-            },
-            {
-                opacity: 1,
-                yPercent: 0,
-                duration: 0.4,
-            },
-            '-=0.2',
-        )
-        .fromTo(
-            desc1,
-            {
-                opacity: 0,
-                yPercent: 100,
-            },
-            {
-                opacity: 1,
-                yPercent: 0,
-                duration: 0.4,
-            },
-        )
-        .fromTo(
-            desc2,
-            {
-                opacity: 0,
-                yPercent: 100,
-            },
-            {
-                opacity: 1,
-                yPercent: 0,
-                duration: 0.4,
-            },
-            '-=0.2',
-        )
-        .fromTo(
-            countUp,
-            {
-                opacity: 0,
-                yPercent: 50,
-            },
-            {
-                opacity: 1,
-                yPercent: 0,
-                duration: 0.4,
-                onComplete: () => {
-                    countUpDigitsReverse('.count-item-1', { duration: 2000 });
-                    countUpDigitsReverse('.count-item-2', { duration: 2000 });
-                },
-            },
-        );
 }
 
 function initParallaxSectionAnimation() {
