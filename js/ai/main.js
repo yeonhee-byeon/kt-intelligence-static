@@ -325,7 +325,7 @@ function initParallaxDepthSectionAnimation() {
     window.addEventListener('scroll', trackScrollState, { passive: true });
 
     ScrollTrigger.matchMedia({
-        all: function () {
+        '(min-width: 769px)': function () {
             let tlComplete = false;
             const tl = gsap.timeline({
                 ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
@@ -545,6 +545,7 @@ function initParallaxDepthSectionAnimation() {
                     '-=0.2',
                 );
         },
+        '(max-width: 768px)': function () {},
     });
 
     // 리사이즈 시 WheelNavigation만 재생성
@@ -749,26 +750,19 @@ function initUsecaseSectionAnimation() {
 }
 
 function initMobileMenu() {
-    const pdsSection = document.querySelector('.mobile-pds-menu');
     const ecoSection = document.querySelector('.eco-partners-mobile');
+    const pdsSection = document.querySelector('.mobile-pds-menu');
 
-    if (!pdsSection || !ecoSection || !window.Swiper) return;
-
-    const pdsMenuSwiper = new Swiper('.mobile-pds-menu .swiper-container', {
-        slidesPerView: 'auto',
-        spaceBetween: 14,
-        centeredSlides: true,
-        speed: 500,
-        effect: 'slide',
-        on: {
-            slideChange: function () {
-                const activeIndex = this.activeIndex;
-                setActiveMenu(activeIndex);
-            },
-        },
-    });
+    if (!ecoSection || !pdsSection || !window.Swiper) return;
 
     const ecoSwiper = new Swiper('.eco-partners-mobile .swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 14,
+        speed: 500,
+        effect: 'slide',
+    });
+
+    const pdsMenuSwiper = new Swiper('.mobile-pds-menu .swiper-container', {
         slidesPerView: 'auto',
         spaceBetween: 14,
         // centeredSlides: true,
