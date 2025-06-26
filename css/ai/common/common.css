@@ -131,11 +131,11 @@ body.scroll-lock {
         font-size: 16px !important;
     }
 } */
-@media (max-width: 1366px) {
+/* @media (max-width: 1366px) {
     html {
         font-size: 1.1713vw !important;
     }
-}
+} */
 
 .hide-desc {
     position: absolute;
@@ -558,6 +558,7 @@ body.scroll-lock {
     color: var(--white-color);
     font-family: 'Pretendard', sans-serif;
     font-size: var(--font-size-base);
+    padding: 0 2rem;
 }
 
 .footer-top {

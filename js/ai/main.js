@@ -546,6 +546,12 @@ function initParallaxDepthSectionAnimation() {
                 );
         },
         '(max-width: 768px)': function () {
+            enableScroll();
+            if (wheelNavInstance) {
+                wheelNavInstance.destroy();
+                wheelNavInstance = null;
+            }
+
             // Swiper 인스턴스 생성 (모바일 메뉴용)
             var pdsSwiper = null;
             var section = document.querySelector('.parallax-depth-section .component-content');
