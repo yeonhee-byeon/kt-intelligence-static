@@ -506,7 +506,7 @@
 
 /* resources detail Page */
 .techDetailPage {
-    max-width: 768px;
+    max-width: 48rem;
     margin: 0 auto;
     padding-top: 12.75rem;
 }
@@ -533,6 +533,8 @@
 .tech-detail-header .card-tags {
     margin: 0 auto;
     width: fit-content;
+    justify-content: center;
+    max-width: 80%;
 }
 
 .tech-detail-header .card-tags span {
