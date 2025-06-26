@@ -614,10 +614,12 @@ function initParallaxDepthSectionAnimation() {
 
     // 리사이즈 시 WheelNavigation만 재생성
     window.addEventListener('resize', () => {
-        if (wheelNavInstance) {
-            wheelNavInstance.destroy();
-            wheelNavInstance = null;
-        }
+        ScrollTrigger.refresh();
+        // if (wheelNavInstance) {
+        //     console.log(wheelNavInstance);
+        //     wheelNavInstance.destroy();
+        //     wheelNavInstance = null;
+        // }
     });
 
     // cleanup function
