@@ -103,7 +103,7 @@
 }
 
 html {
-    font-size: 0.8333vw !important;
+    font-size: 16px;
 }
 
 body {
@@ -126,9 +126,14 @@ body.scroll-lock {
     overscroll-behavior: none;
 }
 
-@media (min-width: 1921px) {
+/* @media (min-width: 1921px) {
     html {
         font-size: 16px !important;
+    }
+} */
+@media (max-width: 1536px) {
+    html {
+        font-size: 1.0417vw;
     }
 }
 

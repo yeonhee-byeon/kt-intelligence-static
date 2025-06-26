@@ -1857,7 +1857,7 @@ br {
         max-width: none;
     }
     .kquality-section .kquality-hex-wrap {
-        margin-bottom: 6rem;
+        margin-bottom: 12rem;
     }
     .kquality-section .kquality-bottom {
         margin-top: 0;
@@ -2235,7 +2235,7 @@ br {
     }
 
     .usecase-section {
-        padding: 0 2rem 10rem;
+        padding: 0 0 10rem;
         position: relative;
         z-index: 1;
         overflow: hidden;
@@ -2245,8 +2245,7 @@ br {
     }
     .usecase-section .usecase-swiper {
         display: flex;
-        padding-top: 2.4rem;
-        padding-bottom: 2.4rem;
+        padding: 2.4rem 2rem;
         width: 100%;
     }
     .usecase-swiper .swiper-slide {
