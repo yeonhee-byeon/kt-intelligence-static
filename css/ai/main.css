@@ -1808,6 +1808,7 @@ br {
     .cube-last-text ul li img {
         width: 23.1rem;
         height: 4.4rem;
+        margin-top: -1rem;
     }
     .cube-last-text ul li span {
         font-size: 3.48rem;
