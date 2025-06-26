@@ -1,7 +1,29 @@
-// Tabs Component
+// ======= 리팩토링: sub_cy.js =======
+
 document.addEventListener('DOMContentLoaded', function () {
+  initTabsComponent();
+  initInnerTabs();
+  initStickyHeader();
+  initModelTabsSwiper();
+  initInnerTabClick();
+  initAccordion();
+  initSequentialVideoPlayer();
+  initResourcesTab();
+});
+
+window.addEventListener('resize', function () {
+  initModelTabsSwiper();
+  if (window.innerWidth < 768) assignMobileTabIndexes();
+  initInnerTabClick();
+});
+
+window.addEventListener('scroll', function () {
+  syncMobileTabActiveByScroll();
+});
+
+// ===== Tabs Component =====
+function initTabsComponent() {
   document.querySelectorAll('.tabs').forEach(function (tabs) {
-    // tabs를 감싸는 가장 가까운 .tabs-component를 컨테이너로 사용
     const container = tabs.closest('.tabs-component') || tabs.parentNode;
     const tabButtons = tabs.querySelectorAll('.tabs__tab');
     const tabPanels = Array.from(container.querySelectorAll('.tabs__panel'));
@@ -18,32 +40,137 @@ document.addEventListener('DOMContentLoaded', function () {
           panel.classList.toggle('tabs__panel--active', isActive);
           panel.hidden = !isActive;
         });
-
-        // 모바일에서 탭 클릭 시 해당 탭을 왼쪽으로 스크롤 (1.25rem 여백)
         if (window.innerWidth <= 767) {
           const tabsContainer = tabs;
           const tabElement = e.target;
           const containerRect = tabsContainer.getBoundingClientRect();
           const tabRect = tabElement.getBoundingClientRect();
-          const scrollLeft = tabRect.left - containerRect.left - 20; // 1.25rem = 20px
-
-          tabsContainer.scrollTo({
-            left: tabsContainer.scrollLeft + scrollLeft,
-            behavior: 'smooth'
-          });
+          const scrollLeft = tabRect.left - containerRect.left - 20;
+          tabsContainer.scrollTo({ left: tabsContainer.scrollLeft + scrollLeft, behavior: 'smooth' });
         }
       }
     });
   });
-});
+}
+// resources 탭 내 게시글 접속 시 뒤로가기 해도 탭 활성화 유지 + 모바일 자동 스크롤
+(function () {
+  const TAB_KEY = 'resourcesTabActive';
+  const tabPrefix = 'tab-';
+  const tabGroupSelector = '.js-tab-group .tabs__tab';
+  const panelGroupSelector = '.js-tab-group .tabs__panel';
 
-// Solution Model Inner Tabs
-document.addEventListener('DOMContentLoaded', function () {
+  function getTabNameById(tabId) {
+    switch (tabId) {
+      case 'tab-1': return 'all';
+      case 'tab-2': return 'whatsnew';
+      case 'tab-3': return 'modelcard';
+      case 'tab-4': return 'techreport';
+      case 'tab-5': return 'publications';
+      default: return 'all';
+    }
+  }
+  function getTabIdByName(tabName) {
+    switch (tabName) {
+      case 'all': return 'tab-1';
+      case 'whatsnew': return 'tab-2';
+      case 'modelcard': return 'tab-3';
+      case 'techreport': return 'tab-4';
+      case 'publications': return 'tab-5';
+      default: return 'tab-1';
+    }
+  }
+
+  function activateTab(tabId, scrollToTab = false) {
+    const tabBtns = document.querySelectorAll(tabGroupSelector);
+    const tabPanels = document.querySelectorAll(panelGroupSelector);
+    tabBtns.forEach(btn => {
+      const isActive = btn.id === tabId;
+      btn.classList.toggle('tabs__tab--active', isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      // 모바일: 활성화된 탭 자동 스크롤
+      if (isActive && scrollToTab && window.innerWidth <= 767) {
+        const tabsContainer = btn.parentNode;
+        const containerRect = tabsContainer.getBoundingClientRect();
+        const tabRect = btn.getBoundingClientRect();
+        const scrollLeft = tabRect.left - containerRect.left - 20; // 1.25rem = 20px
+        tabsContainer.scrollTo({
+          left: tabsContainer.scrollLeft + scrollLeft,
+          behavior: 'smooth'
+        });
+      }
+    });
+    tabPanels.forEach(panel => {
+      const isActive = panel.getAttribute('aria-labelledby') === tabId;
+      panel.classList.toggle('tabs__panel--active', isActive);
+      panel.hidden = !isActive;
+    });
+  }
+
+  function saveTab(tabId) {
+    localStorage.setItem(TAB_KEY, tabId);
+  }
+  function getSavedTab() {
+    return localStorage.getItem(TAB_KEY);
+  }
+
+  function setHash(tabId) {
+    const tabName = getTabNameById(tabId);
+    if (location.hash !== '#' + tabName) {
+      history.replaceState(null, '', '#' + tabName);
+    }
+  }
+  function getTabIdFromHash() {
+    const hash = location.hash.replace('#', '');
+    if (!hash) return null;
+    return getTabIdByName(hash);
+  }
+
+  function handleTabClick(e) {
+    if (!e.target.classList.contains('tabs__tab')) return;
+    const tabId = e.target.id;
+    setHash(tabId);
+    saveTab(tabId);
+    // 모바일: 클릭 시 자동 스크롤
+    if (window.innerWidth <= 767) {
+      activateTab(tabId, true);
+    }
+  }
+
+  function handleHashChange() {
+    const tabId = getTabIdFromHash();
+    if (tabId) {
+      // 뒤로가기 등으로 해시 변경 시에도 모바일 자동 스크롤
+      activateTab(tabId, window.innerWidth <= 767);
+      saveTab(tabId);
+    }
+  }
+
+  // 초기 진입 시: 해시 → localStorage → 기본값 순으로 탭 활성화
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabIdFromHash = getTabIdFromHash();
+    const tabIdFromStorage = getSavedTab();
+    let tabIdToActivate = tabIdFromHash || tabIdFromStorage || 'tab-1';
+    // 모바일: 진입 시 자동 스크롤
+    activateTab(tabIdToActivate, window.innerWidth <= 767);
+    setHash(tabIdToActivate);
+    // 탭 클릭 시 해시/스토리지 동기화
+    const tabBtns = document.querySelectorAll(tabGroupSelector);
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', handleTabClick);
+    });
+  });
+  // 뒤로가기/앞으로가기 시 해시 변경 감지
+  window.addEventListener('hashchange', handleHashChange);
+})();
+
+
+
+
+// ===== Inner Tabs (Fade) =====
+function initInnerTabs() {
   document.querySelectorAll('.inner-tabs-container').forEach(function (container) {
     const triggers = container.querySelectorAll('.inner-tab-trigger');
     const contents = container.querySelectorAll('.inner-tab-content');
-
-    // Initial setup: hide all but active
     contents.forEach(function (content) {
       content.style.transition = 'opacity 0.4s ease-in-out';
       if (!content.classList.contains('active')) {
@@ -55,43 +182,29 @@ document.addEventListener('DOMContentLoaded', function () {
         content.style.position = 'relative';
       }
     });
-
     function fadeOut(element, callback) {
       element.style.opacity = '0';
       setTimeout(function () {
         element.style.position = 'absolute';
         element.style.visibility = 'hidden';
         element.style.zIndex = '-1';
-        if (callback) {
-          callback();
-        }
-      }, 300); // transition duration
+        if (callback) callback();
+      }, 300);
     }
-
     function fadeIn(element) {
       element.style.position = 'relative';
       element.style.visibility = 'visible';
       element.style.zIndex = '1';
-      setTimeout(function () {
-        element.style.opacity = '1';
-      }, 20); // allow visibility to apply before starting transition
+      setTimeout(function () { element.style.opacity = '1'; }, 20);
     }
-
     triggers.forEach(function (clickedTrigger, index) {
       clickedTrigger.addEventListener('click', function () {
-
         if (clickedTrigger.classList.contains('active')) return;
-
         let currentActiveTrigger = container.querySelector('.inner-tab-trigger.active');
         let currentActiveContent = container.querySelector('.inner-tab-content.active');
-
-        if (currentActiveTrigger) {
-          currentActiveTrigger.classList.remove('active');
-        }
+        if (currentActiveTrigger) currentActiveTrigger.classList.remove('active');
         clickedTrigger.classList.add('active');
-
         const newContent = contents[index];
-
         if (currentActiveContent && newContent) {
           fadeOut(currentActiveContent, function () {
             currentActiveContent.classList.remove('active');
@@ -102,22 +215,21 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
-});
+}
 
-
-// Solution Model Inner Tabs swiper
-const modelTabs = document.querySelector('.mobile-model-tabs');
-function initTabMobileSwiper() {
+// ===== Model Tabs Swiper (Mobile) =====
+let mobileTabSwiper = null;
+function initModelTabsSwiper() {
+  const modelTabs = document.querySelector('.mobile-model-tabs');
+  if (!modelTabs) return;
   if (window.innerWidth < 768) {
-    if (!window.mobileTabSwiper) {
-      window.mobileTabSwiper = new Swiper('.mobile-model-tabs', {
+    if (!mobileTabSwiper) {
+      mobileTabSwiper = new Swiper('.mobile-model-tabs', {
         spaceBetween: 12,
         slidesPerView: 'auto',
         centeredSlides: false,
         on: {
-          slideChange: function () {
-            syncMobileTabContent(this.activeIndex);
-          },
+          slideChange: function () { syncMobileTabContent(this.activeIndex); },
           tap: function (swiper, e) {
             const clickedIdx = swiper.clickedIndex;
             if (typeof clickedIdx === 'number' && clickedIdx !== swiper.activeIndex) {
@@ -127,35 +239,23 @@ function initTabMobileSwiper() {
           }
         }
       });
-      // data-index 부여 (dl, div 모두)
       assignMobileTabIndexes();
-      syncMobileTabContent(window.mobileTabSwiper.activeIndex || 0);
+      syncMobileTabContent(mobileTabSwiper.activeIndex || 0);
     }
-    // 모바일에서는 .mobile-model-tabs .inner-tab-trigger에 직접 클릭 이벤트 제거
-    const mobileTriggers = document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger');
-    mobileTriggers.forEach(trigger => {
-      trigger.onclick = null;
-    });
+    document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger').forEach(trigger => { trigger.onclick = null; });
   } else {
-    if (window.mobileTabSwiper) {
-      window.mobileTabSwiper.destroy();
-      window.mobileTabSwiper = null;
+    if (mobileTabSwiper) {
+      mobileTabSwiper.destroy();
+      mobileTabSwiper = null;
     }
   }
 }
-
-// 모바일 탭/컨텐츠에 data-index 부여
 function assignMobileTabIndexes() {
   const triggers = document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger');
   const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
-  triggers.forEach((el, idx) => {
-    el.setAttribute('data-index', idx);
-  });
-  contents.forEach((el, idx) => {
-    el.setAttribute('data-index', idx);
-  });
+  triggers.forEach((el, idx) => { el.setAttribute('data-index', idx); });
+  contents.forEach((el, idx) => { el.setAttribute('data-index', idx); });
 }
-
 function syncMobileTabContent(activeIdx) {
   if (window.innerWidth >= 768) return;
   const triggers = document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger');
@@ -192,21 +292,11 @@ function syncMobileTabContent(activeIdx) {
   });
 }
 
-if (modelTabs) {
-  window.addEventListener('resize', function () {
-    initTabMobileSwiper();
-    if (window.innerWidth < 768) assignMobileTabIndexes();
-  });
-  window.addEventListener('DOMContentLoaded', function () {
-    initTabMobileSwiper();
-    if (window.innerWidth < 768) assignMobileTabIndexes();
-  });
-}
-
+// ===== Inner Tab Click (PC/모바일) =====
 function initInnerTabClick() {
+  const triggers = document.querySelectorAll('.example-side-txts.top-tab-txts .inner-tab-trigger');
+  const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
   if (window.innerWidth >= 768) {
-    const triggers = document.querySelectorAll('.example-side-txts.top-tab-txts .inner-tab-trigger');
-    const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
     triggers.forEach((trigger, idx) => {
       trigger.onclick = function () {
         triggers.forEach((el, i) => {
@@ -216,37 +306,27 @@ function initInnerTabClick() {
       };
     });
   } else {
-    const triggers = document.querySelectorAll('.example-side-txts.top-tab-txts .inner-tab-trigger');
-    const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
     triggers.forEach((trigger, idx) => {
       trigger.onclick = function () {
         triggers.forEach((el, i) => {
           el.classList.toggle('active', i === idx);
           if (contents[i]) contents[i].classList.toggle('active', i === idx);
         });
-        // 모바일에서 탭 클릭 시 .tabs__panel__anchor로 스크롤 이동
         const anchor = document.querySelectorAll('.tabs__panel__anchor')[idx];
         if (anchor) {
-          // const header = document.querySelector('#main-header');
-          // const headerHeight = header ? header.offsetHeight : 0;
-          const headerHeight = 0; // 고정값 50px 사용
+          const headerHeight = 50;
           const rect = anchor.getBoundingClientRect();
           const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
           const targetPosition = scrollTop + rect.top - headerHeight - 30;
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
         }
       };
     });
   }
 }
-window.addEventListener('DOMContentLoaded', initInnerTabClick);
-window.addEventListener('resize', initInnerTabClick);
 
-//arcodian
-(function () {
+// ===== 아코디언 =====
+function initAccordion() {
   function closeAllAccordionItems(container, exceptItem) {
     container.querySelectorAll('.kt-accordion__item').forEach(function (item) {
       if (item !== exceptItem) {
@@ -256,14 +336,12 @@ window.addEventListener('resize', initInnerTabClick);
       }
     });
   }
-
   document.querySelectorAll('.kt-accordion').forEach(function (accordion) {
     accordion.querySelectorAll('.kt-accordion__header').forEach(function (header) {
       header.addEventListener('click', function () {
         const item = header.closest('.kt-accordion__item');
         const panel = item.querySelector('.kt-accordion__panel');
         const isActive = item.classList.contains('active');
-
         if (!isActive) {
           closeAllAccordionItems(accordion, item);
           item.classList.add('active');
@@ -274,156 +352,107 @@ window.addEventListener('resize', initInnerTabClick);
         }
       });
     });
-
-    // 페이지 로드시 열려있는 아코디언이 있으면 높이 세팅
     accordion.querySelectorAll('.kt-accordion__item.active .kt-accordion__panel').forEach(function (panel) {
       panel.style.maxHeight = panel.scrollHeight + 'px';
     });
   });
+}
 
-
-  // 스티키 헤더 show 클래스 토글
-  function toggleStickyHeader() {
-    const stickyHeader = document.querySelector('.tab-sticky-header');
-    const tabsComponent = document.querySelector('.tabs-component');
-
-    if (!stickyHeader || !tabsComponent) return;
-
-    // 플래그: 첫 번째 li 클릭 후 일정 시간 동안 show 유지
-    let forceShowStickyHeader = false;
-
-    function checkScroll() {
-      const tabsRect = tabsComponent.getBoundingClientRect();
-      const headerHeight = document.querySelector('#main-header').offsetHeight;
-      const inRange = tabsRect.top <= headerHeight && tabsRect.bottom > headerHeight;
-
-      // 배경색 영역 체크
-      const blackStyleSections = document.querySelectorAll('.bg-black-style');
-      blackStyleSections.forEach(section => {
-        const sectionRect = section.getBoundingClientRect();
-        const isInBlackStyle = sectionRect.top <= headerHeight && sectionRect.bottom > headerHeight;
-        if (isInBlackStyle) {
-          stickyHeader.classList.add('black-style');
-          return;
-        }
-      });
-      if (!Array.from(blackStyleSections).some(section => {
-        const sectionRect = section.getBoundingClientRect();
-        return sectionRect.top <= headerHeight && sectionRect.bottom > headerHeight;
-      })) {
-        stickyHeader.classList.remove('black-style');
-      }
-
-      const firstLi = stickyHeader.querySelector('.sticky-header-list li:first-child');
-      if (firstLi && firstLi.classList.contains('active')) {
-        // 첫 번째 li가 active이거나, forceShowStickyHeader가 true면 show 유지
-        if (inRange || forceShowStickyHeader) {
-          stickyHeader.classList.add('show');
-        } else {
-          stickyHeader.classList.remove('show');
-        }
+// ===== Sticky Header =====
+function initStickyHeader() {
+  const stickyHeader = document.querySelector('.tab-sticky-header');
+  const tabsComponent = document.querySelector('.tabs-component');
+  if (!stickyHeader || !tabsComponent) return;
+  let forceShowStickyHeader = false;
+  let isScrolling = false;
+  function checkScroll() {
+    const tabsRect = tabsComponent.getBoundingClientRect();
+    const headerHeight = document.querySelector('#main-header').offsetHeight;
+    const inRange = tabsRect.top <= headerHeight && tabsRect.bottom > headerHeight;
+    const blackStyleSections = document.querySelectorAll('.bg-black-style');
+    blackStyleSections.forEach(section => {
+      const sectionRect = section.getBoundingClientRect();
+      const isInBlackStyle = sectionRect.top <= headerHeight && sectionRect.bottom > headerHeight;
+      if (isInBlackStyle) {
+        stickyHeader.classList.add('black-style');
         return;
       }
-
-      if (inRange) {
+    });
+    if (!Array.from(blackStyleSections).some(section => {
+      const sectionRect = section.getBoundingClientRect();
+      return sectionRect.top <= headerHeight && sectionRect.bottom > headerHeight;
+    })) {
+      stickyHeader.classList.remove('black-style');
+    }
+    const firstLi = stickyHeader.querySelector('.sticky-header-list li:first-child');
+    if (firstLi && firstLi.classList.contains('active')) {
+      if (inRange || forceShowStickyHeader) {
         stickyHeader.classList.add('show');
       } else {
         stickyHeader.classList.remove('show');
       }
+      return;
     }
-
-    window.addEventListener('scroll', checkScroll);
-    checkScroll();
-
-    const stickyItems = stickyHeader.querySelectorAll('.tab-sticky-header .sticky-header-list li');
-    let isScrolling = false;
-
-    stickyItems.forEach((item, index) => {
-      item.addEventListener('click', function () {
-        const targetId = this.getAttribute('data-section');
-        const targetSection = document.getElementById(targetId);
-        const isPC = window.innerWidth >= 768;
-        let headerHeight = isPC
-          ? (document.querySelector('#main-header')?.offsetHeight || 0)
-          : 50; // 모바일은 50px 고정
-
-        if (targetSection) {
-          isScrolling = true;
-          const targetRect = targetSection.getBoundingClientRect();
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          const targetPosition = scrollTop + targetRect.top - headerHeight;
-
-          // 첫 번째 li 클릭 시 일정 시간 동안 show 유지
-          if (index === 0) {
-            forceShowStickyHeader = true;
-            stickyHeader.classList.add('show');
-            window.scrollTo({
-              top: targetPosition + 2,
-              behavior: 'smooth'
-            });
-            setTimeout(() => {
-              forceShowStickyHeader = false;
-              checkScroll(); // 플래그 해제 후 상태 재확인
-            }, 800); // 스크롤 애니메이션 시간에 맞게 조정
-          } else {
-            window.scrollTo({
-              top: targetPosition + 3,
-              behavior: 'smooth'
-            });
-          }
-
-          // 활성화된 탭 버튼 클릭
-          const tabButton = document.querySelector(`[aria-labelledby="${targetId}"]`);
-          if (tabButton) {
-            tabButton.click();
-          }
-
-          stickyItems.forEach(li => li.classList.remove('active'));
-          this.classList.add('active');
-
-          setTimeout(() => {
-            isScrolling = false;
-          }, 1000);
-        }
-      });
-    });
-
-    // 스크롤 시 현재 보이는 섹션에 해당하는 li에 active 클래스 추가
-    function updateActiveItem() {
-      if (isScrolling) return; // 스크롤 중에는 업데이트하지 않음
-      const sections = Array.from(document.querySelectorAll('.tabs__panel__anchor'));
-      const isPC = window.innerWidth >= 768;
-      const headerHeight = isPC
-        ? (document.querySelector('#main-header')?.offsetHeight || 0)
-        : 50;
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        // 섹션이 헤더 아래에 위치할 때 active
-        if (rect.top <= headerHeight && rect.bottom >= headerHeight) {
-          const sectionId = section.id;
-          stickyItems.forEach(item => {
-            if (item.getAttribute('data-section') === sectionId) {
-              item.classList.add('active');
-            } else {
-              item.classList.remove('active');
-            }
-          });
-        }
-      });
+    if (inRange) {
+      stickyHeader.classList.add('show');
+    } else {
+      stickyHeader.classList.remove('show');
     }
-
-    // 스크롤 이벤트에 updateActiveItem 추가
-    window.addEventListener('scroll', updateActiveItem);
   }
-  // 초기 로드시 실행
-  document.addEventListener('DOMContentLoaded', function () {
-    toggleStickyHeader();
+  function updateActiveItem() {
+    if (isScrolling) return;
+    const sections = Array.from(document.querySelectorAll('.tabs__panel__anchor'));
+    const isPC = window.innerWidth >= 768;
+    const headerHeight = isPC ? (document.querySelector('#main-header')?.offsetHeight || 0) : 50;
+    const stickyItems = stickyHeader.querySelectorAll('.tab-sticky-header .sticky-header-list li');
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= headerHeight && rect.bottom >= headerHeight) {
+        const sectionId = section.id;
+        stickyItems.forEach(item => {
+          if (item.getAttribute('data-section') === sectionId) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+      }
+    });
+  }
+  window.addEventListener('scroll', checkScroll);
+  window.addEventListener('scroll', updateActiveItem);
+  checkScroll();
+  const stickyItems = stickyHeader.querySelectorAll('.tab-sticky-header .sticky-header-list li');
+  stickyItems.forEach((item, index) => {
+    item.addEventListener('click', function () {
+      const targetId = this.getAttribute('data-section');
+      const targetSection = document.getElementById(targetId);
+      const isPC = window.innerWidth >= 768;
+      let headerHeight = isPC ? (document.querySelector('#main-header')?.offsetHeight || 0) : 50;
+      if (targetSection) {
+        isScrolling = true;
+        const targetRect = targetSection.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const targetPosition = scrollTop + targetRect.top - headerHeight;
+        if (index === 0) {
+          forceShowStickyHeader = true;
+          stickyHeader.classList.add('show');
+          window.scrollTo({ top: targetPosition + 2, behavior: 'smooth' });
+          setTimeout(() => { forceShowStickyHeader = false; checkScroll(); }, 800);
+        } else {
+          window.scrollTo({ top: targetPosition + 3, behavior: 'smooth' });
+        }
+        const tabButton = document.querySelector(`[aria-labelledby="${targetId}"]`);
+        if (tabButton) tabButton.click();
+        stickyItems.forEach(li => li.classList.remove('active'));
+        this.classList.add('active');
+        setTimeout(() => { isScrolling = false; }, 1000);
+      }
+    });
   });
+}
 
-})();
-
-
-// 모바일에서 스크롤 시 탭 active 동기화 (강제 초기화)
+// ===== 모바일 탭 active 동기화 (스크롤) =====
 function syncMobileTabActiveByScroll() {
   if (window.innerWidth >= 768) return;
   const triggers = document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger');
@@ -434,7 +463,6 @@ function syncMobileTabActiveByScroll() {
   let foundIdx = -1;
   contents.forEach((content, idx) => {
     const rect = content.getBoundingClientRect();
-    // 화면 상단 기준(헤더 아래)에서 컨텐츠가 40% 이상 보이면 해당 탭 active
     const visibleTop = Math.max(rect.top, headerHeight);
     const visibleBottom = Math.min(rect.bottom, viewportHeight);
     const visibleHeight = Math.max(0, visibleBottom - visibleTop);
@@ -443,23 +471,19 @@ function syncMobileTabActiveByScroll() {
       foundIdx = idx;
     }
   });
-  // 항상 모든 탭의 active를 먼저 제거
   triggers.forEach((el) => el.classList.remove('active'));
-  // 해당 섹션만 active
   if (foundIdx !== -1) {
     triggers[foundIdx].classList.add('active');
   }
 }
-window.addEventListener('scroll', syncMobileTabActiveByScroll);
 
-
-
-
-
-
-// ====== K Model 순차 영상 자동재생 (IntersectionObserver + 모바일 분기) ======
-(function () {
-  // 유틸: 이미지/비디오 show/hide
+// ===== K Model 순차 영상 자동재생 =====
+function initSequentialVideoPlayer() {
+  const container = document.getElementById('video-play-trigger-01');
+  if (!container) return;
+  const wrappers = Array.from(container.querySelectorAll('.auto-video-wrapper'));
+  const videos = wrappers.map(w => w.querySelector('video'));
+  wrappers.forEach(showImage);
   function showVideo(wrapper) {
     const img = wrapper.querySelector('img');
     const videoWrap = wrapper.querySelector('.video-play-wrapper');
@@ -472,8 +496,6 @@ window.addEventListener('scroll', syncMobileTabActiveByScroll);
     if (img) img.style.opacity = 1;
     if (videoWrap) videoWrap.style.opacity = 0;
   }
-
-  // 순차 재생 컨트롤러 (PC)
   function SequentialVideoPlayer(container) {
     this.container = container;
     this.wrappers = Array.from(container.querySelectorAll('.auto-video-wrapper'));
@@ -522,8 +544,6 @@ window.addEventListener('scroll', syncMobileTabActiveByScroll);
       video.removeEventListener('ended', this._onEnded);
     });
   };
-
-  // 모바일: 모든 영상 동시 무한재생
   function playAllVideos(wrappers, videos) {
     wrappers.forEach(showVideo);
     videos.forEach(video => {
@@ -539,74 +559,51 @@ window.addEventListener('scroll', syncMobileTabActiveByScroll);
       showImage(wrappers[idx]);
     });
   }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const container = document.getElementById('video-play-trigger-01');
-    if (!container) return;
-    const wrappers = Array.from(container.querySelectorAll('.auto-video-wrapper'));
-    const videos = wrappers.map(w => w.querySelector('video'));
-    wrappers.forEach(showImage);
-
-    // PC: 기존 IntersectionObserver 순차재생
-    // 모바일: AOS 등장 후 전체 영상 무한재생
-    function isMobile() {
-      return window.innerWidth <= 767;
+  function isMobile() { return window.innerWidth <= 767; }
+  let observer;
+  let aosIn = false;
+  function handleEnter() {
+    if (isMobile()) {
+      playAllVideos(wrappers, videos);
+      aosIn = true;
+    } else {
+      player.play();
     }
-
-    let observer;
-    let aosIn = false;
-
-    function handleEnter() {
-      if (isMobile()) {
-        playAllVideos(wrappers, videos);
-        aosIn = true;
-      } else {
-        player.play();
-      }
+  }
+  function handleLeave() {
+    if (isMobile()) {
+      stopAllVideos(wrappers, videos);
+      aosIn = false;
+    } else {
+      player.stop();
     }
-    function handleLeave() {
-      if (isMobile()) {
-        stopAllVideos(wrappers, videos);
-        aosIn = false;
-      } else {
-        player.stop();
-      }
-    }
-
-    // PC용 순차재생 인스턴스
-    const player = new SequentialVideoPlayer(container);
-
-    // 옵저버 등록 (PC/모바일 공통)
-    observer = new window.IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            handleEnter();
-          } else {
-            handleLeave();
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(container);
-
-    // 모바일: AOS 등장 후 바로 재생 (IntersectionObserver가 즉시 트리거됨)
-    // 리사이즈 대응: PC<->모바일 전환 시 상태 초기화
-    window.addEventListener('resize', function () {
-      if (isMobile()) {
-        if (aosIn) {
-          playAllVideos(wrappers, videos);
+  }
+  const player = new SequentialVideoPlayer(container);
+  observer = new window.IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          handleEnter();
         } else {
-          stopAllVideos(wrappers, videos);
+          handleLeave();
         }
+      });
+    },
+    { threshold: 0.3 }
+  );
+  observer.observe(container);
+  window.addEventListener('resize', function () {
+    if (isMobile()) {
+      if (aosIn) {
+        playAllVideos(wrappers, videos);
       } else {
         stopAllVideos(wrappers, videos);
-        player.stop();
       }
-    });
+    } else {
+      stopAllVideos(wrappers, videos);
+      player.stop();
+    }
   });
-})();
+}
 // ====== // K Model 순차 영상 자동재생 ======
-
 
