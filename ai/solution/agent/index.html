@@ -147,67 +147,70 @@
                     </ul>
 
                     <!-- 그래프  html 코드 -->
-                    <div class="agent-graph-wrapper">
-                        <div class="agent-graph" data-aos="fade-up" data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic">
-                            <div class="k-agent-architecture">
-                                <!-- K Agent 전체 박스 -->
-                                <div class="k-agent-container">
-                                    <div class="k-agent-title">K Agent</div>
-                                    <!-- Memory -->
-                                    <div class="memory-section">
-                                        <div class="memory-title">Memory</div>
-                                        <div class="memory-types">
-                                            <div class="memory-type">Short-Term</div>
-                                            <div class="memory-type">Long-Term</div>
+                    <div class="pc-only">
+                        <div class="agent-graph-wrapper">
+                            <div class="agent-graph" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic">
+                                <div class="k-agent-architecture">
+                                    <!-- K Agent 전체 박스 -->
+                                    <div class="k-agent-container">
+                                        <div class="k-agent-title">K Agent</div>
+                                        <!-- Memory -->
+                                        <div class="memory-section">
+                                            <div class="memory-title">Memory</div>
+                                            <div class="memory-types">
+                                                <div class="memory-type">Short-Term</div>
+                                                <div class="memory-type">Long-Term</div>
+                                            </div>
+                                        </div>
+                                        <!-- Agent Orchestrator -->
+                                        <div class="agent-orchestrator-section">
+                                            <div class="agent-orchestrator-title">Agent Orchestrator</div>
+                                            <div class="orchestrator-steps">
+                                                <div class="orchestrator-step">Planner</div>
+                                                <div class="orchestrator-step">Agent/Tool Execution</div>
+                                                <div class="orchestrator-step">Tool</div>
+                                            </div>
+                                        </div>
+                                        <!-- Multi-Model Orchestrator -->
+                                        <div class="multi-model-orchestrator-section">
+                                            <div class="multi-model-title">Multi-Model Orchestrator</div>
+                                            <div class="models">
+                                                <div class="model">Model A</div>
+                                                <div class="model">Model B</div>
+                                                <div class="model">Model C</div>
+                                            </div>
+                                        </div>
+                                        <!-- UI/UX -->
+                                        <div class="uiux-section">
+                                            <div class="uiux-title">UI/UX</div>
                                         </div>
                                     </div>
-                                    <!-- Agent Orchestrator -->
-                                    <div class="agent-orchestrator-section">
-                                        <div class="agent-orchestrator-title">Agent Orchestrator</div>
-                                        <div class="orchestrator-steps">
-                                            <div class="orchestrator-step">Planner</div>
-                                            <div class="orchestrator-step">Agent/Tool Execution</div>
-                                            <div class="orchestrator-step">Tool</div>
+                                    <!-- Query/Response (좌측) -->
+                                    <div class="query-response-section">
+                                        <div class="query-box">Query</div>
+                                        <div class="response-box">Response</div>
+                                    </div>
+                                    <!-- Agent Hub (우측) -->
+                                    <div class="agent-graph-right">
+                                        <div class="agent-hub-section">
+                                            <div class="agent-hub-title">Agent Hub</div>
+                                        </div>
+                                        <!-- MCP Hub (우측) -->
+                                        <div class="mcp-hub-section">
+                                            <div class="mcp-hub-title">MCP Hub<br><span class="mcp-desc">(Model Context
+                                                    Protocol)</span></div>
+                                            <div class="mcp-hub-list">
+                                                <div>RAG, Web Search,<br>
+                                                    Calculator, Coding ...</div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <!-- Multi-Model Orchestrator -->
-                                    <div class="multi-model-orchestrator-section">
-                                        <div class="multi-model-title">Multi-Model Orchestrator</div>
-                                        <div class="models">
-                                            <div class="model">Model A</div>
-                                            <div class="model">Model B</div>
-                                            <div class="model">Model C</div>
-                                        </div>
-                                    </div>
-                                    <!-- UI/UX -->
-                                    <div class="uiux-section">
-                                        <div class="uiux-title">UI/UX</div>
-                                    </div>
+                                    <!-- 화살표 등 관계선은 CSS로 구현 -->
                                 </div>
-                                <!-- Query/Response (좌측) -->
-                                <div class="query-response-section">
-                                    <div class="query-box">Query</div>
-                                    <div class="response-box">Response</div>
-                                </div>
-                                <!-- Agent Hub (우측) -->
-                                <div class="agent-graph-right">
-                                    <div class="agent-hub-section">
-                                        <div class="agent-hub-title">Agent Hub</div>
-                                    </div>
-                                    <!-- MCP Hub (우측) -->
-                                    <div class="mcp-hub-section">
-                                        <div class="mcp-hub-title">MCP Hub<br><span class="mcp-desc">(Model Context
-                                                Protocol)</span></div>
-                                        <div class="mcp-hub-list">
-                                            <div>RAG, Web Search,<br>
-                                                Calculator, Coding ...</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- 화살표 등 관계선은 CSS로 구현 -->
                             </div>
                         </div>
+
                     </div>
 
                     <div class="mobile-show">
