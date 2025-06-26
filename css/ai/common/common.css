@@ -133,7 +133,7 @@ body.scroll-lock {
 } */
 @media (max-width: 1536px) {
     html {
-        font-size: 1.0417vw;
+        font-size: 1.0417vw !important;
     }
 }
 
