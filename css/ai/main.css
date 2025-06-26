@@ -1172,10 +1172,10 @@ br {
 }
 @keyframes customSliderLoop {
     0% {
-        transform: translateX(-0%);
+        transform: translateX(0%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 .custom-slide {

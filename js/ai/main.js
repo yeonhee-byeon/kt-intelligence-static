@@ -723,10 +723,30 @@ class WheelNavigation {
     }
 }
 
-// 페이지 로드 후 초기화
-document.addEventListener('DOMContentLoaded', () => {
-    // new WheelNavigation();
-});
+function initUsecaseSectionAnimation() {
+    const section = document.querySelector('.usecase-section');
+    if (!section) return;
+
+    const track = document.querySelector('.custom-slider-track');
+    const slides = Array.from(track.children);
+
+    // 복제하여 자연스럽게 무한 루프 효과
+    slides.forEach((slide) => {
+        const clone = slide.cloneNode(true);
+        track.appendChild(clone);
+    });
+
+    // 마우스 호버 시 애니메이션 정지
+    const wrapper = document.querySelector('.custom-slider');
+
+    wrapper.addEventListener('mouseenter', () => {
+        track.style.animationPlayState = 'paused';
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+        track.style.animationPlayState = 'running';
+    });
+}
 
 function initMobileMenu() {
     const pdsSection = document.querySelector('.mobile-pds-menu');
@@ -772,6 +792,7 @@ window.addEventListener('load', function () {
     initParallaxSectionAnimation();
     initParallaxDepthSectionAnimation();
     initMobileMenu();
+    initUsecaseSectionAnimation();
 });
 
 // Ensure GSAP ScrollToPlugin is registered
