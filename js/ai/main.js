@@ -1,12 +1,12 @@
 // 스크롤 위치 복원 방지
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-}
+// if ('scrollRestoration' in history) {
+//     history.scrollRestoration = 'manual';
+// }
 
-// // 새로고침/이동 직전 스크롤 위치 초기화
-window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-};
+// // // 새로고침/이동 직전 스크롤 위치 초기화
+// window.onbeforeunload = function () {
+//     window.scrollTo(0, 0);
+// };
 
 // ===== 애니메이션 함수 정의 =====
 function initHeroSectionAnimation() {
@@ -545,7 +545,71 @@ function initParallaxDepthSectionAnimation() {
                     '-=0.2',
                 );
         },
-        '(max-width: 768px)': function () {},
+        '(max-width: 768px)': function () {
+            // Swiper 인스턴스 생성 (모바일 메뉴용)
+            var pdsSwiper = null;
+            var section = document.querySelector('.parallax-depth-section .component-content');
+            if (!section || !window.Swiper) return;
+
+            var cubeItems = document.querySelectorAll('.cube-wrapper .cube-item');
+            var cubeImgs = Array.from(cubeItems)
+                .map(function (item) {
+                    return item.querySelector('img');
+                })
+                .reverse();
+
+            // Swiper 생성
+            pdsSwiper = new Swiper('.mobile-pds-menu .swiper-container', {
+                slidesPerView: 'auto',
+                spaceBetween: 16,
+                speed: 500,
+                effect: 'slide',
+                on: {
+                    slideChange: function () {
+                        updateCubeActiveImage(this.activeIndex);
+                    },
+                },
+            });
+
+            // cube-item 이미지 active 처리 함수
+            function updateCubeActiveImage(activeIdx) {
+                cubeImgs.forEach(function (img, idx) {
+                    if (imagePaths[idx]) {
+                        img.src = idx === activeIdx ? imagePaths[idx].active : imagePaths[idx].src;
+                    }
+                });
+            }
+
+            // parallax-depth-section 진입 시 첫번째 활성화
+            var st = ScrollTrigger.create({
+                trigger: section,
+                start: 'top center',
+                end: 'bottom center',
+                onEnter: function () {
+                    if (pdsSwiper) {
+                        pdsSwiper.slideTo(0, 0);
+                        updateCubeActiveImage(0);
+                    }
+                },
+                onEnterBack: function () {
+                    if (pdsSwiper) {
+                        pdsSwiper.slideTo(0, 0);
+                        updateCubeActiveImage(0);
+                    }
+                },
+                onLeave: function () {
+                    // 섹션 이탈 시 모든 cube-item 이미지를 기본으로
+                    cubeImgs.forEach(function (img, idx) {
+                        if (imagePaths[idx]) img.src = imagePaths[idx].src;
+                    });
+                },
+                onLeaveBack: function () {
+                    cubeImgs.forEach(function (img, idx) {
+                        if (imagePaths[idx]) img.src = imagePaths[idx].src;
+                    });
+                },
+            });
+        },
     });
 
     // 리사이즈 시 WheelNavigation만 재생성
@@ -750,21 +814,13 @@ function initUsecaseSectionAnimation() {
 }
 
 function initMobileMenu() {
-    const ecoSection = document.querySelector('.eco-partners-mobile');
-    const pdsSection = document.querySelector('.mobile-pds-menu');
+    const usecaseSection = document.querySelector('.usecase-section .usecase-swiper');
 
-    if (!ecoSection || !pdsSection || !window.Swiper) return;
+    if (!usecaseSection || !window.Swiper) return;
 
-    const ecoSwiper = new Swiper('.eco-partners-mobile .swiper-container', {
+    const usecaseSwiper = new Swiper(usecaseSection, {
         slidesPerView: 'auto',
-        spaceBetween: 14,
-        speed: 500,
-        effect: 'slide',
-    });
-
-    const pdsMenuSwiper = new Swiper('.mobile-pds-menu .swiper-container', {
-        slidesPerView: 'auto',
-        spaceBetween: 14,
+        spaceBetween: 16,
         // centeredSlides: true,
         speed: 500,
         effect: 'slide',
