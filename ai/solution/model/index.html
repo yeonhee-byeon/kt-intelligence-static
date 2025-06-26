@@ -1,557 +1,412 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- SEO -->
-        <link rel="icon" href="/resource/images/ai/KT_16.ico" />
-        <title>K Model | 한국형 AI 언어 모델 - K Intelligence</title>
-        <meta
-            name="description"
-            content="KT의 K Model은 한국어에 특화된 고성능 생성형 AI입니다. 안전하고 믿을 수 있는 AI로 기업의 업무 혁신을 도와드립니다."
-        />
-        <meta
-            name="keywords"
-            content="K Model, 한국형 AI 모델, KT AI, LLM, 한국어 특화 AI, 프롬프트 템플릿, KT, K Intelligence, 기업용 AI 모델, 생성형 AI, AI API"
-        />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- SNS 공유용 -->
-        <meta property="og:title" content="K Model | 한국형 AI 언어 모델 - K Intelligence" />
-        <meta
-            property="og:description"
-            content="KT의 K Model은 한국어에 특화된 고성능 생성형 AI입니다. 안전하고 믿을 수 있는 AI로 기업의 업무 혁신을 도와드립니다."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="KT AI" />
+    <!-- SEO -->
+    <link rel="icon" href="/resource/images/ai/KT_16.ico" />
+    <title>K Model | 한국형 AI 언어 모델 - K Intelligence</title>
+    <meta name="description" content="KT의 K Model은 한국어에 특화된 고성능 생성형 AI입니다. 안전하고 믿을 수 있는 AI로 기업의 업무 혁신을 도와드립니다." />
+    <meta name="keywords"
+        content="K Model, 한국형 AI 모델, KT AI, LLM, 한국어 특화 AI, 프롬프트 템플릿, KT, K Intelligence, 기업용 AI 모델, 생성형 AI, AI API" />
 
-        <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
-        <!-- Common CSS -->
-        <link rel="stylesheet" href="/css/ai/common/common.css" />
-        <!-- Reset CSS -->
-        <link rel="stylesheet" href="/css/ai/common/reset.css" />
-        <!-- AOS CSS -->
-        <link rel="stylesheet" href="/css/ai/common/aos.css" />
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="/css/ai/solution.css" />
-        <link rel="stylesheet" href="/css/ai/solution_cy.css" />
-    </head>
+    <!-- SNS 공유용 -->
+    <meta property="og:title" content="K Model | 한국형 AI 언어 모델 - K Intelligence" />
+    <meta property="og:description"
+        content="KT의 K Model은 한국어에 특화된 고성능 생성형 AI입니다. 안전하고 믿을 수 있는 AI로 기업의 업무 혁신을 도와드립니다." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="KT AI" />
 
-    <style>
-        html {
-            overflow-x: hidden;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="/css/ai/common/common.css" />
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="/css/ai/common/reset.css" />
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="/css/ai/common/aos.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/css/ai/solution.css" />
+    <link rel="stylesheet" href="/css/ai/solution_cy.css" />
+</head>
 
-    <body>
-        <!-- Header -->
-        <header id="main-header" class="header">
-            <div class="header-inner"></div>
+<style>
+    html {
+        overflow-x: hidden;
+    }
+</style>
 
-            <!-- Sticky Header -->
-            <div id="sticky-header" class="sticky-header tab-sticky-header">
-                <div class="sticky-header-inner">
-                    <ul class="sticky-header-list">
-                        <li data-section="tab-panel-1">믿:음2.0</li>
-                        <li data-section="tab-panel-2">GPT K</li>
-                        <li data-section="tab-panel-3">Llama K</li>
+<body>
+    <!-- Header -->
+    <header id="main-header" class="header">
+        <div class="header-inner"></div>
+
+        <!-- Sticky Header -->
+        <div id="sticky-header" class="sticky-header tab-sticky-header">
+            <div class="sticky-header-inner">
+                <ul class="sticky-header-list">
+                    <li data-section="tab-panel-1">믿:음2.0</li>
+                    <li data-section="tab-panel-2">GPT K</li>
+                    <li data-section="tab-panel-3">Llama K</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section id="banner-section " class="banner-section">
+        <img src="/resource/images/ai/solution/model/model-banner.png" alt="banner" width="100%" height="100%"
+            class="model-topBanner" />
+        <img src="/resource/images/ai/solution/model/model-banner-mo.png" alt="banner" width="100%" height="100%"
+            class="mobile-show" />
+        <div class="banner-inner logo-bk">
+            <h2>
+                <img src="/resource/images/ai/solution/ico-kon.svg" alt="logo" width="53" height="52" />
+                <img src="/resource/images/ai/solution/ico-kon_bk.svg" alt="logo" width="53" height="52"
+                    class="k-logo-bk" />
+                Model
+            </h2>
+            <p>
+                검증된 데이터와 안정적인 인프라를 기반으로 안심하고 활용할 수 있는,
+                <br />
+                신뢰성과 안전성을 모두 갖춘 가장 한국적인 AI모델입니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <div class="content-wrapper solution-model-wrapper">
+        <!-- K Model 장점 -->
+        <section class="content-section">
+            <div class="content-inner">
+                <div class="title-wrapper">
+                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">K Model</span>
+                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        한국적 AI의 핵심 철학
+                    </h2>
+                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        ‘한국적 AI’는 한국의 언어와 문화, 환경에 최적화된 인공지능을
+                        뜻합니다.<br />
+                        KT는 고객(국가, 기업, 개인)을 깊이 이해하고 고객의 경험(AX)을 리딩하기
+                        위해 4가지 핵심 철학을 수립했습니다.
+                    </p>
+                </div>
+                <div class="card-wrapper" id="video-play-trigger-01">
+                    <ul class="card-list customer">
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="card-item auto-video-wrapper" id="video-play-item-01-01">
+                                <img src="/resource/images/ai/solution/model/K Model-01.png" alt="" width="676"
+                                    height="441" />
+                                <div class="video-play-wrapper">
+                                    <div class="video-inner">
+                                        <video src="/resource/videos/ai/solution/model/K Model-01.mp4" muted loop
+                                            playsinline></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>Data Sovereignty</h3>
+                            <p>
+                                고객 데이터의 주권은 침해받지 않아야 하며, 이를 절대적으로
+                                보호해야 합니다.
+                            </p>
+                        </li>
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="card-item auto-video-wrapper" id="video-play-item-01-04">
+                                <img src="/resource/images/ai/solution/model/K Model-04.png" alt="" width="676"
+                                    height="441" />
+                                <div class="video-play-wrapper">
+                                    <div class="video-inner">
+                                        <video src="/resource/videos/ai/solution/model/K Model-04.mp4" muted loop
+                                            playsinline></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>Cultural Relevance</h3>
+                            <p>
+                                AI는 한국의 언어, 문화, 사회적 맥락을 깊이 이해할 수 있어야
+                                합니다.
+                            </p>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="card-item auto-video-wrapper" id="video-play-item-01-02">
+                                <img src="/resource/images/ai/solution/model/K Model-02.png" alt="" width="676"
+                                    height="441" />
+                                <div class="video-play-wrapper">
+                                    <div class="video-inner">
+                                        <video src="/resource/videos/ai/solution/model/K Model-02.mp4" muted loop
+                                            playsinline></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>Full AI Model Line-up</h3>
+                            <p>
+                                고객은 자신의 목적과 상황에 맞는 AI 모델을 유연하게 선택할
+                                권리를 존중받아야 합니다.
+                            </p>
+                        </li>
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="card-item auto-video-wrapper" id="video-play-item-01-03">
+                                <img src="/resource/images/ai/solution/model/K Model-03.png" alt="" width="676"
+                                    height="441" />
+                                <div class="video-play-wrapper">
+                                    <div class="video-inner">
+                                        <video src="/resource/videos/ai/solution/model/K Model-03.mp4" muted loop
+                                            playsinline></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>Reliable & Responsible</h3>
+                            <p>
+                                AI는 안전성과 설명 가능성을 갖추며, 관련 규제를 준수하고 책임
+                                있게 운영되어야 합니다.
+                            </p>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </header>
+        </section>
 
-        <!-- Banner Section -->
-        <section id="banner-section " class="banner-section">
-            <img
-                src="/resource/images/ai/solution/model/model-banner.png"
-                alt="banner"
-                width="100%"
-                height="100%"
-                class="model-topBanner"
-            />
-            <img
-                src="/resource/images/ai/solution/model/model-banner-mo.png"
-                alt="banner"
-                width="100%"
-                height="100%"
-                class="mobile-show"
-            />
-            <div class="banner-inner logo-bk">
-                <h2>
-                    <img
-                        src="/resource/images/ai/solution/ico-kon.svg"
-                        alt="logo"
-                        width="53"
-                        height="52"
-                    />
-                    <img
-                        src="/resource/images/ai/solution/ico-kon_bk.svg"
-                        alt="logo"
-                        width="53"
-                        height="52"
-                        class="k-logo-bk"
-                    />
-                    Model
-                </h2>
-                <p>
-                    검증된 데이터와 안정적인 인프라를 기반으로 안심하고 활용할 수 있는,
-                    <br />
-                    신뢰성과 안전성을 모두 갖춘 가장 한국적인 AI모델입니다.
-                </p>
+        <!-- 라인업 -->
+        <section class="content-section">
+            <div class="content-inner">
+                <div class="title-wrapper">
+                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">K Model</span>
+                    <h2 class="no-desc" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        라인업
+                    </h2>
+                </div>
+                <div class="box-wrapper line-up-box">
+                    <ul class="box-list model-line-up">
+                        <!-- 독자모델 (이미 있음) -->
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="box-item">
+                                <h3>KT 독자 모델</h3>
+                                <h4>KT의 원천기술을 기반으로 자체 개발한 AI 모델</h4>
+                                <p>
+                                    자체 기술로 설계·학습된 AI 모델로 정밀한 튜닝과 검증을 통해
+                                    다양한 <br />환경에서 안정적이고 정확한 응답을 제공합니다.
+                                </p>
+                                <div class="card-tags">
+                                    <span class="card-tag">믿:음2.0 Mini</span>
+                                    <span class="card-tag">믿:음2.0 Base</span>
+                                    <span class="card-tag">믿:음2.0 Pro (예정)</span>
+                                    <span class="card-tag">멀티모달 (예정)</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 협력모델 -->
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="box-item">
+                                <h3>협력모델</h3>
+                                <h4>세계 최고 수준의 AI 성능에 한국형 데이터로 정밀 튜닝</h4>
+                                <p>
+                                    MS 등 글로벌 선도 기업과의 협업을 통해, 최고 성능의 AI에
+                                    한국 특화 데이터를<br />
+                                    결합해 시너지를 극대화했습니다.
+                                </p>
+                                <div class="card-tags">
+                                    <span class="card-tag">GPT K (예정)</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 오픈소스 기반 모델 -->
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="box-item">
+                                <h3>오픈소스 기반 모델</h3>
+                                <h4>유연한 적용과 경제성을 고려한 오픈소스 기반 AI 모델</h4>
+                                <p>
+                                    산업별 요구에 유연하게 대응할 수 있도록, 공개된 오픈소스
+                                    모델을 기반으로 실용적으로 설계했습니다.
+                                </p>
+                                <div class="card-tags">
+                                    <span class="card-tag">Llama K (예정)</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 특화 모델 -->
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="box-item">
+                                <h3>특화 모델</h3>
+                                <h4>전문 분야에 맞춰 학습된 Ready-Made AI 모델</h4>
+                                <p>
+                                    법률, 금융, 의료 등 특정 영역의 데이터를 기반으로 정확하고
+                                    신뢰할 수 <br />
+                                    있는 AI 경험을 제공합니다.
+                                </p>
+                                <div class="card-tags">
+                                    <span class="card-tag">법률 모델 (예정)</span>
+                                    <span class="card-tag">금융 모델 (예정)</span>
+                                    <span class="card-tag">교육 모델 (예정)</span>
+                                    <span class="card-tag">의료 모델 (예정)</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Content Section -->
-        <div class="content-wrapper solution-model-wrapper">
-            <!-- K Model 장점 -->
-            <section class="content-section">
-                <div class="content-inner">
-                    <div class="title-wrapper">
-                        <span
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                            >K Model</span
-                        >
-                        <h2
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                        >
-                            한국적 AI의 핵심 철학
-                        </h2>
-                        <p
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                        >
-                            ‘한국적 AI’는 한국의 언어와 문화, 환경에 최적화된 인공지능을
-                            뜻합니다.<br />
-                            KT는 고객(국가, 기업, 개인)을 깊이 이해하고 고객의 경험(AX)을 리딩하기
-                            위해 4가지 핵심 철학을 수립했습니다.
-                        </p>
-                    </div>
-                    <div class="card-wrapper" id="video-play-trigger-01">
-                        <ul class="card-list customer">
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div
-                                    class="card-item auto-video-wrapper"
-                                    id="video-play-item-01-01"
-                                >
-                                    <img
-                                        src="/resource/images/ai/solution/model/K Model-01.png"
-                                        alt=""
-                                        width="676"
-                                        height="441"
-                                    />
-                                    <div class="video-play-wrapper">
-                                        <div class="video-inner">
-                                            <video
-                                                src="/resource/videos/ai/solution/model/K Model-01.mp4"
-                                                muted
-                                                loop
-                                                playsinline
-                                            ></video>
-                                        </div>
-                                    </div>
+        <!-- 탭 -->
+        <section class="content-section model-section tabs-component">
+            <div class="bg-black-style">
+                <div class="content-inner overgrid-inner">
+                    <div class="tab-inner-wrapper">
+                        <!-- 1번 탭 컨텐츠 -->
+                        <div class="tabs__panel__anchor tabs__panel__anchor--active" id="tab-panel-1" role="tabpanel"
+                            aria-labelledby="tab-1">
+                            <div class="tab-section only-title">
+                                <div class="title-wrapper">
+                                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">KT
+                                        독자 모델</span>
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        믿:음2.0
+                                    </h2>
+                                    <h3 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        국내 AI 기술 주권 확보를 위한 <br class="mo-br" />
+                                        KT의 자체 개발 언어모델(LLM)
+                                    </h3>
                                 </div>
-                                <h3>Data Sovereignty</h3>
-                                <p>
-                                    고객 데이터의 주권은 침해받지 않아야 하며, 이를 절대적으로
-                                    보호해야 합니다.
-                                </p>
-                            </li>
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div
-                                    class="card-item auto-video-wrapper"
-                                    id="video-play-item-01-04"
-                                >
-                                    <img
-                                        src="/resource/images/ai/solution/model/K Model-04.png"
-                                        alt=""
-                                        width="676"
-                                        height="441"
-                                    />
-                                    <div class="video-play-wrapper">
-                                        <div class="video-inner">
-                                            <video
-                                                src="/resource/videos/ai/solution/model/K Model-04.mp4"
-                                                muted
-                                                loop
-                                                playsinline
-                                            ></video>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3>Cultural Relevance</h3>
-                                <p>
-                                    AI는 한국의 언어, 문화, 사회적 맥락을 깊이 이해할 수 있어야
-                                    합니다.
-                                </p>
-                            </li>
 
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div
-                                    class="card-item auto-video-wrapper"
-                                    id="video-play-item-01-02"
-                                >
-                                    <img
-                                        src="/resource/images/ai/solution/model/K Model-02.png"
-                                        alt=""
-                                        width="676"
-                                        height="441"
-                                    />
-                                    <div class="video-play-wrapper">
-                                        <div class="video-inner">
-                                            <video
-                                                src="/resource/videos/ai/solution/model/K Model-02.mp4"
-                                                muted
-                                                loop
-                                                playsinline
-                                            ></video>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3>Full AI Model Line-up</h3>
-                                <p>
-                                    고객은 자신의 목적과 상황에 맞는 AI 모델을 유연하게 선택할
-                                    권리를 존중받아야 합니다.
-                                </p>
-                            </li>
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div
-                                    class="card-item auto-video-wrapper"
-                                    id="video-play-item-01-03"
-                                >
-                                    <img
-                                        src="/resource/images/ai/solution/model/K Model-03.png"
-                                        alt=""
-                                        width="676"
-                                        height="441"
-                                    />
-                                    <div class="video-play-wrapper">
-                                        <div class="video-inner">
-                                            <video
-                                                src="/resource/videos/ai/solution/model/K Model-03.mp4"
-                                                muted
-                                                loop
-                                                playsinline
-                                            ></video>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3>Reliable & Responsible</h3>
-                                <p>
-                                    AI는 안전성과 설명 가능성을 갖추며, 관련 규제를 준수하고 책임
-                                    있게 운영되어야 합니다.
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 라인업 -->
-            <section class="content-section">
-                <div class="content-inner">
-                    <div class="title-wrapper">
-                        <span
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                            >K Model</span
-                        >
-                        <h2
-                            class="no-desc"
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                        >
-                            라인업
-                        </h2>
-                    </div>
-                    <div class="box-wrapper line-up-box">
-                        <ul class="box-list model-line-up">
-                            <!-- 독자모델 (이미 있음) -->
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="box-item">
-                                    <h3>KT 독자 모델</h3>
-                                    <h4>KT의 원천기술을 기반으로 자체 개발한 AI 모델</h4>
-                                    <p>
-                                        자체 기술로 설계·학습된 AI 모델로 정밀한 튜닝과 검증을 통해
-                                        다양한 <br />환경에서 안정적이고 정확한 응답을 제공합니다.
-                                    </p>
-                                    <div class="card-tags">
-                                        <span class="card-tag">믿:음2.0 Mini</span>
-                                        <span class="card-tag">믿:음2.0 Base</span>
-                                        <span class="card-tag">믿:음2.0 Pro (예정)</span>
-                                        <span class="card-tag">멀티모달 (예정)</span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- 협력모델 -->
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="box-item">
-                                    <h3>협력모델</h3>
-                                    <h4>세계 최고 수준의 AI 성능에 한국형 데이터로 정밀 튜닝</h4>
-                                    <p>
-                                        MS 등 글로벌 선도 기업과의 협업을 통해, 최고 성능의 AI에
-                                        한국 특화 데이터를<br />
-                                        결합해 시너지를 극대화했습니다.
-                                    </p>
-                                    <div class="card-tags">
-                                        <span class="card-tag">GPT K (예정)</span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- 오픈소스 기반 모델 -->
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="box-item">
-                                    <h3>오픈소스 기반 모델</h3>
-                                    <h4>유연한 적용과 경제성을 고려한 오픈소스 기반 AI 모델</h4>
-                                    <p>
-                                        산업별 요구에 유연하게 대응할 수 있도록, 공개된 오픈소스
-                                        모델을 기반으로 실용적으로 설계했습니다.
-                                    </p>
-                                    <div class="card-tags">
-                                        <span class="card-tag">Llama K (예정)</span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- 특화 모델 -->
-                            <li
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="box-item">
-                                    <h3>특화 모델</h3>
-                                    <h4>전문 분야에 맞춰 학습된 Ready-Made AI 모델</h4>
-                                    <p>
-                                        법률, 금융, 의료 등 특정 영역의 데이터를 기반으로 정확하고
-                                        신뢰할 수 <br />
-                                        있는 AI 경험을 제공합니다.
-                                    </p>
-                                    <div class="card-tags">
-                                        <span class="card-tag">법률 모델 (예정)</span>
-                                        <span class="card-tag">금융 모델 (예정)</span>
-                                        <span class="card-tag">교육 모델 (예정)</span>
-                                        <span class="card-tag">의료 모델 (예정)</span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 탭 -->
-            <section class="content-section model-section tabs-component">
-                <div class="bg-black-style">
-                    <div class="content-inner overgrid-inner">
-                        <div class="tab-inner-wrapper">
-                            <!-- 1번 탭 컨텐츠 -->
-                            <div
-                                class="tabs__panel__anchor tabs__panel__anchor--active"
-                                id="tab-panel-1"
-                                role="tabpanel"
-                                aria-labelledby="tab-1"
-                            >
-                                <div class="tab-section only-title">
-                                    <div class="title-wrapper">
-                                        <span
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                            >KT 독자 모델</span
-                                        >
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            믿:음2.0
-                                        </h2>
-                                        <h3
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            국내 AI 기술 주권 확보를 위한 <br class="mo-br" />
-                                            KT의 자체 개발 언어모델(LLM)
-                                        </h3>
-                                    </div>
-
-                                    <!-- <div class="btn-wrap" data-aos="fade-up" data-aos-duration="800"
+                                <!-- <div class="btn-wrap" data-aos="fade-up" data-aos-duration="800"
                                     data-aos-easing="ease-out-cubic">
                                     <button type="button" class="btn md white middle-btn">
                                         모델 체험하기
                                     </button>
                                 </div> -->
+                            </div>
+
+                            <div class="tab-section overInPadding">
+                                <div class="sub-title-wrapper tp2">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        믿:음의 장점
+                                    </h2>
                                 </div>
 
-                                <div class="tab-section overInPadding">
-                                    <div class="sub-title-wrapper tp2">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            믿:음의 장점
-                                        </h2>
-                                    </div>
+                                <div class="box-wrapper model-believe-box">
+                                    <ul class="box-list">
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    국내 최초 11B 규모 상업적 활용이 가능한
+                                                    <br />
+                                                    오픈 소스 모델 공개
+                                                </h3>
+                                                <p>
+                                                    한국 AI 생태계 발전을 위해 믿:음 Mini(2.3B),
+                                                    Base(11B) 모델의 오픈소스 공개
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    On-device 소형 모델부터<br /><br class="mo-br" />
+                                                    고성능 모델까지 다양한 라인업
+                                                </h3>
+                                                <p>
+                                                    mini(2.3B), Base(11B), Pro(41B) 모델을
+                                                    성능과 GPU 자원에 맞춰 유연하게 선택
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    한국어에 최적화된 고유의<br>
+                                                    Tokenizer 적용
+                                                </h3>
+                                                <p>한국어에 특화된 고유 Tokenizer로 압축률을 높이고 추론 효율성 향상</p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    글로벌 수준의 성능을 갖춘<br /><br class="mo-br" />
+                                                    KT 독자 모델
+                                                </h3>
+                                                <p>
+                                                    원천기술과 축적된 노하우를 바탕으로, 최신 AI
+                                                    기술의 빠른 적용
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                                    <div class="box-wrapper model-believe-box">
-                                        <ul class="box-list">
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        국내 최초 11B 규모 상업적 활용이 가능한
-                                                        <br />
-                                                        오픈 소스 모델 공개
-                                                    </h3>
-                                                    <p>
-                                                        한국 AI 생태계 발전을 위해 믿:음 Mini(2.3B),
-                                                        Base(11B) 모델의 오픈소스 공개
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        On-device 소형 모델부터<br /><br
-                                                            class="mo-br"
-                                                        />
-                                                        고성능 모델까지 다양한 라인업
-                                                    </h3>
-                                                    <p>
-                                                        mini(2.3B), Base(11B), Pro(41B) 모델을
-                                                        성능과 GPU 자원에 맞춰 유연하게 선택
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        한국어에 최적화된 언어처리기술인 고유의
-                                                        <br />
-                                                        Tokenizer 적용
-                                                    </h3>
-                                                    <p>한국어에 최적화된 고유의 Tokenizer 적용</p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        글로벌 수준의 성능을 갖춘<br /><br
-                                                            class="mo-br"
-                                                        />
-                                                        KT 독자 모델
-                                                    </h3>
-                                                    <p>
-                                                        원천기술과 축적된 노하우를 바탕으로, 최신 AI
-                                                        기술의 빠른 적용
-                                                    </p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                            <div class="tab-section gap10">
+                                <div class="sub-title-wrapper">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        활용 예시
+                                    </h2>
+                                    <span class="gray-sm" data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">믿:음2.0</span>
                                 </div>
 
-                                <div class="tab-section gap10">
-                                    <div class="sub-title-wrapper">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            활용 예시
-                                        </h2>
-                                        <span
-                                            class="gray-sm"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                            >믿:음2.0</span
-                                        >
-                                    </div>
+                                <div class="example-side-wrapper">
+                                    <div class="example-side-item inner-tabs-container">
+                                        <!-- 수정시 pc, 모바일 버전 둘다 적용 필요 -->
 
-                                    <div class="example-side-wrapper">
-                                        <div class="example-side-item inner-tabs-container">
-                                            <!-- 수정시 pc, 모바일 버전 둘다 적용 필요 -->
+                                        <!-- pc버전 탭버튼 -->
+                                        <div class="pc-only">
+                                            <div class="example-side-txts top-tab-txts" data-aos="fade-up"
+                                                data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                                <dl class="active inner-tab-trigger">
+                                                    <dt>한국어 작문</dt>
+                                                    <dd>
+                                                        한국어와 영어 모두에서 자연스럽고 <br />
+                                                        유창한 글쓰기
+                                                    </dd>
+                                                </dl>
+                                                <dl class="inner-tab-trigger">
+                                                    <dt>문서 기반 질의 응답</dt>
+                                                    <dd>
+                                                        국내에서 널리 쓰이는 문서(공문서 등)의
+                                                        <br />
+                                                        이해를 바탕으로 한 질문 답변
+                                                    </dd>
+                                                </dl>
+                                                <dl class="inner-tab-trigger">
+                                                    <dt>한국 문화 맥락에 기반한 글쓰기</dt>
+                                                    <dd>
+                                                        한국의 언어적·문화적 특성을 반영한
+                                                        <br />
+                                                        자연스러운 문장 구성
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
 
-                                            <!-- pc버전 탭버튼 -->
-                                            <div class="pc-only">
-                                                <div
-                                                    class="example-side-txts top-tab-txts"
-                                                    data-aos="fade-up"
-                                                    data-aos-duration="800"
-                                                    data-aos-easing="ease-out-cubic"
-                                                >
-                                                    <dl class="active inner-tab-trigger">
-                                                        <dt>한국어 작문</dt>
+                                        <!-- 모바일버전 탭버튼 스와이퍼 -->
+                                        <div class="mobile-show moTab-swiper-wrapper" data-aos="fade-up"
+                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="mobile-model-tabs swiper-container">
+                                                <div class="example-side-txts top-tab-txts swiper-wrapper">
+                                                    <dl class="active inner-tab-trigger swiper-slide">
+                                                        <dt>다국어(한국어, 영어) 지원</dt>
                                                         <dd>
-                                                            한국어와 영어 모두에서 자연스럽고 <br />
-                                                            유창한 글쓰기
-                                                        </dd>
-                                                    </dl>
-                                                    <dl class="inner-tab-trigger">
-                                                        <dt>문서 기반 질의 응답</dt>
-                                                        <dd>
-                                                            국내에서 널리 쓰이는 문서(공문서 등)의
+                                                            한국어와 영어 모두에서 자연스럽고
                                                             <br />
-                                                            이해를 바탕으로 한 질문 답변
+                                                            일관된 응답 제공
                                                         </dd>
                                                     </dl>
-                                                    <dl class="inner-tab-trigger">
-                                                        <dt>한국 문화 맥락에 기반한 글쓰기</dt>
+                                                    <dl class="inner-tab-trigger swiper-slide">
+                                                        <dt>AI 추론(Reasoning)</dt>
+                                                        <dd>
+                                                            한국어와 영어 모두에서 자연스럽고<br />
+                                                            일관된 응답 제공
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="inner-tab-trigger swiper-slide">
+                                                        <dt>
+                                                            한국 문화 맥락에 기반한
+                                                            <br class="mo-br" />글쓰기
+                                                        </dt>
                                                         <dd>
                                                             한국의 언어적·문화적 특성을 반영한
                                                             <br />
@@ -560,591 +415,473 @@
                                                     </dl>
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            <!-- 모바일버전 탭버튼 스와이퍼 -->
-                                            <div
-                                                class="mobile-show moTab-swiper-wrapper"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="mobile-model-tabs swiper-container">
-                                                    <div
-                                                        class="example-side-txts top-tab-txts swiper-wrapper"
-                                                    >
-                                                        <dl
-                                                            class="active inner-tab-trigger swiper-slide"
-                                                        >
-                                                            <dt>다국어(한국어, 영어) 지원</dt>
-                                                            <dd>
-                                                                한국어와 영어 모두에서 자연스럽고
-                                                                <br />
-                                                                일관된 응답 제공
-                                                            </dd>
-                                                        </dl>
-                                                        <dl class="inner-tab-trigger swiper-slide">
-                                                            <dt>AI 추론(Reasoning)</dt>
-                                                            <dd>
-                                                                한국어와 영어 모두에서 자연스럽고<br />
-                                                                일관된 응답 제공
-                                                            </dd>
-                                                        </dl>
-                                                        <dl class="inner-tab-trigger swiper-slide">
-                                                            <dt>
-                                                                한국 문화 맥락에 기반한
-                                                                <br class="mo-br" />글쓰기
-                                                            </dt>
-                                                            <dd>
-                                                                한국의 언어적·문화적 특성을 반영한
-                                                                <br />
-                                                                자연스러운 문장 구성
-                                                            </dd>
-                                                        </dl>
+                                        <!-- 첫번째 탭 컨텐츠 -->
+                                        <div class="example-con-wrapper" data-aos="fade-up" data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic">
+                                            <div class="example-content inner-tab-content active">
+                                                <div class="example-inner">
+                                                    <div class="exam-items">
+                                                        <div class="ex-in-tit">
+                                                            <h4>믿:음2.0</h4>
+                                                        </div>
+
+                                                        <h3>
+                                                            제목: 제품 보증서 전달 오류에 대한
+                                                            사과드립니다.
+                                                        </h3>
+                                                        <p>
+                                                            고객님께,<br class="both" />
+                                                            안녕하세요. [회사명]의 [발신자
+                                                            이름]입니다.<br class="both" />
+                                                            우선 저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께
+                                                            잘못된<br class="both" />
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다.
+                                                            <br class="both" /><br class="both" />내부 확인 결과, 문서 전달 과정에서
+                                                            오류가 발생한 것을 확인하였으며,
+                                                            이에 대한 재발 방지를 위해 내부
+                                                            프로세스를 점검하고 있습니다.<br class="both" />
+                                                            올바른 제품 보증서를 첨부하여
+                                                            보내드리오니 확인 부탁드립니다.
+                                                            <br class="both" />고객님께,
+                                                            안녕하세요. [회사명]의 [발신자
+                                                            이름]입니다. 우선 저희 제품을 이용해
+                                                            주셔서 감사드립니다. 이번에 고객님께
+                                                            잘못된 제품 보증서가 전달된 점에
+                                                            대해 진심으로 사과드립니다. 내부
+                                                            확인 결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <!-- 첫번째 탭 컨텐츠 -->
-                                            <div
-                                                class="example-con-wrapper"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div
-                                                    class="example-content inner-tab-content active"
-                                                >
-                                                    <div class="example-inner">
-                                                        <div class="exam-items">
-                                                            <div class="ex-in-tit">
-                                                                <h4>믿:음2.0</h4>
-                                                            </div>
-
-                                                            <h3>
-                                                                제목: 제품 보증서 전달 오류에 대한
-                                                                사과드립니다.
-                                                            </h3>
-                                                            <p>
-                                                                고객님께,<br class="both" />
-                                                                안녕하세요. [회사명]의 [발신자
-                                                                이름]입니다.<br class="both" />
-                                                                우선 저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께
-                                                                잘못된<br class="both" />
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다.
-                                                                <br class="both" /><br
-                                                                    class="both"
-                                                                />내부 확인 결과, 문서 전달 과정에서
-                                                                오류가 발생한 것을 확인하였으며,
-                                                                이에 대한 재발 방지를 위해 내부
-                                                                프로세스를 점검하고 있습니다.<br
-                                                                    class="both"
-                                                                />
-                                                                올바른 제품 보증서를 첨부하여
-                                                                보내드리오니 확인 부탁드립니다.
-                                                                <br class="both" />고객님께,
-                                                                안녕하세요. [회사명]의 [발신자
-                                                                이름]입니다. 우선 저희 제품을 이용해
-                                                                주셔서 감사드립니다. 이번에 고객님께
-                                                                잘못된 제품 보증서가 전달된 점에
-                                                                대해 진심으로 사과드립니다. 내부
-                                                                확인 결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.
-                                                            </p>
+                                            <div class="example-content inner-tab-content">
+                                                <div class="example-inner">
+                                                    <div class="exam-items">
+                                                        <div class="ex-in-tit">
+                                                            <h4>믿:음2.2</h4>
                                                         </div>
+                                                        <h3>제목: 두번째 컨텐츠</h3>
+                                                        <p>
+                                                            고객님께,<br class="both" />
+                                                            안녕하세요. [회사명]의 [발신자
+                                                            이름]입니다.<br class="both" />
+                                                            우선 저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께
+                                                            잘못된<br class="both" />
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다.
+                                                            <br class="both" /><br class="both" />내부 확인 결과, 문서 전달 과정에서
+                                                            오류가 발생한 것을 확인하였으며,
+                                                            이에 대한 재발 방지를 위해 내부
+                                                            프로세스를 점검하고 있습니다.<br class="both" />
+                                                            올바른 제품 보증서를 첨부하여
+                                                            보내드리오니 확인 부탁드립니다.
+                                                            <br class="both" />고객님께,
+                                                            안녕하세요. [회사명]의 [발신자
+                                                            이름]입니다. 우선 저희 제품을 이용해
+                                                            주셔서 감사드립니다. 이번에 고객님께
+                                                            잘못된 제품 보증서가 전달된 점에
+                                                            대해 진심으로 사과드립니다. 내부
+                                                            확인 결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.
+                                                        </p>
                                                     </div>
                                                 </div>
-                                                <div class="example-content inner-tab-content">
-                                                    <div class="example-inner">
-                                                        <div class="exam-items">
-                                                            <div class="ex-in-tit">
-                                                                <h4>믿:음2.2</h4>
-                                                            </div>
-                                                            <h3>제목: 두번째 컨텐츠</h3>
-                                                            <p>
-                                                                고객님께,<br class="both" />
-                                                                안녕하세요. [회사명]의 [발신자
-                                                                이름]입니다.<br class="both" />
-                                                                우선 저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께
-                                                                잘못된<br class="both" />
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다.
-                                                                <br class="both" /><br
-                                                                    class="both"
-                                                                />내부 확인 결과, 문서 전달 과정에서
-                                                                오류가 발생한 것을 확인하였으며,
-                                                                이에 대한 재발 방지를 위해 내부
-                                                                프로세스를 점검하고 있습니다.<br
-                                                                    class="both"
-                                                                />
-                                                                올바른 제품 보증서를 첨부하여
-                                                                보내드리오니 확인 부탁드립니다.
-                                                                <br class="both" />고객님께,
-                                                                안녕하세요. [회사명]의 [발신자
-                                                                이름]입니다. 우선 저희 제품을 이용해
-                                                                주셔서 감사드립니다. 이번에 고객님께
-                                                                잘못된 제품 보증서가 전달된 점에
-                                                                대해 진심으로 사과드립니다. 내부
-                                                                확인 결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.
-                                                            </p>
+                                            </div>
+                                            <div class="example-content inner-tab-content">
+                                                <div class="example-inner">
+                                                    <div class="exam-items">
+                                                        <div class="ex-in-tit">
+                                                            <h4>믿:음2.5</h4>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="example-content inner-tab-content">
-                                                    <div class="example-inner">
-                                                        <div class="exam-items">
-                                                            <div class="ex-in-tit">
-                                                                <h4>믿:음2.5</h4>
-                                                            </div>
-                                                            <h3>
-                                                                제목: 세번째 컨텐츠 제목: 세번째
-                                                                컨텐츠제목: 세번째 컨텐츠제목:
-                                                                세번째 컨텐츠
-                                                            </h3>
-                                                            <p>
-                                                                고객님께,<br class="both" />
-                                                                안녕하세요. [회사명]의 [발신자
-                                                                이름]입니다.<br class="both" />
-                                                                우선 저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께
-                                                                잘못된<br class="both" />
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다.
-                                                                <br class="both" /><br
-                                                                    class="both"
-                                                                />내부 확인 결과, 문서 전달 과정에서
-                                                                오류가 발생한 것을 확인하였으며,
-                                                                이에 대한 재발 방지를 위해 내부
-                                                                프로세스를 점검하고 있습니다.<br
-                                                                    class="both"
-                                                                />
-                                                                올바른 제품 보증서를 첨부하여
-                                                                보내드리오니 확인 부탁드립니다.
-                                                                <br class="both" />고객님께,
-                                                                안녕하세요. [회사명]의 [발신자
-                                                                이름]입니다. 우선 저희 제품을 이용해
-                                                                주셔서 감사드립니다. 이번에 고객님께
-                                                                잘못된 제품 보증서가 전달된 점에
-                                                                대해 진심으로 사과드립니다. 내부
-                                                                확인 결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.고객님께, 안녕하세요.
-                                                                [회사명]의 [발신자 이름]입니다. 우선
-                                                                저희 제품을 이용해 주셔서
-                                                                감사드립니다. 이번에 고객님께 잘못된
-                                                                제품 보증서가 전달된 점에 대해
-                                                                진심으로 사과드립니다. 내부 확인
-                                                                결과, 문서 전달 과정에서 오류가
-                                                                발생한 것을 확인하였으며, 이에 대한
-                                                                재발 방지를 위해 내부 프로세스를
-                                                                점검하고 있습니다. 올바른 제품
-                                                                보증서를 첨부하여 보내드리오니 확인
-                                                                부탁드립니다.
-                                                            </p>
-                                                        </div>
+                                                        <h3>
+                                                            제목: 세번째 컨텐츠 제목: 세번째
+                                                            컨텐츠제목: 세번째 컨텐츠제목:
+                                                            세번째 컨텐츠
+                                                        </h3>
+                                                        <p>
+                                                            고객님께,<br class="both" />
+                                                            안녕하세요. [회사명]의 [발신자
+                                                            이름]입니다.<br class="both" />
+                                                            우선 저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께
+                                                            잘못된<br class="both" />
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다.
+                                                            <br class="both" /><br class="both" />내부 확인 결과, 문서 전달 과정에서
+                                                            오류가 발생한 것을 확인하였으며,
+                                                            이에 대한 재발 방지를 위해 내부
+                                                            프로세스를 점검하고 있습니다.<br class="both" />
+                                                            올바른 제품 보증서를 첨부하여
+                                                            보내드리오니 확인 부탁드립니다.
+                                                            <br class="both" />고객님께,
+                                                            안녕하세요. [회사명]의 [발신자
+                                                            이름]입니다. 우선 저희 제품을 이용해
+                                                            주셔서 감사드립니다. 이번에 고객님께
+                                                            잘못된 제품 보증서가 전달된 점에
+                                                            대해 진심으로 사과드립니다. 내부
+                                                            확인 결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.고객님께, 안녕하세요.
+                                                            [회사명]의 [발신자 이름]입니다. 우선
+                                                            저희 제품을 이용해 주셔서
+                                                            감사드립니다. 이번에 고객님께 잘못된
+                                                            제품 보증서가 전달된 점에 대해
+                                                            진심으로 사과드립니다. 내부 확인
+                                                            결과, 문서 전달 과정에서 오류가
+                                                            발생한 것을 확인하였으며, 이에 대한
+                                                            재발 방지를 위해 내부 프로세스를
+                                                            점검하고 있습니다. 올바른 제품
+                                                            보증서를 첨부하여 보내드리오니 확인
+                                                            부탁드립니다.
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="tab-section gap10 overInPadding">
-                                    <div class="sub-title-wrapper">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            믿:음2.0 라인업
-                                        </h2>
-                                    </div>
+                            <div class="tab-section gap10 overInPadding">
+                                <div class="sub-title-wrapper">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        믿:음2.0 라인업
+                                    </h2>
+                                </div>
 
-                                    <div class="example-side-wrapper">
-                                        <div class="example-side-item">
-                                            <div
-                                                class="example-side-txts model-line-up"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <dl>
-                                                    <dt>믿:음2.0 Mini</dt>
-                                                    <dd>
-                                                        소형 디바이스에서 구동할 수 있도록<br />경량화한
-                                                        On-Device향 모델
-                                                    </dd>
-                                                </dl>
-                                                <dl>
-                                                    <dt>믿:음2.0 Base</dt>
-                                                    <dd>
-                                                        성능과 효율의 밸런스를 갖춘<br />
-                                                        균형 잡힌 모델
-                                                    </dd>
-                                                </dl>
-                                                <dl>
-                                                    <dt>믿:음2.0 Pro (예정)</dt>
-                                                    <dd>
-                                                        Frontier급<br />
-                                                        고성능 모델
-                                                    </dd>
-                                                </dl>
-                                            </div>
+                                <div class="example-side-wrapper">
+                                    <div class="example-side-item">
+                                        <div class="example-side-txts model-line-up" data-aos="fade-up"
+                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <dl>
+                                                <dt>믿:음2.0 Mini</dt>
+                                                <dd>
+                                                    소형 디바이스에서 구동할 수 있도록<br />경량화한
+                                                    On-Device향 모델
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>믿:음2.0 Base</dt>
+                                                <dd>
+                                                    성능과 효율의 밸런스를 갖춘<br />
+                                                    균형 잡힌 모델
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>믿:음2.0 Pro (예정)</dt>
+                                                <dd>
+                                                    Frontier급<br />
+                                                    고성능 모델
+                                                </dd>
+                                            </dl>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div
-                                        class="btn-wrap"
-                                        data-aos="fade-up"
-                                        data-aos-duration="800"
-                                        data-aos-easing="ease-out-cubic"
-                                    >
-                                        <button type="button" class="btn sm white last-btn">
-                                            자세히 보기
-                                        </button>
-                                    </div>
+                                <div class="btn-wrap" data-aos="fade-up" data-aos-duration="800"
+                                    data-aos-easing="ease-out-cubic">
+                                    <button type="button" class="btn sm white last-btn">
+                                        자세히 보기
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="bg-bright-fff">
-                    <div class="content-inner">
-                        <div class="tab-inner-wrapper">
-                            <!-- 2번 탭 컨텐츠 -->
-                            <div
-                                class="tabs__panel__anchor"
-                                id="tab-panel-2"
-                                role="tabpanel"
-                                aria-labelledby="tab-2"
-                            >
-                                <div class="tab-section only-title">
-                                    <div class="title-wrapper">
-                                        <span
-                                            class="open-planned top-center"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                            >공개 예정</span
-                                        >
-                                        <span
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                            >KT-MS 협력모델</span
-                                        >
-                                        <h2
-                                            class="open-wrapper"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            GPT K
-                                            <span class="open-planned pc-only">공개 예정</span>
-                                        </h2>
-                                        <h3
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            글로벌 최고 성능의 GPT-4o에 KT <br class="mo-br" />
-                                            *소버린 데이터(Sovereign Data)를<br
-                                                class="mo-br"
-                                            /><br />
-                                            학습시킨 한국어와 한국의 역사·문화·정서에 특화된 모델
-                                        </h3>
-                                        <p
-                                            class="gray-desc"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            소버린 데이터* 한국 고유의 언어/문화/산업 데이터로
-                                            이루어진 KT독자적 학습 자산으로서<br />
-                                            한국의 맥락을 정밀하게 반영한 AI 개발의 핵심 요소
-                                        </p>
-                                    </div>
+            <div class="bg-bright-fff">
+                <div class="content-inner">
+                    <div class="tab-inner-wrapper">
+                        <!-- 2번 탭 컨텐츠 -->
+                        <div class="tabs__panel__anchor" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2">
+                            <div class="tab-section only-title">
+                                <div class="title-wrapper">
+                                    <span class="open-planned top-center" data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">공개 예정</span>
+                                    <span data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">KT-MS 협력모델</span>
+                                    <h2 class="open-wrapper" data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">
+                                        GPT K
+                                        <span class="open-planned pc-only">공개 예정</span>
+                                    </h2>
+                                    <h3 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        글로벌 최고 성능의 GPT-4o에 KT <br class="mo-br" />
+                                        *소버린 데이터(Sovereign Data)를<br class="mo-br" /><br />
+                                        학습시킨 한국어와 한국의 역사·문화·정서에 특화된 모델
+                                    </h3>
+                                    <p class="gray-desc" data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">
+                                        소버린 데이터* 한국 고유의 언어/문화/산업 데이터로
+                                        이루어진 KT독자적 학습 자산으로서<br />
+                                        한국의 맥락을 정밀하게 반영한 AI 개발의 핵심 요소
+                                    </p>
+                                </div>
 
-                                    <!-- <div class="btn-wrap" data-aos="fade-up" data-aos-duration="800"
+                                <!-- <div class="btn-wrap" data-aos="fade-up" data-aos-duration="800"
                                     data-aos-easing="ease-out-cubic">
                                     <button type="button" class="btn md">
                                         모델 체험하기
                                     </button>
                                 </div> -->
-                                </div>
+                            </div>
 
-                                <div class="tab-section">
-                                    <div class="sub-title-wrapper tp2">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            GPT K의 장점
-                                        </h2>
-                                    </div>
-                                    <div class="gpt-benefit-box">
-                                        <ul class="box-list white-box">
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        한국어와 영어 모두 뛰어난<br /><br
-                                                            class="mo-br"
-                                                        />
-                                                        한국적 AI 모델
-                                                    </h3>
-                                                    <p>
-                                                        글로벌 최고 수준의 GPT-4o 성능 우위를
-                                                        유지하면서, 한국어 성능을 전반적으로 개선
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        한국적인 지식과​<br class="both" />
-                                                        민감도 인지 능력 향상
-                                                    </h3>
-                                                    <p>
-                                                        KT가 자체 확보한 소버린 데이터 및 SFT* /
-                                                        RLHF** 학습을 통해 한국 고유 지식 정교화​<br />
-                                                        *SFT: Supervised Fine-Tuning<br />
-                                                        **RLHF: Reinforcement Learning from Human
-                                                        Feedback
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        한국 특화 평가지표를 통해
-                                                        <br class="both" />
-                                                        한국적AI 적합도 향상
-                                                    </h3>
-                                                    <p>
-                                                        KT가 전문기관 및 산학연구기관과 함께 개발한
-                                                        한국 특화 성능 벤치마크 및 RAI 벤치마크 적용
-                                                    </p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                            <div class="tab-section">
+                                <div class="sub-title-wrapper tp2">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        GPT K의 장점
+                                    </h2>
                                 </div>
-                                <!-- <div class="tab-section gap10">
+                                <div class="gpt-benefit-box">
+                                    <ul class="box-list white-box">
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    한국어와 영어 모두 뛰어난<br /><br class="mo-br" />
+                                                    한국적 AI 모델
+                                                </h3>
+                                                <p>
+                                                    글로벌 최고 수준의 GPT-4o 성능 우위를
+                                                    유지하면서, 한국어 성능을 전반적으로 개선
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    한국적인 지식과​<br class="both" />
+                                                    민감도 인지 능력 향상
+                                                </h3>
+                                                <p>
+                                                    KT가 자체 확보한 소버린 데이터 및 SFT* /
+                                                    RLHF** 학습을 통해 한국 고유 지식 정교화​<br />
+                                                    *SFT: Supervised Fine-Tuning<br />
+                                                    **RLHF: Reinforcement Learning from Human
+                                                    Feedback
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    한국 특화 평가지표를 통해
+                                                    <br class="both" />
+                                                    한국적AI 적합도 향상
+                                                </h3>
+                                                <p>
+                                                    KT가 전문기관 및 산학연구기관과 함께 개발한
+                                                    한국 특화 성능 벤치마크 및 RAI 벤치마크 적용
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <div class="tab-section gap10">
                                 <div class="sub-title-wrapper tp2">
                                     <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                                         활용 사례 비교
@@ -1436,44 +1173,36 @@
                                 </div>
                             </div> -->
 
-                                <div class="tab-section gap10">
-                                    <div class="sub-title-wrapper">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            GPT K 라인업
-                                        </h2>
-                                    </div>
+                            <div class="tab-section gap10">
+                                <div class="sub-title-wrapper">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        GPT K 라인업
+                                    </h2>
+                                </div>
 
-                                    <div class="example-side-wrapper">
-                                        <div class="example-side-item">
-                                            <div
-                                                class="example-side-txts model-line-up single-box"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <dl class="">
-                                                    <dt class="open-wrapper">
-                                                        GPT K
-                                                        <span class="open-planned">공개 예정</span>
-                                                    </dt>
-                                                    <dd>
-                                                        KT와 Microsoft 협업으로 탄생한 한국적 AI
-                                                    </dd>
-                                                </dl>
-                                                <!-- <dl>
+                                <div class="example-side-wrapper">
+                                    <div class="example-side-item">
+                                        <div class="example-side-txts model-line-up single-box" data-aos="fade-up"
+                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <dl class="">
+                                                <dt class="open-wrapper">
+                                                    GPT K
+                                                    <span class="open-planned">공개 예정</span>
+                                                </dt>
+                                                <dd>
+                                                    KT와 Microsoft 협업으로 탄생한 한국적 AI
+                                                </dd>
+                                            </dl>
+                                            <!-- <dl>
                                                 <dt class="open-wrapper">Phi-K <span class="open-planned">공개 예정</span>
                                                 </dt>
                                                 <dd>곧 공개될 예정입니다.</dd>
                                             </dl> -->
-                                            </div>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <!-- <div
+                                <!-- <div
                                         class="btn-wrap"
                                         data-aos="fade-up"
                                         data-aos-duration="800"
@@ -1483,138 +1212,100 @@
                                             자세히 보기
                                         </button>
                                     </div> -->
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="bg-black-style">
-                    <div class="content-inner">
-                        <div class="tab-inner-wrapper">
-                            <!-- 3번 탭 컨텐츠 -->
-                            <div
-                                class="tabs__panel__anchor"
-                                id="tab-panel-3"
-                                role="tabpanel"
-                                aria-labelledby="tab-3"
-                            >
-                                <div class="tab-section only-title">
-                                    <div class="title-wrapper">
-                                        <span
-                                            class="open-planned top-center"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                            >공개 예정</span
-                                        >
-                                        <span
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                            >오픈소스 기반 모델</span
-                                        >
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                            class="open-wrapper"
-                                        >
-                                            Llama K
-                                            <span class="open-planned pc-only">공개 예정</span>
-                                        </h2>
-                                        <h3
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            Meta의 Llama 3.x가 지원하지 않는 한국어에 대해, KT 자체
-                                            데이터와 학습 노하우를<br />
-                                            적용해 원본모델의 성능을 유지하면서도 한국어 능력을 대폭
-                                            강화한 비용 효율적 모델
-                                        </h3>
-                                    </div>
+            <div class="bg-black-style">
+                <div class="content-inner">
+                    <div class="tab-inner-wrapper">
+                        <!-- 3번 탭 컨텐츠 -->
+                        <div class="tabs__panel__anchor" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3">
+                            <div class="tab-section only-title">
+                                <div class="title-wrapper">
+                                    <span class="open-planned top-center" data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">공개 예정</span>
+                                    <span data-aos="fade-up" data-aos-duration="800"
+                                        data-aos-easing="ease-out-cubic">오픈소스 기반 모델</span>
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic"
+                                        class="open-wrapper">
+                                        Llama K
+                                        <span class="open-planned pc-only">공개 예정</span>
+                                    </h2>
+                                    <h3 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        Meta의 Llama 3.x가 지원하지 않는 한국어에 대해, KT 자체
+                                        데이터와 학습 노하우를<br />
+                                        적용해 원본모델의 성능을 유지하면서도 한국어 능력을 대폭
+                                        강화한 비용 효율적 모델
+                                    </h3>
+                                </div>
 
-                                    <!-- <div class="btn-wrap" data-aos="fade-up" data-aos-duration="800"
+                                <!-- <div class="btn-wrap" data-aos="fade-up" data-aos-duration="800"
                                     data-aos-easing="ease-out-cubic">
                                     <button type="button" class="btn md white">
                                         모델 체험하기
                                     </button>
                                 </div> -->
-                                </div>
+                            </div>
 
-                                <div class="tab-section">
-                                    <div class="sub-title-wrapper tp2">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            Llama K의 장점
-                                        </h2>
-                                    </div>
-                                    <div class="gpt-benefit-box liama-benefit-box">
-                                        <ul class="box-list white-box">
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        Llama 원본모델의 성능은 <br />
-                                                        그대로 유지하고, 한국어 이해/생성 능력은
-                                                        획기적으로 강화
-                                                    </h3>
-                                                    <p>
-                                                        원본모델의 지식 보존 위해 KT의 노하우가 담긴
-                                                        독자적인 학습 기법 사용 및 한국어와
-                                                        한국문화를 담은 고품질의 데이터 선별 활용
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        한국어 지시 이행<br />(Instruction-following)<br />
-                                                        성능 대폭 향상
-                                                    </h3>
-                                                    <p>
-                                                        오픈소스 모델이 상용 모델 대비 성능이 낮았던
-                                                        한국어 지시 이행(Instruction-Following)
-                                                        영역에서 비약적인 성능 향상을 달성<br />
-                                                        높임법 종결어미등 한국어 특화 영역 7개
-                                                        항목과<br />
-                                                        공공분야 포맷 이행 영역 적용
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <div class="box-item">
-                                                    <h3>
-                                                        한국어 Reasoning<br />
-                                                        코딩,수학 영역 최적화 학습<br />
-                                                        기법 적용
-                                                    </h3>
-                                                    <p>
-                                                        KT 독자적인 한국어 리워드모델 기반
-                                                        <br />최신 Online Reinforcement Learning
-                                                        기술 활용
-                                                    </p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                            <div class="tab-section">
+                                <div class="sub-title-wrapper tp2">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        Llama K의 장점
+                                    </h2>
                                 </div>
-                                <!-- <div class="tab-section gap10">
+                                <div class="gpt-benefit-box liama-benefit-box">
+                                    <ul class="box-list white-box">
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    Llama 원본모델의 성능은 <br />
+                                                    그대로 유지하고, 한국어 이해/생성 능력은
+                                                    획기적으로 강화
+                                                </h3>
+                                                <p>
+                                                    원본모델의 지식 보존 위해 KT의 노하우가 담긴
+                                                    독자적인 학습 기법 사용 및 한국어와
+                                                    한국문화를 담은 고품질의 데이터 선별 활용
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    한국어 지시 이행<br />(Instruction-following)<br />
+                                                    성능 대폭 향상
+                                                </h3>
+                                                <p>
+                                                    오픈소스 모델이 상용 모델 대비 성능이 낮았던
+                                                    한국어 지시 이행(Instruction-Following)
+                                                    영역에서 비약적인 성능 향상을 달성<br />
+                                                    높임법 종결어미등 한국어 특화 영역 7개
+                                                    항목과<br />
+                                                    공공분야 포맷 이행 영역 적용
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <div class="box-item">
+                                                <h3>
+                                                    한국어 Reasoning<br />
+                                                    코딩,수학 영역 최적화 학습<br />
+                                                    기법 적용
+                                                </h3>
+                                                <p>
+                                                    KT 독자적인 한국어 리워드모델 기반
+                                                    <br />최신 Online Reinforcement Learning
+                                                    기술 활용
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <div class="tab-section gap10">
                                 <div class="sub-title-wrapper tp2">
                                     <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                                         활용 사례 비교
@@ -1904,47 +1595,39 @@
                                 </div>
                             </div> -->
 
-                                <div class="tab-section gap10">
-                                    <div class="sub-title-wrapper">
-                                        <h2
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            data-aos-easing="ease-out-cubic"
-                                        >
-                                            Llama K 라인업
-                                        </h2>
-                                    </div>
+                            <div class="tab-section gap10">
+                                <div class="sub-title-wrapper">
+                                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                        Llama K 라인업
+                                    </h2>
+                                </div>
 
-                                    <div class="example-side-wrapper">
-                                        <div class="example-side-item">
-                                            <div
-                                                class="example-side-txts model-line-up"
-                                                data-aos="fade-up"
-                                                data-aos-duration="800"
-                                                data-aos-easing="ease-out-cubic"
-                                            >
-                                                <dl>
-                                                    <dt class="open-wrapper">
-                                                        Llama K 11B
-                                                        <span class="open-planned">공개 예정</span>
-                                                    </dt>
-                                                    <dd>일반적인 성능의 기본 모델</dd>
-                                                </dl>
-                                                <dl>
-                                                    <dt class="open-wrapper">
-                                                        Llama K 74B
-                                                        <span class="open-planned">공개 예정</span>
-                                                    </dt>
-                                                    <dd>
-                                                        RAG 등 Enterprise급 성능 요구에 적합한
-                                                        고성능 모델
-                                                    </dd>
-                                                </dl>
-                                            </div>
+                                <div class="example-side-wrapper">
+                                    <div class="example-side-item">
+                                        <div class="example-side-txts model-line-up" data-aos="fade-up"
+                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <dl>
+                                                <dt class="open-wrapper">
+                                                    Llama K 11B
+                                                    <span class="open-planned">공개 예정</span>
+                                                </dt>
+                                                <dd>일반적인 성능의 기본 모델</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt class="open-wrapper">
+                                                    Llama K 74B
+                                                    <span class="open-planned">공개 예정</span>
+                                                </dt>
+                                                <dd>
+                                                    RAG 등 Enterprise급 성능 요구에 적합한
+                                                    고성능 모델
+                                                </dd>
+                                            </dl>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <!-- <div
+                                <!-- <div
                                         class="btn-wrap"
                                         data-aos="fade-up"
                                         data-aos-duration="800"
@@ -1954,42 +1637,29 @@
                                             자세히 보기
                                         </button>
                                     </div> -->
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="content-section pt-160 mo-pb-0">
-                <div class="content-inner overgrid-inner">
-                    <div class="title-wrapper">
-                        <span
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                            >K Model</span
-                        >
-                        <h2
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                        >
-                            Use Cases
-                        </h2>
-                        <p
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                        >
-                            K intelligence와 함께한 기업들의 변화,<br class="mo-br" />
-                            성과로 증명된 유즈케이스를 확인해보세요.
-                        </p>
-                    </div>
+        <section class="content-section pt-160 mo-pb-0">
+            <div class="content-inner overgrid-inner">
+                <div class="title-wrapper">
+                    <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">K Model</span>
+                    <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        Use Cases
+                    </h2>
+                    <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                        K intelligence와 함께한 기업들의 변화,<br class="mo-br" />
+                        성과로 증명된 유즈케이스를 확인해보세요.
+                    </p>
+                </div>
 
-                    <div class="card-wrapper">
-                        <ul class="card-list-horizontal">
-                            <!-- <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                <div class="card-wrapper">
+                    <ul class="card-list-horizontal">
+                        <!-- <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                             <div class="card-inner">
                                 <div class="card-img">
                                     <img src="/resource/images/ai/usecase/image01.png" alt="" />
@@ -2008,30 +1678,25 @@
                                 </div>
                             </div>
                         </li> -->
-                            <li
-                                class="card"
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="card-inner">
-                                    <div class="card-img">
-                                        <img src="/resource/images/ai/usecase/image05.png" alt="" />
-                                    </div>
-                                    <div class="card-txts">
-                                        <h3 class="sub-title-sm">기가지니</h3>
-                                        <p class="sub-desc">
-                                            KT 음성인식·자연어처리 기반의 스마트홈 AI 서비스
-                                        </p>
-                                        <div class="card-tags">
-                                            <span class="card-tag">믿:음</span>
-                                            <span class="card-tag">음성합성</span>
-                                            <span class="card-tag">음성인식</span>
-                                        </div>
+                        <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="card-inner">
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/usecase/image05.png" alt="" />
+                                </div>
+                                <div class="card-txts">
+                                    <h3 class="sub-title-sm">기가지니</h3>
+                                    <p class="sub-desc">
+                                        KT 음성인식·자연어처리 기반의 스마트홈 AI 서비스
+                                    </p>
+                                    <div class="card-tags">
+                                        <span class="card-tag">믿:음</span>
+                                        <span class="card-tag">음성합성</span>
+                                        <span class="card-tag">음성인식</span>
                                     </div>
                                 </div>
-                            </li>
-                            <!-- <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            </div>
+                        </li>
+                        <!-- <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                             <div class="card-inner">
                                 <div class="card-img">
                                     <img src="/resource/images/ai/usecase/image04.png" alt="" />
@@ -2050,37 +1715,32 @@
                                 </div>
                             </div>
                         </li> -->
-                            <li
-                                class="card"
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="card-inner">
-                                    <div class="card-img">
-                                        <img src="/resource/images/ai/usecase/image03.png" alt="" />
-                                    </div>
-                                    <div class="card-txts">
-                                        <h3 class="sub-title-sm">KT 100번 고객센터</h3>
-                                        <p class="sub-desc">
-                                            AI 상담 어시스트와 보이스봇으로 더 똑똑하게 상담하는 KT
-                                            100번 고객센터
-                                        </p>
-                                        <div class="card-tags">
-                                            <span class="card-tag">KT사례</span>
-                                            <span class="card-tag">믿:음</span>
-                                            <span class="card-tag">음성합성</span>
-                                            <span class="card-tag">음성인식</span>
-                                        </div>
+                        <li class="card" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div class="card-inner">
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/usecase/image03.png" alt="" />
+                                </div>
+                                <div class="card-txts">
+                                    <h3 class="sub-title-sm">KT 100번 고객센터</h3>
+                                    <p class="sub-desc">
+                                        AI 상담 어시스트와 보이스봇으로 더 똑똑하게 상담하는 KT
+                                        100번 고객센터
+                                    </p>
+                                    <div class="card-tags">
+                                        <span class="card-tag">KT사례</span>
+                                        <span class="card-tag">믿:음</span>
+                                        <span class="card-tag">음성합성</span>
+                                        <span class="card-tag">음성인식</span>
                                     </div>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </li>
+                    </ul>
 
-                        <!-- swiper -->
-                        <ul class="card-list-horizontal swiper-container">
-                            <div class="swiper-wrapper">
-                                <!-- <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                    <!-- swiper -->
+                    <ul class="card-list-horizontal swiper-container">
+                        <div class="swiper-wrapper">
+                            <!-- <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
                                 data-aos-easing="ease-out-cubic">
                                 <div class="card-inner">
                                     <div class="card-img">
@@ -2101,34 +1761,27 @@
                                     </div>
                                 </div>
                             </li> -->
-                                <li
-                                    class="card swiper-slide"
-                                    data-aos="fade-up"
-                                    data-aos-duration="800"
-                                    data-aos-easing="ease-out-cubic"
-                                >
-                                    <div class="card-inner">
-                                        <div class="card-img">
-                                            <img
-                                                src="/resource/images/ai/usecase/image02.png"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="card-txts">
-                                            <h3 class="sub-title-sm">지니TV</h3>
-                                            <p class="sub-desc">
-                                                자연스러운 대화로 콘텐츠 탐색이 가능한 LLM 기반
-                                                미디어 Agent,실시간 자막 생성이 적용된 AI TV
-                                            </p>
-                                            <div class="card-tags">
-                                                <span class="card-tag">KT사례</span>
-                                                <span class="card-tag">Multi-Agent</span>
-                                                <span class="card-tag">음성합성</span>
-                                            </div>
+                            <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic">
+                                <div class="card-inner">
+                                    <div class="card-img">
+                                        <img src="/resource/images/ai/usecase/image02.png" alt="" />
+                                    </div>
+                                    <div class="card-txts">
+                                        <h3 class="sub-title-sm">지니TV</h3>
+                                        <p class="sub-desc">
+                                            자연스러운 대화로 콘텐츠 탐색이 가능한 LLM 기반
+                                            미디어 Agent,실시간 자막 생성이 적용된 AI TV
+                                        </p>
+                                        <div class="card-tags">
+                                            <span class="card-tag">KT사례</span>
+                                            <span class="card-tag">Multi-Agent</span>
+                                            <span class="card-tag">음성합성</span>
                                         </div>
                                     </div>
-                                </li>
-                                <!-- <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                                </div>
+                            </li>
+                            <!-- <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
                                 data-aos-easing="ease-out-cubic">
                                 <div class="card-inner">
                                     <div class="card-img">
@@ -2148,85 +1801,75 @@
                                     </div>
                                 </div>
                             </li> -->
-                                <li
-                                    class="card swiper-slide"
-                                    data-aos="fade-up"
-                                    data-aos-duration="800"
-                                    data-aos-easing="ease-out-cubic"
-                                >
-                                    <div class="card-inner">
-                                        <div class="card-img">
-                                            <img
-                                                src="/resource/images/ai/usecase/image03.png"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="card-txts">
-                                            <h3 class="sub-title-sm">KT 100번 고객센터</h3>
-                                            <p class="sub-desc">
-                                                AI 상담 어시스트와 보이스봇으로 더 똑똑하게 상담하는
-                                                KT 100번 고객센터
-                                            </p>
-                                            <div class="card-tags">
-                                                <span class="card-tag">KT사례</span>
-                                                <span class="card-tag">믿:음2.0</span>
-                                                <span class="card-tag">음성합성</span>
-                                                <span class="card-tag">음성인식</span>
-                                            </div>
+                            <li class="card swiper-slide" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic">
+                                <div class="card-inner">
+                                    <div class="card-img">
+                                        <img src="/resource/images/ai/usecase/image03.png" alt="" />
+                                    </div>
+                                    <div class="card-txts">
+                                        <h3 class="sub-title-sm">KT 100번 고객센터</h3>
+                                        <p class="sub-desc">
+                                            AI 상담 어시스트와 보이스봇으로 더 똑똑하게 상담하는
+                                            KT 100번 고객센터
+                                        </p>
+                                        <div class="card-tags">
+                                            <span class="card-tag">KT사례</span>
+                                            <span class="card-tag">믿:음2.0</span>
+                                            <span class="card-tag">음성합성</span>
+                                            <span class="card-tag">음성인식</span>
                                         </div>
                                     </div>
-                                </li>
-                            </div>
-                        </ul>
-                        <div
-                            class="btnWrap pc-only"
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-easing="ease-out-cubic"
-                        >
-                            <a href="/ai/usecase/">
-                                <button type="button" class="btn sm">전체보기</button>
-                            </a>
+                                </div>
+                            </li>
                         </div>
+                    </ul>
+                    <div class="btnWrap pc-only" data-aos="fade-up" data-aos-duration="800"
+                        data-aos-easing="ease-out-cubic">
+                        <a href="/ai/usecase/">
+                            <button type="button" class="btn sm">전체보기</button>
+                        </a>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+    </div>
 
-        <!-- KT Model 체험하기 -->
-        <section id="kt-model-section" class="kt-model-section"></section>
+    <!-- KT Model 체험하기 -->
+    <section id="kt-model-section" class="kt-model-section"></section>
 
-        <!-- Footer -->
-        <footer class="footer"></footer>
+    <!-- Footer -->
+    <footer class="footer"></footer>
 
-        <!-- Script -->
-        <script src="/js/ai/common/common.js"></script>
-        <script src="/js/ai/solution.js"></script>
+    <!-- Script -->
+    <script src="/js/ai/common/common.js"></script>
+    <script src="/js/ai/solution.js"></script>
 
-        <script>
-            includeCommonLayout();
-        </script>
-        <script src="/js/ai/common/aos.js"></script>
-        <script src="/js/ai/common/swiper-bundle.min.js"></script>
+    <script>
+        includeCommonLayout();
+    </script>
+    <script src="/js/ai/common/aos.js"></script>
+    <script src="/js/ai/common/swiper-bundle.min.js"></script>
 
-        <!-- Tabs Component (공통) -->
-        <script src="/js/ai/sub_cy.js"></script>
+    <!-- Tabs Component (공통) -->
+    <script src="/js/ai/sub_cy.js"></script>
 
-        <script>
-            AOS.init();
+    <script>
+        AOS.init();
 
-            // 탭 전환 후 AOS 새로고침
-            document.addEventListener('DOMContentLoaded', function () {
-                var tabButtons = document.querySelectorAll('.tabs__tab');
-                tabButtons.forEach(function (btn) {
-                    btn.addEventListener('click', function () {
-                        // 탭 전환 후 AOS 새로고침
-                        setTimeout(function () {
-                            AOS.refresh();
-                        }, 100);
-                    });
+        // 탭 전환 후 AOS 새로고침
+        document.addEventListener('DOMContentLoaded', function () {
+            var tabButtons = document.querySelectorAll('.tabs__tab');
+            tabButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    // 탭 전환 후 AOS 새로고침
+                    setTimeout(function () {
+                        AOS.refresh();
+                    }, 100);
                 });
             });
-        </script>
-    </body>
+        });
+    </script>
+</body>
+
 </html>
