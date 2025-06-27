@@ -2577,8 +2577,12 @@
 .example-side-item .example-side-txts.top-tab-txts dl {
     transition: border 0.5s ease-in;
     cursor: pointer;
+}
+
+.bg-black-style .example-side-item .example-side-txts.top-tab-txts dl {
     background: #131313;
 }
+
 
 .example-side-item .example-side-txts.single-box {
     justify-content: center;
@@ -2681,15 +2685,25 @@
 }
 
 .flex.example-double .example-con-wrapper {
-    padding: 2.5rem 3.625rem 0 3.625rem;
+    padding: 2.5rem 0.625rem 2.5rem 2.5rem;
+    border: 1px solid var(--gray-300-color);
+}
+
+.bg-black-style .flex.example-double .example-con-wrapper {
+    border: 1px solid #373737;
+    background-color: #131313;
+}
+
+.bg-black-style .flex.example-double .example-con-wrapper .example-content {
+    border: 0;
 }
 
 .flex.example-double .example-content {
-    width: 34.8rem;
+    width: 100%;
 }
 
 .flex.example-double .example-content .example-inner .exam-items {
-    width: 34.1rem;
+    width: 100%;
 }
 
 .example-con-wrapper {
@@ -2710,6 +2724,15 @@
     height: 23.75rem;
     overflow-y: scroll;
     position: relative;
+}
+
+.flex.example-double .example-content .example-inner .exam-items {
+    padding: 0rem 0.625rem 0rem 0rem;
+    width: 100%;
+}
+
+.flex.example-double .example-content {
+    padding: 0;
 }
 
 .example-content .example-inner .exam-items::-webkit-scrollbar {
@@ -2777,21 +2800,28 @@
     border: 0;
 }
 
-.example-content .example-inner .ex-in-tit {
-    position: sticky;
-    top: 0;
-    left: 0;
+.bg-black-style .example-content .example-inner .ex-in-tit {
     background-color: #131313;
-    padding-bottom: 1rem;
 }
 
-.example-content .example-inner h4 {
+.example-content .example-inner .model-options {
+    padding-left: 2.5rem;
+}
+
+.flex.example-double .example-content .example-inner .model-options {
+    padding-left: 0rem;
+}
+
+.example-content .example-inner .model-options ul li {}
+
+.example-content .example-inner .model-options h4 {
     color: var(--primary-color) !important;
     width: fit-content;
     position: relative;
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    cursor: pointer;
 }
 
 .example-content .example-inner h4:after {
@@ -2817,6 +2847,25 @@
     width: 100%;
     margin-top: 5rem;
 }
+
+/* 탭 관련 스타일 추가 */
+/* double-inner-tab-content-wrapper 탭 fade 효과 */
+.double-inner-tab-content-wrapper .flex.example-double {
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.double-inner-tab-content-wrapper .flex.example-double.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    z-index: 1;
+}
+
+
 
 .simple-box-wrapper ul {
     display: flex;
@@ -3839,6 +3888,7 @@
         margin-left: 0.8rem !important;
         padding: 0 1.2rem !important;
         border-radius: 1.5rem !important;
+        white-space: nowrap;
     }
 
     .open-planned.top-center {
@@ -4483,7 +4533,7 @@
     .moTab-swiper-wrapper .mobile-model-tabs.swiper-container .swiper-slide {
         flex: 1 0 86%;
         max-width: unset;
-        min-height: 18.6rem;
+        min-height: 21.3rem;
         padding: 2.6rem;
     }
 
@@ -4540,7 +4590,7 @@
     .example-content .example-inner .exam-items,
     .flex.example-double .example-content .example-inner .exam-items {
         width: calc(100% - 0.6rem);
-        height: 31.6rem;
+        height: 28rem;
     }
 
     /* .example-con-wrapper,

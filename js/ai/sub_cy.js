@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   initTabsComponent();
   initInnerTabs();
+  initDoubleInnerTabs();
   initStickyHeader();
   initModelTabsSwiper();
   initInnerTabClick();
@@ -15,6 +16,7 @@ window.addEventListener('resize', function () {
   initModelTabsSwiper();
   if (window.innerWidth < 768) assignMobileTabIndexes();
   initInnerTabClick();
+  initDoubleInnerTabs();
 });
 
 window.addEventListener('scroll', function () {
@@ -210,6 +212,86 @@ function initInnerTabs() {
             currentActiveContent.classList.remove('active');
             newContent.classList.add('active');
             fadeIn(newContent);
+          });
+        }
+      });
+    });
+  });
+}
+
+// ===== Double Inner Tabs (버튼/컨텐츠 분리형) =====
+function initDoubleInnerTabs() {
+  document.querySelectorAll('.inner-tabs-container').forEach(function (container) {
+    // 컨테이너 바로 다음에 오는 double-inner-tab-content-wrapper를 찾음
+    var contentWrapper = container.nextElementSibling;
+    if (!contentWrapper || !contentWrapper.classList.contains('double-inner-tab-content-wrapper')) return;
+    var triggers = Array.from(container.querySelectorAll('.inner-tab-trigger'));
+    var tabPanels = Array.from(contentWrapper.querySelectorAll('.flex.example-double'));
+    var count = Math.min(triggers.length, tabPanels.length);
+
+    // fadeOut, fadeIn 유틸 함수 (initInnerTabs와 동일)
+    function fadeOut(element, callback) {
+      element.style.opacity = '0';
+      setTimeout(function () {
+        element.style.position = 'absolute';
+        element.style.visibility = 'hidden';
+        element.style.zIndex = '-1';
+        if (callback) callback();
+      }, 300);
+    }
+    function fadeIn(element) {
+      element.style.position = 'relative';
+      element.style.visibility = 'visible';
+      element.style.zIndex = '1';
+      setTimeout(function () { element.style.opacity = '1'; }, 20);
+    }
+
+    // 초기화: 모든 패널 숨기고 첫 번째만 보이게
+    tabPanels.forEach(function (panel, idx) {
+      panel.style.transition = 'opacity 0.4s ease-in-out';
+      if (idx !== 0) {
+        panel.style.opacity = '0';
+        panel.style.position = 'absolute';
+        panel.style.visibility = 'hidden';
+        panel.style.zIndex = '-1';
+        panel.classList.remove('active');
+      } else {
+        panel.style.opacity = '1';
+        panel.style.position = 'relative';
+        panel.style.visibility = 'visible';
+        panel.style.zIndex = '1';
+        panel.classList.add('active');
+      }
+    });
+    triggers.forEach(function (trigger, idx) {
+      if (idx === 0) {
+        trigger.classList.add('active');
+      } else {
+        trigger.classList.remove('active');
+      }
+    });
+
+    // 기존 이벤트 제거 (중복 방지)
+    triggers.forEach(function (trigger, i) {
+      var newTrigger = trigger.cloneNode(true);
+      trigger.parentNode.replaceChild(newTrigger, trigger);
+      triggers[i] = newTrigger;
+    });
+
+    // 이벤트 바인딩 (그룹 내에서만 동작)
+    triggers.slice(0, count).forEach(function (trigger, idx) {
+      trigger.addEventListener('click', function () {
+        if (trigger.classList.contains('active')) return;
+        var currentActiveTrigger = container.querySelector('.inner-tab-trigger.active');
+        var currentActivePanel = contentWrapper.querySelector('.flex.example-double.active');
+        if (currentActiveTrigger) currentActiveTrigger.classList.remove('active');
+        trigger.classList.add('active');
+        var newPanel = tabPanels[idx];
+        if (currentActivePanel && newPanel) {
+          fadeOut(currentActivePanel, function () {
+            currentActivePanel.classList.remove('active');
+            newPanel.classList.add('active');
+            fadeIn(newPanel);
           });
         }
       });
