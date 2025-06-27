@@ -307,14 +307,13 @@ br.mo-br {
     margin-bottom: 0.75rem;
 }
 .card-item h4.to-be {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    display: inline-block;
 }
 .card-item h4.to-be::after {
     content: '공개 예정';
-    display: block;
+    display: inline-block;
     padding: 0.25rem 0.875rem;
+    margin-left: 1rem;
     background: var(--gray-600-color);
     border-radius: 99999px;
     text-align: center;
@@ -952,6 +951,7 @@ br.mo-br {
     display: flex;
     align-items: flex-start;
     gap: 0.375rem;
+    text-align: left;
 }
 
 .list-item .list-description li:before {
@@ -2579,10 +2579,8 @@ br.mo-br {
 }
 
 @media (min-width: 768px) and (max-width: 1536px) {
-    .architecture-diagram .table-list {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 3.5rem 2.5rem;
+    .architecture-diagram .table-list.vertical ~ .table-list {
+        margin-top: 2rem;
     }
     .architecture-diagram .table-row {
         gap: 3.5rem;
@@ -2598,15 +2596,14 @@ br.mo-br {
         padding: 1.5rem 0.5rem;
         text-align: center;
     }
-    .architecture-diagram .table-item {
-        padding: 2.5rem 1.5rem;
+    .architecture-diagram .table-list .table-col .table-item {
+        padding: 1rem;
         text-align: center;
     }
-    .architecture-diagram .table-item h2,
-    .architecture-diagram .table-item h3 {
+    .architecture-diagram .table-list .table-col .table-item h3 {
         font-size: 1.9rem;
         margin-bottom: 1.2rem;
-        text-align: center;
+        text-align: left;
     }
     .architecture-diagram .table-item p,
     .architecture-diagram .table-item ul li {
@@ -2637,7 +2634,15 @@ br.mo-br {
         margin-top: 0;
     }
     .architecture-diagram .table-item.center.text ul li {
-        flex: 1;
+        flex: 0;
         align-items: center;
+    }
+
+    .useCasePage .sub-conSec {
+        padding: 0 2rem !important;
+    }
+
+    .card-item {
+        width: 25rem;
     }
 }

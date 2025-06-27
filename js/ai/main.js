@@ -759,7 +759,7 @@ class WheelNavigation {
         // Deactivate all items first
         this.listItems.forEach((item) => {
             item.classList.remove('active');
-            gsap.set(item, { opacity: 0 });
+            gsap.set(item, { opacity: 0, zIndex: -1 });
         });
         this.cubeItems.forEach((item, index) => {
             const img = item.querySelector('img');
@@ -776,7 +776,7 @@ class WheelNavigation {
         const initialCubeImg = this.cubeItems[this.currentIndex].querySelector('img');
 
         initialListItem.classList.add('active');
-        gsap.set(initialListItem, { opacity: 1 });
+        gsap.set(initialListItem, { opacity: 1, zIndex: 1 });
 
         if (initialCubeImg && imagePaths[this.currentIndex]) {
             initialCubeImg.src = imagePaths[this.currentIndex].active;
@@ -876,6 +876,7 @@ class WheelNavigation {
         this.listItems[oldIndex].classList.remove('active');
         tl.to(this.listItems[oldIndex], {
             opacity: 0,
+            zIndex: -1,
             duration: 0.3, // 애니메이션 시간 단축
             ease: 'power2.inOut',
         });
@@ -885,6 +886,7 @@ class WheelNavigation {
             this.listItems[newIndex],
             {
                 opacity: 1,
+                zIndex: 1,
                 duration: 0.3, // 애니메이션 시간 단축
                 ease: 'power2.inOut',
             },

@@ -2497,12 +2497,12 @@ br {
         margin-bottom: 2.038rem;
     }
     .list-wrap ul li > h3 > img {
-        width: 5.575rem;
-        height: 5.488rem;
-        margin-top: -1.5rem;
+        width: 4.875rem;
+        height: auto;
+        margin-top: -1.3rem;
     }
     .list-wrap ul li > h3 > span {
-        font-size: 5.324rem;
+        font-size: 4.824rem;
     }
     .list-wrap ul li > p {
         font-size: var(--font-size-2xl);
@@ -2539,6 +2539,17 @@ br {
     .cube-item-6 {
         bottom: 36.9%;
         left: 37.6%;
+    }
+    .cube-last-text ul li {
+        gap: 0.713rem;
+        font-size: 2rem;
+    }
+    .cube-last-text ul li img {
+        width: 33.625rem;
+        height: auto;
+    }
+    .cube-last-text ul li span {
+        font-size: 4.663rem;
     }
 
     .kquality-inner {
