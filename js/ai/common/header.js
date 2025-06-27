@@ -36,141 +36,151 @@ if (langBtn && langMenu) {
     });
 }
 
-// 스크롤 시 헤더 숨김/노출
-let lastScrollY = window.scrollY;
 const header = document.getElementById('main-header');
-const sticky = document.querySelector('.sticky-header');
-window.addEventListener('scroll', () => {
-    const currentY = window.scrollY;
-    if (currentY === 0) {
-        header.classList.add('show');
-        header.classList.remove('hide', 'scrolled');
-        return;
+// 스크롤 시 헤더/스티키 메뉴 show/hide 및 상태 관리 (최적화)
+(function () {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    const stickyHeader = document.querySelector('.sticky-header');
+    const parallaxSection = document.getElementById('parallax-depth-section');
+    let lastHeaderState = null;
+    let lastStickyState = null;
+
+    function onScroll() {
+        const currentY = window.scrollY;
+        const isMobile = window.innerWidth <= 768;
+        // 헤더 show/hide
+        let headerState;
+        if (currentY === 0) {
+            headerState = 'top';
+        } else if (currentY > lastScrollY && currentY > 80) {
+            headerState = 'hide';
+        } else {
+            headerState = 'show';
+        }
+        // 상태 변화시에만 DOM 조작
+        if (headerState !== lastHeaderState) {
+            if (headerState === 'top' || headerState === 'show') {
+                header.classList.add('show');
+                header.classList.remove('hide');
+            } else if (headerState === 'hide') {
+                header.classList.add('hide');
+                header.classList.remove('show');
+            }
+            if (currentY > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            lastHeaderState = headerState;
+        }
+        // 스티키 헤더 show/hide (모바일만)
+        if (stickyHeader && parallaxSection) {
+            const sectionRect = parallaxSection.getBoundingClientRect();
+            let stickyState = sectionRect.top <= 1 ? 'show' : 'hide';
+            if (stickyState !== lastStickyState) {
+                if (stickyState === 'show') {
+                    stickyHeader.classList.add('show');
+                } else {
+                    stickyHeader.classList.remove('show');
+                }
+                lastStickyState = stickyState;
+            }
+        }
+        lastScrollY = currentY;
+        ticking = false;
     }
-    if (currentY > lastScrollY && currentY > 80) {
-        // down
-        header.classList.add('hide');
-        header.classList.remove('show');
-    } else {
-        // up
-        header.classList.add('show');
-        header.classList.remove('hide');
+    function onScrollThrottled() {
+        if (!ticking) {
+            window.requestAnimationFrame(onScroll);
+            ticking = true;
+        }
     }
-    if (currentY > 0) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-    lastScrollY = currentY;
-});
+    window.removeEventListener('scroll', onScroll); // 혹시 중복 방지
+    window.addEventListener('scroll', onScrollThrottled);
+    // 초기 상태 적용
+    onScroll();
+})();
 
 // 구성요소 영역에서 dark-header 클래스 토글
-const depthSection = document.querySelector('.parallax-depth-section .component-content');
+// 구성요소 영역에서 dark-header 클래스 토글 및 스티키 헤더 관리
+const depthSection = document.querySelector('.parallax-depth-section');
 const kqualitySection = document.querySelector('.kquality-section');
-if (depthSection) {
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    header.classList.add('dark-header');
-                } else {
-                    header.classList.remove('dark-header');
-                }
-            });
-        },
-        {
-            threshold: 0.1,
-        },
-    );
-
-    observer.observe(depthSection);
-}
-if (kqualitySection) {
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    header.classList.add('gray-header');
-                } else {
-                    header.classList.remove('gray-header');
-                }
-            });
-        },
-        {
-            threshold: 0.3,
-        },
-    );
-    observer.observe(kqualitySection);
-}
-
-// Sticky Header
 const stickyHeaderList = document.querySelector('.sticky-header-list');
 const componentSections = document.querySelectorAll(
     '#parallax-depth-section, #kquality-section, #eco-section, #usecase-section, #news-section',
 );
 
+function updateHeaderAndStickyNav() {
+    // 헤더 클래스 업데이트
+    if (depthSection) {
+        const depthRect = depthSection.getBoundingClientRect();
+        const depthVisible = depthRect.top <= 0 && depthRect.bottom > 0;
+        depthVisible ? header.classList.add('dark-header') : header.classList.remove('dark-header');
+    }
+
+    if (kqualitySection) {
+        const kqualityRect = kqualitySection.getBoundingClientRect();
+        const kqualityVisible = kqualityRect.top <= 0 && kqualityRect.bottom > 0;
+        kqualityVisible
+            ? header.classList.add('gray-header')
+            : header.classList.remove('gray-header');
+    }
+
+    // 스티키 네비게이션 업데이트
+    if (stickyHeaderList && componentSections.length > 0) {
+        const visibleSections = Array.from(componentSections)
+            .map((section) => ({
+                section,
+                top: section.getBoundingClientRect().top,
+            }))
+            .filter(({ top, section }) => top < window.innerHeight && top > -section.offsetHeight);
+
+        if (visibleSections.length > 0) {
+            const activeSection = visibleSections.reduce((prev, curr) =>
+                !prev || curr.top < prev.top ? curr : prev,
+            );
+
+            const sectionId = activeSection.section.id || activeSection.section.dataset.section;
+            const stickyItems = stickyHeaderList.querySelectorAll('li');
+
+            stickyItems.forEach((el) => el.classList.remove('active'));
+            const activeStickyItem = stickyHeaderList.querySelector(
+                `[data-section="${sectionId}"]`,
+            );
+            if (activeStickyItem) activeStickyItem.classList.add('active');
+        }
+    }
+}
+
+// 스크롤 이벤트에 통합 함수 연결
+window.addEventListener('scroll', updateHeaderAndStickyNav);
+
+// 초기 실행
+updateHeaderAndStickyNav();
+
+// 스티키 헤더 클릭 이벤트
 if (stickyHeaderList && componentSections.length > 0) {
-    // li 클릭 시 해당 section으로 스크롤 이동
-    const stickyItems = stickyHeaderList.querySelectorAll('li');
-    stickyItems.forEach((item) => {
-        item.addEventListener('click', (e) => {
+    stickyHeaderList.querySelectorAll('li').forEach((item) => {
+        item.addEventListener('click', () => {
             const sectionId = item.dataset.section;
             const targetSection =
                 document.getElementById(sectionId) ||
                 document.querySelector(`[data-section="${sectionId}"]`);
+
             if (targetSection) {
-                // 스크롤 이동 (header 높이만큼 오프셋)
                 const headerOffset = (header && header.offsetHeight) || 0;
                 const sectionTop =
                     targetSection.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
                 window.scrollTo({ top: sectionTop, behavior: 'smooth' });
 
-                // 모든 li에서 active 제거 후, 클릭한 li에 active 부여
-                stickyItems.forEach((el) => el.classList.remove('active'));
+                stickyHeaderList
+                    .querySelectorAll('li')
+                    .forEach((el) => el.classList.remove('active'));
                 item.classList.add('active');
             }
         });
-    });
-
-    // 직접 스크롤 시 IntersectionObserver로 li 활성화
-    const stickyMenuObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const sectionId = entry.target.id || entry.target.dataset.section;
-                    stickyItems.forEach((el) => el.classList.remove('active'));
-                    const activeStickyItem = stickyHeaderList.querySelector(
-                        `li[data-section="${sectionId}"]`,
-                    );
-                    if (activeStickyItem) {
-                        activeStickyItem.classList.add('active');
-                    }
-                }
-            });
-        },
-        {
-            rootMargin: '-40% 0px',
-            threshold: 0.01,
-        },
-    );
-    componentSections.forEach((section) => {
-        stickyMenuObserver.observe(section);
-    });
-}
-
-const stickyHeader = document.querySelector('.sticky-header');
-const parallaxSection = document.getElementById('parallax-depth-section');
-
-// 스크롤 위치로 sticky-header show/hide
-if (stickyHeader && parallaxSection) {
-    window.addEventListener('scroll', () => {
-        const sectionRect = parallaxSection.getBoundingClientRect();
-
-        if (sectionRect.top <= 1) {
-            stickyHeader.classList.add('show');
-        } else {
-            stickyHeader.classList.remove('show');
-        }
     });
 }
 
