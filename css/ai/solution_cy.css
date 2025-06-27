@@ -3293,6 +3293,7 @@
 
     .content-inner.overgrid-inner .card-wrapper .card-list-horizontal.swiper-container {
         padding-left: 2rem;
+        padding-bottom: 0.2rem;
     }
 
     .content-inner.overgrid-inner .card-wrapper .card-list-horizontal .card.swiper-slide:nth-last-child(1) {
@@ -4412,10 +4413,10 @@
     .solution-model-wrapper .tabs__panel__anchor>.tab-section.only-title:after {
         display: block;
         content: '';
-        width: 100vw;
+        width: calc(100vw + 2rem);
         background-position: top;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         position: absolute;
         top: -9.8rem;
         left: -2rem;
@@ -4425,7 +4426,7 @@
     .solution-model-wrapper #tab-panel-1>.tab-section.only-title:after {
         background-image: url('/resource/images/ai/solution/model/title-only-bg-01_mo.png');
         padding-bottom: 0rem;
-        height: 50vh;
+        height: 57vh;
     }
 
     .solution-model-wrapper #tab-panel-2>.tab-section.only-title:after {
@@ -4497,6 +4498,10 @@
         gap: 0;
     }
 
+    .example-side-item .example-side-txts.top-tab-txts dl.swiper-slide-active {
+        border: 1px solid var(--primary-color);
+    }
+
     .example-side-item .example-side-txts dl {
         position: relative;
         padding: 20px;
@@ -4524,6 +4529,10 @@
 
     .moTab-swiper-wrapper {
         overflow-x: hidden;
+    }
+
+    .bg-black-style .model-believe-box .box-item {
+        background-color: var(--black-color);
     }
 
     .moTab-swiper-wrapper .mobile-model-tabs.swiper-container {
@@ -4568,15 +4577,18 @@
     }
 
     .example-content {
-        width: calc(100% - 5.2rem);
+        width: calc(100% - 4rem);
     }
 
     .flex.example-double .example-content {
         width: 100%;
+        height: auto;
     }
 
     .flex.example-double .example-con-wrapper {
-        padding: 2.6rem 2.6rem 0 2.6rem;
+        padding: 2.6rem 0 2.6rem 2.6rem;
+        margin: 0 2rem;
+        max-height: 36.5rem;
     }
 
     .example-con-wrapper.mo-mr20 {

@@ -3,19 +3,19 @@
 document.addEventListener('DOMContentLoaded', function () {
   initTabsComponent();
   initInnerTabs();
-  initDoubleInnerTabs();
+  initDoubleInnerTabs01();
+  initDoubleInnerTabs02();
   initStickyHeader();
   initModelTabsSwiper();
-  initInnerTabClick();
+  initModelTabsSwiper02();
+  initModelTabsSwiper03();
   initAccordion();
   initSequentialVideoPlayer();
-  initResourcesTab();
 });
 
 window.addEventListener('resize', function () {
   initModelTabsSwiper();
   if (window.innerWidth < 768) assignMobileTabIndexes();
-  initInnerTabClick();
   initDoubleInnerTabs();
 });
 
@@ -170,7 +170,7 @@ function initTabsComponent() {
 
 // ===== Inner Tabs (Fade) =====
 function initInnerTabs() {
-  document.querySelectorAll('.inner-tabs-container').forEach(function (container) {
+  document.querySelectorAll('.inner-tabs-wrapper01').forEach(function (container) {
     const triggers = container.querySelectorAll('.inner-tab-trigger');
     const contents = container.querySelectorAll('.inner-tab-content');
     contents.forEach(function (content) {
@@ -220,7 +220,86 @@ function initInnerTabs() {
 }
 
 // ===== Double Inner Tabs (버튼/컨텐츠 분리형) =====
-function initDoubleInnerTabs() {
+function initDoubleInnerTabs01() {
+  document.querySelectorAll('.inner-tabs-container').forEach(function (container) {
+    // 컨테이너 바로 다음에 오는 double-inner-tab-content-wrapper를 찾음
+    var contentWrapper = container.nextElementSibling;
+    if (!contentWrapper || !contentWrapper.classList.contains('double-inner-tab-content-wrapper')) return;
+    var triggers = Array.from(container.querySelectorAll('.inner-tab-trigger'));
+    var tabPanels = Array.from(contentWrapper.querySelectorAll('.flex.example-double'));
+    var count = Math.min(triggers.length, tabPanels.length);
+
+    // fadeOut, fadeIn 유틸 함수 (initInnerTabs와 동일)
+    function fadeOut(element, callback) {
+      element.style.opacity = '0';
+      setTimeout(function () {
+        element.style.position = 'absolute';
+        element.style.visibility = 'hidden';
+        element.style.zIndex = '-1';
+        if (callback) callback();
+      }, 300);
+    }
+    function fadeIn(element) {
+      element.style.position = 'relative';
+      element.style.visibility = 'visible';
+      element.style.zIndex = '1';
+      setTimeout(function () { element.style.opacity = '1'; }, 20);
+    }
+
+    // 초기화: 모든 패널 숨기고 첫 번째만 보이게
+    tabPanels.forEach(function (panel, idx) {
+      panel.style.transition = 'opacity 0.4s ease-in-out';
+      if (idx !== 0) {
+        panel.style.opacity = '0';
+        panel.style.position = 'absolute';
+        panel.style.visibility = 'hidden';
+        panel.style.zIndex = '-1';
+        panel.classList.remove('active');
+      } else {
+        panel.style.opacity = '1';
+        panel.style.position = 'relative';
+        panel.style.visibility = 'visible';
+        panel.style.zIndex = '1';
+        panel.classList.add('active');
+      }
+    });
+    triggers.forEach(function (trigger, idx) {
+      if (idx === 0) {
+        trigger.classList.add('active');
+      } else {
+        trigger.classList.remove('active');
+      }
+    });
+
+    // 기존 이벤트 제거 (중복 방지)
+    triggers.forEach(function (trigger, i) {
+      var newTrigger = trigger.cloneNode(true);
+      trigger.parentNode.replaceChild(newTrigger, trigger);
+      triggers[i] = newTrigger;
+    });
+
+    // 이벤트 바인딩 (그룹 내에서만 동작)
+    triggers.slice(0, count).forEach(function (trigger, idx) {
+      trigger.addEventListener('click', function () {
+        if (trigger.classList.contains('active')) return;
+        var currentActiveTrigger = container.querySelector('.inner-tab-trigger.active');
+        var currentActivePanel = contentWrapper.querySelector('.flex.example-double.active');
+        if (currentActiveTrigger) currentActiveTrigger.classList.remove('active');
+        trigger.classList.add('active');
+        var newPanel = tabPanels[idx];
+        if (currentActivePanel && newPanel) {
+          fadeOut(currentActivePanel, function () {
+            currentActivePanel.classList.remove('active');
+            newPanel.classList.add('active');
+            fadeIn(newPanel);
+          });
+        }
+      });
+    });
+  });
+}
+// ===== Double Inner Tabs (버튼/컨텐츠 분리형) =====
+function initDoubleInnerTabs02() {
   document.querySelectorAll('.inner-tabs-container').forEach(function (container) {
     // 컨테이너 바로 다음에 오는 double-inner-tab-content-wrapper를 찾음
     var contentWrapper = container.nextElementSibling;
@@ -299,14 +378,18 @@ function initDoubleInnerTabs() {
   });
 }
 
+
+
+
+
 // ===== Model Tabs Swiper (Mobile) =====
 let mobileTabSwiper = null;
 function initModelTabsSwiper() {
-  const modelTabs = document.querySelector('.mobile-model-tabs');
+  const modelTabs = document.querySelector('.mobile-model-tabs.modeltabs01');
   if (!modelTabs) return;
   if (window.innerWidth < 768) {
     if (!mobileTabSwiper) {
-      mobileTabSwiper = new Swiper('.mobile-model-tabs', {
+      mobileTabSwiper = new Swiper('.mobile-model-tabs.modeltabs01', {
         spaceBetween: 12,
         slidesPerView: 'auto',
         centeredSlides: false,
@@ -324,7 +407,7 @@ function initModelTabsSwiper() {
       assignMobileTabIndexes();
       syncMobileTabContent(mobileTabSwiper.activeIndex || 0);
     }
-    document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger').forEach(trigger => { trigger.onclick = null; });
+    document.querySelectorAll('.mobile-model-tabs.modeltabs01 .inner-tab-trigger').forEach(trigger => { trigger.onclick = null; });
   } else {
     if (mobileTabSwiper) {
       mobileTabSwiper.destroy();
@@ -333,15 +416,15 @@ function initModelTabsSwiper() {
   }
 }
 function assignMobileTabIndexes() {
-  const triggers = document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger');
+  const triggers = document.querySelectorAll('.mobile-model-tabs.modeltabs01 .inner-tab-trigger');
   const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
   triggers.forEach((el, idx) => { el.setAttribute('data-index', idx); });
   contents.forEach((el, idx) => { el.setAttribute('data-index', idx); });
 }
 function syncMobileTabContent(activeIdx) {
   if (window.innerWidth >= 768) return;
-  const triggers = document.querySelectorAll('.mobile-model-tabs .inner-tab-trigger');
-  const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
+  const triggers = document.querySelectorAll('.mobile-model-tabs.modeltabs01 .inner-tab-trigger');
+  const contents = document.querySelectorAll('.inner-tabs-wrapper01 .example-side-item .inner-tab-content');
   triggers.forEach((el, idx) => {
     const tIdx = el.getAttribute('data-index');
     if (parseInt(tIdx) === activeIdx) {
@@ -374,10 +457,227 @@ function syncMobileTabContent(activeIdx) {
   });
 }
 
+// ===== Model Tabs Swiper (Mobile) 두번째 =====
+let mobileTabSwiper02 = null;
+function initModelTabsSwiper02() {
+  const modelTabs = document.querySelector('.mobile-model-tabs.modeltabs02');
+  if (!modelTabs) return;
+  if (window.innerWidth < 768) {
+    if (!mobileTabSwiper02) {
+      mobileTabSwiper02 = new Swiper('.mobile-model-tabs.modeltabs02', {
+        spaceBetween: 12,
+        slidesPerView: 'auto',
+        centeredSlides: false,
+        on: {
+          slideChange: function () { syncMobileTabContent02(this.activeIndex); },
+          tap: function (swiper, e) {
+            const clickedIdx = swiper.clickedIndex;
+            if (typeof clickedIdx === 'number' && clickedIdx !== swiper.activeIndex) {
+              swiper.slideTo(clickedIdx);
+            }
+            syncMobileTabContent02(swiper.activeIndex);
+          }
+        }
+      });
+      assignMobileTabIndexes02();
+      syncMobileTabContent02(mobileTabSwiper02.activeIndex || 0);
+    }
+    document.querySelectorAll('.mobile-model-tabs.modeltabs02 .inner-tab-trigger').forEach(trigger => { trigger.onclick = null; });
+  } else {
+    if (mobileTabSwiper02) {
+      mobileTabSwiper02.destroy();
+      mobileTabSwiper02 = null;
+    }
+  }
+}
+function assignMobileTabIndexes02() {
+  const triggers02 = document.querySelectorAll('.mobile-model-tabs.modeltabs02 .inner-tab-trigger');
+  const contents02 = document.querySelectorAll('.inner-tabs-wrapper02 .flex.example-double');
+  triggers02.forEach((el, idx) => { el.setAttribute('data-index', idx); });
+  contents02.forEach((el, idx) => { el.setAttribute('data-index', idx); });
+}
+function syncMobileTabContent02(activeIdx) {
+  if (window.innerWidth >= 768) return;
+  const triggers02 = document.querySelectorAll('.mobile-model-tabs.modeltabs02 .inner-tab-trigger');
+  const contents02 = document.querySelectorAll('.inner-tabs-wrapper02 .flex.example-double');
+  triggers02.forEach((el, idx) => {
+    const tIdx = el.getAttribute('data-index');
+    if (parseInt(tIdx) === activeIdx) {
+      el.classList.add('active');
+      el.style.opacity = '1';
+      el.style.transition = 'opacity';
+    } else {
+      el.classList.remove('active');
+      el.style.opacity = '0.6';
+      el.style.transition = 'opacity';
+    }
+  });
+  contents02.forEach((el, idx) => {
+    const cIdx = el.getAttribute('data-index');
+    if (parseInt(cIdx) === activeIdx) {
+      el.classList.add('active');
+      el.style.opacity = '1';
+      el.style.transition = 'opacity';
+      el.style.visibility = 'visible';
+      el.style.zIndex = '1';
+      el.style.position = 'relative';
+    } else {
+      el.classList.remove('active');
+      el.style.opacity = '0';
+      el.style.transition = 'opacity';
+      el.style.visibility = 'hidden';
+      el.style.zIndex = '-1';
+      el.style.position = 'absolute';
+    }
+  });
+}
+
+// ===== Model Tabs Swiper (Mobile) 세번째 =====
+let mobileTabSwiper03 = null;
+function initModelTabsSwiper03() {
+  const modelTabs = document.querySelector('.mobile-model-tabs.modeltabs03');
+  if (!modelTabs) return;
+  if (window.innerWidth < 768) {
+    if (!mobileTabSwiper03) {
+      mobileTabSwiper03 = new Swiper('.mobile-model-tabs.modeltabs03', {
+        spaceBetween: 12,
+        slidesPerView: 'auto',
+        centeredSlides: false,
+        on: {
+          slideChange: function () { syncMobileTabContent03(this.activeIndex); },
+          tap: function (swiper, e) {
+            const clickedIdx = swiper.clickedIndex;
+            if (typeof clickedIdx === 'number' && clickedIdx !== swiper.activeIndex) {
+              swiper.slideTo(clickedIdx);
+            }
+            syncMobileTabContent03(swiper.activeIndex);
+          }
+        }
+      });
+      assignMobileTabIndexes03();
+      syncMobileTabContent03(mobileTabSwiper03.activeIndex || 0);
+    }
+    document.querySelectorAll('.mobile-model-tabs.modeltabs03 .inner-tab-trigger').forEach(trigger => { trigger.onclick = null; });
+  } else {
+    if (mobileTabSwiper03) {
+      mobileTabSwiper03.destroy();
+      mobileTabSwiper03 = null;
+    }
+  }
+}
+function assignMobileTabIndexes03() {
+  const triggers03 = document.querySelectorAll('.mobile-model-tabs.modeltabs03 .inner-tab-trigger');
+  const contents03 = document.querySelectorAll('.inner-tabs-wrapper03 .flex.example-double');
+  triggers03.forEach((el, idx) => { el.setAttribute('data-index', idx); });
+  contents03.forEach((el, idx) => { el.setAttribute('data-index', idx); });
+}
+function syncMobileTabContent03(activeIdx) {
+  if (window.innerWidth >= 768) return;
+  const triggers03 = document.querySelectorAll('.mobile-model-tabs.modeltabs03 .inner-tab-trigger');
+  const contents03 = document.querySelectorAll('.inner-tabs-wrapper03 .flex.example-double');
+  triggers03.forEach((el, idx) => {
+    const tIdx = el.getAttribute('data-index');
+    if (parseInt(tIdx) === activeIdx) {
+      el.classList.add('active');
+      el.style.opacity = '1';
+      el.style.transition = 'opacity';
+    } else {
+      el.classList.remove('active');
+      el.style.opacity = '0.6';
+      el.style.transition = 'opacity';
+    }
+  });
+  contents03.forEach((el, idx) => {
+    const cIdx = el.getAttribute('data-index');
+    if (parseInt(cIdx) === activeIdx) {
+      el.classList.add('active');
+      el.style.opacity = '1';
+      el.style.transition = 'opacity';
+      el.style.visibility = 'visible';
+      el.style.zIndex = '1';
+      el.style.position = 'relative';
+    } else {
+      el.classList.remove('active');
+      el.style.opacity = '0';
+      el.style.transition = 'opacity';
+      el.style.visibility = 'hidden';
+      el.style.zIndex = '-1';
+      el.style.position = 'absolute';
+    }
+  });
+}
+
+
+
+
 // ===== Inner Tab Click (PC/모바일) =====
-function initInnerTabClick() {
-  const triggers = document.querySelectorAll('.example-side-txts.top-tab-txts .inner-tab-trigger');
-  const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
+function initInnerTabClick01() {
+  const triggers = document.querySelectorAll('.inner-tabs-wrapper01 .example-side-txts.top-tab-txts .inner-tab-trigger');
+  const contents = document.querySelectorAll('.inner-tabs-wrapper01 .example-side-item .inner-tab-content');
+  if (window.innerWidth >= 768) {
+    triggers.forEach((trigger, idx) => {
+      trigger.onclick = function () {
+        triggers.forEach((el, i) => {
+          el.classList.toggle('active', i === idx);
+          if (contents[i]) contents[i].classList.toggle('active', i === idx);
+        });
+      };
+    });
+  } else {
+    triggers.forEach((trigger, idx) => {
+      trigger.onclick = function () {
+        triggers.forEach((el, i) => {
+          el.classList.toggle('active', i === idx);
+          if (contents[i]) contents[i].classList.toggle('active', i === idx);
+        });
+        const anchor = document.querySelectorAll('.tabs__panel__anchor')[idx];
+        if (anchor) {
+          const headerHeight = 50;
+          const rect = anchor.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const targetPosition = scrollTop + rect.top - headerHeight - 30;
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+      };
+    });
+  }
+}
+// ===== Inner Tab Click (PC/모바일) =====
+function initInnerTabClick02() {
+  const triggers = document.querySelectorAll('.inner-tabs-wrapper02 .example-side-txts.top-tab-txts .inner-tab-trigger');
+  const contents = document.querySelectorAll('.inner-tabs-wrapper02 .example-side-item .inner-tab-content');
+  if (window.innerWidth >= 768) {
+    triggers.forEach((trigger, idx) => {
+      trigger.onclick = function () {
+        triggers.forEach((el, i) => {
+          el.classList.toggle('active', i === idx);
+          if (contents[i]) contents[i].classList.toggle('active', i === idx);
+        });
+      };
+    });
+  } else {
+    triggers.forEach((trigger, idx) => {
+      trigger.onclick = function () {
+        triggers.forEach((el, i) => {
+          el.classList.toggle('active', i === idx);
+          if (contents[i]) contents[i].classList.toggle('active', i === idx);
+        });
+        const anchor = document.querySelectorAll('.tabs__panel__anchor')[idx];
+        if (anchor) {
+          const headerHeight = 50;
+          const rect = anchor.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const targetPosition = scrollTop + rect.top - headerHeight - 30;
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+      };
+    });
+  }
+}
+// ===== Inner Tab Click (PC/모바일) =====
+function initInnerTabClick03() {
+  const triggers = document.querySelectorAll('.inner-tabs-wrapper03 .example-side-txts.top-tab-txts .inner-tab-trigger');
+  const contents = document.querySelectorAll('.inner-tabs-wrapper03 .example-side-item .inner-tab-content');
   if (window.innerWidth >= 768) {
     triggers.forEach((trigger, idx) => {
       trigger.onclick = function () {
