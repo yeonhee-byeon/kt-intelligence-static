@@ -513,17 +513,18 @@ br {
     margin: 0 auto;
     height: 100vh;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     position: relative;
+    gap: 6rem;
 }
 .list-wrap {
     width: 26rem;
     height: 26.7rem;
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 0;
-    transform: translate(0, -72%);
+    transform: translate(0, -72%); */
 }
 .list-wrap ul {
     width: 100%;
@@ -583,13 +584,14 @@ br {
     max-width: 46.625rem;
     width: 100%;
     height: 53rem;
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 50%;
-    transform: translate(0%, -46%);
+    position: relative;
+    /* top: 50%;
+    transform: translate(0%, -46%); */
 }
 .cube-item {
     width: 100%;
@@ -1356,7 +1358,6 @@ br {
     font-size: var(--font-size-3xl);
     line-height: var(--line-height-152);
     letter-spacing: var(--letter-spacing-lg);
-    text-align: center;
     vertical-align: middle;
 }
 .news-btn {
@@ -2397,5 +2398,223 @@ br {
     }
     .news-inner .btn {
         margin-top: 1rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+    .sub-banner-section .sub-banner-inner > ul > li > h2 span {
+        font-size: 3.4rem;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li > p {
+        font-size: 2rem;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li:nth-child(3) {
+        gap: 2rem;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li .count-up {
+        min-width: 19rem;
+        gap: 1rem;
+        font-size: 11rem;
+        padding: 2rem;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li .count-up .rolling-number {
+        font-size: 11rem;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li .count-up .countup-digit-container {
+        height: 11rem;
+    }
+    .sub-banner-section .sub-banner-inner > ul > li .count-up .countup-digit span {
+        font-size: 11rem;
+        width: 6.813rem;
+    }
+
+    .subtitle3 {
+        font-size: 2.725rem;
+    }
+    .subtitle2 {
+        font-size: 7.875rem;
+    }
+    .subtitle1 {
+        font-size: 10.125rem;
+    }
+    .parallax-description {
+        font-size: 2rem;
+    }
+    .image-obj-0 {
+        width: 17.125rem;
+        height: auto;
+    }
+    .image-obj-1 {
+        width: 16.063rem;
+        height: auto;
+    }
+    .image-obj-2 {
+        width: 23.5rem;
+        height: auto;
+    }
+    .image-obj-3 {
+        width: 16.063rem;
+        height: auto;
+    }
+    .image-obj-4 {
+        width: 16.125rem;
+        height: auto;
+    }
+    .image-obj-5 {
+        width: 16.125rem;
+        height: auto;
+    }
+
+    .kdata-section {
+        padding: 7rem 0 9rem 0;
+    }
+    .kdata-inner {
+        gap: 3rem;
+    }
+    .kdata-title {
+        font-size: 2rem;
+    }
+
+    .component-title h2 {
+        font-size: 5rem;
+    }
+    .component-title p {
+        font-size: 1.6rem;
+    }
+    .component-content-inner {
+        padding: 0 2rem;
+        align-items: center;
+        gap: 2rem;
+    }
+    .list-wrap {
+        width: 22rem;
+        height: 22rem;
+        position: relative;
+        top: 0;
+        transform: none !important;
+    }
+    .list-wrap ul li > h3 {
+        margin-bottom: 2.038rem;
+    }
+    .list-wrap ul li > h3 > img {
+        width: 5.575rem;
+        height: 5.488rem;
+        margin-top: -1.5rem;
+    }
+    .list-wrap ul li > h3 > span {
+        font-size: 5.324rem;
+    }
+    .list-wrap ul li > p {
+        font-size: var(--font-size-2xl);
+        margin-bottom: 1rem;
+    }
+    .list-wrap ul li > span {
+        font-size: var(--font-size-base);
+        margin-bottom: 2rem;
+    }
+    .cube-wrapper {
+        max-width: 27rem;
+        height: 30.4rem;
+        margin-top: 0;
+    }
+    .cube-item-1,
+    .cube-item-2,
+    .cube-item-3 {
+        width: 100%;
+    }
+    .cube-item-4,
+    .cube-item-5,
+    .cube-item-6 {
+        width: 13.438rem;
+        height: auto;
+    }
+    .cube-item-4 {
+        bottom: 50.1%;
+        left: 12.3%;
+    }
+    .cube-item-5 {
+        bottom: 43.4%;
+        left: 24.9%;
+    }
+    .cube-item-6 {
+        bottom: 36.9%;
+        left: 37.6%;
+    }
+
+    .kquality-inner {
+        padding: 0 2rem;
+    }
+    .section-subtitle {
+        margin-bottom: 3rem;
+    }
+    .kquality-hex-center {
+        width: 24.313rem;
+        height: 23.875rem;
+        font-size: 1.6rem;
+        padding: 0;
+    }
+    .kquality-hex-wrap {
+        margin-bottom: 5rem;
+    }
+    .kquality-hex-item {
+        padding: 1rem 1.25rem;
+    }
+    .kquality-hex-label {
+        font-size: var(--font-size-xl);
+    }
+    .kquality-hex-item-1 {
+        left: 20%;
+        top: 11%;
+    }
+    .kquality-hex-item-2 {
+        right: -7%;
+        top: 36%;
+    }
+    .kquality-hex-item-3 {
+        right: -5%;
+        bottom: 9%;
+    }
+    .kquality-hex-item-4 {
+        left: 4%;
+        bottom: 9%;
+    }
+    .kquality-hex-item-5 {
+        left: -14%;
+        top: 36%;
+    }
+    .kquality-list-item {
+        flex-wrap: wrap;
+    }
+    .kquality-bottom {
+        font-size: var(--font-size-4xl);
+    }
+
+    .eco-inner {
+        padding: 0 2rem;
+    }
+    .eco-top {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+        background-size: cover;
+    }
+    .eco-partners {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .eco-bottom {
+        flex-wrap: wrap;
+    }
+    .eco-bottom-badges {
+        flex-wrap: wrap;
+    }
+    .eco-bottom-card {
+        flex: 1 0 25.5rem;
+        padding: 2rem 0;
+    }
+
+    .news-inner {
+        padding: 0 2rem;
     }
 }

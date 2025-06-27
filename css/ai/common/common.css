@@ -1643,3 +1643,12 @@ body.scroll-lock {
     width: 2.4rem;
     height: 2.4rem;
 }
+
+@media (min-width: 768px) and (max-width: 1366px) {
+    .sticky-header-list {
+        gap: 2rem;
+    }
+    .sticky-header-list li {
+        font-size: 1.1rem;
+    }
+}

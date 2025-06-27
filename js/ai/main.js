@@ -421,6 +421,7 @@ function initParallaxDepthSectionAnimation() {
 
     ScrollTrigger.matchMedia({
         '(min-width: 769px)': function () {
+            gsap.set('.cube-last-text', { zIndex: -1 });
             let tlComplete = false;
             const tl = gsap.timeline({
                 ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
@@ -441,11 +442,11 @@ function initParallaxDepthSectionAnimation() {
                     duration: 0.4,
                     stagger: 0.2,
                     onStart: () => {
-                        gsap.set('.cube-wrapper', { xPercent: 0 });
+                        gsap.set('.cube-wrapper', { xPercent: -30 });
                     },
                 },
             )
-                .fromTo('.cube-wrapper', { xPercent: 0 }, { xPercent: 34, duration: 0.3 })
+                .fromTo('.cube-wrapper', { xPercent: -30 }, { xPercent: 0, duration: 0.3 })
                 .fromTo(
                     '.list-wrap ul',
                     { opacity: 0, xPercent: 52, yPercent: -12 },
@@ -612,9 +613,9 @@ function initParallaxDepthSectionAnimation() {
             tl2.fromTo('.list-wrap ul', { opacity: 1 }, { opacity: 0, duration: 0.5 })
                 .fromTo(
                     '.cube-wrapper',
-                    { xPercent: 34 },
+                    { xPercent: 0 },
                     {
-                        xPercent: 0,
+                        xPercent: -30,
                         duration: 0.5,
                         ease: 'power2.inOut',
                     },
@@ -623,9 +624,10 @@ function initParallaxDepthSectionAnimation() {
                 .fromTo('.component-content', { scale: 1 }, { scale: 0.8, ease: 'power2.inOut' })
                 .fromTo(
                     '.cube-last-text',
-                    { opacity: 0 },
+                    { opacity: 0, zIndex: -1 },
                     {
                         opacity: 1,
+                        zIndex: 1,
                         duration: 0.3,
                         ease: 'power2.inOut',
                         onComplete: () => {
