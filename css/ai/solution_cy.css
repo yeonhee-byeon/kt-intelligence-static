@@ -2262,6 +2262,77 @@
     top: 19rem;
 }
 
+/* Multi-Model Orchestrator 도식 */
+.orchestrator-title,
+.orchestrator-user-request,
+.orchestrator-routing-controller,
+.orchestrator-llms-label {
+    font-weight: 700;
+    font-size: var(--font-size-3xl);
+    line-height: 150%;
+    letter-spacing: -0.5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.orchestrator-routing-controller {
+    border: 1px solid #000;
+    padding: 1.875rem;
+    border-radius: 1.25rem;
+    width: 34.25rem;
+}
+
+.orchestrator-llms-item {
+    display: flex;
+    gap: 2.5rem;
+    border: 1px solid #000;
+    border-radius: 1rem;
+    width: fit-content;
+    padding: 1.25rem 2.5rem;
+    align-items: center;
+}
+
+.llms-circles {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.llms-title {
+    font-weight: 700;
+    font-size: var(--font-size-xl);
+    line-height: 172%;
+    letter-spacing: -0.4px;
+    text-align: center;
+}
+
+.llms-circle {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 100%;
+    display: block;
+}
+
+.llms-circle.orange {
+    background-color: #FFE5B6;
+}
+
+.llms-circle.green {
+    background-color: #DEFFC6;
+}
+
+.llms-circle.light-orange {
+    background-color: #F4E4B7;
+}
+
+.llms-circle.white {
+    background-color: #FFFFFF;
+}
+
+.llms-circle.red {
+    background-color: #FFD1D1;
+}
+
 /* model page */
 .solution-model-wrapper .tab-inner-wrapper>#tab-panel-1 {
     background-image: url('/resource/images/ai/solution/model/title-only-bg-01.png');
