@@ -2147,17 +2147,17 @@ br.mo-br {
         padding: 2.4rem 2rem;
     }
 
-    .card-list-horizontal li.card {
+    .card-list-horizontal div.card {
         flex: 1 0 86%;
         max-width: unset;
     }
 
 
-    .card-list-horizontal li.card .card-txts {
+    .card-list-horizontal div.card .card-txts {
         margin-top: 1.6rem;
     }
 
-    .card-list-horizontal li.card .card-txts h3 {
+    .card-list-horizontal div.card .card-txts h3 {
         margin-bottom: 1.6rem;
     }
 
