@@ -2,15 +2,14 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   initTabsComponent();
-  initInnerTabs();
   initDoubleInnerTabs01();
   initDoubleInnerTabs02();
   initStickyHeader();
-  initModelTabsSwiper();
   initModelTabsSwiper02();
   initModelTabsSwiper03();
   initAccordion();
   initSequentialVideoPlayer();
+  initExTaps01();
 });
 
 window.addEventListener('resize', function () {
@@ -168,56 +167,7 @@ function initTabsComponent() {
 
 
 
-// ===== Inner Tabs (Fade) =====
-function initInnerTabs() {
-  document.querySelectorAll('.inner-tabs-wrapper01').forEach(function (container) {
-    const triggers = container.querySelectorAll('.inner-tab-trigger');
-    const contents = container.querySelectorAll('.inner-tab-content');
-    contents.forEach(function (content) {
-      content.style.transition = 'opacity 0.4s ease-in-out';
-      if (!content.classList.contains('active')) {
-        content.style.opacity = '0';
-        content.style.position = 'absolute';
-        content.style.visibility = 'hidden';
-        content.style.zIndex = '-1';
-      } else {
-        content.style.position = 'relative';
-      }
-    });
-    function fadeOut(element, callback) {
-      element.style.opacity = '0';
-      setTimeout(function () {
-        element.style.position = 'absolute';
-        element.style.visibility = 'hidden';
-        element.style.zIndex = '-1';
-        if (callback) callback();
-      }, 300);
-    }
-    function fadeIn(element) {
-      element.style.position = 'relative';
-      element.style.visibility = 'visible';
-      element.style.zIndex = '1';
-      setTimeout(function () { element.style.opacity = '1'; }, 20);
-    }
-    triggers.forEach(function (clickedTrigger, index) {
-      clickedTrigger.addEventListener('click', function () {
-        if (clickedTrigger.classList.contains('active')) return;
-        let currentActiveTrigger = container.querySelector('.inner-tab-trigger.active');
-        let currentActiveContent = container.querySelector('.inner-tab-content.active');
-        if (currentActiveTrigger) currentActiveTrigger.classList.remove('active');
-        clickedTrigger.classList.add('active');
-        const newContent = contents[index];
-        if (currentActiveContent && newContent) {
-          fadeOut(currentActiveContent, function () {
-            currentActiveContent.classList.remove('active');
-            newContent.classList.add('active');
-            fadeIn(newContent);
-          });
-        }
-      });
-    });
-  });
-}
+
 
 // ===== Double Inner Tabs (버튼/컨텐츠 분리형) =====
 function initDoubleInnerTabs01() {
@@ -381,81 +331,6 @@ function initDoubleInnerTabs02() {
 
 
 
-
-// ===== Model Tabs Swiper (Mobile) =====
-let mobileTabSwiper = null;
-function initModelTabsSwiper() {
-  const modelTabs = document.querySelector('.mobile-model-tabs.modeltabs01');
-  if (!modelTabs) return;
-  if (window.innerWidth < 768) {
-    if (!mobileTabSwiper) {
-      mobileTabSwiper = new Swiper('.mobile-model-tabs.modeltabs01', {
-        spaceBetween: 12,
-        slidesPerView: 'auto',
-        centeredSlides: false,
-        on: {
-          slideChange: function () { syncMobileTabContent(this.activeIndex); },
-          tap: function (swiper, e) {
-            const clickedIdx = swiper.clickedIndex;
-            if (typeof clickedIdx === 'number' && clickedIdx !== swiper.activeIndex) {
-              swiper.slideTo(clickedIdx);
-            }
-            syncMobileTabContent(swiper.activeIndex);
-          }
-        }
-      });
-      assignMobileTabIndexes();
-      syncMobileTabContent(mobileTabSwiper.activeIndex || 0);
-    }
-    document.querySelectorAll('.mobile-model-tabs.modeltabs01 .inner-tab-trigger').forEach(trigger => { trigger.onclick = null; });
-  } else {
-    if (mobileTabSwiper) {
-      mobileTabSwiper.destroy();
-      mobileTabSwiper = null;
-    }
-  }
-}
-function assignMobileTabIndexes() {
-  const triggers = document.querySelectorAll('.mobile-model-tabs.modeltabs01 .inner-tab-trigger');
-  const contents = document.querySelectorAll('.example-side-item .inner-tab-content');
-  triggers.forEach((el, idx) => { el.setAttribute('data-index', idx); });
-  contents.forEach((el, idx) => { el.setAttribute('data-index', idx); });
-}
-function syncMobileTabContent(activeIdx) {
-  if (window.innerWidth >= 768) return;
-  const triggers = document.querySelectorAll('.mobile-model-tabs.modeltabs01 .inner-tab-trigger');
-  const contents = document.querySelectorAll('.inner-tabs-wrapper01 .example-side-item .inner-tab-content');
-  triggers.forEach((el, idx) => {
-    const tIdx = el.getAttribute('data-index');
-    if (parseInt(tIdx) === activeIdx) {
-      el.classList.add('active');
-      el.style.opacity = '1';
-      el.style.transition = 'opacity';
-    } else {
-      el.classList.remove('active');
-      el.style.opacity = '0.6';
-      el.style.transition = 'opacity';
-    }
-  });
-  contents.forEach((el, idx) => {
-    const cIdx = el.getAttribute('data-index');
-    if (parseInt(cIdx) === activeIdx) {
-      el.classList.add('active');
-      el.style.opacity = '1';
-      el.style.transition = 'opacity';
-      el.style.visibility = 'visible';
-      el.style.zIndex = '1';
-      el.style.position = 'relative';
-    } else {
-      el.classList.remove('active');
-      el.style.opacity = '0';
-      el.style.transition = 'opacity';
-      el.style.visibility = 'hidden';
-      el.style.zIndex = '-1';
-      el.style.position = 'absolute';
-    }
-  });
-}
 
 // ===== Model Tabs Swiper (Mobile) 두번째 =====
 let mobileTabSwiper02 = null;
@@ -988,4 +863,78 @@ function initSequentialVideoPlayer() {
   });
 }
 // ====== // K Model 순차 영상 자동재생 ======
+
+// ===== ex-taps-01 탭 연동 스크립트 =====
+document.addEventListener('DOMContentLoaded', function () {
+  var tabList = document.querySelectorAll('.ex-taps-01 dl');
+  var titleContents = document.querySelectorAll('.cont-title-wrap .ex-content');
+  var bodyContents = document.querySelectorAll('.ex-txt-wrapper .ex-content-txts');
+
+  if (tabList.length && titleContents.length && bodyContents.length) {
+    tabList.forEach(function (tab, idx) {
+      tab.addEventListener('click', function () {
+        // 탭 활성화
+        tabList.forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+        // 제목 영역 active 클래스 토글
+        titleContents.forEach(function (tc, i) {
+          tc.classList.toggle('active', i === idx);
+        });
+        // 본문 영역 active 클래스 토글
+        bodyContents.forEach(function (bc, i) {
+          bc.classList.toggle('active', i === idx);
+        });
+      });
+    });
+    // 초기화: 첫번째 탭만 보이게
+    tabList.forEach(function (t, i) { t.classList.toggle('active', i === 0); });
+    titleContents.forEach(function (tc, i) { tc.classList.toggle('active', i === 0); });
+    bodyContents.forEach(function (bc, i) { bc.classList.toggle('active', i === 0); });
+  }
+});
+
+// ===== 모바일 ex-taps-01 Swiper 연동 스크립트 (별도) =====
+document.addEventListener('DOMContentLoaded', function () {
+  var swiperEl = document.querySelector('.moTab-swiper-wrapper .modeltabs01');
+  if (!swiperEl) return;
+  var tabList = swiperEl.querySelectorAll('.ex-taps-01 dl');
+  var titleContents = document.querySelectorAll('.cont-title-wrap .ex-content');
+  var bodyContents = document.querySelectorAll('.ex-txt-wrapper .ex-content-txts');
+
+  // Swiper 인스턴스 생성 (중복 방지)
+  if (!window.__modelTabs01Swiper) {
+    var swiper = new Swiper(swiperEl, {
+      spaceBetween: 16,
+      slidesPerView: 'auto',
+      centeredSlides: false,
+      on: {
+        slideChange: function () {
+          var idx = swiper.activeIndex;
+          // 탭 활성화
+          tabList.forEach(function (t, i) { t.classList.toggle('active', i === idx); });
+          // 제목 영역 active 클래스 토글
+          titleContents.forEach(function (tc, i) { tc.classList.toggle('active', i === idx); });
+          // 본문 영역 active 클래스 토글
+          bodyContents.forEach(function (bc, i) { bc.classList.toggle('active', i === idx); });
+        }
+      }
+    });
+    window.__modelTabs01Swiper = swiper;
+  } else {
+    var swiper = window.__modelTabs01Swiper;
+  }
+
+  // dl 클릭 시 해당 인덱스로 슬라이드 이동 및 연동
+  tabList.forEach(function (tab, idx) {
+    tab.addEventListener('click', function () {
+      swiper.slideTo(idx);
+      // 아래 연동은 slideChange 이벤트에서 처리됨
+    });
+  });
+
+  // 초기화: 첫번째 탭만 보이게
+  tabList.forEach(function (t, i) { t.classList.toggle('active', i === 0); });
+  titleContents.forEach(function (tc, i) { tc.classList.toggle('active', i === 0); });
+  bodyContents.forEach(function (bc, i) { bc.classList.toggle('active', i === 0); });
+});
 
