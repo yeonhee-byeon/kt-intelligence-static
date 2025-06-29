@@ -3960,6 +3960,11 @@
 
     /* ***************************************solution page ****************************************** */
 
+    /* overgrid card */
+    .card-list-horizontal li.card.odd {
+        flex: 1 0 81.8%;
+    }
+
     /* 오픈예정 */
     .open-planned {
         font-size: 1.3rem !important;
