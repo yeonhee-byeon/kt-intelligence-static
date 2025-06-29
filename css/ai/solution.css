@@ -2152,10 +2152,6 @@ br.mo-br {
         max-width: unset;
     }
 
-    .card-list-horizontal li.card.odd {
-        flex: 1 0 81.5%;
-        max-width: unset;
-    }
 
     .card-list-horizontal li.card .card-txts {
         margin-top: 1.6rem;

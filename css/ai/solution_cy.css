@@ -3639,7 +3639,7 @@
     }
 
     .content-inner.overgrid-inner .card-wrapper .card-list-horizontal.swiper-container .swiper-wrapper .swiper-slide:nth-last-child(1) {
-        margin-right: 2rem;
+        margin-right: 2rem !important;
     }
 
     /* .content-inner.overgrid-inner .card-list-horizontal li.card .card-txts h3 {
