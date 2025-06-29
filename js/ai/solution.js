@@ -47,7 +47,7 @@ function initMobileSwiper() {
     if (window.innerWidth < 768) {
         if (!window.mobileSwiper) {
             window.mobileSwiper = new Swiper('.card-list-horizontal.swiper-container', {
-                slidesPerView: 1.17,
+                slidesPerView: 1.16,
                 spaceBetween: 16,
                 // centeredSlides: true,
                 speed: 500,
