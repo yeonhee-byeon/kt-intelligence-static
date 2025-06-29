@@ -340,9 +340,11 @@ function initModelTabsSwiper02() {
   if (window.innerWidth < 768) {
     if (!mobileTabSwiper02) {
       mobileTabSwiper02 = new Swiper('.mobile-model-tabs.modeltabs02', {
-        spaceBetween: 12,
         slidesPerView: 'auto',
-        centeredSlides: false,
+        spaceBetween: 12,
+        // centeredSlides: true,
+        speed: 500,
+        effect: 'slide',
         on: {
           slideChange: function () { syncMobileTabContent02(this.activeIndex); },
           tap: function (swiper, e) {
@@ -415,9 +417,11 @@ function initModelTabsSwiper03() {
   if (window.innerWidth < 768) {
     if (!mobileTabSwiper03) {
       mobileTabSwiper03 = new Swiper('.mobile-model-tabs.modeltabs03', {
-        spaceBetween: 12,
         slidesPerView: 'auto',
-        centeredSlides: false,
+        spaceBetween: 12,
+        // centeredSlides: true,
+        speed: 500,
+        effect: 'slide',
         on: {
           slideChange: function () { syncMobileTabContent03(this.activeIndex); },
           tap: function (swiper, e) {
@@ -904,9 +908,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // Swiper 인스턴스 생성 (중복 방지)
   if (!window.__modelTabs01Swiper) {
     var swiper = new Swiper(swiperEl, {
-      spaceBetween: 16,
       slidesPerView: 'auto',
-      centeredSlides: false,
+      spaceBetween: 12,
+      // centeredSlides: true,
+      speed: 500,
+      effect: 'slide',
       on: {
         slideChange: function () {
           var idx = swiper.activeIndex;

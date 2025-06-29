@@ -3632,7 +3632,7 @@
         padding: 0;
     }
 
-    .content-inner.overgrid-inner .card-wrapper .card-list-horizontal.swiper-container {
+    /* .content-inner.overgrid-inner .card-wrapper .card-list-horizontal.swiper-container {
         padding-bottom: 0.2rem;
         padding-right: 4rem !important;
     }
@@ -3645,7 +3645,7 @@
 
     .content-inner.overgrid-inner .card-list-horizontal li.card .card-txts h3 {
         margin-bottom: 0;
-    }
+    } */
 
     /* btn */
     .basic-bk-btn {
@@ -4225,13 +4225,13 @@
     /* ***************************************solution page ****************************************** */
 
     /* overgrid card */
-    .card-list-horizontal li.card {
+    /*  .card-list-horizontal li.card {
         flex: 1 0 92%;
     }
 
     .card-list-horizontal li.card.odd {
         flex: 1 0 86.8%;
-    }
+    }  */
 
     /* 오픈예정 */
     .open-planned {

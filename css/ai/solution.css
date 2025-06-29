@@ -2021,6 +2021,11 @@ br.mo-br {
         flex: 1 1 100% !important;
     }
 
+    .card-list li .card-item.small-mo-padding {
+        padding: 2.6rem 1.2rem 2.6rem 2.6rem;
+        ;
+    }
+
     .card-list li .card-item {
         padding: 2.6rem;
         width: 100%;
@@ -2041,13 +2046,13 @@ br.mo-br {
     }
 
     .card-item h4.to-be {
-        white-space: nowrap;
         gap: 0.8rem;
     }
 
     .card-item h4.to-be::after {
         padding: 0.4rem 1.2rem;
         font-size: 1.3rem;
+        white-space: nowrap;
     }
 
     .card-list li .card-item p {
@@ -2139,6 +2144,7 @@ br.mo-br {
 
     .card-list-horizontal.swiper-container {
         display: flex;
+        padding: 2.4rem 2rem;
     }
 
     .card-list-horizontal li.card {
@@ -2227,6 +2233,7 @@ br.mo-br {
     .table-card-list.text>li .table-card-item h3.to-be:after {
         padding: 0.4rem 1.2rem;
         font-size: 1.3rem;
+        white-space: nowrap;
     }
 
     .table-card-list.text>li .table-card-item ul {
