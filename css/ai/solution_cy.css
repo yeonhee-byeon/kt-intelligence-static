@@ -2128,7 +2128,7 @@
     z-index: 0;
 }
 
-.multi-model-title:before {
+/* .multi-model-title:before {
     display: block;
     content: '';
     height: 2.25rem;
@@ -2141,7 +2141,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 0;
-}
+} */
 
 .multi-model-orchestrator-section .models {
     display: flex;
