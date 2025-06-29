@@ -2942,6 +2942,7 @@
 }
 
 .example-content .example-inner h4,
+.example-content .example-inner h3,
 .example-content .example-inner h3 .ex-content {
     color: #000;
     font-size: var(--font-size-3xl);
@@ -2967,6 +2968,7 @@
 }
 
 .bg-black-style .example-content .example-inner h4,
+.example-content .example-inner h3,
 .bg-black-style .example-content .example-inner h3 .ex-content {
     color: #fff;
 }
