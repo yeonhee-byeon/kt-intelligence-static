@@ -2942,7 +2942,7 @@
 }
 
 .example-content .example-inner h4,
-.example-content .example-inner h3 {
+.example-content .example-inner h3 .ex-content {
     color: #000;
     font-size: var(--font-size-3xl);
     font-style: normal;
@@ -2967,7 +2967,7 @@
 }
 
 .bg-black-style .example-content .example-inner h4,
-.bg-black-style .example-content .example-inner h3 {
+.bg-black-style .example-content .example-inner h3 .ex-content {
     color: #fff;
 }
 
@@ -3493,12 +3493,14 @@
     }
 
     .content-inner.overgrid-inner .card-wrapper .card-list-horizontal.swiper-container {
-        padding-left: 2rem;
         padding-bottom: 0.2rem;
+        padding-right: 4rem !important;
     }
 
-    .content-inner.overgrid-inner .card-wrapper .card-list-horizontal .card.swiper-slide:nth-last-child(1) {
-        margin-right: 2rem;
+
+    .content-inner.overgrid-inner .card-wrapper .card-list-horizontal.swiper-container .swiper-wrapper {
+        padding-left: 2rem;
+        padding-right: -4rem !important;
     }
 
     .content-inner.overgrid-inner .card-list-horizontal li.card .card-txts h3 {
@@ -4083,8 +4085,12 @@
     /* ***************************************solution page ****************************************** */
 
     /* overgrid card */
+    .card-list-horizontal li.card {
+        flex: 1 0 92%;
+    }
+
     .card-list-horizontal li.card.odd {
-        flex: 1 0 81.8%;
+        flex: 1 0 86.8%;
     }
 
     /* 오픈예정 */
@@ -4909,3 +4915,6 @@
         display: none;
     }
 }
+
+
+@media (max-width: 444px) and (min-width : 400px) {}
