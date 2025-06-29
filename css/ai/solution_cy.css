@@ -4130,6 +4130,12 @@
         margin-bottom: 0.85rem !important;
     }
 
+    .open-planned .mid-circle {
+        margin: 0.95rem;
+        width: 0.3rem;
+        height: 0.3rem;
+    }
+
     .card-list-horizontal {
         display: none;
         flex-wrap: nowrap;
