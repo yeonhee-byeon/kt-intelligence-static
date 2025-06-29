@@ -1289,10 +1289,11 @@ br.mo-br {
     display: flex;
     gap: 1.25rem;
     justify-content: center;
+    width: 100%;
 }
 
 .cloud-arch-box {
-    width: 35.25rem;
+    width: 100%;
     border-radius: 0.75rem;
     padding: 1.875rem 5rem;
     text-align: center;
@@ -1304,9 +1305,24 @@ br.mo-br {
 }
 
 .cloud-arch-middle {
-    margin-bottom: 24px;
-    padding-top: 6rem;
+    margin-bottom: 2.4rem;
+    padding-top: 4.9rem;
     position: relative;
+    width: 100%;
+}
+
+.cloud-arch-middle:after {
+    display: block;
+    content: '';
+    background-image: url('/resource/images/ai/solution/cloud/cloud-graph-arrow01.png');
+    width: 0.5rem;
+    height: 2.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 43rem;
+    top: 17.2rem;
 }
 
 .cloud-arch-middle-line {
@@ -1321,7 +1337,7 @@ br.mo-br {
 }
 
 .cloud-arch-middle-line-top {
-    width: 100%;
+    width: 44.0625rem;
     height: 2rem;
     border-radius: 0px 0px 0.5rem 0.5rem;
     border-right: 1px solid var(--gray-300-color);
@@ -1330,9 +1346,12 @@ br.mo-br {
 }
 
 .cloud-arch-middle-line-middle {
-    width: 1px;
-    height: 2.5rem;
-    background: var(--gray-300-color);
+    background-image: url('/resource/images/ai/solution/cloud/cloud-graph-arrow03.png');
+    width: 44.25rem;
+    height: 5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .cloud-arch-middle-line-bottom {
@@ -1352,12 +1371,15 @@ br.mo-br {
 }
 
 .cloud-arch-main {
-    padding: 1.5rem 2.5rem 4.25rem;
+    padding: 3.25rem 0;
     text-align: center;
     font-size: var(--font-size-4xl);
     font-weight: 700;
     line-height: var(--line-height-150);
     letter-spacing: var(--letter-spacing-md);
+    border: 1px solid #d9d9d9;
+    width: 100%;
+    border-radius: 1.25rem;
 }
 
 .cloud-arch-bottom {
@@ -1428,6 +1450,7 @@ br.mo-br {
 
 .cloud-arch-layer .label.red {
     color: var(--primary-color);
+    white-space: nowrap;
 }
 
 .cloud-arch-bottom-content {
