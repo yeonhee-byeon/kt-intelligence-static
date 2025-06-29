@@ -3633,14 +3633,11 @@
     }
 
     .content-inner.overgrid-inner .card-wrapper .card-list-horizontal.swiper-container {
-        padding: 0;
+        padding: 0 2rem 0 2rem;
         padding-bottom: 0.2rem;
-        padding-left: 2rem;
     }
 
-    .content-inner.overgrid-inner .card-wrapper .card-list-horizontal.swiper-container .swiper-wrapper .swiper-slide:nth-last-child(1) {
-        margin-right: 2rem !important;
-    }
+
 
     /* .content-inner.overgrid-inner .card-list-horizontal li.card .card-txts h3 {
         margin-bottom: 0;
