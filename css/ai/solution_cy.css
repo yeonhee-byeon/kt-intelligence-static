@@ -1067,6 +1067,14 @@
     margin-left: 1rem !important;
 }
 
+.open-planned .mid-circle {
+    width: 0.1875rem;
+    height: 0.1875rem;
+    border-radius: 100%;
+    margin: 0 0.375rem;
+    background-color: var(--white-color);
+}
+
 .open-planned.top-center {
     display: none !important;
 }
@@ -3964,7 +3972,7 @@
     }
 
     .open-planned.top-center {
-        display: block !important;
+        display: flex !important;
         margin-left: 0 !important;
         margin-bottom: 2rem !important;
     }
