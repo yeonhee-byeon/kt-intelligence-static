@@ -3632,18 +3632,17 @@
         padding: 0;
     }
 
-    /* .content-inner.overgrid-inner .card-wrapper .card-list-horizontal.swiper-container {
+    .content-inner.overgrid-inner .card-wrapper .card-list-horizontal.swiper-container {
+        padding: 0;
         padding-bottom: 0.2rem;
-        padding-right: 4rem !important;
-    }
-
-
-    .content-inner.overgrid-inner .card-wrapper .card-list-horizontal.swiper-container .swiper-wrapper {
         padding-left: 2rem;
-        padding-right: -4rem !important;
     }
 
-    .content-inner.overgrid-inner .card-list-horizontal li.card .card-txts h3 {
+    .content-inner.overgrid-inner .card-wrapper .card-list-horizontal.swiper-container .swiper-wrapper .swiper-slide:nth-last-child(1) {
+        margin-right: 2rem;
+    }
+
+    /* .content-inner.overgrid-inner .card-list-horizontal li.card .card-txts h3 {
         margin-bottom: 0;
     } */
 
