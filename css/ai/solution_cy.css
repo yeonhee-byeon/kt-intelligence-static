@@ -3638,6 +3638,8 @@
         width: 100%;
     }
 
+    .content-inner.overgrid-inner .card-wrapper .card-list-horizontal div.card {}
+
     /* .content-inner.overgrid-inner .card-list-horizontal li.card .card-txts h3 {
         margin-bottom: 0;
     } */
