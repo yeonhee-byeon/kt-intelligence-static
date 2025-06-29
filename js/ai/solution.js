@@ -53,7 +53,7 @@ function initMobileSwiper() {
                 speed: 500,
                 effect: 'slide',
                 slidesOffsetBefore: 20,
-                slidesOffsetAfter: 20,
+                slidesOffsetAfter: 40,
             });
         }
     } else {
