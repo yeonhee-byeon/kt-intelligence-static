@@ -1711,6 +1711,21 @@
 
 .orchestrator-diagram {
     width: 100%;
+    margin-top: 3.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.orchestrator-diagram:after {
+    display: block;
+    content: '';
+    background-image: url('/resource/images/ai/solution/agent/Key\ Features-graph-arrow.png');
+    width: 45.25rem;
+    height: 26.375rem;
+    position: absolute;
+    top: 9.625rem;
+    left: 6.875rem;
+    z-index: -1;
 }
 
 .orchestrator-diagram .img img {
@@ -2113,6 +2128,7 @@
     position: relative;
 }
 
+/* 
 .multi-model-title:after {
     display: block;
     content: '';
@@ -2126,7 +2142,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 0;
-}
+} */
 
 /* .multi-model-title:before {
     display: block;
@@ -2271,6 +2287,17 @@
 }
 
 /* Multi-Model Orchestrator 도식 */
+.model-page-title-wrapper {
+    width: 100%;
+}
+
+.orchestrator-diagram {
+    width: 100%;
+    border: 1px solid #D9D9D9;
+    border-radius: 1.25rem;
+    padding: 3.75rem 5rem 5rem 5rem;
+}
+
 .orchestrator-title,
 .orchestrator-user-request,
 .orchestrator-routing-controller,
@@ -2283,27 +2310,109 @@
     vertical-align: middle;
 }
 
+.orchestrator-title {
+    margin-bottom: 1.0625rem;
+}
+
 .orchestrator-routing-controller {
-    border: 1px solid #000;
+    border: 1px solid #d9d9d9;
     padding: 1.875rem;
     border-radius: 1.25rem;
     width: 34.25rem;
+    background-color: #fff;
+}
+
+.orchestrator-user-request {
+    position: relative;
+    z-index: 2;
+    background-image: url('/resource/images/ai/solution/agent/orchestrator-routing-controller_bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 18.40625rem;
+    height: 4.6875rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+.orchestrator-user-request span {
+    color: #000;
+    font-weight: 700;
+    font-size: var(--font-size-3xl);
+    line-height: 150%;
+    letter-spacing: -0.5px;
+    text-align: center;
+    vertical-align: middle;
+    padding-right: 1.5rem;
+}
+
+.orchestrator-routing-controller {
+    margin: 0 auto;
 }
 
 .orchestrator-llms-item {
-    display: flex;
-    gap: 2.5rem;
-    border: 1px solid #000;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
     border-radius: 1rem;
-    width: fit-content;
+    width: 16rem;
     padding: 1.25rem 2.5rem;
     align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.orchestrator-llms-list {
+    display: flex;
+    justify-content: center;
+    gap: 1.6875rem;
+    padding: 5rem 3.6875rem;
+    border-radius: 1rem;
+}
+
+.orchestrator-llms-list:after {
+    display: block;
+    content: '';
+    background-image: url('/resource/images/ai/solution/agent/KeyFeatures-graph-arrow.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 45.25rem;
+    height: 26.375rem;
+    position: absolute;
+    top: 9.625rem;
+    left: 6.875rem;
+    z-index: -2;
+}
+
+.orchestrator-llms-list::before {
+    display: block;
+    content: '';
+    background-image: url('/resource/images/ai/solution/agent/KeyFeatures-graph-arrow02.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 76.5rem;
+    height: 17.375rem;
+    position: absolute;
+    top: 21.125rem;
+    left: 5rem;
+    z-index: -2;
+}
+
+.orchestrator-llms-label {
+    text-align: right;
+    padding-bottom: 0.75rem;
 }
 
 .llms-circles {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    margin-top: 0.75rem;
+    justify-content: center;
 }
 
 .llms-title {
@@ -2322,11 +2431,13 @@
 }
 
 .llms-circle.orange {
-    background-color: #FFE5B6;
+    background-color: #F8EFD5;
+    border: 1px solid #F4E4B7;
 }
 
 .llms-circle.green {
-    background-color: #DEFFC6;
+    background-color: #E5F4E0;
+    border: 1px solid #DCECD7;
 }
 
 .llms-circle.light-orange {
@@ -2334,11 +2445,12 @@
 }
 
 .llms-circle.white {
-    background-color: #FFFFFF;
+    background-color: #E5E5ED;
+    border: 1px solid #D5D5E4;
 }
 
 .llms-circle.red {
-    background-color: #FFD1D1;
+    background-color: #F2DADB;
 }
 
 /* model page */
@@ -4364,6 +4476,10 @@
         max-width: 100%;
         min-width: 100%;
         margin-right: 0;
+    }
+
+    .agent-KeyFeatures {
+        margin-top: 4rem;
     }
 
     /* cloud Page */

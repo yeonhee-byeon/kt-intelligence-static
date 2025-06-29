@@ -636,7 +636,7 @@
                         <!-- 2번 탭 컨텐츠 -->
                         <div class="tabs__panel__anchor" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2">
                             <div class="tab-section">
-                                <div class="title-wrapper only-title">
+                                <div class="title-wrapper only-title model-page-title-wrapper">
                                     <span class="open-planned top-center" data-aos="fade-up" data-aos-duration="800"
                                         data-aos-easing="ease-out-cubic">공개 예정</span>
                                     <span data-aos="fade-up" data-aos-duration="800"
@@ -658,36 +658,38 @@
                                     </p>
 
                                     <!-- Multi-Model Orchestrator 도식 -->
-                                    <div class="orchestrator-diagram">
-                                        <div class="orchestrator-title">Multi-Model Orchestrator</div>
-                                        <div class="orchestrator-user-request-row">
-                                            <div class="orchestrator-user-request">User Request</div>
-                                        </div>
-                                        <div class="orchestrator-routing-controller-row">
-                                            <div class="orchestrator-routing-controller">Routing Controller</div>
-                                        </div>
-                                        <div class="orchestrator-llms-box">
-                                            <div class="orchestrator-llms-label">&lt;LLMs&gt;</div>
-                                            <div class="orchestrator-llms-list">
-                                                <div class="orchestrator-llms-item">
-                                                    <div class="llms-title">법률 특화</div>
-                                                    <div class="llms-circles">
-                                                        <span class="llms-circle orange"></span>
-                                                        <span class="llms-circle green"></span>
-                                                        <span class="llms-circle orange"></span>
-                                                        <span class="llms-circle white"></span>
+                                    <div class="pc-only">
+                                        <div class="orchestrator-diagram" data-aos="fade-up" data-aos-duration="800"
+                                            data-aos-easing="ease-out-cubic">
+                                            <div class="orchestrator-title">Multi-Model Orchestrator</div>
+                                            <div class="orchestrator-user-request-row">
+                                                <div class="orchestrator-user-request"><span>User Request</span></div>
+                                            </div>
+                                            <div class="orchestrator-routing-controller-row">
+                                                <div class="orchestrator-routing-controller">Routing Controller</div>
+                                            </div>
+                                            <div class="orchestrator-llms-box">
+                                                <div class="orchestrator-llms-label">&lt;LLMs&gt;</div>
+                                                <div class="orchestrator-llms-list">
+                                                    <div class="orchestrator-llms-item">
+                                                        <div class="llms-title">법률 특화</div>
+                                                        <div class="llms-circles">
+                                                            <span class="llms-circle orange"></span>
+                                                            <span class="llms-circle green"></span>
+                                                            <span class="llms-circle orange"></span>
+                                                            <span class="llms-circle white"></span>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="orchestrator-llms-item">
-                                                    <div class="llms-title">교육 특화</div>
-                                                    <div class="llms-circles">
-                                                        <span class="llms-circle light-orange"></span>
-                                                        <span class="llms-circle green"></span>
-                                                        <span class="llms-circle light-orange"></span>
-                                                        <span class="llms-circle white"></span>
+                                                    <div class="orchestrator-llms-item">
+                                                        <div class="llms-title">교육 특화</div>
+                                                        <div class="llms-circles">
+                                                            <span class="llms-circle red"></span>
+                                                            <span class="llms-circle green"></span>
+                                                            <span class="llms-circle red"></span>
+                                                            <span class="llms-circle white"></span>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="orchestrator-llms-item">
+                                                    <!-- <div class="orchestrator-llms-item">
                                                     <div class="llms-title">GPT K</div>
                                                     <div class="llms-circles">
                                                         <span class="llms-circle red"></span>
@@ -695,26 +697,35 @@
                                                         <span class="llms-circle green"></span>
                                                         <span class="llms-circle green"></span>
                                                     </div>
-                                                </div>
-                                                <div class="orchestrator-llms-item">
-                                                    <div class="llms-title">믿:음2.0</div>
-                                                    <div class="llms-circles">
-                                                        <span class="llms-circle green"></span>
-                                                        <span class="llms-circle green"></span>
-                                                        <span class="llms-circle green"></span>
-                                                        <span class="llms-circle orange"></span>
+                                                </div> -->
+                                                    <div class="orchestrator-llms-item">
+                                                        <div class="llms-title">믿:음2.0</div>
+                                                        <div class="llms-circles">
+                                                            <span class="llms-circle green"></span>
+                                                            <span class="llms-circle green"></span>
+                                                            <span class="llms-circle green"></span>
+                                                            <span class="llms-circle orange"></span>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="orchestrator-llms-item">
-                                                    <div class="llms-title">금융 특화</div>
-                                                    <div class="llms-circles">
-                                                        <span class="llms-circle white"></span>
-                                                        <span class="llms-circle green"></span>
-                                                        <span class="llms-circle orange"></span>
-                                                        <span class="llms-circle white"></span>
+                                                    <div class="orchestrator-llms-item">
+                                                        <div class="llms-title">금융 특화</div>
+                                                        <div class="llms-circles">
+                                                            <span class="llms-circle red"></span>
+                                                            <span class="llms-circle green"></span>
+                                                            <span class="llms-circle orange"></span>
+                                                            <span class="llms-circle white"></span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mobile-show">
+                                        <div class="shape-wrapper agent-KeyFeatures" data-aos="fade-up"
+                                            data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            <img src="/resource/images/ai/solution/agent/KeyFeatures-graph.png" alt="">
                                         </div>
                                     </div>
 
