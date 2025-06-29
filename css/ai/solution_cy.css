@@ -4120,6 +4120,12 @@
         display: block !important;
     }
 
+    .open-planned.top-banner.mobile-show .flex {
+        display: flex;
+        align-items: center;
+        color: #fff;
+    }
+
     .open-planned.top-banner.mobile-show.small-one {
         margin-bottom: 0.85rem !important;
     }
