@@ -4545,6 +4545,9 @@
     }
 
     /* studio page */
+    .card-list.customer.studio-key-feature {
+        gap: 4rem;
+    }
 
     .table-card-wrapper.studio-lineUp .table-card-list.studio-table-card-list.text>li h3+p {
         font-weight: 700;
