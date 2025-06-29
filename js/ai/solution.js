@@ -52,6 +52,8 @@ function initMobileSwiper() {
                 // centeredSlides: true,
                 speed: 500,
                 effect: 'slide',
+                slidesOffsetBefore: 20,
+                slidesOffsetAfter: 20,
             });
         }
     } else {
