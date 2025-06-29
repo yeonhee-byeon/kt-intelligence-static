@@ -1544,6 +1544,10 @@ br.mo-br {
     margin-top: 1.25rem;
 }
 
+.architecture-diagram.model-diagram02 .table-list {
+    margin-top: 0;
+}
+
 .architecture-diagram .table-list.vertical~.table-list {
     margin-top: 3rem;
 }
