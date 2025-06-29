@@ -1097,7 +1097,7 @@
     position: absolute;
     right: -7.7rem;
     top: 2.85rem;
-    padding: 0 1.5rem !important;
+    padding: 0 1.25rem !important;
 }
 
 .open-planned.top-banner.mobile-show {
@@ -3408,6 +3408,10 @@
     min-height: 15.72rem;
 }
 
+.studio-lineUp .table-card-list.text>li .table-card-item ul li h4 {
+    color: #000;
+}
+
 /* Mobile Styles */
 @media (max-width: 767px) {
 
@@ -4108,6 +4112,10 @@
         line-height: 3.4rem !important;
         border-radius: 1.7rem !important;
         display: block !important;
+    }
+
+    .open-planned.top-banner.mobile-show.small-one {
+        margin-bottom: 0.85rem !important;
     }
 
     .card-list-horizontal {
