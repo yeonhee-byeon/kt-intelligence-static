@@ -4541,6 +4541,18 @@
 
     /* studio page */
 
+    .table-card-wrapper.studio-lineUp .table-card-list.studio-table-card-list.text>li h3+p {
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 156%;
+        letter-spacing: 0%;
+    }
+
+    .table-card-wrapper.studio-lineUp .table-card-list.studio-table-card-list.text>li h3+p {
+        margin-bottom: 0;
+    }
+
+
     .solution-model-wrapper .tab-inner-wrapper>#tab-panel-1 {
         background-image: none;
     }
