@@ -1,5 +1,3 @@
-// ======= 리팩토링: sub_cy.js =======
-
 document.addEventListener('DOMContentLoaded', function () {
   initTabsComponent();
   initDoubleInnerTabs01();
@@ -134,7 +132,7 @@ function initTabsComponent() {
   function handleHashChange() {
     const tabId = getTabIdFromHash();
     if (tabId) {
-      // 뒤로가기 등으로 해시 변경 시에도 모바일 자동 스크롤
+      // 뒤로가기/앞으로가기 시 해시 변경 시에도 모바일 자동 스크롤
       activateTab(tabId, window.innerWidth <= 767);
       saveTab(tabId);
     }
@@ -877,6 +875,23 @@ function checkExamItemsScroll() {
     }
     if (contentHeight > maxHeightPx) {
       parent.classList.add('hasScroll');
+      // 스크롤 이벤트 바인딩
+      var scrollHandler = function () {
+        var bgBlackParent = parent.closest('.bg-black-style');
+        if (!bgBlackParent) return;
+        // 맨 아래 도달 시 hasScroll 제거, 아니면 추가
+        if (examItems.scrollTop + examItems.clientHeight >= examItems.scrollHeight - 2) {
+          if (parent.classList.contains('hasScroll')) {
+            parent.classList.remove('hasScroll');
+          }
+        } else {
+          if (!parent.classList.contains('hasScroll')) {
+            parent.classList.add('hasScroll');
+          }
+        }
+      };
+      examItems.addEventListener('scroll', scrollHandler);
+      examItems.__scrollHandler = scrollHandler;
     } else {
       parent.classList.remove('hasScroll');
     }
