@@ -242,122 +242,103 @@ function initParallaxSectionAnimation() {
     const container = section.querySelector('.parallax-container');
 
     ScrollTrigger.matchMedia({
-        '(min-width: 769px)': function () {
-            // 데스크톱에서만 pin 애니메이션 실행
-            const tl = gsap.timeline({
+        '(max-width: 768px)': function () {
+            gsap.set(images[3], { scaleX: -1 });
+        },
+    });
+    // 컨테이너 고정 애니메이션
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: section,
+            start: 'top top',
+            end: 'bottom bottom',
+            // scrub: 1,
+            pin: true,
+            pinSpacing: false,
+        },
+    });
+
+    gsap.fromTo(
+        '.parallax-titles, .parallax-description',
+        {
+            opacity: 0,
+        },
+        {
+            opacity: 1,
+            duration: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: section,
+                start: 'top center',
+                end: 'center center',
+                scrub: true,
+            },
+        },
+    );
+
+    // 각 이미지별 패럴렉스 애니메이션
+    images.forEach((img, index) => {
+        // 이미지별로 다른 속도 적용
+        const speeds = [1, 1, 1, 1, 1];
+        const speed = speeds[index] || 1;
+
+        tl.fromTo(
+            img,
+            {
+                y: '0', // 시작 위치 (화면 하단)
+            },
+            {
+                y: `-${200 * speed}vh`, // 속도에 따른 최종 위치 조정
+                ease: 'none',
                 scrollTrigger: {
                     trigger: section,
                     start: 'top top',
                     end: 'bottom bottom',
-                    pin: true,
-                    pinSpacing: false,
+                    scrub: true,
+                    toggleActions: 'play none none reverse',
                 },
-            });
-
-            gsap.fromTo(
-                '.parallax-titles, .parallax-description',
-                {
-                    opacity: 0,
-                },
-                {
-                    opacity: 1,
-                    duration: 1,
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top center',
-                        end: 'center center',
-                        scrub: true,
-                    },
-                },
-            );
-
-            // 각 이미지별 패럴렉스 애니메이션 (데스크톱만)
-            images.forEach((img, index) => {
-                const speeds = [1, 1, 1, 1, 1];
-                const speed = speeds[index] || 1;
-
-                tl.fromTo(
-                    img,
-                    {
-                        y: '0',
-                    },
-                    {
-                        y: `-${200 * speed}vh`,
-                        ease: 'none',
-                        scrollTrigger: {
-                            trigger: section,
-                            start: 'top top',
-                            end: 'bottom bottom',
-                            scrub: true,
-                            toggleActions: 'play none none reverse',
-                        },
-                    },
-                );
-            });
-
-            gsap.fromTo(
-                images[1],
-                {
-                    opacity: 0,
-                    xPercent: -20,
-                },
-                {
-                    opacity: 1,
-                    xPercent: 0,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top bottom',
-                        end: 'top center',
-                        scrub: 1,
-                    },
-                },
-            );
-            gsap.fromTo(
-                images[4],
-                {
-                    opacity: 0,
-                    xPercent: 20,
-                },
-                {
-                    opacity: 1,
-                    xPercent: 0,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top center',
-                        end: 'top top',
-                        scrub: 1,
-                    },
-                },
-            );
-
-            //return tl;
-        },
-        '(max-width: 768px)': function () {
-            // 모바일에서는 이미지 스케일 조정만
-            gsap.set(images[3], { scaleX: -1 });
-
-            // 모바일에서는 단순한 페이드인 애니메이션만
-            gsap.fromTo(
-                '.parallax-titles, .parallax-description',
-                {
-                    opacity: 0,
-                },
-                {
-                    opacity: 1,
-                    duration: 1,
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top 80%',
-                        end: 'bottom 20%',
-                    },
-                },
-            );
-        },
+            },
+        );
     });
+
+    gsap.fromTo(
+        images[1],
+        {
+            opacity: 0,
+            xPercent: -20,
+        },
+        {
+            opacity: 1,
+            xPercent: 0,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: section,
+                start: 'top bottom',
+                end: 'top center',
+                scrub: 1,
+            },
+        },
+    );
+    gsap.fromTo(
+        images[4],
+        {
+            opacity: 0,
+            xPercent: 20,
+        },
+        {
+            opacity: 1,
+            xPercent: 0,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: section,
+                start: 'top center',
+                end: 'top top',
+                scrub: 1,
+            },
+        },
+    );
+
+    // return tl;
 }
 
 // 큐브 이미지 경로
@@ -673,31 +654,16 @@ function initParallaxDepthSectionAnimation() {
                 })
                 .reverse();
 
-            // 모바일 스와이퍼 순서와 imagePaths 배열 매핑
-            // 스와이퍼: [Model, RAG, Agent, Studio, RAI, Infra]
-            // imagePaths: [Model, RAG, Agent, Studio, RAI, Infra] (동일)
-            // cubeImgs (reversed): [Model, RAG, Agent, Studio, RAI, Infra] (동일)
-
             // Swiper 생성
             pdsSwiper = new Swiper('.mobile-pds-menu .swiper-container', {
                 slidesPerView: 'auto',
                 spaceBetween: 16,
                 speed: 500,
                 effect: 'slide',
-                centeredSlides: false,
-                initialSlide: 0,
-                touchRatio: 1,
-                allowTouchMove: true,
                 on: {
-                    init: function () {
-                        updateCubeActiveImage(this.activeIndex);
-                    },
                     slideChange: function () {
                         updateCubeActiveImage(this.activeIndex);
                     },
-                    slideChangeTransitionEnd: function () {
-                        updateCubeActiveImage(this.activeIndex);
-                    }
                 },
             });
 
@@ -705,15 +671,9 @@ function initParallaxDepthSectionAnimation() {
             function updateCubeActiveImage(activeIdx) {
                 cubeImgs.forEach(function (img, idx) {
                     if (imagePaths[idx]) {
-                        const isActive = idx === activeIdx;
-                        img.src = isActive ? imagePaths[idx].active : imagePaths[idx].src;
+                        img.src = idx === activeIdx ? imagePaths[idx].active : imagePaths[idx].src;
                     }
                 });
-            }
-
-            // 초기 상태 설정
-            if (pdsSwiper) {
-                updateCubeActiveImage(0); // 첫 번째 슬라이드 활성화
             }
 
             // parallax-depth-section 진입 시 첫번째 활성화
