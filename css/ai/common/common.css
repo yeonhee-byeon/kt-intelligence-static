@@ -139,13 +139,13 @@ body.scroll-lock {
 } */
 
 
-/* @media (max-width: 1536px) {
+@media (max-width: 1536px) {
     html {
         font-size: 1.0417vw !important;
     }
-} */
+}
 
-.hide-desc {
+*/ .hide-desc {
     position: absolute;
     width: 1px;
     height: 1px;
