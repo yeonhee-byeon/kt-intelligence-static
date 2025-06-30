@@ -5170,7 +5170,7 @@
     .example-content .example-inner h3 {
         margin: 1.6rem 0 1.4rem;
         width:100%;
-        outline:1px solid blue;
+        
     }
 
     .bg-black-style .answer-tit {
@@ -5180,6 +5180,7 @@
         line-height: 156%;
         /* 24.96px */
         margin-top: 2.6rem;
+        width: 100%;
     }
 
     .bg-black-style .example-content .example-inner .ex-content-wrap p {
