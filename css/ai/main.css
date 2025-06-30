@@ -1919,6 +1919,16 @@ br {
         letter-spacing: var(--letter-spacing-md);
     }
 
+    /* 개선1 */
+    .parallax-section .parallax-images img {
+        will-change: transform, opacity;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+        -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+        image-rendering: auto;
+    }
+
     .parallax-section .parallax-images img:nth-child(1) {
         width: 15.8rem;
         height: 21.1rem;
