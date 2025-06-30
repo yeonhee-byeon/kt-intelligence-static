@@ -715,6 +715,10 @@ br {
     display: none;
 }
 
+.mobile-pds-menu .swiper-slide .btn.main img {
+    display: none;
+}
+
 .cube-wrapper {
     max-width: 46.625rem;
     width: 100%;
