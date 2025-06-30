@@ -774,7 +774,7 @@ function checkExamItemsScroll() {
         // preventBottomGap 값을 PC/모바일에 따라 다르게 적용
         let preventBottomGap;
         if (window.matchMedia('(max-width: 768px)').matches) {
-          preventBottomGap = 130; // 모바일 전용 값(px)
+          preventBottomGap = 40; // 모바일 전용 값(px)
         } else {
           const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
           preventBottomGap = 6.5 * rootFontSize; // PC용
@@ -816,7 +816,7 @@ if (scrollBox && examItemsParent) {
   scrollBox.addEventListener('scroll', () => {
     let preventBottomGap;
     if (window.matchMedia('(max-width: 768px)').matches) {
-      preventBottomGap = 130; // 모바일 전용 값(px)
+      preventBottomGap = 40; // 모바일 전용 값(px)
     } else {
       const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
       preventBottomGap = 6.5 * rootFontSize; // PC용
