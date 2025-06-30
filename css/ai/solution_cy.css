@@ -5204,6 +5204,7 @@
         max-height: 36rem;
         padding: 1.2rem 2.6rem 2.6rem 2.6rem;
         height: auto;
+        transition : all o.5s;
     }
 
     .tab-section.fixedHeight {
