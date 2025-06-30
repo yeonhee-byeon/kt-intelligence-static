@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initModelTabsSwiper03();
   initAccordion();
   initSequentialVideoPlayer();
-  initExTaps01();
 });
 
 window.addEventListener('resize', function () {
