@@ -868,6 +868,22 @@ function initSequentialVideoPlayer() {
 }
 // ====== // K Model 순차 영상 자동재생 ======
 
+// ===== exam-items 스크롤 감지 및 hasScroll 클래스 추가 =====
+function checkExamItemsScroll() {
+  var examItemsList = document.querySelectorAll('.exam-items.ex-items');
+  var maxHeightPx = 20 * 16; // 20rem = 320px
+  examItemsList.forEach(function (examItems) {
+    var parent = examItems.closest('.example-content');
+    if (!parent) return;
+    var contentHeight = examItems.scrollHeight;
+    if (contentHeight > maxHeightPx) {
+      parent.classList.add('hasScroll');
+    } else {
+      parent.classList.remove('hasScroll');
+    }
+  });
+}
+
 // ===== ex-taps-01 탭 연동 스크립트 =====
 document.addEventListener('DOMContentLoaded', function () {
   var tabList = document.querySelectorAll('.ex-taps-01 dl');
@@ -888,12 +904,16 @@ document.addEventListener('DOMContentLoaded', function () {
         bodyContents.forEach(function (bc, i) {
           bc.classList.toggle('active', i === idx);
         });
+        // exam-items 스크롤 상태 갱신
+        checkExamItemsScroll();
       });
     });
     // 초기화: 첫번째 탭만 보이게
     tabList.forEach(function (t, i) { t.classList.toggle('active', i === 0); });
     titleContents.forEach(function (tc, i) { tc.classList.toggle('active', i === 0); });
     bodyContents.forEach(function (bc, i) { bc.classList.toggle('active', i === 0); });
+    // 초기화 시에도 스크롤 상태 갱신
+    checkExamItemsScroll();
   }
 });
 
@@ -922,6 +942,8 @@ document.addEventListener('DOMContentLoaded', function () {
           titleContents.forEach(function (tc, i) { tc.classList.toggle('active', i === idx); });
           // 본문 영역 active 클래스 토글
           bodyContents.forEach(function (bc, i) { bc.classList.toggle('active', i === idx); });
+          // exam-items 스크롤 상태 갱신
+          checkExamItemsScroll();
         }
       }
     });
@@ -935,6 +957,8 @@ document.addEventListener('DOMContentLoaded', function () {
     tab.addEventListener('click', function () {
       swiper.slideTo(idx);
       // 아래 연동은 slideChange 이벤트에서 처리됨
+      // exam-items 스크롤 상태 갱신
+      checkExamItemsScroll();
     });
   });
 
@@ -942,5 +966,7 @@ document.addEventListener('DOMContentLoaded', function () {
   tabList.forEach(function (t, i) { t.classList.toggle('active', i === 0); });
   titleContents.forEach(function (tc, i) { tc.classList.toggle('active', i === 0); });
   bodyContents.forEach(function (bc, i) { bc.classList.toggle('active', i === 0); });
+  // 초기화 시에도 스크롤 상태 갱신
+  checkExamItemsScroll();
 });
 
