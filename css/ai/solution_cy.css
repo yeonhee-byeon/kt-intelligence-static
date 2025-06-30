@@ -2925,7 +2925,7 @@
     overflow-y: scroll;
     position: relative;
     margin-top: 0;
-    transition : all 0.2s;
+    transition : padding-bottom 0.2s;
 }
 
 .flex.example-double .example-content .example-inner .exam-items {
@@ -2951,7 +2951,7 @@
     margin-bottom: 2.5rem;
     margin-top: -2.5rem;
     padding-bottom: 0;
-    transition : all 0.2s;
+    transition : padding-bottom 0.2s;
 }
 
 
@@ -5207,7 +5207,7 @@
         max-height: 36rem;
         padding: 1.2rem 2.6rem 2.6rem 2.6rem;
         height: auto;
-        transition : all 0.2s;
+        transition : padding-bottom 0.2s;
     }
 
     .tab-section.fixedHeight {
