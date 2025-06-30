@@ -777,7 +777,7 @@ function checkExamItemsScroll() {
           preventBottomGap = 25; // 모바일 전용 값(px)
         } else {
           const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-          preventBottomGap = 6.5 * rootFontSize; // PC용
+          preventBottomGap = 2.5 * rootFontSize; // PC용
         }
         const maxScroll = examItems.scrollHeight - examItems.clientHeight;
         if (examItems.scrollTop >= maxScroll - preventBottomGap) {
@@ -819,7 +819,7 @@ if (scrollBox && examItemsParent) {
       preventBottomGap = 25; // 모바일 전용 값(px)
     } else {
       const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-      preventBottomGap = 6.5 * rootFontSize; // PC용
+      preventBottomGap = 2.5 * rootFontSize; // PC용
     }
     const max = scrollBox.scrollHeight - scrollBox.clientHeight;
     if (scrollBox.scrollTop >= max - preventBottomGap) {
