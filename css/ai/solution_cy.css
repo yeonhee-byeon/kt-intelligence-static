@@ -3227,13 +3227,27 @@
     height: auto;
 }
 
-.bg-black-style .example-content.hasScroll {
+.bg-black-style .example-content.ex-content {
     padding-bottom: 0;
+}
+
+.bg-black-style .example-content.ex-content .ex-content-wrap {
+    margin-bottom: 2.5rem;
+}
+
+/* 
+.bg-black-style .example-content.ex-content.hasScroll .ex-content-wrap {
+    margin-bottom: 0;
+} */
+
+.bg-black-style .example-content.ex-content.hasScroll {
     position: relative;
     overflow: hidden;
 }
 
-.bg-black-style .example-content.hasScroll:before {
+
+.bg-black-style .example-content:before {
+    opacity: 0;
     display: block;
     content: '';
     width: 100%;
@@ -3242,11 +3256,26 @@
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+.bg-black-style .example-content.hasScroll:before {
     z-index: 1;
+    opacity: 1;
+    /* transition: opacity 0.4s ease-in-out; */
 }
 
 .tab-section.fixedHeight {
     height: 72.5625rem;
+}
+
+.example-content .margin-box {
+    height: 2.5rem;
+    width: 100%;
+    display: none;
+}
+
+.example-content.example-content.ex-content.hasScroll .margin-box {
+    display: block;
 }
 
 /* studioPage */
@@ -5140,7 +5169,7 @@
 
     .example-content .example-inner .exam-items.ex-items {
         max-height: 36rem;
-        padding: 1.2rem 2.6rem 2.6rem 2.6rem;
+        padding: 1.2rem 2.6rem 0 2.6rem;
     }
 
     .tab-section.fixedHeight {
@@ -5152,7 +5181,13 @@
         background: linear-gradient(180deg, rgba(19, 19, 19, 0.00) -6.63%, #131313 100%);
     }
 
+    .example-content .example-inner .model-options {
+        padding: 0 2.6rem;
+    }
+
+    .bg-black-style .example-content.ex-content .ex-content-wrap {
+        margin-bottom: 0rem;
+        padding-bottom: 2.6rem;
+    }
+
 }
-
-
-@media (max-width: 444px) and (min-width : 400px) {}

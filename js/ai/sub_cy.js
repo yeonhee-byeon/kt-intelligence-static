@@ -870,6 +870,11 @@ function checkExamItemsScroll() {
     var parent = examItems.closest('.example-content');
     if (!parent) return;
     var contentHeight = examItems.scrollHeight;
+    // 기존 스크롤 이벤트 제거 (중복 방지)
+    if (examItems.__scrollHandler) {
+      examItems.removeEventListener('scroll', examItems.__scrollHandler);
+      examItems.__scrollHandler = null;
+    }
     if (contentHeight > maxHeightPx) {
       parent.classList.add('hasScroll');
     } else {
