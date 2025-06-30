@@ -4834,13 +4834,13 @@
     .solution-model-wrapper #tab-panel-2>.tab-section.only-title:after {
         background-image: url('/resource/images/ai/solution/model/title-only-bg-02_mo.png');
         padding-bottom: 0rem;
-        height: 100vh;
+        height: 50vh;
     }
 
     .solution-model-wrapper #tab-panel-3>.tab-section.only-title:after {
         background-image: url('/resource/images/ai/solution/model/title-only-bg-03_mo.png');
         padding-bottom: 0rem;
-        height: 100vh;
+        height: 50vh;
     }
 
     .example-side-item .example-side-txts.single-box dl {
