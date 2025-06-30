@@ -210,6 +210,34 @@ br {
     padding: 2.5rem;
 }
 
+/* .sub-banner-section .sub-banner-inner>ul>li .count-up.smallflex .rolling-number.count-item-1 {
+    outline: 2px solid red;
+    gap: 0;
+
+}
+
+.sub-banner-section .sub-banner-inner>ul>li .count-up .countup-digit {
+    margin-right: -5px;
+}
+
+.sub-banner-section .sub-banner-inner>ul>li .count-up .countup-digit-container {
+    overflow-x: visible;
+} */
+
+/* 
+.sub-banner-section .sub-banner-inner>ul>li .count-up.smallflex .rolling-number.count-item-1 .countup-digit-container+.countup-digit-container .countup-digit {
+    margin-right: -30px
+} */
+
+/* .sub-banner-section .sub-banner-inner>ul>li .count-up.smallflex .rolling-number.count-item-1 .countup-digit-container:nth-child(1) {
+    margin-left: 10px;
+}
+
+.sub-banner-section .sub-banner-inner>ul>li .count-up.smallflex .rolling-number.count-item-1 .countup-digit-container:nth-child(2) {
+    margin-right: -30px;
+} */
+
+
 .sub-banner-section .sub-banner-inner>ul>li .count-up>span {
     color: var(--white-color);
     font-size: var(--font-size-3xl);
