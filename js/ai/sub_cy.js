@@ -788,6 +788,46 @@ function checkExamItemsScroll() {
     }
   });
 }
+const scrollBox = document.querySelector('.example-content .example-inner .exam-items.ex-items');
+
+// root font-size 가져오기 (기본: 16px)
+const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+const preventBottomGap = 6.5 * rootFontSize; // 2.5rem → px로 변환
+
+scrollBox.addEventListener('scroll', () => {
+  const maxScroll = scrollBox.scrollHeight - scrollBox.clientHeight;
+
+  if (scrollBox.scrollTop >= maxScroll - preventBottomGap) {
+    scrollBox.scrollTop = maxScroll - preventBottomGap;
+  }
+});
+
+// 추가: 스크롤이 맨 위/아래에 도달하면 body가 자연스럽게 스크롤되도록
+if (scrollBox) {
+  let isBodyScrolling = false;
+  let lastDelta = 0;
+
+  scrollBox.addEventListener('wheel', function (e) {
+    const delta = e.deltaY;
+    const atTop = scrollBox.scrollTop === 0;
+    const atBottom = scrollBox.scrollTop + scrollBox.clientHeight >= scrollBox.scrollHeight - preventBottomGap;
+
+    // 내부 스크롤이 끝에 도달했을 때만 body로 넘김
+    if ((delta > 0 && atBottom) || (delta < 0 && atTop)) {
+      e.preventDefault();
+      lastDelta = delta;
+
+      if (!isBodyScrolling) {
+        isBodyScrolling = true;
+        window.scrollBy({ top: lastDelta, left: 0, behavior: 'auto' });
+        setTimeout(() => {
+          isBodyScrolling = false;
+        }, 120); // 120ms 동안 추가 wheel 무시
+      }
+    }
+    // 내부 스크롤은 그대로 동작
+  }, { passive: false });
+}
 
 // ===== ex-taps-01 탭 연동 스크립트 =====
 document.addEventListener('DOMContentLoaded', function () {

@@ -2605,7 +2605,7 @@
 }
 
 .gpt-benefit-box.liama-benefit-box .box-list li .box-item {
-    height: 23.3625rem;
+    height: 21.3625rem;
     background-color: transparent;
     border: 1px solid #373737;
     padding: 2.5rem;
@@ -3235,10 +3235,11 @@
     margin-bottom: 2.5rem;
 }
 
-/* 
+
 .bg-black-style .example-content.ex-content.hasScroll .ex-content-wrap {
-    margin-bottom: 0;
-} */
+    padding-bottom: 6rem;
+}
+
 
 .bg-black-style .example-content.ex-content.hasScroll {
     position: relative;
@@ -3271,12 +3272,14 @@
 .example-content .margin-box {
     height: 2.5rem;
     width: 100%;
-    display: none;
+    display: block;
+    background-color: red;
 }
 
+/* 
 .example-content.example-content.ex-content.hasScroll .margin-box {
     display: block;
-}
+} */
 
 /* studioPage */
 .diamond-wrapper {
