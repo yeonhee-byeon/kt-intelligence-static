@@ -81,7 +81,7 @@ function initIntroSectionAnimation() {
                 {
                     opacity: 1,
                     yPercent: 0,
-                    duration: 0.2,
+                    duration: 0.3,
                 },
             )
                 .fromTo(
@@ -93,7 +93,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.2,
+                        duration: 0.3,
                     },
                     '-=0.2',
                 )
@@ -106,7 +106,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.2,
+                        duration: 0.3,
                     },
                 )
                 .fromTo(
@@ -118,7 +118,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.2,
+                        duration: 0.3,
                     },
                     '-=0.2',
                 )
@@ -131,7 +131,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.2,
+                        duration: 0.3,
                         onComplete: () => {
                             countUpDigitsReverse('.count-item-1', { duration: 2000 });
                             countUpDigitsReverse('.count-item-2', { duration: 2000 });
@@ -158,7 +158,7 @@ function initIntroSectionAnimation() {
                 {
                     opacity: 1,
                     yPercent: 0,
-                    duration: 0.2,
+                    duration: 0.3,
                 },
             )
                 .fromTo(
@@ -170,7 +170,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.2,
+                        duration: 0.3,
                     },
                     '-=0.2',
                 )
@@ -183,7 +183,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.2,
+                        duration: 0.3,
                     },
                 )
                 .fromTo(
@@ -195,7 +195,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.2,
+                        duration: 0.3,
                     },
                     '-=0.2',
                 )
@@ -208,7 +208,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.2,
+                        duration: 0.3,
                         onStart: () => {
                             countUpDigitsReverse('.count-item-1', { duration: 2000 });
                         },
@@ -223,7 +223,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.2,
+                        duration: 0.3,
                         onStart: () => {
                             countUpDigitsReverse('.count-item-2', { duration: 2000 });
                         },
@@ -441,7 +441,7 @@ function initParallaxDepthSectionAnimation() {
                 {
                     opacity: 1,
                     yPercent: 0,
-                    duration: 0.2,
+                    duration: 0.3,
                     stagger: 0.2,
                     onStart: () => {
                         gsap.set('.cube-wrapper', { xPercent: 0 });
