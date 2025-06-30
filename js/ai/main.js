@@ -302,11 +302,11 @@ function initParallaxSectionAnimation() {
     });
 
     gsap.fromTo(
-        // images[1],
-        // {
-        //     opacity: 0,
-        //     xPercent: -20,
-        // },
+        images[1],
+        {
+            // opacity: 0,
+            // xPercent: -20,
+        },
         {
             opacity: 1,
             xPercent: 0,
