@@ -766,6 +766,7 @@ function checkExamItemsScroll() {
     }
     if (contentHeight > maxHeightPx) {
       parent.classList.add('hasScroll');
+      parent.classList.add('hasScrollfixed');
       // 스크롤 이벤트 바인딩
       var scrollHandler = function () {
         var bgBlackParent = parent.closest('.bg-black-style');
@@ -786,6 +787,7 @@ function checkExamItemsScroll() {
         } else {
           if (!parent.classList.contains('hasScroll')) {
             parent.classList.add('hasScroll');
+            parent.classList.add('hasScrollfixed');
           }
         }
       };
@@ -793,6 +795,7 @@ function checkExamItemsScroll() {
       examItems.__scrollHandler = scrollHandler;
     } else {
       parent.classList.remove('hasScroll');
+      parent.classList.remove('hasScrollfixed');
     }
   });
 }
@@ -804,6 +807,29 @@ function checkExamItemsScroll() {
 //     scrollBox.scrollTop = maxScroll - preventBottomGap;
 //   }
 // });
+
+
+const scrollBox = document.querySelector('.example-content .example-inner .exam-items.ex-items');
+const examItemsParent = document.querySelector('.example-content .example-inner .exam-items');
+
+if (scrollBox && examItemsParent) {
+  scrollBox.addEventListener('scroll', () => {
+    let preventBottomGap;
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      preventBottomGap = 130; // 모바일 전용 값(px)
+    } else {
+      const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      preventBottomGap = 6.5 * rootFontSize; // PC용
+    }
+    const max = scrollBox.scrollHeight - scrollBox.clientHeight;
+    if (scrollBox.scrollTop >= max - preventBottomGap) {
+      examItemsParent.classList.add('hasPadding');
+    } else {
+      examItemsParent.classList.remove('hasPadding');
+    }
+  });
+}
+
 
 
 
@@ -829,6 +855,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         // exam-items 스크롤 상태 갱신
         checkExamItemsScroll();
+        // 탭 클릭 시 hasPadding 클래스 삭제 및 스크롤 맨 위로 이동
+        document.querySelectorAll('.example-content .example-inner .exam-items').forEach(el => {
+          el.classList.remove('hasPadding');
+          el.scrollTop = 0;
+        });
       });
     });
     // 초기화: 첫번째 탭만 보이게
@@ -839,6 +870,9 @@ document.addEventListener('DOMContentLoaded', function () {
     checkExamItemsScroll();
   }
 });
+
+
+
 
 // ===== 모바일 ex-taps-01 Swiper 연동 스크립트 (별도) =====
 document.addEventListener('DOMContentLoaded', function () {
@@ -867,6 +901,11 @@ document.addEventListener('DOMContentLoaded', function () {
           bodyContents.forEach(function (bc, i) { bc.classList.toggle('active', i === idx); });
           // exam-items 스크롤 상태 갱신
           checkExamItemsScroll();
+          // 슬라이드 변경 시 hasPadding 클래스 삭제 및 스크롤 맨 위로 이동
+          document.querySelectorAll('.example-content .example-inner .exam-items').forEach(el => {
+            el.classList.remove('hasPadding');
+            el.scrollTop = 0;
+          });
         }
       }
     });
@@ -889,3 +928,15 @@ document.addEventListener('DOMContentLoaded', function () {
   checkExamItemsScroll();
 });
 
+// 모바일 ex-taps-01 Swiper 탭 클릭 시 hasPadding 삭제 및 스크롤 맨 위로 이동
+const mobileTabDls = document.querySelectorAll('.modeltabs01 .ex-taps-01 dl');
+if (mobileTabDls.length) {
+  mobileTabDls.forEach(dl => {
+    dl.addEventListener('click', function () {
+      document.querySelectorAll('.example-content .example-inner .exam-items').forEach(el => {
+        el.classList.remove('hasPadding');
+        el.scrollTop = 0;
+      });
+    });
+  });
+}
