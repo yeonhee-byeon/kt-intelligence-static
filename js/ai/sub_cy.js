@@ -921,7 +921,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   var swiperEl = document.querySelector('.moTab-swiper-wrapper .modeltabs01');
   if (!swiperEl) return;
-  var tabList = swiperEl.querySelectorAll('.ex-taps-01 dl');
+  var tabList = swiperEl.querySelectorAll('.modeltabs01 .ex-taps-01 dl');
   var titleContents = document.querySelectorAll('.cont-title-wrap .ex-content');
   var bodyContents = document.querySelectorAll('.ex-txt-wrapper .ex-content-txts');
 
@@ -952,14 +952,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var swiper = window.__modelTabs01Swiper;
   }
 
-  // dl 클릭 시 해당 인덱스로 슬라이드 이동 및 연동
-  tabList.forEach(function (tab, idx) {
-    tab.addEventListener('click', function () {
-      swiper.slideTo(idx);
-      // 아래 연동은 slideChange 이벤트에서 처리됨
-      // exam-items 스크롤 상태 갱신
-      checkExamItemsScroll();
-    });
+  // dl 클릭 이벤트 제거 (오직 스와이프만 동작)
+  tabList.forEach(function (tab) {
+    tab.onclick = null;
+    tab.removeEventListener && tab.removeEventListener('click', Function.prototype);
   });
 
   // 초기화: 첫번째 탭만 보이게
