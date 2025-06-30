@@ -11,9 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initSequentialVideoPlayer();
 });
 
-window.addEventListener('resize', function () {
-  if (window.innerWidth < 768)
-});
 
 window.addEventListener('scroll', function () {
   syncMobileTabActiveByScroll();
