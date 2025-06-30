@@ -886,7 +886,7 @@ function checkExamItemsScroll() {
 
 // ===== ex-taps-01 탭 연동 스크립트 =====
 document.addEventListener('DOMContentLoaded', function () {
-  var tabList = document.querySelectorAll('.ex-taps-01 dl');
+  var tabList = document.querySelectorAll('.pc-only .ex-taps-01 dl');
   var titleContents = document.querySelectorAll('.cont-title-wrap .ex-content');
   var bodyContents = document.querySelectorAll('.ex-txt-wrapper .ex-content-txts');
 
