@@ -12,9 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.addEventListener('resize', function () {
-  initModelTabsSwiper();
-  if (window.innerWidth < 768) assignMobileTabIndexes();
-  initDoubleInnerTabs();
+  if (window.innerWidth < 768)
+    initDoubleInnerTabs();
 });
 
 window.addEventListener('scroll', function () {

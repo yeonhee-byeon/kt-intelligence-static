@@ -497,7 +497,7 @@ br.mo-br {
     position: relative;
 }
 
-.table-card-list>li:after {
+/* .table-card-list>li:after {
     content: '';
     display: block;
     width: 3.25rem;
@@ -507,7 +507,7 @@ br.mo-br {
     top: 50%;
     right: 0;
     transform: translate(140%, -50%);
-}
+} */
 
 .table-card-list>li:last-child:after,
 .table-card-list>li:nth-child(3n):after {

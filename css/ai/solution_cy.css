@@ -1724,7 +1724,7 @@
     z-index: 1;
 }
 
-.orchestrator-diagram:after {
+/* .orchestrator-diagram:after {
     display: block;
     content: '';
     background-image: url('/resource/images/ai/solution/agent/Key\ Features-graph-arrow.png');
@@ -1734,7 +1734,7 @@
     top: 9.625rem;
     left: 6.875rem;
     z-index: -1;
-}
+} */
 
 .orchestrator-diagram .img img {
     display: block;
