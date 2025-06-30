@@ -395,6 +395,123 @@
   <script>
     includeCommonLayout({ skipKtModel: true });
   </script>
+
+
+  <script>
+
+    // resources 탭 내 게시글 접속 시 뒤로가기 해도 탭 활성화 유지 + 모바일 자동 스크롤
+    (function () {
+      const TAB_KEY = 'resourcesTabActive';
+      const tabPrefix = 'tab-';
+      const tabGroupSelector = '.js-tab-group .tabs__tab';
+      const panelGroupSelector = '.js-tab-group .tabs__panel';
+
+      function getTabNameById(tabId) {
+        switch (tabId) {
+          case 'tab-1': return 'all';
+          case 'tab-2': return 'whatsnew';
+          case 'tab-3': return 'modelcard';
+          case 'tab-4': return 'techreport';
+          case 'tab-5': return 'publications';
+          default: return 'all';
+        }
+      }
+      function getTabIdByName(tabName) {
+        switch (tabName) {
+          case 'all': return 'tab-1';
+          case 'whatsnew': return 'tab-2';
+          case 'modelcard': return 'tab-3';
+          case 'techreport': return 'tab-4';
+          case 'publications': return 'tab-5';
+          default: return 'tab-1';
+        }
+      }
+
+      function activateTab(tabId, scrollToTab = false) {
+        const tabBtns = document.querySelectorAll(tabGroupSelector);
+        const tabPanels = document.querySelectorAll(panelGroupSelector);
+        tabBtns.forEach(btn => {
+          const isActive = btn.id === tabId;
+          btn.classList.toggle('tabs__tab--active', isActive);
+          btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          // 모바일: 활성화된 탭 자동 스크롤
+          if (isActive && scrollToTab && window.innerWidth <= 767) {
+            const tabsContainer = btn.parentNode;
+            const containerRect = tabsContainer.getBoundingClientRect();
+            const tabRect = btn.getBoundingClientRect();
+            const scrollLeft = tabRect.left - containerRect.left - 20; // 1.25rem = 20px
+            tabsContainer.scrollTo({
+              left: tabsContainer.scrollLeft + scrollLeft,
+              behavior: 'smooth'
+            });
+          }
+        });
+        tabPanels.forEach(panel => {
+          const isActive = panel.getAttribute('aria-labelledby') === tabId;
+          panel.classList.toggle('tabs__panel--active', isActive);
+          panel.hidden = !isActive;
+        });
+      }
+
+      function saveTab(tabId) {
+        localStorage.setItem(TAB_KEY, tabId);
+      }
+      function getSavedTab() {
+        return localStorage.getItem(TAB_KEY);
+      }
+
+      function setHash(tabId) {
+        const tabName = getTabNameById(tabId);
+        if (location.hash !== '#' + tabName) {
+          history.replaceState(null, '', '#' + tabName);
+        }
+      }
+      function getTabIdFromHash() {
+        const hash = location.hash.replace('#', '');
+        if (!hash) return null;
+        return getTabIdByName(hash);
+      }
+
+      function handleTabClick(e) {
+        if (!e.target.classList.contains('tabs__tab')) return;
+        const tabId = e.target.id;
+        setHash(tabId);
+        saveTab(tabId);
+        // 모바일: 클릭 시 자동 스크롤
+        if (window.innerWidth <= 767) {
+          activateTab(tabId, true);
+        }
+      }
+
+      function handleHashChange() {
+        const tabId = getTabIdFromHash();
+        if (tabId) {
+          // 뒤로가기/앞으로가기 시 해시 변경 시에도 모바일 자동 스크롤
+          activateTab(tabId, window.innerWidth <= 767);
+          saveTab(tabId);
+        }
+      }
+
+      // 초기 진입 시: 해시 → localStorage → 기본값 순으로 탭 활성화
+      document.addEventListener('DOMContentLoaded', function () {
+        const tabIdFromHash = getTabIdFromHash();
+        const tabIdFromStorage = getSavedTab();
+        let tabIdToActivate = tabIdFromHash || tabIdFromStorage || 'tab-1';
+        // 모바일: 진입 시 자동 스크롤
+        activateTab(tabIdToActivate, window.innerWidth <= 767);
+        setHash(tabIdToActivate);
+        // 탭 클릭 시 해시/스토리지 동기화
+        const tabBtns = document.querySelectorAll(tabGroupSelector);
+        tabBtns.forEach(btn => {
+          btn.addEventListener('click', handleTabClick);
+        });
+      });
+      // 뒤로가기/앞으로가기 시 해시 변경 감지
+      window.addEventListener('hashchange', handleHashChange);
+    })();
+
+  </script>
+
 </body>
 
 </html>
