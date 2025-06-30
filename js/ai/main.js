@@ -271,7 +271,7 @@ function initParallaxSectionAnimation() {
                 trigger: section,
                 start: 'top center',
                 end: 'center center',
-                scrub: true,
+                scrub: 1,
             },
         },
     );
@@ -294,7 +294,7 @@ function initParallaxSectionAnimation() {
                     trigger: section,
                     start: 'top top',
                     end: 'bottom bottom',
-                    scrub: true,
+                    scrub: 1,
                     toggleActions: 'play none none reverse',
                 },
             },
