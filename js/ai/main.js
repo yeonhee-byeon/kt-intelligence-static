@@ -233,6 +233,9 @@ function initIntroSectionAnimation() {
     });
 }
 
+
+
+
 function initParallaxSectionAnimation() {
     const section = document.querySelector('.parallax-section');
     if (!section || !window.gsap || !window.ScrollTrigger) return;
@@ -243,7 +246,13 @@ function initParallaxSectionAnimation() {
 
     ScrollTrigger.matchMedia({
         '(max-width: 768px)': function () {
-            gsap.set(images[3], { scaleX: -1 });
+            // gsap.set(images[3],  { scaleX: -1 });
+
+            gsap.set(images, {
+                force3D: true,
+                transform: 'translateZ(0)',
+            });
+
         },
     });
     // 컨테이너 고정 애니메이션
@@ -279,8 +288,8 @@ function initParallaxSectionAnimation() {
     // 각 이미지별 패럴렉스 애니메이션
     images.forEach((img, index) => {
         // 이미지별로 다른 속도 적용
-        const speeds = [1, 1, 1, 1, 1];
-        const speed = speeds[index] || 1;
+        const speeds = [0.3, 0.5, 0.8, 1, 1.2];
+        const speed = speeds[index] ?? 1; // undefined만 대비 (0은 허용)
 
         tl.fromTo(
             img,
