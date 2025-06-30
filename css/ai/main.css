@@ -210,32 +210,10 @@ br {
     padding: 2.5rem;
 }
 
-/* .sub-banner-section .sub-banner-inner>ul>li .count-up.smallflex .rolling-number.count-item-1 {
-    outline: 2px solid red;
-    gap: 0;
-
-}
-
-.sub-banner-section .sub-banner-inner>ul>li .count-up .countup-digit {
-    margin-right: -5px;
-}
-
-.sub-banner-section .sub-banner-inner>ul>li .count-up .countup-digit-container {
-    overflow-x: visible;
-} */
-
-/* 
-.sub-banner-section .sub-banner-inner>ul>li .count-up.smallflex .rolling-number.count-item-1 .countup-digit-container+.countup-digit-container .countup-digit {
-    margin-right: -30px
-} */
-
-/* .sub-banner-section .sub-banner-inner>ul>li .count-up.smallflex .rolling-number.count-item-1 .countup-digit-container:nth-child(1) {
-    margin-left: 10px;
-}
-
 .sub-banner-section .sub-banner-inner>ul>li .count-up.smallflex .rolling-number.count-item-1 .countup-digit-container:nth-child(2) {
-    margin-right: -30px;
-} */
+    margin-left: -0.95rem;
+}
+
 
 
 .sub-banner-section .sub-banner-inner>ul>li .count-up>span {
@@ -254,6 +232,10 @@ br {
     font-weight: 600;
     line-height: 1;
     letter-spacing: var(--letter-spacing-md);
+}
+
+.sub-banner-section .sub-banner-inner>ul>li .count-up .rolling-number span {
+    color: var(--white-color);
 }
 
 .sub-banner-section .sub-banner-inner>ul>li .count-up .countup-digit-container {
@@ -280,7 +262,6 @@ br {
     text-align: center;
     width: 7.5rem;
     /* 자릿수 폭 고정 (디자인에 따라 조정) */
-    padding: 0;
 }
 
 /* Info Case Section */
@@ -1883,6 +1864,23 @@ br {
         align-items: center;
         gap: 1.2rem;
         border-radius: 2rem;
+    }
+
+    .sub-banner-section .sub-banner-inner>ul>li .count-up.smallflex {
+        padding: 2.4rem 4.8rem 2.4rem 4rem;
+    }
+
+    .sub-banner-section .sub-banner-inner>ul>li .count-up .rolling-number>span {
+        font-weight: 600;
+        font-size: 10rem;
+        line-height: 100%;
+        letter-spacing: -2.0px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .sub-banner-section .sub-banner-inner>ul>li .count-up.smallflex>span {
+        margin-left: 0.8rem;
     }
 
     .sub-banner-section .sub-banner-inner>ul>li .count-up>span {

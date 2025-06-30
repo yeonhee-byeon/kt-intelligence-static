@@ -20,7 +20,7 @@ function countUpDigitsReverse(selector, options = {}) {
     const el = document.querySelector(selector);
     if (!el) return;
     const targetStr = el.dataset.target || '';
-    const duration = options.duration || 1200;
+    const duration = options.duration || 1100;
     el.innerHTML = '';
 
     for (let i = 0; i < targetStr.length; i++) {
@@ -81,7 +81,7 @@ function initIntroSectionAnimation() {
                 {
                     opacity: 1,
                     yPercent: 0,
-                    duration: 0.25,
+                    duration: 0.4,
                 },
             )
                 .fromTo(
@@ -93,7 +93,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.25,
+                        duration: 0.4,
                     },
                     '-=0.2',
                 )
@@ -106,7 +106,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.25,
+                        duration: 0.4,
                     },
                 )
                 .fromTo(
@@ -118,12 +118,12 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.25,
+                        duration: 0.4,
                     },
                     '-=0.2',
                 )
                 .fromTo(
-                    countUp,
+                    countUp[0],
                     {
                         opacity: 0,
                         yPercent: 50,
@@ -131,12 +131,27 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.25,
-                        onComplete: () => {
-                            countUpDigitsReverse('.count-item-1', { duration: 2000 });
-                            countUpDigitsReverse('.count-item-2', { duration: 2000 });
+                        duration: 0.4,
+                        onStart: () => {
+                            countUpDigitsReverse('.count-item-1', { duration: 1500 });
                         },
                     },
+                )
+                .fromTo(
+                    countUp[1],
+                    {
+                        opacity: 0,
+                        yPercent: 50,
+                    },
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 0.4,
+                        onStart: () => {
+                            countUpDigitsReverse('.count-item-2', { duration: 1500 });
+                        },
+                    },
+                    '-=0.4',
                 );
         },
         '(max-width: 768px)': function () {
@@ -158,7 +173,7 @@ function initIntroSectionAnimation() {
                 {
                     opacity: 1,
                     yPercent: 0,
-                    duration: 0.25,
+                    duration: 0.4,
                 },
             )
                 .fromTo(
@@ -170,7 +185,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.25,
+                        duration: 0.4,
                     },
                     '-=0.2',
                 )
@@ -183,7 +198,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.25,
+                        duration: 0.4,
                     },
                 )
                 .fromTo(
@@ -195,7 +210,7 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.25,
+                        duration: 0.4,
                     },
                     '-=0.2',
                 )
@@ -208,9 +223,9 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.25,
+                        duration: 0.4,
                         onStart: () => {
-                            countUpDigitsReverse('.count-item-1', { duration: 2000 });
+                            countUpDigitsReverse('.count-item-1', { duration: 1500 });
                         },
                     },
                 )
@@ -223,9 +238,9 @@ function initIntroSectionAnimation() {
                     {
                         opacity: 1,
                         yPercent: 0,
-                        duration: 0.25,
+                        duration: 0.4,
                         onStart: () => {
-                            countUpDigitsReverse('.count-item-2', { duration: 2000 });
+                            countUpDigitsReverse('.count-item-2', { duration: 1500 });
                         },
                     },
                 );
@@ -441,7 +456,7 @@ function initParallaxDepthSectionAnimation() {
                 {
                     opacity: 1,
                     yPercent: 0,
-                    duration: 0.25,
+                    duration: 0.4,
                     stagger: 0.2,
                     onStart: () => {
                         gsap.set('.cube-wrapper', { xPercent: 0 });
