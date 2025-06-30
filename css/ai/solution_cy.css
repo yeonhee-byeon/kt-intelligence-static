@@ -4826,21 +4826,24 @@
     }
 
     .solution-model-wrapper #tab-panel-1>.tab-section.only-title:after {
-        background-image: url('/resource/images/ai/solution/model/title-only-bg-01_mo.png');
+        background-image: url('/resource/images/ai/solution/model/title-only-bg-01_mo2.png');
         padding-bottom: 0rem;
         height: 100vh;
+        background-size: contain;
     }
 
     .solution-model-wrapper #tab-panel-2>.tab-section.only-title:after {
         background-image: url('/resource/images/ai/solution/model/title-only-bg-02_mo.png');
         padding-bottom: 0rem;
         height: 50vh;
+        background-size: contain;
     }
 
     .solution-model-wrapper #tab-panel-3>.tab-section.only-title:after {
         background-image: url('/resource/images/ai/solution/model/title-only-bg-03_mo.png');
         padding-bottom: 0rem;
         height: 50vh;
+        background-size: contain;
     }
 
     .example-side-item .example-side-txts.single-box dl {
