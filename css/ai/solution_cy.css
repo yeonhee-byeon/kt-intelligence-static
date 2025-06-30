@@ -4907,6 +4907,11 @@
         border: 1px solid var(--primary-color);
     }
 
+    .example-side-item .example-side-txts.top-tab-txts.ex-taps-01 dl {
+        height: 15.2rem;
+        min-height: 0;
+    }
+
     .example-side-item .example-side-txts dl {
         position: relative;
         padding: 20px;
