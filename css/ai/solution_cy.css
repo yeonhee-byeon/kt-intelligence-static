@@ -5169,6 +5169,8 @@
 
     .example-content .example-inner h3 {
         margin: 1.6rem 0 1.4rem;
+        width:100%;
+        outline:1px solid blue;
     }
 
     .bg-black-style .answer-tit {
@@ -5205,7 +5207,7 @@
 
     .example-content .example-inner .exam-items.ex-items {
         max-height: 36rem;
-        padding: 1.2rem 0 2.6rem 2.6rem;
+        padding: 1.2rem 2.6rem 2.6rem 2.6rem;
         height: auto;
         transition : all 0.2s ease-in;
     }
