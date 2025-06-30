@@ -322,8 +322,8 @@ function initParallaxSectionAnimation() {
     gsap.fromTo(
         images[4],
         {
-            opacity: 0,
-            xPercent: 20,
+            // opacity: 0,
+            // xPercent: 20,
         },
         {
             opacity: 1,
