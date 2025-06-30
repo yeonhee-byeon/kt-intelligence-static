@@ -2962,7 +2962,7 @@
 }
 
 .example-content .example-inner h3 {
-    margin: 0.875rem 0 1.25rem;
+    margin: 1.25rem 0 1rem;
 }
 
 .example-content .example-inner p {
@@ -4828,19 +4828,19 @@
     .solution-model-wrapper #tab-panel-1>.tab-section.only-title:after {
         background-image: url('/resource/images/ai/solution/model/title-only-bg-01_mo.png');
         padding-bottom: 0rem;
-        height: 57vh;
+        height: 100vh;
     }
 
     .solution-model-wrapper #tab-panel-2>.tab-section.only-title:after {
         background-image: url('/resource/images/ai/solution/model/title-only-bg-02_mo.png');
         padding-bottom: 0rem;
-        height: 50vh;
+        height: 100vh;
     }
 
     .solution-model-wrapper #tab-panel-3>.tab-section.only-title:after {
         background-image: url('/resource/images/ai/solution/model/title-only-bg-03_mo.png');
         padding-bottom: 0rem;
-        height: 50vh;
+        height: 100vh;
     }
 
     .example-side-item .example-side-txts.single-box dl {
