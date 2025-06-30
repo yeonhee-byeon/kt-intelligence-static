@@ -5110,7 +5110,7 @@
         /* 26.88px */
     }
 
-    .example-content .example-inner .exam-items {width:100%}
+    .example-content .example-inner .exam-items {}
 
     .example-content .example-inner .exam-items::-webkit-scrollbar {
         width: 0.4rem;
@@ -5205,7 +5205,7 @@
 
     .example-content .example-inner .exam-items.ex-items {
         max-height: 36rem;
-        padding: 1.2rem 2.6rem 2.6rem 2.6rem;
+        padding: 1.2rem 0 2.6rem 2.6rem;
         height: auto;
         transition : all 0.2s ease-in;
     }
