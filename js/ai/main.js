@@ -338,7 +338,7 @@ function initParallaxSectionAnimation() {
         },
     );
 
-    return tl;
+    // return tl;
 }
 
 // 큐브 이미지 경로

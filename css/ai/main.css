@@ -169,7 +169,7 @@ br {
 }
 
 .sub-banner-section .sub-banner-inner>ul>li:nth-child(3) {
-    gap: 5.5rem;
+    gap: 2rem;
 }
 
 .sub-banner-section .sub-banner-inner>ul>li>h2 {
@@ -197,7 +197,8 @@ br {
 }
 
 .sub-banner-section .sub-banner-inner>ul>li .count-up {
-    min-width: 21rem;
+    min-width: 20.5625rem;
+    max-width: 20.5625rem;
     width: 100%;
     display: flex;
     flex: 1;
@@ -238,7 +239,7 @@ br {
     display: flex;
     flex-direction: column;
     transition: transform 1s cubic-bezier(0.33, 1, 0.68, 1);
-    will-change: transform;
+    /* will-change: transform; */
 }
 
 .sub-banner-section .sub-banner-inner>ul>li .count-up .countup-digit span {
@@ -620,6 +621,42 @@ br {
     font-weight: 600;
     line-height: 1;
     letter-spacing: var(--letter-spacing-md);
+}
+
+.list-wrap ul li>h3 .flex-bottom {
+    display: flex;
+    align-items: flex-end;
+}
+
+.list-wrap ul li>h3 .flex-bottom span {
+    display: block;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-size: 5.885rem;
+    line-height: 100%;
+    letter-spacing: -2%;
+    color: var(--primary-color);
+}
+
+.list-wrap ul li>h3 .flex-bottom span+em {
+    display: block;
+    font-family: Pretendard;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 150%;
+    letter-spacing: -0.4px;
+    color: #A5A5A5;
+    padding-bottom: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.list-wrap ul li>h3>span+em {
+    color: #A5A5A5;
+    font-family: Pretendard;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 150%;
+    letter-spacing: -2%;
 }
 
 .list-wrap ul li>p {
@@ -1805,21 +1842,23 @@ br {
     }
 
     .sub-banner-section .sub-banner-inner>ul>li .count-up {
-        min-width: 20.2rem;
+        min-width: 18.7rem;
+        max-width: 18.7rem;
         padding: 2.4rem 4rem;
         font-size: 10rem;
         align-items: center;
         gap: 1.2rem;
+        border-radius: 2rem;
     }
 
     .sub-banner-section .sub-banner-inner>ul>li .count-up>span {
-        padding: 0.8rem 1.6rem;
+        padding: 0;
         font-size: 1.6rem;
         line-height: normal;
         letter-spacing: var(--letter-spacing-base);
     }
 
-    .sub-banner-section .sub-banner-inner>ul>li .count-up .rolling-number {
+    .sub-banner-section .sub-banner-inner>ul>li .count-up .countup-digit span .sub-banner-section .sub-banner-inner>ul>li .count-up .rolling-number {
         display: flex;
         font-size: 10rem;
         line-height: normal;
@@ -1960,9 +1999,9 @@ br {
     }
 
     .mobile-pds-menu .swiper-slide {
-        min-height: 40rem;
+        min-height: 26.8rem;
         width: 27.6rem;
-        padding: 4rem;
+        padding: 3.2rem;
         background: #181818;
         border-radius: 2rem;
         display: flex;
@@ -1971,37 +2010,57 @@ br {
     }
 
     .mobile-pds-menu .swiper-slide>div>h3 {
-        margin-bottom: 3.2rem;
+        margin-bottom: 2.4rem;
+        position: relative;
     }
 
     .mobile-pds-menu .swiper-slide>div>h3>img {
-        width: 4.2rem;
-        height: 4.1rem;
+        width: 2.8rem;
+        height: 2.8rem;
         object-fit: contain;
     }
 
     .mobile-pds-menu .swiper-slide>div>h3>span {
         color: var(--primary-color);
-        font-size: 3.76rem;
+        font-size: 2.58rem;
         font-weight: 600;
         line-height: 1;
         letter-spacing: var(--letter-spacing-md);
     }
 
+    .mobile-pds-menu .swiper-slide>div>h3>span+em {
+        font-family: Pretendard;
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: #A5A5A5;
+        margin-left: 0.5rem;
+        padding-bottom: 0.3rem;
+        position: absolute;
+        bottom: 0px;
+    }
+
     .mobile-pds-menu .swiper-slide>div>p {
         color: var(--white-color);
-        font-size: 2rem;
+        font-family: Pretendard;
         font-weight: 600;
-        line-height: 1.5;
-        margin-bottom: 1.6rem;
+        font-size: 1.7rem;
+        line-height: 150%;
+        letter-spacing: 0%;
         white-space: nowrap;
+
     }
 
     .mobile-pds-menu .swiper-slide>div>span {
         color: #a5a5a5;
-        font-size: 1.6rem;
-        font-weight: 400;
-        line-height: 1.5;
+        font-family: Pretendard;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 150%;
+        letter-spacing: 0%;
+        margin-top: 1.6rem;
+        display: block;
         white-space: nowrap;
     }
 
@@ -2011,11 +2070,17 @@ br {
     }
 
     .mobile-pds-menu .swiper-slide .btn.main {
-        padding: 0.9rem 2.4rem;
-        border-radius: 0.6rem;
-        font-size: 1.6rem;
-        font-weight: 700;
-        line-height: 1.72;
+        background-color: transparent;
+        padding: 0;
+        font-family: Pretendard;
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: #D9D9D9;
+        position: absolute;
+        top: 4.2rem;
+        right: 2.4rem;
     }
 
     .cube-wrapper {
@@ -2166,7 +2231,7 @@ br {
     }
 
     .kquality-section .kquality-hex-wrap {
-        margin-bottom: 12rem;
+        margin-bottom: 8rem;
     }
 
     .kquality-section .kquality-bottom {
