@@ -770,8 +770,16 @@ function checkExamItemsScroll() {
       var scrollHandler = function () {
         var bgBlackParent = parent.closest('.bg-black-style');
         if (!bgBlackParent) return;
-        // 맨 아래 도달 시 hasScroll 제거, 아니면 추가
-        if (examItems.scrollTop + examItems.clientHeight >= examItems.scrollHeight - 2) {
+        // preventBottomGap 값을 PC/모바일에 따라 다르게 적용
+        let preventBottomGap;
+        if (window.matchMedia('(max-width: 768px)').matches) {
+          preventBottomGap = 130; // 모바일 전용 값(px)
+        } else {
+          const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+          preventBottomGap = 6.5 * rootFontSize; // PC용
+        }
+        const maxScroll = examItems.scrollHeight - examItems.clientHeight;
+        if (examItems.scrollTop >= maxScroll - preventBottomGap) {
           if (parent.classList.contains('hasScroll')) {
             parent.classList.remove('hasScroll');
           }

@@ -2909,6 +2909,7 @@
     border-radius: 1.25rem;
     padding: 0rem 0 0 0;
     width: 100%;
+    overflow: hidden;
 }
 
 .example-content {
@@ -2918,7 +2919,7 @@
 }
 
 .example-content .example-inner .exam-items {
-    padding: 0 2.5rem 2.5rem 2.5rem;
+    padding: 0 2.5rem 0rem 2.5rem;
     width: calc(100% - 0.625rem);
     height: 23.75rem;
     overflow-y: scroll;
@@ -3221,10 +3222,16 @@
     color: #222;
 }
 
-.example-content .example-inner .exam-items.ex-items {
-    max-height: 21.5rem;
-    padding: 1.5rem 2.5rem 0 2.5rem;
-    height: auto;
+.example-content .example-inner .scroll-wrapper {
+    position: relative;
+}
+
+.example-content .example-inner .scroll-wrapper .box {
+    position: absolute;
+    bottom: 0;
+    background-color: #131313;
+    height: 2.5rem;
+    width: 100%;
 }
 
 .bg-black-style .example-content.ex-content {
@@ -3250,7 +3257,7 @@
     opacity: 0;
     display: block;
     content: '';
-    width: 100%;
+    width: 95%;
     height: 3.75rem;
     background: linear-gradient(180deg, rgba(19, 19, 19, 0) 0%, #131313 100%);
     position: absolute;
@@ -5186,8 +5193,17 @@
     }
 
     .bg-black-style .example-content.ex-content .ex-content-wrap {
-        margin-bottom: 0rem;
-        padding-bottom: 2.6rem;
+        margin-bottom: 2.5rem;
     }
+
+    .example-side-item .example-side-txts.top-tab-txts dl.inner-tab-trigger.swiper-slide.swiper-slide-prev.active {
+        border: 1px solid #373737;
+    }
+
+
+    .example-side-item .example-side-txts.top-tab-txts dl.active {
+        border: 1px solid var(--primary-color);
+    }
+
 
 }
