@@ -5110,7 +5110,7 @@
         /* 26.88px */
     }
 
-    .example-content .example-inner .exam-items {}
+    .example-content .example-inner .exam-items {width:100%}
 
     .example-content .example-inner .exam-items::-webkit-scrollbar {
         width: 0.4rem;
