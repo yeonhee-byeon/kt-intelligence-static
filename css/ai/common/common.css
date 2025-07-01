@@ -845,10 +845,16 @@ body.scroll-lock {
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: var(--letter-spacing-md);
+    text-align: center;
 }
 
-.kt-model-content .section-title span {
-    font-weight: 400;
+.kt-model-content .red-point-txt {
+    margin-top: -2.5rem;
+}
+
+.kt-model-content .red-point-txt img {
+    display: block;
+    width: 25.722875rem;
 }
 
 /* =========================
@@ -1342,13 +1348,21 @@ body.scroll-lock {
 
     .kt-model-section .kt-model-content {
         height: 100%;
-        gap: 4.8rem;
+        gap: 6rem;
     }
 
     .kt-model-section .kt-model-content .section-title {
         gap: 0;
         text-align: center;
         font-size: 4rem;
+    }
+
+    .kt-model-content .red-point-txt img {
+        width: 23.1rem;
+    }
+
+    .kt-model-content .red-point-txt {
+        margin-top: -4.8rem;
     }
 
     /* Button */
