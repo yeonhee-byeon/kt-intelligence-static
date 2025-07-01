@@ -2621,8 +2621,23 @@
     flex: initial;
 }
 
+
 .gpt-benefit-box .box-list li .box-item {
     height: 21rem;
+}
+
+.gpt-benefit-box .box-item p span {
+    font-family: Pretendard;
+    font-weight: 500;
+    font-size: var(--font-size-md);
+    line-height: 172%;
+    letter-spacing: var(--letter-spacing-base);
+    color: #C7C7C7;
+    display: block;
+}
+
+.gpt-benefit-box .box-item p span+span {
+    margin-top: 1.5rem;
 }
 
 .gpt-benefit-box .box-list li h3 {
@@ -2630,7 +2645,7 @@
 }
 
 .gpt-benefit-box.liama-benefit-box .box-list li .box-item {
-    height: 23.3625rem;
+    height: 22.8rem;
     background-color: transparent;
     border: 1px solid #373737;
     padding: 2.5rem;
@@ -4908,6 +4923,18 @@
     .gpt-benefit-box.liama-benefit-box .box-list li .box-item {
         height: auto;
     }
+
+
+    .gpt-benefit-box .box-item p span {
+        font-size: 1.6rem;
+        color: #C7C7C7;
+        display: block;
+    }
+
+    .gpt-benefit-box .box-item p span+span {
+        margin-top: 1.2rem;
+    }
+
 
     .solution-model-wrapper #tab-panel-1,
     .solution-model-wrapper #tab-panel-2,
