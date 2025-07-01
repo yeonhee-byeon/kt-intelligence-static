@@ -2871,4 +2871,31 @@ br {
     .news-inner .btn {
         margin-top: 1rem;
     }
+
+    @media (max-width: 356px) {
+
+        .kquality-section .kquality-hex-center {
+            width: 22rem;
+        }
+
+        .kquality-section .kquality-hex-item-2 {
+            right: -17%;
+        }
+
+        .kquality-section .kquality-hex-item-5 {
+            left: -16%;
+        }
+
+        .kquality-section .kquality-hex-item-4 {
+            left: -4%;
+            bottom: -5%;
+        }
+
+        .kquality-section .kquality-hex-item-3 {
+            right: -12%;
+            bottom: -5%;
+        }
+
+    }
+
 }

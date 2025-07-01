@@ -772,6 +772,10 @@
     letter-spacing: -0.48px;
 }
 
+.tech-detail-article .post-custom b {
+    font-weight: bold;
+}
+
 .tech-detail-article .post-custom h4 {
     font-size: 1.125rem;
     font-style: normal;
@@ -4110,6 +4114,7 @@
         line-height: 160%;
         letter-spacing: -0.24px;
     }
+
 
     .tech-detail-article .post-custom h4 {
         font-size: 1.8rem;
