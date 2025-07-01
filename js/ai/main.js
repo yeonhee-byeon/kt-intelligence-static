@@ -264,17 +264,21 @@ function initParallaxSectionAnimation() {
             gsap.set(images[3], { scaleX: -1 });
         },
     });
+
     // 컨테이너 고정 애니메이션
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: section,
             start: 'top top',
             end: 'bottom bottom',
-            // scrub: 1,
             pin: true,
             pinSpacing: false,
         },
     });
+
+    // iOS 크롬에서만 부드러운 scrub 값 적용
+    const isIOSChrome = /CriOS/.test(navigator.userAgent) && /iPhone|iPad|iPod/.test(navigator.userAgent);
+    const scrubValue = isIOSChrome ? 0.3 : 1; // iOS 크롬에서만 부드럽게
 
     gsap.fromTo(
         '.parallax-titles, .parallax-description',
@@ -289,7 +293,7 @@ function initParallaxSectionAnimation() {
                 trigger: section,
                 start: 'top center',
                 end: 'center center',
-                scrub: 1,
+                scrub: scrubValue,
             },
         },
     );
@@ -300,7 +304,7 @@ function initParallaxSectionAnimation() {
         const speeds = [1, 1, 1, 1, 1];
         const speed = speeds[index] || 1;
 
-        tl.fromTo(
+        gsap.fromTo(
             img,
             {
                 y: '0', // 시작 위치 (화면 하단)
@@ -312,7 +316,7 @@ function initParallaxSectionAnimation() {
                     trigger: section,
                     start: 'top top',
                     end: 'bottom bottom',
-                    scrub: 1,
+                    scrub: scrubValue, // iOS 크롬에서 부드러운 scrub
                     toggleActions: 'play none none reverse',
                 },
             },
@@ -322,8 +326,8 @@ function initParallaxSectionAnimation() {
     gsap.fromTo(
         images[1],
         {
-            // opacity: 0,
-            // xPercent: -20,
+            opacity: 1,
+            xPercent: 0,
         },
         {
             opacity: 1,
@@ -333,15 +337,16 @@ function initParallaxSectionAnimation() {
                 trigger: section,
                 start: 'top bottom',
                 end: 'top center',
-                scrub: 1,
+                scrub: scrubValue,
             },
         },
     );
+
     gsap.fromTo(
         images[4],
         {
-            // opacity: 0,
-            // xPercent: 20,
+            opacity: 1,
+            xPercent: 0,
         },
         {
             opacity: 1,
@@ -351,12 +356,10 @@ function initParallaxSectionAnimation() {
                 trigger: section,
                 start: 'top center',
                 end: 'top top',
-                scrub: 1,
+                scrub: scrubValue,
             },
         },
     );
-
-    // return tl;
 }
 
 // 큐브 이미지 경로
@@ -727,14 +730,14 @@ function initParallaxDepthSectionAnimation() {
     });
 
     // 리사이즈 시 WheelNavigation만 재생성
-    window.addEventListener('resize', () => {
-        ScrollTrigger.refresh();
-        // if (wheelNavInstance) {
-        //     console.log(wheelNavInstance);
-        //     wheelNavInstance.destroy();
-        //     wheelNavInstance = null;
-        // }
-    });
+    // window.addEventListener('resize', () => {
+    //     ScrollTrigger.refresh();
+    // if (wheelNavInstance) {
+    //     console.log(wheelNavInstance);
+    //     wheelNavInstance.destroy();
+    //     wheelNavInstance = null;
+    // }
+    // });
 
     // cleanup function
     return () => {
