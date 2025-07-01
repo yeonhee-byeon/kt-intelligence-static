@@ -107,95 +107,82 @@ const header = document.getElementById('main-header');
 const depthSection = document.querySelector('.parallax-depth-section');
 const kqualitySection = document.querySelector('.kquality-section');
 const stickyHeaderList = document.querySelector('.sticky-header-list');
-const componentSections = document.querySelectorAll('[id^="parallax-depth-section"], [id^="kquality-section"], [id^="eco-section"], [id^="usecase-section"], [id^="news-section"]');
-const stickyItems = stickyHeaderList ? stickyHeaderList.querySelectorAll('li') : [];
-let stickyHeaderClickLock = false;
-let stickyHeaderClickLockTimer = null;
-let previousScrollTop = window.pageYOffset;
+const componentSections = document.querySelectorAll(
+    '#parallax-depth-section, #kquality-section, #eco-section, #usecase-section, #news-section',
+);
 
-// 1. 클릭 시 앵커 이동 및 active 처리
-stickyItems.forEach((item) => {
-    item.addEventListener('click', (e) => {
-        const li = e.currentTarget || (e.target.closest && e.target.closest('li'));
-        if (!li) return;
-        // 모든 li의 active 제거 후, 클릭한 li에만 active 부여
-        stickyItems.forEach((el) => el.classList.remove('active'));
-        li.classList.add('active');
-        // 모바일: 슬라이드 애니메이션
-        if (window.innerWidth <= 768) {
-            li.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+function updateHeaderAndStickyNav() {
+    // 헤더 클래스 업데이트
+    if (depthSection) {
+        const depthRect = depthSection.getBoundingClientRect();
+        const depthVisible = depthRect.top <= 0 && depthRect.bottom > 0;
+        depthVisible ? header.classList.add('dark-header') : header.classList.remove('dark-header');
+    }
+
+    if (kqualitySection) {
+        const kqualityRect = kqualitySection.getBoundingClientRect();
+        const kqualityVisible = kqualityRect.top <= 0 && kqualityRect.bottom > 0;
+        kqualityVisible
+            ? header.classList.add('gray-header')
+            : header.classList.remove('gray-header');
+    }
+
+    // 스티키 네비게이션 업데이트
+    if (stickyHeaderList && componentSections.length > 0) {
+        const visibleSections = Array.from(componentSections)
+            .map((section) => ({
+                section,
+                top: section.getBoundingClientRect().top,
+            }))
+            .filter(({ top, section }) => top < window.innerHeight && top > -section.offsetHeight);
+
+        if (visibleSections.length > 0) {
+            const activeSection = visibleSections.reduce((prev, curr) =>
+                !prev || curr.top < prev.top ? curr : prev,
+            );
+
+            const sectionId = activeSection.section.id || activeSection.section.dataset.section;
+            const stickyItems = stickyHeaderList.querySelectorAll('li');
+
+            stickyItems.forEach((el) => el.classList.remove('active'));
+            const activeStickyItem = stickyHeaderList.querySelector(
+                `[data-section="${sectionId}"]`,
+            );
+            if (activeStickyItem) activeStickyItem.classList.add('active');
         }
-        // 클릭 후 500ms 동안 스크롤 감지에 의한 active 갱신 막기
-        if (stickyHeaderClickLockTimer) clearTimeout(stickyHeaderClickLockTimer);
-        stickyHeaderClickLock = true;
-        stickyHeaderClickLockTimer = setTimeout(() => { stickyHeaderClickLock = false; }, 500);
-        // 섹션 이동
-        const sectionId = li.getAttribute('data-section');
-        const targetSection = document.getElementById(sectionId);
-        if (targetSection) {
-            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const sectionTopAbs = targetSection.getBoundingClientRect().top + currentScrollTop;
-            const isDownScroll = sectionTopAbs > currentScrollTop;
-            const offset = window.innerWidth <= 768 ? 0 : (isDownScroll ? 54 : 173);
-            const scrollToY = sectionTopAbs - offset;
-            window.scrollTo({ top: scrollToY, behavior: 'smooth' });
-            previousScrollTop = currentScrollTop;
-        }
-    });
-});
-
-// 기존 스크롤 이벤트 기반 자동 active 제거
-window.removeEventListener('scroll', updateStickyTabActiveByScroll);
-
-// IntersectionObserver로 정확한 섹션 진입 감지 및 active 처리
-function setupStickyTabIntersectionObserver() {
-    if (!stickyHeaderList || !componentSections.length) return;
-    const headerOffset = 54; // PC 기준 고정 헤더 높이
-    const observerOptions = {
-        root: null,
-        rootMargin: `-${headerOffset}px 0px 0px 0px`,
-        threshold: [0, 0.01, 0.99, 1]
-    };
-    let lastActiveIndex = -1;
-    let ticking = false;
-    const observer = new IntersectionObserver((entries) => {
-        if (stickyHeaderClickLock) return; // 클릭 락 시 자동 active 갱신 막기
-        // 스로틀링: requestAnimationFrame으로 중복 처리 방지
-        if (ticking) return;
-        ticking = true;
-        window.requestAnimationFrame(() => {
-            let foundIdx = -1;
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    // 해당 section이 header 아래에 정확히 들어온 경우만
-                    const sectionId = entry.target.id;
-                    const liIdx = Array.from(stickyItems).findIndex(li => li.getAttribute('data-section') === sectionId);
-                    if (liIdx !== -1) {
-                        // top <= 54px && bottom > 54px 조건 추가 확인
-                        const rect = entry.target.getBoundingClientRect();
-                        if (rect.top <= headerOffset && rect.bottom > headerOffset) {
-                            foundIdx = liIdx;
-                        }
-                    }
-                }
-            });
-            stickyItems.forEach((li, idx) => {
-                if (idx === foundIdx) {
-                    li.classList.add('active');
-                    if (window.innerWidth <= 768) {
-                        li.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
-                    }
-                } else {
-                    li.classList.remove('active');
-                }
-            });
-            ticking = false;
-        });
-    }, observerOptions);
-    componentSections.forEach(section => observer.observe(section));
+    }
 }
 
-setupStickyTabIntersectionObserver();
+// 스크롤 이벤트에 통합 함수 연결
+window.addEventListener('scroll', updateHeaderAndStickyNav);
+
+// 초기 실행
+updateHeaderAndStickyNav();
+
+// 스티키 헤더 클릭 이벤트
+if (stickyHeaderList && componentSections.length > 0) {
+    stickyHeaderList.querySelectorAll('li').forEach((item) => {
+        item.addEventListener('click', () => {
+            const sectionId = item.dataset.section;
+            const targetSection =
+                document.getElementById(sectionId) ||
+                document.querySelector(`[data-section="${sectionId}"]`);
+
+            if (targetSection) {
+                const headerOffset = (header && header.offsetHeight) || 0;
+                const sectionTop =
+                    targetSection.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+                window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+
+                stickyHeaderList
+                    .querySelectorAll('li')
+                    .forEach((el) => el.classList.remove('active'));
+                item.classList.add('active');
+            }
+        });
+    });
+}
 
 // ===== 모바일 메뉴 인터랙션 =====
 (function () {
