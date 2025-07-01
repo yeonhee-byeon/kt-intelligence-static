@@ -314,16 +314,16 @@ if (stickyHeaderList && componentSections.length > 0) {
                 foundIdx = idx;
             }
         });
-        // 반드시 하나만 active, 나머지는 모두 remove
         stickyItems.forEach((li, idx) => {
             if (idx === foundIdx) {
                 li.classList.add('active');
+                // 모바일에서 자동 활성화 시에도 슬라이드 이동
                 if (window.innerWidth <= 768) {
                     const container = stickyHeaderList;
                     const tabElement = li;
                     const containerRect = container.getBoundingClientRect();
                     const tabRect = tabElement.getBoundingClientRect();
-                    const scrollLeft = tabRect.left - containerRect.left + 50;
+                    const scrollLeft = tabRect.left - containerRect.left - 0;
                     container.scrollTo({ left: container.scrollLeft + scrollLeft, behavior: 'smooth' });
                 }
             } else {

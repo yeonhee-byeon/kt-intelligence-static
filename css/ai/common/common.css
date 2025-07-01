@@ -1162,14 +1162,25 @@ body.scroll-lock {
         width: 100%;
         justify-content: flex-start;
         max-width: none;
-        padding: 1.7rem 2rem;
+        padding: 1.7rem 0rem;
         overflow-x: auto;
         -ms-overflow-style: none;
         /* IE/Edge */
         scrollbar-width: none;
         /* Firefox */
-
     }
+
+    .sticky-header-inner.main-sticky-header-inner {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -2rem;
+        padding: 1.7rem 4rem;
+        scrollbar-width: none;
+        -ms-overfl ow-style: none;
+        width: calc(100% + 4rem);
+    }
+
 
     .sticky-header-inner::-webkit-scrollbar {
         display: none;
@@ -1177,6 +1188,13 @@ body.scroll-lock {
 
     .sticky-header-list {
         gap: 3.2rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+    }
+
+    .sticky-header-list::-webkit-scrollbar {
+        display: none;
     }
 
     .sticky-header-list li {
