@@ -319,7 +319,12 @@ if (stickyHeaderList && componentSections.length > 0) {
             if (idx === foundIdx) {
                 li.classList.add('active');
                 if (window.innerWidth <= 768) {
-                    li.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+                    const container = stickyHeaderList;
+                    const tabElement = li;
+                    const containerRect = container.getBoundingClientRect();
+                    const tabRect = tabElement.getBoundingClientRect();
+                    const scrollLeft = tabRect.left - containerRect.left + 50;
+                    container.scrollTo({ left: container.scrollLeft + scrollLeft, behavior: 'smooth' });
                 }
             } else {
                 li.classList.remove('active');

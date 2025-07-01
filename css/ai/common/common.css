@@ -1168,6 +1168,7 @@ body.scroll-lock {
         /* IE/Edge */
         scrollbar-width: none;
         /* Firefox */
+
     }
 
     .sticky-header-inner::-webkit-scrollbar {
