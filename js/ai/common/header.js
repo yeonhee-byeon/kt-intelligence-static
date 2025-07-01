@@ -303,17 +303,17 @@ if (stickyHeaderList && componentSections.length > 0) {
     const stickyItems = stickyHeaderList.querySelectorAll('li');
 
     function updateStickyHeaderActive() {
-        // =====const headerHeight = header ? header.offsetHeight : 0;
-        //let foundIdx = -1;
-        //stickyItems.forEach((li, idx) => {
-        //const sectionId = li.getAttribute('data-section');
-        //const section = document.getElementById(sectionId);
-        //if (!section) return;
-        //const rect = section.getBoundingClientRect();
-        //if (rect.top <= headerHeight && rect.bottom > headerHeight) {
-        //foundIdx = idx;
-        //}
-        //}); 
+        const headerHeight = header ? header.offsetHeight : 0;
+        let foundIdx = -1;
+        stickyItems.forEach((li, idx) => {
+            const sectionId = li.getAttribute('data-section');
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= headerHeight && rect.bottom > headerHeight) {
+                foundIdx = idx;
+            }
+        });
         stickyItems.forEach((li, idx) => {
             if (idx === foundIdx) {
                 li.classList.add('active');
