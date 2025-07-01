@@ -2925,7 +2925,7 @@
     overflow-y: scroll;
     position: relative;
     margin-top: 0;
-    transition : all 0.2s ease-in;
+    
 }
 
 .flex.example-double .example-content .example-inner .exam-items {
@@ -2951,7 +2951,6 @@
     margin-bottom: 2.5rem;
     margin-top: -2.5rem;
     padding-bottom: 0;
-    transition : all 0.2s ease-in;
 }
 
 
