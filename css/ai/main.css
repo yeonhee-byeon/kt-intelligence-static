@@ -2065,13 +2065,13 @@ br {
         margin-bottom: 2.4rem;
         position: relative;
         display: flex;
-        align-items: flex-end;
     }
 
     .mobile-pds-menu .swiper-slide>div>h3>img {
         width: 2.8rem;
         height: 2.8rem;
         object-fit: contain;
+        margin-right: 0.5rem;
     }
 
     .mobile-pds-menu .swiper-slide>div>h3>span {
@@ -2080,6 +2080,7 @@ br {
         font-weight: 600;
         line-height: 1;
         letter-spacing: var(--letter-spacing-md);
+        margin-top: 0.5rem;
     }
 
     .mobile-pds-menu .swiper-slide>div>h3>span+em {
