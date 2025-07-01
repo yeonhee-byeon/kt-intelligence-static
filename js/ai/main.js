@@ -957,7 +957,7 @@ window.addEventListener('load', function () {
     }
     initHeroSectionAnimation();
     initIntroSectionAnimation();
-    // initParallaxSectionAnimation();
+    initParallaxSectionAnimation();
     initParallaxDepthSectionAnimation();
     initMobileMenu();
     initUsecaseSectionAnimation();
