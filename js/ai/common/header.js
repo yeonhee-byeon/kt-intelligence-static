@@ -323,7 +323,7 @@ if (stickyHeaderList && componentSections.length > 0) {
                     const tabElement = li;
                     const containerRect = container.getBoundingClientRect();
                     const tabRect = tabElement.getBoundingClientRect();
-                    const scrollLeft = tabRect.left - containerRect.left - 00;
+                    const scrollLeft = tabRect.left - containerRect.left - 0;
                     container.scrollTo({ left: container.scrollLeft + scrollLeft, behavior: 'smooth' });
                 }
             } else {
