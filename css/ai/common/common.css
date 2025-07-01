@@ -1170,15 +1170,20 @@ body.scroll-lock {
         /* Firefox */
     }
 
+    .main-sticky-header {
+        left: 2rem;
+    }
+
     .sticky-header-inner.main-sticky-header-inner {
         overflow-x: auto;
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
-        margin: 0 -2rem;
-        padding: 1.7rem 4rem;
+        margin: 0 0rem;
+        padding: 1.7rem 2rem;
         scrollbar-width: none;
         -ms-overfl ow-style: none;
-        width: calc(100% + 4rem);
+        width: 100%;
+        padding-left: 2rem;
     }
 
 
