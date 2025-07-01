@@ -106,7 +106,7 @@ const header = document.getElementById('main-header');
 // 구성요소 영역에서 dark-header 클래스 토글 및 스티키 헤더 관리
 const depthSection = document.querySelector('.parallax-depth-section');
 const kqualitySection = document.querySelector('.kquality-section');
-const stickyHeaderList = document.querySelector('.sticky-header-list');
+const stickyHeaderList = document.querySelector('.sticky-header-list.main-sticky-header');
 const componentSections = document.querySelectorAll(
     '#parallax-depth-section, #kquality-section, #eco-section, #usecase-section, #news-section',
 );
@@ -298,7 +298,7 @@ if (stickyHeaderList && componentSections.length > 0) {
 // ===== 스티키 헤더 탭 정확 active 동기화 (기존 코드 영향 X) =====
 (function stickyHeaderTabAccurateActive() {
     const header = document.querySelector('#main-header');
-    const stickyHeaderList = document.querySelector('.sticky-header-list');
+    const stickyHeaderList = document.querySelector('.sticky-header-list.main-sticky-header');
     if (!stickyHeaderList) return;
     const stickyItems = stickyHeaderList.querySelectorAll('li');
 
@@ -332,23 +332,43 @@ if (stickyHeaderList && componentSections.length > 0) {
     document.addEventListener('DOMContentLoaded', updateStickyHeaderActive);
     setTimeout(updateStickyHeaderActive, 100); // 초기 렌더 지연 대응
 
+    let manualActive = false;
     stickyItems.forEach((li) => {
         li.addEventListener('click', function () {
+            manualActive = true;
             const sectionId = this.getAttribute('data-section');
             const section = document.getElementById(sectionId);
-            const headerHeight = header ? header.offsetHeight : 0;
+            let headerHeight = header ? header.offsetHeight : 0;
+            let extraOffset = 0;
+            if (window.innerWidth <= 768) {
+                extraOffset = -30;
+            } else {
+                const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+                extraOffset = -4 * rem;
+            }
             if (section) {
                 const rect = section.getBoundingClientRect();
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const targetPosition = scrollTop + rect.top - headerHeight;
+                const targetPosition = scrollTop + rect.top - headerHeight - extraOffset;
                 window.scrollTo({ top: targetPosition, behavior: 'smooth' });
             }
-            // 반드시 하나만 active, 나머지는 모두 remove
             stickyItems.forEach((el) => el.classList.remove('active'));
             this.classList.add('active');
             if (window.innerWidth <= 768) {
                 this.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
             }
         });
+    });
+
+    window.addEventListener('scroll', function () {
+        if (window.innerWidth <= 768 && manualActive) {
+            const stickyHeaderList = document.querySelector('.sticky-header-list.main-sticky-header');
+            if (stickyHeaderList) {
+                stickyHeaderList.querySelectorAll('li.active').forEach(li => {
+                    li.classList.remove('active');
+                });
+            }
+            manualActive = false;
+        }
     });
 })();

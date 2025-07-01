@@ -1011,7 +1011,7 @@ br {
 .eco-section {
     width: 100%;
     background: var(--white-color);
-    padding: 10rem 0 11.25rem 0;
+    padding: 10rem 0 7.25rem 0;
     display: flex;
     justify-content: center;
 }
@@ -1389,7 +1389,7 @@ br {
 
 /* Use Case Swiper Section */
 .usecase-section {
-    padding: 6rem 0 7rem 0;
+    padding: 10rem 0 5rem 0;
 }
 
 .usecase-inner {
@@ -1544,7 +1544,7 @@ br {
 
 /* News Section (Figma 기반) */
 .news-section {
-    padding: 8rem 0 0;
+    padding: 10rem 0 0;
     position: relative;
 }
 

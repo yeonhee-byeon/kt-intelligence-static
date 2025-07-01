@@ -1185,6 +1185,36 @@ body.scroll-lock {
         white-space: nowrap;
     }
 
+
+    .sticky-header-list li:hover {
+        color: var(--gray-500-color);
+        font-weight: 700;
+        border-bottom: 2px solid transparent;
+    }
+
+    .dark-header .sticky-header-list li:hover {
+        color: var(--white-color);
+    }
+
+    .dark-header .sticky-header-list li:hover {
+        color: var(--white-color);
+        border-bottom: 2px solid var(--white-color);
+    }
+
+
+    .sticky-header-list li.active {
+        color: var(--black-color);
+        border-bottom: 2px solid var(--black-color);
+    }
+
+    .dark-header .sticky-header-list li.active {
+        color: var(--white-color);
+        border-bottom: 2px solid var(--white-color);
+    }
+
+
+
+
     /* section,
   .pin-space {
     display: none !important;
