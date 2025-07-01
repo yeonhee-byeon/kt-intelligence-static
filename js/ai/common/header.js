@@ -302,6 +302,9 @@ if (stickyHeaderList && componentSections.length > 0) {
     if (!stickyHeaderList) return;
     const stickyItems = stickyHeaderList.querySelectorAll('li');
 
+    // 각 li별로 마지막으로 active된 섹션 인덱스 저장
+    let lastActiveIdx = -1;
+
     function updateStickyHeaderActive() {
         const headerHeight = header ? header.offsetHeight : 0;
         let foundIdx = -1;
@@ -317,8 +320,8 @@ if (stickyHeaderList && componentSections.length > 0) {
         stickyItems.forEach((li, idx) => {
             if (idx === foundIdx) {
                 li.classList.add('active');
-                // 모바일에서 자동 활성화 시에도 슬라이드 이동
-                if (window.innerWidth <= 768) {
+                // 모바일에서 해당 섹션에 "처음 진입"했을 때만 자동 슬라이드
+                if (window.innerWidth <= 768 && lastActiveIdx !== foundIdx) {
                     const container = stickyHeaderList;
                     const tabElement = li;
                     const containerRect = container.getBoundingClientRect();
@@ -330,6 +333,8 @@ if (stickyHeaderList && componentSections.length > 0) {
                 li.classList.remove('active');
             }
         });
+        // 마지막으로 active된 인덱스 갱신
+        lastActiveIdx = foundIdx;
     }
 
     window.addEventListener('scroll', updateStickyHeaderActive);
