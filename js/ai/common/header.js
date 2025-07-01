@@ -298,12 +298,12 @@ if (stickyHeaderList && componentSections.length > 0) {
 // ===== 스티키 헤더 탭 정확 active 동기화 (기존 코드 영향 X) =====
 (function stickyHeaderTabAccurateActive() {
     const header = document.querySelector('#main-header');
-    const headerHeight = header ? header.offsetHeight : 0;
     const stickyHeaderList = document.querySelector('.sticky-header-list');
     if (!stickyHeaderList) return;
     const stickyItems = stickyHeaderList.querySelectorAll('li');
 
     function updateStickyHeaderActive() {
+        const headerHeight = header ? header.offsetHeight : 0;
         let foundIdx = -1;
         stickyItems.forEach((li, idx) => {
             const sectionId = li.getAttribute('data-section');
@@ -314,6 +314,7 @@ if (stickyHeaderList && componentSections.length > 0) {
                 foundIdx = idx;
             }
         });
+        // 반드시 하나만 active, 나머지는 모두 remove
         stickyItems.forEach((li, idx) => {
             if (idx === foundIdx) {
                 li.classList.add('active');
@@ -335,7 +336,6 @@ if (stickyHeaderList && componentSections.length > 0) {
         li.addEventListener('click', function () {
             const sectionId = this.getAttribute('data-section');
             const section = document.getElementById(sectionId);
-            const header = document.querySelector('#main-header');
             const headerHeight = header ? header.offsetHeight : 0;
             if (section) {
                 const rect = section.getBoundingClientRect();
@@ -343,6 +343,7 @@ if (stickyHeaderList && componentSections.length > 0) {
                 const targetPosition = scrollTop + rect.top - headerHeight;
                 window.scrollTo({ top: targetPosition, behavior: 'smooth' });
             }
+            // 반드시 하나만 active, 나머지는 모두 remove
             stickyItems.forEach((el) => el.classList.remove('active'));
             this.classList.add('active');
             if (window.innerWidth <= 768) {
