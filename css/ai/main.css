@@ -584,6 +584,7 @@ br {
     align-items: flex-start;
     justify-content: center;
     position: relative;
+    overflow: hidden;
 }
 
 .list-wrap {
