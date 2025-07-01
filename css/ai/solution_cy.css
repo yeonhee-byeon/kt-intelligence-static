@@ -2925,7 +2925,6 @@
     overflow-y: scroll;
     position: relative;
     margin-top: 0;
-    transition: all 0.2s ease-in;
 }
 
 .flex.example-double .example-content .example-inner .exam-items {
@@ -3290,7 +3289,6 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    transition : all 0.5s;
 }
 
 .bg-black-style .example-content.hasScroll:before {
@@ -5168,8 +5166,6 @@
 
     .example-content .example-inner h3 {
         margin: 1.6rem 0 1.4rem;
-        width:100%;
-        
     }
 
     .bg-black-style .answer-tit {
@@ -5179,7 +5175,6 @@
         line-height: 156%;
         /* 24.96px */
         margin-top: 2.6rem;
-        width: 100%;
     }
 
     .bg-black-style .example-content .example-inner .ex-content-wrap p {
@@ -5209,7 +5204,6 @@
         max-height: 36rem;
         padding: 1.2rem 2.6rem 2.6rem 2.6rem;
         height: auto;
-        transition : all 0.2s ease-in;
     }
 
     .tab-section.fixedHeight {
