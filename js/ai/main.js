@@ -251,113 +251,113 @@ function initIntroSectionAnimation() {
 
 
 
-function initParallaxSectionAnimation() {
-    const section = document.querySelector('.parallax-section');
-    if (!section || !window.gsap || !window.ScrollTrigger) return;
+// function initParallaxSectionAnimation() {
+//     const section = document.querySelector('.parallax-section');
+//     if (!section || !window.gsap || !window.ScrollTrigger) return;
 
-    // 이미지 요소들 선택
-    const images = section.querySelectorAll('.parallax-images img');
-    const container = section.querySelector('.parallax-container');
+//     // 이미지 요소들 선택
+//     const images = section.querySelectorAll('.parallax-images img');
+//     const container = section.querySelector('.parallax-container');
 
-    ScrollTrigger.matchMedia({
-        '(max-width: 768px)': function () {
-            gsap.set(images[3], { scaleX: -1 });
-        },
-    });
-    // 컨테이너 고정 애니메이션
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: section,
-            start: 'top top',
-            end: 'bottom bottom',
-            // scrub: 1,
-            pin: true,
-            pinSpacing: false,
-        },
-    });
+//     ScrollTrigger.matchMedia({
+//         '(max-width: 768px)': function () {
+//             gsap.set(images[3], { scaleX: -1 });
+//         },
+//     });
+//     // 컨테이너 고정 애니메이션
+//     const tl = gsap.timeline({
+//         scrollTrigger: {
+//             trigger: section,
+//             start: 'top top',
+//             end: 'bottom bottom',
+//             // scrub: 1,
+//             pin: true,
+//             pinSpacing: false,
+//         },
+//     });
 
-    gsap.fromTo(
-        '.parallax-titles, .parallax-description',
-        {
-            opacity: 0,
-        },
-        {
-            opacity: 1,
-            duration: 1,
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger: section,
-                start: 'top center',
-                end: 'center center',
-                scrub: 1,
-            },
-        },
-    );
+//     gsap.fromTo(
+//         '.parallax-titles, .parallax-description',
+//         {
+//             opacity: 0,
+//         },
+//         {
+//             opacity: 1,
+//             duration: 1,
+//             ease: 'power2.out',
+//             scrollTrigger: {
+//                 trigger: section,
+//                 start: 'top center',
+//                 end: 'center center',
+//                 scrub: 1,
+//             },
+//         },
+//     );
 
-    // 각 이미지별 패럴렉스 애니메이션
-    images.forEach((img, index) => {
-        // 이미지별로 다른 속도 적용
-        const speeds = [1, 1, 1, 1, 1];
-        const speed = speeds[index] || 1;
+//     // 각 이미지별 패럴렉스 애니메이션
+//     images.forEach((img, index) => {
+//         // 이미지별로 다른 속도 적용
+//         const speeds = [1, 1, 1, 1, 1];
+//         const speed = speeds[index] || 1;
 
-        tl.fromTo(
-            img,
-            {
-                y: '0', // 시작 위치 (화면 하단)
-            },
-            {
-                y: `-${200 * speed}vh`, // 속도에 따른 최종 위치 조정
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top top',
-                    end: 'bottom bottom',
-                    scrub: 1,
-                    toggleActions: 'play none none reverse',
-                },
-            },
-        );
-    });
+//         tl.fromTo(
+//             img,
+//             {
+//                 y: '0', // 시작 위치 (화면 하단)
+//             },
+//             {
+//                 y: `-${200 * speed}vh`, // 속도에 따른 최종 위치 조정
+//                 ease: 'none',
+//                 scrollTrigger: {
+//                     trigger: section,
+//                     start: 'top top',
+//                     end: 'bottom bottom',
+//                     scrub: 1,
+//                     toggleActions: 'play none none reverse',
+//                 },
+//             },
+//         );
+//     });
 
-    gsap.fromTo(
-        images[1],
-        {
-            // opacity: 0,
-            // xPercent: -20,
-        },
-        {
-            opacity: 1,
-            xPercent: 0,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: section,
-                start: 'top bottom',
-                end: 'top center',
-                scrub: 1,
-            },
-        },
-    );
-    gsap.fromTo(
-        images[4],
-        {
-            // opacity: 0,
-            // xPercent: 20,
-        },
-        {
-            opacity: 1,
-            xPercent: 0,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: section,
-                start: 'top center',
-                end: 'top top',
-                scrub: 1,
-            },
-        },
-    );
+//     gsap.fromTo(
+//         images[1],
+//         {
+//             // opacity: 0,
+//             // xPercent: -20,
+//         },
+//         {
+//             opacity: 1,
+//             xPercent: 0,
+//             ease: 'none',
+//             scrollTrigger: {
+//                 trigger: section,
+//                 start: 'top bottom',
+//                 end: 'top center',
+//                 scrub: 1,
+//             },
+//         },
+//     );
+//     gsap.fromTo(
+//         images[4],
+//         {
+//             // opacity: 0,
+//             // xPercent: 20,
+//         },
+//         {
+//             opacity: 1,
+//             xPercent: 0,
+//             ease: 'none',
+//             scrollTrigger: {
+//                 trigger: section,
+//                 start: 'top center',
+//                 end: 'top top',
+//                 scrub: 1,
+//             },
+//         },
+//     );
 
-    // return tl;
-}
+//     // return tl;
+// }
 
 // 큐브 이미지 경로
 const imagePaths = [
@@ -957,7 +957,7 @@ window.addEventListener('load', function () {
     }
     initHeroSectionAnimation();
     initIntroSectionAnimation();
-    initParallaxSectionAnimation();
+    // initParallaxSectionAnimation();
     initParallaxDepthSectionAnimation();
     initMobileMenu();
     initUsecaseSectionAnimation();
