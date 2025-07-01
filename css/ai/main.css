@@ -2080,7 +2080,7 @@ br {
         font-weight: 600;
         line-height: 1;
         letter-spacing: var(--letter-spacing-md);
-        margin-top: 0.5rem;
+        margin-top: 0.55rem;
     }
 
     .mobile-pds-menu .swiper-slide>div>h3>span+em {
