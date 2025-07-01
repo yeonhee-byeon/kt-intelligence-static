@@ -2065,6 +2065,7 @@ br {
         margin-bottom: 2.4rem;
         position: relative;
         display: flex;
+        align-items: baseline;
     }
 
     .mobile-pds-menu .swiper-slide>div>h3>img {
@@ -2080,10 +2081,13 @@ br {
         font-weight: 600;
         line-height: 1;
         letter-spacing: var(--letter-spacing-md);
-        margin-top: 0.65rem;
+        position: relative;
+        width: fit-content;
+        display: flex;
+        align-items: center;
     }
 
-    .mobile-pds-menu .swiper-slide>div>h3>span+em {
+    .mobile-pds-menu .swiper-slide>div>h3>span em {
         font-family: Pretendard;
         font-weight: 500;
         font-size: 1.2rem;
@@ -2091,8 +2095,7 @@ br {
         letter-spacing: 0%;
         color: #A5A5A5;
         margin-left: 0.5rem;
-        padding-bottom: 0.3rem;
-
+        display: block;
     }
 
     .mobile-pds-menu .swiper-slide>div>p {
