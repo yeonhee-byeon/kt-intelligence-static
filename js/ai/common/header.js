@@ -112,6 +112,9 @@ const componentSections = document.querySelectorAll(
 );
 
 function updateHeaderAndStickyNav() {
+    // 스크롤 시 gray-header2 항상 제거
+    header.classList.remove('gray-header2');
+
     // 헤더 클래스 업데이트
     if (depthSection) {
         const depthRect = depthSection.getBoundingClientRect();
