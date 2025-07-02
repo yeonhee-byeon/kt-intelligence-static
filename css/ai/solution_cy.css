@@ -4251,7 +4251,7 @@
         line-height: 152%;
         /* 28.8px */
         letter-spacing: 0px;
-        margin-top: 4rem;
+        /* margin-top: 4rem; */
     }
 
     .tech-detail-article .post-custom h3.fz-sm {
