@@ -795,8 +795,7 @@
 }
 
 .tech-detail-article .post-custom h4 {
-    font-size: 2.4rem;
-    /* font-size: 1.125rem; */
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: 700;
     line-height: 152%;
@@ -4134,6 +4133,10 @@
 
     .sub-content.techDetailPage {
         padding-top: 9.4rem;
+    }
+
+    .tech-detail-header .tech-detail-category {
+        font-size: 1.6rem;
     }
 
     .tech-detail-header .tech-detail-title {
