@@ -783,7 +783,7 @@
     line-height: 160%;
     /* 28.8px */
     letter-spacing: -0.36px;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
 }
 
 .tech-detail-article .post-custom h3.fz-sm {
@@ -4147,7 +4147,7 @@
     }
 
     .tech-detail-article .post-custom .img {
-        margin: 2.8rem 0;
+        margin: 0rem 0;
         padding: 0 2rem;
     }
 
@@ -4283,7 +4283,6 @@
 
     .tech-detail-article .table-wrapper>h5 {
         font-size: 1.3rem;
-        white-space: nowrap;
         margin-top: 1.6rem;
     }
 
