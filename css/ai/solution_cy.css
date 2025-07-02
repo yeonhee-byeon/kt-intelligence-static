@@ -4166,6 +4166,11 @@
         text-underline-position: from-font;
     }
 
+    .tech-detail-article .post-custom:nth-of-type(6) img,
+    .tech-detail-article .post-custom:nth-of-type(7) img {
+        margin-top: 4rem;
+    }
+
     .tech-detail-article .post-custom + .post-custom {
         margin-top: 8rem;
     }
