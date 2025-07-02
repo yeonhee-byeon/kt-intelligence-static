@@ -1687,6 +1687,11 @@ body.scroll-lock {
     margin-bottom: 8px;
 }
 
+.mobile-sub-menu+.mobile-sub-menu {
+    margin-top: -8px;
+    padding-top: 0;
+}
+
 .mobile-menu-item.has-sub.open .mobile-sub-menu {
     display: block;
 }
@@ -1715,15 +1720,15 @@ body.scroll-lock {
 }
 
 .mobile-menu-bottom {
-    border-top: 1px solid var(--gray-200-color);
-    margin-top: 0rem;
-    padding: 2.4rem 2rem 0 2rem;
+    padding: 0rem 2rem 0 2rem;
 }
 
 .mobile-menu-links {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+    position: relative;
+    padding: 24px 0;
 }
 
 .mobile-menu-ext-link {
@@ -1753,10 +1758,21 @@ body.scroll-lock {
     justify-content: space-between;
     padding: 60px 0 2.4rem;
     position: relative;
-    margin-top: 2.4rem;
 }
 
-.mobile-menu-bottom-row::before {
+.mobile-menu-links::before {
+    display: block;
+    content: '';
+    width: 100vw;
+    margin-left: -20px;
+    background-color: var(--gray-200-color);
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mobile-menu-bottom-row:before {
     display: block;
     content: '';
     width: 100vw;
