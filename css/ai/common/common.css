@@ -1649,6 +1649,14 @@ body.scroll-lock {
     cursor: pointer;
 }
 
+.mobile-menu-item .mobile-menu-link strong {
+    transition: color 0.3s ease-in;
+}
+
+.mobile-menu-item.has-sub.open .mobile-menu-link strong {
+    color: var(--primary-color);
+}
+
 .mobile-menu-item img {
     transform: rotate(90deg);
 }
