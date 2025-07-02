@@ -1684,6 +1684,7 @@ body.scroll-lock {
     background: #fafafa;
     padding: 2rem 0;
     margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .mobile-menu-item.has-sub.open .mobile-sub-menu {
@@ -1737,6 +1738,8 @@ body.scroll-lock {
 .mobile-menu-link.directTop {
     margin-top: 8px;
 }
+
+
 
 .mobile-menu-ext-link img {
     width: 2rem;
