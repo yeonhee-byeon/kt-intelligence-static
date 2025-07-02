@@ -59,4 +59,18 @@ function includeCommonLayout(options = {}) {
             } else {
             }
         });
+    const isMobile = window.innerWidth <= 768;
+
+    function updateResponsiveLinks() {
+        const isMobile = window.innerWidth <= 768;
+        document.querySelectorAll('a[data-pc][data-mo]').forEach((el) => {
+            el.setAttribute('href', isMobile ? el.dataset.mo : el.dataset.pc);
+        });
+    }
+
+    // 페이지 로딩 시 실행
+    document.addEventListener('DOMContentLoaded', updateResponsiveLinks);
+
+    // 창 크기 변경 시 다시 실행
+    window.addEventListener('resize', updateResponsiveLinks);
 }

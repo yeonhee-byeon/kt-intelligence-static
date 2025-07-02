@@ -1,4 +1,31 @@
 /* Hero Section */
+
+.open-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.open-planned {
+    text-align: center !important;
+    background-color: var(--gray-600-color) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-sm) !important;
+    line-height: var(--line-height-170) !important;
+    letter-spacing: 0 !important;
+    color: var(--white-color) !important;
+    padding: 0 0.875rem !important;
+    height: 2rem !important;
+    line-height: 2rem !important;
+    display: flex !important;
+    width: fit-content !important;
+    align-items: center !important;
+    border-radius: 6.1875rem !important;
+    margin-left: 1rem !important;
+    white-space: nowrap;
+}
+
+
+
 br {
     display: block;
 }
@@ -1767,6 +1794,17 @@ br {
 
 /* 모바일 메인 스타일 */
 @media (max-width: 768px) {
+
+    .open-planned {
+        font-size: 1.3rem !important;
+        height: 3rem !important;
+        line-height: 3rem !important;
+        margin-left: 0.8rem !important;
+        padding: 0 1.2rem !important;
+        border-radius: 1.5rem !important;
+        white-space: nowrap !important;
+    }
+
     br {
         display: none;
     }
