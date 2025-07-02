@@ -1733,6 +1733,10 @@ body.scroll-lock {
     gap: 0.4rem;
 }
 
+.mobile-menu-link.directTop {
+    margin-top: 8px;
+}
+
 .mobile-menu-ext-link img {
     width: 2rem;
     height: 2rem;
