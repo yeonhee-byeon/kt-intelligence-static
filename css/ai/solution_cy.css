@@ -934,7 +934,7 @@
 
 .tech-detail-article .table-wrapper>h5 {
     margin-top: 1.25rem;
-    text-align: right;
+    text-align: center;
     font-size: var(--font-size-sm);
     color: var(--gray-600-color);
     font-weight: 500;
