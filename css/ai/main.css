@@ -2175,6 +2175,7 @@ br {
         font-size: 1.2rem;
         line-height: normal;
         margin-top: 0.8rem;
+        font-weight: 500;
     }
 
     .mobile-pds-menu .swiper-slide>a {
