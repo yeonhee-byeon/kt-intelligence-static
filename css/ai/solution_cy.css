@@ -606,6 +606,16 @@
     line-height: 172%;
 }
 
+.tech-detail-article-list ul li a.nolink {
+    pointer-events: none;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+}
+
 .tech-detail-article-list ul.vertical {
     line-height: 172%;
 }
@@ -4148,7 +4158,7 @@
 
     .tech-detail-article .post-custom .img {
         margin: 0rem 0;
-        padding: 0 2rem;
+        padding: 0 0rem;
     }
 
     .tech-detail-article .post-custom h5 {
