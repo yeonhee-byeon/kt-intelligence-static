@@ -121,7 +121,7 @@ function updateHeaderAndStickyNav() {
 
     if (kqualitySection) {
         const kqualityRect = kqualitySection.getBoundingClientRect();
-        const kqualityVisible = kqualityRect.top <= 0 && kqualityRect.bottom > 0;
+        const kqualityVisible = kqualityRect.top <= 100 && kqualityRect.bottom > 0;
         kqualityVisible
             ? header.classList.add('gray-header')
             : header.classList.remove('gray-header');
@@ -354,7 +354,7 @@ if (stickyHeaderList && componentSections.length > 0) {
                 extraOffset = -30;
             } else {
                 const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-                extraOffset = -5 * rem;
+                extraOffset = -5.5 * rem;
             }
             if (section) {
                 const rect = section.getBoundingClientRect();
