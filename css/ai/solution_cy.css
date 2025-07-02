@@ -5113,6 +5113,7 @@
         line-height: 156%;
         /* 34.32px */
         letter-spacing: -0.22px;
+        white-space: nowrap;
     }
 
     .example-side-item .example-side-txts dd {
