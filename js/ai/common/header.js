@@ -112,9 +112,6 @@ const componentSections = document.querySelectorAll(
 );
 
 function updateHeaderAndStickyNav() {
-    // 스크롤 시 gray-header2 항상 제거
-    header.classList.remove('gray-header2');
-
     // 헤더 클래스 업데이트
     if (depthSection) {
         const depthRect = depthSection.getBoundingClientRect();
@@ -367,10 +364,6 @@ if (stickyHeaderList && componentSections.length > 0) {
             }
             stickyItems.forEach((el) => el.classList.remove('active'));
             this.classList.add('active');
-            // kquality-section 탭 클릭 시 gray-header2 무조건 추가 (중복 추가 허용)
-            if (sectionId === 'kquality-section') {
-                header.classList.add('gray-header2');
-            }
             if (window.innerWidth <= 768) {
                 this.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
             }
