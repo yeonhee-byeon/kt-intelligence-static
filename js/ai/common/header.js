@@ -364,9 +364,9 @@ if (stickyHeaderList && componentSections.length > 0) {
             }
             stickyItems.forEach((el) => el.classList.remove('active'));
             this.classList.add('active');
-            // kquality-section 탭 클릭 시 gray-header 무조건 추가 (중복 추가 허용)
+            // kquality-section 탭 클릭 시 gray-header2 무조건 추가 (중복 추가 허용)
             if (sectionId === 'kquality-section') {
-                header.classList.add('gray-header');
+                header.classList.add('gray-header2');
             }
             if (window.innerWidth <= 768) {
                 this.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
