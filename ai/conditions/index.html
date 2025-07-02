@@ -16,9 +16,8 @@
     <link rel="stylesheet" href="/css/ai/common/aos.css" />
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelector('#mobile-solution-sub')?.classList.add('open');
-        });
+        const mobileMenu = document.querySelector('#mobile-menu');
+        if (mobileMenu) mobileMenu.classList.add('active');
     </script>
 
 </head>
