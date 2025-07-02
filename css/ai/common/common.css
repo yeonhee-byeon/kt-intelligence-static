@@ -1683,7 +1683,7 @@ body.scroll-lock {
     display: none;
     background: #fafafa;
     padding: 2rem 0;
-    mask-type: 8px;
+    margin-bottom: 8px;
 }
 
 .mobile-menu-item.has-sub.open .mobile-sub-menu {
