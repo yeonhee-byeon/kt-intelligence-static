@@ -1683,6 +1683,7 @@ body.scroll-lock {
     display: none;
     background: #fafafa;
     padding: 2rem 0;
+    mask-type: 8px;
 }
 
 .mobile-menu-item.has-sub.open .mobile-sub-menu {
@@ -1694,7 +1695,6 @@ body.scroll-lock {
     font-size: 1.6rem;
     font-weight: 800;
     line-height: 1.56;
-    margin-bottom: 6px;
 }
 
 .mobile-sub-menu li a {
@@ -1721,7 +1721,7 @@ body.scroll-lock {
 .mobile-menu-links {
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
+    gap: 1.6rem;
 }
 
 .mobile-menu-ext-link {
