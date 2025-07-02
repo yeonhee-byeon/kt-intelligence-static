@@ -1081,6 +1081,13 @@
     white-space: nowrap;
 }
 
+.open-planned.tit{
+    font-size: var(--font-size-base) !important;
+    height: 2.75rem !important;
+    line-height: 2.75rem !important;
+    padding: 0 1.25rem !important;
+}
+
 .open-planned .mid-circle {
     width: 0.1875rem;
     height: 0.1875rem;
