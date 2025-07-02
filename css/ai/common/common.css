@@ -504,9 +504,10 @@ body.scroll-lock {
     background: var(--black-color);
 }
 
+/* 
 .gray-header .sticky-header {
-    background: var(--gray-50-color);
-}
+    background: var(--gray-50-color) !important;
+} */
 
 .sticky-header-inner {
     max-width: 86.5rem;
@@ -553,6 +554,12 @@ body.scroll-lock {
     color: var(--white-color);
     border-bottom: 2px solid var(--white-color);
 }
+
+/* 
+.dark-header.gray-header .sticky-header-list li.active {
+    color: var(--black-color) !important;
+    border-bottom: 2px solid var(--black-color) !important;
+} */
 
 .dark-header .sticky-header-list li:hover {
     color: var(--white-color);
