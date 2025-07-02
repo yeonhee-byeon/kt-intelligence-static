@@ -1644,9 +1644,10 @@ body.scroll-lock {
     justify-content: space-between;
     font-size: 2.2rem;
     font-weight: 700;
-    padding: 1.6rem 2.5rem 1.6rem 2rem;
+    padding: 1.2rem 2.5rem 1.2rem 2rem;
     color: #181818;
     cursor: pointer;
+    line-height: 172%;
 }
 
 .mobile-menu-item .mobile-menu-link strong {
@@ -1655,6 +1656,14 @@ body.scroll-lock {
 
 .mobile-menu-item.has-sub.open .mobile-menu-link strong {
     color: var(--primary-color);
+}
+
+.mobile-menu-item.directTop {
+    margin-top: 8px;
+}
+
+.mobile-menu-item.directBottom {
+    margin-bottom: 12px;
 }
 
 .mobile-menu-item img {

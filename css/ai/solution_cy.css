@@ -922,10 +922,6 @@
     color: var(--gray-800-color);
 }
 
-.tech-detail-article .table-wrapper tbody tr:hover {
-    background-color: var(--gray-50-color);
-}
-
 .tech-detail-article .table-wrapper>h5 {
     margin-top: 1.25rem;
     text-align: right;
